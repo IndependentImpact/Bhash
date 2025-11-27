@@ -1,6 +1,6 @@
 @prefix ex: <https://bhash.dev/examples/impact/> .
 @prefix hedera: <https://bhash.dev/hedera/core/> .
-@prefix aiao: <https://datadudes.xyz/ontology/aiao#> .
+@prefix aiao: <http://w3id.org/aiao#> .
 @prefix claimont: <https://datadudes.xyz/claimont#> .
 @prefix impactont: <https://datadudes.xyz/ontology/impactont#> .
 @prefix infocomm: <https://datadudes.xyz/ontology/infocomm#> .
@@ -178,7 +178,7 @@ ex:TelemetryExchangeQ3
 
 ex:ReforestationAssertion
     a hedera:StablecoinReserveAssertion ;
-    rdfs:label "Reforestation Impact Assertion"@en ;
+    rdfs:label "Reforestation Impact Claim"@en ;
     hedera:hasImpactSubject ex:CommunityTreasury ;
     hedera:reportsImpactIndicator ex:ReforestationMetric ;
     hedera:deliveredBySchedule ex:ReforestationSchedule ;
@@ -188,7 +188,7 @@ ex:ReforestationAssertion
 
 ex:SoilCarbonAssertion
     a hedera:ConsensusImpactAssertion ;
-    rdfs:label "Soil Carbon Impact Assertion"@en ;
+    rdfs:label "Soil Carbon Impact Claim"@en ;
     hedera:hasImpactSubject ex:CommunityTreasury ;
     hedera:reportsImpactIndicator ex:SoilCarbonMetric ;
     hedera:deliveredBySchedule ex:SoilCarbonSchedule ;
@@ -198,7 +198,7 @@ ex:SoilCarbonAssertion
 
 ex:MirrorNodeAlpha hedera:publishesImpactDataset ex:ReforestationDataset .
 
-ex:ReforestationAssertion a aiao:ImpactAssertion .
+ex:ReforestationAssertion a aiao:ImpactClaim .
 
 ex:ReforestationMetric impactont:hasMetricValue "1250"^^xsd:decimal .
 
@@ -210,7 +210,7 @@ ex:MirrorNodeBeta hedera:publishesImpactDataset ex:SoilCarbonDataset .
 
 ex:MirrorNodeBeta a infocomm:CommunicationNode .
 
-ex:SoilCarbonAssertion a aiao:ImpactAssertion .
+ex:SoilCarbonAssertion a aiao:ImpactClaim .
 
 ex:SoilCarbonMetric impactont:hasMetricValue "980"^^xsd:decimal .
 

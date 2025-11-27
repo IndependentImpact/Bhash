@@ -1,12 +1,12 @@
 PREFIX hedera: <https://bhash.dev/hedera/core/>
-PREFIX aiao: <https://datadudes.xyz/ontology/aiao#>
+PREFIX aiao: <http://w3id.org/aiao#>
 PREFIX claimont: <https://datadudes.xyz/claimont#>
 PREFIX impactont: <https://datadudes.xyz/ontology/impactont#>
 PREFIX infocomm: <https://datadudes.xyz/ontology/infocomm#>
 
 SELECT ?assertion ?subject ?indicator ?value ?sdgGoal ?schedule ?node
 WHERE {
-  ?assertion a aiao:ImpactAssertion ;
+  ?assertion a aiao:ImpactClaim ;
              hedera:hasImpactSubject ?subject ;
              hedera:reportsImpactIndicator ?indicator .
 

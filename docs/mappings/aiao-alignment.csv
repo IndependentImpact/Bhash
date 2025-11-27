@@ -1,5 +1,5 @@
 Term,Source Document,Notes
-hedera:ConsensusImpactAssertion,https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/message-flows,Consensus messages provide timestamped evidence for anthropogenic impact reporting; aligns with AIAO ImpactAssertion pattern.
+hedera:ConsensusImpactAssertion,https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/message-flows,Consensus messages provide timestamped evidence for anthropogenic impact reporting; aligns with AIAO ImpactClaim pattern.
 hedera:StablecoinReserveAssertion,https://hips.hedera.com/hip/hip-540,Stablecoin reserve movements map to AIAO assertions about financial support for impact programmes.
 hedera:MirrorImpactIndicator,https://docs.hedera.com/hedera/mirror-node/architecture/metrics,Mirror metrics back the indicator requirements described in AIAO guidance.
 hedera:reportsImpactIndicator,https://docs.hedera.com/hedera/mirror-node/architecture/metrics,Mirror telemetry ties assertions to quantitative indicators as required by AIAO.

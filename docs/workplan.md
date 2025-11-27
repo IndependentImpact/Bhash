@@ -140,7 +140,7 @@ Each module should deliver:
   * Produce ROBOT templates for bridge modules (`ontology/src/alignment/aiao.ttl`, etc.) that materialise `owl:equivalentClass`/`owl:subClassOf` axioms and annotate provenance back to Hedera documentation.
   * Schedule expert review workshops with anthropogenic impact stakeholders to validate impact- and climate-focused alignments before asserting strong equivalences.
 * **Data pilots:** Load sample data (mirror node exports, HIP reference payloads) into a triple store (e.g., GraphDB, Blazegraph) and validate SHACL constraints.
-  * Extend pilots with anthropogenic impact-oriented exemplars that transform consensus transactions into AIAO `ImpactAssertion` instances and demonstrate cross-ontology query answering.
+  * Extend pilots with anthropogenic impact-oriented exemplars that transform consensus transactions into AIAO `ImpactClaim` instances and demonstrate cross-ontology query answering.
 
 ### Phase 4 progress review (2025-10-02)
 

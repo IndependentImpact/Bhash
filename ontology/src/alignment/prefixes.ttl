@@ -1,5 +1,5 @@
 @prefix hedera: <https://bhash.dev/hedera/core/> .
-@prefix aiao: <https://datadudes.xyz/ontology/aiao#> .
+@prefix aiao: <http://w3id.org/aiao#> .
 @prefix claimont: <https://datadudes.xyz/claimont#> .
 @prefix impactont: <https://datadudes.xyz/ontology/impactont#> .
 @prefix infocomm: <https://datadudes.xyz/ontology/infocomm#> .

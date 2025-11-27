@@ -12,7 +12,7 @@ This blueprint operationalises the Phase 4 integration goal of binding Hedera-na
 
 | Artefact | Description | Owner | Status |
 | -------- | ----------- | ----- | ------ |
-| `ontology/src/alignment/aiao.ttl` | MIREOT-trimmed import/bridge linking Hedera consensus & token events to `aiao:ImpactAssertion` patterns. | Ontology modellers | ✅ Complete (2025-10-02) |
+| `ontology/src/alignment/aiao.ttl` | MIREOT-trimmed import/bridge linking Hedera consensus & token events to `aiao:ImpactClaim` patterns. | Ontology modellers | ✅ Complete (2025-10-02) |
 | `ontology/src/alignment/claimont.ttl` | Alignment axioms connecting sustainability commitments and scheduled actions to ClaimOnt mitigation/adaptation classes. | Ontology modellers | ✅ Complete (2025-10-02) |
 | `ontology/src/alignment/impactont.ttl` | Bridges HTS compliance & treasury analytics metrics to ImpactOnt KPIs with provenance annotations. | Ontology modellers | ✅ Complete (2025-10-02) |
 | `ontology/src/alignment/infocomm.ttl` | Maps Hedera/Hiero infrastructure classes (nodes, shards, pipelines) to InfoComm communication assets. | Ontology modellers | ✅ Complete (2025-10-02) |
@@ -51,7 +51,7 @@ This blueprint operationalises the Phase 4 integration goal of binding Hedera-na
 
 ## References
 
-* [AIAO](https://datadudes.xyz/aiao)
+* [AIAO](https://w3id.org/aiao)
 * [ClaimOnt](https://datadudes.xyz/claimont)
 * [ImpactOnt](https://datadudes.xyz/impactont)
 * [InfoComm](https://datadudes.xyz/infocomm)

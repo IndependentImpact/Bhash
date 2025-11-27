@@ -12,7 +12,7 @@ Phase 1 requires identifying reusable vocabularies that can accelerate Bhash mod
 | [FIBO](https://spec.edmcouncil.org/fibo/) | Financial instruments & governance. | Token classifications, treasury roles, governance committees. | Scope alignment needed; avoid over-constraining token semantics. |
 | [ODRL](https://www.w3.org/TR/odrl-model/) | Policy/permission modelling. | Custom fee rules, access control statements for topics/files. | Evaluate complexity relative to simpler policy shapes. |
 | [OpenTelemetry semantic conventions](https://opentelemetry.io/docs/specs/semconv/) | Telemetry schema for observability. | Potential mapping for node metrics and mirror observability data. | Likely optional until telemetry integration is prioritised. |
-| [AIAO](https://datadudes.xyz/aiao) | Anthropogenic impact accounting upper ontology. | Provides environmental and social impact scaffolding for anthropogenic impact reporting on Hedera-hosted assets. | Requires bridge module translating Hedera service events into impact indicators. |
+| [AIAO](https://w3id.org/aiao) | Anthropogenic impact accounting upper ontology. | Provides environmental and social impact scaffolding for anthropogenic impact reporting on Hedera-hosted assets. | Requires bridge module translating Hedera service events into impact indicators. |
 | [ClaimOnt](https://datadudes.xyz/claimont) | Climate accounting ontology for mitigation/adaptation measures. | Align Hedera staking, sustainability initiatives, and carbon credit tokens with climate metrics. | Need domain expert review to avoid overstating equivalence relationships. |
 | [ImpactOnt](https://datadudes.xyz/impactont) | Ontology for modelling impact investment portfolios and KPIs. | Map Hedera token compliance and treasury analytics concepts to impact investment observables. | Ensure financial definitions complement existing FIBO alignments. |
 | [InfoComm](https://datadudes.xyz/infocomm) | Information and communication infrastructure ontology. | Useful for representing Hedera network infrastructure, mirror data pipelines, and observability dependencies. | Identify overlap with Hiero virtualization constructs before importing. |
@@ -58,7 +58,7 @@ Phase 1 requires identifying reusable vocabularies that can accelerate Bhash mod
 ### AIAO
 
 * Emphasises anthropogenic impact indicators (environmental, social, governance) that downstream reporting platforms require.
-* Hedera token and treasury analytics modules can expose activity traces (e.g., sustainability-linked tokens, carbon offsets) as `aiao:ImpactAssertion` instances referencing consensus transactions.
+* Hedera token and treasury analytics modules can expose activity traces (e.g., sustainability-linked tokens, carbon offsets) as `aiao:ImpactClaim` instances referencing consensus transactions.
 * Next step: design a bridge shape that consumes Hedera transaction provenance and emits AIAO-compatible impact statements for anthropogenic impact pilots.
 
 ### ClaimOnt
