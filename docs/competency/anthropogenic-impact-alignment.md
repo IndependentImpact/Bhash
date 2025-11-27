@@ -2,10 +2,10 @@
 
 Phase 4 introduces the cross-ontology assets required to exercise CQ-IMPACT-001 and demonstrate AIAO-aligned reporting with Hedera data. The alignment sample now covers multiple SDG goals and mitigation schedules so stakeholder reviews can inspect diversified telemetry flows.
 
-## CQ-IMPACT-001 – How do scheduled sustainability transactions translate into AIAO impact assertions with supporting KPIs and telemetry provenance?
+## CQ-IMPACT-001 – How do scheduled sustainability transactions translate into AIAO impact claims with supporting KPIs and telemetry provenance?
 
 * **Status:** Validated via example graph and regression query in Phase 4 completion run.
-* **Scope:** Show how scheduled mitigation actions funded on Hedera surface as AIAO impact assertions with provenance to mirror datasets and sustainability KPIs.
+* **Scope:** Show how scheduled mitigation actions funded on Hedera surface as AIAO impact claims with provenance to mirror datasets and sustainability KPIs.
 * **Inputs:**
   * Ontology: `ontology/src/alignment/aiao.ttl`, `ontology/src/alignment/claimont.ttl`, `ontology/src/alignment/impactont.ttl`, `ontology/src/alignment/infocomm.ttl`
   * Sample graph: `ontology/examples/alignment-impact.ttl`
@@ -14,7 +14,7 @@ Phase 4 introduces the cross-ontology assets required to exercise CQ-IMPACT-001 
 ### Execution notes
 
 1. Load the core and alignment ontologies alongside the anthropogenic impact sample graph into an RDF store.
-2. Execute the SPARQL query to retrieve each `aiao:ImpactAssertion`, its Hedera subject, associated KPI metrics, optional SDG goal, related scheduled mitigation action, and the communication node exposing evidence datasets.
+2. Execute the SPARQL query to retrieve each `aiao:ImpactClaim`, its Hedera subject, associated KPI metrics, optional SDG goal, related scheduled mitigation action, and the communication node exposing evidence datasets.
 3. Review the results to verify that Hedera concepts inherit semantics from AIAO, ClaimOnt, ImpactOnt, and InfoComm through the bridge axioms; confirm the query output matches `tests/fixtures/results/cq-impact-001.csv`.
 
 ### Sample result (derived from `ontology/examples/alignment-impact.ttl`)

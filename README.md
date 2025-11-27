@@ -44,7 +44,7 @@ The Phase 4 integration sprint introduces dedicated bridge modules that expose H
 
 | Bridge | File | Focus |
 | ------ | ---- | ----- |
-| AIAO alignment | `ontology/src/alignment/aiao.ttl` | Maps consensus evidence, scheduled transactions, and token reserve events to `aiao:ImpactAssertion` patterns for sustainability attestations. |
+| AIAO alignment | `ontology/src/alignment/aiao.ttl` | Maps consensus evidence, scheduled transactions, and token reserve events to `aiao:ImpactClaim` patterns for sustainability attestations. |
 | ClaimOnt alignment | `ontology/src/alignment/claimont.ttl` | Projects scheduled climate commitments and milestones into ClaimOnt mitigation/adaptation taxonomies. |
 | ImpactOnt alignment | `ontology/src/alignment/impactont.ttl` | Aligns treasury and compliance telemetry with ImpactOnt KPI, SDG, and policy structures. |
 | InfoComm alignment | `ontology/src/alignment/infocomm.ttl` | Describes mirror nodes, Hiero shards, and telemetry exchanges as InfoComm communication assets with latency/SLA annotations. |
