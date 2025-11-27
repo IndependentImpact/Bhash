@@ -1,6 +1,8 @@
 @prefix : <https://bhash.dev/hedera/alignment/aiao/> .
 @prefix hedera: <https://bhash.dev/hedera/core/> .
 @prefix aiao: <http://w3id.org/aiao#> .
+@prefix claimont: <http://w3id.org/claimont#> .
+@prefix impactont: <http://w3id.org/impactont#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -52,10 +54,10 @@ hedera:MirrorImpactIndicator
     a owl:Class ;
     rdfs:label "Mirror impact indicator"@en ;
     rdfs:subClassOf hedera:TelemetryMetric ,
-        aiao:ImpactIndicator ;
+        impactont:Indicator ;
     skos:definition "Telemetry metric derived from mirror analytics that feeds anthropogenic impact indicator dashboards."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/mirror-node/architecture/metrics> ;
-    dcterms:source <http://w3id.org/aiao#ImpactIndicator> ;
+    dcterms:source <http://w3id.org/impactont#Indicator> ;
     .
 
 ###
@@ -67,21 +69,21 @@ hedera:hasImpactSubject
     rdfs:label "has impact subject"@en ;
     rdfs:domain aiao:ImpactClaim ;
     rdfs:range hedera:Actor ;
-    rdfs:subPropertyOf aiao:hasSubject ;
+    rdfs:subPropertyOf claimont:hasSubject ;
     skos:definition "Identifies the Hedera actor that an AIAO impact claim evaluates."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/governing-the-network> ;
-    dcterms:source <http://w3id.org/aiao#hasSubject> ;
+    dcterms:source <http://w3id.org/claimont#hasSubject> ;
     .
 
 hedera:reportsImpactIndicator
     a owl:ObjectProperty ;
     rdfs:label "reports impact indicator"@en ;
     rdfs:domain aiao:ImpactClaim ;
-    rdfs:range aiao:ImpactIndicator ;
-    rdfs:subPropertyOf aiao:reportsOnIndicator ;
+    rdfs:range impactont:Indicator ;
+    rdfs:subPropertyOf impactont:isDefinedByIndicator ;
     skos:definition "Links an impact claim to the indicator captured via Hedera telemetry."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/mirror-node/architecture/metrics> ;
-    dcterms:source <http://w3id.org/aiao#reportsOnIndicator> ;
+    dcterms:source <http://w3id.org/impactont#isDefinedByIndicator> ;
     .
 
 hedera:deliveredBySchedule
@@ -100,10 +102,10 @@ hedera:referencesMirrorDataset
     rdfs:label "references mirror dataset"@en ;
     rdfs:domain aiao:ImpactClaim ;
     rdfs:range hedera:MirrorDataset ;
-    rdfs:subPropertyOf aiao:hasEvidenceSource ;
+    rdfs:subPropertyOf claimont:isSupportedBy ;
     skos:definition "Connects an impact claim to the mirror dataset furnishing evidentiary support."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/mirror-node/sdks-and-apis/rest-api> ;
-    dcterms:source <http://w3id.org/aiao#hasEvidenceSource> ;
+    dcterms:source <http://w3id.org/claimont#isSupportedBy> ;
     .
 
 hedera:capturesImpactWindow
@@ -111,8 +113,8 @@ hedera:capturesImpactWindow
     rdfs:label "captures impact window"@en ;
     rdfs:domain aiao:ImpactClaim ;
     rdfs:range xsd:string ;
-    rdfs:subPropertyOf aiao:hasTemporalScope ;
+    rdfs:subPropertyOf impactont:hasTemporalLocation ;
     skos:definition "Specifies the reporting window for an impact claim expressed with Hedera data."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/transactions/transaction-lifecycle> ;
-    dcterms:source <http://w3id.org/aiao#hasTemporalScope> ;
+    dcterms:source <http://w3id.org/impactont#hasTemporalLocation> ;
     .
