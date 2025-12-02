@@ -1,4 +1,4 @@
 ID,LABEL,TYPE,SUBCLASS_OF,DEFINITION
 ID,Label,A,,
-https://bhash.dev/hedera/consensus/SampleTopic,"Sample governance topic",owl:Class,https://bhash.dev/hedera/core/ConsensusTopic,"Consensus topic derived from template workflow"
-https://bhash.dev/hedera/consensus/SampleAdminKey,"Sample admin key",owl:Class,https://bhash.dev/hedera/core/TopicAdminKey,"Admin key created through the ROBOT template example"
+https://hashgraphontology.xyx/hedera/consensus/SampleTopic,"Sample governance topic",owl:Class,https://hashgraphontology.xyx/hedera/core/ConsensusTopic,"Consensus topic derived from template workflow"
+https://hashgraphontology.xyx/hedera/consensus/SampleAdminKey,"Sample admin key",owl:Class,https://hashgraphontology.xyx/hedera/core/TopicAdminKey,"Admin key created through the ROBOT template example"

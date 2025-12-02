@@ -1,11 +1,11 @@
-@prefix : <https://bhash.dev/hedera/imports/prov/> .
+@prefix : <https://hashgraphontology.xyx/hedera/imports/prov/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://bhash.dev/hedera/imports/prov>
+<https://hashgraphontology.xyx/hedera/imports/prov>
     a owl:Ontology ;
     dcterms:title "PROV-O profile for Bhash"@en ;
     dcterms:description "Trimmed subset of PROV-O terms referenced by the Bhash core and consensus modules."@en ;

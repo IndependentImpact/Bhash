@@ -1,2 +1,2 @@
 schedule,transaction,status,missingSignatures,expires
-https://bhash.dev/examples/file/EmergencyPauseSchedule,https://bhash.dev/examples/contracts/SwapExecution,pending-signatures,1,2025-10-01T00:00:00+00:00
+https://hashgraphontology.xyx/examples/file/EmergencyPauseSchedule,https://hashgraphontology.xyx/examples/contracts/SwapExecution,pending-signatures,1,2025-10-01T00:00:00+00:00

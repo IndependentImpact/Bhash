@@ -59,18 +59,18 @@ LOGGER = logging.getLogger("hedera_fluree")
 # Compact JSON-LD context used when inserting topic metadata into Fluree.
 JSONLD_CONTEXT: Mapping[str, Any] = {
     "@version": 1.1,
-    "@vocab": "https://bhash.dev/hedera/ledger#",
-    "hedera": "https://bhash.dev/hedera/core/",
+    "@vocab": "https://hashgraphontology.xyx/hedera/ledger#",
+    "hedera": "https://hashgraphontology.xyx/hedera/core/",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "Topic": "hedera:ConsensusTopic",
-    "topicId": "https://bhash.dev/hedera/ledger#topicId",
+    "topicId": "https://hashgraphontology.xyx/hedera/ledger#topicId",
     "network": "hedera:occursOn",
-    "memo": "https://bhash.dev/hedera/ledger#memo",
+    "memo": "https://hashgraphontology.xyx/hedera/ledger#memo",
     "consensusTimestamp": {
-        "@id": "https://bhash.dev/hedera/ledger#consensusTimestamp",
+        "@id": "https://hashgraphontology.xyx/hedera/ledger#consensusTimestamp",
         "@type": "xsd:dateTime",
     },
-    "transactionId": "https://bhash.dev/hedera/ledger#transactionId",
+    "transactionId": "https://hashgraphontology.xyx/hedera/ledger#transactionId",
 }
 
 

@@ -1,5 +1,5 @@
-@prefix : <https://bhash.dev/hedera/token/> .
-@prefix hedera: <https://bhash.dev/hedera/core/> .
+@prefix : <https://hashgraphontology.xyx/hedera/token/> .
+@prefix hedera: <https://hashgraphontology.xyx/hedera/core/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -8,14 +8,14 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://bhash.dev/hedera/token>
+<https://hashgraphontology.xyx/hedera/token>
     a owl:Ontology ;
     dcterms:title "Hedera Token Service module"@en ;
     dcterms:description "Service-specific vocabulary for modelling Hedera Token Service artefacts, compliance roles, and lifecycle events."@en ;
     dcterms:creator "Bhash Ontology Working Group"@en ;
     dcterms:created "2024-09-27"^^xsd:date ;
     dcterms:modified "2024-09-27"^^xsd:date ;
-    owl:imports <https://bhash.dev/hedera/core> ;
+    owl:imports <https://hashgraphontology.xyx/hedera/core> ;
     owl:versionInfo "0.1.0-dev" ;
     skos:editorialNote "Phase 3 sprint module introducing token compliance semantics to support CQ-COMP-003."@en ;
     .

@@ -25,7 +25,7 @@ Phase 3 expands the catalogue with the remaining service modules:
 - `src/mirror-analytics.ttl` – mirror dataset, retention, and analytics workspace vocabulary to support treasury reporting.
 - `src/hiero.ttl` – Hiero shard participation, onboarding states, and validator roles extending the core Hiero layer abstractions.
 
-All IRIs follow the canonical namespace `https://bhash.dev/hedera/`.  Additional namespaces (e.g., `/governance/`, `/hts/`)
+All IRIs follow the canonical namespace `https://hashgraphontology.xyx/hedera/`.  Additional namespaces (e.g., `/governance/`, `/hts/`)
 are introduced per module so downstream integrations can import the specific slices they require.
 
 ### Example data

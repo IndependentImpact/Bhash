@@ -1,5 +1,5 @@
-@prefix ex: <https://bhash.dev/examples/impact/> .
-@prefix hedera: <https://bhash.dev/hedera/core/> .
+@prefix ex: <https://hashgraphontology.xyx/examples/impact/> .
+@prefix hedera: <https://hashgraphontology.xyx/hedera/core/> .
 @prefix aiao: <http://w3id.org/aiao#> .
 @prefix claimont: <https://datadudes.xyz/claimont#> .
 @prefix impactont: <https://datadudes.xyz/ontology/impactont#> .
