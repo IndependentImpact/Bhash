@@ -1,5 +1,5 @@
-@prefix : <https://bhash.dev/hedera/hiero/> .
-@prefix hedera: <https://bhash.dev/hedera/core/> .
+@prefix : <https://hashgraphontology.xyx/hedera/hiero/> .
+@prefix hedera: <https://hashgraphontology.xyx/hedera/core/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -8,14 +8,14 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://bhash.dev/hedera/hiero>
+<https://hashgraphontology.xyx/hedera/hiero>
     a owl:Ontology ;
     dcterms:title "Hiero Overlay module"@en ;
     dcterms:description "Vocabulary extending the core ontology with Hiero shards, validator roles, and onboarding milestones."@en ;
     dcterms:creator "Bhash Ontology Working Group"@en ;
     dcterms:created "2024-10-01"^^xsd:date ;
     dcterms:modified "2025-09-30"^^xsd:date ;
-    owl:imports <https://bhash.dev/hedera/core> ;
+    owl:imports <https://hashgraphontology.xyx/hedera/core> ;
     owl:versionInfo "0.1.0-dev" ;
     skos:editorialNote "Phase 3 Hiero overlay capturing shard participation states for CQ-HIE-009."@en ;
     .

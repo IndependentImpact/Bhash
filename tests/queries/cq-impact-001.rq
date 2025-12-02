@@ -1,4 +1,4 @@
-PREFIX hedera: <https://bhash.dev/hedera/core/>
+PREFIX hedera: <https://hashgraphontology.xyx/hedera/core/>
 PREFIX aiao: <http://w3id.org/aiao#>
 PREFIX claimont: <https://datadudes.xyz/claimont#>
 PREFIX impactont: <https://datadudes.xyz/ontology/impactont#>
