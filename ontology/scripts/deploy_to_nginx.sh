@@ -9,6 +9,8 @@ TARGET_ROOT=${TARGET_ROOT:-/var/www}
 DEST="$TARGET_ROOT/$SITE_NAME/"
 USE_SUDO=${USE_SUDO:-true}
 RSYNC_BIN=${RSYNC_BIN:-rsync}
+WEB_USER=${WEB_USER:-www-data}
+WEB_GROUP=${WEB_GROUP:-www-data}
 
 if [ ! -d "$DEPLOYMENT_DIR" ]; then
     echo "❌ Deployment directory not found: $DEPLOYMENT_DIR" >&2
@@ -23,3 +25,4 @@ fi
 
 set -x
 "${SUDO_CMD[@]}" "$RSYNC_BIN" -av --delete "$DEPLOYMENT_DIR"/ "$DEST"
+"${SUDO_CMD[@]}" chown -R "$WEB_USER":"$WEB_GROUP" "$DEST"
