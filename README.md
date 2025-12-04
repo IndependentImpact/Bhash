@@ -95,6 +95,46 @@ snapshots. A handful of legacy Python harnesses remain under `scripts/` while
 their Go replacements are scheduled, but new automation should target the Go
 workflow.
 
+## Generating OWL/HTML/JSON-LD artefacts
+
+Publishable artefacts for each ontology module (OWL/RDF/XML, HTML catalogue,
+JSON-LD, and Turtle) are generated from the source `.ttl` files under
+`ontology/src` via a small Python helper. The script renders human-readable
+catalogues using Jinja2 and keeps machine-readable formats in sync for
+deployments.
+
+1. Prepare the Python environment using the helper script under `ontology/` (this creates `ontology/venv` with the required
+   dependencies):
+
+   ```bash
+   ontology/install_requirements.sh
+   ```
+
+2. Convert the source ontologies into deployable artefacts:
+
+   ```bash
+   ontology/venv/bin/python ontology/scripts/convert_ontologies.py \
+     --source-dir ontology/src \
+     --deployment-dir ontology/deployment
+   ```
+
+   Each module gains four files in `ontology/deployment/`: `.owl` (RDF/XML),
+   `.html` (rendered catalogue), `.jsonld` (JSON-LD context/graph), and `.ttl`
+   (normalised Turtle). A shared `imports/` directory is also refreshed to keep
+   imported slices aligned.
+
+3. Deploy by syncing the `ontology/deployment/` directory to your hosting
+   target (e.g., GitHub Pages, S3 bucket, or an internal web server). For a
+   static publish you can simply run:
+
+   ```bash
+   rsync -avh ontology/deployment/ <user>@<host>:/var/www/ontology/
+   ```
+
+   Downstream systems that consume the OWL or JSON-LD contexts should reference
+   the files from this deployment directory so they stay aligned with the
+   repository sources.
+
 ## Phase 4 data pilot
 
 Run `python scripts/run_phase4_pilot.py` to initialise an Oxigraph-backed triple store with the Phase 3/4 ontologies and example graphs. The script executes the anthropogenic impact competency query, runs SHACL validation, and records artefacts under `build/pilots/phase4/` for stakeholder review. A Go-native pilot command is on the roadmap; see `docs/python_helper_migration_plan.md` for the migration schedule.
