@@ -22,7 +22,7 @@ dcat:downloadURL a owl:ObjectProperty ;
     rdfs:isDefinedBy dcat: ;
     rdfs:range rdfs:Resource .
 
-<https://hashgraphontology.xyx/hedera/imports/dcat> a owl:Ontology ;
+<https://hashgraphontology.xyz/imports/dcat> a owl:Ontology ;
     dcterms:created "2024-09-20"^^xsd:date ;
     dcterms:description "Trimmed subset of DCAT terms needed for mirror dataset cataloguing."@en ;
     dcterms:modified "2024-09-20"^^xsd:date ;

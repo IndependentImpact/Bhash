@@ -1,20 +1,20 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix hedera: <https://hashgraphontology.xyx/hedera/core/> .
+@prefix hedera: <https://hashgraphontology.xyz/core/> .
 @prefix impactont: <https://datadudes.xyz/ontology/impactont#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://hashgraphontology.xyx/hedera/alignment/impactont> a owl:Ontology ;
+<https://hashgraphontology.xyz/alignment/impactont> a owl:Ontology ;
     dcterms:created "2025-10-01"^^xsd:date ;
     dcterms:creator "Bhash Ontology Working Group"@en ;
     dcterms:description "Connects Hedera treasury and compliance analytics to ImpactOnt KPI structures for sustainability dashboards."@en ;
     dcterms:modified "2025-10-01"^^xsd:date ;
     dcterms:title "ImpactOnt alignment module"@en ;
-    owl:imports <https://hashgraphontology.xyx/hedera/core>,
-        <https://hashgraphontology.xyx/hedera/mirror-analytics>,
-        <https://hashgraphontology.xyx/hedera/token> ;
+    owl:imports <https://hashgraphontology.xyz/core>,
+        <https://hashgraphontology.xyz/mirror-analytics>,
+        <https://hashgraphontology.xyz/token> ;
     owl:versionInfo "0.1.0-dev" ;
     skos:editorialNote "Phase 4 bridge module translating Hedera compliance metrics into ImpactOnt KPI and SDG linkages."@en .
 

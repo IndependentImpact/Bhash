@@ -1,4 +1,4 @@
-@prefix hedera: <https://hashgraphontology.xyx/hedera/core/> .
+@prefix hedera: <https://hashgraphontology.xyz/core/> .
 @prefix aiao: <http://w3id.org/aiao#> .
 @prefix claimont: <https://datadudes.xyz/claimont#> .
 @prefix impactont: <https://datadudes.xyz/ontology/impactont#> .

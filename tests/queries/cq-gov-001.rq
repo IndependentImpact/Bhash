@@ -1,5 +1,5 @@
 PREFIX dcterms: <http://purl.org/dc/terms/>
-PREFIX hedera: <https://hashgraphontology.xyx/hedera/core/>
+PREFIX hedera: <https://hashgraphontology.xyz/core/>
 
 SELECT ?member ?memberName ?committee ?committeeName ?hip
 WHERE {

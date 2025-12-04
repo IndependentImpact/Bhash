@@ -1,4 +1,4 @@
-PREFIX hedera: <https://hashgraphontology.xyx/hedera/core/>
+PREFIX hedera: <https://hashgraphontology.xyz/core/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT ?network ?networkLabel ?validator ?validatorLabel ?operatorAccount ?mandate

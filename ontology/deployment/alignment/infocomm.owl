@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rdf:RDF
    xmlns:dcterms="http://purl.org/dc/terms/"
-   xmlns:hedera="https://hashgraphontology.xyx/hedera/core/"
+   xmlns:hedera="https://hashgraphontology.xyz/core/"
    xmlns:owl="http://www.w3.org/2002/07/owl#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
 >
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/alignment/infocomm">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/alignment/infocomm">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
     <dcterms:title xml:lang="en">InfoComm alignment module</dcterms:title>
     <dcterms:description xml:lang="en">Maps Hedera/Hiero infrastructure elements to InfoComm communication assets for sustainability telemetry exchanges.</dcterms:description>
     <dcterms:creator xml:lang="en">Bhash Ontology Working Group</dcterms:creator>
     <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-10-01</dcterms:created>
     <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-10-01</dcterms:modified>
-    <owl:imports rdf:resource="https://hashgraphontology.xyx/hedera/core"/>
-    <owl:imports rdf:resource="https://hashgraphontology.xyx/hedera/mirror-analytics"/>
-    <owl:imports rdf:resource="https://hashgraphontology.xyx/hedera/hiero"/>
+    <owl:imports rdf:resource="https://hashgraphontology.xyz/core"/>
+    <owl:imports rdf:resource="https://hashgraphontology.xyz/mirror-analytics"/>
+    <owl:imports rdf:resource="https://hashgraphontology.xyz/hiero"/>
     <owl:versionInfo>0.1.0-dev</owl:versionInfo>
     <skos:editorialNote xml:lang="en">Phase 4 bridge module exposing mirror nodes and Hiero shards as InfoComm communication nodes and network segments.</skos:editorialNote>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/servedByNode">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/servedByNode">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:label xml:lang="en">served by node</rdfs:label>
-    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/ImpactTelemetryExchange"/>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/ImpactTelemetryExchange"/>
     <rdfs:range rdf:resource="https://datadudes.xyz/ontology/infocomm#CommunicationNode"/>
     <rdfs:subPropertyOf rdf:resource="https://datadudes.xyz/ontology/infocomm#isServedBy"/>
     <skos:definition xml:lang="en">Associates a telemetry exchange with the communication node responsible for delivering data.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/mirror-node/sdks-and-apis/rest-api"/>
     <dcterms:source rdf:resource="https://datadudes.xyz/infocomm#isServedBy"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasTelemetryLatency">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/hasTelemetryLatency">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdfs:label xml:lang="en">has telemetry latency</rdfs:label>
     <rdfs:domain rdf:resource="https://datadudes.xyz/ontology/infocomm#CommunicationNode"/>
@@ -40,7 +40,7 @@
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/mirror-node/architecture/metrics"/>
     <dcterms:source rdf:resource="https://datadudes.xyz/infocomm#hasLatency"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/anchorsTelemetryPolicy">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/anchorsTelemetryPolicy">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:label xml:lang="en">anchors telemetry policy</rdfs:label>
     <rdfs:domain rdf:resource="https://datadudes.xyz/ontology/infocomm#CommunicationNode"/>
@@ -50,48 +50,48 @@
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/mirror-node/architecture/overview"/>
     <dcterms:source rdf:resource="https://datadudes.xyz/infocomm#boundByAgreement"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/HieroCommunicationSegment">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/HieroCommunicationSegment">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">Hiero communication segment</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/HieroShard"/>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/HieroShard"/>
     <rdfs:subClassOf rdf:resource="https://datadudes.xyz/ontology/infocomm#NetworkSegment"/>
     <skos:definition xml:lang="en">Hiero shard treated as a communication segment for impact telemetry flows.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hiero/concepts/shards"/>
     <dcterms:source rdf:resource="https://datadudes.xyz/infocomm#NetworkSegment"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/MirrorCommunicationNode">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/MirrorCommunicationNode">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">Mirror communication node</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/MirrorService"/>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/MirrorService"/>
     <rdfs:subClassOf rdf:resource="https://datadudes.xyz/ontology/infocomm#CommunicationNode"/>
     <skos:definition xml:lang="en">Mirror service interpreted as a communication node within the InfoComm ontology.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/mirror-node"/>
     <dcterms:source rdf:resource="https://datadudes.xyz/infocomm#CommunicationNode"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/publishesImpactDataset">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/publishesImpactDataset">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:label xml:lang="en">publishes impact dataset</rdfs:label>
     <rdfs:domain rdf:resource="https://datadudes.xyz/ontology/infocomm#CommunicationNode"/>
-    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/MirrorDataset"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyz/core/MirrorDataset"/>
     <rdfs:subPropertyOf rdf:resource="https://datadudes.xyz/ontology/infocomm#exposesInterface"/>
     <skos:definition xml:lang="en">States that a communication node exposes a mirror dataset interface.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/mirror-node/sdks-and-apis/rest-api"/>
     <dcterms:source rdf:resource="https://datadudes.xyz/infocomm#exposesInterface"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/routesThroughSegment">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/routesThroughSegment">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:label xml:lang="en">routes through segment</rdfs:label>
-    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/ImpactTelemetryExchange"/>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/ImpactTelemetryExchange"/>
     <rdfs:range rdf:resource="https://datadudes.xyz/ontology/infocomm#NetworkSegment"/>
     <rdfs:subPropertyOf rdf:resource="https://datadudes.xyz/ontology/infocomm#traversesSegment"/>
     <skos:definition xml:lang="en">Identifies the network segment used to transport telemetry.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hiero/concepts/shards"/>
     <dcterms:source rdf:resource="https://datadudes.xyz/infocomm#traversesSegment"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/ImpactTelemetryExchange">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/ImpactTelemetryExchange">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">Impact telemetry exchange</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/Process"/>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/Process"/>
     <rdfs:subClassOf rdf:resource="https://datadudes.xyz/ontology/infocomm#ExchangeProcess"/>
     <skos:definition xml:lang="en">Process shuttling anthropogenic impact telemetry between Hiero shards and mirror services.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hiero/concepts/validators"/>

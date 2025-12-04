@@ -1,12 +1,12 @@
 [
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasEndpointPort",
+    "@id": "https://hashgraphontology.xyz/core/hasEndpointPort",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/ConsensusNodeEndpoint"
+        "@id": "https://hashgraphontology.xyz/core/ConsensusNodeEndpoint"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -28,7 +28,7 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/CouncilCommittee",
+    "@id": "https://hashgraphontology.xyz/core/CouncilCommittee",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -40,7 +40,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/GovernanceBody"
+        "@id": "https://hashgraphontology.xyz/core/GovernanceBody"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -49,20 +49,20 @@
         "@value": "Sub-structure of the Hedera Governing Council that manages delegated mandates such as finance or membership reviews."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://hedera.com/council"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasMessageContent",
+    "@id": "https://hashgraphontology.xyz/core/hasMessageContent",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TopicMessage"
+        "@id": "https://hashgraphontology.xyz/core/TopicMessage"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -84,13 +84,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/isMirroredBy",
+    "@id": "https://hashgraphontology.xyz/core/isMirroredBy",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/ConsensusRecordFile"
+        "@id": "https://hashgraphontology.xyz/core/ConsensusRecordFile"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -101,7 +101,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/MirrorDataset"
+        "@id": "https://hashgraphontology.xyz/core/MirrorDataset"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -112,13 +112,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/supportedBy",
+    "@id": "https://hashgraphontology.xyz/core/supportedBy",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Process"
+        "@id": "https://hashgraphontology.xyz/core/Process"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -129,7 +129,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/GovernanceDecision"
+        "@id": "https://hashgraphontology.xyz/core/GovernanceDecision"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -140,13 +140,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/stewardsProcess",
+    "@id": "https://hashgraphontology.xyz/core/stewardsProcess",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/GovernanceBody"
+        "@id": "https://hashgraphontology.xyz/core/GovernanceBody"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -157,17 +157,17 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/GovernanceProcess"
+        "@id": "https://hashgraphontology.xyz/core/GovernanceProcess"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/participatesIn"
+        "@id": "https://hashgraphontology.xyz/core/participatesIn"
       }
     ],
     "http://www.w3.org/2002/07/owl#inverseOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/hasSteward"
+        "@id": "https://hashgraphontology.xyz/core/hasSteward"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -178,13 +178,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/includesMessage",
+    "@id": "https://hashgraphontology.xyz/core/includesMessage",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/ConsensusRecordFile"
+        "@id": "https://hashgraphontology.xyz/core/ConsensusRecordFile"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -195,7 +195,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TopicMessage"
+        "@id": "https://hashgraphontology.xyz/core/TopicMessage"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -206,13 +206,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasSequenceNumber",
+    "@id": "https://hashgraphontology.xyz/core/hasSequenceNumber",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TopicMessage"
+        "@id": "https://hashgraphontology.xyz/core/TopicMessage"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -234,7 +234,7 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/TopicSubmitKey",
+    "@id": "https://hashgraphontology.xyz/core/TopicSubmitKey",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -246,7 +246,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/AccountKey"
+        "@id": "https://hashgraphontology.xyz/core/AccountKey"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -255,14 +255,14 @@
         "@value": "Key that governs which actors may post messages to a consensus topic."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/permissions"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/TopicMessage",
+    "@id": "https://hashgraphontology.xyz/core/TopicMessage",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -274,7 +274,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Event"
+        "@id": "https://hashgraphontology.xyz/core/Event"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -283,20 +283,20 @@
         "@value": "Individual message submitted to a consensus topic and assigned a consensus timestamp."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/message-flows"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasSteward",
+    "@id": "https://hashgraphontology.xyz/core/hasSteward",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/GovernanceProcess"
+        "@id": "https://hashgraphontology.xyz/core/GovernanceProcess"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -307,17 +307,17 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/GovernanceBody"
+        "@id": "https://hashgraphontology.xyz/core/GovernanceBody"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/hasParticipant"
+        "@id": "https://hashgraphontology.xyz/core/hasParticipant"
       }
     ],
     "http://www.w3.org/2002/07/owl#inverseOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/stewardsProcess"
+        "@id": "https://hashgraphontology.xyz/core/stewardsProcess"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -328,13 +328,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/targetsTopic",
+    "@id": "https://hashgraphontology.xyz/core/targetsTopic",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Transaction"
+        "@id": "https://hashgraphontology.xyz/core/Transaction"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -345,7 +345,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/ConsensusTopic"
+        "@id": "https://hashgraphontology.xyz/core/ConsensusTopic"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -356,7 +356,7 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/ConsensusNodeEndpoint",
+    "@id": "https://hashgraphontology.xyz/core/ConsensusNodeEndpoint",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -368,7 +368,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Artefact"
+        "@id": "https://hashgraphontology.xyz/core/Artefact"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -377,20 +377,20 @@
         "@value": "Network endpoint (IP, port, TLS configuration) exposed by a consensus node for client submissions."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/core-concepts/staking/nodes"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasSubmitKey",
+    "@id": "https://hashgraphontology.xyz/core/hasSubmitKey",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/ConsensusTopic"
+        "@id": "https://hashgraphontology.xyz/core/ConsensusTopic"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -401,12 +401,12 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TopicSubmitKey"
+        "@id": "https://hashgraphontology.xyz/core/TopicSubmitKey"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/hasTopicKey"
+        "@id": "https://hashgraphontology.xyz/core/hasTopicKey"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -417,13 +417,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/isSubBodyOf",
+    "@id": "https://hashgraphontology.xyz/core/isSubBodyOf",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/GovernanceBody"
+        "@id": "https://hashgraphontology.xyz/core/GovernanceBody"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -434,7 +434,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/GovernanceBody"
+        "@id": "https://hashgraphontology.xyz/core/GovernanceBody"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -445,13 +445,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasEndpointAddress",
+    "@id": "https://hashgraphontology.xyz/core/hasEndpointAddress",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/ConsensusNodeEndpoint"
+        "@id": "https://hashgraphontology.xyz/core/ConsensusNodeEndpoint"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -473,7 +473,7 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/ConsensusRecordFile",
+    "@id": "https://hashgraphontology.xyz/core/ConsensusRecordFile",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -485,7 +485,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Artefact"
+        "@id": "https://hashgraphontology.xyz/core/Artefact"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -494,20 +494,20 @@
         "@value": "Exported record file containing ordered transactions, consensus timestamps, and running hashes."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/mirror-node/architecture/record-and-balance-files"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasTopicKey",
+    "@id": "https://hashgraphontology.xyz/core/hasTopicKey",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/ConsensusTopic"
+        "@id": "https://hashgraphontology.xyz/core/ConsensusTopic"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -518,7 +518,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/AccountKey"
+        "@id": "https://hashgraphontology.xyz/core/AccountKey"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -529,7 +529,7 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/TopicAdminKey",
+    "@id": "https://hashgraphontology.xyz/core/TopicAdminKey",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -541,7 +541,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/AccountKey"
+        "@id": "https://hashgraphontology.xyz/core/AccountKey"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -550,20 +550,20 @@
         "@value": "Key that authorises topic-level administration such as update, delete, and re-key operations."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/permissions"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasAdminKey",
+    "@id": "https://hashgraphontology.xyz/core/hasAdminKey",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/ConsensusTopic"
+        "@id": "https://hashgraphontology.xyz/core/ConsensusTopic"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -574,12 +574,12 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TopicAdminKey"
+        "@id": "https://hashgraphontology.xyz/core/TopicAdminKey"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/hasTopicKey"
+        "@id": "https://hashgraphontology.xyz/core/hasTopicKey"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -590,13 +590,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/assignsRole",
+    "@id": "https://hashgraphontology.xyz/core/assignsRole",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/RoleAssignment"
+        "@id": "https://hashgraphontology.xyz/core/RoleAssignment"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -607,7 +607,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Role"
+        "@id": "https://hashgraphontology.xyz/core/Role"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -618,7 +618,7 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/ConsensusTopic",
+    "@id": "https://hashgraphontology.xyz/core/ConsensusTopic",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -630,7 +630,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Artefact"
+        "@id": "https://hashgraphontology.xyz/core/Artefact"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -639,20 +639,20 @@
         "@value": "Ordered message channel configured with administrator, submit, and auto-renew keys."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/topics"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/emitsRecordFile",
+    "@id": "https://hashgraphontology.xyz/core/emitsRecordFile",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/ConsensusService"
+        "@id": "https://hashgraphontology.xyz/core/ConsensusService"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -663,7 +663,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/ConsensusRecordFile"
+        "@id": "https://hashgraphontology.xyz/core/ConsensusRecordFile"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -674,7 +674,7 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/ValidatorOnboardingSteward",
+    "@id": "https://hashgraphontology.xyz/core/ValidatorOnboardingSteward",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -686,7 +686,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Role"
+        "@id": "https://hashgraphontology.xyz/core/Role"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -695,14 +695,14 @@
         "@value": "Role fulfilled by council members who oversee validator onboarding approvals and requirements."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://hips.hedera.com/hip/hip-840"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/ConsensusService",
+    "@id": "https://hashgraphontology.xyz/core/ConsensusService",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -714,7 +714,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Service"
+        "@id": "https://hashgraphontology.xyz/core/Service"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -723,14 +723,14 @@
         "@value": "Operational service that orders transactions, emits consensus timestamps, and manages topics."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/consensus",
+    "@id": "https://hashgraphontology.xyz/consensus",
     "@type": [
       "http://www.w3.org/2002/07/owl#Ontology"
     ],
@@ -766,7 +766,7 @@
     ],
     "http://www.w3.org/2002/07/owl#imports": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core"
+        "@id": "https://hashgraphontology.xyz/core"
       }
     ],
     "http://www.w3.org/2002/07/owl#versionInfo": [
@@ -782,7 +782,7 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/RoleAssignment",
+    "@id": "https://hashgraphontology.xyz/core/RoleAssignment",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -794,7 +794,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Process"
+        "@id": "https://hashgraphontology.xyz/core/Process"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -803,14 +803,14 @@
         "@value": "Process that confers a specific governance or operational role to an actor."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/core-concepts/governing-the-network#council-committees"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/ValidatorOnboardingCommittee",
+    "@id": "https://hashgraphontology.xyz/core/ValidatorOnboardingCommittee",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -822,7 +822,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/CouncilCommittee"
+        "@id": "https://hashgraphontology.xyz/core/CouncilCommittee"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -831,20 +831,20 @@
         "@value": "Council committee that stewards validator onboarding cohorts and associated policy decisions."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://raw.githubusercontent.com/hashgraph/hedera-docs/main/core-concepts/staking/staking.md#phase-iii-staking-rewards-program-launch"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasMessageSize",
+    "@id": "https://hashgraphontology.xyz/core/hasMessageSize",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TopicMessage"
+        "@id": "https://hashgraphontology.xyz/core/TopicMessage"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -866,13 +866,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasRunningHash",
+    "@id": "https://hashgraphontology.xyz/core/hasRunningHash",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/ConsensusRecordFile"
+        "@id": "https://hashgraphontology.xyz/core/ConsensusRecordFile"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -894,13 +894,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/deliversMessage",
+    "@id": "https://hashgraphontology.xyz/core/deliversMessage",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/ConsensusService"
+        "@id": "https://hashgraphontology.xyz/core/ConsensusService"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -911,7 +911,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TopicMessage"
+        "@id": "https://hashgraphontology.xyz/core/TopicMessage"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -922,13 +922,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasTopic",
+    "@id": "https://hashgraphontology.xyz/core/hasTopic",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/ConsensusService"
+        "@id": "https://hashgraphontology.xyz/core/ConsensusService"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -939,7 +939,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/ConsensusTopic"
+        "@id": "https://hashgraphontology.xyz/core/ConsensusTopic"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -950,13 +950,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/exposesEndpoint",
+    "@id": "https://hashgraphontology.xyz/core/exposesEndpoint",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/ConsensusNode"
+        "@id": "https://hashgraphontology.xyz/core/ConsensusNode"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -967,7 +967,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/ConsensusNodeEndpoint"
+        "@id": "https://hashgraphontology.xyz/core/ConsensusNodeEndpoint"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [

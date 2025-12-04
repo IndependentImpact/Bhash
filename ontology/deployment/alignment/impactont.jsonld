@@ -1,6 +1,6 @@
 [
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/targetsSDGGoal",
+    "@id": "https://hashgraphontology.xyz/core/targetsSDGGoal",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
@@ -11,7 +11,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TelemetryMetric"
+        "@id": "https://hashgraphontology.xyz/core/TelemetryMetric"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -36,14 +36,14 @@
         "@value": "Indicates which Sustainable Development Goal a Hedera metric supports."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/mirror-node/architecture/metrics"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasImpactVariance",
+    "@id": "https://hashgraphontology.xyz/core/hasImpactVariance",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
@@ -54,7 +54,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TelemetryMetric"
+        "@id": "https://hashgraphontology.xyz/core/TelemetryMetric"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -79,14 +79,14 @@
         "@value": "Captures the variance observed for an impact KPI across a reporting period."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/mirror-node/architecture/metrics"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/ComplianceAlignmentScore",
+    "@id": "https://hashgraphontology.xyz/core/ComplianceAlignmentScore",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -103,7 +103,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TelemetryMetric"
+        "@id": "https://hashgraphontology.xyz/core/TelemetryMetric"
       },
       {
         "@id": "https://datadudes.xyz/ontology/impactont#ComplianceIndicator"
@@ -115,14 +115,14 @@
         "@value": "Composite indicator evaluating adherence to sustainability-linked compliance rules."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://hips.hedera.com/hip/hip-540"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasMetricValue",
+    "@id": "https://hashgraphontology.xyz/core/hasMetricValue",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
@@ -133,7 +133,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TelemetryMetric"
+        "@id": "https://hashgraphontology.xyz/core/TelemetryMetric"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -158,14 +158,14 @@
         "@value": "Quantitative value reported for a Hedera-aligned impact metric."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/mirror-node/architecture/metrics"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasImpactBaseline",
+    "@id": "https://hashgraphontology.xyz/core/hasImpactBaseline",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
@@ -176,7 +176,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TelemetryMetric"
+        "@id": "https://hashgraphontology.xyz/core/TelemetryMetric"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -201,14 +201,14 @@
         "@value": "Baseline quantitative value used for comparing KPI improvement."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/mirror-node/architecture/metrics"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/alignsWithPolicy",
+    "@id": "https://hashgraphontology.xyz/core/alignsWithPolicy",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
@@ -219,7 +219,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TelemetryMetric"
+        "@id": "https://hashgraphontology.xyz/core/TelemetryMetric"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -244,14 +244,14 @@
         "@value": "States which policy instrument governs the sustainability KPI."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://hips.hedera.com/hip/hip-540"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/summarisesToken",
+    "@id": "https://hashgraphontology.xyz/core/summarisesToken",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
@@ -262,7 +262,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TelemetryMetric"
+        "@id": "https://hashgraphontology.xyz/core/TelemetryMetric"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -273,7 +273,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Token"
+        "@id": "https://hashgraphontology.xyz/core/Token"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
@@ -287,14 +287,14 @@
         "@value": "Identifies the token whose balances underpin a KPI."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-relationships"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/alignment/impactont",
+    "@id": "https://hashgraphontology.xyz/alignment/impactont",
     "@type": [
       "http://www.w3.org/2002/07/owl#Ontology"
     ],
@@ -330,13 +330,13 @@
     ],
     "http://www.w3.org/2002/07/owl#imports": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core"
+        "@id": "https://hashgraphontology.xyz/core"
       },
       {
-        "@id": "https://hashgraphontology.xyx/hedera/token"
+        "@id": "https://hashgraphontology.xyz/token"
       },
       {
-        "@id": "https://hashgraphontology.xyx/hedera/mirror-analytics"
+        "@id": "https://hashgraphontology.xyz/mirror-analytics"
       }
     ],
     "http://www.w3.org/2002/07/owl#versionInfo": [
@@ -352,7 +352,7 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/TreasuryImpactKPI",
+    "@id": "https://hashgraphontology.xyz/core/TreasuryImpactKPI",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -369,7 +369,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TelemetryMetric"
+        "@id": "https://hashgraphontology.xyz/core/TelemetryMetric"
       },
       {
         "@id": "https://datadudes.xyz/ontology/impactont#KPI"
@@ -381,7 +381,7 @@
         "@value": "Metric summarising treasury-controlled token balances for sustainability reporting."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/mirror-node/architecture/metrics"
       }

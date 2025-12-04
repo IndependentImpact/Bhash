@@ -1,154 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rdf:RDF
    xmlns:dcterms="http://purl.org/dc/terms/"
-   xmlns:hedera="https://hashgraphontology.xyx/hedera/core/"
+   xmlns:hedera="https://hashgraphontology.xyz/core/"
    xmlns:owl="http://www.w3.org/2002/07/owl#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
 >
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasActivationDate">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/hasActivationDate">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdfs:label xml:lang="en">has activation date</rdfs:label>
-    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/HieroParticipation"/>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/HieroParticipation"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
     <skos:definition xml:lang="en">Date on which the participation became active.</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasOnboardingState">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/hasOnboardingState">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:label xml:lang="en">has onboarding state</rdfs:label>
-    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/HieroParticipation"/>
-    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/HieroOnboardingState"/>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/HieroParticipation"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyz/core/HieroOnboardingState"/>
     <skos:definition xml:lang="en">Associates a participation with its onboarding classification.</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/HieroSequencerNode">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/HieroSequencerNode">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">Hiero sequencer node</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/Validator"/>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/Validator"/>
     <skos:definition xml:lang="en">Validator role producing ordered batches for Hiero shards.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hiero/concepts/validators#consensus"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/HieroOnboardingState">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/HieroOnboardingState">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">Hiero onboarding state</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/Concept"/>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/Concept"/>
     <skos:definition xml:lang="en">State classification such as pending, active, or slashed for validators joining Hiero.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hiero/concepts/validators"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/supportsLayer">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/supportsLayer">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:label xml:lang="en">supports layer</rdfs:label>
-    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/HieroParticipation"/>
-    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/HieroLayer"/>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/HieroParticipation"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyz/core/HieroLayer"/>
     <skos:definition xml:lang="en">Identifies which Hiero layer the participation supports (consensus, execution, availability).</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasValidatorScore">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/hasValidatorScore">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdfs:label xml:lang="en">has validator score</rdfs:label>
-    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/HieroParticipation"/>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/HieroParticipation"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
     <skos:definition xml:lang="en">Composite score used to assess validator readiness.</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/participatesInShard">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/participatesInShard">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:label xml:lang="en">participates in shard</rdfs:label>
-    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/HieroParticipation"/>
-    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/HieroShard"/>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/HieroParticipation"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyz/core/HieroShard"/>
     <skos:definition xml:lang="en">Identifies the shard in which the participation occurs.</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/HieroUpgradeMilestone">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/HieroUpgradeMilestone">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">Hiero upgrade milestone</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/Event"/>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/Event"/>
     <skos:definition xml:lang="en">Event representing progression in the Hiero rollout roadmap.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hiero/roadmap"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/HieroParticipation">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/HieroParticipation">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">Hiero participation</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/Process"/>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/Process"/>
     <skos:definition xml:lang="en">Process describing a validator's lifecycle within a Hiero shard.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hiero/concepts/validators"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasParticipationStatus">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/hasParticipationStatus">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdfs:label xml:lang="en">has participation status</rdfs:label>
-    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/HieroParticipation"/>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/HieroParticipation"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <skos:definition xml:lang="en">Human-readable status for participation (e.g., onboarding, active, slashed).</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/HieroAvailabilityNode">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/HieroAvailabilityNode">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">Hiero availability node</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/Validator"/>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/Validator"/>
     <skos:definition xml:lang="en">Validator focusing on data availability responsibilities in Hiero.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hiero/concepts/validators#availability"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/HieroShard">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/HieroShard">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">Hiero shard</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/Network"/>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/Network"/>
     <skos:definition xml:lang="en">Logical partition of the Hiero network responsible for consensus and execution within a region.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hiero/concepts/shards"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/participationOf">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/participationOf">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:label xml:lang="en">participation of</rdfs:label>
-    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/HieroParticipation"/>
-    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/Validator"/>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/HieroParticipation"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyz/core/Validator"/>
     <skos:definition xml:lang="en">Links a Hiero participation process to the validator involved.</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/HieroStateProof">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/HieroStateProof">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">Hiero state proof</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/Artefact"/>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/Artefact"/>
     <skos:definition xml:lang="en">Proof object attesting to shard state for cross-shard verification.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hiero/concepts/state-proofs"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/hiero">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/hiero">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
     <dcterms:title xml:lang="en">Hiero Overlay module</dcterms:title>
     <dcterms:description xml:lang="en">Vocabulary extending the core ontology with Hiero shards, validator roles, and onboarding milestones.</dcterms:description>
     <dcterms:creator xml:lang="en">Bhash Ontology Working Group</dcterms:creator>
     <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-10-01</dcterms:created>
     <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-09-30</dcterms:modified>
-    <owl:imports rdf:resource="https://hashgraphontology.xyx/hedera/core"/>
+    <owl:imports rdf:resource="https://hashgraphontology.xyz/core"/>
     <owl:versionInfo>0.1.0-dev</owl:versionInfo>
     <skos:editorialNote xml:lang="en">Phase 3 Hiero overlay capturing shard participation states for CQ-HIE-009.</skos:editorialNote>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasShardIdentifier">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/hasShardIdentifier">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdfs:label xml:lang="en">has shard identifier</rdfs:label>
-    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/HieroShard"/>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/HieroShard"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <skos:definition xml:lang="en">Short identifier for a Hiero shard.</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/publishesStateProof">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/publishesStateProof">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:label xml:lang="en">publishes state proof</rdfs:label>
-    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/HieroParticipation"/>
-    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/HieroStateProof"/>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/HieroParticipation"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyz/core/HieroStateProof"/>
     <skos:definition xml:lang="en">Indicates state proofs emitted as part of participation.</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/triggeredByMilestone">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/triggeredByMilestone">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:label xml:lang="en">triggered by milestone</rdfs:label>
-    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/HieroParticipation"/>
-    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/HieroUpgradeMilestone"/>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/HieroParticipation"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyz/core/HieroUpgradeMilestone"/>
     <skos:definition xml:lang="en">Relates participation progress to roadmap milestones.</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/HieroValidatorRole">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/HieroValidatorRole">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">Hiero validator role</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/Role"/>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/Role"/>
     <skos:definition xml:lang="en">Role undertaken by validators within the Hiero architecture (consensus, execution, availability).</skos:definition>
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hiero/concepts/validators"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/assumesHieroRole">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/assumesHieroRole">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:label xml:lang="en">assumes Hiero role</rdfs:label>
-    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/HieroParticipation"/>
-    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/HieroValidatorRole"/>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/HieroParticipation"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyz/core/HieroValidatorRole"/>
     <skos:definition xml:lang="en">Associates a participation with the specific Hiero validator role performed.</skos:definition>
   </rdf:Description>
 </rdf:RDF>

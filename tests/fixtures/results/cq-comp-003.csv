@@ -1,2 +1,2 @@
 token,tokenLabel,symbol,treasuryAccount,kycController,kycLabel,freezeController,freezeLabel
-https://hashgraphontology.xyx/examples/token/USDH,USDH Stablecoin,USDH,https://hashgraphontology.xyx/examples/token/IssuerAccount,https://hashgraphontology.xyx/examples/token/StablecoinIssuer,Stablecoin issuer,https://hashgraphontology.xyx/examples/token/CompliancePartner,Compliance partner
+https://hashgraphontology.xyz/examples/token/USDH,USDH Stablecoin,USDH,https://hashgraphontology.xyz/examples/token/IssuerAccount,https://hashgraphontology.xyz/examples/token/StablecoinIssuer,Stablecoin issuer,https://hashgraphontology.xyz/examples/token/CompliancePartner,Compliance partner

@@ -1,6 +1,6 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix hedera: <https://hashgraphontology.xyx/hedera/core/> .
+@prefix hedera: <https://hashgraphontology.xyz/core/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -8,7 +8,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://hashgraphontology.xyx/hedera/core> a owl:Ontology ;
+<https://hashgraphontology.xyz/core> a owl:Ontology ;
     dcterms:created "2024-05-02"^^xsd:date ;
     dcterms:creator "Bhash Ontology Working Group"@en ;
     dcterms:description "Upper-level classes and properties capturing shared Hedera and Hiero network concepts, including identity, governance, transactions, and data export semantics."@en ;
@@ -19,8 +19,8 @@
         <https://docs.hedera.com/hiero> ;
     dcterms:title "Bhash Core Ontology"@en ;
     rdfs:seeAlso <https://hips.hedera.com/> ;
-    owl:imports <https://hashgraphontology.xyx/hedera/imports/dcat>,
-        <https://hashgraphontology.xyx/hedera/imports/prov> ;
+    owl:imports <https://hashgraphontology.xyz/imports/dcat>,
+        <https://hashgraphontology.xyz/imports/prov> ;
     owl:versionIRI hedera:0.1.0-dev ;
     owl:versionInfo "0.1.0-dev" ;
     skos:editorialNote "Phase 2 expands the scaffold with account, key, staking, transaction lifecycle, and Hiero overlay abstractions reused by downstream service modules."@en .

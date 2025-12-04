@@ -1,5 +1,5 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix hedera: <https://hashgraphontology.xyx/hedera/core/> .
+@prefix hedera: <https://hashgraphontology.xyz/core/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -279,13 +279,13 @@ hedera:tracksRelationship a owl:ObjectProperty ;
     rdfs:range hedera:TokenRelationship ;
     skos:definition "Links the Token Service to the per-account relationship records it maintains."@en .
 
-<https://hashgraphontology.xyx/hedera/token> a owl:Ontology ;
+<https://hashgraphontology.xyz/token> a owl:Ontology ;
     dcterms:created "2024-09-27"^^xsd:date ;
     dcterms:creator "Bhash Ontology Working Group"@en ;
     dcterms:description "Service-specific vocabulary for modelling Hedera Token Service artefacts, compliance roles, and lifecycle events."@en ;
     dcterms:modified "2024-09-27"^^xsd:date ;
     dcterms:title "Hedera Token Service module"@en ;
-    owl:imports <https://hashgraphontology.xyx/hedera/core> ;
+    owl:imports <https://hashgraphontology.xyz/core> ;
     owl:versionInfo "0.1.0-dev" ;
     skos:editorialNote "Phase 3 sprint module introducing token compliance semantics to support CQ-COMP-003."@en .
 

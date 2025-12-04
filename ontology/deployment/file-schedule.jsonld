@@ -1,6 +1,6 @@
 [
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/ScheduleExecution",
+    "@id": "https://hashgraphontology.xyz/core/ScheduleExecution",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -12,7 +12,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Process"
+        "@id": "https://hashgraphontology.xyz/core/Process"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -21,14 +21,14 @@
         "@value": "Process that executes a scheduled transaction once all required signatures are collected."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/how-scheduled-transactions-work"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/ScheduleSignature",
+    "@id": "https://hashgraphontology.xyz/core/ScheduleSignature",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -40,7 +40,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Artefact"
+        "@id": "https://hashgraphontology.xyz/core/Artefact"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -49,20 +49,20 @@
         "@value": "Signature provided by an account approving a scheduled transaction."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/how-scheduled-transactions-work"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasFileId",
+    "@id": "https://hashgraphontology.xyz/core/hasFileId",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/File"
+        "@id": "https://hashgraphontology.xyz/core/File"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -84,13 +84,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasExecution",
+    "@id": "https://hashgraphontology.xyz/core/hasExecution",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/ScheduledTransaction"
+        "@id": "https://hashgraphontology.xyz/core/ScheduledTransaction"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -101,7 +101,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/ScheduleExecution"
+        "@id": "https://hashgraphontology.xyz/core/ScheduleExecution"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -112,13 +112,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasCollectedSignatureCount",
+    "@id": "https://hashgraphontology.xyz/core/hasCollectedSignatureCount",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/ScheduledTransaction"
+        "@id": "https://hashgraphontology.xyz/core/ScheduledTransaction"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -140,13 +140,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasSchedulePayer",
+    "@id": "https://hashgraphontology.xyz/core/hasSchedulePayer",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/ScheduledTransaction"
+        "@id": "https://hashgraphontology.xyz/core/ScheduledTransaction"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -168,13 +168,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/requiresSignature",
+    "@id": "https://hashgraphontology.xyz/core/requiresSignature",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/ScheduledTransaction"
+        "@id": "https://hashgraphontology.xyz/core/ScheduledTransaction"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -185,7 +185,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Account"
+        "@id": "https://hashgraphontology.xyz/core/Account"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -196,13 +196,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasScheduleExpiration",
+    "@id": "https://hashgraphontology.xyz/core/hasScheduleExpiration",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/ScheduledTransaction"
+        "@id": "https://hashgraphontology.xyz/core/ScheduledTransaction"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -224,13 +224,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasRequiredSignatureCount",
+    "@id": "https://hashgraphontology.xyz/core/hasRequiredSignatureCount",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/ScheduledTransaction"
+        "@id": "https://hashgraphontology.xyz/core/ScheduledTransaction"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -252,13 +252,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasFileMemo",
+    "@id": "https://hashgraphontology.xyz/core/hasFileMemo",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/File"
+        "@id": "https://hashgraphontology.xyz/core/File"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -280,13 +280,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/expiresWith",
+    "@id": "https://hashgraphontology.xyz/core/expiresWith",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/ScheduledTransaction"
+        "@id": "https://hashgraphontology.xyz/core/ScheduledTransaction"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -297,7 +297,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Event"
+        "@id": "https://hashgraphontology.xyz/core/Event"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -308,13 +308,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasScheduleStatus",
+    "@id": "https://hashgraphontology.xyz/core/hasScheduleStatus",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/ScheduledTransaction"
+        "@id": "https://hashgraphontology.xyz/core/ScheduledTransaction"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -336,13 +336,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasFileKey",
+    "@id": "https://hashgraphontology.xyz/core/hasFileKey",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/File"
+        "@id": "https://hashgraphontology.xyz/core/File"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -353,7 +353,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/FileKey"
+        "@id": "https://hashgraphontology.xyz/core/FileKey"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -364,7 +364,7 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/FileUpdate",
+    "@id": "https://hashgraphontology.xyz/core/FileUpdate",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -376,7 +376,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Process"
+        "@id": "https://hashgraphontology.xyz/core/Process"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -385,14 +385,14 @@
         "@value": "Process that amends file contents or metadata under the control of file keys."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/core-concepts/file-service/update-files"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/File",
+    "@id": "https://hashgraphontology.xyz/core/File",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -404,7 +404,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Artefact"
+        "@id": "https://hashgraphontology.xyz/core/Artefact"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -413,14 +413,14 @@
         "@value": "On-ledger file storing bytecode, configuration, or metadata referenced by other services."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/core-concepts/file-service/file-storage"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/ScheduleService",
+    "@id": "https://hashgraphontology.xyz/core/ScheduleService",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -432,7 +432,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Service"
+        "@id": "https://hashgraphontology.xyz/core/Service"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -441,20 +441,20 @@
         "@value": "Service that queues transactions for deferred execution once signature requirements are met."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/introduction"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasFileContent",
+    "@id": "https://hashgraphontology.xyz/core/hasFileContent",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/File"
+        "@id": "https://hashgraphontology.xyz/core/File"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -465,7 +465,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/FileContent"
+        "@id": "https://hashgraphontology.xyz/core/FileContent"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -476,13 +476,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/storesArtefact",
+    "@id": "https://hashgraphontology.xyz/core/storesArtefact",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/File"
+        "@id": "https://hashgraphontology.xyz/core/File"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -493,7 +493,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Artefact"
+        "@id": "https://hashgraphontology.xyz/core/Artefact"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -504,7 +504,7 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/FileKey",
+    "@id": "https://hashgraphontology.xyz/core/FileKey",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -516,7 +516,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/AccountKey"
+        "@id": "https://hashgraphontology.xyz/core/AccountKey"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -525,20 +525,20 @@
         "@value": "Key that authorises file creation, update, and deletion actions."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/core-concepts/file-service/file-keys"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasFileSize",
+    "@id": "https://hashgraphontology.xyz/core/hasFileSize",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/File"
+        "@id": "https://hashgraphontology.xyz/core/File"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -560,13 +560,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/schedulesTransaction",
+    "@id": "https://hashgraphontology.xyz/core/schedulesTransaction",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/ScheduledTransaction"
+        "@id": "https://hashgraphontology.xyz/core/ScheduledTransaction"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -577,7 +577,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Process"
+        "@id": "https://hashgraphontology.xyz/core/Process"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -588,7 +588,7 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/FileContent",
+    "@id": "https://hashgraphontology.xyz/core/FileContent",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -600,7 +600,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Artefact"
+        "@id": "https://hashgraphontology.xyz/core/Artefact"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -609,14 +609,14 @@
         "@value": "Payload stored within a File Service file such as contract bytecode or fee schedules."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/core-concepts/file-service/file-storage"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/ScheduledTransaction",
+    "@id": "https://hashgraphontology.xyz/core/ScheduledTransaction",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -628,7 +628,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Artefact"
+        "@id": "https://hashgraphontology.xyz/core/Artefact"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -637,20 +637,20 @@
         "@value": "Deferred transaction waiting for a quorum of signatures before execution."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/how-scheduled-transactions-work"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasScheduleId",
+    "@id": "https://hashgraphontology.xyz/core/hasScheduleId",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/ScheduledTransaction"
+        "@id": "https://hashgraphontology.xyz/core/ScheduledTransaction"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -672,7 +672,7 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/FileService",
+    "@id": "https://hashgraphontology.xyz/core/FileService",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -684,7 +684,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Service"
+        "@id": "https://hashgraphontology.xyz/core/Service"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -693,14 +693,14 @@
         "@value": "Network service that stores bytecode, fee schedules, and other artefacts under key-controlled files."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/core-concepts/file-service/introduction"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/PendingSchedule",
+    "@id": "https://hashgraphontology.xyz/core/PendingSchedule",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -712,7 +712,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/ScheduledTransaction"
+        "@id": "https://hashgraphontology.xyz/core/ScheduledTransaction"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -721,20 +721,20 @@
         "@value": "Scheduled transaction that has not yet gathered sufficient signatures."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/core-concepts/scheduled-transactions"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasCollectedSignature",
+    "@id": "https://hashgraphontology.xyz/core/hasCollectedSignature",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/ScheduledTransaction"
+        "@id": "https://hashgraphontology.xyz/core/ScheduledTransaction"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -745,7 +745,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/ScheduleSignature"
+        "@id": "https://hashgraphontology.xyz/core/ScheduleSignature"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -756,13 +756,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasScheduleMemo",
+    "@id": "https://hashgraphontology.xyz/core/hasScheduleMemo",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/ScheduledTransaction"
+        "@id": "https://hashgraphontology.xyz/core/ScheduledTransaction"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -784,7 +784,7 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/file-schedule",
+    "@id": "https://hashgraphontology.xyz/file-schedule",
     "@type": [
       "http://www.w3.org/2002/07/owl#Ontology"
     ],
@@ -820,7 +820,7 @@
     ],
     "http://www.w3.org/2002/07/owl#imports": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core"
+        "@id": "https://hashgraphontology.xyz/core"
       }
     ],
     "http://www.w3.org/2002/07/owl#versionInfo": [
@@ -836,13 +836,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/updatesFile",
+    "@id": "https://hashgraphontology.xyz/core/updatesFile",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/FileUpdate"
+        "@id": "https://hashgraphontology.xyz/core/FileUpdate"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -853,7 +853,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/File"
+        "@id": "https://hashgraphontology.xyz/core/File"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -864,13 +864,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/performedBy",
+    "@id": "https://hashgraphontology.xyz/core/performedBy",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/FileUpdate"
+        "@id": "https://hashgraphontology.xyz/core/FileUpdate"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -881,7 +881,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Account"
+        "@id": "https://hashgraphontology.xyz/core/Account"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [

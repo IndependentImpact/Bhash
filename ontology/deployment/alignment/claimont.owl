@@ -1,86 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rdf:RDF
    xmlns:dcterms="http://purl.org/dc/terms/"
-   xmlns:hedera="https://hashgraphontology.xyx/hedera/core/"
+   xmlns:hedera="https://hashgraphontology.xyz/core/"
    xmlns:owl="http://www.w3.org/2002/07/owl#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
 >
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/ScheduledMitigationAction">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/ScheduledMitigationAction">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">Scheduled mitigation action</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/ScheduledTransaction"/>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/ScheduledTransaction"/>
     <rdfs:subClassOf rdf:resource="https://datadudes.xyz/claimont#MitigationAction"/>
     <skos:definition xml:lang="en">Scheduled transaction whose execution funds or enables a climate mitigation activity.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/introduction"/>
     <dcterms:source rdf:resource="https://datadudes.xyz/claimont#MitigationAction"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/ClimateAdaptationSchedule">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/ClimateAdaptationSchedule">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">Climate adaptation schedule</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/ScheduledTransaction"/>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/ScheduledTransaction"/>
     <rdfs:subClassOf rdf:resource="https://datadudes.xyz/claimont#AdaptationCommitment"/>
     <skos:definition xml:lang="en">Scheduled transaction capturing staged funding for adaptation programmes.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/how-scheduled-transactions-work"/>
     <dcterms:source rdf:resource="https://datadudes.xyz/claimont#AdaptationCommitment"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/linkedImpactAssertion">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/linkedImpactAssertion">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:label xml:lang="en">linked impact assertion</rdfs:label>
-    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/ScheduledTransaction"/>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/ScheduledTransaction"/>
     <rdfs:range rdf:resource="https://datadudes.xyz/claimont#ImpactStatement"/>
     <rdfs:subPropertyOf rdf:resource="https://datadudes.xyz/claimont#documentsOutcome"/>
     <skos:definition xml:lang="en">Connects a scheduled action to the impact statement documenting its execution.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/how-scheduled-transactions-work"/>
     <dcterms:source rdf:resource="https://datadudes.xyz/claimont#ImpactStatement"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/alignment/claimont">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/alignment/claimont">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
     <dcterms:title xml:lang="en">ClaimOnt alignment module</dcterms:title>
     <dcterms:description xml:lang="en">Aligns Hedera scheduled transactions and governance commitments with ClaimOnt climate mitigation and adaptation concepts.</dcterms:description>
     <dcterms:creator xml:lang="en">Bhash Ontology Working Group</dcterms:creator>
     <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-10-01</dcterms:created>
     <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-10-01</dcterms:modified>
-    <owl:imports rdf:resource="https://hashgraphontology.xyx/hedera/core"/>
-    <owl:imports rdf:resource="https://hashgraphontology.xyx/hedera/file-schedule"/>
+    <owl:imports rdf:resource="https://hashgraphontology.xyz/core"/>
+    <owl:imports rdf:resource="https://hashgraphontology.xyz/file-schedule"/>
     <owl:versionInfo>0.1.0-dev</owl:versionInfo>
     <skos:editorialNote xml:lang="en">Phase 4 bridge module mapping scheduled sustainability actions to ClaimOnt mitigation and adaptation taxonomies.</skos:editorialNote>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/advancesClimateObjective">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/advancesClimateObjective">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:label xml:lang="en">advances climate objective</rdfs:label>
-    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/ScheduledTransaction"/>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/ScheduledTransaction"/>
     <rdfs:range rdf:resource="https://datadudes.xyz/claimont#ClimateObjective"/>
     <rdfs:subPropertyOf rdf:resource="https://datadudes.xyz/claimont#advancesObjective"/>
     <skos:definition xml:lang="en">Associates a scheduled transaction with the climate objective it advances.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/introduction"/>
     <dcterms:source rdf:resource="https://datadudes.xyz/claimont#advancesObjective"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasClimateWindow">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/hasClimateWindow">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdfs:label xml:lang="en">has climate window</rdfs:label>
-    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/ScheduledTransaction"/>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/ScheduledTransaction"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:subPropertyOf rdf:resource="https://datadudes.xyz/claimont#hasReportingPeriod"/>
     <skos:definition xml:lang="en">Specifies the reporting period for a scheduled climate commitment.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/how-scheduled-transactions-work"/>
     <dcterms:source rdf:resource="https://datadudes.xyz/claimont#hasReportingPeriod"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/ResilienceMilestone">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/ResilienceMilestone">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">Resilience milestone</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/Event"/>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/Event"/>
     <rdfs:subClassOf rdf:resource="https://datadudes.xyz/claimont#ResilienceOutcome"/>
     <skos:definition xml:lang="en">Network event used as a milestone for tracking adaptation commitments.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hiero/roadmap"/>
     <dcterms:source rdf:resource="https://datadudes.xyz/claimont#ResilienceOutcome"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/tracksResilienceMilestone">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/tracksResilienceMilestone">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:label xml:lang="en">tracks resilience milestone</rdfs:label>
-    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/ScheduledTransaction"/>
-    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/ResilienceMilestone"/>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/ScheduledTransaction"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyz/core/ResilienceMilestone"/>
     <rdfs:subPropertyOf rdf:resource="https://datadudes.xyz/claimont#monitorsIndicator"/>
     <skos:definition xml:lang="en">Identifies the network milestone used to evidence progress against a climate action.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hiero/roadmap"/>

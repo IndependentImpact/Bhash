@@ -1,250 +1,250 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rdf:RDF
    xmlns:dcterms="http://purl.org/dc/terms/"
-   xmlns:hedera="https://hashgraphontology.xyx/hedera/core/"
+   xmlns:hedera="https://hashgraphontology.xyz/core/"
    xmlns:owl="http://www.w3.org/2002/07/owl#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
 >
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/ValidatorOnboardingCommittee">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/ValidatorOnboardingCommittee">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">Validator onboarding committee</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/CouncilCommittee"/>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/CouncilCommittee"/>
     <skos:definition xml:lang="en">Council committee that stewards validator onboarding cohorts and associated policy decisions.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://raw.githubusercontent.com/hashgraph/hedera-docs/main/core-concepts/staking/staking.md#phase-iii-staking-rewards-program-launch"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasSubmitKey">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/hasSubmitKey">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:label xml:lang="en">has submit key</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="https://hashgraphontology.xyx/hedera/core/hasTopicKey"/>
-    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/ConsensusTopic"/>
-    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/TopicSubmitKey"/>
+    <rdfs:subPropertyOf rdf:resource="https://hashgraphontology.xyz/core/hasTopicKey"/>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/ConsensusTopic"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyz/core/TopicSubmitKey"/>
     <skos:definition xml:lang="en">Identifies the submit key required for message submission.</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/TopicAdminKey">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/TopicAdminKey">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">Topic admin key</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/AccountKey"/>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/AccountKey"/>
     <skos:definition xml:lang="en">Key that authorises topic-level administration such as update, delete, and re-key operations.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/permissions"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/ConsensusRecordFile">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/ConsensusRecordFile">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">Consensus record file</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/Artefact"/>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/Artefact"/>
     <skos:definition xml:lang="en">Exported record file containing ordered transactions, consensus timestamps, and running hashes.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/mirror-node/architecture/record-and-balance-files"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/ValidatorOnboardingSteward">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/ValidatorOnboardingSteward">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">Validator onboarding steward</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/Role"/>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/Role"/>
     <skos:definition xml:lang="en">Role fulfilled by council members who oversee validator onboarding approvals and requirements.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://hips.hedera.com/hip/hip-840"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasMessageSize">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/hasMessageSize">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdfs:label xml:lang="en">has message size</rdfs:label>
-    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/TopicMessage"/>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/TopicMessage"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     <skos:definition xml:lang="en">Size in bytes of the submitted topic message.</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasMessageContent">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/hasMessageContent">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdfs:label xml:lang="en">has message content</rdfs:label>
-    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/TopicMessage"/>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/TopicMessage"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <skos:definition xml:lang="en">Payload content of a topic message.</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasRunningHash">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/hasRunningHash">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdfs:label xml:lang="en">has running hash</rdfs:label>
-    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/ConsensusRecordFile"/>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/ConsensusRecordFile"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#hexBinary"/>
     <skos:definition xml:lang="en">Running hash stored within a consensus record file.</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/exposesEndpoint">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/exposesEndpoint">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:label xml:lang="en">exposes endpoint</rdfs:label>
-    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/ConsensusNode"/>
-    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/ConsensusNodeEndpoint"/>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/ConsensusNode"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyz/core/ConsensusNodeEndpoint"/>
     <skos:definition xml:lang="en">Relates a consensus node to the endpoint clients use for gRPC/SDK submissions.</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/consensus">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/consensus">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
     <dcterms:title xml:lang="en">Hedera Consensus Service module</dcterms:title>
     <dcterms:description xml:lang="en">Service-specific vocabulary for modelling Hedera Consensus Service topics, messages, and validator interfaces.</dcterms:description>
     <dcterms:creator xml:lang="en">Bhash Ontology Working Group</dcterms:creator>
     <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-09-20</dcterms:created>
     <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-09-20</dcterms:modified>
-    <owl:imports rdf:resource="https://hashgraphontology.xyx/hedera/core"/>
+    <owl:imports rdf:resource="https://hashgraphontology.xyz/core"/>
     <owl:versionInfo>0.1.0-dev</owl:versionInfo>
     <skos:editorialNote xml:lang="en">Phase 3 sprint scaffold capturing core Consensus Service artefacts required for validator onboarding and topic governance competency questions.</skos:editorialNote>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasSteward">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/hasSteward">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:label xml:lang="en">has steward</rdfs:label>
-    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/GovernanceProcess"/>
-    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/GovernanceBody"/>
-    <rdfs:subPropertyOf rdf:resource="https://hashgraphontology.xyx/hedera/core/hasParticipant"/>
-    <owl:inverseOf rdf:resource="https://hashgraphontology.xyx/hedera/core/stewardsProcess"/>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/GovernanceProcess"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyz/core/GovernanceBody"/>
+    <rdfs:subPropertyOf rdf:resource="https://hashgraphontology.xyz/core/hasParticipant"/>
+    <owl:inverseOf rdf:resource="https://hashgraphontology.xyz/core/stewardsProcess"/>
     <skos:definition xml:lang="en">Links a governance process to the council body that stewards the decision.</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasEndpointPort">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/hasEndpointPort">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdfs:label xml:lang="en">has endpoint port</rdfs:label>
-    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/ConsensusNodeEndpoint"/>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/ConsensusNodeEndpoint"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     <skos:definition xml:lang="en">Port number for a consensus node endpoint.</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/ConsensusNodeEndpoint">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/ConsensusNodeEndpoint">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">Consensus node endpoint</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/Artefact"/>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/Artefact"/>
     <skos:definition xml:lang="en">Network endpoint (IP, port, TLS configuration) exposed by a consensus node for client submissions.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/core-concepts/staking/nodes"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasEndpointAddress">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/hasEndpointAddress">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdfs:label xml:lang="en">has endpoint address</rdfs:label>
-    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/ConsensusNodeEndpoint"/>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/ConsensusNodeEndpoint"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <skos:definition xml:lang="en">Network address for a consensus node endpoint.</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/assignsRole">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/assignsRole">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:label xml:lang="en">assigns role</rdfs:label>
-    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/RoleAssignment"/>
-    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/Role"/>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/RoleAssignment"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyz/core/Role"/>
     <skos:definition xml:lang="en">Indicates the role granted by a role assignment process.</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasTopicKey">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/hasTopicKey">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:label xml:lang="en">has topic key</rdfs:label>
-    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/ConsensusTopic"/>
-    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/AccountKey"/>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/ConsensusTopic"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyz/core/AccountKey"/>
     <skos:definition xml:lang="en">Connects a consensus topic to its configured keys.</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/isSubBodyOf">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/isSubBodyOf">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:label xml:lang="en">is sub-body of</rdfs:label>
-    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/GovernanceBody"/>
-    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/GovernanceBody"/>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/GovernanceBody"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyz/core/GovernanceBody"/>
     <skos:definition xml:lang="en">Captures committee hierarchies within the Hedera Governing Council.</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/deliversMessage">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/deliversMessage">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:label xml:lang="en">delivers message</rdfs:label>
-    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/ConsensusService"/>
-    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/TopicMessage"/>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/ConsensusService"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyz/core/TopicMessage"/>
     <skos:definition xml:lang="en">Links the Consensus Service to messages that achieved consensus ordering.</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/ConsensusTopic">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/ConsensusTopic">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">Consensus topic</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/Artefact"/>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/Artefact"/>
     <skos:definition xml:lang="en">Ordered message channel configured with administrator, submit, and auto-renew keys.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/topics"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasSequenceNumber">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/hasSequenceNumber">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdfs:label xml:lang="en">has sequence number</rdfs:label>
-    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/TopicMessage"/>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/TopicMessage"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     <skos:definition xml:lang="en">Consensus-assigned sequence number for a topic message.</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/stewardsProcess">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/stewardsProcess">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:label xml:lang="en">stewards process</rdfs:label>
-    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/GovernanceBody"/>
-    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/GovernanceProcess"/>
-    <rdfs:subPropertyOf rdf:resource="https://hashgraphontology.xyx/hedera/core/participatesIn"/>
-    <owl:inverseOf rdf:resource="https://hashgraphontology.xyx/hedera/core/hasSteward"/>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/GovernanceBody"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyz/core/GovernanceProcess"/>
+    <rdfs:subPropertyOf rdf:resource="https://hashgraphontology.xyz/core/participatesIn"/>
+    <owl:inverseOf rdf:resource="https://hashgraphontology.xyz/core/hasSteward"/>
     <skos:definition xml:lang="en">Identifies the governance process that a council body is accountable for overseeing.</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/CouncilCommittee">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/CouncilCommittee">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">Council committee</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/GovernanceBody"/>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/GovernanceBody"/>
     <skos:definition xml:lang="en">Sub-structure of the Hedera Governing Council that manages delegated mandates such as finance or membership reviews.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://hedera.com/council"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasTopic">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/hasTopic">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:label xml:lang="en">has topic</rdfs:label>
-    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/ConsensusService"/>
-    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/ConsensusTopic"/>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/ConsensusService"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyz/core/ConsensusTopic"/>
     <skos:definition xml:lang="en">Associates the Consensus Service with the topics it manages.</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/emitsRecordFile">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/emitsRecordFile">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:label xml:lang="en">emits record file</rdfs:label>
-    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/ConsensusService"/>
-    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/ConsensusRecordFile"/>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/ConsensusService"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyz/core/ConsensusRecordFile"/>
     <skos:definition xml:lang="en">Indicates that the service produces consensus record files for downstream consumption.</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/includesMessage">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/includesMessage">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:label xml:lang="en">includes message</rdfs:label>
-    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/ConsensusRecordFile"/>
-    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/TopicMessage"/>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/ConsensusRecordFile"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyz/core/TopicMessage"/>
     <skos:definition xml:lang="en">Associates a record file with the topic messages it contains.</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/TopicSubmitKey">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/TopicSubmitKey">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">Topic submit key</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/AccountKey"/>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/AccountKey"/>
     <skos:definition xml:lang="en">Key that governs which actors may post messages to a consensus topic.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/permissions"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/ConsensusService">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/ConsensusService">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">Consensus Service</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/Service"/>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/Service"/>
     <skos:definition xml:lang="en">Operational service that orders transactions, emits consensus timestamps, and manages topics.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasAdminKey">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/hasAdminKey">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:label xml:lang="en">has admin key</rdfs:label>
-    <rdfs:subPropertyOf rdf:resource="https://hashgraphontology.xyx/hedera/core/hasTopicKey"/>
-    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/ConsensusTopic"/>
-    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/TopicAdminKey"/>
+    <rdfs:subPropertyOf rdf:resource="https://hashgraphontology.xyz/core/hasTopicKey"/>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/ConsensusTopic"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyz/core/TopicAdminKey"/>
     <skos:definition xml:lang="en">Identifies the admin key responsible for topic lifecycle changes.</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/targetsTopic">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/targetsTopic">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:label xml:lang="en">targets topic</rdfs:label>
-    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/Transaction"/>
-    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/ConsensusTopic"/>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/Transaction"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyz/core/ConsensusTopic"/>
     <skos:definition xml:lang="en">Links a transaction to the consensus topic it configures or submits to.</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/isMirroredBy">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/isMirroredBy">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:label xml:lang="en">is mirrored by</rdfs:label>
-    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/ConsensusRecordFile"/>
-    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/MirrorDataset"/>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/ConsensusRecordFile"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyz/core/MirrorDataset"/>
     <skos:definition xml:lang="en">Indicates which mirror dataset republishes a record file.</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/supportedBy">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/supportedBy">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:label xml:lang="en">supported by</rdfs:label>
-    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/Process"/>
-    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/GovernanceDecision"/>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/Process"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyz/core/GovernanceDecision"/>
     <skos:definition xml:lang="en">Associates a process with the governance decision or mandate that authorises it.</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/RoleAssignment">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/RoleAssignment">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">Role assignment</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/Process"/>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/Process"/>
     <skos:definition xml:lang="en">Process that confers a specific governance or operational role to an actor.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/core-concepts/governing-the-network#council-committees"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/TopicMessage">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/TopicMessage">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">Topic message</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/Event"/>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/Event"/>
     <skos:definition xml:lang="en">Individual message submitted to a consensus topic and assigned a consensus timestamp.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/message-flows"/>
   </rdf:Description>

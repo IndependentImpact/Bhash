@@ -1,74 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rdf:RDF
    xmlns:dcterms="http://purl.org/dc/terms/"
-   xmlns:hedera="https://hashgraphontology.xyx/hedera/core/"
+   xmlns:hedera="https://hashgraphontology.xyz/core/"
    xmlns:owl="http://www.w3.org/2002/07/owl#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
 >
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasImpactSubject">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/hasImpactSubject">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:label xml:lang="en">has impact subject</rdfs:label>
     <rdfs:domain rdf:resource="http://w3id.org/aiao#ImpactClaim"/>
-    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/Actor"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyz/core/Actor"/>
     <rdfs:subPropertyOf rdf:resource="http://w3id.org/claimont#hasSubject"/>
     <skos:definition xml:lang="en">Identifies the Hedera actor that an AIAO impact claim evaluates.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/core-concepts/governing-the-network"/>
     <dcterms:source rdf:resource="http://w3id.org/claimont#hasSubject"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/alignment/aiao">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/alignment/aiao">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
     <dcterms:title xml:lang="en">AIAO alignment module</dcterms:title>
     <dcterms:description xml:lang="en">Bridges Hedera consensus and token events to Anthropogenic Impact Accounting Ontology claims for anthropogenic impact reporting.</dcterms:description>
     <dcterms:creator xml:lang="en">Bhash Ontology Working Group</dcterms:creator>
     <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-10-01</dcterms:created>
     <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-10-01</dcterms:modified>
-    <owl:imports rdf:resource="https://hashgraphontology.xyx/hedera/core"/>
-    <owl:imports rdf:resource="https://hashgraphontology.xyx/hedera/consensus"/>
-    <owl:imports rdf:resource="https://hashgraphontology.xyx/hedera/token"/>
-    <owl:imports rdf:resource="https://hashgraphontology.xyx/hedera/mirror-analytics"/>
+    <owl:imports rdf:resource="https://hashgraphontology.xyz/core"/>
+    <owl:imports rdf:resource="https://hashgraphontology.xyz/consensus"/>
+    <owl:imports rdf:resource="https://hashgraphontology.xyz/token"/>
+    <owl:imports rdf:resource="https://hashgraphontology.xyz/mirror-analytics"/>
     <owl:versionInfo>0.1.0-dev</owl:versionInfo>
     <skos:editorialNote xml:lang="en">Phase 4 bridge module initiating anthropogenic impact integration by tying consensus topic evidence and token reserve events to AIAO impact claims.</skos:editorialNote>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/ConsensusImpactAssertion">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/ConsensusImpactAssertion">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">Consensus impact assertion</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/TopicMessage"/>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/TopicMessage"/>
     <rdfs:subClassOf rdf:resource="http://w3id.org/aiao#ImpactClaim"/>
     <skos:definition xml:lang="en">Consensus Service message curated to substantiate an anthropogenic impact claim.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/message-flows"/>
     <dcterms:source rdf:resource="http://w3id.org/aiao#ImpactClaim"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/deliveredBySchedule">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/deliveredBySchedule">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:label xml:lang="en">delivered by schedule</rdfs:label>
     <rdfs:domain rdf:resource="http://w3id.org/aiao#ImpactClaim"/>
-    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/ScheduledTransaction"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyz/core/ScheduledTransaction"/>
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasDerivedFrom"/>
     <skos:definition xml:lang="en">Associates an impact claim with the scheduled transaction that operationalised it.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/how-scheduled-transactions-work"/>
     <dcterms:source rdf:resource="http://w3id.org/aiao#ImpactClaim"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/StablecoinReserveAssertion">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/StablecoinReserveAssertion">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">Stablecoin reserve assertion</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/TokenEvent"/>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/TokenEvent"/>
     <rdfs:subClassOf rdf:resource="http://w3id.org/aiao#ImpactClaim"/>
     <skos:definition xml:lang="en">Token event demonstrating reserve movements that underpin sustainability-linked commitments.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://hips.hedera.com/hip/hip-540"/>
     <dcterms:source rdf:resource="http://w3id.org/aiao#ImpactClaim"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/MirrorImpactIndicator">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/MirrorImpactIndicator">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">Mirror impact indicator</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/TelemetryMetric"/>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/TelemetryMetric"/>
     <rdfs:subClassOf rdf:resource="http://w3id.org/impactont#Indicator"/>
     <skos:definition xml:lang="en">Telemetry metric derived from mirror analytics that feeds anthropogenic impact indicator dashboards.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/mirror-node/architecture/metrics"/>
     <dcterms:source rdf:resource="http://w3id.org/impactont#Indicator"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/reportsImpactIndicator">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/reportsImpactIndicator">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:label xml:lang="en">reports impact indicator</rdfs:label>
     <rdfs:domain rdf:resource="http://w3id.org/aiao#ImpactClaim"/>
@@ -78,7 +78,7 @@
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/mirror-node/architecture/metrics"/>
     <dcterms:source rdf:resource="http://w3id.org/impactont#isDefinedByIndicator"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/capturesImpactWindow">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/capturesImpactWindow">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdfs:label xml:lang="en">captures impact window</rdfs:label>
     <rdfs:domain rdf:resource="http://w3id.org/aiao#ImpactClaim"/>
@@ -88,11 +88,11 @@
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/core-concepts/transactions/transaction-lifecycle"/>
     <dcterms:source rdf:resource="http://w3id.org/impactont#hasTemporalLocation"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/referencesMirrorDataset">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/referencesMirrorDataset">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:label xml:lang="en">references mirror dataset</rdfs:label>
     <rdfs:domain rdf:resource="http://w3id.org/aiao#ImpactClaim"/>
-    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/MirrorDataset"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyz/core/MirrorDataset"/>
     <rdfs:subPropertyOf rdf:resource="http://w3id.org/claimont#isSupportedBy"/>
     <skos:definition xml:lang="en">Connects an impact claim to the mirror dataset furnishing evidentiary support.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/mirror-node/sdks-and-apis/rest-api"/>

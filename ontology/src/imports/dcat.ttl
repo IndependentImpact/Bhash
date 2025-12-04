@@ -1,11 +1,11 @@
-@prefix : <https://hashgraphontology.xyx/hedera/imports/dcat/> .
+@prefix : <https://hashgraphontology.xyz/imports/dcat/> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://hashgraphontology.xyx/hedera/imports/dcat>
+<https://hashgraphontology.xyz/imports/dcat>
     a owl:Ontology ;
     dcterms:title "DCAT profile for Bhash"@en ;
     dcterms:description "Trimmed subset of DCAT terms needed for mirror dataset cataloguing."@en ;

@@ -1,5 +1,5 @@
-@prefix : <https://hashgraphontology.xyx/hedera/alignment/claimont/> .
-@prefix hedera: <https://hashgraphontology.xyx/hedera/core/> .
+@prefix : <https://hashgraphontology.xyz/alignment/claimont/> .
+@prefix hedera: <https://hashgraphontology.xyz/core/> .
 @prefix claimont: <https://datadudes.xyz/claimont#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -9,15 +9,15 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://hashgraphontology.xyx/hedera/alignment/claimont>
+<https://hashgraphontology.xyz/alignment/claimont>
     a owl:Ontology ;
     dcterms:title "ClaimOnt alignment module"@en ;
     dcterms:description "Aligns Hedera scheduled transactions and governance commitments with ClaimOnt climate mitigation and adaptation concepts."@en ;
     dcterms:creator "Bhash Ontology Working Group"@en ;
     dcterms:created "2025-10-01"^^xsd:date ;
     dcterms:modified "2025-10-01"^^xsd:date ;
-    owl:imports <https://hashgraphontology.xyx/hedera/core> ,
-        <https://hashgraphontology.xyx/hedera/file-schedule> ;
+    owl:imports <https://hashgraphontology.xyz/core> ,
+        <https://hashgraphontology.xyz/file-schedule> ;
     owl:versionInfo "0.1.0-dev" ;
     skos:editorialNote "Phase 4 bridge module mapping scheduled sustainability actions to ClaimOnt mitigation and adaptation taxonomies."@en ;
     .

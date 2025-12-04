@@ -1,20 +1,20 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix hedera: <https://hashgraphontology.xyx/hedera/core/> .
+@prefix hedera: <https://hashgraphontology.xyz/core/> .
 @prefix infocomm: <https://datadudes.xyz/ontology/infocomm#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://hashgraphontology.xyx/hedera/alignment/infocomm> a owl:Ontology ;
+<https://hashgraphontology.xyz/alignment/infocomm> a owl:Ontology ;
     dcterms:created "2025-10-01"^^xsd:date ;
     dcterms:creator "Bhash Ontology Working Group"@en ;
     dcterms:description "Maps Hedera/Hiero infrastructure elements to InfoComm communication assets for sustainability telemetry exchanges."@en ;
     dcterms:modified "2025-10-01"^^xsd:date ;
     dcterms:title "InfoComm alignment module"@en ;
-    owl:imports <https://hashgraphontology.xyx/hedera/core>,
-        <https://hashgraphontology.xyx/hedera/hiero>,
-        <https://hashgraphontology.xyx/hedera/mirror-analytics> ;
+    owl:imports <https://hashgraphontology.xyz/core>,
+        <https://hashgraphontology.xyz/hiero>,
+        <https://hashgraphontology.xyz/mirror-analytics> ;
     owl:versionInfo "0.1.0-dev" ;
     skos:editorialNote "Phase 4 bridge module exposing mirror nodes and Hiero shards as InfoComm communication nodes and network segments."@en .
 

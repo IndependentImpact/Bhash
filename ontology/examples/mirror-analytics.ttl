@@ -1,5 +1,5 @@
-@prefix exma: <https://hashgraphontology.xyx/examples/mirror/> .
-@prefix hedera: <https://hashgraphontology.xyx/hedera/core/> .
+@prefix exma: <https://hashgraphontology.xyz/examples/mirror/> .
+@prefix hedera: <https://hashgraphontology.xyz/core/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
