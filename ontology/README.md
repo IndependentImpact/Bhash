@@ -10,6 +10,19 @@ in the project README and will expand as modelling sprints deliver additional mo
 - `shapes/` – SHACL constraint files that validate RDF data against the ontology (to be populated in later phases).
 - `examples/` – Example graphs, competency question answers, and sample data extracts used for validation.
 
+## Building deployment artefacts
+
+Use the conversion helper to regenerate the deployable OWL (RDF/XML), HTML, JSON-LD, and Turtle files from the sources in
+`src/`. Start by creating the virtual environment via the local installer:
+
+```bash
+./install_requirements.sh
+./venv/bin/python scripts/convert_ontologies.py --source-dir src --deployment-dir deployment
+```
+
+The command emits refreshed artefacts under `deployment/`, including an `imports/` folder for trimmed external dependencies.
+Sync that directory to your publishing target so downstream users pull the latest OWL or JSON-LD contexts.
+
 ## Core module
 
 `src/core.ttl` introduces the upper-level vocabulary shared by all service-specific modules.  Phase 2 expanded the scaffold
