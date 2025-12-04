@@ -1,0 +1,337 @@
+[
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/tracksResilienceMilestone",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@id": "https://datadudes.xyz/claimont#monitorsIndicator"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/ScheduledTransaction"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "tracks resilience milestone"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/ResilienceMilestone"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://datadudes.xyz/claimont#monitorsIndicator"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Identifies the network milestone used to evidence progress against a climate action."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hiero/roadmap"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/linkedImpactAssertion",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@id": "https://datadudes.xyz/claimont#ImpactStatement"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/ScheduledTransaction"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "linked impact assertion"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://datadudes.xyz/claimont#ImpactStatement"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://datadudes.xyz/claimont#documentsOutcome"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Connects a scheduled action to the impact statement documenting its execution."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/how-scheduled-transactions-work"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/ClimateAdaptationSchedule",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@id": "https://datadudes.xyz/claimont#AdaptationCommitment"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Climate adaptation schedule"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/ScheduledTransaction"
+      },
+      {
+        "@id": "https://datadudes.xyz/claimont#AdaptationCommitment"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Scheduled transaction capturing staged funding for adaptation programmes."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/how-scheduled-transactions-work"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/ScheduledMitigationAction",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@id": "https://datadudes.xyz/claimont#MitigationAction"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Scheduled mitigation action"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/ScheduledTransaction"
+      },
+      {
+        "@id": "https://datadudes.xyz/claimont#MitigationAction"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Scheduled transaction whose execution funds or enables a climate mitigation activity."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/introduction"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/advancesClimateObjective",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@id": "https://datadudes.xyz/claimont#advancesObjective"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/ScheduledTransaction"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "advances climate objective"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://datadudes.xyz/claimont#ClimateObjective"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://datadudes.xyz/claimont#advancesObjective"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Associates a scheduled transaction with the climate objective it advances."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/introduction"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/hasClimateWindow",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@id": "https://datadudes.xyz/claimont#hasReportingPeriod"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/ScheduledTransaction"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has climate window"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://datadudes.xyz/claimont#hasReportingPeriod"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Specifies the reporting period for a scheduled climate commitment."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/how-scheduled-transactions-work"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/alignment/claimont",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Ontology"
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2025-10-01"
+      }
+    ],
+    "http://purl.org/dc/terms/creator": [
+      {
+        "@language": "en",
+        "@value": "Bhash Ontology Working Group"
+      }
+    ],
+    "http://purl.org/dc/terms/description": [
+      {
+        "@language": "en",
+        "@value": "Aligns Hedera scheduled transactions and governance commitments with ClaimOnt climate mitigation and adaptation concepts."
+      }
+    ],
+    "http://purl.org/dc/terms/modified": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2025-10-01"
+      }
+    ],
+    "http://purl.org/dc/terms/title": [
+      {
+        "@language": "en",
+        "@value": "ClaimOnt alignment module"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#imports": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core"
+      },
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/file-schedule"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#versionInfo": [
+      {
+        "@value": "0.1.0-dev"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#editorialNote": [
+      {
+        "@language": "en",
+        "@value": "Phase 4 bridge module mapping scheduled sustainability actions to ClaimOnt mitigation and adaptation taxonomies."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/ResilienceMilestone",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@id": "https://datadudes.xyz/claimont#ResilienceOutcome"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Resilience milestone"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/Event"
+      },
+      {
+        "@id": "https://datadudes.xyz/claimont#ResilienceOutcome"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Network event used as a milestone for tracking adaptation commitments."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hiero/roadmap"
+      }
+    ]
+  }
+]

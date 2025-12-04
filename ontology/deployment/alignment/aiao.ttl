@@ -1,0 +1,93 @@
+@prefix aiao: <http://w3id.org/aiao#> .
+@prefix claimont: <http://w3id.org/claimont#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix hedera: <https://hashgraphontology.xyx/hedera/core/> .
+@prefix impactont: <http://w3id.org/impactont#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://hashgraphontology.xyx/hedera/alignment/aiao> a owl:Ontology ;
+    dcterms:created "2025-10-01"^^xsd:date ;
+    dcterms:creator "Bhash Ontology Working Group"@en ;
+    dcterms:description "Bridges Hedera consensus and token events to Anthropogenic Impact Accounting Ontology claims for anthropogenic impact reporting."@en ;
+    dcterms:modified "2025-10-01"^^xsd:date ;
+    dcterms:title "AIAO alignment module"@en ;
+    owl:imports <https://hashgraphontology.xyx/hedera/consensus>,
+        <https://hashgraphontology.xyx/hedera/core>,
+        <https://hashgraphontology.xyx/hedera/mirror-analytics>,
+        <https://hashgraphontology.xyx/hedera/token> ;
+    owl:versionInfo "0.1.0-dev" ;
+    skos:editorialNote "Phase 4 bridge module initiating anthropogenic impact integration by tying consensus topic evidence and token reserve events to AIAO impact claims."@en .
+
+hedera:ConsensusImpactAssertion a owl:Class ;
+    rdfs:label "Consensus impact assertion"@en ;
+    dcterms:source aiao:ImpactClaim ;
+    rdfs:subClassOf aiao:ImpactClaim,
+        hedera:TopicMessage ;
+    skos:definition "Consensus Service message curated to substantiate an anthropogenic impact claim."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/message-flows> .
+
+hedera:MirrorImpactIndicator a owl:Class ;
+    rdfs:label "Mirror impact indicator"@en ;
+    dcterms:source impactont:Indicator ;
+    rdfs:subClassOf impactont:Indicator,
+        hedera:TelemetryMetric ;
+    skos:definition "Telemetry metric derived from mirror analytics that feeds anthropogenic impact indicator dashboards."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/mirror-node/architecture/metrics> .
+
+hedera:StablecoinReserveAssertion a owl:Class ;
+    rdfs:label "Stablecoin reserve assertion"@en ;
+    dcterms:source aiao:ImpactClaim ;
+    rdfs:subClassOf aiao:ImpactClaim,
+        hedera:TokenEvent ;
+    skos:definition "Token event demonstrating reserve movements that underpin sustainability-linked commitments."@en ;
+    hedera:sourceDocument <https://hips.hedera.com/hip/hip-540> .
+
+hedera:capturesImpactWindow a owl:DatatypeProperty ;
+    rdfs:label "captures impact window"@en ;
+    dcterms:source impactont:hasTemporalLocation ;
+    rdfs:domain aiao:ImpactClaim ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf impactont:hasTemporalLocation ;
+    skos:definition "Specifies the reporting window for an impact claim expressed with Hedera data."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/transactions/transaction-lifecycle> .
+
+hedera:deliveredBySchedule a owl:ObjectProperty ;
+    rdfs:label "delivered by schedule"@en ;
+    dcterms:source aiao:ImpactClaim ;
+    rdfs:domain aiao:ImpactClaim ;
+    rdfs:range hedera:ScheduledTransaction ;
+    rdfs:subPropertyOf prov:wasDerivedFrom ;
+    skos:definition "Associates an impact claim with the scheduled transaction that operationalised it."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/how-scheduled-transactions-work> .
+
+hedera:hasImpactSubject a owl:ObjectProperty ;
+    rdfs:label "has impact subject"@en ;
+    dcterms:source claimont:hasSubject ;
+    rdfs:domain aiao:ImpactClaim ;
+    rdfs:range hedera:Actor ;
+    rdfs:subPropertyOf claimont:hasSubject ;
+    skos:definition "Identifies the Hedera actor that an AIAO impact claim evaluates."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/governing-the-network> .
+
+hedera:referencesMirrorDataset a owl:ObjectProperty ;
+    rdfs:label "references mirror dataset"@en ;
+    dcterms:source claimont:isSupportedBy ;
+    rdfs:domain aiao:ImpactClaim ;
+    rdfs:range hedera:MirrorDataset ;
+    rdfs:subPropertyOf claimont:isSupportedBy ;
+    skos:definition "Connects an impact claim to the mirror dataset furnishing evidentiary support."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/mirror-node/sdks-and-apis/rest-api> .
+
+hedera:reportsImpactIndicator a owl:ObjectProperty ;
+    rdfs:label "reports impact indicator"@en ;
+    dcterms:source impactont:isDefinedByIndicator ;
+    rdfs:domain aiao:ImpactClaim ;
+    rdfs:range impactont:Indicator ;
+    rdfs:subPropertyOf impactont:isDefinedByIndicator ;
+    skos:definition "Links an impact claim to the indicator captured via Hedera telemetry."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/mirror-node/architecture/metrics> .
+

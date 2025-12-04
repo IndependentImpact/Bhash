@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hedera Smart Contract Service module – Hashgraph Ontology</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2rem auto; max-width: 1100px; line-height: 1.6; }
+        h1, h2, h3 { color: #1f2937; }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        th, td { padding: 0.5rem; border: 1px solid #e5e7eb; vertical-align: top; }
+        th { background: #f3f4f6; text-align: left; }
+        .meta { color: #4b5563; }
+        .pill { display: inline-block; padding: 0.2rem 0.5rem; margin: 0.1rem; background: #e5e7eb; border-radius: 6px; }
+        .small { font-size: 0.9rem; }
+        .section { margin-top: 2rem; }
+        a { color: #0f766e; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hedera Smart Contract Service module</h1>
+        <div class="meta">IRI: <a href="https://hashgraphontology.xyx/hedera/contracts">https://hashgraphontology.xyx/hedera/contracts</a></div>
+        <p>Vocabulary describing Hedera Smart Contract Service artefacts, execution traces, and system contract integrations.</p>
+        <p class="meta">Source file: smart-contracts.ttl</p>
+    </header>
+
+    <section class="section">
+        <h2>Prefixes</h2>
+        <table>
+            <thead><tr><th>Prefix</th><th>Namespace</th></tr></thead>
+            <tbody>
+            
+                <tr><td>dcterms</td><td>http://purl.org/dc/terms/</td></tr>
+            
+                <tr><td>hedera</td><td>https://hashgraphontology.xyx/hedera/core/</td></tr>
+            
+                <tr><td>ns1</td><td>https://hashgraphontology.xyx/hedera/</td></tr>
+            
+                <tr><td>ns2</td><td>https://docs.hedera.com/hedera/mirror-node/sdks-and-apis/rest-api#tag/</td></tr>
+            
+                <tr><td>ns3</td><td>https://docs.hedera.com/hedera/core-concepts/smart-contracts/</td></tr>
+            
+                <tr><td>ns4</td><td>https://docs.hedera.com/hedera/core-concepts/smart-contracts/system-contracts#</td></tr>
+            
+                <tr><td>ns5</td><td>https://docs.hedera.com/hedera/sdks-and-apis/smart-contracts/</td></tr>
+            
+                <tr><td>owl</td><td>http://www.w3.org/2002/07/owl#</td></tr>
+            
+                <tr><td>rdf</td><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#</td></tr>
+            
+                <tr><td>rdfs</td><td>http://www.w3.org/2000/01/rdf-schema#</td></tr>
+            
+                <tr><td>skos</td><td>http://www.w3.org/2004/02/skos/core#</td></tr>
+            
+                <tr><td>xsd</td><td>http://www.w3.org/2001/XMLSchema#</td></tr>
+            
+            </tbody>
+        </table>
+    </section>
+
+    <section class="section">
+        <h2>Classes (12)</h2>
+        <table>
+            <thead><tr><th>Label</th><th>QName</th><th>Subclass Of</th><th>Notes</th></tr></thead>
+            <tbody>
+            
+                <tr id="cls-hedera-ContractAccount">
+                    <td>Contract account</td>
+                    <td>hedera:ContractAccount</td>
+                    <td><span class="pill">hedera:Account</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Account generated for a deployed smart contract to receive funds and identify executions.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/ContractAccount</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-ContractBytecode">
+                    <td>Contract bytecode</td>
+                    <td>hedera:ContractBytecode</td>
+                    <td><span class="pill">hedera:Artefact</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> EVM bytecode package uploaded via File Service and linked to a deployed smart contract.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/ContractBytecode</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-ContractEvent">
+                    <td>Contract event</td>
+                    <td>hedera:ContractEvent</td>
+                    <td><span class="pill">hedera:Event</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Event emitted by a contract execution and captured in mirror node logs.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/ContractEvent</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-ContractExecution">
+                    <td>Contract execution</td>
+                    <td>hedera:ContractExecution</td>
+                    <td><span class="pill">hedera:Process</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Process representing a transaction that executes a smart contract function.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/ContractExecution</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-ContractLog">
+                    <td>Contract log</td>
+                    <td>hedera:ContractLog</td>
+                    <td><span class="pill">hedera:Artefact</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Structured record describing indexed topics and data generated by a contract event.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/ContractLog</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-GasFeeSchedule">
+                    <td>Gas fee schedule</td>
+                    <td>hedera:GasFeeSchedule</td>
+                    <td><span class="pill">hedera:Artefact</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Fee schedule that defines intrinsic and surcharge gas costs for smart contract operations.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/GasFeeSchedule</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-OpcodeTrace">
+                    <td>Opcode trace</td>
+                    <td>hedera:OpcodeTrace</td>
+                    <td><span class="pill">hedera:Artefact</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Detailed record of EVM opcodes executed during a contract execution.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/OpcodeTrace</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-Precompile">
+                    <td>Precompile</td>
+                    <td>hedera:Precompile</td>
+                    <td><span class="pill">hedera:SystemContract</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Entry point exposing native Hedera services (HTS, HCS) to smart contracts via reserved selectors.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/Precompile</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-PrecompileInvocation">
+                    <td>Precompile invocation</td>
+                    <td>hedera:PrecompileInvocation</td>
+                    <td><span class="pill">hedera:Event</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Event capturing a contract execution invoking a specific system contract precompile.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/PrecompileInvocation</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-SmartContract">
+                    <td>Smart contract</td>
+                    <td>hedera:SmartContract</td>
+                    <td><span class="pill">hedera:Artefact</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Deployed EVM bytecode managed by the Smart Contract Service with an associated contract account.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/SmartContract</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-SmartContractService">
+                    <td>Smart Contract Service</td>
+                    <td>hedera:SmartContractService</td>
+                    <td><span class="pill">hedera:Service</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Network service that executes EVM smart contracts and exposes system contract integrations.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/SmartContractService</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-SystemContract">
+                    <td>System contract</td>
+                    <td>hedera:SystemContract</td>
+                    <td><span class="pill">hedera:SmartContract</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Reserved contract deployed by Hedera for protocol operations such as HTS precompiles.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/SystemContract</div>
+                    </td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </section>
+
+    <section class="section">
+        <h2>Properties (17)</h2>
+        <table>
+            <thead><tr><th>Label</th><th>QName</th><th>Kind</th><th>Domain</th><th>Range</th><th>Notes</th></tr></thead>
+            <tbody>
+            
+                <tr id="prop-hedera-emitsContractEvent">
+                    <td>emits contract event</td>
+                    <td>hedera:emitsContractEvent</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:ContractExecution</span></td>
+                    <td><span class="pill">hedera:ContractEvent</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/emitsContractEvent</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-executesContract">
+                    <td>executes contract</td>
+                    <td>hedera:executesContract</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:ContractExecution</span></td>
+                    <td><span class="pill">hedera:SmartContract</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/executesContract</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasBytecode">
+                    <td>has bytecode</td>
+                    <td>hedera:hasBytecode</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:SmartContract</span></td>
+                    <td><span class="pill">hedera:ContractBytecode</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasBytecode</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasContractId">
+                    <td>has contract id</td>
+                    <td>hedera:hasContractId</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:SmartContract</span></td>
+                    <td><span class="pill">xsd:string</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasContractId</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasFunctionSelector">
+                    <td>has function selector</td>
+                    <td>hedera:hasFunctionSelector</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:PrecompileInvocation</span></td>
+                    <td><span class="pill">xsd:string</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasFunctionSelector</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasGasBreakdown">
+                    <td>has gas breakdown</td>
+                    <td>hedera:hasGasBreakdown</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:OpcodeTrace</span></td>
+                    <td><span class="pill">xsd:string</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasGasBreakdown</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasGasLimit">
+                    <td>has gas limit</td>
+                    <td>hedera:hasGasLimit</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:ContractExecution</span></td>
+                    <td><span class="pill">xsd:integer</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasGasLimit</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasGasSchedule">
+                    <td>has gas schedule</td>
+                    <td>hedera:hasGasSchedule</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:SmartContractService</span></td>
+                    <td><span class="pill">hedera:GasFeeSchedule</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasGasSchedule</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasGasUsed">
+                    <td>has gas used</td>
+                    <td>hedera:hasGasUsed</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:PrecompileInvocation</span></td>
+                    <td><span class="pill">xsd:integer</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasGasUsed</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasInvocationCount">
+                    <td>has invocation count</td>
+                    <td>hedera:hasInvocationCount</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:SmartContract</span></td>
+                    <td><span class="pill">xsd:integer</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasInvocationCount</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasOpcodeTrace">
+                    <td>has opcode trace</td>
+                    <td>hedera:hasOpcodeTrace</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:ContractExecution</span></td>
+                    <td><span class="pill">hedera:OpcodeTrace</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasOpcodeTrace</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasResultStatus">
+                    <td>has result status</td>
+                    <td>hedera:hasResultStatus</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:ContractExecution</span></td>
+                    <td><span class="pill">xsd:string</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasResultStatus</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-includesInvocation">
+                    <td>includes invocation</td>
+                    <td>hedera:includesInvocation</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:ContractExecution</span></td>
+                    <td><span class="pill">hedera:PrecompileInvocation</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/includesInvocation</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-invokesSystemContract">
+                    <td>invokes system contract</td>
+                    <td>hedera:invokesSystemContract</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:SmartContract</span></td>
+                    <td><span class="pill">hedera:SystemContract</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/invokesSystemContract</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-recordsLog">
+                    <td>records log</td>
+                    <td>hedera:recordsLog</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:ContractEvent</span></td>
+                    <td><span class="pill">hedera:ContractLog</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/recordsLog</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-storesBytecodeIn">
+                    <td>stores bytecode in</td>
+                    <td>hedera:storesBytecodeIn</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:ContractBytecode</span></td>
+                    <td><span class="pill">hedera:File</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/storesBytecodeIn</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-targetsSystemContract">
+                    <td>targets system contract</td>
+                    <td>hedera:targetsSystemContract</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:PrecompileInvocation</span></td>
+                    <td><span class="pill">hedera:Precompile</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/targetsSystemContract</div>
+                    </td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>

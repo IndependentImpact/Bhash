@@ -1,0 +1,390 @@
+[
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/targetsSDGGoal",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@id": "https://datadudes.xyz/impactont#targetsSDG"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/TelemetryMetric"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "targets SDG goal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://datadudes.xyz/ontology/impactont#SDGGoal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://datadudes.xyz/ontology/impactont#targetsSDG"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Indicates which Sustainable Development Goal a Hedera metric supports."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/mirror-node/architecture/metrics"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/hasImpactVariance",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@id": "https://datadudes.xyz/impactont#hasVariance"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/TelemetryMetric"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has impact variance"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://datadudes.xyz/ontology/impactont#hasVariance"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Captures the variance observed for an impact KPI across a reporting period."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/mirror-node/architecture/metrics"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/ComplianceAlignmentScore",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@id": "https://datadudes.xyz/impactont#ComplianceIndicator"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Compliance alignment score"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/TelemetryMetric"
+      },
+      {
+        "@id": "https://datadudes.xyz/ontology/impactont#ComplianceIndicator"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Composite indicator evaluating adherence to sustainability-linked compliance rules."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://hips.hedera.com/hip/hip-540"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/hasMetricValue",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@id": "https://datadudes.xyz/impactont#hasMetricValue"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/TelemetryMetric"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has metric value"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://datadudes.xyz/ontology/impactont#hasMetricValue"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Quantitative value reported for a Hedera-aligned impact metric."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/mirror-node/architecture/metrics"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/hasImpactBaseline",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@id": "https://datadudes.xyz/impactont#hasBaselineValue"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/TelemetryMetric"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has impact baseline"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://datadudes.xyz/ontology/impactont#hasBaselineValue"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Baseline quantitative value used for comparing KPI improvement."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/mirror-node/architecture/metrics"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/alignsWithPolicy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@id": "https://datadudes.xyz/impactont#supportedByPolicy"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/TelemetryMetric"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "aligns with policy"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://datadudes.xyz/ontology/impactont#PolicyInstrument"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://datadudes.xyz/ontology/impactont#supportedByPolicy"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "States which policy instrument governs the sustainability KPI."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://hips.hedera.com/hip/hip-540"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/summarisesToken",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@id": "https://datadudes.xyz/impactont#measuresAsset"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/TelemetryMetric"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "summarises token"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/Token"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://datadudes.xyz/ontology/impactont#measuresAsset"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Identifies the token whose balances underpin a KPI."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-relationships"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/alignment/impactont",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Ontology"
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2025-10-01"
+      }
+    ],
+    "http://purl.org/dc/terms/creator": [
+      {
+        "@language": "en",
+        "@value": "Bhash Ontology Working Group"
+      }
+    ],
+    "http://purl.org/dc/terms/description": [
+      {
+        "@language": "en",
+        "@value": "Connects Hedera treasury and compliance analytics to ImpactOnt KPI structures for sustainability dashboards."
+      }
+    ],
+    "http://purl.org/dc/terms/modified": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2025-10-01"
+      }
+    ],
+    "http://purl.org/dc/terms/title": [
+      {
+        "@language": "en",
+        "@value": "ImpactOnt alignment module"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#imports": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core"
+      },
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/token"
+      },
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/mirror-analytics"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#versionInfo": [
+      {
+        "@value": "0.1.0-dev"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#editorialNote": [
+      {
+        "@language": "en",
+        "@value": "Phase 4 bridge module translating Hedera compliance metrics into ImpactOnt KPI and SDG linkages."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/TreasuryImpactKPI",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@id": "https://datadudes.xyz/impactont#KPI"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Treasury impact KPI"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/TelemetryMetric"
+      },
+      {
+        "@id": "https://datadudes.xyz/ontology/impactont#KPI"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Metric summarising treasury-controlled token balances for sustainability reporting."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/mirror-node/architecture/metrics"
+      }
+    ]
+  }
+]

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:hedera="https://hashgraphontology.xyx/hedera/core/"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/ScheduleService">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Schedule Service</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/Service"/>
+    <skos:definition xml:lang="en">Service that queues transactions for deferred execution once signature requirements are met.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/introduction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/performedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">performed by</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/FileUpdate"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/Account"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasAssociatedWith"/>
+    <skos:definition xml:lang="en">Identifies the account that submitted the file update.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasScheduleExpiration">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">has schedule expiration</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/ScheduledTransaction"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <skos:definition xml:lang="en">Timestamp at which the scheduled transaction expires.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasFileContent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has file content</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/File"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/FileContent"/>
+    <skos:definition xml:lang="en">Links a file to the payload stored within it.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/ScheduleSignature">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Schedule signature</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/Artefact"/>
+    <skos:definition xml:lang="en">Signature provided by an account approving a scheduled transaction.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/how-scheduled-transactions-work"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/FileUpdate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">File update</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/Process"/>
+    <skos:definition xml:lang="en">Process that amends file contents or metadata under the control of file keys.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/core-concepts/file-service/update-files"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/File">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">File</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/Artefact"/>
+    <skos:definition xml:lang="en">On-ledger file storing bytecode, configuration, or metadata referenced by other services.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/core-concepts/file-service/file-storage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/ScheduleExecution">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Schedule execution</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/Process"/>
+    <skos:definition xml:lang="en">Process that executes a scheduled transaction once all required signatures are collected.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/how-scheduled-transactions-work"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/updatesFile">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">updates file</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/FileUpdate"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/File"/>
+    <skos:definition xml:lang="en">Connects a file update process to the file being modified.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasScheduleStatus">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">has schedule status</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/ScheduledTransaction"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <skos:definition xml:lang="en">Enumerated status such as pending-signatures, executed, or expired.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasScheduleMemo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">has schedule memo</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/ScheduledTransaction"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <skos:definition xml:lang="en">Memo describing the scheduled transaction purpose.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/file-schedule">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <dcterms:title xml:lang="en">Hedera File and Schedule Services module</dcterms:title>
+    <dcterms:description xml:lang="en">Vocabulary for modelling Hedera File Service artefacts and Scheduled Transaction lifecycle states.</dcterms:description>
+    <dcterms:creator xml:lang="en">Bhash Ontology Working Group</dcterms:creator>
+    <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-10-01</dcterms:created>
+    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-09-30</dcterms:modified>
+    <owl:imports rdf:resource="https://hashgraphontology.xyx/hedera/core"/>
+    <owl:versionInfo>0.1.0-dev</owl:versionInfo>
+    <skos:editorialNote xml:lang="en">Phase 3 sprint module integrating File Service bytecode storage and scheduled transaction governance for CQ-COMP-004.</skos:editorialNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/FileKey">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">File key</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/AccountKey"/>
+    <skos:definition xml:lang="en">Key that authorises file creation, update, and deletion actions.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/core-concepts/file-service/file-keys"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasFileId">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">has file id</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/File"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <skos:definition xml:lang="en">Ledger identifier (e.g., 0.0.x) for a file.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasFileKey">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has file key</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/File"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/FileKey"/>
+    <skos:definition xml:lang="en">Associates a file with the keys authorised to modify it.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/ScheduledTransaction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Scheduled transaction</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/Artefact"/>
+    <skos:definition xml:lang="en">Deferred transaction waiting for a quorum of signatures before execution.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/how-scheduled-transactions-work"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/storesArtefact">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">stores artefact</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/File"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/Artefact"/>
+    <skos:definition xml:lang="en">Indicates that a file stores an artefact such as bytecode or fee schedules.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasCollectedSignatureCount">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">has collected signature count</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/ScheduledTransaction"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <skos:definition xml:lang="en">Number of signatures collected so far for the schedule.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasFileSize">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">has file size</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/File"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <skos:definition xml:lang="en">Size of file contents in bytes.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/FileContent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">File content</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/Artefact"/>
+    <skos:definition xml:lang="en">Payload stored within a File Service file such as contract bytecode or fee schedules.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/core-concepts/file-service/file-storage"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasRequiredSignatureCount">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">has required signature count</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/ScheduledTransaction"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <skos:definition xml:lang="en">Number of signatures needed before execution.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/PendingSchedule">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Pending schedule</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/ScheduledTransaction"/>
+    <skos:definition xml:lang="en">Scheduled transaction that has not yet gathered sufficient signatures.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/core-concepts/scheduled-transactions"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasExecution">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has execution</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/ScheduledTransaction"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/ScheduleExecution"/>
+    <skos:definition xml:lang="en">Associates a scheduled transaction with its execution once signatures complete.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/expiresWith">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">expires with</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/ScheduledTransaction"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/Event"/>
+    <skos:definition xml:lang="en">Identifies the event that marks the expiration of a scheduled transaction.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/FileService">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">File Service</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/Service"/>
+    <skos:definition xml:lang="en">Network service that stores bytecode, fee schedules, and other artefacts under key-controlled files.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/core-concepts/file-service/introduction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasSchedulePayer">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">has schedule payer</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/ScheduledTransaction"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <skos:definition xml:lang="en">Account identifier paying for schedule execution.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasCollectedSignature">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has collected signature</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/ScheduledTransaction"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/ScheduleSignature"/>
+    <skos:definition xml:lang="en">Connects a scheduled transaction to signatures already obtained.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/schedulesTransaction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">schedules transaction</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/ScheduledTransaction"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/Process"/>
+    <skos:definition xml:lang="en">Links a scheduled transaction artefact to the process that will execute once signatures are collected.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasScheduleId">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">has schedule id</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/ScheduledTransaction"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <skos:definition xml:lang="en">Ledger identifier for a scheduled transaction.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/requiresSignature">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">requires signature</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/ScheduledTransaction"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/Account"/>
+    <skos:definition xml:lang="en">Identifies accounts whose signatures are required for a scheduled transaction.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasFileMemo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">has file memo</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/File"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <skos:definition xml:lang="en">Memo describing file purpose or metadata.</skos:definition>
+  </rdf:Description>
+</rdf:RDF>

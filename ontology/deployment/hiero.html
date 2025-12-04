@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hiero Overlay module – Hashgraph Ontology</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2rem auto; max-width: 1100px; line-height: 1.6; }
+        h1, h2, h3 { color: #1f2937; }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        th, td { padding: 0.5rem; border: 1px solid #e5e7eb; vertical-align: top; }
+        th { background: #f3f4f6; text-align: left; }
+        .meta { color: #4b5563; }
+        .pill { display: inline-block; padding: 0.2rem 0.5rem; margin: 0.1rem; background: #e5e7eb; border-radius: 6px; }
+        .small { font-size: 0.9rem; }
+        .section { margin-top: 2rem; }
+        a { color: #0f766e; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hiero Overlay module</h1>
+        <div class="meta">IRI: <a href="https://hashgraphontology.xyx/hedera/hiero">https://hashgraphontology.xyx/hedera/hiero</a></div>
+        <p>Vocabulary extending the core ontology with Hiero shards, validator roles, and onboarding milestones.</p>
+        <p class="meta">Source file: hiero.ttl</p>
+    </header>
+
+    <section class="section">
+        <h2>Prefixes</h2>
+        <table>
+            <thead><tr><th>Prefix</th><th>Namespace</th></tr></thead>
+            <tbody>
+            
+                <tr><td>dcterms</td><td>http://purl.org/dc/terms/</td></tr>
+            
+                <tr><td>hedera</td><td>https://hashgraphontology.xyx/hedera/core/</td></tr>
+            
+                <tr><td>ns1</td><td>https://docs.hedera.com/hiero/concepts/</td></tr>
+            
+                <tr><td>ns2</td><td>https://hashgraphontology.xyx/hedera/</td></tr>
+            
+                <tr><td>ns3</td><td>https://docs.hedera.com/hiero/</td></tr>
+            
+                <tr><td>ns4</td><td>https://docs.hedera.com/hiero/concepts/validators#</td></tr>
+            
+                <tr><td>owl</td><td>http://www.w3.org/2002/07/owl#</td></tr>
+            
+                <tr><td>rdf</td><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#</td></tr>
+            
+                <tr><td>rdfs</td><td>http://www.w3.org/2000/01/rdf-schema#</td></tr>
+            
+                <tr><td>skos</td><td>http://www.w3.org/2004/02/skos/core#</td></tr>
+            
+                <tr><td>xsd</td><td>http://www.w3.org/2001/XMLSchema#</td></tr>
+            
+            </tbody>
+        </table>
+    </section>
+
+    <section class="section">
+        <h2>Classes (8)</h2>
+        <table>
+            <thead><tr><th>Label</th><th>QName</th><th>Subclass Of</th><th>Notes</th></tr></thead>
+            <tbody>
+            
+                <tr id="cls-hedera-HieroAvailabilityNode">
+                    <td>Hiero availability node</td>
+                    <td>hedera:HieroAvailabilityNode</td>
+                    <td><span class="pill">hedera:Validator</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Validator focusing on data availability responsibilities in Hiero.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/HieroAvailabilityNode</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-HieroOnboardingState">
+                    <td>Hiero onboarding state</td>
+                    <td>hedera:HieroOnboardingState</td>
+                    <td><span class="pill">hedera:Concept</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> State classification such as pending, active, or slashed for validators joining Hiero.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/HieroOnboardingState</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-HieroParticipation">
+                    <td>Hiero participation</td>
+                    <td>hedera:HieroParticipation</td>
+                    <td><span class="pill">hedera:Process</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Process describing a validator's lifecycle within a Hiero shard.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/HieroParticipation</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-HieroSequencerNode">
+                    <td>Hiero sequencer node</td>
+                    <td>hedera:HieroSequencerNode</td>
+                    <td><span class="pill">hedera:Validator</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Validator role producing ordered batches for Hiero shards.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/HieroSequencerNode</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-HieroShard">
+                    <td>Hiero shard</td>
+                    <td>hedera:HieroShard</td>
+                    <td><span class="pill">hedera:Network</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Logical partition of the Hiero network responsible for consensus and execution within a region.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/HieroShard</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-HieroStateProof">
+                    <td>Hiero state proof</td>
+                    <td>hedera:HieroStateProof</td>
+                    <td><span class="pill">hedera:Artefact</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Proof object attesting to shard state for cross-shard verification.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/HieroStateProof</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-HieroUpgradeMilestone">
+                    <td>Hiero upgrade milestone</td>
+                    <td>hedera:HieroUpgradeMilestone</td>
+                    <td><span class="pill">hedera:Event</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Event representing progression in the Hiero rollout roadmap.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/HieroUpgradeMilestone</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-HieroValidatorRole">
+                    <td>Hiero validator role</td>
+                    <td>hedera:HieroValidatorRole</td>
+                    <td><span class="pill">hedera:Role</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Role undertaken by validators within the Hiero architecture (consensus, execution, availability).</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/HieroValidatorRole</div>
+                    </td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </section>
+
+    <section class="section">
+        <h2>Properties (11)</h2>
+        <table>
+            <thead><tr><th>Label</th><th>QName</th><th>Kind</th><th>Domain</th><th>Range</th><th>Notes</th></tr></thead>
+            <tbody>
+            
+                <tr id="prop-hedera-assumesHieroRole">
+                    <td>assumes Hiero role</td>
+                    <td>hedera:assumesHieroRole</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:HieroParticipation</span></td>
+                    <td><span class="pill">hedera:HieroValidatorRole</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/assumesHieroRole</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasActivationDate">
+                    <td>has activation date</td>
+                    <td>hedera:hasActivationDate</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:HieroParticipation</span></td>
+                    <td><span class="pill">xsd:date</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasActivationDate</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasOnboardingState">
+                    <td>has onboarding state</td>
+                    <td>hedera:hasOnboardingState</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:HieroParticipation</span></td>
+                    <td><span class="pill">hedera:HieroOnboardingState</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasOnboardingState</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasParticipationStatus">
+                    <td>has participation status</td>
+                    <td>hedera:hasParticipationStatus</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:HieroParticipation</span></td>
+                    <td><span class="pill">xsd:string</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasParticipationStatus</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasShardIdentifier">
+                    <td>has shard identifier</td>
+                    <td>hedera:hasShardIdentifier</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:HieroShard</span></td>
+                    <td><span class="pill">xsd:string</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasShardIdentifier</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasValidatorScore">
+                    <td>has validator score</td>
+                    <td>hedera:hasValidatorScore</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:HieroParticipation</span></td>
+                    <td><span class="pill">xsd:decimal</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasValidatorScore</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-participatesInShard">
+                    <td>participates in shard</td>
+                    <td>hedera:participatesInShard</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:HieroParticipation</span></td>
+                    <td><span class="pill">hedera:HieroShard</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/participatesInShard</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-participationOf">
+                    <td>participation of</td>
+                    <td>hedera:participationOf</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:HieroParticipation</span></td>
+                    <td><span class="pill">hedera:Validator</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/participationOf</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-publishesStateProof">
+                    <td>publishes state proof</td>
+                    <td>hedera:publishesStateProof</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:HieroParticipation</span></td>
+                    <td><span class="pill">hedera:HieroStateProof</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/publishesStateProof</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-supportsLayer">
+                    <td>supports layer</td>
+                    <td>hedera:supportsLayer</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:HieroParticipation</span></td>
+                    <td><span class="pill">hedera:HieroLayer</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/supportsLayer</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-triggeredByMilestone">
+                    <td>triggered by milestone</td>
+                    <td>hedera:triggeredByMilestone</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:HieroParticipation</span></td>
+                    <td><span class="pill">hedera:HieroUpgradeMilestone</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/triggeredByMilestone</div>
+                    </td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>

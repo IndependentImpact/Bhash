@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:hedera="https://hashgraphontology.xyx/hedera/core/"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasRetentionDays">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">has retention days</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/DatasetRetentionPolicy"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <skos:definition xml:lang="en">Number of days data is retained.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/DatasetRetentionPolicy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Dataset retention policy</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/Artefact"/>
+    <skos:definition xml:lang="en">Policy describing how long datasets are retained in analytics storage.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/mirror-node/architecture/record-and-balance-files"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/coversService">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">covers service</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/MirrorDataset"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/Service"/>
+    <skos:definition xml:lang="en">Identifies which Hedera service a dataset provides analytics for.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/MirrorNodeOperatorRole">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Mirror node operator role</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/Role"/>
+    <skos:definition xml:lang="en">Role fulfilled by organisations running mirror node infrastructure.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/mirror-node/deploy"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/AnalyticsWorkspace">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Analytics workspace</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/Artefact"/>
+    <skos:definition xml:lang="en">Analytical environment consuming mirror datasets for reporting or dashboards.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/mirror-node/architecture/overview"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/publishesDataset">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">publishes dataset</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/MirrorService"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/MirrorDataset"/>
+    <skos:definition xml:lang="en">Links a mirror service to datasets it exports.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasDatasetType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">has dataset type</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/MirrorDataset"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <skos:definition xml:lang="en">Describes the type of dataset (e.g., balances, contract-results).</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/runsPipeline">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">runs pipeline</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/Actor"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/IngestionPipeline"/>
+    <skos:definition xml:lang="en">Links an operator to the ingestion pipeline they run.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/MirrorGrpcAPI">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Mirror gRPC API</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/Artefact"/>
+    <skos:definition xml:lang="en">gRPC streaming interface for subscribing to Hedera mirror node data.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/mirror-node/sdks-and-apis/grpc-api"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/producesMetric">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">produces metric</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/IngestionPipeline"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/TelemetryMetric"/>
+    <skos:definition xml:lang="en">Indicates metrics emitted by an ingestion pipeline.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasDatasetURI">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">has dataset URI</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/MirrorDataset"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    <skos:definition xml:lang="en">URI endpoint where the dataset can be accessed.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasRetentionPolicy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has retention policy</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/MirrorDataset"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/DatasetRetentionPolicy"/>
+    <skos:definition xml:lang="en">Associates a dataset with its retention policy.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasMetricValue">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">has metric value</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/TelemetryMetric"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <skos:definition xml:lang="en">Quantitative value reported for a metric.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/mirror-analytics">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <dcterms:title xml:lang="en">Hedera Mirror and Analytics Ecosystem module</dcterms:title>
+    <dcterms:description xml:lang="en">Vocabulary for mirror nodes, exported datasets, and analytics workspaces consuming Hedera telemetry.</dcterms:description>
+    <dcterms:creator xml:lang="en">Bhash Ontology Working Group</dcterms:creator>
+    <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-10-01</dcterms:created>
+    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-09-30</dcterms:modified>
+    <owl:imports rdf:resource="https://hashgraphontology.xyx/hedera/core"/>
+    <owl:versionInfo>0.1.0-dev</owl:versionInfo>
+    <skos:editorialNote xml:lang="en">Phase 3 sprint module documenting mirror node pipelines, dataset retention, and analytics reuse for CQ-ANL-007.</skos:editorialNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/TelemetryMetric">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Telemetry metric</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/Event"/>
+    <skos:definition xml:lang="en">Metric derived from mirror node operations or analytics pipelines.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/mirror-node/architecture/metrics"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasWorkspacePurpose">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">has workspace purpose</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/AnalyticsWorkspace"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <skos:definition xml:lang="en">Narrative description of the analytics workspace focus.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/feedsAnalyticsWorkspace">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">feeds analytics workspace</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/MirrorDataset"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/AnalyticsWorkspace"/>
+    <skos:definition xml:lang="en">Identifies analytics workspaces that consume a dataset.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasMetricWindow">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">has metric window</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/TelemetryMetric"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <skos:definition xml:lang="en">Time window (e.g., 1h, 24h) represented by the metric.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/MirrorRestAPI">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Mirror REST API</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/Artefact"/>
+    <skos:definition xml:lang="en">RESTful interface provided by mirror nodes for querying Hedera history.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/mirror-node/sdks-and-apis/rest-api"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/exposesRestEndpoint">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">exposes REST endpoint</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/MirrorService"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/MirrorRestAPI"/>
+    <skos:definition xml:lang="en">Connects a mirror service to its REST API artefact.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/IngestionPipeline">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Ingestion pipeline</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/Process"/>
+    <skos:definition xml:lang="en">Pipeline that ingests record files into analytics storage.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/mirror-node/architecture/overview"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/MirrorService">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Mirror Service</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/Service"/>
+    <skos:definition xml:lang="en">Service tier that replicates consensus data and exposes REST/gRPC APIs.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/mirror-node"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/curatesWorkspace">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">curates workspace</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/Actor"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/AnalyticsWorkspace"/>
+    <skos:definition xml:lang="en">Indicates the actor responsible for an analytics workspace.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/exposesGrpcEndpoint">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">exposes gRPC endpoint</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/MirrorService"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/MirrorGrpcAPI"/>
+    <skos:definition xml:lang="en">Connects a mirror service to its gRPC streaming artefact.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/MirrorDataset">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Mirror dataset</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/Artefact"/>
+    <skos:definition xml:lang="en">Dataset exported by mirror nodes such as transactions, balances, or contract logs.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/mirror-node/architecture/record-and-balance-files"/>
+  </rdf:Description>
+</rdf:RDF>

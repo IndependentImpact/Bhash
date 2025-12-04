@@ -1,0 +1,1581 @@
+[
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/isFrozen",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/TokenRelationship"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is frozen"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Flag indicating whether the account is currently frozen for the token."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/hasDecimals",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/FungibleToken"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has decimals"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Number of decimal places tracked for fungible token units."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/assignsKey",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/TokenKeyAssignment"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "assigns key"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/TokenKey"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Links a key assignment to the specific token key being governed."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/hasTokenRelationship",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/Token"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has token relationship"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/TokenRelationship"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Relates a token to per-account state records."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/PauseKey",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Pause key"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/TokenKey"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Token key that can pause and resume all token transfers regardless of account state."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-keys"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/tracksRelationship",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/TokenService"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "tracks relationship"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/TokenRelationship"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Links the Token Service to the per-account relationship records it maintains."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/submitsTokenTransaction",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/Account"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "submits token transaction"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/TokenEvent"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Links an account to the token events it initiated via signed transactions."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/hasAllowance",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/TokenRelationship"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has allowance"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Approved allowance amount the account has granted to spenders."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/hasControllerRole",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/TokenKeyAssignment"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has controller role"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/Role"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Connects a key assignment to the governance role describing its responsibilities."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/KYCControllerRole",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "KYC controller role"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/TokenComplianceRole"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Role accountable for administering KYC approvals required before token transfers."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://hips.hedera.com/hip/hip-540"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/hasMaxSupply",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/Token"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has max supply"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Maximum configured supply for a token."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/hasTokenId",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/Token"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has token id"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Ledger identifier for a token (e.g., 0.0.x)."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/relatesToken",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/TokenRelationship"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "relates token"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/Token"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Identifies the token associated with a relationship record."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/KYCKeyAssignment",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "KYC key assignment"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/TokenKeyAssignment"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Assignment that links a KYC key to the accountable controller enforcing onboarding checks."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://hips.hedera.com/hip/hip-540"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/StablecoinToken",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "HIP-540"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Stablecoin token"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/FungibleToken"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Fungible token profile following HIP-540 stablecoin controls, including explicit KYC and freeze governance."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://hips.hedera.com/hip/hip-540"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/CustomFee",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Custom fee"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/Artefact"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Fee schedule entry defining royalty, fixed, or fractional fees assessed on token transfers."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/sdks-and-apis/token-service/custom-fees"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/controlsKey",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/Role"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "controls key"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/TokenKey"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "States that a governance role exercises authority over a particular token key."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/feeCollector",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/CustomFee"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "fee collector"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/Account"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Identifies the account that receives assessed custom fees."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/SupplyKeyAssignment",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Supply key assignment"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/TokenKeyAssignment"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Assignment that links a supply key to the actor authorised to mint or burn supply."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-keys"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/TokenBurnEvent",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Token burn event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/TokenEvent"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Event noting supply removed from circulation."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-burn-and-wipe"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/FixedFee",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Fixed fee"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/CustomFee"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Custom fee that transfers a fixed quantity of tokens or HBAR to the collector."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/sdks-and-apis/token-service/custom-fees/fixed-fees"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/hasKeyAssignment",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/Token"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has key assignment"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/TokenKeyAssignment"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Connects a token to artefacts describing who controls each of its keys."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/TokenKeyAssignment",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Token key assignment"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/Artefact"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Artefact capturing which actor controls a specific token key and for what governance purpose."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://hips.hedera.com/hip/hip-540"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/hasCustomFee",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/Token"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has custom fee"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/CustomFee"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Associates a token with the custom fee schedule entries it enforces."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/token",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Ontology"
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2024-09-27"
+      }
+    ],
+    "http://purl.org/dc/terms/creator": [
+      {
+        "@language": "en",
+        "@value": "Bhash Ontology Working Group"
+      }
+    ],
+    "http://purl.org/dc/terms/description": [
+      {
+        "@language": "en",
+        "@value": "Service-specific vocabulary for modelling Hedera Token Service artefacts, compliance roles, and lifecycle events."
+      }
+    ],
+    "http://purl.org/dc/terms/modified": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2024-09-27"
+      }
+    ],
+    "http://purl.org/dc/terms/title": [
+      {
+        "@language": "en",
+        "@value": "Hedera Token Service module"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#imports": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#versionInfo": [
+      {
+        "@value": "0.1.0-dev"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#editorialNote": [
+      {
+        "@language": "en",
+        "@value": "Phase 3 sprint module introducing token compliance semantics to support CQ-COMP-003."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/TokenRelationship",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Token relationship"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/Artefact"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Per-account view of balances, KYC, freeze, and allowance states for a specific token."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-relationships"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/TokenEvent",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Token event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/Event"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Event emitted by the Token Service reflecting mint, burn, or transfer outcomes."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts/transactions/transaction-lifecycle"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/hasTreasury",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/Token"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has treasury"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/Account"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Identifies the treasury account responsible for token reserves and initial distribution."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/AdminKey",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Admin key"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/TokenKey"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Token key that can update core properties or delete the token."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-keys"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/hasSymbol",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/Token"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has symbol"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Ticker-style symbol for a token."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/TokenComplianceRole",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Token compliance role"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/Role"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Role describing a governance responsibility over compliance-sensitive token keys."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://hips.hedera.com/hip/hip-540"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/SupplyKey",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Supply key"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/TokenKey"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Token key that authorises minting or burning supply for fungible and non-fungible tokens."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-keys"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/FreezeControllerRole",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Freeze controller role"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/TokenComplianceRole"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Role responsible for freezing or unfreezing token accounts to maintain compliance."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://hips.hedera.com/hip/hip-540"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/provTrace",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/Token"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "provenance trace"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/ns/prov#Entity"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.w3.org/ns/prov#wasDerivedFrom"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "References source artefacts (HIPs, disclosures) demonstrating compliance provenance."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/FungibleToken",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Fungible token"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/Token"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Token whose units are interchangeable and tracked via balances and allowances."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/sdks-and-apis/token-service/fungible-tokens"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/NonFungibleToken",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Non-fungible token"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/Token"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Token representing unique serialised items with metadata and ownership tracked per serial."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/sdks-and-apis/token-service/non-fungible-tokens"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/recordsEvent",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/TokenRelationship"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "records event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/TokenEvent"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Associates a token relationship with an event that affected its balances or status."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/hasTokenBalance",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/TokenRelationship"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has token balance"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Balance of token units recorded for the relationship."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/isControlledBy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/TokenKeyAssignment"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is controlled by"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/Actor"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Indicates which actor holds operational control over a token key."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/isKYCApproved",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/TokenRelationship"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is KYC approved"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Flag indicating whether the account has been marked as KYC compliant for the token."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/KYCKey",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "KYC key"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/TokenKey"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Token key that authorises marking accounts as KYC-compliant before they may transfer tokens."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-keys"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/FreezeKeyAssignment",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Freeze key assignment"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/TokenKeyAssignment"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Assignment that links a freeze key to the actor authorised to halt or resume transfers."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://hips.hedera.com/hip/hip-540"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/managesToken",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/TokenService"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "manages token"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/Token"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/managesArtefact"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Associates the Token Service with tokens under its lifecycle governance."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/TokenTransferEvent",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Token transfer event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/TokenEvent"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Event capturing debits and credits recorded for token relationships during a transfer."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts/transactions/transaction-lifecycle"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/RoyaltyFee",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Royalty fee"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/CustomFee"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Custom fee that distributes a percentage of NFT sales to the royalty collector."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/sdks-and-apis/token-service/custom-fees/royalty-fees"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/TokenTreasuryRole",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Token treasury role"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/Role"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Role fulfilled by the account safeguarding reserves and distributing supply on behalf of a token."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/sdks-and-apis/token-service/treasury-and-supply"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/Token",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Token"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/Artefact"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Digital asset managed by the Token Service with associated supply, metadata, and key governance."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/sdks-and-apis/token-service/introduction"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/TokenKey",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Token key"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/AccountKey"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Key material that authorises token-specific actions such as supply control, compliance, or metadata updates."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-keys"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/TokenMintEvent",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Token mint event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/TokenEvent"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Event noting additional supply minted for a token."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-create-and-mint"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/hasInitialSupply",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/FungibleToken"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has initial supply"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Initial supply minted at token creation."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/enforcementState",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/TokenKeyAssignment"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "enforcement state"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Narrative state of the key (e.g., present, removed, in escrow) supporting compliance attestation."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/FractionalFee",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Fractional fee"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/CustomFee"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Custom fee deducting a fraction of the transferred amount and sending it to a collector."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/sdks-and-apis/token-service/custom-fees/fractional-fees"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/relatesAccount",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/TokenRelationship"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "relates account"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/Account"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Identifies the account whose state is described by a token relationship."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/TokenService",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Token Service"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/Service"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Network service responsible for minting, managing, and enforcing policy over fungible and non-fungible tokens."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/sdks-and-apis/token-service/introduction"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/FreezeKey",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Freeze key"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/TokenKey"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Token key that toggles whether accounts may transact the token."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-keys"
+      }
+    ]
+  }
+]

@@ -1,0 +1,1090 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bhash Core Ontology – Hashgraph Ontology</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2rem auto; max-width: 1100px; line-height: 1.6; }
+        h1, h2, h3 { color: #1f2937; }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        th, td { padding: 0.5rem; border: 1px solid #e5e7eb; vertical-align: top; }
+        th { background: #f3f4f6; text-align: left; }
+        .meta { color: #4b5563; }
+        .pill { display: inline-block; padding: 0.2rem 0.5rem; margin: 0.1rem; background: #e5e7eb; border-radius: 6px; }
+        .small { font-size: 0.9rem; }
+        .section { margin-top: 2rem; }
+        a { color: #0f766e; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bhash Core Ontology</h1>
+        <div class="meta">IRI: <a href="https://hashgraphontology.xyx/hedera/core">https://hashgraphontology.xyx/hedera/core</a></div>
+        <p>Upper-level classes and properties capturing shared Hedera and Hiero network concepts, including identity, governance, transactions, and data export semantics.</p>
+        <p class="meta">Source file: core.ttl</p>
+    </header>
+
+    <section class="section">
+        <h2>Prefixes</h2>
+        <table>
+            <thead><tr><th>Prefix</th><th>Namespace</th></tr></thead>
+            <tbody>
+            
+                <tr><td>dcat</td><td>http://www.w3.org/ns/dcat#</td></tr>
+            
+                <tr><td>dcterms</td><td>http://purl.org/dc/terms/</td></tr>
+            
+                <tr><td>hedera</td><td>https://hashgraphontology.xyx/hedera/core/</td></tr>
+            
+                <tr><td>ns1</td><td>https://docs.hedera.com/hedera/core-concepts/transactions/</td></tr>
+            
+                <tr><td>ns10</td><td>https://docs.hedera.com/hedera/core-concepts/accounts/account-properties#</td></tr>
+            
+                <tr><td>ns11</td><td>https://docs.hedera.com/hedera/core-concepts/transactions/transaction-lifecycle#</td></tr>
+            
+                <tr><td>ns12</td><td>https://docs.hedera.com/hedera/core-concepts/staking/</td></tr>
+            
+                <tr><td>ns13</td><td>https://www.apache.org/licenses/</td></tr>
+            
+                <tr><td>ns14</td><td>https://docs.hedera.com/hedera/network/nodes/</td></tr>
+            
+                <tr><td>ns15</td><td>https://docs.hedera.com/hedera/</td></tr>
+            
+                <tr><td>ns16</td><td>https://docs.hedera.com/hedera/core-concepts/accounts/</td></tr>
+            
+                <tr><td>ns17</td><td>https://docs.hedera.com/hedera/core-concepts/staking/stake-hbar#</td></tr>
+            
+                <tr><td>ns18</td><td>https://docs.hedera.com/hedera/mirror-node/architecture/</td></tr>
+            
+                <tr><td>ns2</td><td>https://docs.hedera.com/hedera/mirror-node/sdks-and-apis/</td></tr>
+            
+                <tr><td>ns3</td><td>https://hashgraphontology.xyx/hedera/</td></tr>
+            
+                <tr><td>ns4</td><td>https://docs.hedera.com/</td></tr>
+            
+                <tr><td>ns5</td><td>https://hips.hedera.com/hip/</td></tr>
+            
+                <tr><td>ns6</td><td>https://docs.hedera.com/hedera/core-concepts/</td></tr>
+            
+                <tr><td>ns7</td><td>https://hashgraphontology.xyx/hedera/imports/</td></tr>
+            
+                <tr><td>ns8</td><td>https://hedera.com/</td></tr>
+            
+                <tr><td>ns9</td><td>https://docs.hedera.com/hiero/concepts/</td></tr>
+            
+                <tr><td>owl</td><td>http://www.w3.org/2002/07/owl#</td></tr>
+            
+                <tr><td>prov</td><td>http://www.w3.org/ns/prov#</td></tr>
+            
+                <tr><td>rdf</td><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#</td></tr>
+            
+                <tr><td>rdfs</td><td>http://www.w3.org/2000/01/rdf-schema#</td></tr>
+            
+                <tr><td>schema1</td><td>http://schema.org/</td></tr>
+            
+                <tr><td>skos</td><td>http://www.w3.org/2004/02/skos/core#</td></tr>
+            
+                <tr><td>xsd</td><td>http://www.w3.org/2001/XMLSchema#</td></tr>
+            
+            </tbody>
+        </table>
+    </section>
+
+    <section class="section">
+        <h2>Classes (37)</h2>
+        <table>
+            <thead><tr><th>Label</th><th>QName</th><th>Subclass Of</th><th>Notes</th></tr></thead>
+            <tbody>
+            
+                <tr id="cls-hedera-Account">
+                    <td>Account</td>
+                    <td>hedera:Account</td>
+                    <td><span class="pill">hedera:Actor</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> On-ledger identity storing keys, balances, and staking configuration for participation in Hedera services.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/Account</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-AccountKey">
+                    <td>Account key</td>
+                    <td>hedera:AccountKey</td>
+                    <td><span class="pill">hedera:Artefact</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Key material that authorises actions for accounts, topics, files, and tokens.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/AccountKey</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-Actor">
+                    <td>Actor</td>
+                    <td>hedera:Actor</td>
+                    <td><span class="pill">hedera:Concept</span><span class="pill">prov:Agent</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> An agent that participates in Hedera or Hiero network operations, such as councils, operators, or wallets.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/Actor</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-Artefact">
+                    <td>Artefact</td>
+                    <td>hedera:Artefact</td>
+                    <td><span class="pill">hedera:Concept</span><span class="pill">prov:Entity</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Digital object or state produced or managed by Hedera services (topics, tokens, files, smart contracts).</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/Artefact</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-Concept">
+                    <td>Concept</td>
+                    <td>hedera:Concept</td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Abstract superclass for all Bhash ontology entities.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/Concept</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-ConsensusFinalityPhase">
+                    <td>Consensus finality phase</td>
+                    <td>hedera:ConsensusFinalityPhase</td>
+                    <td><span class="pill">hedera:TransactionPhase</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Phase in which consensus nodes order the transaction and assign a consensus timestamp.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/ConsensusFinalityPhase</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-ConsensusNode">
+                    <td>Consensus node</td>
+                    <td>hedera:ConsensusNode</td>
+                    <td><span class="pill">hedera:Node</span><span class="pill">hedera:Validator</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Validator node participating in Hedera consensus ordering and staking.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/ConsensusNode</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-Event">
+                    <td>Event</td>
+                    <td>hedera:Event</td>
+                    <td><span class="pill">hedera:Concept</span><span class="pill">prov:Entity</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Bounded outcome or observation emitted by a process, typically recorded through mirror nodes or logs.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/Event</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-GovernanceBody">
+                    <td>Governance body</td>
+                    <td>hedera:GovernanceBody</td>
+                    <td><span class="pill">hedera:Actor</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Formal collective responsible for decision-making over network policy or operations.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/GovernanceBody</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-GovernanceDecision">
+                    <td>Governance decision</td>
+                    <td>hedera:GovernanceDecision</td>
+                    <td><span class="pill">hedera:Event</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Recorded outcome of a governance process, such as an approved vote or mandate.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/GovernanceDecision</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-GovernanceProcess">
+                    <td>Governance process</td>
+                    <td>hedera:GovernanceProcess</td>
+                    <td><span class="pill">hedera:Process</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Process through which councils or committees evaluate and ratify network decisions.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/GovernanceProcess</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-HieroConsensusLayer">
+                    <td>Hiero consensus layer</td>
+                    <td>hedera:HieroConsensusLayer</td>
+                    <td><span class="pill">hedera:HieroLayer</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Hiero layer responsible for ordering transactions and coordinating validator sets.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/HieroConsensusLayer</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-HieroExecutionLayer">
+                    <td>Hiero execution layer</td>
+                    <td>hedera:HieroExecutionLayer</td>
+                    <td><span class="pill">hedera:HieroLayer</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Hiero layer executing ordered transactions and maintaining state commitments.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/HieroExecutionLayer</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-HieroLayer">
+                    <td>Hiero layer</td>
+                    <td>hedera:HieroLayer</td>
+                    <td><span class="pill">hedera:Network</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Logical component of the Hiero architecture (consensus, execution, or service layer).</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/HieroLayer</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-HieroServiceLayer">
+                    <td>Hiero service layer</td>
+                    <td>hedera:HieroServiceLayer</td>
+                    <td><span class="pill">hedera:HieroLayer</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Hiero layer exposing Hedera services (tokens, consensus topics, contracts) to applications.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/HieroServiceLayer</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-HieroShard">
+                    <td>Hiero shard</td>
+                    <td>hedera:HieroShard</td>
+                    <td><span class="pill">hedera:Network</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Network partition within Hiero that localises consensus and execution responsibilities.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/HieroShard</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-KeyList">
+                    <td>Key list</td>
+                    <td>hedera:KeyList</td>
+                    <td><span class="pill">hedera:AccountKey</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Composite key structure enforcing threshold or multi-signature requirements.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/KeyList</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-MirrorDataset">
+                    <td>Mirror dataset</td>
+                    <td>hedera:MirrorDataset</td>
+                    <td><span class="pill">hedera:Artefact</span><span class="pill">dcat:Dataset</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Dataset published by a mirror node exposing consensus records or account state.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/MirrorDataset</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-MirrorExportPhase">
+                    <td>Mirror export phase</td>
+                    <td>hedera:MirrorExportPhase</td>
+                    <td><span class="pill">hedera:TransactionPhase</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Phase where consensus and balance data are exported to mirror nodes for querying.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/MirrorExportPhase</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-MirrorNode">
+                    <td>Mirror node</td>
+                    <td>hedera:MirrorNode</td>
+                    <td><span class="pill">hedera:Node</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Data replication node exposing consensus history via REST and gRPC APIs.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/MirrorNode</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-Network">
+                    <td>Network</td>
+                    <td>hedera:Network</td>
+                    <td><span class="pill">hedera:Actor</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> A distributed environment (e.g., mainnet, testnet, shard) that provides Hedera services.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/Network</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-Node">
+                    <td>Node</td>
+                    <td>hedera:Node</td>
+                    <td><span class="pill">hedera:Actor</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Operational actor (consensus or mirror) providing network infrastructure.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/Node</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-Process">
+                    <td>Process</td>
+                    <td>hedera:Process</td>
+                    <td><span class="pill">hedera:Concept</span><span class="pill">prov:Activity</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Coordinated activity that changes network state, such as transaction execution or governance voting.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/Process</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-PublicKey">
+                    <td>Public key</td>
+                    <td>hedera:PublicKey</td>
+                    <td><span class="pill">hedera:AccountKey</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Individual Ed25519 or ECDSA key associated with accounts, contracts, and services.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/PublicKey</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-Role">
+                    <td>Role</td>
+                    <td>hedera:Role</td>
+                    <td><span class="pill">hedera:Concept</span><span class="pill">prov:Role</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Responsibility or capacity that an actor can perform within the network.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/Role</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-Service">
+                    <td>Service</td>
+                    <td>hedera:Service</td>
+                    <td><span class="pill">hedera:Concept</span><span class="pill">schema1:Service</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> A capability offered by the Hedera network such as consensus, token management, or smart contract execution.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/Service</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-StakingEvent">
+                    <td>Staking event</td>
+                    <td>hedera:StakingEvent</td>
+                    <td><span class="pill">hedera:Event</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Event recording a staking action or reward distribution.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/StakingEvent</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-StakingProcess">
+                    <td>Staking process</td>
+                    <td>hedera:StakingProcess</td>
+                    <td><span class="pill">hedera:Process</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Process that binds accounts to validator nodes and accrues staking rewards.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/StakingProcess</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-ThresholdKey">
+                    <td>Threshold key</td>
+                    <td>hedera:ThresholdKey</td>
+                    <td><span class="pill">hedera:AccountKey</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Key arrangement requiring a subset of signatures out of a larger list to authorise an action.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/ThresholdKey</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-Transaction">
+                    <td>Transaction</td>
+                    <td>hedera:Transaction</td>
+                    <td><span class="pill">hedera:Artefact</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Signed payload submitted to the Hedera network that changes ledger state upon execution.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/Transaction</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-TransactionExecutionPhase">
+                    <td>Transaction execution phase</td>
+                    <td>hedera:TransactionExecutionPhase</td>
+                    <td><span class="pill">hedera:TransactionPhase</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Phase performing business logic and state transitions for the ordered transaction.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/TransactionExecutionPhase</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-TransactionPhase">
+                    <td>Transaction phase</td>
+                    <td>hedera:TransactionPhase</td>
+                    <td><span class="pill">hedera:Process</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Segment of the transaction lifecycle (submission, consensus, execution, export).</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/TransactionPhase</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-TransactionRecord">
+                    <td>Transaction record</td>
+                    <td>hedera:TransactionRecord</td>
+                    <td><span class="pill">hedera:Event</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Structured record capturing the result of a processed transaction.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/TransactionRecord</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-TransactionSubmission">
+                    <td>Transaction submission</td>
+                    <td>hedera:TransactionSubmission</td>
+                    <td><span class="pill">hedera:TransactionPhase</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Phase where a client signs and submits the transaction to a node.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/TransactionSubmission</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-Validator">
+                    <td>Validator</td>
+                    <td>hedera:Validator</td>
+                    <td><span class="pill">hedera:Actor</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Node operator that participates in consensus or execution for Hedera or Hiero networks.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/Validator</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-ValidatorOnboardingProcess">
+                    <td>Validator onboarding process</td>
+                    <td>hedera:ValidatorOnboardingProcess</td>
+                    <td><span class="pill">hedera:GovernanceProcess</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Governance process that evaluates, approves, and activates validator participants.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/ValidatorOnboardingProcess</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-VoteEvent">
+                    <td>Vote event</td>
+                    <td>hedera:VoteEvent</td>
+                    <td><span class="pill">hedera:GovernanceDecision</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Governance decision capturing the voting record that authorises a change.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/VoteEvent</div>
+                    </td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </section>
+
+    <section class="section">
+        <h2>Properties (38)</h2>
+        <table>
+            <thead><tr><th>Label</th><th>QName</th><th>Kind</th><th>Domain</th><th>Range</th><th>Notes</th></tr></thead>
+            <tbody>
+            
+                <tr id="prop-hedera-consumesArtefact">
+                    <td>consumes artefact</td>
+                    <td>hedera:consumesArtefact</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:Service</span></td>
+                    <td><span class="pill">hedera:Artefact</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/consumesArtefact</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-declinesStakingRewards">
+                    <td>declines staking rewards</td>
+                    <td>hedera:declinesStakingRewards</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:Account</span></td>
+                    <td><span class="pill">xsd:boolean</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/declinesStakingRewards</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-exposedOn">
+                    <td>exposed on</td>
+                    <td>hedera:exposedOn</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:Service</span></td>
+                    <td><span class="pill">hedera:Network</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/exposedOn</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-governs">
+                    <td>governs</td>
+                    <td>hedera:governs</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:GovernanceBody</span></td>
+                    <td><span class="pill">hedera:Network</span></td>
+                    <td class="small">
+                        
+                        <div><strong>SubProperty Of:</strong> <span class="pill">prov:influenced</span></div>
+                        <div><strong>Inverse Of:</strong> <span class="pill">hedera:isGovernedBy</span></div>
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/governs</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasAccount">
+                    <td>has account</td>
+                    <td>hedera:hasAccount</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:Actor</span></td>
+                    <td><span class="pill">hedera:Account</span></td>
+                    <td class="small">
+                        
+                        
+                        <div><strong>Inverse Of:</strong> <span class="pill">hedera:isAccountOf</span></div>
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasAccount</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasAccountAlias">
+                    <td>has account alias</td>
+                    <td>hedera:hasAccountAlias</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:Account</span></td>
+                    <td><span class="pill">xsd:string</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasAccountAlias</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasAccountId">
+                    <td>has account ID</td>
+                    <td>hedera:hasAccountId</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:Account</span></td>
+                    <td><span class="pill">xsd:string</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasAccountId</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasLayer">
+                    <td>has layer</td>
+                    <td>hedera:hasLayer</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:Network</span></td>
+                    <td><span class="pill">hedera:HieroLayer</span></td>
+                    <td class="small">
+                        
+                        
+                        <div><strong>Inverse Of:</strong> <span class="pill">hedera:isLayerOf</span></div>
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasLayer</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasMandate">
+                    <td>has mandate</td>
+                    <td>hedera:hasMandate</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:GovernanceBody</span></td>
+                    <td><span class="pill">xsd:string</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasMandate</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasParticipant">
+                    <td>has participant</td>
+                    <td>hedera:hasParticipant</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:Process</span></td>
+                    <td><span class="pill">hedera:Actor</span></td>
+                    <td class="small">
+                        
+                        <div><strong>SubProperty Of:</strong> <span class="pill">prov:wasAssociatedWith</span></div>
+                        <div><strong>Inverse Of:</strong> <span class="pill">hedera:participatesIn</span></div>
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasParticipant</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasPhaseOrder">
+                    <td>has phase order</td>
+                    <td>hedera:hasPhaseOrder</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:TransactionPhase</span></td>
+                    <td><span class="pill">xsd:integer</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasPhaseOrder</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasRecord">
+                    <td>has record</td>
+                    <td>hedera:hasRecord</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:Transaction</span></td>
+                    <td><span class="pill">hedera:TransactionRecord</span></td>
+                    <td class="small">
+                        
+                        <div><strong>SubProperty Of:</strong> <span class="pill">prov:wasAttributedTo</span></div>
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasRecord</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasRole">
+                    <td>has role</td>
+                    <td>hedera:hasRole</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:Actor</span></td>
+                    <td><span class="pill">hedera:Role</span></td>
+                    <td class="small">
+                        
+                        <div><strong>SubProperty Of:</strong> <span class="pill">prov:hadRole</span></div>
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasRole</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasShard">
+                    <td>has shard</td>
+                    <td>hedera:hasShard</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:Network</span></td>
+                    <td><span class="pill">hedera:HieroShard</span></td>
+                    <td class="small">
+                        
+                        
+                        <div><strong>Inverse Of:</strong> <span class="pill">hedera:isShardOf</span></div>
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasShard</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasTransactionPhase">
+                    <td>has transaction phase</td>
+                    <td>hedera:hasTransactionPhase</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:Transaction</span></td>
+                    <td><span class="pill">hedera:TransactionPhase</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasTransactionPhase</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-isAccountOf">
+                    <td>is account of</td>
+                    <td>hedera:isAccountOf</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:Account</span></td>
+                    <td><span class="pill">hedera:Actor</span></td>
+                    <td class="small">
+                        
+                        
+                        <div><strong>Inverse Of:</strong> <span class="pill">hedera:hasAccount</span></div>
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/isAccountOf</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-isGovernedBy">
+                    <td>is governed by</td>
+                    <td>hedera:isGovernedBy</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:Network</span></td>
+                    <td><span class="pill">hedera:GovernanceBody</span></td>
+                    <td class="small">
+                        
+                        <div><strong>SubProperty Of:</strong> <span class="pill">prov:wasInfluencedBy</span></div>
+                        <div><strong>Inverse Of:</strong> <span class="pill">hedera:governs</span></div>
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/isGovernedBy</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-isLayerOf">
+                    <td>is layer of</td>
+                    <td>hedera:isLayerOf</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:HieroLayer</span></td>
+                    <td><span class="pill">hedera:Network</span></td>
+                    <td class="small">
+                        
+                        
+                        <div><strong>Inverse Of:</strong> <span class="pill">hedera:hasLayer</span></div>
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/isLayerOf</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-isOperatedBy">
+                    <td>is operated by</td>
+                    <td>hedera:isOperatedBy</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:Service</span></td>
+                    <td><span class="pill">hedera:Actor</span></td>
+                    <td class="small">
+                        
+                        <div><strong>SubProperty Of:</strong> <span class="pill">prov:wasAssociatedWith</span></div>
+                        <div><strong>Inverse Of:</strong> <span class="pill">hedera:operatesService</span></div>
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/isOperatedBy</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-isPublishedBy">
+                    <td>is published by</td>
+                    <td>hedera:isPublishedBy</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:MirrorDataset</span></td>
+                    <td><span class="pill">hedera:MirrorNode</span></td>
+                    <td class="small">
+                        
+                        
+                        <div><strong>Inverse Of:</strong> <span class="pill">hedera:publishesDataset</span></div>
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/isPublishedBy</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-isShardOf">
+                    <td>is shard of</td>
+                    <td>hedera:isShardOf</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:HieroShard</span></td>
+                    <td><span class="pill">hedera:Network</span></td>
+                    <td class="small">
+                        
+                        
+                        <div><strong>Inverse Of:</strong> <span class="pill">hedera:hasShard</span></div>
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/isShardOf</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-issuesDecision">
+                    <td>issues decision</td>
+                    <td>hedera:issuesDecision</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:GovernanceProcess</span></td>
+                    <td><span class="pill">hedera:GovernanceDecision</span></td>
+                    <td class="small">
+                        
+                        <div><strong>SubProperty Of:</strong> <span class="pill">hedera:producesEvent</span></div>
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/issuesDecision</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-managesArtefact">
+                    <td>manages artefact</td>
+                    <td>hedera:managesArtefact</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:Service</span></td>
+                    <td><span class="pill">hedera:Artefact</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/managesArtefact</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-occursOn">
+                    <td>occurs on</td>
+                    <td>hedera:occursOn</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:Process</span></td>
+                    <td><span class="pill">hedera:Network</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/occursOn</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-operatesService">
+                    <td>operates service</td>
+                    <td>hedera:operatesService</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:Actor</span></td>
+                    <td><span class="pill">hedera:Service</span></td>
+                    <td class="small">
+                        
+                        
+                        <div><strong>Inverse Of:</strong> <span class="pill">hedera:isOperatedBy</span></div>
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/operatesService</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-participatesIn">
+                    <td>participates in</td>
+                    <td>hedera:participatesIn</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:Actor</span></td>
+                    <td><span class="pill">hedera:Process</span></td>
+                    <td class="small">
+                        
+                        
+                        <div><strong>Inverse Of:</strong> <span class="pill">hedera:hasParticipant</span></div>
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/participatesIn</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-precedesPhase">
+                    <td>precedes phase</td>
+                    <td>hedera:precedesPhase</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:TransactionPhase</span></td>
+                    <td><span class="pill">hedera:TransactionPhase</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/precedesPhase</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-producesEvent">
+                    <td>produces event</td>
+                    <td>hedera:producesEvent</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:Process</span></td>
+                    <td><span class="pill">hedera:Event</span></td>
+                    <td class="small">
+                        
+                        <div><strong>SubProperty Of:</strong> <span class="pill">prov:generated</span></div>
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/producesEvent</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-producesRecord">
+                    <td>produces record</td>
+                    <td>hedera:producesRecord</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:TransactionPhase</span></td>
+                    <td><span class="pill">hedera:TransactionRecord</span></td>
+                    <td class="small">
+                        
+                        <div><strong>SubProperty Of:</strong> <span class="pill">hedera:producesEvent</span></div>
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/producesRecord</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-publishesDataset">
+                    <td>publishes dataset</td>
+                    <td>hedera:publishesDataset</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:MirrorNode</span></td>
+                    <td><span class="pill">hedera:MirrorDataset</span></td>
+                    <td class="small">
+                        
+                        
+                        <div><strong>Inverse Of:</strong> <span class="pill">hedera:isPublishedBy</span></div>
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/publishesDataset</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-recordsStake">
+                    <td>records stake</td>
+                    <td>hedera:recordsStake</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:StakingProcess</span></td>
+                    <td><span class="pill">hedera:StakingEvent</span></td>
+                    <td class="small">
+                        
+                        <div><strong>SubProperty Of:</strong> <span class="pill">hedera:producesEvent</span></div>
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/recordsStake</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-registeredIn">
+                    <td>registered in</td>
+                    <td>hedera:registeredIn</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:Artefact</span></td>
+                    <td><span class="pill">hedera:Network</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/registeredIn</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-securedBy">
+                    <td>secured by</td>
+                    <td>hedera:securedBy</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:Account</span></td>
+                    <td><span class="pill">hedera:AccountKey</span></td>
+                    <td class="small">
+                        
+                        
+                        <div><strong>Inverse Of:</strong> <span class="pill">hedera:securesAccount</span></div>
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/securedBy</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-securesAccount">
+                    <td>secures account</td>
+                    <td>hedera:securesAccount</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:AccountKey</span></td>
+                    <td><span class="pill">hedera:Account</span></td>
+                    <td class="small">
+                        
+                        
+                        <div><strong>Inverse Of:</strong> <span class="pill">hedera:securedBy</span></div>
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/securesAccount</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-stakesTo">
+                    <td>stakes to</td>
+                    <td>hedera:stakesTo</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:Account</span></td>
+                    <td><span class="pill">hedera:Validator</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/stakesTo</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-submittedBy">
+                    <td>submitted by</td>
+                    <td>hedera:submittedBy</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:Transaction</span></td>
+                    <td><span class="pill">hedera:Account</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/submittedBy</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-targetsValidator">
+                    <td>targets validator</td>
+                    <td>hedera:targetsValidator</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:ValidatorOnboardingProcess</span></td>
+                    <td><span class="pill">hedera:Validator</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/targetsValidator</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-virtualisesService">
+                    <td>virtualises service</td>
+                    <td>hedera:virtualisesService</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:HieroLayer</span></td>
+                    <td><span class="pill">hedera:Service</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/virtualisesService</div>
+                    </td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>

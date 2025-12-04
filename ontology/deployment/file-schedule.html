@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hedera File and Schedule Services module – Hashgraph Ontology</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2rem auto; max-width: 1100px; line-height: 1.6; }
+        h1, h2, h3 { color: #1f2937; }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        th, td { padding: 0.5rem; border: 1px solid #e5e7eb; vertical-align: top; }
+        th { background: #f3f4f6; text-align: left; }
+        .meta { color: #4b5563; }
+        .pill { display: inline-block; padding: 0.2rem 0.5rem; margin: 0.1rem; background: #e5e7eb; border-radius: 6px; }
+        .small { font-size: 0.9rem; }
+        .section { margin-top: 2rem; }
+        a { color: #0f766e; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hedera File and Schedule Services module</h1>
+        <div class="meta">IRI: <a href="https://hashgraphontology.xyx/hedera/file-schedule">https://hashgraphontology.xyx/hedera/file-schedule</a></div>
+        <p>Vocabulary for modelling Hedera File Service artefacts and Scheduled Transaction lifecycle states.</p>
+        <p class="meta">Source file: file-schedule.ttl</p>
+    </header>
+
+    <section class="section">
+        <h2>Prefixes</h2>
+        <table>
+            <thead><tr><th>Prefix</th><th>Namespace</th></tr></thead>
+            <tbody>
+            
+                <tr><td>dcterms</td><td>http://purl.org/dc/terms/</td></tr>
+            
+                <tr><td>hedera</td><td>https://hashgraphontology.xyx/hedera/core/</td></tr>
+            
+                <tr><td>ns1</td><td>https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/</td></tr>
+            
+                <tr><td>ns2</td><td>https://hashgraphontology.xyx/hedera/</td></tr>
+            
+                <tr><td>ns3</td><td>https://docs.hedera.com/hedera/core-concepts/file-service/</td></tr>
+            
+                <tr><td>ns4</td><td>https://docs.hedera.com/hedera/core-concepts/</td></tr>
+            
+                <tr><td>owl</td><td>http://www.w3.org/2002/07/owl#</td></tr>
+            
+                <tr><td>prov</td><td>http://www.w3.org/ns/prov#</td></tr>
+            
+                <tr><td>rdf</td><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#</td></tr>
+            
+                <tr><td>rdfs</td><td>http://www.w3.org/2000/01/rdf-schema#</td></tr>
+            
+                <tr><td>skos</td><td>http://www.w3.org/2004/02/skos/core#</td></tr>
+            
+                <tr><td>xsd</td><td>http://www.w3.org/2001/XMLSchema#</td></tr>
+            
+            </tbody>
+        </table>
+    </section>
+
+    <section class="section">
+        <h2>Classes (10)</h2>
+        <table>
+            <thead><tr><th>Label</th><th>QName</th><th>Subclass Of</th><th>Notes</th></tr></thead>
+            <tbody>
+            
+                <tr id="cls-hedera-File">
+                    <td>File</td>
+                    <td>hedera:File</td>
+                    <td><span class="pill">hedera:Artefact</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> On-ledger file storing bytecode, configuration, or metadata referenced by other services.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/File</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-FileContent">
+                    <td>File content</td>
+                    <td>hedera:FileContent</td>
+                    <td><span class="pill">hedera:Artefact</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Payload stored within a File Service file such as contract bytecode or fee schedules.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/FileContent</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-FileKey">
+                    <td>File key</td>
+                    <td>hedera:FileKey</td>
+                    <td><span class="pill">hedera:AccountKey</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Key that authorises file creation, update, and deletion actions.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/FileKey</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-FileService">
+                    <td>File Service</td>
+                    <td>hedera:FileService</td>
+                    <td><span class="pill">hedera:Service</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Network service that stores bytecode, fee schedules, and other artefacts under key-controlled files.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/FileService</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-FileUpdate">
+                    <td>File update</td>
+                    <td>hedera:FileUpdate</td>
+                    <td><span class="pill">hedera:Process</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Process that amends file contents or metadata under the control of file keys.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/FileUpdate</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-PendingSchedule">
+                    <td>Pending schedule</td>
+                    <td>hedera:PendingSchedule</td>
+                    <td><span class="pill">hedera:ScheduledTransaction</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Scheduled transaction that has not yet gathered sufficient signatures.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/PendingSchedule</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-ScheduleExecution">
+                    <td>Schedule execution</td>
+                    <td>hedera:ScheduleExecution</td>
+                    <td><span class="pill">hedera:Process</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Process that executes a scheduled transaction once all required signatures are collected.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/ScheduleExecution</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-ScheduleService">
+                    <td>Schedule Service</td>
+                    <td>hedera:ScheduleService</td>
+                    <td><span class="pill">hedera:Service</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Service that queues transactions for deferred execution once signature requirements are met.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/ScheduleService</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-ScheduleSignature">
+                    <td>Schedule signature</td>
+                    <td>hedera:ScheduleSignature</td>
+                    <td><span class="pill">hedera:Artefact</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Signature provided by an account approving a scheduled transaction.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/ScheduleSignature</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-ScheduledTransaction">
+                    <td>Scheduled transaction</td>
+                    <td>hedera:ScheduledTransaction</td>
+                    <td><span class="pill">hedera:Artefact</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Deferred transaction waiting for a quorum of signatures before execution.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/ScheduledTransaction</div>
+                    </td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </section>
+
+    <section class="section">
+        <h2>Properties (20)</h2>
+        <table>
+            <thead><tr><th>Label</th><th>QName</th><th>Kind</th><th>Domain</th><th>Range</th><th>Notes</th></tr></thead>
+            <tbody>
+            
+                <tr id="prop-hedera-expiresWith">
+                    <td>expires with</td>
+                    <td>hedera:expiresWith</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:ScheduledTransaction</span></td>
+                    <td><span class="pill">hedera:Event</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/expiresWith</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasCollectedSignature">
+                    <td>has collected signature</td>
+                    <td>hedera:hasCollectedSignature</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:ScheduledTransaction</span></td>
+                    <td><span class="pill">hedera:ScheduleSignature</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasCollectedSignature</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasCollectedSignatureCount">
+                    <td>has collected signature count</td>
+                    <td>hedera:hasCollectedSignatureCount</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:ScheduledTransaction</span></td>
+                    <td><span class="pill">xsd:integer</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasCollectedSignatureCount</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasExecution">
+                    <td>has execution</td>
+                    <td>hedera:hasExecution</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:ScheduledTransaction</span></td>
+                    <td><span class="pill">hedera:ScheduleExecution</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasExecution</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasFileContent">
+                    <td>has file content</td>
+                    <td>hedera:hasFileContent</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:File</span></td>
+                    <td><span class="pill">hedera:FileContent</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasFileContent</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasFileId">
+                    <td>has file id</td>
+                    <td>hedera:hasFileId</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:File</span></td>
+                    <td><span class="pill">xsd:string</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasFileId</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasFileKey">
+                    <td>has file key</td>
+                    <td>hedera:hasFileKey</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:File</span></td>
+                    <td><span class="pill">hedera:FileKey</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasFileKey</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasFileMemo">
+                    <td>has file memo</td>
+                    <td>hedera:hasFileMemo</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:File</span></td>
+                    <td><span class="pill">xsd:string</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasFileMemo</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasFileSize">
+                    <td>has file size</td>
+                    <td>hedera:hasFileSize</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:File</span></td>
+                    <td><span class="pill">xsd:integer</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasFileSize</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasRequiredSignatureCount">
+                    <td>has required signature count</td>
+                    <td>hedera:hasRequiredSignatureCount</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:ScheduledTransaction</span></td>
+                    <td><span class="pill">xsd:integer</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasRequiredSignatureCount</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasScheduleExpiration">
+                    <td>has schedule expiration</td>
+                    <td>hedera:hasScheduleExpiration</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:ScheduledTransaction</span></td>
+                    <td><span class="pill">xsd:dateTime</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasScheduleExpiration</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasScheduleId">
+                    <td>has schedule id</td>
+                    <td>hedera:hasScheduleId</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:ScheduledTransaction</span></td>
+                    <td><span class="pill">xsd:string</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasScheduleId</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasScheduleMemo">
+                    <td>has schedule memo</td>
+                    <td>hedera:hasScheduleMemo</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:ScheduledTransaction</span></td>
+                    <td><span class="pill">xsd:string</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasScheduleMemo</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasSchedulePayer">
+                    <td>has schedule payer</td>
+                    <td>hedera:hasSchedulePayer</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:ScheduledTransaction</span></td>
+                    <td><span class="pill">xsd:string</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasSchedulePayer</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasScheduleStatus">
+                    <td>has schedule status</td>
+                    <td>hedera:hasScheduleStatus</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:ScheduledTransaction</span></td>
+                    <td><span class="pill">xsd:string</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasScheduleStatus</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-performedBy">
+                    <td>performed by</td>
+                    <td>hedera:performedBy</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:FileUpdate</span></td>
+                    <td><span class="pill">hedera:Account</span></td>
+                    <td class="small">
+                        
+                        <div><strong>SubProperty Of:</strong> <span class="pill">prov:wasAssociatedWith</span></div>
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/performedBy</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-requiresSignature">
+                    <td>requires signature</td>
+                    <td>hedera:requiresSignature</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:ScheduledTransaction</span></td>
+                    <td><span class="pill">hedera:Account</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/requiresSignature</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-schedulesTransaction">
+                    <td>schedules transaction</td>
+                    <td>hedera:schedulesTransaction</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:ScheduledTransaction</span></td>
+                    <td><span class="pill">hedera:Process</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/schedulesTransaction</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-storesArtefact">
+                    <td>stores artefact</td>
+                    <td>hedera:storesArtefact</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:File</span></td>
+                    <td><span class="pill">hedera:Artefact</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/storesArtefact</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-updatesFile">
+                    <td>updates file</td>
+                    <td>hedera:updatesFile</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:FileUpdate</span></td>
+                    <td><span class="pill">hedera:File</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/updatesFile</div>
+                    </td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>

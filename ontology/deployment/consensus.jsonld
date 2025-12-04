@@ -1,0 +1,980 @@
+[
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/hasEndpointPort",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/ConsensusNodeEndpoint"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has endpoint port"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Port number for a consensus node endpoint."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/CouncilCommittee",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Council committee"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/GovernanceBody"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Sub-structure of the Hedera Governing Council that manages delegated mandates such as finance or membership reviews."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://hedera.com/council"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/hasMessageContent",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/TopicMessage"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has message content"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Payload content of a topic message."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/isMirroredBy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/ConsensusRecordFile"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is mirrored by"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/MirrorDataset"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Indicates which mirror dataset republishes a record file."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/supportedBy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/Process"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "supported by"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/GovernanceDecision"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Associates a process with the governance decision or mandate that authorises it."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/stewardsProcess",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/GovernanceBody"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "stewards process"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/GovernanceProcess"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/participatesIn"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/hasSteward"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Identifies the governance process that a council body is accountable for overseeing."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/includesMessage",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/ConsensusRecordFile"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "includes message"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/TopicMessage"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Associates a record file with the topic messages it contains."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/hasSequenceNumber",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/TopicMessage"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has sequence number"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Consensus-assigned sequence number for a topic message."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/TopicSubmitKey",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Topic submit key"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/AccountKey"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Key that governs which actors may post messages to a consensus topic."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/permissions"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/TopicMessage",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Topic message"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/Event"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Individual message submitted to a consensus topic and assigned a consensus timestamp."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/message-flows"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/hasSteward",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/GovernanceProcess"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has steward"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/GovernanceBody"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/hasParticipant"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/stewardsProcess"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Links a governance process to the council body that stewards the decision."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/targetsTopic",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/Transaction"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "targets topic"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/ConsensusTopic"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Links a transaction to the consensus topic it configures or submits to."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/ConsensusNodeEndpoint",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Consensus node endpoint"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/Artefact"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Network endpoint (IP, port, TLS configuration) exposed by a consensus node for client submissions."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts/staking/nodes"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/hasSubmitKey",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/ConsensusTopic"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has submit key"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/TopicSubmitKey"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/hasTopicKey"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Identifies the submit key required for message submission."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/isSubBodyOf",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/GovernanceBody"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is sub-body of"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/GovernanceBody"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Captures committee hierarchies within the Hedera Governing Council."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/hasEndpointAddress",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/ConsensusNodeEndpoint"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has endpoint address"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Network address for a consensus node endpoint."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/ConsensusRecordFile",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Consensus record file"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/Artefact"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Exported record file containing ordered transactions, consensus timestamps, and running hashes."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/mirror-node/architecture/record-and-balance-files"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/hasTopicKey",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/ConsensusTopic"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has topic key"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/AccountKey"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Connects a consensus topic to its configured keys."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/TopicAdminKey",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Topic admin key"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/AccountKey"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Key that authorises topic-level administration such as update, delete, and re-key operations."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/permissions"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/hasAdminKey",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/ConsensusTopic"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has admin key"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/TopicAdminKey"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/hasTopicKey"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Identifies the admin key responsible for topic lifecycle changes."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/assignsRole",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/RoleAssignment"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "assigns role"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/Role"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Indicates the role granted by a role assignment process."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/ConsensusTopic",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Consensus topic"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/Artefact"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Ordered message channel configured with administrator, submit, and auto-renew keys."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/topics"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/emitsRecordFile",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/ConsensusService"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "emits record file"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/ConsensusRecordFile"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Indicates that the service produces consensus record files for downstream consumption."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/ValidatorOnboardingSteward",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Validator onboarding steward"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/Role"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Role fulfilled by council members who oversee validator onboarding approvals and requirements."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://hips.hedera.com/hip/hip-840"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/ConsensusService",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Consensus Service"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/Service"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Operational service that orders transactions, emits consensus timestamps, and manages topics."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/consensus",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Ontology"
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2024-09-20"
+      }
+    ],
+    "http://purl.org/dc/terms/creator": [
+      {
+        "@language": "en",
+        "@value": "Bhash Ontology Working Group"
+      }
+    ],
+    "http://purl.org/dc/terms/description": [
+      {
+        "@language": "en",
+        "@value": "Service-specific vocabulary for modelling Hedera Consensus Service topics, messages, and validator interfaces."
+      }
+    ],
+    "http://purl.org/dc/terms/modified": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2024-09-20"
+      }
+    ],
+    "http://purl.org/dc/terms/title": [
+      {
+        "@language": "en",
+        "@value": "Hedera Consensus Service module"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#imports": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#versionInfo": [
+      {
+        "@value": "0.1.0-dev"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#editorialNote": [
+      {
+        "@language": "en",
+        "@value": "Phase 3 sprint scaffold capturing core Consensus Service artefacts required for validator onboarding and topic governance competency questions."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/RoleAssignment",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Role assignment"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/Process"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Process that confers a specific governance or operational role to an actor."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts/governing-the-network#council-committees"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/ValidatorOnboardingCommittee",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Validator onboarding committee"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/CouncilCommittee"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Council committee that stewards validator onboarding cohorts and associated policy decisions."
+      }
+    ],
+    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+      {
+        "@id": "https://raw.githubusercontent.com/hashgraph/hedera-docs/main/core-concepts/staking/staking.md#phase-iii-staking-rewards-program-launch"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/hasMessageSize",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/TopicMessage"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has message size"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Size in bytes of the submitted topic message."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/hasRunningHash",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/ConsensusRecordFile"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has running hash"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#hexBinary"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Running hash stored within a consensus record file."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/deliversMessage",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/ConsensusService"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "delivers message"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/TopicMessage"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Links the Consensus Service to messages that achieved consensus ordering."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/hasTopic",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/ConsensusService"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has topic"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/ConsensusTopic"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Associates the Consensus Service with the topics it manages."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyx/hedera/core/exposesEndpoint",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/ConsensusNode"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "exposes endpoint"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyx/hedera/core/ConsensusNodeEndpoint"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Relates a consensus node to the endpoint clients use for gRPC/SDK submissions."
+      }
+    ]
+  }
+]

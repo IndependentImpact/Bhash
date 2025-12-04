@@ -1,0 +1,659 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix hedera: <https://hashgraphontology.xyx/hedera/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema1: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://hashgraphontology.xyx/hedera/core> a owl:Ontology ;
+    dcterms:created "2024-05-02"^^xsd:date ;
+    dcterms:creator "Bhash Ontology Working Group"@en ;
+    dcterms:description "Upper-level classes and properties capturing shared Hedera and Hiero network concepts, including identity, governance, transactions, and data export semantics."@en ;
+    dcterms:license <https://www.apache.org/licenses/LICENSE-2.0> ;
+    dcterms:modified "2025-09-16"^^xsd:date ;
+    dcterms:source <https://docs.hedera.com/hedera>,
+        <https://docs.hedera.com/hedera/core-concepts/transactions/transaction-lifecycle>,
+        <https://docs.hedera.com/hiero> ;
+    dcterms:title "Bhash Core Ontology"@en ;
+    rdfs:seeAlso <https://hips.hedera.com/> ;
+    owl:imports <https://hashgraphontology.xyx/hedera/imports/dcat>,
+        <https://hashgraphontology.xyx/hedera/imports/prov> ;
+    owl:versionIRI hedera:0.1.0-dev ;
+    owl:versionInfo "0.1.0-dev" ;
+    skos:editorialNote "Phase 2 expands the scaffold with account, key, staking, transaction lifecycle, and Hiero overlay abstractions reused by downstream service modules."@en .
+
+hedera:ConsensusFinalityPhase a owl:Class ;
+    rdfs:label "Consensus finality phase"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty hedera:hasParticipant ;
+            owl:someValuesFrom hedera:Validator ],
+        [ a owl:Restriction ;
+            owl:onProperty hedera:producesRecord ;
+            owl:someValuesFrom hedera:TransactionRecord ],
+        hedera:TransactionPhase ;
+    skos:definition "Phase in which consensus nodes order the transaction and assign a consensus timestamp."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/transactions/transaction-lifecycle#consensus> .
+
+hedera:ConsensusNode a owl:Class ;
+    rdfs:label "Consensus node"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty hedera:hasAccount ;
+            owl:someValuesFrom hedera:Account ],
+        [ a owl:Restriction ;
+            owl:onProperty hedera:participatesIn ;
+            owl:someValuesFrom hedera:ValidatorOnboardingProcess ],
+        hedera:Node,
+        hedera:Validator ;
+    skos:definition "Validator node participating in Hedera consensus ordering and staking."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/network/nodes/mainnet-nodes> .
+
+hedera:HieroConsensusLayer a owl:Class ;
+    rdfs:label "Hiero consensus layer"@en ;
+    rdfs:subClassOf hedera:HieroLayer ;
+    skos:definition "Hiero layer responsible for ordering transactions and coordinating validator sets."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hiero> .
+
+hedera:HieroExecutionLayer a owl:Class ;
+    rdfs:label "Hiero execution layer"@en ;
+    rdfs:subClassOf hedera:HieroLayer ;
+    skos:definition "Hiero layer executing ordered transactions and maintaining state commitments."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hiero> .
+
+hedera:HieroServiceLayer a owl:Class ;
+    rdfs:label "Hiero service layer"@en ;
+    rdfs:subClassOf hedera:HieroLayer ;
+    skos:definition "Hiero layer exposing Hedera services (tokens, consensus topics, contracts) to applications."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hiero> .
+
+hedera:KeyList a owl:Class ;
+    rdfs:label "Key list"@en ;
+    rdfs:subClassOf hedera:AccountKey ;
+    skos:definition "Composite key structure enforcing threshold or multi-signature requirements."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/accounts/account-properties#keys> .
+
+hedera:MirrorExportPhase a owl:Class ;
+    rdfs:label "Mirror export phase"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty hedera:hasParticipant ;
+            owl:someValuesFrom hedera:MirrorNode ],
+        [ a owl:Restriction ;
+            owl:onProperty hedera:producesRecord ;
+            owl:someValuesFrom hedera:TransactionRecord ],
+        hedera:TransactionPhase ;
+    skos:definition "Phase where consensus and balance data are exported to mirror nodes for querying."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/mirror-node/architecture/record-and-balance-files> .
+
+hedera:PublicKey a owl:Class ;
+    rdfs:label "Public key"@en ;
+    rdfs:subClassOf hedera:AccountKey ;
+    skos:definition "Individual Ed25519 or ECDSA key associated with accounts, contracts, and services."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/accounts/cryptographic-keys> .
+
+hedera:ThresholdKey a owl:Class ;
+    rdfs:label "Threshold key"@en ;
+    rdfs:subClassOf hedera:AccountKey ;
+    skos:definition "Key arrangement requiring a subset of signatures out of a larger list to authorise an action."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/accounts/account-properties#keys> .
+
+hedera:TransactionExecutionPhase a owl:Class ;
+    rdfs:label "Transaction execution phase"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty hedera:hasParticipant ;
+            owl:someValuesFrom hedera:Actor ],
+        hedera:TransactionPhase ;
+    skos:definition "Phase performing business logic and state transitions for the ordered transaction."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/transactions/transaction-lifecycle#execution> .
+
+hedera:TransactionSubmission a owl:Class ;
+    rdfs:label "Transaction submission"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty hedera:hasParticipant ;
+            owl:someValuesFrom hedera:Account ],
+        [ a owl:Restriction ;
+            owl:onProperty hedera:precedesPhase ;
+            owl:someValuesFrom hedera:TransactionPhase ],
+        hedera:TransactionPhase ;
+    skos:definition "Phase where a client signs and submits the transaction to a node."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/transactions/submit-a-transaction> .
+
+hedera:VoteEvent a owl:Class ;
+    rdfs:label "Vote event"@en ;
+    rdfs:subClassOf hedera:GovernanceDecision ;
+    skos:definition "Governance decision capturing the voting record that authorises a change."@en ;
+    hedera:sourceDocument <https://hedera.com/council> .
+
+hedera:declinesStakingRewards a owl:DatatypeProperty ;
+    rdfs:label "declines staking rewards"@en ;
+    rdfs:domain hedera:Account ;
+    rdfs:range xsd:boolean ;
+    skos:definition "Boolean flag indicating the account opts out of receiving staking rewards."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/staking/stake-hbar#staking-reward-distribution> .
+
+hedera:governs a owl:ObjectProperty ;
+    rdfs:label "governs"@en ;
+    rdfs:domain hedera:GovernanceBody ;
+    rdfs:range hedera:Network ;
+    rdfs:subPropertyOf prov:influenced ;
+    owl:inverseOf hedera:isGovernedBy ;
+    skos:definition "Relates a governance body to the network scope over which it has authority."@en .
+
+hedera:hasAccountAlias a owl:DatatypeProperty ;
+    rdfs:label "has account alias"@en ;
+    rdfs:domain hedera:Account ;
+    rdfs:range xsd:string ;
+    skos:definition "Alias for the account, such as an EVM address or public key representation."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/accounts/account-alias> .
+
+hedera:hasLayer a owl:ObjectProperty ;
+    rdfs:label "has layer"@en ;
+    rdfs:domain hedera:Network ;
+    rdfs:range hedera:HieroLayer ;
+    owl:inverseOf hedera:isLayerOf ;
+    skos:definition "Associates a network with one of its Hiero layers."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hiero> .
+
+hedera:hasRole a owl:ObjectProperty ;
+    rdfs:label "has role"@en ;
+    rdfs:domain hedera:Actor ;
+    rdfs:range hedera:Role ;
+    rdfs:subPropertyOf prov:hadRole ;
+    skos:definition "Associates an actor with a functional role it performs."@en .
+
+hedera:hasShard a owl:ObjectProperty ;
+    rdfs:label "has shard"@en ;
+    rdfs:domain hedera:Network ;
+    rdfs:range hedera:HieroShard ;
+    owl:inverseOf hedera:isShardOf ;
+    skos:definition "Relates a network to a Hiero shard subdivision."@en ;
+    hedera:sourceDocument <https://hips.hedera.com/hip/hip-840> .
+
+hedera:operatesService a owl:ObjectProperty ;
+    rdfs:label "operates service"@en ;
+    rdfs:domain hedera:Actor ;
+    rdfs:range hedera:Service ;
+    owl:inverseOf hedera:isOperatedBy ;
+    skos:definition "Indicates that an actor is responsible for operating or providing a service."@en .
+
+hedera:sourceDocument a owl:AnnotationProperty ;
+    rdfs:label "source document"@en ;
+    skos:definition "Reference link to Hedera or Hiero documentation that supports an ontology element."@en .
+
+hedera:stakesTo a owl:ObjectProperty ;
+    rdfs:label "stakes to"@en ;
+    rdfs:domain hedera:Account ;
+    rdfs:range hedera:Validator ;
+    skos:definition "Denotes the validator that receives stake from an account."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/staking/stake-hbar> .
+
+hedera:Role a owl:Class ;
+    rdfs:label "Role"@en ;
+    rdfs:subClassOf prov:Role,
+        hedera:Concept ;
+    skos:definition "Responsibility or capacity that an actor can perform within the network."@en .
+
+hedera:consumesArtefact a owl:ObjectProperty ;
+    rdfs:label "consumes artefact"@en ;
+    rdfs:domain hedera:Service ;
+    rdfs:range hedera:Artefact ;
+    skos:definition "Associates a service with artefacts it reads or depends upon."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts> .
+
+hedera:exposedOn a owl:ObjectProperty ;
+    rdfs:label "exposed on"@en ;
+    rdfs:domain hedera:Service ;
+    rdfs:range hedera:Network ;
+    skos:definition "Indicates the network or shard through which a service is made available."@en .
+
+hedera:hasAccountId a owl:DatatypeProperty ;
+    rdfs:label "has account ID"@en ;
+    rdfs:domain hedera:Account ;
+    rdfs:range xsd:string ;
+    skos:definition "String identifier representing the canonical account ID (shard.realm.num)."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/accounts> .
+
+hedera:hasMandate a owl:DatatypeProperty ;
+    rdfs:label "has mandate"@en ;
+    rdfs:domain hedera:GovernanceBody ;
+    rdfs:range xsd:string ;
+    skos:definition "Textual reference to the charter, HIP, or policy that defines a governance body's authority."@en ;
+    hedera:sourceDocument <https://hedera.com/council> .
+
+hedera:hasPhaseOrder a owl:DatatypeProperty ;
+    rdfs:label "has phase order"@en ;
+    rdfs:domain hedera:TransactionPhase ;
+    rdfs:range xsd:integer ;
+    skos:definition "Ordinal index used to order transaction lifecycle phases."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/transactions/transaction-lifecycle> .
+
+hedera:hasRecord a owl:ObjectProperty ;
+    rdfs:label "has record"@en ;
+    rdfs:domain hedera:Transaction ;
+    rdfs:range hedera:TransactionRecord ;
+    rdfs:subPropertyOf prov:wasAttributedTo ;
+    skos:definition "Links a transaction to the resulting record emitted after execution."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/transactions/transaction-record> .
+
+hedera:hasTransactionPhase a owl:ObjectProperty ;
+    rdfs:label "has transaction phase"@en ;
+    rdfs:domain hedera:Transaction ;
+    rdfs:range hedera:TransactionPhase ;
+    skos:definition "Associates a transaction artefact with the lifecycle phases it traverses."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/transactions/transaction-lifecycle> .
+
+hedera:issuesDecision a owl:ObjectProperty ;
+    rdfs:label "issues decision"@en ;
+    rdfs:domain hedera:GovernanceProcess ;
+    rdfs:range hedera:GovernanceDecision ;
+    rdfs:subPropertyOf hedera:producesEvent ;
+    skos:definition "Connects a governance process to the decision it issues."@en ;
+    hedera:sourceDocument <https://hedera.com/council> .
+
+hedera:managesArtefact a owl:ObjectProperty ;
+    rdfs:label "manages artefact"@en ;
+    rdfs:domain hedera:Service ;
+    rdfs:range hedera:Artefact ;
+    skos:definition "Links a service to the artefacts whose lifecycle it controls."@en .
+
+hedera:occursOn a owl:ObjectProperty ;
+    rdfs:label "occurs on"@en ;
+    rdfs:domain hedera:Process ;
+    rdfs:range hedera:Network ;
+    skos:definition "Identifies the network context in which a process executes."@en .
+
+hedera:precedesPhase a owl:ObjectProperty ;
+    rdfs:label "precedes phase"@en ;
+    rdfs:domain hedera:TransactionPhase ;
+    rdfs:range hedera:TransactionPhase ;
+    skos:definition "Orders transaction phases within the lifecycle."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/transactions/transaction-lifecycle> .
+
+hedera:publishesDataset a owl:ObjectProperty ;
+    rdfs:label "publishes dataset"@en ;
+    rdfs:domain hedera:MirrorNode ;
+    rdfs:range hedera:MirrorDataset ;
+    owl:inverseOf hedera:isPublishedBy ;
+    skos:definition "Indicates that a mirror node publishes a dataset for consumers."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/mirror-node/sdks-and-apis/rest-api> .
+
+hedera:recordsStake a owl:ObjectProperty ;
+    rdfs:label "records stake"@en ;
+    rdfs:domain hedera:StakingProcess ;
+    rdfs:range hedera:StakingEvent ;
+    rdfs:subPropertyOf hedera:producesEvent ;
+    skos:definition "Indicates the staking event emitted by a staking process."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/staking/staking> .
+
+hedera:registeredIn a owl:ObjectProperty ;
+    rdfs:label "registered in"@en ;
+    rdfs:domain hedera:Artefact ;
+    rdfs:range hedera:Network ;
+    skos:definition "Indicates the canonical network where an artefact is recorded."@en .
+
+hedera:securedBy a owl:ObjectProperty ;
+    rdfs:label "secured by"@en ;
+    rdfs:domain hedera:Account ;
+    rdfs:range hedera:AccountKey ;
+    owl:inverseOf hedera:securesAccount ;
+    skos:definition "Connects an account to the key material that authorises its actions."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/accounts/account-properties#keys> .
+
+hedera:submittedBy a owl:ObjectProperty ;
+    rdfs:label "submitted by"@en ;
+    rdfs:domain hedera:Transaction ;
+    rdfs:range hedera:Account ;
+    skos:definition "Identifies the account that paid for or submitted the transaction."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/transactions/submit-a-transaction> .
+
+hedera:targetsValidator a owl:ObjectProperty ;
+    rdfs:label "targets validator"@en ;
+    rdfs:domain hedera:ValidatorOnboardingProcess ;
+    rdfs:range hedera:Validator ;
+    skos:definition "Identifies the validator being evaluated or activated by an onboarding process."@en ;
+    hedera:sourceDocument <https://hips.hedera.com/hip/hip-840> .
+
+hedera:virtualisesService a owl:ObjectProperty ;
+    rdfs:label "virtualises service"@en ;
+    rdfs:domain hedera:HieroLayer ;
+    rdfs:range hedera:Service ;
+    skos:definition "Relates a Hiero layer to the services it virtualises or hosts."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hiero> .
+
+hedera:GovernanceProcess a owl:Class ;
+    rdfs:label "Governance process"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty hedera:hasParticipant ;
+            owl:someValuesFrom hedera:GovernanceBody ],
+        [ a owl:Restriction ;
+            owl:onProperty hedera:issuesDecision ;
+            owl:someValuesFrom hedera:GovernanceDecision ],
+        hedera:Process ;
+    skos:definition "Process through which councils or committees evaluate and ratify network decisions."@en ;
+    hedera:sourceDocument <https://hedera.com/council> .
+
+hedera:HieroShard a owl:Class ;
+    rdfs:label "Hiero shard"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty hedera:isShardOf ;
+            owl:someValuesFrom hedera:Network ],
+        hedera:Network ;
+    skos:definition "Network partition within Hiero that localises consensus and execution responsibilities."@en ;
+    hedera:sourceDocument <https://hips.hedera.com/hip/hip-840> .
+
+hedera:Node a owl:Class ;
+    rdfs:label "Node"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty hedera:hasAccount ;
+            owl:someValuesFrom hedera:Account ],
+        hedera:Actor ;
+    skos:definition "Operational actor (consensus or mirror) providing network infrastructure."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/network/nodes/mainnet-nodes> .
+
+hedera:StakingEvent a owl:Class ;
+    rdfs:label "Staking event"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty prov:wasGeneratedBy ;
+            owl:someValuesFrom hedera:StakingProcess ],
+        hedera:Event ;
+    skos:definition "Event recording a staking action or reward distribution."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/staking/stake-hbar> .
+
+hedera:StakingProcess a owl:Class ;
+    rdfs:label "Staking process"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty hedera:hasParticipant ;
+            owl:someValuesFrom hedera:Account ],
+        [ a owl:Restriction ;
+            owl:onProperty hedera:recordsStake ;
+            owl:someValuesFrom hedera:StakingEvent ],
+        hedera:Process ;
+    skos:definition "Process that binds accounts to validator nodes and accrues staking rewards."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/staking/staking> .
+
+hedera:ValidatorOnboardingProcess a owl:Class ;
+    rdfs:label "Validator onboarding process"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty hedera:targetsValidator ;
+            owl:someValuesFrom hedera:Validator ],
+        [ a owl:Restriction ;
+            owl:onProperty hedera:producesEvent ;
+            owl:someValuesFrom hedera:GovernanceDecision ],
+        hedera:GovernanceProcess ;
+    skos:definition "Governance process that evaluates, approves, and activates validator participants."@en ;
+    hedera:sourceDocument <https://hips.hedera.com/hip/hip-840> .
+
+hedera:hasAccount a owl:ObjectProperty ;
+    rdfs:label "has account"@en ;
+    rdfs:domain hedera:Actor ;
+    rdfs:range hedera:Account ;
+    owl:inverseOf hedera:isAccountOf ;
+    skos:definition "Relates an actor to an account under its control."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/accounts> .
+
+hedera:isAccountOf a owl:ObjectProperty ;
+    rdfs:label "is account of"@en ;
+    rdfs:domain hedera:Account ;
+    rdfs:range hedera:Actor ;
+    skos:definition "Links an account back to the actor that owns or controls it."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/accounts> .
+
+hedera:isGovernedBy a owl:ObjectProperty ;
+    rdfs:label "is governed by"@en ;
+    rdfs:domain hedera:Network ;
+    rdfs:range hedera:GovernanceBody ;
+    rdfs:subPropertyOf prov:wasInfluencedBy ;
+    skos:definition "Associates a network with the governance body that exercises authority over it."@en .
+
+hedera:isLayerOf a owl:ObjectProperty ;
+    rdfs:label "is layer of"@en ;
+    rdfs:domain hedera:HieroLayer ;
+    rdfs:range hedera:Network ;
+    skos:definition "Links a Hiero layer to the network it belongs to."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hiero> .
+
+hedera:isOperatedBy a owl:ObjectProperty ;
+    rdfs:label "is operated by"@en ;
+    rdfs:domain hedera:Service ;
+    rdfs:range hedera:Actor ;
+    rdfs:subPropertyOf prov:wasAssociatedWith ;
+    skos:definition "Associates a service with the actor accountable for running it."@en .
+
+hedera:isPublishedBy a owl:ObjectProperty ;
+    rdfs:label "is published by"@en ;
+    rdfs:domain hedera:MirrorDataset ;
+    rdfs:range hedera:MirrorNode ;
+    skos:definition "Links a dataset back to the mirror node that publishes it."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/mirror-node/sdks-and-apis/rest-api> .
+
+hedera:isShardOf a owl:ObjectProperty ;
+    rdfs:label "is shard of"@en ;
+    rdfs:domain hedera:HieroShard ;
+    rdfs:range hedera:Network ;
+    skos:definition "Indicates which broader network a Hiero shard belongs to."@en ;
+    hedera:sourceDocument <https://hips.hedera.com/hip/hip-840> .
+
+hedera:participatesIn a owl:ObjectProperty ;
+    rdfs:label "participates in"@en ;
+    rdfs:domain hedera:Actor ;
+    rdfs:range hedera:Process ;
+    owl:inverseOf hedera:hasParticipant ;
+    skos:definition "Connects an actor to a process in which it takes part."@en .
+
+hedera:securesAccount a owl:ObjectProperty ;
+    rdfs:label "secures account"@en ;
+    rdfs:domain hedera:AccountKey ;
+    rdfs:range hedera:Account ;
+    skos:definition "Indicates which account a key structure protects."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/accounts/account-properties#keys> .
+
+hedera:MirrorDataset a owl:Class ;
+    rdfs:label "Mirror dataset"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty hedera:isPublishedBy ;
+            owl:someValuesFrom hedera:MirrorNode ],
+        [ a owl:Restriction ;
+            owl:onProperty dcat:accessURL ;
+            owl:someValuesFrom xsd:anyURI ],
+        dcat:Dataset,
+        hedera:Artefact ;
+    skos:definition "Dataset published by a mirror node exposing consensus records or account state."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/mirror-node/sdks-and-apis/rest-api> .
+
+hedera:Transaction a owl:Class ;
+    rdfs:label "Transaction"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty hedera:hasTransactionPhase ;
+            owl:someValuesFrom hedera:TransactionPhase ],
+        [ a owl:Restriction ;
+            owl:onProperty hedera:hasRecord ;
+            owl:someValuesFrom hedera:TransactionRecord ],
+        [ a owl:Restriction ;
+            owl:onProperty hedera:submittedBy ;
+            owl:someValuesFrom hedera:Account ],
+        [ a owl:Restriction ;
+            owl:onProperty hedera:registeredIn ;
+            owl:someValuesFrom hedera:Network ],
+        hedera:Artefact ;
+    skos:definition "Signed payload submitted to the Hedera network that changes ledger state upon execution."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/transactions/transaction-lifecycle> .
+
+hedera:producesRecord a owl:ObjectProperty ;
+    rdfs:label "produces record"@en ;
+    rdfs:domain hedera:TransactionPhase ;
+    rdfs:range hedera:TransactionRecord ;
+    rdfs:subPropertyOf hedera:producesEvent ;
+    skos:definition "Indicates that a transaction phase emits a transaction record."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/transactions/transaction-record> .
+
+hedera:GovernanceDecision a owl:Class ;
+    rdfs:label "Governance decision"@en ;
+    rdfs:subClassOf hedera:Event ;
+    skos:definition "Recorded outcome of a governance process, such as an approved vote or mandate."@en ;
+    hedera:sourceDocument <https://hedera.com/council> .
+
+hedera:MirrorNode a owl:Class ;
+    rdfs:label "Mirror node"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty hedera:publishesDataset ;
+            owl:someValuesFrom hedera:MirrorDataset ],
+        hedera:Node ;
+    skos:definition "Data replication node exposing consensus history via REST and gRPC APIs."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/mirror-node> .
+
+hedera:Event a owl:Class ;
+    rdfs:label "Event"@en ;
+    rdfs:subClassOf prov:Entity,
+        hedera:Concept ;
+    skos:definition "Bounded outcome or observation emitted by a process, typically recorded through mirror nodes or logs."@en .
+
+hedera:GovernanceBody a owl:Class ;
+    rdfs:label "Governance body"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty hedera:hasMandate ;
+            owl:someValuesFrom xsd:string ],
+        hedera:Actor ;
+    skos:definition "Formal collective responsible for decision-making over network policy or operations."@en ;
+    hedera:sourceDocument <https://hedera.com/council> .
+
+hedera:Validator a owl:Class ;
+    rdfs:label "Validator"@en ;
+    rdfs:subClassOf hedera:Actor ;
+    skos:definition "Node operator that participates in consensus or execution for Hedera or Hiero networks."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hiero/concepts/validators> .
+
+hedera:producesEvent a owl:ObjectProperty ;
+    rdfs:label "produces event"@en ;
+    rdfs:domain hedera:Process ;
+    rdfs:range hedera:Event ;
+    rdfs:subPropertyOf prov:generated ;
+    skos:definition "States that a process yields a specific event observation."@en .
+
+hedera:AccountKey a owl:Class ;
+    rdfs:label "Account key"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty hedera:securesAccount ;
+            owl:someValuesFrom hedera:Account ],
+        hedera:Artefact ;
+    skos:definition "Key material that authorises actions for accounts, topics, files, and tokens."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/accounts/account-properties> .
+
+hedera:Concept a owl:Class ;
+    rdfs:label "Concept"@en ;
+    skos:definition "Abstract superclass for all Bhash ontology entities."@en .
+
+hedera:HieroLayer a owl:Class ;
+    rdfs:label "Hiero layer"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty hedera:isLayerOf ;
+            owl:someValuesFrom hedera:Network ],
+        [ a owl:Restriction ;
+            owl:onProperty hedera:virtualisesService ;
+            owl:someValuesFrom hedera:Service ],
+        hedera:Network ;
+    skos:definition "Logical component of the Hiero architecture (consensus, execution, or service layer)."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hiero> .
+
+hedera:TransactionRecord a owl:Class ;
+    rdfs:label "Transaction record"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty prov:wasGeneratedBy ;
+            owl:someValuesFrom hedera:TransactionPhase ],
+        hedera:Event ;
+    skos:definition "Structured record capturing the result of a processed transaction."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/transactions/transaction-record> .
+
+hedera:Service a owl:Class ;
+    rdfs:label "Service"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom hedera:Artefact ;
+            owl:onProperty hedera:managesArtefact ],
+        [ a owl:Restriction ;
+            owl:onProperty hedera:isOperatedBy ;
+            owl:someValuesFrom hedera:Actor ],
+        [ a owl:Restriction ;
+            owl:onProperty hedera:exposedOn ;
+            owl:someValuesFrom hedera:Network ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom hedera:Artefact ;
+            owl:onProperty hedera:consumesArtefact ],
+        schema1:Service,
+        hedera:Concept ;
+    skos:definition "A capability offered by the Hedera network such as consensus, token management, or smart contract execution."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts> .
+
+hedera:Artefact a owl:Class ;
+    rdfs:label "Artefact"@en ;
+    rdfs:subClassOf prov:Entity,
+        hedera:Concept ;
+    skos:definition "Digital object or state produced or managed by Hedera services (topics, tokens, files, smart contracts)."@en .
+
+hedera:Process a owl:Class ;
+    rdfs:label "Process"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty hedera:occursOn ;
+            owl:someValuesFrom hedera:Network ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom hedera:Event ;
+            owl:onProperty hedera:producesEvent ],
+        [ a owl:Restriction ;
+            owl:onProperty hedera:hasParticipant ;
+            owl:someValuesFrom hedera:Actor ],
+        prov:Activity,
+        hedera:Concept ;
+    skos:definition "Coordinated activity that changes network state, such as transaction execution or governance voting."@en .
+
+hedera:hasParticipant a owl:ObjectProperty ;
+    rdfs:label "has participant"@en ;
+    rdfs:domain hedera:Process ;
+    rdfs:range hedera:Actor ;
+    rdfs:subPropertyOf prov:wasAssociatedWith ;
+    skos:definition "Relates a process to the actors that are associated with it."@en .
+
+hedera:TransactionPhase a owl:Class ;
+    rdfs:label "Transaction phase"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty hedera:hasPhaseOrder ;
+            owl:someValuesFrom xsd:integer ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom hedera:TransactionRecord ;
+            owl:onProperty hedera:producesRecord ],
+        hedera:Process ;
+    skos:definition "Segment of the transaction lifecycle (submission, consensus, execution, export)."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/transactions/transaction-lifecycle> .
+
+hedera:Account a owl:Class ;
+    rdfs:label "Account"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty hedera:isAccountOf ;
+            owl:someValuesFrom hedera:Actor ],
+        [ a owl:Restriction ;
+            owl:onProperty hedera:securedBy ;
+            owl:someValuesFrom hedera:AccountKey ],
+        [ a owl:Restriction ;
+            owl:onProperty hedera:hasAccountId ;
+            owl:someValuesFrom xsd:string ],
+        hedera:Actor ;
+    skos:definition "On-ledger identity storing keys, balances, and staking configuration for participation in Hedera services."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/accounts> .
+
+hedera:Actor a owl:Class ;
+    rdfs:label "Actor"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty hedera:participatesIn ;
+            owl:someValuesFrom hedera:Process ],
+        prov:Agent,
+        hedera:Concept ;
+    skos:definition "An agent that participates in Hedera or Hiero network operations, such as councils, operators, or wallets."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/accounts> .
+
+hedera:Network a owl:Class ;
+    rdfs:label "Network"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty hedera:isGovernedBy ;
+            owl:someValuesFrom hedera:GovernanceBody ],
+        hedera:Actor ;
+    skos:definition "A distributed environment (e.g., mainnet, testnet, shard) that provides Hedera services."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/network/nodes/mainnet-nodes> .
+

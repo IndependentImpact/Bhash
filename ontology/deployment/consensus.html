@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hedera Consensus Service module – Hashgraph Ontology</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2rem auto; max-width: 1100px; line-height: 1.6; }
+        h1, h2, h3 { color: #1f2937; }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        th, td { padding: 0.5rem; border: 1px solid #e5e7eb; vertical-align: top; }
+        th { background: #f3f4f6; text-align: left; }
+        .meta { color: #4b5563; }
+        .pill { display: inline-block; padding: 0.2rem 0.5rem; margin: 0.1rem; background: #e5e7eb; border-radius: 6px; }
+        .small { font-size: 0.9rem; }
+        .section { margin-top: 2rem; }
+        a { color: #0f766e; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hedera Consensus Service module</h1>
+        <div class="meta">IRI: <a href="https://hashgraphontology.xyx/hedera/consensus">https://hashgraphontology.xyx/hedera/consensus</a></div>
+        <p>Service-specific vocabulary for modelling Hedera Consensus Service topics, messages, and validator interfaces.</p>
+        <p class="meta">Source file: consensus.ttl</p>
+    </header>
+
+    <section class="section">
+        <h2>Prefixes</h2>
+        <table>
+            <thead><tr><th>Prefix</th><th>Namespace</th></tr></thead>
+            <tbody>
+            
+                <tr><td>dcterms</td><td>http://purl.org/dc/terms/</td></tr>
+            
+                <tr><td>hedera</td><td>https://hashgraphontology.xyx/hedera/core/</td></tr>
+            
+                <tr><td>ns1</td><td>https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/</td></tr>
+            
+                <tr><td>ns2</td><td>https://docs.hedera.com/hedera/mirror-node/architecture/</td></tr>
+            
+                <tr><td>ns3</td><td>https://hashgraphontology.xyx/hedera/</td></tr>
+            
+                <tr><td>ns4</td><td>https://raw.githubusercontent.com/hashgraph/hedera-docs/main/core-concepts/staking/staking.md#</td></tr>
+            
+                <tr><td>ns5</td><td>https://docs.hedera.com/hedera/core-concepts/staking/</td></tr>
+            
+                <tr><td>ns6</td><td>https://docs.hedera.com/hedera/core-concepts/governing-the-network#</td></tr>
+            
+                <tr><td>ns7</td><td>https://docs.hedera.com/hedera/core-concepts/</td></tr>
+            
+                <tr><td>ns8</td><td>https://hips.hedera.com/hip/</td></tr>
+            
+                <tr><td>ns9</td><td>https://hedera.com/</td></tr>
+            
+                <tr><td>owl</td><td>http://www.w3.org/2002/07/owl#</td></tr>
+            
+                <tr><td>rdf</td><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#</td></tr>
+            
+                <tr><td>rdfs</td><td>http://www.w3.org/2000/01/rdf-schema#</td></tr>
+            
+                <tr><td>skos</td><td>http://www.w3.org/2004/02/skos/core#</td></tr>
+            
+                <tr><td>xsd</td><td>http://www.w3.org/2001/XMLSchema#</td></tr>
+            
+            </tbody>
+        </table>
+    </section>
+
+    <section class="section">
+        <h2>Classes (11)</h2>
+        <table>
+            <thead><tr><th>Label</th><th>QName</th><th>Subclass Of</th><th>Notes</th></tr></thead>
+            <tbody>
+            
+                <tr id="cls-hedera-ConsensusNodeEndpoint">
+                    <td>Consensus node endpoint</td>
+                    <td>hedera:ConsensusNodeEndpoint</td>
+                    <td><span class="pill">hedera:Artefact</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Network endpoint (IP, port, TLS configuration) exposed by a consensus node for client submissions.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/ConsensusNodeEndpoint</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-ConsensusRecordFile">
+                    <td>Consensus record file</td>
+                    <td>hedera:ConsensusRecordFile</td>
+                    <td><span class="pill">hedera:Artefact</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Exported record file containing ordered transactions, consensus timestamps, and running hashes.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/ConsensusRecordFile</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-ConsensusService">
+                    <td>Consensus Service</td>
+                    <td>hedera:ConsensusService</td>
+                    <td><span class="pill">hedera:Service</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Operational service that orders transactions, emits consensus timestamps, and manages topics.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/ConsensusService</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-ConsensusTopic">
+                    <td>Consensus topic</td>
+                    <td>hedera:ConsensusTopic</td>
+                    <td><span class="pill">hedera:Artefact</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Ordered message channel configured with administrator, submit, and auto-renew keys.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/ConsensusTopic</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-CouncilCommittee">
+                    <td>Council committee</td>
+                    <td>hedera:CouncilCommittee</td>
+                    <td><span class="pill">hedera:GovernanceBody</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Sub-structure of the Hedera Governing Council that manages delegated mandates such as finance or membership reviews.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/CouncilCommittee</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-RoleAssignment">
+                    <td>Role assignment</td>
+                    <td>hedera:RoleAssignment</td>
+                    <td><span class="pill">hedera:Process</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Process that confers a specific governance or operational role to an actor.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/RoleAssignment</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-TopicAdminKey">
+                    <td>Topic admin key</td>
+                    <td>hedera:TopicAdminKey</td>
+                    <td><span class="pill">hedera:AccountKey</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Key that authorises topic-level administration such as update, delete, and re-key operations.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/TopicAdminKey</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-TopicMessage">
+                    <td>Topic message</td>
+                    <td>hedera:TopicMessage</td>
+                    <td><span class="pill">hedera:Event</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Individual message submitted to a consensus topic and assigned a consensus timestamp.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/TopicMessage</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-TopicSubmitKey">
+                    <td>Topic submit key</td>
+                    <td>hedera:TopicSubmitKey</td>
+                    <td><span class="pill">hedera:AccountKey</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Key that governs which actors may post messages to a consensus topic.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/TopicSubmitKey</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-ValidatorOnboardingCommittee">
+                    <td>Validator onboarding committee</td>
+                    <td>hedera:ValidatorOnboardingCommittee</td>
+                    <td><span class="pill">hedera:CouncilCommittee</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Council committee that stewards validator onboarding cohorts and associated policy decisions.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/ValidatorOnboardingCommittee</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-ValidatorOnboardingSteward">
+                    <td>Validator onboarding steward</td>
+                    <td>hedera:ValidatorOnboardingSteward</td>
+                    <td><span class="pill">hedera:Role</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Role fulfilled by council members who oversee validator onboarding approvals and requirements.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/ValidatorOnboardingSteward</div>
+                    </td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </section>
+
+    <section class="section">
+        <h2>Properties (21)</h2>
+        <table>
+            <thead><tr><th>Label</th><th>QName</th><th>Kind</th><th>Domain</th><th>Range</th><th>Notes</th></tr></thead>
+            <tbody>
+            
+                <tr id="prop-hedera-assignsRole">
+                    <td>assigns role</td>
+                    <td>hedera:assignsRole</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:RoleAssignment</span></td>
+                    <td><span class="pill">hedera:Role</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/assignsRole</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-deliversMessage">
+                    <td>delivers message</td>
+                    <td>hedera:deliversMessage</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:ConsensusService</span></td>
+                    <td><span class="pill">hedera:TopicMessage</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/deliversMessage</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-emitsRecordFile">
+                    <td>emits record file</td>
+                    <td>hedera:emitsRecordFile</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:ConsensusService</span></td>
+                    <td><span class="pill">hedera:ConsensusRecordFile</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/emitsRecordFile</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-exposesEndpoint">
+                    <td>exposes endpoint</td>
+                    <td>hedera:exposesEndpoint</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:ConsensusNode</span></td>
+                    <td><span class="pill">hedera:ConsensusNodeEndpoint</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/exposesEndpoint</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasAdminKey">
+                    <td>has admin key</td>
+                    <td>hedera:hasAdminKey</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:ConsensusTopic</span></td>
+                    <td><span class="pill">hedera:TopicAdminKey</span></td>
+                    <td class="small">
+                        
+                        <div><strong>SubProperty Of:</strong> <span class="pill">hedera:hasTopicKey</span></div>
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasAdminKey</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasEndpointAddress">
+                    <td>has endpoint address</td>
+                    <td>hedera:hasEndpointAddress</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:ConsensusNodeEndpoint</span></td>
+                    <td><span class="pill">xsd:string</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasEndpointAddress</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasEndpointPort">
+                    <td>has endpoint port</td>
+                    <td>hedera:hasEndpointPort</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:ConsensusNodeEndpoint</span></td>
+                    <td><span class="pill">xsd:integer</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasEndpointPort</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasMessageContent">
+                    <td>has message content</td>
+                    <td>hedera:hasMessageContent</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:TopicMessage</span></td>
+                    <td><span class="pill">xsd:string</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasMessageContent</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasMessageSize">
+                    <td>has message size</td>
+                    <td>hedera:hasMessageSize</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:TopicMessage</span></td>
+                    <td><span class="pill">xsd:integer</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasMessageSize</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasRunningHash">
+                    <td>has running hash</td>
+                    <td>hedera:hasRunningHash</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:ConsensusRecordFile</span></td>
+                    <td><span class="pill">xsd:hexBinary</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasRunningHash</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasSequenceNumber">
+                    <td>has sequence number</td>
+                    <td>hedera:hasSequenceNumber</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:TopicMessage</span></td>
+                    <td><span class="pill">xsd:integer</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasSequenceNumber</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasSteward">
+                    <td>has steward</td>
+                    <td>hedera:hasSteward</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:GovernanceProcess</span></td>
+                    <td><span class="pill">hedera:GovernanceBody</span></td>
+                    <td class="small">
+                        
+                        <div><strong>SubProperty Of:</strong> <span class="pill">hedera:hasParticipant</span></div>
+                        <div><strong>Inverse Of:</strong> <span class="pill">hedera:stewardsProcess</span></div>
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasSteward</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasSubmitKey">
+                    <td>has submit key</td>
+                    <td>hedera:hasSubmitKey</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:ConsensusTopic</span></td>
+                    <td><span class="pill">hedera:TopicSubmitKey</span></td>
+                    <td class="small">
+                        
+                        <div><strong>SubProperty Of:</strong> <span class="pill">hedera:hasTopicKey</span></div>
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasSubmitKey</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasTopic">
+                    <td>has topic</td>
+                    <td>hedera:hasTopic</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:ConsensusService</span></td>
+                    <td><span class="pill">hedera:ConsensusTopic</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasTopic</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasTopicKey">
+                    <td>has topic key</td>
+                    <td>hedera:hasTopicKey</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:ConsensusTopic</span></td>
+                    <td><span class="pill">hedera:AccountKey</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasTopicKey</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-includesMessage">
+                    <td>includes message</td>
+                    <td>hedera:includesMessage</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:ConsensusRecordFile</span></td>
+                    <td><span class="pill">hedera:TopicMessage</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/includesMessage</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-isMirroredBy">
+                    <td>is mirrored by</td>
+                    <td>hedera:isMirroredBy</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:ConsensusRecordFile</span></td>
+                    <td><span class="pill">hedera:MirrorDataset</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/isMirroredBy</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-isSubBodyOf">
+                    <td>is sub-body of</td>
+                    <td>hedera:isSubBodyOf</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:GovernanceBody</span></td>
+                    <td><span class="pill">hedera:GovernanceBody</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/isSubBodyOf</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-stewardsProcess">
+                    <td>stewards process</td>
+                    <td>hedera:stewardsProcess</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:GovernanceBody</span></td>
+                    <td><span class="pill">hedera:GovernanceProcess</span></td>
+                    <td class="small">
+                        
+                        <div><strong>SubProperty Of:</strong> <span class="pill">hedera:participatesIn</span></div>
+                        <div><strong>Inverse Of:</strong> <span class="pill">hedera:hasSteward</span></div>
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/stewardsProcess</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-supportedBy">
+                    <td>supported by</td>
+                    <td>hedera:supportedBy</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:Process</span></td>
+                    <td><span class="pill">hedera:GovernanceDecision</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/supportedBy</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-targetsTopic">
+                    <td>targets topic</td>
+                    <td>hedera:targetsTopic</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:Transaction</span></td>
+                    <td><span class="pill">hedera:ConsensusTopic</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/targetsTopic</div>
+                    </td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>

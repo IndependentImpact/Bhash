@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hedera Mirror and Analytics Ecosystem module – Hashgraph Ontology</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2rem auto; max-width: 1100px; line-height: 1.6; }
+        h1, h2, h3 { color: #1f2937; }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        th, td { padding: 0.5rem; border: 1px solid #e5e7eb; vertical-align: top; }
+        th { background: #f3f4f6; text-align: left; }
+        .meta { color: #4b5563; }
+        .pill { display: inline-block; padding: 0.2rem 0.5rem; margin: 0.1rem; background: #e5e7eb; border-radius: 6px; }
+        .small { font-size: 0.9rem; }
+        .section { margin-top: 2rem; }
+        a { color: #0f766e; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hedera Mirror and Analytics Ecosystem module</h1>
+        <div class="meta">IRI: <a href="https://hashgraphontology.xyx/hedera/mirror-analytics">https://hashgraphontology.xyx/hedera/mirror-analytics</a></div>
+        <p>Vocabulary for mirror nodes, exported datasets, and analytics workspaces consuming Hedera telemetry.</p>
+        <p class="meta">Source file: mirror-analytics.ttl</p>
+    </header>
+
+    <section class="section">
+        <h2>Prefixes</h2>
+        <table>
+            <thead><tr><th>Prefix</th><th>Namespace</th></tr></thead>
+            <tbody>
+            
+                <tr><td>dcterms</td><td>http://purl.org/dc/terms/</td></tr>
+            
+                <tr><td>hedera</td><td>https://hashgraphontology.xyx/hedera/core/</td></tr>
+            
+                <tr><td>ns1</td><td>https://docs.hedera.com/hedera/mirror-node/</td></tr>
+            
+                <tr><td>ns2</td><td>https://hashgraphontology.xyx/hedera/</td></tr>
+            
+                <tr><td>ns3</td><td>https://docs.hedera.com/hedera/mirror-node/sdks-and-apis/</td></tr>
+            
+                <tr><td>ns4</td><td>https://docs.hedera.com/hedera/mirror-node/architecture/</td></tr>
+            
+                <tr><td>ns5</td><td>https://docs.hedera.com/hedera/</td></tr>
+            
+                <tr><td>owl</td><td>http://www.w3.org/2002/07/owl#</td></tr>
+            
+                <tr><td>rdf</td><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#</td></tr>
+            
+                <tr><td>rdfs</td><td>http://www.w3.org/2000/01/rdf-schema#</td></tr>
+            
+                <tr><td>skos</td><td>http://www.w3.org/2004/02/skos/core#</td></tr>
+            
+                <tr><td>xsd</td><td>http://www.w3.org/2001/XMLSchema#</td></tr>
+            
+            </tbody>
+        </table>
+    </section>
+
+    <section class="section">
+        <h2>Classes (9)</h2>
+        <table>
+            <thead><tr><th>Label</th><th>QName</th><th>Subclass Of</th><th>Notes</th></tr></thead>
+            <tbody>
+            
+                <tr id="cls-hedera-AnalyticsWorkspace">
+                    <td>Analytics workspace</td>
+                    <td>hedera:AnalyticsWorkspace</td>
+                    <td><span class="pill">hedera:Artefact</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Analytical environment consuming mirror datasets for reporting or dashboards.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/AnalyticsWorkspace</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-DatasetRetentionPolicy">
+                    <td>Dataset retention policy</td>
+                    <td>hedera:DatasetRetentionPolicy</td>
+                    <td><span class="pill">hedera:Artefact</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Policy describing how long datasets are retained in analytics storage.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/DatasetRetentionPolicy</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-IngestionPipeline">
+                    <td>Ingestion pipeline</td>
+                    <td>hedera:IngestionPipeline</td>
+                    <td><span class="pill">hedera:Process</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Pipeline that ingests record files into analytics storage.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/IngestionPipeline</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-MirrorDataset">
+                    <td>Mirror dataset</td>
+                    <td>hedera:MirrorDataset</td>
+                    <td><span class="pill">hedera:Artefact</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Dataset exported by mirror nodes such as transactions, balances, or contract logs.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/MirrorDataset</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-MirrorGrpcAPI">
+                    <td>Mirror gRPC API</td>
+                    <td>hedera:MirrorGrpcAPI</td>
+                    <td><span class="pill">hedera:Artefact</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> gRPC streaming interface for subscribing to Hedera mirror node data.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/MirrorGrpcAPI</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-MirrorNodeOperatorRole">
+                    <td>Mirror node operator role</td>
+                    <td>hedera:MirrorNodeOperatorRole</td>
+                    <td><span class="pill">hedera:Role</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Role fulfilled by organisations running mirror node infrastructure.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/MirrorNodeOperatorRole</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-MirrorRestAPI">
+                    <td>Mirror REST API</td>
+                    <td>hedera:MirrorRestAPI</td>
+                    <td><span class="pill">hedera:Artefact</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> RESTful interface provided by mirror nodes for querying Hedera history.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/MirrorRestAPI</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-MirrorService">
+                    <td>Mirror Service</td>
+                    <td>hedera:MirrorService</td>
+                    <td><span class="pill">hedera:Service</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Service tier that replicates consensus data and exposes REST/gRPC APIs.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/MirrorService</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-TelemetryMetric">
+                    <td>Telemetry metric</td>
+                    <td>hedera:TelemetryMetric</td>
+                    <td><span class="pill">hedera:Event</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Metric derived from mirror node operations or analytics pipelines.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/TelemetryMetric</div>
+                    </td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </section>
+
+    <section class="section">
+        <h2>Properties (15)</h2>
+        <table>
+            <thead><tr><th>Label</th><th>QName</th><th>Kind</th><th>Domain</th><th>Range</th><th>Notes</th></tr></thead>
+            <tbody>
+            
+                <tr id="prop-hedera-coversService">
+                    <td>covers service</td>
+                    <td>hedera:coversService</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:MirrorDataset</span></td>
+                    <td><span class="pill">hedera:Service</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/coversService</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-curatesWorkspace">
+                    <td>curates workspace</td>
+                    <td>hedera:curatesWorkspace</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:Actor</span></td>
+                    <td><span class="pill">hedera:AnalyticsWorkspace</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/curatesWorkspace</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-exposesGrpcEndpoint">
+                    <td>exposes gRPC endpoint</td>
+                    <td>hedera:exposesGrpcEndpoint</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:MirrorService</span></td>
+                    <td><span class="pill">hedera:MirrorGrpcAPI</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/exposesGrpcEndpoint</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-exposesRestEndpoint">
+                    <td>exposes REST endpoint</td>
+                    <td>hedera:exposesRestEndpoint</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:MirrorService</span></td>
+                    <td><span class="pill">hedera:MirrorRestAPI</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/exposesRestEndpoint</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-feedsAnalyticsWorkspace">
+                    <td>feeds analytics workspace</td>
+                    <td>hedera:feedsAnalyticsWorkspace</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:MirrorDataset</span></td>
+                    <td><span class="pill">hedera:AnalyticsWorkspace</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/feedsAnalyticsWorkspace</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasDatasetType">
+                    <td>has dataset type</td>
+                    <td>hedera:hasDatasetType</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:MirrorDataset</span></td>
+                    <td><span class="pill">xsd:string</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasDatasetType</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasDatasetURI">
+                    <td>has dataset URI</td>
+                    <td>hedera:hasDatasetURI</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:MirrorDataset</span></td>
+                    <td><span class="pill">xsd:anyURI</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasDatasetURI</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasMetricValue">
+                    <td>has metric value</td>
+                    <td>hedera:hasMetricValue</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:TelemetryMetric</span></td>
+                    <td><span class="pill">xsd:decimal</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasMetricValue</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasMetricWindow">
+                    <td>has metric window</td>
+                    <td>hedera:hasMetricWindow</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:TelemetryMetric</span></td>
+                    <td><span class="pill">xsd:string</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasMetricWindow</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasRetentionDays">
+                    <td>has retention days</td>
+                    <td>hedera:hasRetentionDays</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:DatasetRetentionPolicy</span></td>
+                    <td><span class="pill">xsd:integer</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasRetentionDays</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasRetentionPolicy">
+                    <td>has retention policy</td>
+                    <td>hedera:hasRetentionPolicy</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:MirrorDataset</span></td>
+                    <td><span class="pill">hedera:DatasetRetentionPolicy</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasRetentionPolicy</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasWorkspacePurpose">
+                    <td>has workspace purpose</td>
+                    <td>hedera:hasWorkspacePurpose</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:AnalyticsWorkspace</span></td>
+                    <td><span class="pill">xsd:string</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasWorkspacePurpose</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-producesMetric">
+                    <td>produces metric</td>
+                    <td>hedera:producesMetric</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:IngestionPipeline</span></td>
+                    <td><span class="pill">hedera:TelemetryMetric</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/producesMetric</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-publishesDataset">
+                    <td>publishes dataset</td>
+                    <td>hedera:publishesDataset</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:MirrorService</span></td>
+                    <td><span class="pill">hedera:MirrorDataset</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/publishesDataset</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-runsPipeline">
+                    <td>runs pipeline</td>
+                    <td>hedera:runsPipeline</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:Actor</span></td>
+                    <td><span class="pill">hedera:IngestionPipeline</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/runsPipeline</div>
+                    </td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>

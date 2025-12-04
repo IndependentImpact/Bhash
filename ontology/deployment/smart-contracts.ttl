@@ -1,0 +1,191 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix hedera: <https://hashgraphontology.xyx/hedera/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://hashgraphontology.xyx/hedera/contracts> a owl:Ontology ;
+    dcterms:created "2024-10-01"^^xsd:date ;
+    dcterms:creator "Bhash Ontology Working Group"@en ;
+    dcterms:description "Vocabulary describing Hedera Smart Contract Service artefacts, execution traces, and system contract integrations."@en ;
+    dcterms:modified "2025-09-30"^^xsd:date ;
+    dcterms:title "Hedera Smart Contract Service module"@en ;
+    owl:imports <https://hashgraphontology.xyx/hedera/core> ;
+    owl:versionInfo "0.1.0-dev" ;
+    skos:editorialNote "Phase 3 sprint module covering smart contract deployment, execution, and HTS precompile usage for CQ-DEV-005."@en .
+
+hedera:ContractAccount a owl:Class ;
+    rdfs:label "Contract account"@en ;
+    rdfs:subClassOf hedera:Account ;
+    skos:definition "Account generated for a deployed smart contract to receive funds and identify executions."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/smart-contracts/contract-accounts> .
+
+hedera:emitsContractEvent a owl:ObjectProperty ;
+    rdfs:label "emits contract event"@en ;
+    rdfs:domain hedera:ContractExecution ;
+    rdfs:range hedera:ContractEvent ;
+    skos:definition "Links a contract execution to events emitted during the call."@en .
+
+hedera:executesContract a owl:ObjectProperty ;
+    rdfs:label "executes contract"@en ;
+    rdfs:domain hedera:ContractExecution ;
+    rdfs:range hedera:SmartContract ;
+    skos:definition "Links a contract execution process to the contract being executed."@en .
+
+hedera:hasBytecode a owl:ObjectProperty ;
+    rdfs:label "has bytecode"@en ;
+    rdfs:domain hedera:SmartContract ;
+    rdfs:range hedera:ContractBytecode ;
+    skos:definition "Connects a smart contract to the bytecode package it executes."@en .
+
+hedera:hasContractId a owl:DatatypeProperty ;
+    rdfs:label "has contract id"@en ;
+    rdfs:domain hedera:SmartContract ;
+    rdfs:range xsd:string ;
+    skos:definition "Ledger identifier (e.g., 0.0.x) for a deployed contract."@en .
+
+hedera:hasFunctionSelector a owl:DatatypeProperty ;
+    rdfs:label "has function selector"@en ;
+    rdfs:domain hedera:PrecompileInvocation ;
+    rdfs:range xsd:string ;
+    skos:definition "Hex-encoded selector identifying the precompile function invoked."@en .
+
+hedera:hasGasBreakdown a owl:DatatypeProperty ;
+    rdfs:label "has gas breakdown"@en ;
+    rdfs:domain hedera:OpcodeTrace ;
+    rdfs:range xsd:string ;
+    skos:definition "Summary of intrinsic, opcode, and surcharge gas components for analytics."@en .
+
+hedera:hasGasLimit a owl:DatatypeProperty ;
+    rdfs:label "has gas limit"@en ;
+    rdfs:domain hedera:ContractExecution ;
+    rdfs:range xsd:integer ;
+    skos:definition "Maximum gas supplied to a contract execution."@en .
+
+hedera:hasGasSchedule a owl:ObjectProperty ;
+    rdfs:label "has gas schedule"@en ;
+    rdfs:domain hedera:SmartContractService ;
+    rdfs:range hedera:GasFeeSchedule ;
+    skos:definition "Associates the Smart Contract Service with the published gas fee schedule."@en .
+
+hedera:hasGasUsed a owl:DatatypeProperty ;
+    rdfs:label "has gas used"@en ;
+    rdfs:domain hedera:PrecompileInvocation ;
+    rdfs:range xsd:integer ;
+    skos:definition "Total gas consumed by a precompile invocation."@en .
+
+hedera:hasInvocationCount a owl:DatatypeProperty ;
+    rdfs:label "has invocation count"@en ;
+    rdfs:domain hedera:SmartContract ;
+    rdfs:range xsd:integer ;
+    skos:definition "Number of times a contract has been executed in the sample dataset."@en .
+
+hedera:hasOpcodeTrace a owl:ObjectProperty ;
+    rdfs:label "has opcode trace"@en ;
+    rdfs:domain hedera:ContractExecution ;
+    rdfs:range hedera:OpcodeTrace ;
+    skos:definition "Links a contract execution to the opcode trace artefact exported by mirror nodes."@en .
+
+hedera:hasResultStatus a owl:DatatypeProperty ;
+    rdfs:label "has result status"@en ;
+    rdfs:domain hedera:ContractExecution ;
+    rdfs:range xsd:string ;
+    skos:definition "Execution status such as SUCCESS, REVERTED, or INSUFFICIENT_GAS."@en .
+
+hedera:includesInvocation a owl:ObjectProperty ;
+    rdfs:label "includes invocation"@en ;
+    rdfs:domain hedera:ContractExecution ;
+    rdfs:range hedera:PrecompileInvocation ;
+    skos:definition "Associates a contract execution with the precompile invocations performed during the call."@en .
+
+hedera:invokesSystemContract a owl:ObjectProperty ;
+    rdfs:label "invokes system contract"@en ;
+    rdfs:domain hedera:SmartContract ;
+    rdfs:range hedera:SystemContract ;
+    skos:definition "Indicates that a contract relies on a particular system contract during execution."@en .
+
+hedera:recordsLog a owl:ObjectProperty ;
+    rdfs:label "records log"@en ;
+    rdfs:domain hedera:ContractEvent ;
+    rdfs:range hedera:ContractLog ;
+    skos:definition "Associates a contract event with the structured log entry captured by mirror nodes."@en .
+
+hedera:storesBytecodeIn a owl:ObjectProperty ;
+    rdfs:label "stores bytecode in"@en ;
+    rdfs:domain hedera:ContractBytecode ;
+    rdfs:range hedera:File ;
+    skos:definition "Indicates which File Service file contains the contract bytecode."@en .
+
+hedera:targetsSystemContract a owl:ObjectProperty ;
+    rdfs:label "targets system contract"@en ;
+    rdfs:domain hedera:PrecompileInvocation ;
+    rdfs:range hedera:Precompile ;
+    skos:definition "Identifies which system contract precompile was invoked."@en .
+
+hedera:ContractLog a owl:Class ;
+    rdfs:label "Contract log"@en ;
+    rdfs:subClassOf hedera:Artefact ;
+    skos:definition "Structured record describing indexed topics and data generated by a contract event."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/mirror-node/sdks-and-apis/rest-api#tag/Contracts> .
+
+hedera:GasFeeSchedule a owl:Class ;
+    rdfs:label "Gas fee schedule"@en ;
+    rdfs:subClassOf hedera:Artefact ;
+    skos:definition "Fee schedule that defines intrinsic and surcharge gas costs for smart contract operations."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/smart-contracts/gas-and-fees> .
+
+hedera:Precompile a owl:Class ;
+    rdfs:label "Precompile"@en ;
+    rdfs:subClassOf hedera:SystemContract ;
+    skos:definition "Entry point exposing native Hedera services (HTS, HCS) to smart contracts via reserved selectors."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/smart-contracts/system-contracts#token-service-precompile> .
+
+hedera:SmartContractService a owl:Class ;
+    rdfs:label "Smart Contract Service"@en ;
+    rdfs:subClassOf hedera:Service ;
+    skos:definition "Network service that executes EVM smart contracts and exposes system contract integrations."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/smart-contracts/introduction> .
+
+hedera:ContractBytecode a owl:Class ;
+    rdfs:label "Contract bytecode"@en ;
+    rdfs:subClassOf hedera:Artefact ;
+    skos:definition "EVM bytecode package uploaded via File Service and linked to a deployed smart contract."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/smart-contracts/deploy-contracts> .
+
+hedera:ContractEvent a owl:Class ;
+    rdfs:label "Contract event"@en ;
+    rdfs:subClassOf hedera:Event ;
+    skos:definition "Event emitted by a contract execution and captured in mirror node logs."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/sdks-and-apis/smart-contracts/contract-log> .
+
+hedera:OpcodeTrace a owl:Class ;
+    rdfs:label "Opcode trace"@en ;
+    rdfs:subClassOf hedera:Artefact ;
+    skos:definition "Detailed record of EVM opcodes executed during a contract execution."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/mirror-node/sdks-and-apis/rest-api#tag/Contracts> .
+
+hedera:SystemContract a owl:Class ;
+    rdfs:label "System contract"@en ;
+    rdfs:subClassOf hedera:SmartContract ;
+    skos:definition "Reserved contract deployed by Hedera for protocol operations such as HTS precompiles."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/smart-contracts/system-contracts> .
+
+hedera:PrecompileInvocation a owl:Class ;
+    rdfs:label "Precompile invocation"@en ;
+    rdfs:subClassOf hedera:Event ;
+    skos:definition "Event capturing a contract execution invoking a specific system contract precompile."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/mirror-node/sdks-and-apis/rest-api#tag/Contracts> .
+
+hedera:ContractExecution a owl:Class ;
+    rdfs:label "Contract execution"@en ;
+    rdfs:subClassOf hedera:Process ;
+    skos:definition "Process representing a transaction that executes a smart contract function."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/sdks-and-apis/smart-contracts/contract-call> .
+
+hedera:SmartContract a owl:Class ;
+    rdfs:label "Smart contract"@en ;
+    rdfs:subClassOf hedera:Artefact ;
+    skos:definition "Deployed EVM bytecode managed by the Smart Contract Service with an associated contract account."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/smart-contracts/introduction> .
+

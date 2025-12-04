@@ -1,0 +1,345 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix hedera: <https://hashgraphontology.xyx/hedera/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+hedera:AdminKey a owl:Class ;
+    rdfs:label "Admin key"@en ;
+    rdfs:subClassOf hedera:TokenKey ;
+    skos:definition "Token key that can update core properties or delete the token."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-keys> .
+
+hedera:FixedFee a owl:Class ;
+    rdfs:label "Fixed fee"@en ;
+    rdfs:subClassOf hedera:CustomFee ;
+    skos:definition "Custom fee that transfers a fixed quantity of tokens or HBAR to the collector."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/sdks-and-apis/token-service/custom-fees/fixed-fees> .
+
+hedera:FractionalFee a owl:Class ;
+    rdfs:label "Fractional fee"@en ;
+    rdfs:subClassOf hedera:CustomFee ;
+    skos:definition "Custom fee deducting a fraction of the transferred amount and sending it to a collector."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/sdks-and-apis/token-service/custom-fees/fractional-fees> .
+
+hedera:FreezeControllerRole a owl:Class ;
+    rdfs:label "Freeze controller role"@en ;
+    rdfs:subClassOf hedera:TokenComplianceRole ;
+    skos:definition "Role responsible for freezing or unfreezing token accounts to maintain compliance."@en ;
+    hedera:sourceDocument <https://hips.hedera.com/hip/hip-540> .
+
+hedera:FreezeKey a owl:Class ;
+    rdfs:label "Freeze key"@en ;
+    rdfs:subClassOf hedera:TokenKey ;
+    skos:definition "Token key that toggles whether accounts may transact the token."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-keys> .
+
+hedera:FreezeKeyAssignment a owl:Class ;
+    rdfs:label "Freeze key assignment"@en ;
+    rdfs:subClassOf hedera:TokenKeyAssignment ;
+    skos:definition "Assignment that links a freeze key to the actor authorised to halt or resume transfers."@en ;
+    hedera:sourceDocument <https://hips.hedera.com/hip/hip-540> .
+
+hedera:KYCControllerRole a owl:Class ;
+    rdfs:label "KYC controller role"@en ;
+    rdfs:subClassOf hedera:TokenComplianceRole ;
+    skos:definition "Role accountable for administering KYC approvals required before token transfers."@en ;
+    hedera:sourceDocument <https://hips.hedera.com/hip/hip-540> .
+
+hedera:KYCKey a owl:Class ;
+    rdfs:label "KYC key"@en ;
+    rdfs:subClassOf hedera:TokenKey ;
+    skos:definition "Token key that authorises marking accounts as KYC-compliant before they may transfer tokens."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-keys> .
+
+hedera:KYCKeyAssignment a owl:Class ;
+    rdfs:label "KYC key assignment"@en ;
+    rdfs:subClassOf hedera:TokenKeyAssignment ;
+    skos:definition "Assignment that links a KYC key to the accountable controller enforcing onboarding checks."@en ;
+    hedera:sourceDocument <https://hips.hedera.com/hip/hip-540> .
+
+hedera:NonFungibleToken a owl:Class ;
+    rdfs:label "Non-fungible token"@en ;
+    rdfs:subClassOf hedera:Token ;
+    skos:definition "Token representing unique serialised items with metadata and ownership tracked per serial."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/sdks-and-apis/token-service/non-fungible-tokens> .
+
+hedera:PauseKey a owl:Class ;
+    rdfs:label "Pause key"@en ;
+    rdfs:subClassOf hedera:TokenKey ;
+    skos:definition "Token key that can pause and resume all token transfers regardless of account state."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-keys> .
+
+hedera:RoyaltyFee a owl:Class ;
+    rdfs:label "Royalty fee"@en ;
+    rdfs:subClassOf hedera:CustomFee ;
+    skos:definition "Custom fee that distributes a percentage of NFT sales to the royalty collector."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/sdks-and-apis/token-service/custom-fees/royalty-fees> .
+
+hedera:StablecoinToken a owl:Class ;
+    rdfs:label "Stablecoin token"@en ;
+    dcterms:identifier "HIP-540" ;
+    rdfs:subClassOf hedera:FungibleToken ;
+    skos:definition "Fungible token profile following HIP-540 stablecoin controls, including explicit KYC and freeze governance."@en ;
+    hedera:sourceDocument <https://hips.hedera.com/hip/hip-540> .
+
+hedera:SupplyKey a owl:Class ;
+    rdfs:label "Supply key"@en ;
+    rdfs:subClassOf hedera:TokenKey ;
+    skos:definition "Token key that authorises minting or burning supply for fungible and non-fungible tokens."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-keys> .
+
+hedera:SupplyKeyAssignment a owl:Class ;
+    rdfs:label "Supply key assignment"@en ;
+    rdfs:subClassOf hedera:TokenKeyAssignment ;
+    skos:definition "Assignment that links a supply key to the actor authorised to mint or burn supply."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-keys> .
+
+hedera:TokenBurnEvent a owl:Class ;
+    rdfs:label "Token burn event"@en ;
+    rdfs:subClassOf hedera:TokenEvent ;
+    skos:definition "Event noting supply removed from circulation."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-burn-and-wipe> .
+
+hedera:TokenMintEvent a owl:Class ;
+    rdfs:label "Token mint event"@en ;
+    rdfs:subClassOf hedera:TokenEvent ;
+    skos:definition "Event noting additional supply minted for a token."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-create-and-mint> .
+
+hedera:TokenTransferEvent a owl:Class ;
+    rdfs:label "Token transfer event"@en ;
+    rdfs:subClassOf hedera:TokenEvent ;
+    skos:definition "Event capturing debits and credits recorded for token relationships during a transfer."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/transactions/transaction-lifecycle> .
+
+hedera:TokenTreasuryRole a owl:Class ;
+    rdfs:label "Token treasury role"@en ;
+    rdfs:subClassOf hedera:Role ;
+    skos:definition "Role fulfilled by the account safeguarding reserves and distributing supply on behalf of a token."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/sdks-and-apis/token-service/treasury-and-supply> .
+
+hedera:assignsKey a owl:ObjectProperty ;
+    rdfs:label "assigns key"@en ;
+    rdfs:domain hedera:TokenKeyAssignment ;
+    rdfs:range hedera:TokenKey ;
+    skos:definition "Links a key assignment to the specific token key being governed."@en .
+
+hedera:controlsKey a owl:ObjectProperty ;
+    rdfs:label "controls key"@en ;
+    rdfs:domain hedera:Role ;
+    rdfs:range hedera:TokenKey ;
+    skos:definition "States that a governance role exercises authority over a particular token key."@en .
+
+hedera:enforcementState a owl:DatatypeProperty ;
+    rdfs:label "enforcement state"@en ;
+    rdfs:domain hedera:TokenKeyAssignment ;
+    rdfs:range xsd:string ;
+    skos:definition "Narrative state of the key (e.g., present, removed, in escrow) supporting compliance attestation."@en .
+
+hedera:feeCollector a owl:ObjectProperty ;
+    rdfs:label "fee collector"@en ;
+    rdfs:domain hedera:CustomFee ;
+    rdfs:range hedera:Account ;
+    skos:definition "Identifies the account that receives assessed custom fees."@en .
+
+hedera:hasAllowance a owl:DatatypeProperty ;
+    rdfs:label "has allowance"@en ;
+    rdfs:domain hedera:TokenRelationship ;
+    rdfs:range xsd:decimal ;
+    skos:definition "Approved allowance amount the account has granted to spenders."@en .
+
+hedera:hasControllerRole a owl:ObjectProperty ;
+    rdfs:label "has controller role"@en ;
+    rdfs:domain hedera:TokenKeyAssignment ;
+    rdfs:range hedera:Role ;
+    skos:definition "Connects a key assignment to the governance role describing its responsibilities."@en .
+
+hedera:hasCustomFee a owl:ObjectProperty ;
+    rdfs:label "has custom fee"@en ;
+    rdfs:domain hedera:Token ;
+    rdfs:range hedera:CustomFee ;
+    skos:definition "Associates a token with the custom fee schedule entries it enforces."@en .
+
+hedera:hasDecimals a owl:DatatypeProperty ;
+    rdfs:label "has decimals"@en ;
+    rdfs:domain hedera:FungibleToken ;
+    rdfs:range xsd:integer ;
+    skos:definition "Number of decimal places tracked for fungible token units."@en .
+
+hedera:hasInitialSupply a owl:DatatypeProperty ;
+    rdfs:label "has initial supply"@en ;
+    rdfs:domain hedera:FungibleToken ;
+    rdfs:range xsd:decimal ;
+    skos:definition "Initial supply minted at token creation."@en .
+
+hedera:hasKeyAssignment a owl:ObjectProperty ;
+    rdfs:label "has key assignment"@en ;
+    rdfs:domain hedera:Token ;
+    rdfs:range hedera:TokenKeyAssignment ;
+    skos:definition "Connects a token to artefacts describing who controls each of its keys."@en .
+
+hedera:hasMaxSupply a owl:DatatypeProperty ;
+    rdfs:label "has max supply"@en ;
+    rdfs:domain hedera:Token ;
+    rdfs:range xsd:decimal ;
+    skos:definition "Maximum configured supply for a token."@en .
+
+hedera:hasSymbol a owl:DatatypeProperty ;
+    rdfs:label "has symbol"@en ;
+    rdfs:domain hedera:Token ;
+    rdfs:range xsd:string ;
+    skos:definition "Ticker-style symbol for a token."@en .
+
+hedera:hasTokenBalance a owl:DatatypeProperty ;
+    rdfs:label "has token balance"@en ;
+    rdfs:domain hedera:TokenRelationship ;
+    rdfs:range xsd:decimal ;
+    skos:definition "Balance of token units recorded for the relationship."@en .
+
+hedera:hasTokenId a owl:DatatypeProperty ;
+    rdfs:label "has token id"@en ;
+    rdfs:domain hedera:Token ;
+    rdfs:range xsd:string ;
+    skos:definition "Ledger identifier for a token (e.g., 0.0.x)."@en .
+
+hedera:hasTokenRelationship a owl:ObjectProperty ;
+    rdfs:label "has token relationship"@en ;
+    rdfs:domain hedera:Token ;
+    rdfs:range hedera:TokenRelationship ;
+    skos:definition "Relates a token to per-account state records."@en .
+
+hedera:hasTreasury a owl:ObjectProperty ;
+    rdfs:label "has treasury"@en ;
+    rdfs:domain hedera:Token ;
+    rdfs:range hedera:Account ;
+    skos:definition "Identifies the treasury account responsible for token reserves and initial distribution."@en .
+
+hedera:isControlledBy a owl:ObjectProperty ;
+    rdfs:label "is controlled by"@en ;
+    rdfs:domain hedera:TokenKeyAssignment ;
+    rdfs:range hedera:Actor ;
+    skos:definition "Indicates which actor holds operational control over a token key."@en .
+
+hedera:isFrozen a owl:DatatypeProperty ;
+    rdfs:label "is frozen"@en ;
+    rdfs:domain hedera:TokenRelationship ;
+    rdfs:range xsd:boolean ;
+    skos:definition "Flag indicating whether the account is currently frozen for the token."@en .
+
+hedera:isKYCApproved a owl:DatatypeProperty ;
+    rdfs:label "is KYC approved"@en ;
+    rdfs:domain hedera:TokenRelationship ;
+    rdfs:range xsd:boolean ;
+    skos:definition "Flag indicating whether the account has been marked as KYC compliant for the token."@en .
+
+hedera:managesToken a owl:ObjectProperty ;
+    rdfs:label "manages token"@en ;
+    rdfs:domain hedera:TokenService ;
+    rdfs:range hedera:Token ;
+    rdfs:subPropertyOf hedera:managesArtefact ;
+    skos:definition "Associates the Token Service with tokens under its lifecycle governance."@en .
+
+hedera:provTrace a owl:ObjectProperty ;
+    rdfs:label "provenance trace"@en ;
+    rdfs:domain hedera:Token ;
+    rdfs:range prov:Entity ;
+    rdfs:subPropertyOf prov:wasDerivedFrom ;
+    skos:definition "References source artefacts (HIPs, disclosures) demonstrating compliance provenance."@en .
+
+hedera:recordsEvent a owl:ObjectProperty ;
+    rdfs:label "records event"@en ;
+    rdfs:domain hedera:TokenRelationship ;
+    rdfs:range hedera:TokenEvent ;
+    skos:definition "Associates a token relationship with an event that affected its balances or status."@en .
+
+hedera:relatesAccount a owl:ObjectProperty ;
+    rdfs:label "relates account"@en ;
+    rdfs:domain hedera:TokenRelationship ;
+    rdfs:range hedera:Account ;
+    skos:definition "Identifies the account whose state is described by a token relationship."@en .
+
+hedera:relatesToken a owl:ObjectProperty ;
+    rdfs:label "relates token"@en ;
+    rdfs:domain hedera:TokenRelationship ;
+    rdfs:range hedera:Token ;
+    skos:definition "Identifies the token associated with a relationship record."@en .
+
+hedera:submitsTokenTransaction a owl:ObjectProperty ;
+    rdfs:label "submits token transaction"@en ;
+    rdfs:domain hedera:Account ;
+    rdfs:range hedera:TokenEvent ;
+    skos:definition "Links an account to the token events it initiated via signed transactions."@en .
+
+hedera:tracksRelationship a owl:ObjectProperty ;
+    rdfs:label "tracks relationship"@en ;
+    rdfs:domain hedera:TokenService ;
+    rdfs:range hedera:TokenRelationship ;
+    skos:definition "Links the Token Service to the per-account relationship records it maintains."@en .
+
+<https://hashgraphontology.xyx/hedera/token> a owl:Ontology ;
+    dcterms:created "2024-09-27"^^xsd:date ;
+    dcterms:creator "Bhash Ontology Working Group"@en ;
+    dcterms:description "Service-specific vocabulary for modelling Hedera Token Service artefacts, compliance roles, and lifecycle events."@en ;
+    dcterms:modified "2024-09-27"^^xsd:date ;
+    dcterms:title "Hedera Token Service module"@en ;
+    owl:imports <https://hashgraphontology.xyx/hedera/core> ;
+    owl:versionInfo "0.1.0-dev" ;
+    skos:editorialNote "Phase 3 sprint module introducing token compliance semantics to support CQ-COMP-003."@en .
+
+hedera:TokenComplianceRole a owl:Class ;
+    rdfs:label "Token compliance role"@en ;
+    rdfs:subClassOf hedera:Role ;
+    skos:definition "Role describing a governance responsibility over compliance-sensitive token keys."@en ;
+    hedera:sourceDocument <https://hips.hedera.com/hip/hip-540> .
+
+hedera:TokenService a owl:Class ;
+    rdfs:label "Token Service"@en ;
+    rdfs:subClassOf hedera:Service ;
+    skos:definition "Network service responsible for minting, managing, and enforcing policy over fungible and non-fungible tokens."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/sdks-and-apis/token-service/introduction> .
+
+hedera:FungibleToken a owl:Class ;
+    rdfs:label "Fungible token"@en ;
+    rdfs:subClassOf hedera:Token ;
+    skos:definition "Token whose units are interchangeable and tracked via balances and allowances."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/sdks-and-apis/token-service/fungible-tokens> .
+
+hedera:CustomFee a owl:Class ;
+    rdfs:label "Custom fee"@en ;
+    rdfs:subClassOf hedera:Artefact ;
+    skos:definition "Fee schedule entry defining royalty, fixed, or fractional fees assessed on token transfers."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/sdks-and-apis/token-service/custom-fees> .
+
+hedera:TokenEvent a owl:Class ;
+    rdfs:label "Token event"@en ;
+    rdfs:subClassOf hedera:Event ;
+    skos:definition "Event emitted by the Token Service reflecting mint, burn, or transfer outcomes."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/transactions/transaction-lifecycle> .
+
+hedera:TokenKey a owl:Class ;
+    rdfs:label "Token key"@en ;
+    rdfs:subClassOf hedera:AccountKey ;
+    skos:definition "Key material that authorises token-specific actions such as supply control, compliance, or metadata updates."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-keys> .
+
+hedera:TokenKeyAssignment a owl:Class ;
+    rdfs:label "Token key assignment"@en ;
+    rdfs:subClassOf hedera:Artefact ;
+    skos:definition "Artefact capturing which actor controls a specific token key and for what governance purpose."@en ;
+    hedera:sourceDocument <https://hips.hedera.com/hip/hip-540> .
+
+hedera:TokenRelationship a owl:Class ;
+    rdfs:label "Token relationship"@en ;
+    rdfs:subClassOf hedera:Artefact ;
+    skos:definition "Per-account view of balances, KYC, freeze, and allowance states for a specific token."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-relationships> .
+
+hedera:Token a owl:Class ;
+    rdfs:label "Token"@en ;
+    rdfs:subClassOf hedera:Artefact ;
+    skos:definition "Digital asset managed by the Token Service with associated supply, metadata, and key governance."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/sdks-and-apis/token-service/introduction> .
+
