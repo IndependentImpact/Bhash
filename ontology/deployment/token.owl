@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:hedera="https://hashgraphontology.xyx/hedera/core/"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/controlsKey">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">controls key</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/Role"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/TokenKey"/>
+    <skos:definition xml:lang="en">States that a governance role exercises authority over a particular token key.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasDecimals">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">has decimals</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/FungibleToken"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <skos:definition xml:lang="en">Number of decimal places tracked for fungible token units.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/TokenComplianceRole">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Token compliance role</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/Role"/>
+    <skos:definition xml:lang="en">Role describing a governance responsibility over compliance-sensitive token keys.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://hips.hedera.com/hip/hip-540"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/TokenTransferEvent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Token transfer event</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/TokenEvent"/>
+    <skos:definition xml:lang="en">Event capturing debits and credits recorded for token relationships during a transfer.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/core-concepts/transactions/transaction-lifecycle"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/token">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <dcterms:title xml:lang="en">Hedera Token Service module</dcterms:title>
+    <dcterms:description xml:lang="en">Service-specific vocabulary for modelling Hedera Token Service artefacts, compliance roles, and lifecycle events.</dcterms:description>
+    <dcterms:creator xml:lang="en">Bhash Ontology Working Group</dcterms:creator>
+    <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-09-27</dcterms:created>
+    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-09-27</dcterms:modified>
+    <owl:imports rdf:resource="https://hashgraphontology.xyx/hedera/core"/>
+    <owl:versionInfo>0.1.0-dev</owl:versionInfo>
+    <skos:editorialNote xml:lang="en">Phase 3 sprint module introducing token compliance semantics to support CQ-COMP-003.</skos:editorialNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/FungibleToken">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Fungible token</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/Token"/>
+    <skos:definition xml:lang="en">Token whose units are interchangeable and tracked via balances and allowances.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/sdks-and-apis/token-service/fungible-tokens"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasKeyAssignment">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has key assignment</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/Token"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/TokenKeyAssignment"/>
+    <skos:definition xml:lang="en">Connects a token to artefacts describing who controls each of its keys.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/FixedFee">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Fixed fee</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/CustomFee"/>
+    <skos:definition xml:lang="en">Custom fee that transfers a fixed quantity of tokens or HBAR to the collector.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/sdks-and-apis/token-service/custom-fees/fixed-fees"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/KYCKey">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">KYC key</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/TokenKey"/>
+    <skos:definition xml:lang="en">Token key that authorises marking accounts as KYC-compliant before they may transfer tokens.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-keys"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/relatesAccount">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">relates account</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/TokenRelationship"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/Account"/>
+    <skos:definition xml:lang="en">Identifies the account whose state is described by a token relationship.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/assignsKey">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">assigns key</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/TokenKeyAssignment"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/TokenKey"/>
+    <skos:definition xml:lang="en">Links a key assignment to the specific token key being governed.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/CustomFee">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Custom fee</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/Artefact"/>
+    <skos:definition xml:lang="en">Fee schedule entry defining royalty, fixed, or fractional fees assessed on token transfers.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/sdks-and-apis/token-service/custom-fees"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasAllowance">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">has allowance</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/TokenRelationship"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <skos:definition xml:lang="en">Approved allowance amount the account has granted to spenders.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/provTrace">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">provenance trace</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/Token"/>
+    <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasDerivedFrom"/>
+    <skos:definition xml:lang="en">References source artefacts (HIPs, disclosures) demonstrating compliance provenance.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/TokenKey">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Token key</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/AccountKey"/>
+    <skos:definition xml:lang="en">Key material that authorises token-specific actions such as supply control, compliance, or metadata updates.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-keys"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/TokenMintEvent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Token mint event</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/TokenEvent"/>
+    <skos:definition xml:lang="en">Event noting additional supply minted for a token.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-create-and-mint"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/FreezeKey">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Freeze key</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/TokenKey"/>
+    <skos:definition xml:lang="en">Token key that toggles whether accounts may transact the token.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-keys"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/feeCollector">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">fee collector</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/CustomFee"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/Account"/>
+    <skos:definition xml:lang="en">Identifies the account that receives assessed custom fees.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/relatesToken">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">relates token</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/TokenRelationship"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/Token"/>
+    <skos:definition xml:lang="en">Identifies the token associated with a relationship record.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/TokenService">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Token Service</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/Service"/>
+    <skos:definition xml:lang="en">Network service responsible for minting, managing, and enforcing policy over fungible and non-fungible tokens.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/sdks-and-apis/token-service/introduction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/FreezeControllerRole">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Freeze controller role</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/TokenComplianceRole"/>
+    <skos:definition xml:lang="en">Role responsible for freezing or unfreezing token accounts to maintain compliance.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://hips.hedera.com/hip/hip-540"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/managesToken">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">manages token</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/TokenService"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/Token"/>
+    <rdfs:subPropertyOf rdf:resource="https://hashgraphontology.xyx/hedera/core/managesArtefact"/>
+    <skos:definition xml:lang="en">Associates the Token Service with tokens under its lifecycle governance.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/recordsEvent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">records event</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/TokenRelationship"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/TokenEvent"/>
+    <skos:definition xml:lang="en">Associates a token relationship with an event that affected its balances or status.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasTokenBalance">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">has token balance</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/TokenRelationship"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <skos:definition xml:lang="en">Balance of token units recorded for the relationship.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasControllerRole">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has controller role</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/TokenKeyAssignment"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/Role"/>
+    <skos:definition xml:lang="en">Connects a key assignment to the governance role describing its responsibilities.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasTokenId">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">has token id</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/Token"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <skos:definition xml:lang="en">Ledger identifier for a token (e.g., 0.0.x).</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/KYCKeyAssignment">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">KYC key assignment</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/TokenKeyAssignment"/>
+    <skos:definition xml:lang="en">Assignment that links a KYC key to the accountable controller enforcing onboarding checks.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://hips.hedera.com/hip/hip-540"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/SupplyKeyAssignment">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Supply key assignment</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/TokenKeyAssignment"/>
+    <skos:definition xml:lang="en">Assignment that links a supply key to the actor authorised to mint or burn supply.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-keys"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasTokenRelationship">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has token relationship</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/Token"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/TokenRelationship"/>
+    <skos:definition xml:lang="en">Relates a token to per-account state records.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasMaxSupply">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">has max supply</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/Token"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <skos:definition xml:lang="en">Maximum configured supply for a token.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/Token">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Token</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/Artefact"/>
+    <skos:definition xml:lang="en">Digital asset managed by the Token Service with associated supply, metadata, and key governance.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/sdks-and-apis/token-service/introduction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/SupplyKey">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Supply key</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/TokenKey"/>
+    <skos:definition xml:lang="en">Token key that authorises minting or burning supply for fungible and non-fungible tokens.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-keys"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/FreezeKeyAssignment">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Freeze key assignment</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/TokenKeyAssignment"/>
+    <skos:definition xml:lang="en">Assignment that links a freeze key to the actor authorised to halt or resume transfers.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://hips.hedera.com/hip/hip-540"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/tracksRelationship">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">tracks relationship</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/TokenService"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/TokenRelationship"/>
+    <skos:definition xml:lang="en">Links the Token Service to the per-account relationship records it maintains.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasInitialSupply">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">has initial supply</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/FungibleToken"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <skos:definition xml:lang="en">Initial supply minted at token creation.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/TokenRelationship">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Token relationship</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/Artefact"/>
+    <skos:definition xml:lang="en">Per-account view of balances, KYC, freeze, and allowance states for a specific token.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-relationships"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasTreasury">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has treasury</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/Token"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/Account"/>
+    <skos:definition xml:lang="en">Identifies the treasury account responsible for token reserves and initial distribution.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/isFrozen">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">is frozen</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/TokenRelationship"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <skos:definition xml:lang="en">Flag indicating whether the account is currently frozen for the token.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/RoyaltyFee">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Royalty fee</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/CustomFee"/>
+    <skos:definition xml:lang="en">Custom fee that distributes a percentage of NFT sales to the royalty collector.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/sdks-and-apis/token-service/custom-fees/royalty-fees"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/AdminKey">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Admin key</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/TokenKey"/>
+    <skos:definition xml:lang="en">Token key that can update core properties or delete the token.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-keys"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/isControlledBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">is controlled by</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/TokenKeyAssignment"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/Actor"/>
+    <skos:definition xml:lang="en">Indicates which actor holds operational control over a token key.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/TokenTreasuryRole">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Token treasury role</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/Role"/>
+    <skos:definition xml:lang="en">Role fulfilled by the account safeguarding reserves and distributing supply on behalf of a token.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/sdks-and-apis/token-service/treasury-and-supply"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/isKYCApproved">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">is KYC approved</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/TokenRelationship"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <skos:definition xml:lang="en">Flag indicating whether the account has been marked as KYC compliant for the token.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/TokenKeyAssignment">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Token key assignment</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/Artefact"/>
+    <skos:definition xml:lang="en">Artefact capturing which actor controls a specific token key and for what governance purpose.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://hips.hedera.com/hip/hip-540"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/KYCControllerRole">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">KYC controller role</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/TokenComplianceRole"/>
+    <skos:definition xml:lang="en">Role accountable for administering KYC approvals required before token transfers.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://hips.hedera.com/hip/hip-540"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/NonFungibleToken">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Non-fungible token</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/Token"/>
+    <skos:definition xml:lang="en">Token representing unique serialised items with metadata and ownership tracked per serial.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/sdks-and-apis/token-service/non-fungible-tokens"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasCustomFee">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">has custom fee</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/Token"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/CustomFee"/>
+    <skos:definition xml:lang="en">Associates a token with the custom fee schedule entries it enforces.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/PauseKey">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Pause key</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/TokenKey"/>
+    <skos:definition xml:lang="en">Token key that can pause and resume all token transfers regardless of account state.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-keys"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/FractionalFee">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Fractional fee</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/CustomFee"/>
+    <skos:definition xml:lang="en">Custom fee deducting a fraction of the transferred amount and sending it to a collector.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/sdks-and-apis/token-service/custom-fees/fractional-fees"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/StablecoinToken">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Stablecoin token</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/FungibleToken"/>
+    <dcterms:identifier>HIP-540</dcterms:identifier>
+    <skos:definition xml:lang="en">Fungible token profile following HIP-540 stablecoin controls, including explicit KYC and freeze governance.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://hips.hedera.com/hip/hip-540"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/TokenEvent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Token event</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/Event"/>
+    <skos:definition xml:lang="en">Event emitted by the Token Service reflecting mint, burn, or transfer outcomes.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/core-concepts/transactions/transaction-lifecycle"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/enforcementState">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">enforcement state</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/TokenKeyAssignment"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <skos:definition xml:lang="en">Narrative state of the key (e.g., present, removed, in escrow) supporting compliance attestation.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/hasSymbol">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">has symbol</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/Token"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <skos:definition xml:lang="en">Ticker-style symbol for a token.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/submitsTokenTransaction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">submits token transaction</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyx/hedera/core/Account"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyx/hedera/core/TokenEvent"/>
+    <skos:definition xml:lang="en">Links an account to the token events it initiated via signed transactions.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/core/TokenBurnEvent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Token burn event</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyx/hedera/core/TokenEvent"/>
+    <skos:definition xml:lang="en">Event noting supply removed from circulation.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-burn-and-wipe"/>
+  </rdf:Description>
+</rdf:RDF>

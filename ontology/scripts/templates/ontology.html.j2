@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ ontology.title or base_name }} – Hashgraph Ontology</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2rem auto; max-width: 1100px; line-height: 1.6; }
+        h1, h2, h3 { color: #1f2937; }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        th, td { padding: 0.5rem; border: 1px solid #e5e7eb; vertical-align: top; }
+        th { background: #f3f4f6; text-align: left; }
+        .meta { color: #4b5563; }
+        .pill { display: inline-block; padding: 0.2rem 0.5rem; margin: 0.1rem; background: #e5e7eb; border-radius: 6px; }
+        .small { font-size: 0.9rem; }
+        .section { margin-top: 2rem; }
+        a { color: #0f766e; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>{{ ontology.title or base_name }}</h1>
+        {% if ontology.iri %}<div class="meta">IRI: <a href="{{ ontology.iri }}">{{ ontology.iri }}</a></div>{% endif %}
+        {% if ontology.description %}<p>{{ ontology.description }}</p>{% endif %}
+        <p class="meta">Source file: {{ source_path }}</p>
+    </header>
+
+    <section class="section">
+        <h2>Prefixes</h2>
+        <table>
+            <thead><tr><th>Prefix</th><th>Namespace</th></tr></thead>
+            <tbody>
+            {% for prefix in prefixes %}
+                <tr><td>{{ prefix.prefix }}</td><td>{{ prefix.ns }}</td></tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </section>
+
+    <section class="section">
+        <h2>Classes ({{ classes|length }})</h2>
+        <table>
+            <thead><tr><th>Label</th><th>QName</th><th>Subclass Of</th><th>Notes</th></tr></thead>
+            <tbody>
+            {% for cls in classes %}
+                <tr id="cls-{{ cls.qname|replace(':','-') }}">
+                    <td>{{ cls.label }}</td>
+                    <td>{{ cls.qname }}</td>
+                    <td>{% for p in cls.subClassOf %}<span class="pill">{{ p }}</span>{% endfor %}</td>
+                    <td class="small">
+                        {% for d in cls.definitions %}<div><strong>Definition:</strong> {{ d }}</div>{% endfor %}
+                        {% for c in cls.comments %}<div><strong>Comment:</strong> {{ c }}</div>{% endfor %}
+                        {% for e in cls.examples %}<div><strong>Example:</strong> {{ e }}</div>{% endfor %}
+                        <div class="meta">IRI: {{ cls.iri }}</div>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </section>
+
+    <section class="section">
+        <h2>Properties ({{ properties|length }})</h2>
+        <table>
+            <thead><tr><th>Label</th><th>QName</th><th>Kind</th><th>Domain</th><th>Range</th><th>Notes</th></tr></thead>
+            <tbody>
+            {% for prop in properties %}
+                <tr id="prop-{{ prop.qname|replace(':','-') }}">
+                    <td>{{ prop.label }}</td>
+                    <td>{{ prop.qname }}</td>
+                    <td>{{ prop.kind }}</td>
+                    <td>{% for d in prop.domain %}<span class="pill">{{ d }}</span>{% endfor %}</td>
+                    <td>{% for r in prop.range %}<span class="pill">{{ r }}</span>{% endfor %}</td>
+                    <td class="small">
+                        {% for c in prop.comments %}<div><strong>Comment:</strong> {{ c }}</div>{% endfor %}
+                        {% if prop.subPropertyOf %}<div><strong>SubProperty Of:</strong> {% for sp in prop.subPropertyOf %}<span class="pill">{{ sp }}</span>{% endfor %}</div>{% endif %}
+                        {% if prop.inverses %}<div><strong>Inverse Of:</strong> {% for inv in prop.inverses %}<span class="pill">{{ inv }}</span>{% endfor %}</div>{% endif %}
+                        <div class="meta">IRI: {{ prop.iri }}</div>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>

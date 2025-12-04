@@ -1,0 +1,161 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix hedera: <https://hashgraphontology.xyx/hedera/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+hedera:MirrorNodeOperatorRole a owl:Class ;
+    rdfs:label "Mirror node operator role"@en ;
+    rdfs:subClassOf hedera:Role ;
+    skos:definition "Role fulfilled by organisations running mirror node infrastructure."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/mirror-node/deploy> .
+
+hedera:coversService a owl:ObjectProperty ;
+    rdfs:label "covers service"@en ;
+    rdfs:domain hedera:MirrorDataset ;
+    rdfs:range hedera:Service ;
+    skos:definition "Identifies which Hedera service a dataset provides analytics for."@en .
+
+hedera:curatesWorkspace a owl:ObjectProperty ;
+    rdfs:label "curates workspace"@en ;
+    rdfs:domain hedera:Actor ;
+    rdfs:range hedera:AnalyticsWorkspace ;
+    skos:definition "Indicates the actor responsible for an analytics workspace."@en .
+
+hedera:exposesGrpcEndpoint a owl:ObjectProperty ;
+    rdfs:label "exposes gRPC endpoint"@en ;
+    rdfs:domain hedera:MirrorService ;
+    rdfs:range hedera:MirrorGrpcAPI ;
+    skos:definition "Connects a mirror service to its gRPC streaming artefact."@en .
+
+hedera:exposesRestEndpoint a owl:ObjectProperty ;
+    rdfs:label "exposes REST endpoint"@en ;
+    rdfs:domain hedera:MirrorService ;
+    rdfs:range hedera:MirrorRestAPI ;
+    skos:definition "Connects a mirror service to its REST API artefact."@en .
+
+hedera:feedsAnalyticsWorkspace a owl:ObjectProperty ;
+    rdfs:label "feeds analytics workspace"@en ;
+    rdfs:domain hedera:MirrorDataset ;
+    rdfs:range hedera:AnalyticsWorkspace ;
+    skos:definition "Identifies analytics workspaces that consume a dataset."@en .
+
+hedera:hasDatasetType a owl:DatatypeProperty ;
+    rdfs:label "has dataset type"@en ;
+    rdfs:domain hedera:MirrorDataset ;
+    rdfs:range xsd:string ;
+    skos:definition "Describes the type of dataset (e.g., balances, contract-results)."@en .
+
+hedera:hasDatasetURI a owl:DatatypeProperty ;
+    rdfs:label "has dataset URI"@en ;
+    rdfs:domain hedera:MirrorDataset ;
+    rdfs:range xsd:anyURI ;
+    skos:definition "URI endpoint where the dataset can be accessed."@en .
+
+hedera:hasMetricValue a owl:DatatypeProperty ;
+    rdfs:label "has metric value"@en ;
+    rdfs:domain hedera:TelemetryMetric ;
+    rdfs:range xsd:decimal ;
+    skos:definition "Quantitative value reported for a metric."@en .
+
+hedera:hasMetricWindow a owl:DatatypeProperty ;
+    rdfs:label "has metric window"@en ;
+    rdfs:domain hedera:TelemetryMetric ;
+    rdfs:range xsd:string ;
+    skos:definition "Time window (e.g., 1h, 24h) represented by the metric."@en .
+
+hedera:hasRetentionDays a owl:DatatypeProperty ;
+    rdfs:label "has retention days"@en ;
+    rdfs:domain hedera:DatasetRetentionPolicy ;
+    rdfs:range xsd:integer ;
+    skos:definition "Number of days data is retained."@en .
+
+hedera:hasRetentionPolicy a owl:ObjectProperty ;
+    rdfs:label "has retention policy"@en ;
+    rdfs:domain hedera:MirrorDataset ;
+    rdfs:range hedera:DatasetRetentionPolicy ;
+    skos:definition "Associates a dataset with its retention policy."@en .
+
+hedera:hasWorkspacePurpose a owl:DatatypeProperty ;
+    rdfs:label "has workspace purpose"@en ;
+    rdfs:domain hedera:AnalyticsWorkspace ;
+    rdfs:range xsd:string ;
+    skos:definition "Narrative description of the analytics workspace focus."@en .
+
+hedera:producesMetric a owl:ObjectProperty ;
+    rdfs:label "produces metric"@en ;
+    rdfs:domain hedera:IngestionPipeline ;
+    rdfs:range hedera:TelemetryMetric ;
+    skos:definition "Indicates metrics emitted by an ingestion pipeline."@en .
+
+hedera:publishesDataset a owl:ObjectProperty ;
+    rdfs:label "publishes dataset"@en ;
+    rdfs:domain hedera:MirrorService ;
+    rdfs:range hedera:MirrorDataset ;
+    skos:definition "Links a mirror service to datasets it exports."@en .
+
+hedera:runsPipeline a owl:ObjectProperty ;
+    rdfs:label "runs pipeline"@en ;
+    rdfs:domain hedera:Actor ;
+    rdfs:range hedera:IngestionPipeline ;
+    skos:definition "Links an operator to the ingestion pipeline they run."@en .
+
+<https://hashgraphontology.xyx/hedera/mirror-analytics> a owl:Ontology ;
+    dcterms:created "2024-10-01"^^xsd:date ;
+    dcterms:creator "Bhash Ontology Working Group"@en ;
+    dcterms:description "Vocabulary for mirror nodes, exported datasets, and analytics workspaces consuming Hedera telemetry."@en ;
+    dcterms:modified "2025-09-30"^^xsd:date ;
+    dcterms:title "Hedera Mirror and Analytics Ecosystem module"@en ;
+    owl:imports <https://hashgraphontology.xyx/hedera/core> ;
+    owl:versionInfo "0.1.0-dev" ;
+    skos:editorialNote "Phase 3 sprint module documenting mirror node pipelines, dataset retention, and analytics reuse for CQ-ANL-007."@en .
+
+hedera:MirrorGrpcAPI a owl:Class ;
+    rdfs:label "Mirror gRPC API"@en ;
+    rdfs:subClassOf hedera:Artefact ;
+    skos:definition "gRPC streaming interface for subscribing to Hedera mirror node data."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/mirror-node/sdks-and-apis/grpc-api> .
+
+hedera:MirrorRestAPI a owl:Class ;
+    rdfs:label "Mirror REST API"@en ;
+    rdfs:subClassOf hedera:Artefact ;
+    skos:definition "RESTful interface provided by mirror nodes for querying Hedera history."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/mirror-node/sdks-and-apis/rest-api> .
+
+hedera:DatasetRetentionPolicy a owl:Class ;
+    rdfs:label "Dataset retention policy"@en ;
+    rdfs:subClassOf hedera:Artefact ;
+    skos:definition "Policy describing how long datasets are retained in analytics storage."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/mirror-node/architecture/record-and-balance-files> .
+
+hedera:IngestionPipeline a owl:Class ;
+    rdfs:label "Ingestion pipeline"@en ;
+    rdfs:subClassOf hedera:Process ;
+    skos:definition "Pipeline that ingests record files into analytics storage."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/mirror-node/architecture/overview> .
+
+hedera:AnalyticsWorkspace a owl:Class ;
+    rdfs:label "Analytics workspace"@en ;
+    rdfs:subClassOf hedera:Artefact ;
+    skos:definition "Analytical environment consuming mirror datasets for reporting or dashboards."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/mirror-node/architecture/overview> .
+
+hedera:MirrorService a owl:Class ;
+    rdfs:label "Mirror Service"@en ;
+    rdfs:subClassOf hedera:Service ;
+    skos:definition "Service tier that replicates consensus data and exposes REST/gRPC APIs."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/mirror-node> .
+
+hedera:TelemetryMetric a owl:Class ;
+    rdfs:label "Telemetry metric"@en ;
+    rdfs:subClassOf hedera:Event ;
+    skos:definition "Metric derived from mirror node operations or analytics pipelines."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/mirror-node/architecture/metrics> .
+
+hedera:MirrorDataset a owl:Class ;
+    rdfs:label "Mirror dataset"@en ;
+    rdfs:subClassOf hedera:Artefact ;
+    skos:definition "Dataset exported by mirror nodes such as transactions, balances, or contract logs."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/mirror-node/architecture/record-and-balance-files> .
+

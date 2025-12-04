@@ -1,0 +1,199 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix hedera: <https://hashgraphontology.xyx/hedera/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+hedera:FileService a owl:Class ;
+    rdfs:label "File Service"@en ;
+    rdfs:subClassOf hedera:Service ;
+    skos:definition "Network service that stores bytecode, fee schedules, and other artefacts under key-controlled files."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/file-service/introduction> .
+
+hedera:PendingSchedule a owl:Class ;
+    rdfs:label "Pending schedule"@en ;
+    rdfs:subClassOf hedera:ScheduledTransaction ;
+    skos:definition "Scheduled transaction that has not yet gathered sufficient signatures."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/scheduled-transactions> .
+
+hedera:ScheduleService a owl:Class ;
+    rdfs:label "Schedule Service"@en ;
+    rdfs:subClassOf hedera:Service ;
+    skos:definition "Service that queues transactions for deferred execution once signature requirements are met."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/introduction> .
+
+hedera:expiresWith a owl:ObjectProperty ;
+    rdfs:label "expires with"@en ;
+    rdfs:domain hedera:ScheduledTransaction ;
+    rdfs:range hedera:Event ;
+    skos:definition "Identifies the event that marks the expiration of a scheduled transaction."@en .
+
+hedera:hasCollectedSignature a owl:ObjectProperty ;
+    rdfs:label "has collected signature"@en ;
+    rdfs:domain hedera:ScheduledTransaction ;
+    rdfs:range hedera:ScheduleSignature ;
+    skos:definition "Connects a scheduled transaction to signatures already obtained."@en .
+
+hedera:hasCollectedSignatureCount a owl:DatatypeProperty ;
+    rdfs:label "has collected signature count"@en ;
+    rdfs:domain hedera:ScheduledTransaction ;
+    rdfs:range xsd:integer ;
+    skos:definition "Number of signatures collected so far for the schedule."@en .
+
+hedera:hasExecution a owl:ObjectProperty ;
+    rdfs:label "has execution"@en ;
+    rdfs:domain hedera:ScheduledTransaction ;
+    rdfs:range hedera:ScheduleExecution ;
+    skos:definition "Associates a scheduled transaction with its execution once signatures complete."@en .
+
+hedera:hasFileContent a owl:ObjectProperty ;
+    rdfs:label "has file content"@en ;
+    rdfs:domain hedera:File ;
+    rdfs:range hedera:FileContent ;
+    skos:definition "Links a file to the payload stored within it."@en .
+
+hedera:hasFileId a owl:DatatypeProperty ;
+    rdfs:label "has file id"@en ;
+    rdfs:domain hedera:File ;
+    rdfs:range xsd:string ;
+    skos:definition "Ledger identifier (e.g., 0.0.x) for a file."@en .
+
+hedera:hasFileKey a owl:ObjectProperty ;
+    rdfs:label "has file key"@en ;
+    rdfs:domain hedera:File ;
+    rdfs:range hedera:FileKey ;
+    skos:definition "Associates a file with the keys authorised to modify it."@en .
+
+hedera:hasFileMemo a owl:DatatypeProperty ;
+    rdfs:label "has file memo"@en ;
+    rdfs:domain hedera:File ;
+    rdfs:range xsd:string ;
+    skos:definition "Memo describing file purpose or metadata."@en .
+
+hedera:hasFileSize a owl:DatatypeProperty ;
+    rdfs:label "has file size"@en ;
+    rdfs:domain hedera:File ;
+    rdfs:range xsd:integer ;
+    skos:definition "Size of file contents in bytes."@en .
+
+hedera:hasRequiredSignatureCount a owl:DatatypeProperty ;
+    rdfs:label "has required signature count"@en ;
+    rdfs:domain hedera:ScheduledTransaction ;
+    rdfs:range xsd:integer ;
+    skos:definition "Number of signatures needed before execution."@en .
+
+hedera:hasScheduleExpiration a owl:DatatypeProperty ;
+    rdfs:label "has schedule expiration"@en ;
+    rdfs:domain hedera:ScheduledTransaction ;
+    rdfs:range xsd:dateTime ;
+    skos:definition "Timestamp at which the scheduled transaction expires."@en .
+
+hedera:hasScheduleId a owl:DatatypeProperty ;
+    rdfs:label "has schedule id"@en ;
+    rdfs:domain hedera:ScheduledTransaction ;
+    rdfs:range xsd:string ;
+    skos:definition "Ledger identifier for a scheduled transaction."@en .
+
+hedera:hasScheduleMemo a owl:DatatypeProperty ;
+    rdfs:label "has schedule memo"@en ;
+    rdfs:domain hedera:ScheduledTransaction ;
+    rdfs:range xsd:string ;
+    skos:definition "Memo describing the scheduled transaction purpose."@en .
+
+hedera:hasSchedulePayer a owl:DatatypeProperty ;
+    rdfs:label "has schedule payer"@en ;
+    rdfs:domain hedera:ScheduledTransaction ;
+    rdfs:range xsd:string ;
+    skos:definition "Account identifier paying for schedule execution."@en .
+
+hedera:hasScheduleStatus a owl:DatatypeProperty ;
+    rdfs:label "has schedule status"@en ;
+    rdfs:domain hedera:ScheduledTransaction ;
+    rdfs:range xsd:string ;
+    skos:definition "Enumerated status such as pending-signatures, executed, or expired."@en .
+
+hedera:performedBy a owl:ObjectProperty ;
+    rdfs:label "performed by"@en ;
+    rdfs:domain hedera:FileUpdate ;
+    rdfs:range hedera:Account ;
+    rdfs:subPropertyOf prov:wasAssociatedWith ;
+    skos:definition "Identifies the account that submitted the file update."@en .
+
+hedera:requiresSignature a owl:ObjectProperty ;
+    rdfs:label "requires signature"@en ;
+    rdfs:domain hedera:ScheduledTransaction ;
+    rdfs:range hedera:Account ;
+    skos:definition "Identifies accounts whose signatures are required for a scheduled transaction."@en .
+
+hedera:schedulesTransaction a owl:ObjectProperty ;
+    rdfs:label "schedules transaction"@en ;
+    rdfs:domain hedera:ScheduledTransaction ;
+    rdfs:range hedera:Process ;
+    skos:definition "Links a scheduled transaction artefact to the process that will execute once signatures are collected."@en .
+
+hedera:storesArtefact a owl:ObjectProperty ;
+    rdfs:label "stores artefact"@en ;
+    rdfs:domain hedera:File ;
+    rdfs:range hedera:Artefact ;
+    skos:definition "Indicates that a file stores an artefact such as bytecode or fee schedules."@en .
+
+hedera:updatesFile a owl:ObjectProperty ;
+    rdfs:label "updates file"@en ;
+    rdfs:domain hedera:FileUpdate ;
+    rdfs:range hedera:File ;
+    skos:definition "Connects a file update process to the file being modified."@en .
+
+<https://hashgraphontology.xyx/hedera/file-schedule> a owl:Ontology ;
+    dcterms:created "2024-10-01"^^xsd:date ;
+    dcterms:creator "Bhash Ontology Working Group"@en ;
+    dcterms:description "Vocabulary for modelling Hedera File Service artefacts and Scheduled Transaction lifecycle states."@en ;
+    dcterms:modified "2025-09-30"^^xsd:date ;
+    dcterms:title "Hedera File and Schedule Services module"@en ;
+    owl:imports <https://hashgraphontology.xyx/hedera/core> ;
+    owl:versionInfo "0.1.0-dev" ;
+    skos:editorialNote "Phase 3 sprint module integrating File Service bytecode storage and scheduled transaction governance for CQ-COMP-004."@en .
+
+hedera:FileContent a owl:Class ;
+    rdfs:label "File content"@en ;
+    rdfs:subClassOf hedera:Artefact ;
+    skos:definition "Payload stored within a File Service file such as contract bytecode or fee schedules."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/file-service/file-storage> .
+
+hedera:FileKey a owl:Class ;
+    rdfs:label "File key"@en ;
+    rdfs:subClassOf hedera:AccountKey ;
+    skos:definition "Key that authorises file creation, update, and deletion actions."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/file-service/file-keys> .
+
+hedera:ScheduleExecution a owl:Class ;
+    rdfs:label "Schedule execution"@en ;
+    rdfs:subClassOf hedera:Process ;
+    skos:definition "Process that executes a scheduled transaction once all required signatures are collected."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/how-scheduled-transactions-work> .
+
+hedera:ScheduleSignature a owl:Class ;
+    rdfs:label "Schedule signature"@en ;
+    rdfs:subClassOf hedera:Artefact ;
+    skos:definition "Signature provided by an account approving a scheduled transaction."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/how-scheduled-transactions-work> .
+
+hedera:FileUpdate a owl:Class ;
+    rdfs:label "File update"@en ;
+    rdfs:subClassOf hedera:Process ;
+    skos:definition "Process that amends file contents or metadata under the control of file keys."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/file-service/update-files> .
+
+hedera:File a owl:Class ;
+    rdfs:label "File"@en ;
+    rdfs:subClassOf hedera:Artefact ;
+    skos:definition "On-ledger file storing bytecode, configuration, or metadata referenced by other services."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/file-service/file-storage> .
+
+hedera:ScheduledTransaction a owl:Class ;
+    rdfs:label "Scheduled transaction"@en ;
+    rdfs:subClassOf hedera:Artefact ;
+    skos:definition "Deferred transaction waiting for a quorum of signatures before execution."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/how-scheduled-transactions-work> .
+

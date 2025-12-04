@@ -1,0 +1,131 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix hedera: <https://hashgraphontology.xyx/hedera/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+hedera:HieroAvailabilityNode a owl:Class ;
+    rdfs:label "Hiero availability node"@en ;
+    rdfs:subClassOf hedera:Validator ;
+    skos:definition "Validator focusing on data availability responsibilities in Hiero."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hiero/concepts/validators#availability> .
+
+hedera:HieroSequencerNode a owl:Class ;
+    rdfs:label "Hiero sequencer node"@en ;
+    rdfs:subClassOf hedera:Validator ;
+    skos:definition "Validator role producing ordered batches for Hiero shards."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hiero/concepts/validators#consensus> .
+
+hedera:assumesHieroRole a owl:ObjectProperty ;
+    rdfs:label "assumes Hiero role"@en ;
+    rdfs:domain hedera:HieroParticipation ;
+    rdfs:range hedera:HieroValidatorRole ;
+    skos:definition "Associates a participation with the specific Hiero validator role performed."@en .
+
+hedera:hasActivationDate a owl:DatatypeProperty ;
+    rdfs:label "has activation date"@en ;
+    rdfs:domain hedera:HieroParticipation ;
+    rdfs:range xsd:date ;
+    skos:definition "Date on which the participation became active."@en .
+
+hedera:hasOnboardingState a owl:ObjectProperty ;
+    rdfs:label "has onboarding state"@en ;
+    rdfs:domain hedera:HieroParticipation ;
+    rdfs:range hedera:HieroOnboardingState ;
+    skos:definition "Associates a participation with its onboarding classification."@en .
+
+hedera:hasParticipationStatus a owl:DatatypeProperty ;
+    rdfs:label "has participation status"@en ;
+    rdfs:domain hedera:HieroParticipation ;
+    rdfs:range xsd:string ;
+    skos:definition "Human-readable status for participation (e.g., onboarding, active, slashed)."@en .
+
+hedera:hasShardIdentifier a owl:DatatypeProperty ;
+    rdfs:label "has shard identifier"@en ;
+    rdfs:domain hedera:HieroShard ;
+    rdfs:range xsd:string ;
+    skos:definition "Short identifier for a Hiero shard."@en .
+
+hedera:hasValidatorScore a owl:DatatypeProperty ;
+    rdfs:label "has validator score"@en ;
+    rdfs:domain hedera:HieroParticipation ;
+    rdfs:range xsd:decimal ;
+    skos:definition "Composite score used to assess validator readiness."@en .
+
+hedera:participatesInShard a owl:ObjectProperty ;
+    rdfs:label "participates in shard"@en ;
+    rdfs:domain hedera:HieroParticipation ;
+    rdfs:range hedera:HieroShard ;
+    skos:definition "Identifies the shard in which the participation occurs."@en .
+
+hedera:participationOf a owl:ObjectProperty ;
+    rdfs:label "participation of"@en ;
+    rdfs:domain hedera:HieroParticipation ;
+    rdfs:range hedera:Validator ;
+    skos:definition "Links a Hiero participation process to the validator involved."@en .
+
+hedera:publishesStateProof a owl:ObjectProperty ;
+    rdfs:label "publishes state proof"@en ;
+    rdfs:domain hedera:HieroParticipation ;
+    rdfs:range hedera:HieroStateProof ;
+    skos:definition "Indicates state proofs emitted as part of participation."@en .
+
+hedera:supportsLayer a owl:ObjectProperty ;
+    rdfs:label "supports layer"@en ;
+    rdfs:domain hedera:HieroParticipation ;
+    rdfs:range hedera:HieroLayer ;
+    skos:definition "Identifies which Hiero layer the participation supports (consensus, execution, availability)."@en .
+
+hedera:triggeredByMilestone a owl:ObjectProperty ;
+    rdfs:label "triggered by milestone"@en ;
+    rdfs:domain hedera:HieroParticipation ;
+    rdfs:range hedera:HieroUpgradeMilestone ;
+    skos:definition "Relates participation progress to roadmap milestones."@en .
+
+<https://hashgraphontology.xyx/hedera/hiero> a owl:Ontology ;
+    dcterms:created "2024-10-01"^^xsd:date ;
+    dcterms:creator "Bhash Ontology Working Group"@en ;
+    dcterms:description "Vocabulary extending the core ontology with Hiero shards, validator roles, and onboarding milestones."@en ;
+    dcterms:modified "2025-09-30"^^xsd:date ;
+    dcterms:title "Hiero Overlay module"@en ;
+    owl:imports <https://hashgraphontology.xyx/hedera/core> ;
+    owl:versionInfo "0.1.0-dev" ;
+    skos:editorialNote "Phase 3 Hiero overlay capturing shard participation states for CQ-HIE-009."@en .
+
+hedera:HieroOnboardingState a owl:Class ;
+    rdfs:label "Hiero onboarding state"@en ;
+    rdfs:subClassOf hedera:Concept ;
+    skos:definition "State classification such as pending, active, or slashed for validators joining Hiero."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hiero/concepts/validators> .
+
+hedera:HieroStateProof a owl:Class ;
+    rdfs:label "Hiero state proof"@en ;
+    rdfs:subClassOf hedera:Artefact ;
+    skos:definition "Proof object attesting to shard state for cross-shard verification."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hiero/concepts/state-proofs> .
+
+hedera:HieroUpgradeMilestone a owl:Class ;
+    rdfs:label "Hiero upgrade milestone"@en ;
+    rdfs:subClassOf hedera:Event ;
+    skos:definition "Event representing progression in the Hiero rollout roadmap."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hiero/roadmap> .
+
+hedera:HieroValidatorRole a owl:Class ;
+    rdfs:label "Hiero validator role"@en ;
+    rdfs:subClassOf hedera:Role ;
+    skos:definition "Role undertaken by validators within the Hiero architecture (consensus, execution, availability)."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hiero/concepts/validators> .
+
+hedera:HieroShard a owl:Class ;
+    rdfs:label "Hiero shard"@en ;
+    rdfs:subClassOf hedera:Network ;
+    skos:definition "Logical partition of the Hiero network responsible for consensus and execution within a region."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hiero/concepts/shards> .
+
+hedera:HieroParticipation a owl:Class ;
+    rdfs:label "Hiero participation"@en ;
+    rdfs:subClassOf hedera:Process ;
+    skos:definition "Process describing a validator's lifecycle within a Hiero shard."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hiero/concepts/validators> .
+

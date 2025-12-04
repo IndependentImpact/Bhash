@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ImpactOnt alignment module – Hashgraph Ontology</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2rem auto; max-width: 1100px; line-height: 1.6; }
+        h1, h2, h3 { color: #1f2937; }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        th, td { padding: 0.5rem; border: 1px solid #e5e7eb; vertical-align: top; }
+        th { background: #f3f4f6; text-align: left; }
+        .meta { color: #4b5563; }
+        .pill { display: inline-block; padding: 0.2rem 0.5rem; margin: 0.1rem; background: #e5e7eb; border-radius: 6px; }
+        .small { font-size: 0.9rem; }
+        .section { margin-top: 2rem; }
+        a { color: #0f766e; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ImpactOnt alignment module</h1>
+        <div class="meta">IRI: <a href="https://hashgraphontology.xyx/hedera/alignment/impactont">https://hashgraphontology.xyx/hedera/alignment/impactont</a></div>
+        <p>Connects Hedera treasury and compliance analytics to ImpactOnt KPI structures for sustainability dashboards.</p>
+        <p class="meta">Source file: alignment/impactont.ttl</p>
+    </header>
+
+    <section class="section">
+        <h2>Prefixes</h2>
+        <table>
+            <thead><tr><th>Prefix</th><th>Namespace</th></tr></thead>
+            <tbody>
+            
+                <tr><td>dcterms</td><td>http://purl.org/dc/terms/</td></tr>
+            
+                <tr><td>hedera</td><td>https://hashgraphontology.xyx/hedera/core/</td></tr>
+            
+                <tr><td>impactont</td><td>https://datadudes.xyz/ontology/impactont#</td></tr>
+            
+                <tr><td>ns1</td><td>https://docs.hedera.com/hedera/sdks-and-apis/token-service/</td></tr>
+            
+                <tr><td>ns2</td><td>https://hashgraphontology.xyx/hedera/alignment/</td></tr>
+            
+                <tr><td>ns3</td><td>https://datadudes.xyz/impactont#</td></tr>
+            
+                <tr><td>ns4</td><td>https://hips.hedera.com/hip/</td></tr>
+            
+                <tr><td>ns5</td><td>https://docs.hedera.com/hedera/mirror-node/architecture/</td></tr>
+            
+                <tr><td>ns6</td><td>https://hashgraphontology.xyx/hedera/</td></tr>
+            
+                <tr><td>owl</td><td>http://www.w3.org/2002/07/owl#</td></tr>
+            
+                <tr><td>rdf</td><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#</td></tr>
+            
+                <tr><td>rdfs</td><td>http://www.w3.org/2000/01/rdf-schema#</td></tr>
+            
+                <tr><td>skos</td><td>http://www.w3.org/2004/02/skos/core#</td></tr>
+            
+                <tr><td>xsd</td><td>http://www.w3.org/2001/XMLSchema#</td></tr>
+            
+            </tbody>
+        </table>
+    </section>
+
+    <section class="section">
+        <h2>Classes (2)</h2>
+        <table>
+            <thead><tr><th>Label</th><th>QName</th><th>Subclass Of</th><th>Notes</th></tr></thead>
+            <tbody>
+            
+                <tr id="cls-hedera-ComplianceAlignmentScore">
+                    <td>Compliance alignment score</td>
+                    <td>hedera:ComplianceAlignmentScore</td>
+                    <td><span class="pill">hedera:TelemetryMetric</span><span class="pill">impactont:ComplianceIndicator</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Composite indicator evaluating adherence to sustainability-linked compliance rules.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/ComplianceAlignmentScore</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-TreasuryImpactKPI">
+                    <td>Treasury impact KPI</td>
+                    <td>hedera:TreasuryImpactKPI</td>
+                    <td><span class="pill">hedera:TelemetryMetric</span><span class="pill">impactont:KPI</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Metric summarising treasury-controlled token balances for sustainability reporting.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/TreasuryImpactKPI</div>
+                    </td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </section>
+
+    <section class="section">
+        <h2>Properties (6)</h2>
+        <table>
+            <thead><tr><th>Label</th><th>QName</th><th>Kind</th><th>Domain</th><th>Range</th><th>Notes</th></tr></thead>
+            <tbody>
+            
+                <tr id="prop-hedera-alignsWithPolicy">
+                    <td>aligns with policy</td>
+                    <td>hedera:alignsWithPolicy</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:TelemetryMetric</span></td>
+                    <td><span class="pill">impactont:PolicyInstrument</span></td>
+                    <td class="small">
+                        
+                        <div><strong>SubProperty Of:</strong> <span class="pill">impactont:supportedByPolicy</span></div>
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/alignsWithPolicy</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasImpactBaseline">
+                    <td>has impact baseline</td>
+                    <td>hedera:hasImpactBaseline</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:TelemetryMetric</span></td>
+                    <td><span class="pill">xsd:decimal</span></td>
+                    <td class="small">
+                        
+                        <div><strong>SubProperty Of:</strong> <span class="pill">impactont:hasBaselineValue</span></div>
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasImpactBaseline</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasImpactVariance">
+                    <td>has impact variance</td>
+                    <td>hedera:hasImpactVariance</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:TelemetryMetric</span></td>
+                    <td><span class="pill">xsd:decimal</span></td>
+                    <td class="small">
+                        
+                        <div><strong>SubProperty Of:</strong> <span class="pill">impactont:hasVariance</span></div>
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasImpactVariance</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasMetricValue">
+                    <td>has metric value</td>
+                    <td>hedera:hasMetricValue</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:TelemetryMetric</span></td>
+                    <td><span class="pill">xsd:decimal</span></td>
+                    <td class="small">
+                        
+                        <div><strong>SubProperty Of:</strong> <span class="pill">impactont:hasMetricValue</span></div>
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasMetricValue</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-summarisesToken">
+                    <td>summarises token</td>
+                    <td>hedera:summarisesToken</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:TelemetryMetric</span></td>
+                    <td><span class="pill">hedera:Token</span></td>
+                    <td class="small">
+                        
+                        <div><strong>SubProperty Of:</strong> <span class="pill">impactont:measuresAsset</span></div>
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/summarisesToken</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-targetsSDGGoal">
+                    <td>targets SDG goal</td>
+                    <td>hedera:targetsSDGGoal</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:TelemetryMetric</span></td>
+                    <td><span class="pill">impactont:SDGGoal</span></td>
+                    <td class="small">
+                        
+                        <div><strong>SubProperty Of:</strong> <span class="pill">impactont:targetsSDG</span></div>
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/targetsSDGGoal</div>
+                    </td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>

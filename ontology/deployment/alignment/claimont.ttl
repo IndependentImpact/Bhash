@@ -1,0 +1,79 @@
+@prefix claimont: <https://datadudes.xyz/claimont#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix hedera: <https://hashgraphontology.xyx/hedera/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://hashgraphontology.xyx/hedera/alignment/claimont> a owl:Ontology ;
+    dcterms:created "2025-10-01"^^xsd:date ;
+    dcterms:creator "Bhash Ontology Working Group"@en ;
+    dcterms:description "Aligns Hedera scheduled transactions and governance commitments with ClaimOnt climate mitigation and adaptation concepts."@en ;
+    dcterms:modified "2025-10-01"^^xsd:date ;
+    dcterms:title "ClaimOnt alignment module"@en ;
+    owl:imports <https://hashgraphontology.xyx/hedera/core>,
+        <https://hashgraphontology.xyx/hedera/file-schedule> ;
+    owl:versionInfo "0.1.0-dev" ;
+    skos:editorialNote "Phase 4 bridge module mapping scheduled sustainability actions to ClaimOnt mitigation and adaptation taxonomies."@en .
+
+hedera:ClimateAdaptationSchedule a owl:Class ;
+    rdfs:label "Climate adaptation schedule"@en ;
+    dcterms:source claimont:AdaptationCommitment ;
+    rdfs:subClassOf claimont:AdaptationCommitment,
+        hedera:ScheduledTransaction ;
+    skos:definition "Scheduled transaction capturing staged funding for adaptation programmes."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/how-scheduled-transactions-work> .
+
+hedera:ScheduledMitigationAction a owl:Class ;
+    rdfs:label "Scheduled mitigation action"@en ;
+    dcterms:source claimont:MitigationAction ;
+    rdfs:subClassOf claimont:MitigationAction,
+        hedera:ScheduledTransaction ;
+    skos:definition "Scheduled transaction whose execution funds or enables a climate mitigation activity."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/introduction> .
+
+hedera:advancesClimateObjective a owl:ObjectProperty ;
+    rdfs:label "advances climate objective"@en ;
+    dcterms:source claimont:advancesObjective ;
+    rdfs:domain hedera:ScheduledTransaction ;
+    rdfs:range claimont:ClimateObjective ;
+    rdfs:subPropertyOf claimont:advancesObjective ;
+    skos:definition "Associates a scheduled transaction with the climate objective it advances."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/introduction> .
+
+hedera:hasClimateWindow a owl:DatatypeProperty ;
+    rdfs:label "has climate window"@en ;
+    dcterms:source claimont:hasReportingPeriod ;
+    rdfs:domain hedera:ScheduledTransaction ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf claimont:hasReportingPeriod ;
+    skos:definition "Specifies the reporting period for a scheduled climate commitment."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/how-scheduled-transactions-work> .
+
+hedera:linkedImpactAssertion a owl:ObjectProperty ;
+    rdfs:label "linked impact assertion"@en ;
+    dcterms:source claimont:ImpactStatement ;
+    rdfs:domain hedera:ScheduledTransaction ;
+    rdfs:range claimont:ImpactStatement ;
+    rdfs:subPropertyOf claimont:documentsOutcome ;
+    skos:definition "Connects a scheduled action to the impact statement documenting its execution."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/how-scheduled-transactions-work> .
+
+hedera:tracksResilienceMilestone a owl:ObjectProperty ;
+    rdfs:label "tracks resilience milestone"@en ;
+    dcterms:source claimont:monitorsIndicator ;
+    rdfs:domain hedera:ScheduledTransaction ;
+    rdfs:range hedera:ResilienceMilestone ;
+    rdfs:subPropertyOf claimont:monitorsIndicator ;
+    skos:definition "Identifies the network milestone used to evidence progress against a climate action."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hiero/roadmap> .
+
+hedera:ResilienceMilestone a owl:Class ;
+    rdfs:label "Resilience milestone"@en ;
+    dcterms:source claimont:ResilienceOutcome ;
+    rdfs:subClassOf claimont:ResilienceOutcome,
+        hedera:Event ;
+    skos:definition "Network event used as a milestone for tracking adaptation commitments."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hiero/roadmap> .
+

@@ -1,0 +1,784 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hedera Token Service module – Hashgraph Ontology</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2rem auto; max-width: 1100px; line-height: 1.6; }
+        h1, h2, h3 { color: #1f2937; }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        th, td { padding: 0.5rem; border: 1px solid #e5e7eb; vertical-align: top; }
+        th { background: #f3f4f6; text-align: left; }
+        .meta { color: #4b5563; }
+        .pill { display: inline-block; padding: 0.2rem 0.5rem; margin: 0.1rem; background: #e5e7eb; border-radius: 6px; }
+        .small { font-size: 0.9rem; }
+        .section { margin-top: 2rem; }
+        a { color: #0f766e; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hedera Token Service module</h1>
+        <div class="meta">IRI: <a href="https://hashgraphontology.xyx/hedera/token">https://hashgraphontology.xyx/hedera/token</a></div>
+        <p>Service-specific vocabulary for modelling Hedera Token Service artefacts, compliance roles, and lifecycle events.</p>
+        <p class="meta">Source file: token.ttl</p>
+    </header>
+
+    <section class="section">
+        <h2>Prefixes</h2>
+        <table>
+            <thead><tr><th>Prefix</th><th>Namespace</th></tr></thead>
+            <tbody>
+            
+                <tr><td>dcterms</td><td>http://purl.org/dc/terms/</td></tr>
+            
+                <tr><td>hedera</td><td>https://hashgraphontology.xyx/hedera/core/</td></tr>
+            
+                <tr><td>ns1</td><td>https://hashgraphontology.xyx/hedera/</td></tr>
+            
+                <tr><td>ns2</td><td>https://docs.hedera.com/hedera/sdks-and-apis/token-service/</td></tr>
+            
+                <tr><td>ns3</td><td>https://docs.hedera.com/hedera/sdks-and-apis/token-service/custom-fees/</td></tr>
+            
+                <tr><td>ns4</td><td>https://hips.hedera.com/hip/</td></tr>
+            
+                <tr><td>ns5</td><td>https://docs.hedera.com/hedera/core-concepts/transactions/</td></tr>
+            
+                <tr><td>owl</td><td>http://www.w3.org/2002/07/owl#</td></tr>
+            
+                <tr><td>prov</td><td>http://www.w3.org/ns/prov#</td></tr>
+            
+                <tr><td>rdf</td><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#</td></tr>
+            
+                <tr><td>rdfs</td><td>http://www.w3.org/2000/01/rdf-schema#</td></tr>
+            
+                <tr><td>skos</td><td>http://www.w3.org/2004/02/skos/core#</td></tr>
+            
+                <tr><td>xsd</td><td>http://www.w3.org/2001/XMLSchema#</td></tr>
+            
+            </tbody>
+        </table>
+    </section>
+
+    <section class="section">
+        <h2>Classes (28)</h2>
+        <table>
+            <thead><tr><th>Label</th><th>QName</th><th>Subclass Of</th><th>Notes</th></tr></thead>
+            <tbody>
+            
+                <tr id="cls-hedera-AdminKey">
+                    <td>Admin key</td>
+                    <td>hedera:AdminKey</td>
+                    <td><span class="pill">hedera:TokenKey</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Token key that can update core properties or delete the token.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/AdminKey</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-CustomFee">
+                    <td>Custom fee</td>
+                    <td>hedera:CustomFee</td>
+                    <td><span class="pill">hedera:Artefact</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Fee schedule entry defining royalty, fixed, or fractional fees assessed on token transfers.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/CustomFee</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-FixedFee">
+                    <td>Fixed fee</td>
+                    <td>hedera:FixedFee</td>
+                    <td><span class="pill">hedera:CustomFee</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Custom fee that transfers a fixed quantity of tokens or HBAR to the collector.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/FixedFee</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-FractionalFee">
+                    <td>Fractional fee</td>
+                    <td>hedera:FractionalFee</td>
+                    <td><span class="pill">hedera:CustomFee</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Custom fee deducting a fraction of the transferred amount and sending it to a collector.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/FractionalFee</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-FreezeControllerRole">
+                    <td>Freeze controller role</td>
+                    <td>hedera:FreezeControllerRole</td>
+                    <td><span class="pill">hedera:TokenComplianceRole</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Role responsible for freezing or unfreezing token accounts to maintain compliance.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/FreezeControllerRole</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-FreezeKey">
+                    <td>Freeze key</td>
+                    <td>hedera:FreezeKey</td>
+                    <td><span class="pill">hedera:TokenKey</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Token key that toggles whether accounts may transact the token.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/FreezeKey</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-FreezeKeyAssignment">
+                    <td>Freeze key assignment</td>
+                    <td>hedera:FreezeKeyAssignment</td>
+                    <td><span class="pill">hedera:TokenKeyAssignment</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Assignment that links a freeze key to the actor authorised to halt or resume transfers.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/FreezeKeyAssignment</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-FungibleToken">
+                    <td>Fungible token</td>
+                    <td>hedera:FungibleToken</td>
+                    <td><span class="pill">hedera:Token</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Token whose units are interchangeable and tracked via balances and allowances.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/FungibleToken</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-KYCControllerRole">
+                    <td>KYC controller role</td>
+                    <td>hedera:KYCControllerRole</td>
+                    <td><span class="pill">hedera:TokenComplianceRole</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Role accountable for administering KYC approvals required before token transfers.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/KYCControllerRole</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-KYCKey">
+                    <td>KYC key</td>
+                    <td>hedera:KYCKey</td>
+                    <td><span class="pill">hedera:TokenKey</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Token key that authorises marking accounts as KYC-compliant before they may transfer tokens.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/KYCKey</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-KYCKeyAssignment">
+                    <td>KYC key assignment</td>
+                    <td>hedera:KYCKeyAssignment</td>
+                    <td><span class="pill">hedera:TokenKeyAssignment</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Assignment that links a KYC key to the accountable controller enforcing onboarding checks.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/KYCKeyAssignment</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-NonFungibleToken">
+                    <td>Non-fungible token</td>
+                    <td>hedera:NonFungibleToken</td>
+                    <td><span class="pill">hedera:Token</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Token representing unique serialised items with metadata and ownership tracked per serial.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/NonFungibleToken</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-PauseKey">
+                    <td>Pause key</td>
+                    <td>hedera:PauseKey</td>
+                    <td><span class="pill">hedera:TokenKey</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Token key that can pause and resume all token transfers regardless of account state.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/PauseKey</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-RoyaltyFee">
+                    <td>Royalty fee</td>
+                    <td>hedera:RoyaltyFee</td>
+                    <td><span class="pill">hedera:CustomFee</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Custom fee that distributes a percentage of NFT sales to the royalty collector.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/RoyaltyFee</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-StablecoinToken">
+                    <td>Stablecoin token</td>
+                    <td>hedera:StablecoinToken</td>
+                    <td><span class="pill">hedera:FungibleToken</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Fungible token profile following HIP-540 stablecoin controls, including explicit KYC and freeze governance.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/StablecoinToken</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-SupplyKey">
+                    <td>Supply key</td>
+                    <td>hedera:SupplyKey</td>
+                    <td><span class="pill">hedera:TokenKey</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Token key that authorises minting or burning supply for fungible and non-fungible tokens.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/SupplyKey</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-SupplyKeyAssignment">
+                    <td>Supply key assignment</td>
+                    <td>hedera:SupplyKeyAssignment</td>
+                    <td><span class="pill">hedera:TokenKeyAssignment</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Assignment that links a supply key to the actor authorised to mint or burn supply.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/SupplyKeyAssignment</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-Token">
+                    <td>Token</td>
+                    <td>hedera:Token</td>
+                    <td><span class="pill">hedera:Artefact</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Digital asset managed by the Token Service with associated supply, metadata, and key governance.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/Token</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-TokenBurnEvent">
+                    <td>Token burn event</td>
+                    <td>hedera:TokenBurnEvent</td>
+                    <td><span class="pill">hedera:TokenEvent</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Event noting supply removed from circulation.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/TokenBurnEvent</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-TokenComplianceRole">
+                    <td>Token compliance role</td>
+                    <td>hedera:TokenComplianceRole</td>
+                    <td><span class="pill">hedera:Role</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Role describing a governance responsibility over compliance-sensitive token keys.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/TokenComplianceRole</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-TokenEvent">
+                    <td>Token event</td>
+                    <td>hedera:TokenEvent</td>
+                    <td><span class="pill">hedera:Event</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Event emitted by the Token Service reflecting mint, burn, or transfer outcomes.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/TokenEvent</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-TokenKey">
+                    <td>Token key</td>
+                    <td>hedera:TokenKey</td>
+                    <td><span class="pill">hedera:AccountKey</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Key material that authorises token-specific actions such as supply control, compliance, or metadata updates.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/TokenKey</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-TokenKeyAssignment">
+                    <td>Token key assignment</td>
+                    <td>hedera:TokenKeyAssignment</td>
+                    <td><span class="pill">hedera:Artefact</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Artefact capturing which actor controls a specific token key and for what governance purpose.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/TokenKeyAssignment</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-TokenMintEvent">
+                    <td>Token mint event</td>
+                    <td>hedera:TokenMintEvent</td>
+                    <td><span class="pill">hedera:TokenEvent</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Event noting additional supply minted for a token.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/TokenMintEvent</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-TokenRelationship">
+                    <td>Token relationship</td>
+                    <td>hedera:TokenRelationship</td>
+                    <td><span class="pill">hedera:Artefact</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Per-account view of balances, KYC, freeze, and allowance states for a specific token.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/TokenRelationship</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-TokenService">
+                    <td>Token Service</td>
+                    <td>hedera:TokenService</td>
+                    <td><span class="pill">hedera:Service</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Network service responsible for minting, managing, and enforcing policy over fungible and non-fungible tokens.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/TokenService</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-TokenTransferEvent">
+                    <td>Token transfer event</td>
+                    <td>hedera:TokenTransferEvent</td>
+                    <td><span class="pill">hedera:TokenEvent</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Event capturing debits and credits recorded for token relationships during a transfer.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/TokenTransferEvent</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-TokenTreasuryRole">
+                    <td>Token treasury role</td>
+                    <td>hedera:TokenTreasuryRole</td>
+                    <td><span class="pill">hedera:Role</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Role fulfilled by the account safeguarding reserves and distributing supply on behalf of a token.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/TokenTreasuryRole</div>
+                    </td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </section>
+
+    <section class="section">
+        <h2>Properties (26)</h2>
+        <table>
+            <thead><tr><th>Label</th><th>QName</th><th>Kind</th><th>Domain</th><th>Range</th><th>Notes</th></tr></thead>
+            <tbody>
+            
+                <tr id="prop-hedera-assignsKey">
+                    <td>assigns key</td>
+                    <td>hedera:assignsKey</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:TokenKeyAssignment</span></td>
+                    <td><span class="pill">hedera:TokenKey</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/assignsKey</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-controlsKey">
+                    <td>controls key</td>
+                    <td>hedera:controlsKey</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:Role</span></td>
+                    <td><span class="pill">hedera:TokenKey</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/controlsKey</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-enforcementState">
+                    <td>enforcement state</td>
+                    <td>hedera:enforcementState</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:TokenKeyAssignment</span></td>
+                    <td><span class="pill">xsd:string</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/enforcementState</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-feeCollector">
+                    <td>fee collector</td>
+                    <td>hedera:feeCollector</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:CustomFee</span></td>
+                    <td><span class="pill">hedera:Account</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/feeCollector</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasAllowance">
+                    <td>has allowance</td>
+                    <td>hedera:hasAllowance</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:TokenRelationship</span></td>
+                    <td><span class="pill">xsd:decimal</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasAllowance</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasControllerRole">
+                    <td>has controller role</td>
+                    <td>hedera:hasControllerRole</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:TokenKeyAssignment</span></td>
+                    <td><span class="pill">hedera:Role</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasControllerRole</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasCustomFee">
+                    <td>has custom fee</td>
+                    <td>hedera:hasCustomFee</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:Token</span></td>
+                    <td><span class="pill">hedera:CustomFee</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasCustomFee</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasDecimals">
+                    <td>has decimals</td>
+                    <td>hedera:hasDecimals</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:FungibleToken</span></td>
+                    <td><span class="pill">xsd:integer</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasDecimals</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasInitialSupply">
+                    <td>has initial supply</td>
+                    <td>hedera:hasInitialSupply</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:FungibleToken</span></td>
+                    <td><span class="pill">xsd:decimal</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasInitialSupply</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasKeyAssignment">
+                    <td>has key assignment</td>
+                    <td>hedera:hasKeyAssignment</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:Token</span></td>
+                    <td><span class="pill">hedera:TokenKeyAssignment</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasKeyAssignment</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasMaxSupply">
+                    <td>has max supply</td>
+                    <td>hedera:hasMaxSupply</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:Token</span></td>
+                    <td><span class="pill">xsd:decimal</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasMaxSupply</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasSymbol">
+                    <td>has symbol</td>
+                    <td>hedera:hasSymbol</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:Token</span></td>
+                    <td><span class="pill">xsd:string</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasSymbol</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasTokenBalance">
+                    <td>has token balance</td>
+                    <td>hedera:hasTokenBalance</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:TokenRelationship</span></td>
+                    <td><span class="pill">xsd:decimal</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasTokenBalance</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasTokenId">
+                    <td>has token id</td>
+                    <td>hedera:hasTokenId</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:Token</span></td>
+                    <td><span class="pill">xsd:string</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasTokenId</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasTokenRelationship">
+                    <td>has token relationship</td>
+                    <td>hedera:hasTokenRelationship</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:Token</span></td>
+                    <td><span class="pill">hedera:TokenRelationship</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasTokenRelationship</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasTreasury">
+                    <td>has treasury</td>
+                    <td>hedera:hasTreasury</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:Token</span></td>
+                    <td><span class="pill">hedera:Account</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/hasTreasury</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-isControlledBy">
+                    <td>is controlled by</td>
+                    <td>hedera:isControlledBy</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:TokenKeyAssignment</span></td>
+                    <td><span class="pill">hedera:Actor</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/isControlledBy</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-isFrozen">
+                    <td>is frozen</td>
+                    <td>hedera:isFrozen</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:TokenRelationship</span></td>
+                    <td><span class="pill">xsd:boolean</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/isFrozen</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-isKYCApproved">
+                    <td>is KYC approved</td>
+                    <td>hedera:isKYCApproved</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:TokenRelationship</span></td>
+                    <td><span class="pill">xsd:boolean</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/isKYCApproved</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-managesToken">
+                    <td>manages token</td>
+                    <td>hedera:managesToken</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:TokenService</span></td>
+                    <td><span class="pill">hedera:Token</span></td>
+                    <td class="small">
+                        
+                        <div><strong>SubProperty Of:</strong> <span class="pill">hedera:managesArtefact</span></div>
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/managesToken</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-provTrace">
+                    <td>provenance trace</td>
+                    <td>hedera:provTrace</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:Token</span></td>
+                    <td><span class="pill">prov:Entity</span></td>
+                    <td class="small">
+                        
+                        <div><strong>SubProperty Of:</strong> <span class="pill">prov:wasDerivedFrom</span></div>
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/provTrace</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-recordsEvent">
+                    <td>records event</td>
+                    <td>hedera:recordsEvent</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:TokenRelationship</span></td>
+                    <td><span class="pill">hedera:TokenEvent</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/recordsEvent</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-relatesAccount">
+                    <td>relates account</td>
+                    <td>hedera:relatesAccount</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:TokenRelationship</span></td>
+                    <td><span class="pill">hedera:Account</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/relatesAccount</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-relatesToken">
+                    <td>relates token</td>
+                    <td>hedera:relatesToken</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:TokenRelationship</span></td>
+                    <td><span class="pill">hedera:Token</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/relatesToken</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-submitsTokenTransaction">
+                    <td>submits token transaction</td>
+                    <td>hedera:submitsTokenTransaction</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:Account</span></td>
+                    <td><span class="pill">hedera:TokenEvent</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/submitsTokenTransaction</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-tracksRelationship">
+                    <td>tracks relationship</td>
+                    <td>hedera:tracksRelationship</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:TokenService</span></td>
+                    <td><span class="pill">hedera:TokenRelationship</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyx/hedera/core/tracksRelationship</div>
+                    </td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>

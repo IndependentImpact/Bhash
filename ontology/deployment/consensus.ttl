@@ -1,0 +1,215 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix hedera: <https://hashgraphontology.xyx/hedera/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://hashgraphontology.xyx/hedera/consensus> a owl:Ontology ;
+    dcterms:created "2024-09-20"^^xsd:date ;
+    dcterms:creator "Bhash Ontology Working Group"@en ;
+    dcterms:description "Service-specific vocabulary for modelling Hedera Consensus Service topics, messages, and validator interfaces."@en ;
+    dcterms:modified "2024-09-20"^^xsd:date ;
+    dcterms:title "Hedera Consensus Service module"@en ;
+    owl:imports <https://hashgraphontology.xyx/hedera/core> ;
+    owl:versionInfo "0.1.0-dev" ;
+    skos:editorialNote "Phase 3 sprint scaffold capturing core Consensus Service artefacts required for validator onboarding and topic governance competency questions."@en .
+
+hedera:ValidatorOnboardingCommittee a owl:Class ;
+    rdfs:label "Validator onboarding committee"@en ;
+    rdfs:subClassOf hedera:CouncilCommittee ;
+    skos:definition "Council committee that stewards validator onboarding cohorts and associated policy decisions."@en ;
+    hedera:sourceDocument <https://raw.githubusercontent.com/hashgraph/hedera-docs/main/core-concepts/staking/staking.md#phase-iii-staking-rewards-program-launch> .
+
+hedera:ValidatorOnboardingSteward a owl:Class ;
+    rdfs:label "Validator onboarding steward"@en ;
+    rdfs:subClassOf hedera:Role ;
+    skos:definition "Role fulfilled by council members who oversee validator onboarding approvals and requirements."@en ;
+    hedera:sourceDocument <https://hips.hedera.com/hip/hip-840> .
+
+hedera:assignsRole a owl:ObjectProperty ;
+    rdfs:label "assigns role"@en ;
+    rdfs:domain hedera:RoleAssignment ;
+    rdfs:range hedera:Role ;
+    skos:definition "Indicates the role granted by a role assignment process."@en .
+
+hedera:deliversMessage a owl:ObjectProperty ;
+    rdfs:label "delivers message"@en ;
+    rdfs:domain hedera:ConsensusService ;
+    rdfs:range hedera:TopicMessage ;
+    skos:definition "Links the Consensus Service to messages that achieved consensus ordering."@en .
+
+hedera:emitsRecordFile a owl:ObjectProperty ;
+    rdfs:label "emits record file"@en ;
+    rdfs:domain hedera:ConsensusService ;
+    rdfs:range hedera:ConsensusRecordFile ;
+    skos:definition "Indicates that the service produces consensus record files for downstream consumption."@en .
+
+hedera:exposesEndpoint a owl:ObjectProperty ;
+    rdfs:label "exposes endpoint"@en ;
+    rdfs:domain hedera:ConsensusNode ;
+    rdfs:range hedera:ConsensusNodeEndpoint ;
+    skos:definition "Relates a consensus node to the endpoint clients use for gRPC/SDK submissions."@en .
+
+hedera:hasAdminKey a owl:ObjectProperty ;
+    rdfs:label "has admin key"@en ;
+    rdfs:domain hedera:ConsensusTopic ;
+    rdfs:range hedera:TopicAdminKey ;
+    rdfs:subPropertyOf hedera:hasTopicKey ;
+    skos:definition "Identifies the admin key responsible for topic lifecycle changes."@en .
+
+hedera:hasEndpointAddress a owl:DatatypeProperty ;
+    rdfs:label "has endpoint address"@en ;
+    rdfs:domain hedera:ConsensusNodeEndpoint ;
+    rdfs:range xsd:string ;
+    skos:definition "Network address for a consensus node endpoint."@en .
+
+hedera:hasEndpointPort a owl:DatatypeProperty ;
+    rdfs:label "has endpoint port"@en ;
+    rdfs:domain hedera:ConsensusNodeEndpoint ;
+    rdfs:range xsd:integer ;
+    skos:definition "Port number for a consensus node endpoint."@en .
+
+hedera:hasMessageContent a owl:DatatypeProperty ;
+    rdfs:label "has message content"@en ;
+    rdfs:domain hedera:TopicMessage ;
+    rdfs:range xsd:string ;
+    skos:definition "Payload content of a topic message."@en .
+
+hedera:hasMessageSize a owl:DatatypeProperty ;
+    rdfs:label "has message size"@en ;
+    rdfs:domain hedera:TopicMessage ;
+    rdfs:range xsd:integer ;
+    skos:definition "Size in bytes of the submitted topic message."@en .
+
+hedera:hasRunningHash a owl:DatatypeProperty ;
+    rdfs:label "has running hash"@en ;
+    rdfs:domain hedera:ConsensusRecordFile ;
+    rdfs:range xsd:hexBinary ;
+    skos:definition "Running hash stored within a consensus record file."@en .
+
+hedera:hasSequenceNumber a owl:DatatypeProperty ;
+    rdfs:label "has sequence number"@en ;
+    rdfs:domain hedera:TopicMessage ;
+    rdfs:range xsd:integer ;
+    skos:definition "Consensus-assigned sequence number for a topic message."@en .
+
+hedera:hasSubmitKey a owl:ObjectProperty ;
+    rdfs:label "has submit key"@en ;
+    rdfs:domain hedera:ConsensusTopic ;
+    rdfs:range hedera:TopicSubmitKey ;
+    rdfs:subPropertyOf hedera:hasTopicKey ;
+    skos:definition "Identifies the submit key required for message submission."@en .
+
+hedera:hasTopic a owl:ObjectProperty ;
+    rdfs:label "has topic"@en ;
+    rdfs:domain hedera:ConsensusService ;
+    rdfs:range hedera:ConsensusTopic ;
+    skos:definition "Associates the Consensus Service with the topics it manages."@en .
+
+hedera:includesMessage a owl:ObjectProperty ;
+    rdfs:label "includes message"@en ;
+    rdfs:domain hedera:ConsensusRecordFile ;
+    rdfs:range hedera:TopicMessage ;
+    skos:definition "Associates a record file with the topic messages it contains."@en .
+
+hedera:isMirroredBy a owl:ObjectProperty ;
+    rdfs:label "is mirrored by"@en ;
+    rdfs:domain hedera:ConsensusRecordFile ;
+    rdfs:range hedera:MirrorDataset ;
+    skos:definition "Indicates which mirror dataset republishes a record file."@en .
+
+hedera:isSubBodyOf a owl:ObjectProperty ;
+    rdfs:label "is sub-body of"@en ;
+    rdfs:domain hedera:GovernanceBody ;
+    rdfs:range hedera:GovernanceBody ;
+    skos:definition "Captures committee hierarchies within the Hedera Governing Council."@en .
+
+hedera:supportedBy a owl:ObjectProperty ;
+    rdfs:label "supported by"@en ;
+    rdfs:domain hedera:Process ;
+    rdfs:range hedera:GovernanceDecision ;
+    skos:definition "Associates a process with the governance decision or mandate that authorises it."@en .
+
+hedera:targetsTopic a owl:ObjectProperty ;
+    rdfs:label "targets topic"@en ;
+    rdfs:domain hedera:Transaction ;
+    rdfs:range hedera:ConsensusTopic ;
+    skos:definition "Links a transaction to the consensus topic it configures or submits to."@en .
+
+hedera:CouncilCommittee a owl:Class ;
+    rdfs:label "Council committee"@en ;
+    rdfs:subClassOf hedera:GovernanceBody ;
+    skos:definition "Sub-structure of the Hedera Governing Council that manages delegated mandates such as finance or membership reviews."@en ;
+    hedera:sourceDocument <https://hedera.com/council> .
+
+hedera:RoleAssignment a owl:Class ;
+    rdfs:label "Role assignment"@en ;
+    rdfs:subClassOf hedera:Process ;
+    skos:definition "Process that confers a specific governance or operational role to an actor."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/governing-the-network#council-committees> .
+
+hedera:TopicAdminKey a owl:Class ;
+    rdfs:label "Topic admin key"@en ;
+    rdfs:subClassOf hedera:AccountKey ;
+    skos:definition "Key that authorises topic-level administration such as update, delete, and re-key operations."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/permissions> .
+
+hedera:TopicSubmitKey a owl:Class ;
+    rdfs:label "Topic submit key"@en ;
+    rdfs:subClassOf hedera:AccountKey ;
+    skos:definition "Key that governs which actors may post messages to a consensus topic."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/permissions> .
+
+hedera:hasSteward a owl:ObjectProperty ;
+    rdfs:label "has steward"@en ;
+    rdfs:domain hedera:GovernanceProcess ;
+    rdfs:range hedera:GovernanceBody ;
+    rdfs:subPropertyOf hedera:hasParticipant ;
+    owl:inverseOf hedera:stewardsProcess ;
+    skos:definition "Links a governance process to the council body that stewards the decision."@en .
+
+hedera:stewardsProcess a owl:ObjectProperty ;
+    rdfs:label "stewards process"@en ;
+    rdfs:domain hedera:GovernanceBody ;
+    rdfs:range hedera:GovernanceProcess ;
+    rdfs:subPropertyOf hedera:participatesIn ;
+    owl:inverseOf hedera:hasSteward ;
+    skos:definition "Identifies the governance process that a council body is accountable for overseeing."@en .
+
+hedera:hasTopicKey a owl:ObjectProperty ;
+    rdfs:label "has topic key"@en ;
+    rdfs:domain hedera:ConsensusTopic ;
+    rdfs:range hedera:AccountKey ;
+    skos:definition "Connects a consensus topic to its configured keys."@en .
+
+hedera:ConsensusNodeEndpoint a owl:Class ;
+    rdfs:label "Consensus node endpoint"@en ;
+    rdfs:subClassOf hedera:Artefact ;
+    skos:definition "Network endpoint (IP, port, TLS configuration) exposed by a consensus node for client submissions."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/staking/nodes> .
+
+hedera:ConsensusService a owl:Class ;
+    rdfs:label "Consensus Service"@en ;
+    rdfs:subClassOf hedera:Service ;
+    skos:definition "Operational service that orders transactions, emits consensus timestamps, and manages topics."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service> .
+
+hedera:ConsensusRecordFile a owl:Class ;
+    rdfs:label "Consensus record file"@en ;
+    rdfs:subClassOf hedera:Artefact ;
+    skos:definition "Exported record file containing ordered transactions, consensus timestamps, and running hashes."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/mirror-node/architecture/record-and-balance-files> .
+
+hedera:ConsensusTopic a owl:Class ;
+    rdfs:label "Consensus topic"@en ;
+    rdfs:subClassOf hedera:Artefact ;
+    skos:definition "Ordered message channel configured with administrator, submit, and auto-renew keys."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/topics> .
+
+hedera:TopicMessage a owl:Class ;
+    rdfs:label "Topic message"@en ;
+    rdfs:subClassOf hedera:Event ;
+    skos:definition "Individual message submitted to a consensus topic and assigned a consensus timestamp."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/message-flows> .
+
