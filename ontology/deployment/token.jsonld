@@ -1,12 +1,12 @@
 [
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/isFrozen",
+    "@id": "https://hashgraphontology.xyz/core/isFrozen",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TokenRelationship"
+        "@id": "https://hashgraphontology.xyz/core/TokenRelationship"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -28,13 +28,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasDecimals",
+    "@id": "https://hashgraphontology.xyz/core/hasDecimals",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/FungibleToken"
+        "@id": "https://hashgraphontology.xyz/core/FungibleToken"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -56,13 +56,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/assignsKey",
+    "@id": "https://hashgraphontology.xyz/core/assignsKey",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TokenKeyAssignment"
+        "@id": "https://hashgraphontology.xyz/core/TokenKeyAssignment"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -73,7 +73,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TokenKey"
+        "@id": "https://hashgraphontology.xyz/core/TokenKey"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -84,13 +84,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasTokenRelationship",
+    "@id": "https://hashgraphontology.xyz/core/hasTokenRelationship",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Token"
+        "@id": "https://hashgraphontology.xyz/core/Token"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -101,7 +101,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TokenRelationship"
+        "@id": "https://hashgraphontology.xyz/core/TokenRelationship"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -112,7 +112,7 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/PauseKey",
+    "@id": "https://hashgraphontology.xyz/core/PauseKey",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -124,7 +124,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TokenKey"
+        "@id": "https://hashgraphontology.xyz/core/TokenKey"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -133,20 +133,20 @@
         "@value": "Token key that can pause and resume all token transfers regardless of account state."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-keys"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/tracksRelationship",
+    "@id": "https://hashgraphontology.xyz/core/tracksRelationship",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TokenService"
+        "@id": "https://hashgraphontology.xyz/core/TokenService"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -157,7 +157,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TokenRelationship"
+        "@id": "https://hashgraphontology.xyz/core/TokenRelationship"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -168,13 +168,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/submitsTokenTransaction",
+    "@id": "https://hashgraphontology.xyz/core/submitsTokenTransaction",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Account"
+        "@id": "https://hashgraphontology.xyz/core/Account"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -185,7 +185,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TokenEvent"
+        "@id": "https://hashgraphontology.xyz/core/TokenEvent"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -196,13 +196,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasAllowance",
+    "@id": "https://hashgraphontology.xyz/core/hasAllowance",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TokenRelationship"
+        "@id": "https://hashgraphontology.xyz/core/TokenRelationship"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -224,13 +224,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasControllerRole",
+    "@id": "https://hashgraphontology.xyz/core/hasControllerRole",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TokenKeyAssignment"
+        "@id": "https://hashgraphontology.xyz/core/TokenKeyAssignment"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -241,7 +241,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Role"
+        "@id": "https://hashgraphontology.xyz/core/Role"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -252,7 +252,7 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/KYCControllerRole",
+    "@id": "https://hashgraphontology.xyz/core/KYCControllerRole",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -264,7 +264,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TokenComplianceRole"
+        "@id": "https://hashgraphontology.xyz/core/TokenComplianceRole"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -273,20 +273,20 @@
         "@value": "Role accountable for administering KYC approvals required before token transfers."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://hips.hedera.com/hip/hip-540"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasMaxSupply",
+    "@id": "https://hashgraphontology.xyz/core/hasMaxSupply",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Token"
+        "@id": "https://hashgraphontology.xyz/core/Token"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -308,13 +308,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasTokenId",
+    "@id": "https://hashgraphontology.xyz/core/hasTokenId",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Token"
+        "@id": "https://hashgraphontology.xyz/core/Token"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -336,13 +336,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/relatesToken",
+    "@id": "https://hashgraphontology.xyz/core/relatesToken",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TokenRelationship"
+        "@id": "https://hashgraphontology.xyz/core/TokenRelationship"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -353,7 +353,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Token"
+        "@id": "https://hashgraphontology.xyz/core/Token"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -364,7 +364,7 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/KYCKeyAssignment",
+    "@id": "https://hashgraphontology.xyz/core/KYCKeyAssignment",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -376,7 +376,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TokenKeyAssignment"
+        "@id": "https://hashgraphontology.xyz/core/TokenKeyAssignment"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -385,14 +385,14 @@
         "@value": "Assignment that links a KYC key to the accountable controller enforcing onboarding checks."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://hips.hedera.com/hip/hip-540"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/StablecoinToken",
+    "@id": "https://hashgraphontology.xyz/core/StablecoinToken",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -409,7 +409,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/FungibleToken"
+        "@id": "https://hashgraphontology.xyz/core/FungibleToken"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -418,14 +418,14 @@
         "@value": "Fungible token profile following HIP-540 stablecoin controls, including explicit KYC and freeze governance."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://hips.hedera.com/hip/hip-540"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/CustomFee",
+    "@id": "https://hashgraphontology.xyz/core/CustomFee",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -437,7 +437,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Artefact"
+        "@id": "https://hashgraphontology.xyz/core/Artefact"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -446,20 +446,20 @@
         "@value": "Fee schedule entry defining royalty, fixed, or fractional fees assessed on token transfers."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/sdks-and-apis/token-service/custom-fees"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/controlsKey",
+    "@id": "https://hashgraphontology.xyz/core/controlsKey",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Role"
+        "@id": "https://hashgraphontology.xyz/core/Role"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -470,7 +470,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TokenKey"
+        "@id": "https://hashgraphontology.xyz/core/TokenKey"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -481,13 +481,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/feeCollector",
+    "@id": "https://hashgraphontology.xyz/core/feeCollector",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/CustomFee"
+        "@id": "https://hashgraphontology.xyz/core/CustomFee"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -498,7 +498,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Account"
+        "@id": "https://hashgraphontology.xyz/core/Account"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -509,7 +509,7 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/SupplyKeyAssignment",
+    "@id": "https://hashgraphontology.xyz/core/SupplyKeyAssignment",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -521,7 +521,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TokenKeyAssignment"
+        "@id": "https://hashgraphontology.xyz/core/TokenKeyAssignment"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -530,14 +530,14 @@
         "@value": "Assignment that links a supply key to the actor authorised to mint or burn supply."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-keys"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/TokenBurnEvent",
+    "@id": "https://hashgraphontology.xyz/core/TokenBurnEvent",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -549,7 +549,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TokenEvent"
+        "@id": "https://hashgraphontology.xyz/core/TokenEvent"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -558,14 +558,14 @@
         "@value": "Event noting supply removed from circulation."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-burn-and-wipe"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/FixedFee",
+    "@id": "https://hashgraphontology.xyz/core/FixedFee",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -577,7 +577,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/CustomFee"
+        "@id": "https://hashgraphontology.xyz/core/CustomFee"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -586,20 +586,20 @@
         "@value": "Custom fee that transfers a fixed quantity of tokens or HBAR to the collector."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/sdks-and-apis/token-service/custom-fees/fixed-fees"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasKeyAssignment",
+    "@id": "https://hashgraphontology.xyz/core/hasKeyAssignment",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Token"
+        "@id": "https://hashgraphontology.xyz/core/Token"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -610,7 +610,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TokenKeyAssignment"
+        "@id": "https://hashgraphontology.xyz/core/TokenKeyAssignment"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -621,7 +621,7 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/TokenKeyAssignment",
+    "@id": "https://hashgraphontology.xyz/core/TokenKeyAssignment",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -633,7 +633,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Artefact"
+        "@id": "https://hashgraphontology.xyz/core/Artefact"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -642,20 +642,20 @@
         "@value": "Artefact capturing which actor controls a specific token key and for what governance purpose."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://hips.hedera.com/hip/hip-540"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasCustomFee",
+    "@id": "https://hashgraphontology.xyz/core/hasCustomFee",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Token"
+        "@id": "https://hashgraphontology.xyz/core/Token"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -666,7 +666,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/CustomFee"
+        "@id": "https://hashgraphontology.xyz/core/CustomFee"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -677,7 +677,7 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/token",
+    "@id": "https://hashgraphontology.xyz/token",
     "@type": [
       "http://www.w3.org/2002/07/owl#Ontology"
     ],
@@ -713,7 +713,7 @@
     ],
     "http://www.w3.org/2002/07/owl#imports": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core"
+        "@id": "https://hashgraphontology.xyz/core"
       }
     ],
     "http://www.w3.org/2002/07/owl#versionInfo": [
@@ -729,7 +729,7 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/TokenRelationship",
+    "@id": "https://hashgraphontology.xyz/core/TokenRelationship",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -741,7 +741,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Artefact"
+        "@id": "https://hashgraphontology.xyz/core/Artefact"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -750,14 +750,14 @@
         "@value": "Per-account view of balances, KYC, freeze, and allowance states for a specific token."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-relationships"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/TokenEvent",
+    "@id": "https://hashgraphontology.xyz/core/TokenEvent",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -769,7 +769,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Event"
+        "@id": "https://hashgraphontology.xyz/core/Event"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -778,20 +778,20 @@
         "@value": "Event emitted by the Token Service reflecting mint, burn, or transfer outcomes."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/core-concepts/transactions/transaction-lifecycle"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasTreasury",
+    "@id": "https://hashgraphontology.xyz/core/hasTreasury",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Token"
+        "@id": "https://hashgraphontology.xyz/core/Token"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -802,7 +802,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Account"
+        "@id": "https://hashgraphontology.xyz/core/Account"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -813,7 +813,7 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/AdminKey",
+    "@id": "https://hashgraphontology.xyz/core/AdminKey",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -825,7 +825,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TokenKey"
+        "@id": "https://hashgraphontology.xyz/core/TokenKey"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -834,20 +834,20 @@
         "@value": "Token key that can update core properties or delete the token."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-keys"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasSymbol",
+    "@id": "https://hashgraphontology.xyz/core/hasSymbol",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Token"
+        "@id": "https://hashgraphontology.xyz/core/Token"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -869,7 +869,7 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/TokenComplianceRole",
+    "@id": "https://hashgraphontology.xyz/core/TokenComplianceRole",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -881,7 +881,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Role"
+        "@id": "https://hashgraphontology.xyz/core/Role"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -890,14 +890,14 @@
         "@value": "Role describing a governance responsibility over compliance-sensitive token keys."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://hips.hedera.com/hip/hip-540"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/SupplyKey",
+    "@id": "https://hashgraphontology.xyz/core/SupplyKey",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -909,7 +909,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TokenKey"
+        "@id": "https://hashgraphontology.xyz/core/TokenKey"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -918,14 +918,14 @@
         "@value": "Token key that authorises minting or burning supply for fungible and non-fungible tokens."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-keys"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/FreezeControllerRole",
+    "@id": "https://hashgraphontology.xyz/core/FreezeControllerRole",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -937,7 +937,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TokenComplianceRole"
+        "@id": "https://hashgraphontology.xyz/core/TokenComplianceRole"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -946,20 +946,20 @@
         "@value": "Role responsible for freezing or unfreezing token accounts to maintain compliance."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://hips.hedera.com/hip/hip-540"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/provTrace",
+    "@id": "https://hashgraphontology.xyz/core/provTrace",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Token"
+        "@id": "https://hashgraphontology.xyz/core/Token"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -986,7 +986,7 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/FungibleToken",
+    "@id": "https://hashgraphontology.xyz/core/FungibleToken",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -998,7 +998,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Token"
+        "@id": "https://hashgraphontology.xyz/core/Token"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -1007,14 +1007,14 @@
         "@value": "Token whose units are interchangeable and tracked via balances and allowances."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/sdks-and-apis/token-service/fungible-tokens"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/NonFungibleToken",
+    "@id": "https://hashgraphontology.xyz/core/NonFungibleToken",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -1026,7 +1026,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Token"
+        "@id": "https://hashgraphontology.xyz/core/Token"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -1035,20 +1035,20 @@
         "@value": "Token representing unique serialised items with metadata and ownership tracked per serial."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/sdks-and-apis/token-service/non-fungible-tokens"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/recordsEvent",
+    "@id": "https://hashgraphontology.xyz/core/recordsEvent",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TokenRelationship"
+        "@id": "https://hashgraphontology.xyz/core/TokenRelationship"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -1059,7 +1059,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TokenEvent"
+        "@id": "https://hashgraphontology.xyz/core/TokenEvent"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -1070,13 +1070,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasTokenBalance",
+    "@id": "https://hashgraphontology.xyz/core/hasTokenBalance",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TokenRelationship"
+        "@id": "https://hashgraphontology.xyz/core/TokenRelationship"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -1098,13 +1098,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/isControlledBy",
+    "@id": "https://hashgraphontology.xyz/core/isControlledBy",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TokenKeyAssignment"
+        "@id": "https://hashgraphontology.xyz/core/TokenKeyAssignment"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -1115,7 +1115,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Actor"
+        "@id": "https://hashgraphontology.xyz/core/Actor"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -1126,13 +1126,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/isKYCApproved",
+    "@id": "https://hashgraphontology.xyz/core/isKYCApproved",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TokenRelationship"
+        "@id": "https://hashgraphontology.xyz/core/TokenRelationship"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -1154,7 +1154,7 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/KYCKey",
+    "@id": "https://hashgraphontology.xyz/core/KYCKey",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -1166,7 +1166,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TokenKey"
+        "@id": "https://hashgraphontology.xyz/core/TokenKey"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -1175,14 +1175,14 @@
         "@value": "Token key that authorises marking accounts as KYC-compliant before they may transfer tokens."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-keys"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/FreezeKeyAssignment",
+    "@id": "https://hashgraphontology.xyz/core/FreezeKeyAssignment",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -1194,7 +1194,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TokenKeyAssignment"
+        "@id": "https://hashgraphontology.xyz/core/TokenKeyAssignment"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -1203,20 +1203,20 @@
         "@value": "Assignment that links a freeze key to the actor authorised to halt or resume transfers."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://hips.hedera.com/hip/hip-540"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/managesToken",
+    "@id": "https://hashgraphontology.xyz/core/managesToken",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TokenService"
+        "@id": "https://hashgraphontology.xyz/core/TokenService"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -1227,12 +1227,12 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Token"
+        "@id": "https://hashgraphontology.xyz/core/Token"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/managesArtefact"
+        "@id": "https://hashgraphontology.xyz/core/managesArtefact"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -1243,7 +1243,7 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/TokenTransferEvent",
+    "@id": "https://hashgraphontology.xyz/core/TokenTransferEvent",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -1255,7 +1255,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TokenEvent"
+        "@id": "https://hashgraphontology.xyz/core/TokenEvent"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -1264,14 +1264,14 @@
         "@value": "Event capturing debits and credits recorded for token relationships during a transfer."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/core-concepts/transactions/transaction-lifecycle"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/RoyaltyFee",
+    "@id": "https://hashgraphontology.xyz/core/RoyaltyFee",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -1283,7 +1283,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/CustomFee"
+        "@id": "https://hashgraphontology.xyz/core/CustomFee"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -1292,14 +1292,14 @@
         "@value": "Custom fee that distributes a percentage of NFT sales to the royalty collector."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/sdks-and-apis/token-service/custom-fees/royalty-fees"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/TokenTreasuryRole",
+    "@id": "https://hashgraphontology.xyz/core/TokenTreasuryRole",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -1311,7 +1311,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Role"
+        "@id": "https://hashgraphontology.xyz/core/Role"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -1320,14 +1320,14 @@
         "@value": "Role fulfilled by the account safeguarding reserves and distributing supply on behalf of a token."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/sdks-and-apis/token-service/treasury-and-supply"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/Token",
+    "@id": "https://hashgraphontology.xyz/core/Token",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -1339,7 +1339,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Artefact"
+        "@id": "https://hashgraphontology.xyz/core/Artefact"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -1348,14 +1348,14 @@
         "@value": "Digital asset managed by the Token Service with associated supply, metadata, and key governance."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/sdks-and-apis/token-service/introduction"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/TokenKey",
+    "@id": "https://hashgraphontology.xyz/core/TokenKey",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -1367,7 +1367,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/AccountKey"
+        "@id": "https://hashgraphontology.xyz/core/AccountKey"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -1376,14 +1376,14 @@
         "@value": "Key material that authorises token-specific actions such as supply control, compliance, or metadata updates."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-keys"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/TokenMintEvent",
+    "@id": "https://hashgraphontology.xyz/core/TokenMintEvent",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -1395,7 +1395,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TokenEvent"
+        "@id": "https://hashgraphontology.xyz/core/TokenEvent"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -1404,20 +1404,20 @@
         "@value": "Event noting additional supply minted for a token."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-create-and-mint"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasInitialSupply",
+    "@id": "https://hashgraphontology.xyz/core/hasInitialSupply",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/FungibleToken"
+        "@id": "https://hashgraphontology.xyz/core/FungibleToken"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -1439,13 +1439,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/enforcementState",
+    "@id": "https://hashgraphontology.xyz/core/enforcementState",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TokenKeyAssignment"
+        "@id": "https://hashgraphontology.xyz/core/TokenKeyAssignment"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -1467,7 +1467,7 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/FractionalFee",
+    "@id": "https://hashgraphontology.xyz/core/FractionalFee",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -1479,7 +1479,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/CustomFee"
+        "@id": "https://hashgraphontology.xyz/core/CustomFee"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -1488,20 +1488,20 @@
         "@value": "Custom fee deducting a fraction of the transferred amount and sending it to a collector."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/sdks-and-apis/token-service/custom-fees/fractional-fees"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/relatesAccount",
+    "@id": "https://hashgraphontology.xyz/core/relatesAccount",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TokenRelationship"
+        "@id": "https://hashgraphontology.xyz/core/TokenRelationship"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -1512,7 +1512,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Account"
+        "@id": "https://hashgraphontology.xyz/core/Account"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -1523,7 +1523,7 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/TokenService",
+    "@id": "https://hashgraphontology.xyz/core/TokenService",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -1535,7 +1535,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Service"
+        "@id": "https://hashgraphontology.xyz/core/Service"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -1544,14 +1544,14 @@
         "@value": "Network service responsible for minting, managing, and enforcing policy over fungible and non-fungible tokens."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/sdks-and-apis/token-service/introduction"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/FreezeKey",
+    "@id": "https://hashgraphontology.xyz/core/FreezeKey",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -1563,7 +1563,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TokenKey"
+        "@id": "https://hashgraphontology.xyz/core/TokenKey"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -1572,7 +1572,7 @@
         "@value": "Token key that toggles whether accounts may transact the token."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-keys"
       }

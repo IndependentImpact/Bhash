@@ -1,6 +1,6 @@
 [
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/ImpactTelemetryExchange",
+    "@id": "https://hashgraphontology.xyz/core/ImpactTelemetryExchange",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -17,7 +17,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Process"
+        "@id": "https://hashgraphontology.xyz/core/Process"
       },
       {
         "@id": "https://datadudes.xyz/ontology/infocomm#ExchangeProcess"
@@ -29,14 +29,14 @@
         "@value": "Process shuttling anthropogenic impact telemetry between Hiero shards and mirror services."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hiero/concepts/validators"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/routesThroughSegment",
+    "@id": "https://hashgraphontology.xyz/core/routesThroughSegment",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
@@ -47,7 +47,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/ImpactTelemetryExchange"
+        "@id": "https://hashgraphontology.xyz/core/ImpactTelemetryExchange"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -72,14 +72,14 @@
         "@value": "Identifies the network segment used to transport telemetry."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hiero/concepts/shards"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/HieroCommunicationSegment",
+    "@id": "https://hashgraphontology.xyz/core/HieroCommunicationSegment",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -96,7 +96,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/HieroShard"
+        "@id": "https://hashgraphontology.xyz/core/HieroShard"
       },
       {
         "@id": "https://datadudes.xyz/ontology/infocomm#NetworkSegment"
@@ -108,14 +108,14 @@
         "@value": "Hiero shard treated as a communication segment for impact telemetry flows."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hiero/concepts/shards"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/anchorsTelemetryPolicy",
+    "@id": "https://hashgraphontology.xyz/core/anchorsTelemetryPolicy",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
@@ -151,14 +151,14 @@
         "@value": "Connects a mirror communication node to the service-level agreement governing telemetry distribution."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/mirror-node/architecture/overview"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/alignment/infocomm",
+    "@id": "https://hashgraphontology.xyz/alignment/infocomm",
     "@type": [
       "http://www.w3.org/2002/07/owl#Ontology"
     ],
@@ -194,13 +194,13 @@
     ],
     "http://www.w3.org/2002/07/owl#imports": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core"
+        "@id": "https://hashgraphontology.xyz/core"
       },
       {
-        "@id": "https://hashgraphontology.xyx/hedera/mirror-analytics"
+        "@id": "https://hashgraphontology.xyz/mirror-analytics"
       },
       {
-        "@id": "https://hashgraphontology.xyx/hedera/hiero"
+        "@id": "https://hashgraphontology.xyz/hiero"
       }
     ],
     "http://www.w3.org/2002/07/owl#versionInfo": [
@@ -216,7 +216,7 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasTelemetryLatency",
+    "@id": "https://hashgraphontology.xyz/core/hasTelemetryLatency",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
@@ -252,14 +252,14 @@
         "@value": "Latency observed when distributing telemetry through a communication node."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/mirror-node/architecture/metrics"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/publishesImpactDataset",
+    "@id": "https://hashgraphontology.xyz/core/publishesImpactDataset",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
@@ -281,7 +281,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/MirrorDataset"
+        "@id": "https://hashgraphontology.xyz/core/MirrorDataset"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
@@ -295,14 +295,14 @@
         "@value": "States that a communication node exposes a mirror dataset interface."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/mirror-node/sdks-and-apis/rest-api"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/MirrorCommunicationNode",
+    "@id": "https://hashgraphontology.xyz/core/MirrorCommunicationNode",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -319,7 +319,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/MirrorService"
+        "@id": "https://hashgraphontology.xyz/core/MirrorService"
       },
       {
         "@id": "https://datadudes.xyz/ontology/infocomm#CommunicationNode"
@@ -331,14 +331,14 @@
         "@value": "Mirror service interpreted as a communication node within the InfoComm ontology."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/mirror-node"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/servedByNode",
+    "@id": "https://hashgraphontology.xyz/core/servedByNode",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
@@ -349,7 +349,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/ImpactTelemetryExchange"
+        "@id": "https://hashgraphontology.xyz/core/ImpactTelemetryExchange"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -374,7 +374,7 @@
         "@value": "Associates a telemetry exchange with the communication node responsible for delivering data."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/mirror-node/sdks-and-apis/rest-api"
       }

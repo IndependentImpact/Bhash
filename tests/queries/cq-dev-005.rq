@@ -1,4 +1,4 @@
-PREFIX hedera: <https://hashgraphontology.xyx/hedera/core/>
+PREFIX hedera: <https://hashgraphontology.xyz/core/>
 PREFIX prov: <http://www.w3.org/ns/prov#>
 
 SELECT ?contract ?invocation ?precompile ?gasUsed

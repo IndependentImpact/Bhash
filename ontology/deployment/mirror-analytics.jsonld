@@ -1,12 +1,12 @@
 [
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/publishesDataset",
+    "@id": "https://hashgraphontology.xyz/core/publishesDataset",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/MirrorService"
+        "@id": "https://hashgraphontology.xyz/core/MirrorService"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -17,7 +17,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/MirrorDataset"
+        "@id": "https://hashgraphontology.xyz/core/MirrorDataset"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -28,13 +28,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/runsPipeline",
+    "@id": "https://hashgraphontology.xyz/core/runsPipeline",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Actor"
+        "@id": "https://hashgraphontology.xyz/core/Actor"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -45,7 +45,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/IngestionPipeline"
+        "@id": "https://hashgraphontology.xyz/core/IngestionPipeline"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -56,7 +56,7 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/MirrorService",
+    "@id": "https://hashgraphontology.xyz/core/MirrorService",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -68,7 +68,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Service"
+        "@id": "https://hashgraphontology.xyz/core/Service"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -77,14 +77,14 @@
         "@value": "Service tier that replicates consensus data and exposes REST/gRPC APIs."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/mirror-node"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/MirrorRestAPI",
+    "@id": "https://hashgraphontology.xyz/core/MirrorRestAPI",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -96,7 +96,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Artefact"
+        "@id": "https://hashgraphontology.xyz/core/Artefact"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -105,14 +105,14 @@
         "@value": "RESTful interface provided by mirror nodes for querying Hedera history."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/mirror-node/sdks-and-apis/rest-api"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/DatasetRetentionPolicy",
+    "@id": "https://hashgraphontology.xyz/core/DatasetRetentionPolicy",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -124,7 +124,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Artefact"
+        "@id": "https://hashgraphontology.xyz/core/Artefact"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -133,20 +133,20 @@
         "@value": "Policy describing how long datasets are retained in analytics storage."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/mirror-node/architecture/record-and-balance-files"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/curatesWorkspace",
+    "@id": "https://hashgraphontology.xyz/core/curatesWorkspace",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Actor"
+        "@id": "https://hashgraphontology.xyz/core/Actor"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -157,7 +157,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/AnalyticsWorkspace"
+        "@id": "https://hashgraphontology.xyz/core/AnalyticsWorkspace"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -168,7 +168,7 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/MirrorGrpcAPI",
+    "@id": "https://hashgraphontology.xyz/core/MirrorGrpcAPI",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -180,7 +180,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Artefact"
+        "@id": "https://hashgraphontology.xyz/core/Artefact"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -189,20 +189,20 @@
         "@value": "gRPC streaming interface for subscribing to Hedera mirror node data."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/mirror-node/sdks-and-apis/grpc-api"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasDatasetURI",
+    "@id": "https://hashgraphontology.xyz/core/hasDatasetURI",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/MirrorDataset"
+        "@id": "https://hashgraphontology.xyz/core/MirrorDataset"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -224,13 +224,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasMetricValue",
+    "@id": "https://hashgraphontology.xyz/core/hasMetricValue",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TelemetryMetric"
+        "@id": "https://hashgraphontology.xyz/core/TelemetryMetric"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -252,13 +252,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasWorkspacePurpose",
+    "@id": "https://hashgraphontology.xyz/core/hasWorkspacePurpose",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/AnalyticsWorkspace"
+        "@id": "https://hashgraphontology.xyz/core/AnalyticsWorkspace"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -280,13 +280,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasMetricWindow",
+    "@id": "https://hashgraphontology.xyz/core/hasMetricWindow",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TelemetryMetric"
+        "@id": "https://hashgraphontology.xyz/core/TelemetryMetric"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -308,13 +308,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/exposesGrpcEndpoint",
+    "@id": "https://hashgraphontology.xyz/core/exposesGrpcEndpoint",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/MirrorService"
+        "@id": "https://hashgraphontology.xyz/core/MirrorService"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -325,7 +325,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/MirrorGrpcAPI"
+        "@id": "https://hashgraphontology.xyz/core/MirrorGrpcAPI"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -336,13 +336,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasRetentionDays",
+    "@id": "https://hashgraphontology.xyz/core/hasRetentionDays",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/DatasetRetentionPolicy"
+        "@id": "https://hashgraphontology.xyz/core/DatasetRetentionPolicy"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -364,13 +364,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/producesMetric",
+    "@id": "https://hashgraphontology.xyz/core/producesMetric",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/IngestionPipeline"
+        "@id": "https://hashgraphontology.xyz/core/IngestionPipeline"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -381,7 +381,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/TelemetryMetric"
+        "@id": "https://hashgraphontology.xyz/core/TelemetryMetric"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -392,7 +392,7 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/MirrorNodeOperatorRole",
+    "@id": "https://hashgraphontology.xyz/core/MirrorNodeOperatorRole",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -404,7 +404,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Role"
+        "@id": "https://hashgraphontology.xyz/core/Role"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -413,20 +413,20 @@
         "@value": "Role fulfilled by organisations running mirror node infrastructure."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/mirror-node/deploy"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasDatasetType",
+    "@id": "https://hashgraphontology.xyz/core/hasDatasetType",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/MirrorDataset"
+        "@id": "https://hashgraphontology.xyz/core/MirrorDataset"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -448,7 +448,7 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/IngestionPipeline",
+    "@id": "https://hashgraphontology.xyz/core/IngestionPipeline",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -460,7 +460,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Process"
+        "@id": "https://hashgraphontology.xyz/core/Process"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -469,20 +469,20 @@
         "@value": "Pipeline that ingests record files into analytics storage."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/mirror-node/architecture/overview"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/coversService",
+    "@id": "https://hashgraphontology.xyz/core/coversService",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/MirrorDataset"
+        "@id": "https://hashgraphontology.xyz/core/MirrorDataset"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -493,7 +493,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Service"
+        "@id": "https://hashgraphontology.xyz/core/Service"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -504,7 +504,7 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/TelemetryMetric",
+    "@id": "https://hashgraphontology.xyz/core/TelemetryMetric",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -516,7 +516,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Event"
+        "@id": "https://hashgraphontology.xyz/core/Event"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -525,20 +525,20 @@
         "@value": "Metric derived from mirror node operations or analytics pipelines."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/mirror-node/architecture/metrics"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/feedsAnalyticsWorkspace",
+    "@id": "https://hashgraphontology.xyz/core/feedsAnalyticsWorkspace",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/MirrorDataset"
+        "@id": "https://hashgraphontology.xyz/core/MirrorDataset"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -549,7 +549,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/AnalyticsWorkspace"
+        "@id": "https://hashgraphontology.xyz/core/AnalyticsWorkspace"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -560,13 +560,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasRetentionPolicy",
+    "@id": "https://hashgraphontology.xyz/core/hasRetentionPolicy",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/MirrorDataset"
+        "@id": "https://hashgraphontology.xyz/core/MirrorDataset"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -577,7 +577,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/DatasetRetentionPolicy"
+        "@id": "https://hashgraphontology.xyz/core/DatasetRetentionPolicy"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -588,7 +588,7 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/MirrorDataset",
+    "@id": "https://hashgraphontology.xyz/core/MirrorDataset",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -600,7 +600,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Artefact"
+        "@id": "https://hashgraphontology.xyz/core/Artefact"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -609,14 +609,14 @@
         "@value": "Dataset exported by mirror nodes such as transactions, balances, or contract logs."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/mirror-node/architecture/record-and-balance-files"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/mirror-analytics",
+    "@id": "https://hashgraphontology.xyz/mirror-analytics",
     "@type": [
       "http://www.w3.org/2002/07/owl#Ontology"
     ],
@@ -652,7 +652,7 @@
     ],
     "http://www.w3.org/2002/07/owl#imports": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core"
+        "@id": "https://hashgraphontology.xyz/core"
       }
     ],
     "http://www.w3.org/2002/07/owl#versionInfo": [
@@ -668,7 +668,7 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/AnalyticsWorkspace",
+    "@id": "https://hashgraphontology.xyz/core/AnalyticsWorkspace",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -680,7 +680,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Artefact"
+        "@id": "https://hashgraphontology.xyz/core/Artefact"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -689,20 +689,20 @@
         "@value": "Analytical environment consuming mirror datasets for reporting or dashboards."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/mirror-node/architecture/overview"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/exposesRestEndpoint",
+    "@id": "https://hashgraphontology.xyz/core/exposesRestEndpoint",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/MirrorService"
+        "@id": "https://hashgraphontology.xyz/core/MirrorService"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -713,7 +713,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/MirrorRestAPI"
+        "@id": "https://hashgraphontology.xyz/core/MirrorRestAPI"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [

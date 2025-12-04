@@ -1,4 +1,4 @@
-PREFIX hedera: <https://hashgraphontology.xyx/hedera/core/>
+PREFIX hedera: <https://hashgraphontology.xyz/core/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
 SELECT ?schedule ?transaction ?status ?missingSignatures ?expires

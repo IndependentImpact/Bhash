@@ -81,7 +81,7 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/imports/dcat",
+    "@id": "https://hashgraphontology.xyz/imports/dcat",
     "@type": [
       "http://www.w3.org/2002/07/owl#Ontology"
     ],

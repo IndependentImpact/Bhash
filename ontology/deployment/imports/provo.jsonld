@@ -1,6 +1,6 @@
 [
   {
-    "@id": "https://hashgraphontology.xyx/hedera/imports/prov",
+    "@id": "https://hashgraphontology.xyz/imports/prov",
     "@type": [
       "http://www.w3.org/2002/07/owl#Ontology"
     ],

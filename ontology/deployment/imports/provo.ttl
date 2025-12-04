@@ -26,7 +26,7 @@ prov:wasGeneratedBy a owl:ObjectProperty ;
     rdfs:isDefinedBy prov: ;
     rdfs:range prov:Activity .
 
-<https://hashgraphontology.xyx/hedera/imports/prov> a owl:Ontology ;
+<https://hashgraphontology.xyz/imports/prov> a owl:Ontology ;
     dcterms:created "2024-09-20"^^xsd:date ;
     dcterms:description "Trimmed subset of PROV-O terms referenced by the Bhash core and consensus modules."@en ;
     dcterms:modified "2024-09-20"^^xsd:date ;

@@ -33,7 +33,7 @@
 
 * **SPARQL query:** `tests/queries/cq-core-001.rq`
   ```sparql
-  PREFIX hedera: <https://hashgraphontology.xyx/hedera/core/>
+  PREFIX hedera: <https://hashgraphontology.xyz/core/>
   SELECT ?network ?validator ?operatorAccount ?mandate
   WHERE {
     ?network a hedera:Network ;

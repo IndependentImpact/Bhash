@@ -27,7 +27,7 @@
 
 * **SPARQL query prototype:**
   ```sparql
-  PREFIX hedera: <https://hashgraphontology.xyx/hedera/core/>
+  PREFIX hedera: <https://hashgraphontology.xyz/core/>
   SELECT ?token ?treasury ?kycController ?freezeController
   WHERE {
     ?token a hedera:StablecoinToken ;

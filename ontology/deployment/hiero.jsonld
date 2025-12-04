@@ -1,12 +1,12 @@
 [
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/assumesHieroRole",
+    "@id": "https://hashgraphontology.xyz/core/assumesHieroRole",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/HieroParticipation"
+        "@id": "https://hashgraphontology.xyz/core/HieroParticipation"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -17,7 +17,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/HieroValidatorRole"
+        "@id": "https://hashgraphontology.xyz/core/HieroValidatorRole"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -28,7 +28,7 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/hiero",
+    "@id": "https://hashgraphontology.xyz/hiero",
     "@type": [
       "http://www.w3.org/2002/07/owl#Ontology"
     ],
@@ -64,7 +64,7 @@
     ],
     "http://www.w3.org/2002/07/owl#imports": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core"
+        "@id": "https://hashgraphontology.xyz/core"
       }
     ],
     "http://www.w3.org/2002/07/owl#versionInfo": [
@@ -80,13 +80,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/participationOf",
+    "@id": "https://hashgraphontology.xyz/core/participationOf",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/HieroParticipation"
+        "@id": "https://hashgraphontology.xyz/core/HieroParticipation"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -97,7 +97,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Validator"
+        "@id": "https://hashgraphontology.xyz/core/Validator"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -108,7 +108,7 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/HieroShard",
+    "@id": "https://hashgraphontology.xyz/core/HieroShard",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -120,7 +120,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Network"
+        "@id": "https://hashgraphontology.xyz/core/Network"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -129,14 +129,14 @@
         "@value": "Logical partition of the Hiero network responsible for consensus and execution within a region."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hiero/concepts/shards"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/HieroParticipation",
+    "@id": "https://hashgraphontology.xyz/core/HieroParticipation",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -148,7 +148,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Process"
+        "@id": "https://hashgraphontology.xyz/core/Process"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -157,14 +157,14 @@
         "@value": "Process describing a validator's lifecycle within a Hiero shard."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hiero/concepts/validators"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/HieroSequencerNode",
+    "@id": "https://hashgraphontology.xyz/core/HieroSequencerNode",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -176,7 +176,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Validator"
+        "@id": "https://hashgraphontology.xyz/core/Validator"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -185,14 +185,14 @@
         "@value": "Validator role producing ordered batches for Hiero shards."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hiero/concepts/validators#consensus"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/HieroOnboardingState",
+    "@id": "https://hashgraphontology.xyz/core/HieroOnboardingState",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -204,7 +204,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Concept"
+        "@id": "https://hashgraphontology.xyz/core/Concept"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -213,20 +213,20 @@
         "@value": "State classification such as pending, active, or slashed for validators joining Hiero."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hiero/concepts/validators"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasShardIdentifier",
+    "@id": "https://hashgraphontology.xyz/core/hasShardIdentifier",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/HieroShard"
+        "@id": "https://hashgraphontology.xyz/core/HieroShard"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -248,13 +248,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/supportsLayer",
+    "@id": "https://hashgraphontology.xyz/core/supportsLayer",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/HieroParticipation"
+        "@id": "https://hashgraphontology.xyz/core/HieroParticipation"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -265,7 +265,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/HieroLayer"
+        "@id": "https://hashgraphontology.xyz/core/HieroLayer"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -276,13 +276,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasActivationDate",
+    "@id": "https://hashgraphontology.xyz/core/hasActivationDate",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/HieroParticipation"
+        "@id": "https://hashgraphontology.xyz/core/HieroParticipation"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -304,7 +304,7 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/HieroStateProof",
+    "@id": "https://hashgraphontology.xyz/core/HieroStateProof",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -316,7 +316,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Artefact"
+        "@id": "https://hashgraphontology.xyz/core/Artefact"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -325,20 +325,20 @@
         "@value": "Proof object attesting to shard state for cross-shard verification."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hiero/concepts/state-proofs"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/publishesStateProof",
+    "@id": "https://hashgraphontology.xyz/core/publishesStateProof",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/HieroParticipation"
+        "@id": "https://hashgraphontology.xyz/core/HieroParticipation"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -349,7 +349,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/HieroStateProof"
+        "@id": "https://hashgraphontology.xyz/core/HieroStateProof"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -360,13 +360,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/participatesInShard",
+    "@id": "https://hashgraphontology.xyz/core/participatesInShard",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/HieroParticipation"
+        "@id": "https://hashgraphontology.xyz/core/HieroParticipation"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -377,7 +377,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/HieroShard"
+        "@id": "https://hashgraphontology.xyz/core/HieroShard"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -388,13 +388,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasOnboardingState",
+    "@id": "https://hashgraphontology.xyz/core/hasOnboardingState",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/HieroParticipation"
+        "@id": "https://hashgraphontology.xyz/core/HieroParticipation"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -405,7 +405,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/HieroOnboardingState"
+        "@id": "https://hashgraphontology.xyz/core/HieroOnboardingState"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -416,7 +416,7 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/HieroAvailabilityNode",
+    "@id": "https://hashgraphontology.xyz/core/HieroAvailabilityNode",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -428,7 +428,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Validator"
+        "@id": "https://hashgraphontology.xyz/core/Validator"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -437,14 +437,14 @@
         "@value": "Validator focusing on data availability responsibilities in Hiero."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hiero/concepts/validators#availability"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/HieroUpgradeMilestone",
+    "@id": "https://hashgraphontology.xyz/core/HieroUpgradeMilestone",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -456,7 +456,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Event"
+        "@id": "https://hashgraphontology.xyz/core/Event"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -465,14 +465,14 @@
         "@value": "Event representing progression in the Hiero rollout roadmap."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hiero/roadmap"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/HieroValidatorRole",
+    "@id": "https://hashgraphontology.xyz/core/HieroValidatorRole",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -484,7 +484,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/Role"
+        "@id": "https://hashgraphontology.xyz/core/Role"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -493,20 +493,20 @@
         "@value": "Role undertaken by validators within the Hiero architecture (consensus, execution, availability)."
       }
     ],
-    "https://hashgraphontology.xyx/hedera/core/sourceDocument": [
+    "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hiero/concepts/validators"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/triggeredByMilestone",
+    "@id": "https://hashgraphontology.xyz/core/triggeredByMilestone",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/HieroParticipation"
+        "@id": "https://hashgraphontology.xyz/core/HieroParticipation"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -517,7 +517,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/HieroUpgradeMilestone"
+        "@id": "https://hashgraphontology.xyz/core/HieroUpgradeMilestone"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -528,13 +528,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasValidatorScore",
+    "@id": "https://hashgraphontology.xyz/core/hasValidatorScore",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/HieroParticipation"
+        "@id": "https://hashgraphontology.xyz/core/HieroParticipation"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -556,13 +556,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyx/hedera/core/hasParticipationStatus",
+    "@id": "https://hashgraphontology.xyz/core/hasParticipationStatus",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyx/hedera/core/HieroParticipation"
+        "@id": "https://hashgraphontology.xyz/core/HieroParticipation"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [

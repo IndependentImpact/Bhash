@@ -1,7 +1,7 @@
 @prefix aiao: <http://w3id.org/aiao#> .
 @prefix claimont: <http://w3id.org/claimont#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix hedera: <https://hashgraphontology.xyx/hedera/core/> .
+@prefix hedera: <https://hashgraphontology.xyz/core/> .
 @prefix impactont: <http://w3id.org/impactont#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -9,16 +9,16 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://hashgraphontology.xyx/hedera/alignment/aiao> a owl:Ontology ;
+<https://hashgraphontology.xyz/alignment/aiao> a owl:Ontology ;
     dcterms:created "2025-10-01"^^xsd:date ;
     dcterms:creator "Bhash Ontology Working Group"@en ;
     dcterms:description "Bridges Hedera consensus and token events to Anthropogenic Impact Accounting Ontology claims for anthropogenic impact reporting."@en ;
     dcterms:modified "2025-10-01"^^xsd:date ;
     dcterms:title "AIAO alignment module"@en ;
-    owl:imports <https://hashgraphontology.xyx/hedera/consensus>,
-        <https://hashgraphontology.xyx/hedera/core>,
-        <https://hashgraphontology.xyx/hedera/mirror-analytics>,
-        <https://hashgraphontology.xyx/hedera/token> ;
+    owl:imports <https://hashgraphontology.xyz/consensus>,
+        <https://hashgraphontology.xyz/core>,
+        <https://hashgraphontology.xyz/mirror-analytics>,
+        <https://hashgraphontology.xyz/token> ;
     owl:versionInfo "0.1.0-dev" ;
     skos:editorialNote "Phase 4 bridge module initiating anthropogenic impact integration by tying consensus topic evidence and token reserve events to AIAO impact claims."@en .
 

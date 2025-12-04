@@ -41,7 +41,7 @@
     <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Activity"/>
     <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov#"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyx/hedera/imports/prov">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/imports/prov">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
     <dcterms:title xml:lang="en">PROV-O profile for Bhash</dcterms:title>
     <dcterms:description xml:lang="en">Trimmed subset of PROV-O terms referenced by the Bhash core and consensus modules.</dcterms:description>

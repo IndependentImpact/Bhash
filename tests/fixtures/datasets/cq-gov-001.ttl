@@ -1,6 +1,6 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ex: <https://hashgraphontology.xyx/examples/cq-gov-001/> .
-@prefix hedera: <https://hashgraphontology.xyx/hedera/core/> .
+@prefix ex: <https://hashgraphontology.xyz/examples/cq-gov-001/> .
+@prefix hedera: <https://hashgraphontology.xyz/core/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 ex:HederaCouncil
