@@ -2,39 +2,46 @@
 @prefix hedera: <https://hashgraphontology.xyz/core/> .
 @prefix aiao: <http://w3id.org/aiao#> .
 @prefix claimont: <https://datadudes.xyz/claimont#> .
-@prefix impactont: <https://datadudes.xyz/ontology/impactont#> .
+@prefix impactont: <http://w3id.org/impactont#> .
 @prefix infocomm: <https://datadudes.xyz/ontology/infocomm#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 ex:CommunityTreasury
-    a hedera:Account ;
+    a hedera:Account, impactont:Thing ;
     rdfs:label "Community Reforestation Treasury"@en ;
     .
 
 ex:CarbonCreditToken
-    a hedera:FungibleToken ;
+    a hedera:FungibleToken, impactont:Thing ;
     rdfs:label "Carbon Credit Token"@en ;
     hedera:hasTreasury ex:CommunityTreasury ;
     .
 
-impactont:SDG15LifeOnLand
-    a impactont:SDGGoal ;
+# SDG Goals - domain-specific instances
+# Note: SDG goals are defined in the hedera: namespace because no standard SDG ontology
+# is widely adopted. If a standard SDG vocabulary emerges (e.g., from UN or W3C), these
+# should be replaced with references to that vocabulary.
+ex:SDG15LifeOnLand
+    a hedera:SDGGoal ;
     rdfs:label "SDG 15 Life on Land"@en ;
+    rdfs:seeAlso <https://sdgs.un.org/goals/goal15> ;
     .
 
-impactont:ForestResiliencePolicy
-    a impactont:PolicyInstrument ;
+ex:ForestResiliencePolicy
+    a hedera:PolicyInstrument ;
     rdfs:label "Forest Resilience Policy"@en ;
     .
 
-impactont:SDG13ClimateAction
-    a impactont:SDGGoal ;
+ex:SDG13ClimateAction
+    a hedera:SDGGoal ;
     rdfs:label "SDG 13 Climate Action"@en ;
+    rdfs:seeAlso <https://sdgs.un.org/goals/goal13> ;
     .
 
-impactont:CarbonResiliencePolicy
-    a impactont:PolicyInstrument ;
+ex:CarbonResiliencePolicy
+    a hedera:PolicyInstrument ;
     rdfs:label "Carbon Resilience Policy"@en ;
     .
 
@@ -103,35 +110,64 @@ ex:SoilCarbonRetentionPolicy
     hedera:hasRetentionDays "45"^^xsd:integer ;
     .
 
-ex:ReforestationMetric
-    a hedera:TreasuryImpactKPI ;
-    rdfs:label "Reforestation Treasury Coverage"@en ;
-    hedera:summarisesToken ex:CarbonCreditToken ;
-    hedera:hasMetricValue "1250"^^xsd:decimal ;
-    hedera:hasImpactBaseline "1000"^^xsd:decimal ;
-    hedera:hasImpactVariance "45"^^xsd:decimal ;
-    hedera:targetsSDGGoal impactont:SDG15LifeOnLand ;
-    hedera:alignsWithPolicy impactont:ForestResiliencePolicy ;
+# Indicators for measuring sustainability states
+ex:TreasuryBalanceIndicator
+    a hedera:TreasuryBalanceIndicator, impactont:Indicator ;
+    rdfs:label "Treasury Balance Indicator"@en ;
+    skos:definition "Measures the token balance in a treasury account."@en ;
     .
 
-ex:SoilCarbonMetric
-    a hedera:TreasuryImpactKPI ;
-    rdfs:label "Soil Carbon Coverage"@en ;
-    hedera:summarisesToken ex:CarbonCreditToken ;
-    hedera:hasMetricValue "980"^^xsd:decimal ;
-    hedera:hasImpactBaseline "900"^^xsd:decimal ;
-    hedera:hasImpactVariance "20"^^xsd:decimal ;
-    hedera:targetsSDGGoal impactont:SDG13ClimateAction ;
-    hedera:alignsWithPolicy impactont:CarbonResiliencePolicy ;
+# States of the treasury at specific points in time
+ex:ReforestationState
+    a impactont:State ;
+    rdfs:label "Reforestation Treasury State Q4 2024"@en ;
+    impactont:isStateOf ex:CommunityTreasury ;
+    impactont:isDefinedByIndicator ex:TreasuryBalanceIndicator ;
+    impactont:hasIndicatorValue "1250"^^xsd:decimal ;
+    impactont:hasModality "real" ;
+    hedera:relatedToSDGGoal ex:SDG15LifeOnLand ;
+    hedera:relatedToPolicy ex:ForestResiliencePolicy ;
+    .
+
+ex:ReforestationBaselineState
+    a impactont:State ;
+    rdfs:label "Reforestation Treasury Baseline State"@en ;
+    impactont:isStateOf ex:CommunityTreasury ;
+    impactont:isDefinedByIndicator ex:TreasuryBalanceIndicator ;
+    impactont:hasIndicatorValue "1000"^^xsd:decimal ;
+    impactont:hasModality "real" ;
+    .
+
+ex:SoilCarbonState
+    a impactont:State ;
+    rdfs:label "Soil Carbon Treasury State Q3 2024"@en ;
+    impactont:isStateOf ex:CommunityTreasury ;
+    impactont:isDefinedByIndicator ex:TreasuryBalanceIndicator ;
+    impactont:hasIndicatorValue "980"^^xsd:decimal ;
+    impactont:hasModality "real" ;
+    hedera:relatedToSDGGoal ex:SDG13ClimateAction ;
+    hedera:relatedToPolicy ex:CarbonResiliencePolicy ;
+    .
+
+ex:SoilCarbonBaselineState
+    a impactont:State ;
+    rdfs:label "Soil Carbon Baseline State"@en ;
+    impactont:isStateOf ex:CommunityTreasury ;
+    impactont:isDefinedByIndicator ex:TreasuryBalanceIndicator ;
+    impactont:hasIndicatorValue "900"^^xsd:decimal ;
+    impactont:hasModality "real" ;
     .
 
 ex:ReforestationSchedule
-    a hedera:ScheduledMitigationAction ;
+    a hedera:ScheduledMitigationAction, impactont:Impact ;
     rdfs:label "Scheduled Funding for Reforestation"@en ;
     hedera:hasClimateWindow "2024-Q4" ;
     hedera:linkedImpactAssertion ex:ReforestationImpactStatement ;
     hedera:tracksResilienceMilestone ex:HieroUpgradeQ4 ;
     hedera:advancesClimateObjective claimont:ForestRestorationObjective ;
+    impactont:impacts ex:ReforestationState ;
+    impactont:hasStateA ex:ReforestationBaselineState ;
+    impactont:hasStateB ex:ReforestationState ;
     .
 
 ex:ReforestationSchedule a claimont:MitigationAction .
@@ -142,12 +178,15 @@ claimont:ForestRestorationObjective
     .
 
 ex:SoilCarbonSchedule
-    a hedera:ScheduledMitigationAction ;
+    a hedera:ScheduledMitigationAction, impactont:Impact ;
     rdfs:label "Soil Carbon Sampling"@en ;
     hedera:hasClimateWindow "2024-Q3" ;
     hedera:linkedImpactAssertion ex:SoilCarbonImpactStatement ;
     hedera:tracksResilienceMilestone ex:HieroUpgradeQ4 ;
     hedera:advancesClimateObjective claimont:CarbonSequestrationObjective ;
+    impactont:impacts ex:SoilCarbonState ;
+    impactont:hasStateA ex:SoilCarbonBaselineState ;
+    impactont:hasStateB ex:SoilCarbonState ;
     .
 
 ex:SoilCarbonSchedule a claimont:MitigationAction .
@@ -177,20 +216,20 @@ ex:TelemetryExchangeQ3
     .
 
 ex:ReforestationAssertion
-    a hedera:StablecoinReserveAssertion ;
+    a hedera:StablecoinReserveAssertion, aiao:ImpactClaim ;
     rdfs:label "Reforestation Impact Claim"@en ;
     hedera:hasImpactSubject ex:CommunityTreasury ;
-    hedera:reportsImpactIndicator ex:ReforestationMetric ;
+    hedera:reportsImpactState ex:ReforestationState ;
     hedera:deliveredBySchedule ex:ReforestationSchedule ;
     hedera:referencesMirrorDataset ex:ReforestationDataset ;
     hedera:capturesImpactWindow "2024-Q4" ;
     .
 
 ex:SoilCarbonAssertion
-    a hedera:ConsensusImpactAssertion ;
+    a hedera:ConsensusImpactAssertion, aiao:ImpactClaim ;
     rdfs:label "Soil Carbon Impact Claim"@en ;
     hedera:hasImpactSubject ex:CommunityTreasury ;
-    hedera:reportsImpactIndicator ex:SoilCarbonMetric ;
+    hedera:reportsImpactState ex:SoilCarbonState ;
     hedera:deliveredBySchedule ex:SoilCarbonSchedule ;
     hedera:referencesMirrorDataset ex:SoilCarbonDataset ;
     hedera:capturesImpactWindow "2024-Q3" ;
@@ -198,20 +237,8 @@ ex:SoilCarbonAssertion
 
 ex:MirrorNodeAlpha hedera:publishesImpactDataset ex:ReforestationDataset .
 
-ex:ReforestationAssertion a aiao:ImpactClaim .
-
-ex:ReforestationMetric impactont:hasMetricValue "1250"^^xsd:decimal .
-
-ex:ReforestationMetric a impactont:KPI .
-
 ex:MirrorNodeAlpha a infocomm:CommunicationNode .
 
 ex:MirrorNodeBeta hedera:publishesImpactDataset ex:SoilCarbonDataset .
 
 ex:MirrorNodeBeta a infocomm:CommunicationNode .
-
-ex:SoilCarbonAssertion a aiao:ImpactClaim .
-
-ex:SoilCarbonMetric impactont:hasMetricValue "980"^^xsd:decimal .
-
-ex:SoilCarbonMetric a impactont:KPI .

@@ -14,11 +14,11 @@ This blueprint operationalises the Phase 4 integration goal of binding Hedera-na
 | -------- | ----------- | ----- | ------ |
 | `ontology/src/alignment/aiao.ttl` | MIREOT-trimmed import/bridge linking Hedera consensus & token events to `aiao:ImpactClaim` patterns. | Ontology modellers | ✅ Complete (2025-10-02) |
 | `ontology/src/alignment/claimont.ttl` | Alignment axioms connecting sustainability commitments and scheduled actions to ClaimOnt mitigation/adaptation classes. | Ontology modellers | ✅ Complete (2025-10-02) |
-| `ontology/src/alignment/impactont.ttl` | Bridges HTS compliance & treasury analytics metrics to ImpactOnt KPIs with provenance annotations. | Ontology modellers | ✅ Complete (2025-10-02) |
+| `ontology/src/alignment/impactont.ttl` | Bridges HTS compliance & treasury analytics metrics to Impact Ontology (w3id.org/impactont) core pattern: Events impact Things through States defined by Indicators. | Ontology modellers | ✅ Complete (2026-01-16) |
 | `ontology/src/alignment/infocomm.ttl` | Maps Hedera/Hiero infrastructure classes (nodes, shards, pipelines) to InfoComm communication assets. | Ontology modellers | ✅ Complete (2025-10-02) |
 | `docs/mappings/aiao-alignment.csv` | Traceability matrix referencing Hedera docs/HIPs that justify each mapping. | Documentation lead | ✅ Complete |
 | `docs/mappings/claimont-alignment.csv` | Provenance map for ClaimOnt bridge classes and properties. | Documentation lead | ✅ Complete (2025-10-02) |
-| `docs/mappings/impactont-alignment.csv` | Traceability for ImpactOnt KPI and policy alignments. | Documentation lead | ✅ Complete (2025-10-02) |
+| `docs/mappings/impactont-alignment.csv` | Traceability for Impact Ontology (w3id.org/impactont) alignments showing correct usage of Events, Things, States, and Indicators. | Documentation lead | ✅ Complete (2026-01-16) |
 | `docs/mappings/infocomm-alignment.csv` | Source references for InfoComm communication asset mappings. | Documentation lead | ✅ Complete (2025-10-02) |
 | `tests/queries/cq-impact-001.rq` | Competency query demonstrating cross-ontology anthropogenic impact reporting. | Tooling lead | ✅ Complete |
 
@@ -53,5 +53,5 @@ This blueprint operationalises the Phase 4 integration goal of binding Hedera-na
 
 * [AIAO](https://w3id.org/aiao)
 * [ClaimOnt](https://datadudes.xyz/claimont)
-* [ImpactOnt](https://datadudes.xyz/impactont)
+* [ImpactOnt](https://w3id.org/impactont)
 * [InfoComm](https://datadudes.xyz/infocomm)
