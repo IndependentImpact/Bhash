@@ -15,13 +15,14 @@
     dcterms:description "Aligns Hedera treasury and compliance analytics with the Impact Ontology, modeling how Hedera transactions (Events) impact the state of accounts and tokens (Things) through measurable indicators."@en ;
     dcterms:creator "Bhash Ontology Working Group"@en ;
     dcterms:created "2025-10-01"^^xsd:date ;
-    dcterms:modified "2026-01-16"^^xsd:date ;
+    dcterms:modified "2025-10-15"^^xsd:date ;
     owl:imports <https://hashgraphontology.xyz/core> ,
         <https://hashgraphontology.xyz/token> ,
         <https://hashgraphontology.xyz/mirror-analytics> ;
     owl:versionInfo "0.1.0-dev" ;
     dcterms:source <http://w3id.org/impactont> ;
-    skos:editorialNote "Phase 4 bridge module aligning Hedera concepts with the Impact Ontology core model: Events impact Things through States defined by Indicators."@en ;
+    rdfs:seeAlso <https://github.com/aiaont/impactont> ;
+    skos:editorialNote "Phase 4 bridge module aligning Hedera concepts with the Impact Ontology core model: Events impact Things through States defined by Indicators. See https://github.com/aiaont/impactont for official ontology specification."@en ;
     .
 
 ###

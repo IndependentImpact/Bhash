@@ -20,9 +20,13 @@ ex:CarbonCreditToken
     .
 
 # SDG Goals - domain-specific instances
+# Note: SDG goals are defined in the hedera: namespace because no standard SDG ontology
+# is widely adopted. If a standard SDG vocabulary emerges (e.g., from UN or W3C), these
+# should be replaced with references to that vocabulary.
 ex:SDG15LifeOnLand
     a hedera:SDGGoal ;
     rdfs:label "SDG 15 Life on Land"@en ;
+    rdfs:seeAlso <https://sdgs.un.org/goals/goal15> ;
     .
 
 ex:ForestResiliencePolicy
@@ -33,6 +37,7 @@ ex:ForestResiliencePolicy
 ex:SDG13ClimateAction
     a hedera:SDGGoal ;
     rdfs:label "SDG 13 Climate Action"@en ;
+    rdfs:seeAlso <https://sdgs.un.org/goals/goal13> ;
     .
 
 ex:CarbonResiliencePolicy
