@@ -1,4 +1,4 @@
-@prefix claimont: <https://datadudes.xyz/claimont#> .
+@prefix claimont: <https://w3id.org/claimont#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix hedera: <https://hashgraphontology.xyz/core/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -20,16 +20,16 @@
 hedera:ClimateAdaptationSchedule a owl:Class ;
     rdfs:label "Climate adaptation schedule"@en ;
     dcterms:source claimont:AdaptationCommitment ;
-    rdfs:subClassOf claimont:AdaptationCommitment,
-        hedera:ScheduledTransaction ;
+    rdfs:subClassOf hedera:ScheduledTransaction,
+        claimont:AdaptationCommitment ;
     skos:definition "Scheduled transaction capturing staged funding for adaptation programmes."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/how-scheduled-transactions-work> .
 
 hedera:ScheduledMitigationAction a owl:Class ;
     rdfs:label "Scheduled mitigation action"@en ;
     dcterms:source claimont:MitigationAction ;
-    rdfs:subClassOf claimont:MitigationAction,
-        hedera:ScheduledTransaction ;
+    rdfs:subClassOf hedera:ScheduledTransaction,
+        claimont:MitigationAction ;
     skos:definition "Scheduled transaction whose execution funds or enables a climate mitigation activity."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/introduction> .
 
@@ -72,8 +72,8 @@ hedera:tracksResilienceMilestone a owl:ObjectProperty ;
 hedera:ResilienceMilestone a owl:Class ;
     rdfs:label "Resilience milestone"@en ;
     dcterms:source claimont:ResilienceOutcome ;
-    rdfs:subClassOf claimont:ResilienceOutcome,
-        hedera:Event ;
+    rdfs:subClassOf hedera:Event,
+        claimont:ResilienceOutcome ;
     skos:definition "Network event used as a milestone for tracking adaptation commitments."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hiero/roadmap> .
 

@@ -1,6 +1,6 @@
 @prefix : <https://hashgraphontology.xyz/alignment/claimont/> .
 @prefix hedera: <https://hashgraphontology.xyz/core/> .
-@prefix claimont: <https://datadudes.xyz/claimont#> .
+@prefix claimont: <https://w3id.org/claimont#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -33,7 +33,7 @@ hedera:ScheduledMitigationAction
         claimont:MitigationAction ;
     skos:definition "Scheduled transaction whose execution funds or enables a climate mitigation activity."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/introduction> ;
-    dcterms:source <https://datadudes.xyz/claimont#MitigationAction> ;
+    dcterms:source <https://w3id.org/claimont#MitigationAction> ;
     .
 
 hedera:ClimateAdaptationSchedule
@@ -43,7 +43,7 @@ hedera:ClimateAdaptationSchedule
         claimont:AdaptationCommitment ;
     skos:definition "Scheduled transaction capturing staged funding for adaptation programmes."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/how-scheduled-transactions-work> ;
-    dcterms:source <https://datadudes.xyz/claimont#AdaptationCommitment> ;
+    dcterms:source <https://w3id.org/claimont#AdaptationCommitment> ;
     .
 
 hedera:ResilienceMilestone
@@ -53,7 +53,7 @@ hedera:ResilienceMilestone
         claimont:ResilienceOutcome ;
     skos:definition "Network event used as a milestone for tracking adaptation commitments."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hiero/roadmap> ;
-    dcterms:source <https://datadudes.xyz/claimont#ResilienceOutcome> ;
+    dcterms:source <https://w3id.org/claimont#ResilienceOutcome> ;
     .
 
 ###
@@ -68,7 +68,7 @@ hedera:advancesClimateObjective
     rdfs:subPropertyOf claimont:advancesObjective ;
     skos:definition "Associates a scheduled transaction with the climate objective it advances."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/introduction> ;
-    dcterms:source <https://datadudes.xyz/claimont#advancesObjective> ;
+    dcterms:source <https://w3id.org/claimont#advancesObjective> ;
     .
 
 hedera:linkedImpactAssertion
@@ -79,7 +79,7 @@ hedera:linkedImpactAssertion
     rdfs:subPropertyOf claimont:documentsOutcome ;
     skos:definition "Connects a scheduled action to the impact statement documenting its execution."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/how-scheduled-transactions-work> ;
-    dcterms:source <https://datadudes.xyz/claimont#ImpactStatement> ;
+    dcterms:source <https://w3id.org/claimont#ImpactStatement> ;
     .
 
 hedera:tracksResilienceMilestone
@@ -90,7 +90,7 @@ hedera:tracksResilienceMilestone
     rdfs:subPropertyOf claimont:monitorsIndicator ;
     skos:definition "Identifies the network milestone used to evidence progress against a climate action."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hiero/roadmap> ;
-    dcterms:source <https://datadudes.xyz/claimont#monitorsIndicator> ;
+    dcterms:source <https://w3id.org/claimont#monitorsIndicator> ;
     .
 
 hedera:hasClimateWindow
@@ -101,5 +101,5 @@ hedera:hasClimateWindow
     rdfs:subPropertyOf claimont:hasReportingPeriod ;
     skos:definition "Specifies the reporting period for a scheduled climate commitment."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/how-scheduled-transactions-work> ;
-    dcterms:source <https://datadudes.xyz/claimont#hasReportingPeriod> ;
+    dcterms:source <https://w3id.org/claimont#hasReportingPeriod> ;
     .

@@ -1,6 +1,6 @@
 [
   {
-    "@id": "https://hashgraphontology.xyz/core/hasScheduleStatus",
+    "@id": "https://hashgraphontology.xyz/core/hasSchedulePayer",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
@@ -12,7 +12,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has schedule status"
+        "@value": "has schedule payer"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -23,427 +23,7 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Enumerated status such as pending-signatures, executed, or expired."
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/hasFileContent",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/File"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has file content"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/FileContent"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Links a file to the payload stored within it."
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/hasRequiredSignatureCount",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/ScheduledTransaction"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has required signature count"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#integer"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Number of signatures needed before execution."
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/PendingSchedule",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Pending schedule"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/ScheduledTransaction"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Scheduled transaction that has not yet gathered sufficient signatures."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hedera/core-concepts/scheduled-transactions"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/FileKey",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "File key"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/AccountKey"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Key that authorises file creation, update, and deletion actions."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hedera/core-concepts/file-service/file-keys"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/ScheduleSignature",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Schedule signature"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Artefact"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Signature provided by an account approving a scheduled transaction."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/how-scheduled-transactions-work"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/FileContent",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "File content"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Artefact"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Payload stored within a File Service file such as contract bytecode or fee schedules."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hedera/core-concepts/file-service/file-storage"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/updatesFile",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/FileUpdate"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "updates file"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/File"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Connects a file update process to the file being modified."
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/requiresSignature",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/ScheduledTransaction"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "requires signature"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Account"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Identifies accounts whose signatures are required for a scheduled transaction."
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/hasCollectedSignatureCount",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/ScheduledTransaction"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has collected signature count"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#integer"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Number of signatures collected so far for the schedule."
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/hasScheduleId",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/ScheduledTransaction"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has schedule id"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Ledger identifier for a scheduled transaction."
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/FileUpdate",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "File update"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Process"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Process that amends file contents or metadata under the control of file keys."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hedera/core-concepts/file-service/update-files"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/hasScheduleExpiration",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/ScheduledTransaction"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has schedule expiration"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Timestamp at which the scheduled transaction expires."
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/expiresWith",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/ScheduledTransaction"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "expires with"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Event"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Identifies the event that marks the expiration of a scheduled transaction."
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/FileService",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "File Service"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Service"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Network service that stores bytecode, fee schedules, and other artefacts under key-controlled files."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hedera/core-concepts/file-service/introduction"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/storesArtefact",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/File"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "stores artefact"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Artefact"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Indicates that a file stores an artefact such as bytecode or fee schedules."
+        "@value": "Account identifier paying for schedule execution."
       }
     ]
   },
@@ -476,70 +56,14 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/hasFileMemo",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/File"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has file memo"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Memo describing file purpose or metadata."
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/hasFileSize",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/File"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has file size"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#integer"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Size of file contents in bytes."
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/File",
+    "@id": "https://hashgraphontology.xyz/core/ScheduleSignature",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "File"
+        "@value": "Schedule signature"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
@@ -550,7 +74,63 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "On-ledger file storing bytecode, configuration, or metadata referenced by other services."
+        "@value": "Signature provided by an account approving a scheduled transaction."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/how-scheduled-transactions-work"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/PendingSchedule",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Pending schedule"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/ScheduledTransaction"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Scheduled transaction that has not yet gathered sufficient signatures."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts/scheduled-transactions"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/FileContent",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "File content"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Artefact"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Payload stored within a File Service file such as contract bytecode or fee schedules."
       }
     ],
     "https://hashgraphontology.xyz/core/sourceDocument": [
@@ -560,7 +140,7 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/hasSchedulePayer",
+    "@id": "https://hashgraphontology.xyz/core/hasRequiredSignatureCount",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
@@ -572,23 +152,107 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has schedule payer"
+        "@value": "has required signature count"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
+        "@id": "http://www.w3.org/2001/XMLSchema#integer"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Account identifier paying for schedule execution."
+        "@value": "Number of signatures needed before execution."
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/hasExecution",
+    "@id": "https://hashgraphontology.xyz/core/hasScheduleExpiration",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/ScheduledTransaction"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has schedule expiration"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#dateTime"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Timestamp at which the scheduled transaction expires."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/updatesFile",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/FileUpdate"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "updates file"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/File"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Connects a file update process to the file being modified."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/ScheduleService",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Schedule Service"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Service"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Service that queues transactions for deferred execution once signature requirements are met."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/introduction"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/requiresSignature",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
@@ -600,46 +264,46 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has execution"
+        "@value": "requires signature"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyz/core/ScheduleExecution"
+        "@id": "https://hashgraphontology.xyz/core/Account"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Associates a scheduled transaction with its execution once signatures complete."
+        "@value": "Identifies accounts whose signatures are required for a scheduled transaction."
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/hasCollectedSignature",
+    "@id": "https://hashgraphontology.xyz/core/FileUpdate",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/ScheduledTransaction"
-      }
+      "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has collected signature"
+        "@value": "File update"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyz/core/ScheduleSignature"
+        "@id": "https://hashgraphontology.xyz/core/Process"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Connects a scheduled transaction to signatures already obtained."
+        "@value": "Process that amends file contents or metadata under the control of file keys."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts/file-service/update-files"
       }
     ]
   },
@@ -672,30 +336,114 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/ScheduleService",
+    "@id": "https://hashgraphontology.xyz/core/FileKey",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Schedule Service"
+        "@value": "File key"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyz/core/Service"
+        "@id": "https://hashgraphontology.xyz/core/AccountKey"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Service that queues transactions for deferred execution once signature requirements are met."
+        "@value": "Key that authorises file creation, update, and deletion actions."
       }
     ],
     "https://hashgraphontology.xyz/core/sourceDocument": [
       {
-        "@id": "https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/introduction"
+        "@id": "https://docs.hedera.com/hedera/core-concepts/file-service/file-keys"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/File",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "File"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Artefact"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "On-ledger file storing bytecode, configuration, or metadata referenced by other services."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts/file-service/file-storage"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/hasFileSize",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/File"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has file size"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Size of file contents in bytes."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/ScheduledTransaction",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Scheduled transaction"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Artefact"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Deferred transaction waiting for a quorum of signatures before execution."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/how-scheduled-transactions-work"
       }
     ]
   },
@@ -752,7 +500,175 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/hasScheduleMemo",
+    "@id": "https://hashgraphontology.xyz/core/expiresWith",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/ScheduledTransaction"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "expires with"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Event"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Identifies the event that marks the expiration of a scheduled transaction."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/schedulesTransaction",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/ScheduledTransaction"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "schedules transaction"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Process"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Links a scheduled transaction artefact to the process that will execute once signatures are collected."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/FileService",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "File Service"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Service"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Network service that stores bytecode, fee schedules, and other artefacts under key-controlled files."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts/file-service/introduction"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/hasCollectedSignature",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/ScheduledTransaction"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has collected signature"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/ScheduleSignature"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Connects a scheduled transaction to signatures already obtained."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/hasFileMemo",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/File"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has file memo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Memo describing file purpose or metadata."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/hasExecution",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/ScheduledTransaction"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has execution"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/ScheduleExecution"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Associates a scheduled transaction with its execution once signatures complete."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/hasCollectedSignatureCount",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
@@ -764,18 +680,18 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has schedule memo"
+        "@value": "has collected signature count"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
+        "@id": "http://www.w3.org/2001/XMLSchema#integer"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Memo describing the scheduled transaction purpose."
+        "@value": "Number of signatures collected so far for the schedule."
       }
     ]
   },
@@ -804,6 +720,118 @@
     "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/how-scheduled-transactions-work"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/hasScheduleStatus",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/ScheduledTransaction"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has schedule status"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Enumerated status such as pending-signatures, executed, or expired."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/storesArtefact",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/File"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "stores artefact"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Artefact"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Indicates that a file stores an artefact such as bytecode or fee schedules."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/hasScheduleMemo",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/ScheduledTransaction"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has schedule memo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Memo describing the scheduled transaction purpose."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/hasScheduleId",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/ScheduledTransaction"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has schedule id"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Ledger identifier for a scheduled transaction."
       }
     ]
   },
@@ -841,58 +869,30 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/schedulesTransaction",
+    "@id": "https://hashgraphontology.xyz/core/hasFileContent",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyz/core/ScheduledTransaction"
+        "@id": "https://hashgraphontology.xyz/core/File"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "schedules transaction"
+        "@value": "has file content"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyz/core/Process"
+        "@id": "https://hashgraphontology.xyz/core/FileContent"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Links a scheduled transaction artefact to the process that will execute once signatures are collected."
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/ScheduledTransaction",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Scheduled transaction"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Artefact"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Deferred transaction waiting for a quorum of signatures before execution."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/how-scheduled-transactions-work"
+        "@value": "Links a file to the payload stored within it."
       }
     ]
   }

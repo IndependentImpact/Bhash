@@ -1,6 +1,6 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix hedera: <https://hashgraphontology.xyz/core/> .
-@prefix impactont: <http://w3id.org/impactont#> .
+@prefix impactont: <https://w3id.org/impactont#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
@@ -11,7 +11,7 @@
     dcterms:creator "Bhash Ontology Working Group"@en ;
     dcterms:description "Aligns Hedera treasury and compliance analytics with the Impact Ontology, modeling how Hedera transactions (Events) impact the state of accounts and tokens (Things) through measurable indicators."@en ;
     dcterms:modified "2025-10-15"^^xsd:date ;
-    dcterms:source <http://w3id.org/impactont> ;
+    dcterms:source <https://w3id.org/impactont> ;
     dcterms:title "ImpactOnt alignment module"@en ;
     rdfs:seeAlso <https://github.com/aiaont/impactont> ;
     owl:imports <https://hashgraphontology.xyz/core>,
