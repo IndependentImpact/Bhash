@@ -13,9 +13,9 @@ Phase 1 requires identifying reusable vocabularies that can accelerate Bhash mod
 | [ODRL](https://www.w3.org/TR/odrl-model/) | Policy/permission modelling. | Custom fee rules, access control statements for topics/files. | Evaluate complexity relative to simpler policy shapes. |
 | [OpenTelemetry semantic conventions](https://opentelemetry.io/docs/specs/semconv/) | Telemetry schema for observability. | Potential mapping for node metrics and mirror observability data. | Likely optional until telemetry integration is prioritised. |
 | [AIAO](https://w3id.org/aiao) | Anthropogenic impact accounting upper ontology. | Provides environmental and social impact scaffolding for anthropogenic impact reporting on Hedera-hosted assets. | Requires bridge module translating Hedera service events into impact indicators. |
-| [ClaimOnt](https://datadudes.xyz/claimont) | Climate accounting ontology for mitigation/adaptation measures. | Align Hedera staking, sustainability initiatives, and carbon credit tokens with climate metrics. | Need domain expert review to avoid overstating equivalence relationships. |
-| [ImpactOnt](https://w3id.org/impactont) | Core ontology for describing how events impact things through measurable states. | Model how Hedera transactions (events) impact the state of accounts and tokens (things) through indicators, enabling sustainability reporting based on measured states. | Correct namespace is http://w3id.org/impactont#. The ontology defines Events, Things, States, and Indicators - not domain-specific concepts like KPIs or SDG goals. |
-| [InfoComm](https://datadudes.xyz/infocomm) | Information and communication infrastructure ontology. | Useful for representing Hedera network infrastructure, mirror data pipelines, and observability dependencies. | Identify overlap with Hiero virtualization constructs before importing. |
+| [ClaimOnt](https://w3id.org/claimont) | Climate accounting ontology for mitigation/adaptation measures. | Align Hedera staking, sustainability initiatives, and carbon credit tokens with climate metrics. | Need domain expert review to avoid overstating equivalence relationships. |
+| [ImpactOnt](https://w3id.org/impactont) | Core ontology for describing how events impact things through measurable states. | Model how Hedera transactions (events) impact the state of accounts and tokens (things) through indicators, enabling sustainability reporting based on measured states. | Correct namespace is https://w3id.org/impactont#. The ontology defines Events, Things, States, and Indicators - not domain-specific concepts like KPIs or SDG goals. |
+| [InfoComm](https://w3id.org/infocomm) | Information and communication infrastructure ontology. | Useful for representing Hedera network infrastructure, mirror data pipelines, and observability dependencies. | Identify overlap with Hiero virtualization constructs before importing. |
 
 ## Detailed notes
 
@@ -73,7 +73,7 @@ Phase 1 requires identifying reusable vocabularies that can accelerate Bhash mod
 * Provides fundamental classes: Thing, Event, Impact, State, Indicator, and their relationships.
 * Hedera transactions can be modeled as Events/Impacts that change States of Things (accounts, tokens) measured by Indicators.
 * Domain-specific concepts like SDG goals, KPIs, and policy instruments are not part of the Impact Ontology and should be defined separately in the Hedera namespace.
-* Next step: Update existing alignment to use correct namespace (http://w3id.org/impactont#) and the proper Event-State-Indicator pattern instead of invented terms like KPI and SDGGoal.
+* Next step: Update existing alignment to use correct namespace (https://w3id.org/impactont#) and the proper Event-State-Indicator pattern instead of invented terms like KPI and SDGGoal.
 
 ### InfoComm
 
