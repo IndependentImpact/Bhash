@@ -3,6 +3,7 @@ build/
 
 # Python virtual environments
 .venv/
+venv/
 
 # Generated files
 *.pyc

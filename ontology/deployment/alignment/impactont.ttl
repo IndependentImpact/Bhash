@@ -1,6 +1,6 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix hedera: <https://hashgraphontology.xyz/core/> .
-@prefix impactont: <https://datadudes.xyz/ontology/impactont#> .
+@prefix impactont: <http://w3id.org/impactont#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
@@ -9,82 +9,99 @@
 <https://hashgraphontology.xyz/alignment/impactont> a owl:Ontology ;
     dcterms:created "2025-10-01"^^xsd:date ;
     dcterms:creator "Bhash Ontology Working Group"@en ;
-    dcterms:description "Connects Hedera treasury and compliance analytics to ImpactOnt KPI structures for sustainability dashboards."@en ;
-    dcterms:modified "2025-10-01"^^xsd:date ;
+    dcterms:description "Aligns Hedera treasury and compliance analytics with the Impact Ontology, modeling how Hedera transactions (Events) impact the state of accounts and tokens (Things) through measurable indicators."@en ;
+    dcterms:modified "2026-01-16"^^xsd:date ;
+    dcterms:source <http://w3id.org/impactont> ;
     dcterms:title "ImpactOnt alignment module"@en ;
     owl:imports <https://hashgraphontology.xyz/core>,
         <https://hashgraphontology.xyz/mirror-analytics>,
         <https://hashgraphontology.xyz/token> ;
     owl:versionInfo "0.1.0-dev" ;
-    skos:editorialNote "Phase 4 bridge module translating Hedera compliance metrics into ImpactOnt KPI and SDG linkages."@en .
+    skos:editorialNote "Phase 4 bridge module aligning Hedera concepts with the Impact Ontology core model: Events impact Things through States defined by Indicators."@en .
 
-hedera:ComplianceAlignmentScore a owl:Class ;
-    rdfs:label "Compliance alignment score"@en ;
-    dcterms:source <https://datadudes.xyz/impactont#ComplianceIndicator> ;
-    rdfs:subClassOf impactont:ComplianceIndicator,
-        hedera:TelemetryMetric ;
-    skos:definition "Composite indicator evaluating adherence to sustainability-linked compliance rules."@en ;
+hedera:Account dcterms:source impactont:Thing ;
+    rdfs:subClassOf impactont:Thing ;
+    skos:editorialNote "Accounts are Things whose states (balances, compliance metrics) can be impacted by transactions."@en .
+
+hedera:ComplianceScoreIndicator a owl:Class ;
+    rdfs:label "Compliance score indicator"@en ;
+    rdfs:subClassOf hedera:SustainabilityIndicator ;
+    skos:definition "Indicator measuring adherence to sustainability-linked compliance rules."@en ;
     hedera:sourceDocument <https://hips.hedera.com/hip/hip-540> .
 
-hedera:TreasuryImpactKPI a owl:Class ;
-    rdfs:label "Treasury impact KPI"@en ;
-    dcterms:source <https://datadudes.xyz/impactont#KPI> ;
-    rdfs:subClassOf impactont:KPI,
-        hedera:TelemetryMetric ;
-    skos:definition "Metric summarising treasury-controlled token balances for sustainability reporting."@en ;
-    hedera:sourceDocument <https://docs.hedera.com/hedera/mirror-node/architecture/metrics> .
-
-hedera:alignsWithPolicy a owl:ObjectProperty ;
-    rdfs:label "aligns with policy"@en ;
-    dcterms:source <https://datadudes.xyz/impactont#supportedByPolicy> ;
-    rdfs:domain hedera:TelemetryMetric ;
-    rdfs:range impactont:PolicyInstrument ;
-    rdfs:subPropertyOf impactont:supportedByPolicy ;
-    skos:definition "States which policy instrument governs the sustainability KPI."@en ;
+hedera:PolicyInstrument a owl:Class ;
+    rdfs:label "Policy instrument"@en ;
+    skos:definition "A governance policy or regulatory instrument that guides sustainability initiatives."@en ;
+    skos:editorialNote "Policy instruments are domain-specific concepts, not defined in the Impact Ontology. They provide governance context for sustainability measurements."@en ;
     hedera:sourceDocument <https://hips.hedera.com/hip/hip-540> .
 
-hedera:hasImpactBaseline a owl:DatatypeProperty ;
-    rdfs:label "has impact baseline"@en ;
-    dcterms:source <https://datadudes.xyz/impactont#hasBaselineValue> ;
-    rdfs:domain hedera:TelemetryMetric ;
-    rdfs:range xsd:decimal ;
-    rdfs:subPropertyOf impactont:hasBaselineValue ;
-    skos:definition "Baseline quantitative value used for comparing KPI improvement."@en ;
-    hedera:sourceDocument <https://docs.hedera.com/hedera/mirror-node/architecture/metrics> .
+hedera:SDGGoal a owl:Class ;
+    rdfs:label "Sustainable Development Goal"@en ;
+    rdfs:seeAlso <https://sdgs.un.org/goals> ;
+    skos:definition "A UN Sustainable Development Goal that sustainability metrics may be aligned with."@en ;
+    skos:editorialNote "SDG goals are domain-specific concepts, not defined in the Impact Ontology. They provide context for sustainability states and indicators."@en .
 
-hedera:hasImpactVariance a owl:DatatypeProperty ;
-    rdfs:label "has impact variance"@en ;
-    dcterms:source <https://datadudes.xyz/impactont#hasVariance> ;
-    rdfs:domain hedera:TelemetryMetric ;
-    rdfs:range xsd:decimal ;
-    rdfs:subPropertyOf impactont:hasVariance ;
-    skos:definition "Captures the variance observed for an impact KPI across a reporting period."@en ;
-    hedera:sourceDocument <https://docs.hedera.com/hedera/mirror-node/architecture/metrics> .
+hedera:ScheduledTransaction dcterms:source impactont:Impact ;
+    rdfs:subClassOf impactont:Impact ;
+    skos:editorialNote "Scheduled transactions are impacts with explicit provenance, useful for sustainability reporting."@en .
 
-hedera:hasMetricValue a owl:DatatypeProperty ;
-    rdfs:label "has metric value"@en ;
-    dcterms:source <https://datadudes.xyz/impactont#hasMetricValue> ;
-    rdfs:domain hedera:TelemetryMetric ;
-    rdfs:range xsd:decimal ;
-    rdfs:subPropertyOf impactont:hasMetricValue ;
-    skos:definition "Quantitative value reported for a Hedera-aligned impact metric."@en ;
-    hedera:sourceDocument <https://docs.hedera.com/hedera/mirror-node/architecture/metrics> .
+hedera:Token dcterms:source impactont:Thing ;
+    rdfs:subClassOf impactont:Thing ;
+    skos:editorialNote "Tokens are Things with states (supply, holder distribution) that change through transfer and mint/burn events."@en .
 
-hedera:summarisesToken a owl:ObjectProperty ;
-    rdfs:label "summarises token"@en ;
-    dcterms:source <https://datadudes.xyz/impactont#measuresAsset> ;
-    rdfs:domain hedera:TelemetryMetric ;
-    rdfs:range hedera:Token ;
-    rdfs:subPropertyOf impactont:measuresAsset ;
-    skos:definition "Identifies the token whose balances underpin a KPI."@en ;
+hedera:TreasuryBalanceIndicator a owl:Class ;
+    rdfs:label "Treasury balance indicator"@en ;
+    rdfs:subClassOf hedera:SustainabilityIndicator ;
+    skos:definition "Indicator measuring token balance held in a treasury account for impact reporting."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-relationships> .
 
-hedera:targetsSDGGoal a owl:ObjectProperty ;
-    rdfs:label "targets SDG goal"@en ;
-    dcterms:source <https://datadudes.xyz/impactont#targetsSDG> ;
-    rdfs:domain hedera:TelemetryMetric ;
-    rdfs:range impactont:SDGGoal ;
-    rdfs:subPropertyOf impactont:targetsSDG ;
-    skos:definition "Indicates which Sustainable Development Goal a Hedera metric supports."@en ;
+hedera:impactsAccountState a owl:ObjectProperty ;
+    rdfs:label "impacts account state"@en ;
+    dcterms:source impactont:impacts ;
+    rdfs:domain hedera:Transaction ;
+    rdfs:range impactont:State ;
+    rdfs:subPropertyOf impactont:impacts ;
+    skos:definition "Relates a Hedera transaction to a state of an account that it impacts."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/transactions/transaction-lifecycle> .
+
+hedera:impactsTokenState a owl:ObjectProperty ;
+    rdfs:label "impacts token state"@en ;
+    dcterms:source impactont:impacts ;
+    rdfs:domain hedera:Transaction ;
+    rdfs:range impactont:State ;
+    rdfs:subPropertyOf impactont:impacts ;
+    skos:definition "Relates a Hedera transaction to a state of a token that it impacts."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-relationships> .
+
+hedera:relatedToPolicy a owl:ObjectProperty ;
+    rdfs:label "related to policy"@en ;
+    rdfs:domain impactont:State ;
+    skos:definition "Links a state to a policy instrument that governs sustainability metrics. Policy instruments are domain-specific and not defined in the Impact Ontology."@en ;
+    skos:editorialNote "Policy instrument instances should be defined in the Hedera namespace."@en ;
+    hedera:sourceDocument <https://hips.hedera.com/hip/hip-540> .
+
+hedera:relatedToSDGGoal a owl:ObjectProperty ;
+    rdfs:label "related to SDG goal"@en ;
+    rdfs:domain impactont:State ;
+    skos:definition "Indicates which UN Sustainable Development Goal a state measurement supports. SDG goals are domain-specific and not defined in the Impact Ontology."@en ;
+    skos:editorialNote "SDG Goal instances should be defined in the Hedera namespace or imported from an SDG-specific ontology if one exists."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/mirror-node/architecture/metrics> .
+
+hedera:reportsImpactState a owl:ObjectProperty ;
+    rdfs:label "reports impact state"@en ;
+    rdfs:range impactont:State ;
+    skos:definition "Links an impact claim or assertion to the state that it reports on."@en ;
+    skos:editorialNote "Used to connect sustainability reporting assertions to the actual measured states."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/mirror-node/architecture/metrics> .
+
+hedera:SustainabilityIndicator a owl:Class ;
+    rdfs:label "Sustainability indicator"@en ;
+    dcterms:source impactont:Indicator ;
+    rdfs:subClassOf impactont:Indicator ;
+    skos:definition "An indicator used to measure sustainability-related states of Hedera assets, such as carbon credit balances or compliance scores."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/mirror-node/architecture/metrics> .
+
+hedera:Transaction dcterms:source impactont:Event ;
+    rdfs:subClassOf impactont:Event ;
+    skos:editorialNote "Transactions are events that impact the state of accounts, tokens, and other Hedera artefacts."@en .
 

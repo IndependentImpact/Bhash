@@ -7,95 +7,118 @@
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
 >
-  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/summarisesToken">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">summarises token</rdfs:label>
-    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/TelemetryMetric"/>
-    <rdfs:range rdf:resource="https://hashgraphontology.xyz/core/Token"/>
-    <rdfs:subPropertyOf rdf:resource="https://datadudes.xyz/ontology/impactont#measuresAsset"/>
-    <skos:definition xml:lang="en">Identifies the token whose balances underpin a KPI.</skos:definition>
-    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-relationships"/>
-    <dcterms:source rdf:resource="https://datadudes.xyz/impactont#measuresAsset"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/alignsWithPolicy">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">aligns with policy</rdfs:label>
-    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/TelemetryMetric"/>
-    <rdfs:range rdf:resource="https://datadudes.xyz/ontology/impactont#PolicyInstrument"/>
-    <rdfs:subPropertyOf rdf:resource="https://datadudes.xyz/ontology/impactont#supportedByPolicy"/>
-    <skos:definition xml:lang="en">States which policy instrument governs the sustainability KPI.</skos:definition>
-    <hedera:sourceDocument rdf:resource="https://hips.hedera.com/hip/hip-540"/>
-    <dcterms:source rdf:resource="https://datadudes.xyz/impactont#supportedByPolicy"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/TreasuryImpactKPI">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Treasury impact KPI</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/TelemetryMetric"/>
-    <rdfs:subClassOf rdf:resource="https://datadudes.xyz/ontology/impactont#KPI"/>
-    <skos:definition xml:lang="en">Metric summarising treasury-controlled token balances for sustainability reporting.</skos:definition>
-    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/mirror-node/architecture/metrics"/>
-    <dcterms:source rdf:resource="https://datadudes.xyz/impactont#KPI"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://hashgraphontology.xyz/alignment/impactont">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
     <dcterms:title xml:lang="en">ImpactOnt alignment module</dcterms:title>
-    <dcterms:description xml:lang="en">Connects Hedera treasury and compliance analytics to ImpactOnt KPI structures for sustainability dashboards.</dcterms:description>
+    <dcterms:description xml:lang="en">Aligns Hedera treasury and compliance analytics with the Impact Ontology, modeling how Hedera transactions (Events) impact the state of accounts and tokens (Things) through measurable indicators.</dcterms:description>
     <dcterms:creator xml:lang="en">Bhash Ontology Working Group</dcterms:creator>
     <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-10-01</dcterms:created>
-    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-10-01</dcterms:modified>
+    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-01-16</dcterms:modified>
     <owl:imports rdf:resource="https://hashgraphontology.xyz/core"/>
     <owl:imports rdf:resource="https://hashgraphontology.xyz/token"/>
     <owl:imports rdf:resource="https://hashgraphontology.xyz/mirror-analytics"/>
     <owl:versionInfo>0.1.0-dev</owl:versionInfo>
-    <skos:editorialNote xml:lang="en">Phase 4 bridge module translating Hedera compliance metrics into ImpactOnt KPI and SDG linkages.</skos:editorialNote>
+    <dcterms:source rdf:resource="http://w3id.org/impactont"/>
+    <skos:editorialNote xml:lang="en">Phase 4 bridge module aligning Hedera concepts with the Impact Ontology core model: Events impact Things through States defined by Indicators.</skos:editorialNote>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/hasImpactVariance">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="en">has impact variance</rdfs:label>
-    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/TelemetryMetric"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-    <rdfs:subPropertyOf rdf:resource="https://datadudes.xyz/ontology/impactont#hasVariance"/>
-    <skos:definition xml:lang="en">Captures the variance observed for an impact KPI across a reporting period.</skos:definition>
-    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/mirror-node/architecture/metrics"/>
-    <dcterms:source rdf:resource="https://datadudes.xyz/impactont#hasVariance"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/ComplianceAlignmentScore">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/SDGGoal">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Compliance alignment score</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/TelemetryMetric"/>
-    <rdfs:subClassOf rdf:resource="https://datadudes.xyz/ontology/impactont#ComplianceIndicator"/>
-    <skos:definition xml:lang="en">Composite indicator evaluating adherence to sustainability-linked compliance rules.</skos:definition>
-    <hedera:sourceDocument rdf:resource="https://hips.hedera.com/hip/hip-540"/>
-    <dcterms:source rdf:resource="https://datadudes.xyz/impactont#ComplianceIndicator"/>
+    <rdfs:label xml:lang="en">Sustainable Development Goal</rdfs:label>
+    <skos:definition xml:lang="en">A UN Sustainable Development Goal that sustainability metrics may be aligned with.</skos:definition>
+    <skos:editorialNote xml:lang="en">SDG goals are domain-specific concepts, not defined in the Impact Ontology. They provide context for sustainability states and indicators.</skos:editorialNote>
+    <rdfs:seeAlso rdf:resource="https://sdgs.un.org/goals"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/targetsSDGGoal">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/reportsImpactState">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">targets SDG goal</rdfs:label>
-    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/TelemetryMetric"/>
-    <rdfs:range rdf:resource="https://datadudes.xyz/ontology/impactont#SDGGoal"/>
-    <rdfs:subPropertyOf rdf:resource="https://datadudes.xyz/ontology/impactont#targetsSDG"/>
-    <skos:definition xml:lang="en">Indicates which Sustainable Development Goal a Hedera metric supports.</skos:definition>
+    <rdfs:label xml:lang="en">reports impact state</rdfs:label>
+    <rdfs:range rdf:resource="http://w3id.org/impactont#State"/>
+    <skos:definition xml:lang="en">Links an impact claim or assertion to the state that it reports on.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/mirror-node/architecture/metrics"/>
-    <dcterms:source rdf:resource="https://datadudes.xyz/impactont#targetsSDG"/>
+    <skos:editorialNote xml:lang="en">Used to connect sustainability reporting assertions to the actual measured states.</skos:editorialNote>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/hasMetricValue">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="en">has metric value</rdfs:label>
-    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/TelemetryMetric"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-    <rdfs:subPropertyOf rdf:resource="https://datadudes.xyz/ontology/impactont#hasMetricValue"/>
-    <skos:definition xml:lang="en">Quantitative value reported for a Hedera-aligned impact metric.</skos:definition>
-    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/mirror-node/architecture/metrics"/>
-    <dcterms:source rdf:resource="https://datadudes.xyz/impactont#hasMetricValue"/>
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/ComplianceScoreIndicator">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Compliance score indicator</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/SustainabilityIndicator"/>
+    <skos:definition xml:lang="en">Indicator measuring adherence to sustainability-linked compliance rules.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://hips.hedera.com/hip/hip-540"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/hasImpactBaseline">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="en">has impact baseline</rdfs:label>
-    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/TelemetryMetric"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-    <rdfs:subPropertyOf rdf:resource="https://datadudes.xyz/ontology/impactont#hasBaselineValue"/>
-    <skos:definition xml:lang="en">Baseline quantitative value used for comparing KPI improvement.</skos:definition>
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/Token">
+    <rdfs:subClassOf rdf:resource="http://w3id.org/impactont#Thing"/>
+    <skos:editorialNote xml:lang="en">Tokens are Things with states (supply, holder distribution) that change through transfer and mint/burn events.</skos:editorialNote>
+    <dcterms:source rdf:resource="http://w3id.org/impactont#Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/Transaction">
+    <rdfs:subClassOf rdf:resource="http://w3id.org/impactont#Event"/>
+    <skos:editorialNote xml:lang="en">Transactions are events that impact the state of accounts, tokens, and other Hedera artefacts.</skos:editorialNote>
+    <dcterms:source rdf:resource="http://w3id.org/impactont#Event"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/SustainabilityIndicator">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Sustainability indicator</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://w3id.org/impactont#Indicator"/>
+    <skos:definition xml:lang="en">An indicator used to measure sustainability-related states of Hedera assets, such as carbon credit balances or compliance scores.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/mirror-node/architecture/metrics"/>
-    <dcterms:source rdf:resource="https://datadudes.xyz/impactont#hasBaselineValue"/>
+    <dcterms:source rdf:resource="http://w3id.org/impactont#Indicator"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/relatedToPolicy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">related to policy</rdfs:label>
+    <rdfs:domain rdf:resource="http://w3id.org/impactont#State"/>
+    <skos:definition xml:lang="en">Links a state to a policy instrument that governs sustainability metrics. Policy instruments are domain-specific and not defined in the Impact Ontology.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://hips.hedera.com/hip/hip-540"/>
+    <skos:editorialNote xml:lang="en">Policy instrument instances should be defined in the Hedera namespace.</skos:editorialNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/relatedToSDGGoal">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">related to SDG goal</rdfs:label>
+    <rdfs:domain rdf:resource="http://w3id.org/impactont#State"/>
+    <skos:definition xml:lang="en">Indicates which UN Sustainable Development Goal a state measurement supports. SDG goals are domain-specific and not defined in the Impact Ontology.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/mirror-node/architecture/metrics"/>
+    <skos:editorialNote xml:lang="en">SDG Goal instances should be defined in the Hedera namespace or imported from an SDG-specific ontology if one exists.</skos:editorialNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/ScheduledTransaction">
+    <rdfs:subClassOf rdf:resource="http://w3id.org/impactont#Impact"/>
+    <skos:editorialNote xml:lang="en">Scheduled transactions are impacts with explicit provenance, useful for sustainability reporting.</skos:editorialNote>
+    <dcterms:source rdf:resource="http://w3id.org/impactont#Impact"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/impactsAccountState">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">impacts account state</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/Transaction"/>
+    <rdfs:range rdf:resource="http://w3id.org/impactont#State"/>
+    <rdfs:subPropertyOf rdf:resource="http://w3id.org/impactont#impacts"/>
+    <skos:definition xml:lang="en">Relates a Hedera transaction to a state of an account that it impacts.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/core-concepts/transactions/transaction-lifecycle"/>
+    <dcterms:source rdf:resource="http://w3id.org/impactont#impacts"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/Account">
+    <rdfs:subClassOf rdf:resource="http://w3id.org/impactont#Thing"/>
+    <skos:editorialNote xml:lang="en">Accounts are Things whose states (balances, compliance metrics) can be impacted by transactions.</skos:editorialNote>
+    <dcterms:source rdf:resource="http://w3id.org/impactont#Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/impactsTokenState">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">impacts token state</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/Transaction"/>
+    <rdfs:range rdf:resource="http://w3id.org/impactont#State"/>
+    <rdfs:subPropertyOf rdf:resource="http://w3id.org/impactont#impacts"/>
+    <skos:definition xml:lang="en">Relates a Hedera transaction to a state of a token that it impacts.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-relationships"/>
+    <dcterms:source rdf:resource="http://w3id.org/impactont#impacts"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/PolicyInstrument">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Policy instrument</rdfs:label>
+    <skos:definition xml:lang="en">A governance policy or regulatory instrument that guides sustainability initiatives.</skos:definition>
+    <skos:editorialNote xml:lang="en">Policy instruments are domain-specific concepts, not defined in the Impact Ontology. They provide governance context for sustainability measurements.</skos:editorialNote>
+    <hedera:sourceDocument rdf:resource="https://hips.hedera.com/hip/hip-540"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/TreasuryBalanceIndicator">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Treasury balance indicator</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/SustainabilityIndicator"/>
+    <skos:definition xml:lang="en">Indicator measuring token balance held in a treasury account for impact reporting.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-relationships"/>
   </rdf:Description>
 </rdf:RDF>
