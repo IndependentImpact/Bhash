@@ -1,9 +1,14 @@
 Term,Source Document,Notes
-hedera:TreasuryImpactKPI,https://docs.hedera.com/hedera/mirror-node/architecture/metrics,Treasury telemetry metrics back ImpactOnt KPIs tracking sustainability funding flows.
-hedera:ComplianceAlignmentScore,https://hips.hedera.com/hip/hip-540,HIP-540 compliance controls map to ImpactOnt compliance indicators.
-hedera:targetsSDGGoal,https://docs.hedera.com/hedera/mirror-node/architecture/metrics,Mirror telemetry exposes SDG goal tagging aligned with ImpactOnt's SDG vocabulary.
-hedera:summarisesToken,https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-relationships,Token balance coverage is required to measure anthropogenic impact instruments and maps to ImpactOnt asset metrics.
-hedera:hasMetricValue,https://docs.hedera.com/hedera/mirror-node/architecture/metrics,Numeric metric values align with ImpactOnt quantitative reporting requirements.
-hedera:hasImpactVariance,https://docs.hedera.com/hedera/mirror-node/architecture/metrics,Variance calculations match ImpactOnt variance semantics for KPI monitoring.
-hedera:alignsWithPolicy,https://hips.hedera.com/hip/hip-540,Policy alignment references HIP mandates and ImpactOnt policy instruments.
-hedera:hasImpactBaseline,https://docs.hedera.com/hedera/mirror-node/architecture/metrics,Baseline values support ImpactOnt baseline comparisons for anthropogenic impact KPIs.
+hedera:Account as impactont:Thing,https://docs.hedera.com/hedera/core-concepts/accounts,Hedera accounts are Things in the Impact Ontology whose states can be measured through indicators.
+hedera:Token as impactont:Thing,https://docs.hedera.com/hedera/sdks-and-apis/token-service/introduction,Tokens are Things with measurable states like supply and distribution.
+hedera:Transaction as impactont:Event,https://docs.hedera.com/hedera/core-concepts/transactions/transaction-lifecycle,Transactions are Events that impact the states of accounts and tokens.
+hedera:ScheduledTransaction as impactont:Impact,https://docs.hedera.com/hedera/sdks-and-apis/scheduled-transaction-service,Scheduled transactions are Impacts with explicit provenance for sustainability reporting.
+hedera:SustainabilityIndicator,https://docs.hedera.com/hedera/mirror-node/architecture/metrics,Indicators measure sustainability-related states using Impact Ontology's Indicator class.
+hedera:TreasuryBalanceIndicator,https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-relationships,Specific indicator for measuring treasury token balances.
+hedera:ComplianceScoreIndicator,https://hips.hedera.com/hip/hip-540,Indicator measuring adherence to sustainability compliance rules.
+impactont:State with impactont:hasIndicatorValue,http://w3id.org/impactont,States of Things are measured by Indicators with values. Replaces the non-existent impactont:KPI concept.
+hedera:relatedToSDGGoal,https://docs.hedera.com/hedera/mirror-node/architecture/metrics,Links states to UN SDG goals (domain-specific concept not in Impact Ontology).
+hedera:relatedToPolicy,https://hips.hedera.com/hip/hip-540,Links states to governance policy instruments (domain-specific concept not in Impact Ontology).
+hedera:reportsImpactState,https://docs.hedera.com/hedera/mirror-node/architecture/metrics,Connects sustainability assertions to the states they report on.
+hedera:SDGGoal,https://sdgs.un.org/goals,Domain-specific class for UN Sustainable Development Goals (not part of Impact Ontology).
+hedera:PolicyInstrument,https://hips.hedera.com/hip/hip-540,Domain-specific class for governance policy instruments (not part of Impact Ontology).
