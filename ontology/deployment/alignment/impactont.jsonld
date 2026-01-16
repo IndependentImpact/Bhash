@@ -1,30 +1,126 @@
 [
   {
-    "@id": "https://hashgraphontology.xyz/core/PolicyInstrument",
+    "@id": "https://hashgraphontology.xyz/alignment/impactont",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#Ontology"
     ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
+    "http://purl.org/dc/terms/created": [
       {
-        "@language": "en",
-        "@value": "Policy instrument"
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2025-10-01"
       }
     ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
+    "http://purl.org/dc/terms/creator": [
       {
         "@language": "en",
-        "@value": "A governance policy or regulatory instrument that guides sustainability initiatives."
+        "@value": "Bhash Ontology Working Group"
+      }
+    ],
+    "http://purl.org/dc/terms/description": [
+      {
+        "@language": "en",
+        "@value": "Aligns Hedera treasury and compliance analytics with the Impact Ontology, modeling how Hedera transactions (Events) impact the state of accounts and tokens (Things) through measurable indicators."
+      }
+    ],
+    "http://purl.org/dc/terms/modified": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2025-10-15"
+      }
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@id": "https://w3id.org/impactont"
+      }
+    ],
+    "http://purl.org/dc/terms/title": [
+      {
+        "@language": "en",
+        "@value": "ImpactOnt alignment module"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
+      {
+        "@id": "https://github.com/aiaont/impactont"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#imports": [
+      {
+        "@id": "https://hashgraphontology.xyz/core"
+      },
+      {
+        "@id": "https://hashgraphontology.xyz/token"
+      },
+      {
+        "@id": "https://hashgraphontology.xyz/mirror-analytics"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#versionInfo": [
+      {
+        "@value": "0.1.0-dev"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#editorialNote": [
       {
         "@language": "en",
-        "@value": "Policy instruments are domain-specific concepts, not defined in the Impact Ontology. They provide governance context for sustainability measurements."
+        "@value": "Phase 4 bridge module aligning Hedera concepts with the Impact Ontology core model: Events impact Things through States defined by Indicators. See https://github.com/aiaont/impactont for official ontology specification."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/Account",
+    "http://purl.org/dc/terms/source": [
+      {
+        "@id": "https://w3id.org/impactont#Thing"
       }
     ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hips.hedera.com/hip/hip-540"
+        "@id": "https://w3id.org/impactont#Thing"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#editorialNote": [
+      {
+        "@language": "en",
+        "@value": "Accounts are Things whose states (balances, compliance metrics) can be impacted by transactions."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/Token",
+    "http://purl.org/dc/terms/source": [
+      {
+        "@id": "https://w3id.org/impactont#Thing"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/impactont#Thing"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#editorialNote": [
+      {
+        "@language": "en",
+        "@value": "Tokens are Things with states (supply, holder distribution) that change through transfer and mint/burn events."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/ScheduledTransaction",
+    "http://purl.org/dc/terms/source": [
+      {
+        "@id": "https://w3id.org/impactont#Impact"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/impactont#Impact"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#editorialNote": [
+      {
+        "@language": "en",
+        "@value": "Scheduled transactions are impacts with explicit provenance, useful for sustainability reporting."
       }
     ]
   },
@@ -35,7 +131,7 @@
     ],
     "http://purl.org/dc/terms/source": [
       {
-        "@id": "http://w3id.org/impactont#impacts"
+        "@id": "https://w3id.org/impactont#impacts"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
@@ -51,12 +147,12 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://w3id.org/impactont#State"
+        "@id": "https://w3id.org/impactont#State"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "http://w3id.org/impactont#impacts"
+        "@id": "https://w3id.org/impactont#impacts"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -72,64 +168,63 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/impactsAccountState",
+    "@id": "https://hashgraphontology.xyz/core/SustainabilityIndicator",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
+      "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://purl.org/dc/terms/source": [
       {
-        "@id": "http://w3id.org/impactont#impacts"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Transaction"
+        "@id": "https://w3id.org/impactont#Indicator"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "impacts account state"
+        "@value": "Sustainability indicator"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://w3id.org/impactont#State"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://w3id.org/impactont#impacts"
+        "@id": "https://w3id.org/impactont#Indicator"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Relates a Hedera transaction to a state of an account that it impacts."
+        "@value": "An indicator used to measure sustainability-related states of Hedera assets, such as carbon credit balances or compliance scores."
       }
     ],
     "https://hashgraphontology.xyz/core/sourceDocument": [
       {
-        "@id": "https://docs.hedera.com/hedera/core-concepts/transactions/transaction-lifecycle"
+        "@id": "https://docs.hedera.com/hedera/mirror-node/architecture/metrics"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/ScheduledTransaction",
-    "http://purl.org/dc/terms/source": [
+    "@id": "https://hashgraphontology.xyz/core/ComplianceScoreIndicator",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@id": "http://w3id.org/impactont#Impact"
+        "@language": "en",
+        "@value": "Compliance score indicator"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://w3id.org/impactont#Impact"
+        "@id": "https://hashgraphontology.xyz/core/SustainabilityIndicator"
       }
     ],
-    "http://www.w3.org/2004/02/skos/core#editorialNote": [
+    "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Scheduled transactions are impacts with explicit provenance, useful for sustainability reporting."
+        "@value": "Indicator measuring adherence to sustainability-linked compliance rules."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://hips.hedera.com/hip/hip-540"
       }
     ]
   },
@@ -137,12 +232,12 @@
     "@id": "https://hashgraphontology.xyz/core/Transaction",
     "http://purl.org/dc/terms/source": [
       {
-        "@id": "http://w3id.org/impactont#Event"
+        "@id": "https://w3id.org/impactont#Event"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://w3id.org/impactont#Event"
+        "@id": "https://w3id.org/impactont#Event"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#editorialNote": [
@@ -182,162 +277,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/TreasuryBalanceIndicator",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Treasury balance indicator"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/SustainabilityIndicator"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Indicator measuring token balance held in a treasury account for impact reporting."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-relationships"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/Account",
-    "http://purl.org/dc/terms/source": [
-      {
-        "@id": "http://w3id.org/impactont#Thing"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://w3id.org/impactont#Thing"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#editorialNote": [
-      {
-        "@language": "en",
-        "@value": "Accounts are Things whose states (balances, compliance metrics) can be impacted by transactions."
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/alignment/impactont",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Ontology"
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2025-10-01"
-      }
-    ],
-    "http://purl.org/dc/terms/creator": [
-      {
-        "@language": "en",
-        "@value": "Bhash Ontology Working Group"
-      }
-    ],
-    "http://purl.org/dc/terms/description": [
-      {
-        "@language": "en",
-        "@value": "Aligns Hedera treasury and compliance analytics with the Impact Ontology, modeling how Hedera transactions (Events) impact the state of accounts and tokens (Things) through measurable indicators."
-      }
-    ],
-    "http://purl.org/dc/terms/modified": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2025-10-15"
-      }
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@id": "http://w3id.org/impactont"
-      }
-    ],
-    "http://purl.org/dc/terms/title": [
-      {
-        "@language": "en",
-        "@value": "ImpactOnt alignment module"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
-      {
-        "@id": "https://github.com/aiaont/impactont"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#imports": [
-      {
-        "@id": "https://hashgraphontology.xyz/core"
-      },
-      {
-        "@id": "https://hashgraphontology.xyz/token"
-      },
-      {
-        "@id": "https://hashgraphontology.xyz/mirror-analytics"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#versionInfo": [
-      {
-        "@value": "0.1.0-dev"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#editorialNote": [
-      {
-        "@language": "en",
-        "@value": "Phase 4 bridge module aligning Hedera concepts with the Impact Ontology core model: Events impact Things through States defined by Indicators. See https://github.com/aiaont/impactont for official ontology specification."
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/relatedToPolicy",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://w3id.org/impactont#State"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "related to policy"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Links a state to a policy instrument that governs sustainability metrics. Policy instruments are domain-specific and not defined in the Impact Ontology."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#editorialNote": [
-      {
-        "@language": "en",
-        "@value": "Policy instrument instances should be defined in the Hedera namespace."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://hips.hedera.com/hip/hip-540"
-      }
-    ]
-  },
-  {
     "@id": "https://hashgraphontology.xyz/core/relatedToSDGGoal",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "http://w3id.org/impactont#State"
+        "@id": "https://w3id.org/impactont#State"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
@@ -377,7 +323,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://w3id.org/impactont#State"
+        "@id": "https://w3id.org/impactont#State"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -399,14 +345,43 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/ComplianceScoreIndicator",
+    "@id": "https://hashgraphontology.xyz/core/PolicyInstrument",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Compliance score indicator"
+        "@value": "Policy instrument"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A governance policy or regulatory instrument that guides sustainability initiatives."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#editorialNote": [
+      {
+        "@language": "en",
+        "@value": "Policy instruments are domain-specific concepts, not defined in the Impact Ontology. They provide governance context for sustainability measurements."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://hips.hedera.com/hip/hip-540"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/TreasuryBalanceIndicator",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Treasury balance indicator"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
@@ -417,7 +392,41 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Indicator measuring adherence to sustainability-linked compliance rules."
+        "@value": "Indicator measuring token balance held in a treasury account for impact reporting."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-relationships"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/relatedToPolicy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/impactont#State"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "related to policy"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Links a state to a policy instrument that governs sustainability metrics. Policy instruments are domain-specific and not defined in the Impact Ontology."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#editorialNote": [
+      {
+        "@language": "en",
+        "@value": "Policy instrument instances should be defined in the Hedera namespace."
       }
     ],
     "https://hashgraphontology.xyz/core/sourceDocument": [
@@ -427,54 +436,45 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/Token",
-    "http://purl.org/dc/terms/source": [
-      {
-        "@id": "http://w3id.org/impactont#Thing"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://w3id.org/impactont#Thing"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#editorialNote": [
-      {
-        "@language": "en",
-        "@value": "Tokens are Things with states (supply, holder distribution) that change through transfer and mint/burn events."
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/SustainabilityIndicator",
+    "@id": "https://hashgraphontology.xyz/core/impactsAccountState",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://purl.org/dc/terms/source": [
       {
-        "@id": "http://w3id.org/impactont#Indicator"
+        "@id": "https://w3id.org/impactont#impacts"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Transaction"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Sustainability indicator"
+        "@value": "impacts account state"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+    "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://w3id.org/impactont#Indicator"
+        "@id": "https://w3id.org/impactont#State"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/impactont#impacts"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "An indicator used to measure sustainability-related states of Hedera assets, such as carbon credit balances or compliance scores."
+        "@value": "Relates a Hedera transaction to a state of an account that it impacts."
       }
     ],
     "https://hashgraphontology.xyz/core/sourceDocument": [
       {
-        "@id": "https://docs.hedera.com/hedera/mirror-node/architecture/metrics"
+        "@id": "https://docs.hedera.com/hedera/core-concepts/transactions/transaction-lifecycle"
       }
     ]
   }

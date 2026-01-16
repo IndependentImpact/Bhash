@@ -1,8 +1,8 @@
-@prefix aiao: <http://w3id.org/aiao#> .
-@prefix claimont: <http://w3id.org/claimont#> .
+@prefix aiao: <https://w3id.org/aiao#> .
+@prefix claimont: <https://w3id.org/claimont#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix hedera: <https://hashgraphontology.xyz/core/> .
-@prefix impactont: <http://w3id.org/impactont#> .
+@prefix impactont: <https://w3id.org/impactont#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -25,24 +25,24 @@
 hedera:ConsensusImpactAssertion a owl:Class ;
     rdfs:label "Consensus impact assertion"@en ;
     dcterms:source aiao:ImpactClaim ;
-    rdfs:subClassOf aiao:ImpactClaim,
-        hedera:TopicMessage ;
+    rdfs:subClassOf hedera:TopicMessage,
+        aiao:ImpactClaim ;
     skos:definition "Consensus Service message curated to substantiate an anthropogenic impact claim."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/message-flows> .
 
 hedera:MirrorImpactIndicator a owl:Class ;
     rdfs:label "Mirror impact indicator"@en ;
     dcterms:source impactont:Indicator ;
-    rdfs:subClassOf impactont:Indicator,
-        hedera:TelemetryMetric ;
+    rdfs:subClassOf hedera:TelemetryMetric,
+        impactont:Indicator ;
     skos:definition "Telemetry metric derived from mirror analytics that feeds anthropogenic impact indicator dashboards."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/mirror-node/architecture/metrics> .
 
 hedera:StablecoinReserveAssertion a owl:Class ;
     rdfs:label "Stablecoin reserve assertion"@en ;
     dcterms:source aiao:ImpactClaim ;
-    rdfs:subClassOf aiao:ImpactClaim,
-        hedera:TokenEvent ;
+    rdfs:subClassOf hedera:TokenEvent,
+        aiao:ImpactClaim ;
     skos:definition "Token event demonstrating reserve movements that underpin sustainability-linked commitments."@en ;
     hedera:sourceDocument <https://hips.hedera.com/hip/hip-540> .
 

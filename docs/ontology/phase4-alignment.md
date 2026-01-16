@@ -52,6 +52,6 @@ This blueprint operationalises the Phase 4 integration goal of binding Hedera-na
 ## References
 
 * [AIAO](https://w3id.org/aiao)
-* [ClaimOnt](https://datadudes.xyz/claimont)
+* [ClaimOnt](https://w3id.org/claimont)
 * [ImpactOnt](https://w3id.org/impactont)
-* [InfoComm](https://datadudes.xyz/infocomm)
+* [InfoComm](https://w3id.org/infocomm)

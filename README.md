@@ -11,15 +11,15 @@ Bhash is an open knowledge engineering effort to describe the Hedera Network and
 * Hiero overlay.
 
 By modelling Hedera's public documentation and implementation guidance—including Hiero validator onboarding—we provide reusable semantics for analytics, compliance, education, and integration projects. Phase 4 extends this scope with bridge modules that align Hedera-native concepts with the 
-* Anthropogenic Impact Accounting Ontology (AIAO),
-* Claim Ontology,
-* Impact Ontology (w3id.org/impactont), and
-* Information Communication Ontology
+* Anthropogenic Impact Accounting Ontology (AIAO at w3id.org/aiao),
+* Claim Ontology (ClaimOnt at w3id.org/claimont),
+* Impact Ontology (ImpactOnt at w3id.org/impactont), and
+* Information Communication Ontology (InfoComm at w3id.org/infocomm)
 
 ## Why an ontology?
 
 * **Shared vocabulary** – establish stable identifiers and definitions for Hedera-specific notions such as accounts, topics, tokens, scheduled transactions, staking nodes, and fee schedules.
-* **Interoperability** – align Hedera concepts with standard vocabularies (PROV-O, DCAT, W3C DID Core, etc.) and specialised anthropogenic impact ontologies (AIAO, ClaimOnt, Impact Ontology at w3id.org/impactont, InfoComm) so that data from mirror nodes, dApps, sustainability disclosures, and compliance tools can interoperate.
+* **Interoperability** – align Hedera concepts with standard vocabularies (PROV-O, DCAT, W3C DID Core, etc.) and specialised anthropogenic impact ontologies (AIAO at w3id.org/aiao, ClaimOnt at w3id.org/claimont, Impact Ontology at w3id.org/impactont, InfoComm at w3id.org/infocomm) so that data from mirror nodes, dApps, sustainability disclosures, and compliance tools can interoperate.
 * **Reasoning & validation** – enable automated validation (via OWL reasoning and SHACL constraints) for network states, policy rules, token compliance requirements, smart contract metadata, and Hiero onboarding milestones.
 * **Documentation** – provide an authoritative reference that augments Hedera/Hiero manuals with explicit relationships that are otherwise scattered across prose and code.
 

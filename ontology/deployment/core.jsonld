@@ -1,204 +1,103 @@
 [
   {
-    "@id": "https://hashgraphontology.xyz/core/declinesStakingRewards",
+    "@id": "https://hashgraphontology.xyz/core/producesEvent",
     "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyz/core/Account"
+        "@id": "https://hashgraphontology.xyz/core/Process"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "declines staking rewards"
+        "@value": "produces event"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#boolean"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Boolean flag indicating the account opts out of receiving staking rewards."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hedera/core-concepts/staking/stake-hbar#staking-reward-distribution"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/GovernanceProcess",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Governance process"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Process"
-      },
-      {
-        "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b18"
-      },
-      {
-        "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b19"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Process through which councils or committees evaluate and ratify network decisions."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://hedera.com/council"
-      }
-    ]
-  },
-  {
-    "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b18",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/hasParticipant"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/GovernanceBody"
-      }
-    ]
-  },
-  {
-    "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b19",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/issuesDecision"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/GovernanceDecision"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/GovernanceDecision",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Governance decision"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
         "@id": "https://hashgraphontology.xyz/core/Event"
       }
     ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Recorded outcome of a governance process, such as an approved vote or mandate."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://hedera.com/council"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/hasLayer",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Network"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has layer"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/HieroLayer"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#inverseOf": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/isLayerOf"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Associates a network with one of its Hiero layers."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hiero"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/governs",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/GovernanceBody"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "governs"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Network"
-      }
-    ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "http://www.w3.org/ns/prov#influenced"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#inverseOf": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/isGovernedBy"
+        "@id": "http://www.w3.org/ns/prov#generated"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Relates a governance body to the network scope over which it has authority."
+        "@value": "States that a process yields a specific event observation."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/MirrorDataset",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Mirror dataset"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Artefact"
+      },
+      {
+        "@id": "http://www.w3.org/ns/dcat#Dataset"
+      },
+      {
+        "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb40"
+      },
+      {
+        "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb41"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Dataset published by a mirror node exposing consensus records or account state."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/mirror-node/sdks-and-apis/rest-api"
+      }
+    ]
+  },
+  {
+    "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb40",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/isPublishedBy"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/MirrorNode"
+      }
+    ]
+  },
+  {
+    "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb41",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.w3.org/ns/dcat#accessURL"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#anyURI"
       }
     ]
   },
@@ -236,30 +135,61 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/stakesTo",
+    "@id": "https://hashgraphontology.xyz/core/hasPhaseOrder",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyz/core/Account"
+        "@id": "https://hashgraphontology.xyz/core/TransactionPhase"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "stakes to"
+        "@value": "has phase order"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyz/core/Validator"
+        "@id": "http://www.w3.org/2001/XMLSchema#integer"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Denotes the validator that receives stake from an account."
+        "@value": "Ordinal index used to order transaction lifecycle phases."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts/transactions/transaction-lifecycle"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/StakingEvent",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Staking event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Event"
+      },
+      {
+        "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb24"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Event recording a staking action or reward distribution."
       }
     ],
     "https://hashgraphontology.xyz/core/sourceDocument": [
@@ -269,310 +199,46 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/Service",
+    "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb24",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.w3.org/ns/prov#wasGeneratedBy"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/StakingProcess"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/PublicKey",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Service"
+        "@value": "Public key"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyz/core/Concept"
-      },
-      {
-        "@id": "http://schema.org/Service"
-      },
-      {
-        "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b1"
-      },
-      {
-        "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b2"
-      },
-      {
-        "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b3"
-      },
-      {
-        "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b4"
+        "@id": "https://hashgraphontology.xyz/core/AccountKey"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "A capability offered by the Hedera network such as consensus, token management, or smart contract execution."
+        "@value": "Individual Ed25519 or ECDSA key associated with accounts, contracts, and services."
       }
     ],
     "https://hashgraphontology.xyz/core/sourceDocument": [
       {
-        "@id": "https://docs.hedera.com/hedera/core-concepts"
-      }
-    ]
-  },
-  {
-    "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b1",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Artefact"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/managesArtefact"
-      }
-    ]
-  },
-  {
-    "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b2",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/isOperatedBy"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Actor"
-      }
-    ]
-  },
-  {
-    "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b3",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/exposedOn"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Network"
-      }
-    ]
-  },
-  {
-    "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b4",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Artefact"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/consumesArtefact"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/operatesService",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Actor"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "operates service"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Service"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#inverseOf": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/isOperatedBy"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Indicates that an actor is responsible for operating or providing a service."
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/exposedOn",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Service"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "exposed on"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Network"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Indicates the network or shard through which a service is made available."
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/MirrorDataset",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Mirror dataset"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Artefact"
-      },
-      {
-        "@id": "http://www.w3.org/ns/dcat#Dataset"
-      },
-      {
-        "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b40"
-      },
-      {
-        "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b41"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Dataset published by a mirror node exposing consensus records or account state."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hedera/mirror-node/sdks-and-apis/rest-api"
-      }
-    ]
-  },
-  {
-    "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b40",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/isPublishedBy"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/MirrorNode"
-      }
-    ]
-  },
-  {
-    "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b41",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://www.w3.org/ns/dcat#accessURL"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#anyURI"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/hasRecord",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Transaction"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has record"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/TransactionRecord"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.w3.org/ns/prov#wasAttributedTo"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Links a transaction to the resulting record emitted after execution."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hedera/core-concepts/transactions/transaction-record"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/targetsValidator",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/ValidatorOnboardingProcess"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "targets validator"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Validator"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Identifies the validator being evaluated or activated by an onboarding process."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://hips.hedera.com/hip/hip-840"
+        "@id": "https://docs.hedera.com/hedera/core-concepts/accounts/cryptographic-keys"
       }
     ]
   },
@@ -595,10 +261,10 @@
         "@id": "https://hashgraphontology.xyz/core/Validator"
       },
       {
-        "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b16"
+        "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb16"
       },
       {
-        "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b17"
+        "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb17"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -614,7 +280,7 @@
     ]
   },
   {
-    "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b16",
+    "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb16",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -630,7 +296,7 @@
     ]
   },
   {
-    "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b17",
+    "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb17",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -642,67 +308,6 @@
     "http://www.w3.org/2002/07/owl#someValuesFrom": [
       {
         "@id": "https://hashgraphontology.xyz/core/ValidatorOnboardingProcess"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/isPublishedBy",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/MirrorDataset"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "is published by"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/MirrorNode"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Links a dataset back to the mirror node that publishes it."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hedera/mirror-node/sdks-and-apis/rest-api"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/HieroExecutionLayer",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Hiero execution layer"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/HieroLayer"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Hiero layer executing ordered transactions and maintaining state commitments."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hiero"
       }
     ]
   },
@@ -722,13 +327,13 @@
         "@id": "https://hashgraphontology.xyz/core/Actor"
       },
       {
-        "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b11"
+        "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb11"
       },
       {
-        "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b12"
+        "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb12"
       },
       {
-        "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b13"
+        "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb13"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -744,7 +349,7 @@
     ]
   },
   {
-    "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b11",
+    "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb11",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -760,7 +365,7 @@
     ]
   },
   {
-    "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b12",
+    "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb12",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -776,7 +381,7 @@
     ]
   },
   {
-    "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b13",
+    "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb13",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -792,101 +397,104 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/isAccountOf",
+    "@id": "https://hashgraphontology.xyz/core/producesRecord",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyz/core/Account"
+        "@id": "https://hashgraphontology.xyz/core/TransactionPhase"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "is account of"
+        "@value": "produces record"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyz/core/Actor"
+        "@id": "https://hashgraphontology.xyz/core/TransactionRecord"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/producesEvent"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Links an account back to the actor that owns or controls it."
+        "@value": "Indicates that a transaction phase emits a transaction record."
       }
     ],
     "https://hashgraphontology.xyz/core/sourceDocument": [
       {
-        "@id": "https://docs.hedera.com/hedera/core-concepts/accounts"
+        "@id": "https://docs.hedera.com/hedera/core-concepts/transactions/transaction-record"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/registeredIn",
+    "@id": "https://hashgraphontology.xyz/core/hasShard",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Artefact"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "registered in"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
       {
         "@id": "https://hashgraphontology.xyz/core/Network"
       }
     ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Indicates the canonical network where an artefact is recorded."
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/hasAccount",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Actor"
-      }
-    ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has account"
+        "@value": "has shard"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyz/core/Account"
+        "@id": "https://hashgraphontology.xyz/core/HieroShard"
       }
     ],
     "http://www.w3.org/2002/07/owl#inverseOf": [
       {
-        "@id": "https://hashgraphontology.xyz/core/isAccountOf"
+        "@id": "https://hashgraphontology.xyz/core/isShardOf"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Relates an actor to an account under its control."
+        "@value": "Relates a network to a Hiero shard subdivision."
       }
     ],
     "https://hashgraphontology.xyz/core/sourceDocument": [
       {
-        "@id": "https://docs.hedera.com/hedera/core-concepts/accounts"
+        "@id": "https://hips.hedera.com/hip/hip-840"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/Event",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Concept"
+      },
+      {
+        "@id": "http://www.w3.org/ns/prov#Entity"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Bounded outcome or observation emitted by a process, typically recorded through mirror nodes or logs."
       }
     ]
   },
@@ -929,30 +537,111 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/hasTransactionPhase",
+    "@id": "https://hashgraphontology.xyz/core/isGovernedBy",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyz/core/Transaction"
+        "@id": "https://hashgraphontology.xyz/core/Network"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has transaction phase"
+        "@value": "is governed by"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyz/core/TransactionPhase"
+        "@id": "https://hashgraphontology.xyz/core/GovernanceBody"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.w3.org/ns/prov#wasInfluencedBy"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Associates a transaction artefact with the lifecycle phases it traverses."
+        "@value": "Associates a network with the governance body that exercises authority over it."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/TransactionRecord",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Transaction record"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Event"
+      },
+      {
+        "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb38"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Structured record capturing the result of a processed transaction."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts/transactions/transaction-record"
+      }
+    ]
+  },
+  {
+    "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb38",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.w3.org/ns/prov#wasGeneratedBy"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/TransactionPhase"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/TransactionPhase",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Transaction phase"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Process"
+      },
+      {
+        "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb29"
+      },
+      {
+        "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb30"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Segment of the transaction lifecycle (submission, consensus, execution, export)."
       }
     ],
     "https://hashgraphontology.xyz/core/sourceDocument": [
@@ -962,14 +651,74 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/TransactionExecutionPhase",
+    "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb29",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/hasPhaseOrder"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    ]
+  },
+  {
+    "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb30",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/TransactionRecord"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/producesRecord"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/HieroConsensusLayer",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Transaction execution phase"
+        "@value": "Hiero consensus layer"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/HieroLayer"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Hiero layer responsible for ordering transactions and coordinating validator sets."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hiero"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/TransactionSubmission",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Transaction submission"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
@@ -977,23 +726,26 @@
         "@id": "https://hashgraphontology.xyz/core/TransactionPhase"
       },
       {
-        "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b35"
+        "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb31"
+      },
+      {
+        "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb32"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Phase performing business logic and state transitions for the ordered transaction."
+        "@value": "Phase where a client signs and submits the transaction to a node."
       }
     ],
     "https://hashgraphontology.xyz/core/sourceDocument": [
       {
-        "@id": "https://docs.hedera.com/hedera/core-concepts/transactions/transaction-lifecycle#execution"
+        "@id": "https://docs.hedera.com/hedera/core-concepts/transactions/submit-a-transaction"
       }
     ]
   },
   {
-    "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b35",
+    "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb31",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -1004,87 +756,117 @@
     ],
     "http://www.w3.org/2002/07/owl#someValuesFrom": [
       {
-        "@id": "https://hashgraphontology.xyz/core/Actor"
+        "@id": "https://hashgraphontology.xyz/core/Account"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/GovernanceBody",
+    "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb32",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/precedesPhase"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/TransactionPhase"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/targetsValidator",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/ValidatorOnboardingProcess"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "targets validator"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Validator"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Identifies the validator being evaluated or activated by an onboarding process."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://hips.hedera.com/hip/hip-840"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/operatesService",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Actor"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "operates service"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Service"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/isOperatedBy"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Indicates that an actor is responsible for operating or providing a service."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/ThresholdKey",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Governance body"
+        "@value": "Threshold key"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyz/core/Actor"
-      },
-      {
-        "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b10"
+        "@id": "https://hashgraphontology.xyz/core/AccountKey"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Formal collective responsible for decision-making over network policy or operations."
+        "@value": "Key arrangement requiring a subset of signatures out of a larger list to authorise an action."
       }
     ],
     "https://hashgraphontology.xyz/core/sourceDocument": [
       {
-        "@id": "https://hedera.com/council"
-      }
-    ]
-  },
-  {
-    "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b10",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/hasMandate"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/isLayerOf",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/HieroLayer"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "is layer of"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Network"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Links a Hiero layer to the network it belongs to."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hiero"
+        "@id": "https://docs.hedera.com/hedera/core-concepts/accounts/account-properties#keys"
       }
     ]
   },
@@ -1122,63 +904,35 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/VoteEvent",
+    "@id": "https://hashgraphontology.xyz/core/occursOn",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Process"
+      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Vote event"
+        "@value": "occurs on"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+    "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyz/core/GovernanceDecision"
+        "@id": "https://hashgraphontology.xyz/core/Network"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Governance decision capturing the voting record that authorises a change."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://hedera.com/council"
+        "@value": "Identifies the network context in which a process executes."
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/Validator",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Validator"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Actor"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Node operator that participates in consensus or execution for Hedera or Hiero networks."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hiero/concepts/validators"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/hasRole",
+    "@id": "https://hashgraphontology.xyz/core/participatesIn",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
@@ -1190,144 +944,94 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has role"
+        "@value": "participates in"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyz/core/Role"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.w3.org/ns/prov#hadRole"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Associates an actor with a functional role it performs."
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/Actor",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Actor"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Concept"
-      },
-      {
-        "@id": "http://www.w3.org/ns/prov#Agent"
-      },
-      {
-        "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b8"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "An agent that participates in Hedera or Hiero network operations, such as councils, operators, or wallets."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hedera/core-concepts/accounts"
-      }
-    ]
-  },
-  {
-    "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b8",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/participatesIn"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
         "@id": "https://hashgraphontology.xyz/core/Process"
       }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/ConsensusFinalityPhase",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
     ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Consensus finality phase"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/TransactionPhase"
-      },
-      {
-        "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b33"
-      },
-      {
-        "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b34"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Phase in which consensus nodes order the transaction and assign a consensus timestamp."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hedera/core-concepts/transactions/transaction-lifecycle#consensus"
-      }
-    ]
-  },
-  {
-    "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b33",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
+    "http://www.w3.org/2002/07/owl#inverseOf": [
       {
         "@id": "https://hashgraphontology.xyz/core/hasParticipant"
       }
     ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+    "http://www.w3.org/2004/02/skos/core#definition": [
       {
-        "@id": "https://hashgraphontology.xyz/core/Validator"
+        "@language": "en",
+        "@value": "Connects an actor to a process in which it takes part."
       }
     ]
   },
   {
-    "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b34",
+    "@id": "https://hashgraphontology.xyz/core/isShardOf",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyz/core/producesRecord"
+        "@id": "https://hashgraphontology.xyz/core/HieroShard"
       }
     ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+    "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@id": "https://hashgraphontology.xyz/core/TransactionRecord"
+        "@language": "en",
+        "@value": "is shard of"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Network"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Indicates which broader network a Hiero shard belongs to."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://hips.hedera.com/hip/hip-840"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/hasAccountId",
+    "@id": "https://hashgraphontology.xyz/core/virtualisesService",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/HieroLayer"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "virtualises service"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Service"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Relates a Hiero layer to the services it virtualises or hosts."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hiero"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/hasAccountAlias",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
@@ -1339,7 +1043,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has account ID"
+        "@value": "has account alias"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -1350,45 +1054,12 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "String identifier representing the canonical account ID (shard.realm.num)."
+        "@value": "Alias for the account, such as an EVM address or public key representation."
       }
     ],
     "https://hashgraphontology.xyz/core/sourceDocument": [
       {
-        "@id": "https://docs.hedera.com/hedera/core-concepts/accounts"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/isGovernedBy",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Network"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "is governed by"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/GovernanceBody"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.w3.org/ns/prov#wasInfluencedBy"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Associates a network with the governance body that exercises authority over it."
+        "@id": "https://docs.hedera.com/hedera/core-concepts/accounts/account-alias"
       }
     ]
   },
@@ -1474,233 +1145,122 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/TransactionRecord",
+    "@id": "https://hashgraphontology.xyz/core/GovernanceBody",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Transaction record"
+        "@value": "Governance body"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyz/core/Event"
+        "@id": "https://hashgraphontology.xyz/core/Actor"
       },
       {
-        "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b38"
+        "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb10"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Structured record capturing the result of a processed transaction."
+        "@value": "Formal collective responsible for decision-making over network policy or operations."
       }
     ],
     "https://hashgraphontology.xyz/core/sourceDocument": [
       {
-        "@id": "https://docs.hedera.com/hedera/core-concepts/transactions/transaction-record"
+        "@id": "https://hedera.com/council"
       }
     ]
   },
   {
-    "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b38",
+    "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb10",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
     "http://www.w3.org/2002/07/owl#onProperty": [
       {
-        "@id": "http://www.w3.org/ns/prov#wasGeneratedBy"
+        "@id": "https://hashgraphontology.xyz/core/hasMandate"
       }
     ],
     "http://www.w3.org/2002/07/owl#someValuesFrom": [
       {
-        "@id": "https://hashgraphontology.xyz/core/TransactionPhase"
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/AccountKey",
+    "@id": "https://hashgraphontology.xyz/core/Validator",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Account key"
+        "@value": "Validator"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyz/core/Artefact"
-      },
-      {
-        "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b14"
+        "@id": "https://hashgraphontology.xyz/core/Actor"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Key material that authorises actions for accounts, topics, files, and tokens."
+        "@value": "Node operator that participates in consensus or execution for Hedera or Hiero networks."
       }
     ],
     "https://hashgraphontology.xyz/core/sourceDocument": [
       {
-        "@id": "https://docs.hedera.com/hedera/core-concepts/accounts/account-properties"
+        "@id": "https://docs.hedera.com/hiero/concepts/validators"
       }
     ]
   },
   {
-    "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b14",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/securesAccount"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Account"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/publishesDataset",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/MirrorNode"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "publishes dataset"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/MirrorDataset"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#inverseOf": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/isPublishedBy"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Indicates that a mirror node publishes a dataset for consumers."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hedera/mirror-node/sdks-and-apis/rest-api"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/Transaction",
+    "@id": "https://hashgraphontology.xyz/core/HieroLayer",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Transaction"
+        "@value": "Hiero layer"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyz/core/Artefact"
+        "@id": "https://hashgraphontology.xyz/core/Network"
       },
       {
-        "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b25"
+        "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb42"
       },
       {
-        "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b26"
-      },
-      {
-        "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b27"
-      },
-      {
-        "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b28"
+        "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb43"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Signed payload submitted to the Hedera network that changes ledger state upon execution."
+        "@value": "Logical component of the Hiero architecture (consensus, execution, or service layer)."
       }
     ],
     "https://hashgraphontology.xyz/core/sourceDocument": [
       {
-        "@id": "https://docs.hedera.com/hedera/core-concepts/transactions/transaction-lifecycle"
+        "@id": "https://docs.hedera.com/hiero"
       }
     ]
   },
   {
-    "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b25",
+    "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb42",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
     "http://www.w3.org/2002/07/owl#onProperty": [
       {
-        "@id": "https://hashgraphontology.xyz/core/hasTransactionPhase"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/TransactionPhase"
-      }
-    ]
-  },
-  {
-    "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b26",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/hasRecord"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/TransactionRecord"
-      }
-    ]
-  },
-  {
-    "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b27",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/submittedBy"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Account"
-      }
-    ]
-  },
-  {
-    "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b28",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/registeredIn"
+        "@id": "https://hashgraphontology.xyz/core/isLayerOf"
       }
     ],
     "http://www.w3.org/2002/07/owl#someValuesFrom": [
@@ -1710,78 +1270,200 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/StakingEvent",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Staking event"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Event"
-      },
-      {
-        "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b24"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Event recording a staking action or reward distribution."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hedera/core-concepts/staking/stake-hbar"
-      }
-    ]
-  },
-  {
-    "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b24",
+    "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb43",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
     "http://www.w3.org/2002/07/owl#onProperty": [
       {
-        "@id": "http://www.w3.org/ns/prov#wasGeneratedBy"
+        "@id": "https://hashgraphontology.xyz/core/virtualisesService"
       }
     ],
     "http://www.w3.org/2002/07/owl#someValuesFrom": [
       {
-        "@id": "https://hashgraphontology.xyz/core/StakingProcess"
+        "@id": "https://hashgraphontology.xyz/core/Service"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/TransactionPhase",
+    "@id": "https://hashgraphontology.xyz/core/TransactionExecutionPhase",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Transaction phase"
+        "@value": "Transaction execution phase"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyz/core/Process"
+        "@id": "https://hashgraphontology.xyz/core/TransactionPhase"
       },
       {
-        "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b29"
-      },
-      {
-        "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b30"
+        "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb35"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Segment of the transaction lifecycle (submission, consensus, execution, export)."
+        "@value": "Phase performing business logic and state transitions for the ordered transaction."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts/transactions/transaction-lifecycle#execution"
+      }
+    ]
+  },
+  {
+    "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb35",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/hasParticipant"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Actor"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/Service",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Service"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Concept"
+      },
+      {
+        "@id": "http://schema.org/Service"
+      },
+      {
+        "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb1"
+      },
+      {
+        "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb2"
+      },
+      {
+        "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb3"
+      },
+      {
+        "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb4"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A capability offered by the Hedera network such as consensus, token management, or smart contract execution."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts"
+      }
+    ]
+  },
+  {
+    "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb1",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Artefact"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/managesArtefact"
+      }
+    ]
+  },
+  {
+    "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb2",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/isOperatedBy"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Actor"
+      }
+    ]
+  },
+  {
+    "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb3",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/exposedOn"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Network"
+      }
+    ]
+  },
+  {
+    "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb4",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Artefact"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/consumesArtefact"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/hasTransactionPhase",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Transaction"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has transaction phase"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/TransactionPhase"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Associates a transaction artefact with the lifecycle phases it traverses."
       }
     ],
     "https://hashgraphontology.xyz/core/sourceDocument": [
@@ -1791,34 +1473,240 @@
     ]
   },
   {
-    "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b29",
+    "@id": "https://hashgraphontology.xyz/core/MirrorNode",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
+      "http://www.w3.org/2002/07/owl#Class"
     ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
+    "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@id": "https://hashgraphontology.xyz/core/hasPhaseOrder"
+        "@language": "en",
+        "@value": "Mirror node"
       }
     ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://www.w3.org/2001/XMLSchema#integer"
+        "@id": "https://hashgraphontology.xyz/core/Node"
+      },
+      {
+        "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb39"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Data replication node exposing consensus history via REST and gRPC APIs."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/mirror-node"
       }
     ]
   },
   {
-    "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b30",
+    "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb39",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+    "http://www.w3.org/2002/07/owl#onProperty": [
       {
-        "@id": "https://hashgraphontology.xyz/core/TransactionRecord"
+        "@id": "https://hashgraphontology.xyz/core/publishesDataset"
       }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/MirrorDataset"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/isOperatedBy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Service"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is operated by"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Actor"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.w3.org/ns/prov#wasAssociatedWith"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Associates a service with the actor accountable for running it."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/Network",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Network"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Actor"
+      },
+      {
+        "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb9"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A distributed environment (e.g., mainnet, testnet, shard) that provides Hedera services."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/network/nodes/mainnet-nodes"
+      }
+    ]
+  },
+  {
+    "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb9",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
     ],
     "http://www.w3.org/2002/07/owl#onProperty": [
       {
-        "@id": "https://hashgraphontology.xyz/core/producesRecord"
+        "@id": "https://hashgraphontology.xyz/core/isGovernedBy"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/GovernanceBody"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/hasRole",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Actor"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has role"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Role"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.w3.org/ns/prov#hadRole"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Associates an actor with a functional role it performs."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/VoteEvent",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Vote event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/GovernanceDecision"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Governance decision capturing the voting record that authorises a change."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://hedera.com/council"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/Actor",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Actor"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Concept"
+      },
+      {
+        "@id": "http://www.w3.org/ns/prov#Agent"
+      },
+      {
+        "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb8"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "An agent that participates in Hedera or Hiero network operations, such as councils, operators, or wallets."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts/accounts"
+      }
+    ]
+  },
+  {
+    "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb8",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/participatesIn"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Process"
       }
     ]
   },
@@ -1851,40 +1739,221 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/producesEvent",
+    "@id": "https://hashgraphontology.xyz/core/Role",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Process"
-      }
+      "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "produces event"
+        "@value": "Role"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyz/core/Event"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+        "@id": "https://hashgraphontology.xyz/core/Concept"
+      },
       {
-        "@id": "http://www.w3.org/ns/prov#generated"
+        "@id": "http://www.w3.org/ns/prov#Role"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "States that a process yields a specific event observation."
+        "@value": "Responsibility or capacity that an actor can perform within the network."
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/hasShard",
+    "@id": "https://hashgraphontology.xyz/core/HieroExecutionLayer",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Hiero execution layer"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/HieroLayer"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Hiero layer executing ordered transactions and maintaining state commitments."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hiero"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/hasAccount",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Actor"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has account"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Account"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/isAccountOf"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Relates an actor to an account under its control."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts/accounts"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/submittedBy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Transaction"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "submitted by"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Account"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Identifies the account that paid for or submitted the transaction."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts/transactions/submit-a-transaction"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/registeredIn",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Artefact"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "registered in"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Network"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Indicates the canonical network where an artefact is recorded."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/GovernanceDecision",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Governance decision"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Event"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Recorded outcome of a governance process, such as an approved vote or mandate."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://hedera.com/council"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/isPublishedBy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/MirrorDataset"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is published by"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/MirrorNode"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Links a dataset back to the mirror node that publishes it."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/mirror-node/sdks-and-apis/rest-api"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/hasLayer",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
@@ -1896,23 +1965,224 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has shard"
+        "@value": "has layer"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyz/core/HieroShard"
+        "@id": "https://hashgraphontology.xyz/core/HieroLayer"
       }
     ],
     "http://www.w3.org/2002/07/owl#inverseOf": [
       {
-        "@id": "https://hashgraphontology.xyz/core/isShardOf"
+        "@id": "https://hashgraphontology.xyz/core/isLayerOf"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Relates a network to a Hiero shard subdivision."
+        "@value": "Associates a network with one of its Hiero layers."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hiero"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/GovernanceProcess",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Governance process"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Process"
+      },
+      {
+        "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb18"
+      },
+      {
+        "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb19"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Process through which councils or committees evaluate and ratify network decisions."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://hedera.com/council"
+      }
+    ]
+  },
+  {
+    "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb18",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/hasParticipant"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/GovernanceBody"
+      }
+    ]
+  },
+  {
+    "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb19",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/issuesDecision"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/GovernanceDecision"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/managesArtefact",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Service"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "manages artefact"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Artefact"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Links a service to the artefacts whose lifecycle it controls."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/Artefact",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Artefact"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Concept"
+      },
+      {
+        "@id": "http://www.w3.org/ns/prov#Entity"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Digital object or state produced or managed by Hedera services (topics, tokens, files, smart contracts)."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/AccountKey",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Account key"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Artefact"
+      },
+      {
+        "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb14"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Key material that authorises actions for accounts, topics, files, and tokens."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts/accounts/account-properties"
+      }
+    ]
+  },
+  {
+    "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb14",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/securesAccount"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Account"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/ValidatorOnboardingProcess",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Validator onboarding process"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/GovernanceProcess"
+      },
+      {
+        "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb20"
+      },
+      {
+        "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb21"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Governance process that evaluates, approves, and activates validator participants."
       }
     ],
     "https://hashgraphontology.xyz/core/sourceDocument": [
@@ -1922,162 +2192,34 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/PublicKey",
+    "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb20",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#Restriction"
     ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
+    "http://www.w3.org/2002/07/owl#onProperty": [
       {
-        "@language": "en",
-        "@value": "Public key"
+        "@id": "https://hashgraphontology.xyz/core/targetsValidator"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
       {
-        "@id": "https://hashgraphontology.xyz/core/AccountKey"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Individual Ed25519 or ECDSA key associated with accounts, contracts, and services."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hedera/core-concepts/accounts/cryptographic-keys"
+        "@id": "https://hashgraphontology.xyz/core/Validator"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/hasPhaseOrder",
+    "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb21",
     "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+      "http://www.w3.org/2002/07/owl#Restriction"
     ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/TransactionPhase"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has phase order"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#integer"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Ordinal index used to order transaction lifecycle phases."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hedera/core-concepts/transactions/transaction-lifecycle"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/recordsStake",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/StakingProcess"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "records stake"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/StakingEvent"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+    "http://www.w3.org/2002/07/owl#onProperty": [
       {
         "@id": "https://hashgraphontology.xyz/core/producesEvent"
       }
     ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
       {
-        "@language": "en",
-        "@value": "Indicates the staking event emitted by a staking process."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hedera/core-concepts/staking/staking"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/ThresholdKey",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Threshold key"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/AccountKey"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Key arrangement requiring a subset of signatures out of a larger list to authorise an action."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hedera/core-concepts/accounts/account-properties#keys"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/virtualisesService",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/HieroLayer"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "virtualises service"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Service"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Relates a Hiero layer to the services it virtualises or hosts."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hiero"
+        "@id": "https://hashgraphontology.xyz/core/GovernanceDecision"
       }
     ]
   },
@@ -2120,409 +2262,6 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/Artefact",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Artefact"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Concept"
-      },
-      {
-        "@id": "http://www.w3.org/ns/prov#Entity"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Digital object or state produced or managed by Hedera services (topics, tokens, files, smart contracts)."
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/participatesIn",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Actor"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "participates in"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Process"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#inverseOf": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/hasParticipant"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Connects an actor to a process in which it takes part."
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/Concept",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Concept"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Abstract superclass for all Bhash ontology entities."
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/Process",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Process"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Concept"
-      },
-      {
-        "@id": "http://www.w3.org/ns/prov#Activity"
-      },
-      {
-        "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b5"
-      },
-      {
-        "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b6"
-      },
-      {
-        "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b7"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Coordinated activity that changes network state, such as transaction execution or governance voting."
-      }
-    ]
-  },
-  {
-    "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b5",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/occursOn"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Network"
-      }
-    ]
-  },
-  {
-    "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b6",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Event"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/producesEvent"
-      }
-    ]
-  },
-  {
-    "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b7",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/hasParticipant"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Actor"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/producesRecord",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/TransactionPhase"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "produces record"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/TransactionRecord"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/producesEvent"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Indicates that a transaction phase emits a transaction record."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hedera/core-concepts/transactions/transaction-record"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/submittedBy",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Transaction"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "submitted by"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Account"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Identifies the account that paid for or submitted the transaction."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hedera/core-concepts/transactions/submit-a-transaction"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/TransactionSubmission",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Transaction submission"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/TransactionPhase"
-      },
-      {
-        "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b31"
-      },
-      {
-        "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b32"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Phase where a client signs and submits the transaction to a node."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hedera/core-concepts/transactions/submit-a-transaction"
-      }
-    ]
-  },
-  {
-    "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b31",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/hasParticipant"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Account"
-      }
-    ]
-  },
-  {
-    "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b32",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/precedesPhase"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/TransactionPhase"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/hasAccountAlias",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Account"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has account alias"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Alias for the account, such as an EVM address or public key representation."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hedera/core-concepts/accounts/account-alias"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/Event",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Event"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Concept"
-      },
-      {
-        "@id": "http://www.w3.org/ns/prov#Entity"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Bounded outcome or observation emitted by a process, typically recorded through mirror nodes or logs."
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/HieroShard",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Hiero shard"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Network"
-      },
-      {
-        "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b44"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Network partition within Hiero that localises consensus and execution responsibilities."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://hips.hedera.com/hip/hip-840"
-      }
-    ]
-  },
-  {
-    "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b44",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/isShardOf"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Network"
-      }
-    ]
-  },
-  {
     "@id": "https://hashgraphontology.xyz/core/MirrorExportPhase",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
@@ -2538,10 +2277,10 @@
         "@id": "https://hashgraphontology.xyz/core/TransactionPhase"
       },
       {
-        "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b36"
+        "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb36"
       },
       {
-        "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b37"
+        "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb37"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -2557,7 +2296,7 @@
     ]
   },
   {
-    "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b36",
+    "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb36",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -2573,7 +2312,7 @@
     ]
   },
   {
-    "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b37",
+    "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb37",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -2589,69 +2328,41 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/managesArtefact",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Service"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "manages artefact"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Artefact"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Links a service to the artefacts whose lifecycle it controls."
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/StakingProcess",
+    "@id": "https://hashgraphontology.xyz/core/ConsensusFinalityPhase",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Staking process"
+        "@value": "Consensus finality phase"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyz/core/Process"
+        "@id": "https://hashgraphontology.xyz/core/TransactionPhase"
       },
       {
-        "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b22"
+        "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb33"
       },
       {
-        "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b23"
+        "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb34"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Process that binds accounts to validator nodes and accrues staking rewards."
+        "@value": "Phase in which consensus nodes order the transaction and assign a consensus timestamp."
       }
     ],
     "https://hashgraphontology.xyz/core/sourceDocument": [
       {
-        "@id": "https://docs.hedera.com/hedera/core-concepts/staking/staking"
+        "@id": "https://docs.hedera.com/hedera/core-concepts/transactions/transaction-lifecycle#consensus"
       }
     ]
   },
   {
-    "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b22",
+    "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb33",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
@@ -2662,140 +2373,108 @@
     ],
     "http://www.w3.org/2002/07/owl#someValuesFrom": [
       {
-        "@id": "https://hashgraphontology.xyz/core/Account"
+        "@id": "https://hashgraphontology.xyz/core/Validator"
       }
     ]
   },
   {
-    "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b23",
+    "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb34",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
     "http://www.w3.org/2002/07/owl#onProperty": [
       {
-        "@id": "https://hashgraphontology.xyz/core/recordsStake"
+        "@id": "https://hashgraphontology.xyz/core/producesRecord"
       }
     ],
     "http://www.w3.org/2002/07/owl#someValuesFrom": [
       {
-        "@id": "https://hashgraphontology.xyz/core/StakingEvent"
+        "@id": "https://hashgraphontology.xyz/core/TransactionRecord"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/sourceDocument",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#AnnotationProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "source document"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Reference link to Hedera or Hiero documentation that supports an ontology element."
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/isOperatedBy",
+    "@id": "https://hashgraphontology.xyz/core/recordsStake",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyz/core/Service"
+        "@id": "https://hashgraphontology.xyz/core/StakingProcess"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "is operated by"
+        "@value": "records stake"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyz/core/Actor"
+        "@id": "https://hashgraphontology.xyz/core/StakingEvent"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "http://www.w3.org/ns/prov#wasAssociatedWith"
+        "@id": "https://hashgraphontology.xyz/core/producesEvent"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Associates a service with the actor accountable for running it."
+        "@value": "Indicates the staking event emitted by a staking process."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts/staking/staking"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/ValidatorOnboardingProcess",
+    "@id": "https://hashgraphontology.xyz/core/Node",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Validator onboarding process"
+        "@value": "Node"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyz/core/GovernanceProcess"
+        "@id": "https://hashgraphontology.xyz/core/Actor"
       },
       {
-        "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b20"
-      },
-      {
-        "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b21"
+        "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb15"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Governance process that evaluates, approves, and activates validator participants."
+        "@value": "Operational actor (consensus or mirror) providing network infrastructure."
       }
     ],
     "https://hashgraphontology.xyz/core/sourceDocument": [
       {
-        "@id": "https://hips.hedera.com/hip/hip-840"
+        "@id": "https://docs.hedera.com/hedera/network/nodes/mainnet-nodes"
       }
     ]
   },
   {
-    "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b20",
+    "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb15",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
     "http://www.w3.org/2002/07/owl#onProperty": [
       {
-        "@id": "https://hashgraphontology.xyz/core/targetsValidator"
+        "@id": "https://hashgraphontology.xyz/core/hasAccount"
       }
     ],
     "http://www.w3.org/2002/07/owl#someValuesFrom": [
       {
-        "@id": "https://hashgraphontology.xyz/core/Validator"
-      }
-    ]
-  },
-  {
-    "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b21",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/producesEvent"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/GovernanceDecision"
+        "@id": "https://hashgraphontology.xyz/core/Account"
       }
     ]
   },
@@ -2833,174 +2512,75 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/MirrorNode",
+    "@id": "https://hashgraphontology.xyz/core/Concept",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Mirror node"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Node"
-      },
-      {
-        "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b39"
+        "@value": "Concept"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Data replication node exposing consensus history via REST and gRPC APIs."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hedera/mirror-node"
+        "@value": "Abstract superclass for all Bhash ontology entities."
       }
     ]
   },
   {
-    "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b39",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/publishesDataset"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/MirrorDataset"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/securesAccount",
+    "@id": "https://hashgraphontology.xyz/core/governs",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyz/core/AccountKey"
+        "@id": "https://hashgraphontology.xyz/core/GovernanceBody"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "secures account"
+        "@value": "governs"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyz/core/Account"
+        "@id": "https://hashgraphontology.xyz/core/Network"
       }
     ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@language": "en",
-        "@value": "Indicates which account a key structure protects."
+        "@id": "http://www.w3.org/ns/prov#influenced"
       }
     ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hedera/core-concepts/accounts/account-properties#keys"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/HieroConsensusLayer",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Hiero consensus layer"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/HieroLayer"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Hiero layer responsible for ordering transactions and coordinating validator sets."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hiero"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/Network",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Network"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Actor"
-      },
-      {
-        "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b9"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A distributed environment (e.g., mainnet, testnet, shard) that provides Hedera services."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hedera/network/nodes/mainnet-nodes"
-      }
-    ]
-  },
-  {
-    "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b9",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
+    "http://www.w3.org/2002/07/owl#inverseOf": [
       {
         "@id": "https://hashgraphontology.xyz/core/isGovernedBy"
       }
     ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+    "http://www.w3.org/2004/02/skos/core#definition": [
       {
-        "@id": "https://hashgraphontology.xyz/core/GovernanceBody"
+        "@language": "en",
+        "@value": "Relates a governance body to the network scope over which it has authority."
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/isShardOf",
+    "@id": "https://hashgraphontology.xyz/core/isLayerOf",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyz/core/HieroShard"
+        "@id": "https://hashgraphontology.xyz/core/HieroLayer"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "is shard of"
+        "@value": "is layer of"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -3011,59 +2591,50 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Indicates which broader network a Hiero shard belongs to."
+        "@value": "Links a Hiero layer to the network it belongs to."
       }
     ],
     "https://hashgraphontology.xyz/core/sourceDocument": [
       {
-        "@id": "https://hips.hedera.com/hip/hip-840"
+        "@id": "https://docs.hedera.com/hiero"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/Node",
+    "@id": "https://hashgraphontology.xyz/core/publishesDataset",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/MirrorNode"
+      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Node"
+        "@value": "publishes dataset"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+    "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyz/core/Actor"
-      },
+        "@id": "https://hashgraphontology.xyz/core/MirrorDataset"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
       {
-        "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b15"
+        "@id": "https://hashgraphontology.xyz/core/isPublishedBy"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Operational actor (consensus or mirror) providing network infrastructure."
+        "@value": "Indicates that a mirror node publishes a dataset for consumers."
       }
     ],
     "https://hashgraphontology.xyz/core/sourceDocument": [
       {
-        "@id": "https://docs.hedera.com/hedera/network/nodes/mainnet-nodes"
-      }
-    ]
-  },
-  {
-    "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b15",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/hasAccount"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Account"
+        "@id": "https://docs.hedera.com/hedera/mirror-node/sdks-and-apis/rest-api"
       }
     ]
   },
@@ -3101,28 +2672,148 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/Role",
+    "@id": "https://hashgraphontology.xyz/core/isAccountOf",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Account"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "is account of"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Actor"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Links an account back to the actor that owns or controls it."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts/accounts"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/securesAccount",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/AccountKey"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "secures account"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Account"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Indicates which account a key structure protects."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts/accounts/account-properties#keys"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/HieroShard",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Role"
+        "@value": "Hiero shard"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyz/core/Concept"
+        "@id": "https://hashgraphontology.xyz/core/Network"
       },
       {
-        "@id": "http://www.w3.org/ns/prov#Role"
+        "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb44"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Responsibility or capacity that an actor can perform within the network."
+        "@value": "Network partition within Hiero that localises consensus and execution responsibilities."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://hips.hedera.com/hip/hip-840"
+      }
+    ]
+  },
+  {
+    "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb44",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/isShardOf"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Network"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/hasAccountId",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Account"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has account ID"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "String identifier representing the canonical account ID (shard.realm.num)."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts/accounts"
       }
     ]
   },
@@ -3155,47 +2846,238 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/HieroLayer",
+    "@id": "https://hashgraphontology.xyz/core/StakingProcess",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Hiero layer"
+        "@value": "Staking process"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyz/core/Network"
+        "@id": "https://hashgraphontology.xyz/core/Process"
       },
       {
-        "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b42"
+        "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb22"
       },
       {
-        "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b43"
+        "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb23"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Logical component of the Hiero architecture (consensus, execution, or service layer)."
+        "@value": "Process that binds accounts to validator nodes and accrues staking rewards."
       }
     ],
     "https://hashgraphontology.xyz/core/sourceDocument": [
       {
-        "@id": "https://docs.hedera.com/hiero"
+        "@id": "https://docs.hedera.com/hedera/core-concepts/staking/staking"
       }
     ]
   },
   {
-    "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b42",
+    "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb22",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
     "http://www.w3.org/2002/07/owl#onProperty": [
       {
-        "@id": "https://hashgraphontology.xyz/core/isLayerOf"
+        "@id": "https://hashgraphontology.xyz/core/hasParticipant"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Account"
+      }
+    ]
+  },
+  {
+    "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb23",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/recordsStake"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/StakingEvent"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/declinesStakingRewards",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Account"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "declines staking rewards"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#boolean"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Boolean flag indicating the account opts out of receiving staking rewards."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts/staking/stake-hbar#staking-reward-distribution"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/hasRecord",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Transaction"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has record"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/TransactionRecord"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.w3.org/ns/prov#wasAttributedTo"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Links a transaction to the resulting record emitted after execution."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts/transactions/transaction-record"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/Transaction",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Transaction"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Artefact"
+      },
+      {
+        "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb25"
+      },
+      {
+        "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb26"
+      },
+      {
+        "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb27"
+      },
+      {
+        "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb28"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Signed payload submitted to the Hedera network that changes ledger state upon execution."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts/transactions/transaction-lifecycle"
+      }
+    ]
+  },
+  {
+    "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb25",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/hasTransactionPhase"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/TransactionPhase"
+      }
+    ]
+  },
+  {
+    "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb26",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/hasRecord"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/TransactionRecord"
+      }
+    ]
+  },
+  {
+    "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb27",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/submittedBy"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Account"
+      }
+    ]
+  },
+  {
+    "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb28",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/registeredIn"
       }
     ],
     "http://www.w3.org/2002/07/owl#someValuesFrom": [
@@ -3205,35 +3087,102 @@
     ]
   },
   {
-    "@id": "_:n3cc8f0c71ec745fa9b6396cc1331c521b43",
+    "@id": "https://hashgraphontology.xyz/core/Process",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Process"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Concept"
+      },
+      {
+        "@id": "http://www.w3.org/ns/prov#Activity"
+      },
+      {
+        "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb5"
+      },
+      {
+        "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb6"
+      },
+      {
+        "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb7"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Coordinated activity that changes network state, such as transaction execution or governance voting."
+      }
+    ]
+  },
+  {
+    "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb5",
     "@type": [
       "http://www.w3.org/2002/07/owl#Restriction"
     ],
     "http://www.w3.org/2002/07/owl#onProperty": [
       {
-        "@id": "https://hashgraphontology.xyz/core/virtualisesService"
+        "@id": "https://hashgraphontology.xyz/core/occursOn"
       }
     ],
     "http://www.w3.org/2002/07/owl#someValuesFrom": [
       {
-        "@id": "https://hashgraphontology.xyz/core/Service"
+        "@id": "https://hashgraphontology.xyz/core/Network"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/occursOn",
+    "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb6",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Event"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/producesEvent"
+      }
+    ]
+  },
+  {
+    "@id": "_:ndb8f34785e1348b2a6c2e32158c65c0cb7",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/hasParticipant"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Actor"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/exposedOn",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://hashgraphontology.xyz/core/Process"
+        "@id": "https://hashgraphontology.xyz/core/Service"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "occurs on"
+        "@value": "exposed on"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -3244,7 +3193,58 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Identifies the network context in which a process executes."
+        "@value": "Indicates the network or shard through which a service is made available."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/sourceDocument",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AnnotationProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "source document"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Reference link to Hedera or Hiero documentation that supports an ontology element."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/stakesTo",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Account"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "stakes to"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Validator"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Denotes the validator that receives stake from an account."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts/staking/stake-hbar"
       }
     ]
   }

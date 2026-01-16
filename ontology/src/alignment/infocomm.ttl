@@ -1,6 +1,6 @@
 @prefix : <https://hashgraphontology.xyz/alignment/infocomm/> .
 @prefix hedera: <https://hashgraphontology.xyz/core/> .
-@prefix infocomm: <https://datadudes.xyz/ontology/infocomm#> .
+@prefix infocomm: <https://w3id.org/infocomm#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -34,7 +34,7 @@ hedera:MirrorCommunicationNode
         infocomm:CommunicationNode ;
     skos:definition "Mirror service interpreted as a communication node within the InfoComm ontology."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/mirror-node> ;
-    dcterms:source <https://datadudes.xyz/infocomm#CommunicationNode> ;
+    dcterms:source <https://w3id.org/infocomm#CommunicationNode> ;
     .
 
 hedera:HieroCommunicationSegment
@@ -44,7 +44,7 @@ hedera:HieroCommunicationSegment
         infocomm:NetworkSegment ;
     skos:definition "Hiero shard treated as a communication segment for impact telemetry flows."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hiero/concepts/shards> ;
-    dcterms:source <https://datadudes.xyz/infocomm#NetworkSegment> ;
+    dcterms:source <https://w3id.org/infocomm#NetworkSegment> ;
     .
 
 hedera:ImpactTelemetryExchange
@@ -54,7 +54,7 @@ hedera:ImpactTelemetryExchange
         infocomm:ExchangeProcess ;
     skos:definition "Process shuttling anthropogenic impact telemetry between Hiero shards and mirror services."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hiero/concepts/validators> ;
-    dcterms:source <https://datadudes.xyz/infocomm#ExchangeProcess> ;
+    dcterms:source <https://w3id.org/infocomm#ExchangeProcess> ;
     .
 
 ###
@@ -69,7 +69,7 @@ hedera:routesThroughSegment
     rdfs:subPropertyOf infocomm:traversesSegment ;
     skos:definition "Identifies the network segment used to transport telemetry."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hiero/concepts/shards> ;
-    dcterms:source <https://datadudes.xyz/infocomm#traversesSegment> ;
+    dcterms:source <https://w3id.org/infocomm#traversesSegment> ;
     .
 
 hedera:servedByNode
@@ -80,7 +80,7 @@ hedera:servedByNode
     rdfs:subPropertyOf infocomm:isServedBy ;
     skos:definition "Associates a telemetry exchange with the communication node responsible for delivering data."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/mirror-node/sdks-and-apis/rest-api> ;
-    dcterms:source <https://datadudes.xyz/infocomm#isServedBy> ;
+    dcterms:source <https://w3id.org/infocomm#isServedBy> ;
     .
 
 hedera:publishesImpactDataset
@@ -91,7 +91,7 @@ hedera:publishesImpactDataset
     rdfs:subPropertyOf infocomm:exposesInterface ;
     skos:definition "States that a communication node exposes a mirror dataset interface."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/mirror-node/sdks-and-apis/rest-api> ;
-    dcterms:source <https://datadudes.xyz/infocomm#exposesInterface> ;
+    dcterms:source <https://w3id.org/infocomm#exposesInterface> ;
     .
 
 hedera:anchorsTelemetryPolicy
@@ -102,7 +102,7 @@ hedera:anchorsTelemetryPolicy
     rdfs:subPropertyOf infocomm:boundByAgreement ;
     skos:definition "Connects a mirror communication node to the service-level agreement governing telemetry distribution."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/mirror-node/architecture/overview> ;
-    dcterms:source <https://datadudes.xyz/infocomm#boundByAgreement> ;
+    dcterms:source <https://w3id.org/infocomm#boundByAgreement> ;
     .
 
 hedera:hasTelemetryLatency
@@ -113,5 +113,5 @@ hedera:hasTelemetryLatency
     rdfs:subPropertyOf infocomm:hasLatency ;
     skos:definition "Latency observed when distributing telemetry through a communication node."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/mirror-node/architecture/metrics> ;
-    dcterms:source <https://datadudes.xyz/infocomm#hasLatency> ;
+    dcterms:source <https://w3id.org/infocomm#hasLatency> ;
     .
