@@ -12,6 +12,8 @@ RSYNC_BIN=${RSYNC_BIN:-rsync}
 WEB_USER=${WEB_USER:-www-data}
 WEB_GROUP=${WEB_GROUP:-www-data}
 INDEX_FILE="$DEPLOYMENT_DIR/index.html"
+PYTHON_BIN=${PYTHON_BIN:-python3}
+CONVERT_SCRIPT="$SCRIPT_DIR/convert_ontologies.py"
 
 if [ ! -d "$DEPLOYMENT_DIR" ]; then
     echo "❌ Deployment directory not found: $DEPLOYMENT_DIR" >&2
@@ -24,10 +26,21 @@ else
     SUDO_CMD=(sudo)
 fi
 
-mapfile -t ARTIFACTS < <(cd "$DEPLOYMENT_DIR" && find . -maxdepth 1 -type f ! -name "index.html" -printf '%f\n' | sort)
-mapfile -t DIRECTORIES < <(cd "$DEPLOYMENT_DIR" && find . -maxdepth 1 -mindepth 1 -type d -printf '%f/\n' | sort)
+# ---------------------------------------------------------------------------
+# Generate the landing page index.html via the Python conversion script when
+# available, falling back to a simple file listing otherwise.
+# ---------------------------------------------------------------------------
+if command -v "$PYTHON_BIN" &>/dev/null && [ -f "$CONVERT_SCRIPT" ]; then
+    echo "Generating landing page via $CONVERT_SCRIPT …"
+    "$PYTHON_BIN" "$CONVERT_SCRIPT" \
+        --deployment-dir "$DEPLOYMENT_DIR" \
+        --generate-index
+else
+    echo "⚠️  Python not found or convert_ontologies.py missing – falling back to basic index." >&2
+    mapfile -t ARTIFACTS < <(cd "$DEPLOYMENT_DIR" && find . -maxdepth 1 -type f ! -name "index.html" -printf '%f\n' | sort)
+    mapfile -t DIRECTORIES < <(cd "$DEPLOYMENT_DIR" && find . -maxdepth 1 -mindepth 1 -type d -printf '%f/\n' | sort)
 
-cat >"$INDEX_FILE" <<'HTML'
+    cat >"$INDEX_FILE" <<'HTML'
 <!doctype html>
 <html lang="en">
 <head>
@@ -56,7 +69,7 @@ HTML
         printf '            <li><a href="%s">%s</a></li>\n' "$entry" "$entry" >>"$INDEX_FILE"
     done
 
-cat >>"$INDEX_FILE" <<'HTML'
+    cat >>"$INDEX_FILE" <<'HTML'
         </ul>
     </div>
     <div class="section">
@@ -64,21 +77,22 @@ cat >>"$INDEX_FILE" <<'HTML'
         <ul>
 HTML
 
-if [ "${#DIRECTORIES[@]}" -eq 0 ]; then
-    echo "            <li class=\"note\">No additional directories</li>" >>"$INDEX_FILE"
-else
-    for dir in "${DIRECTORIES[@]}"; do
-        printf '            <li><a href="%s">%s</a></li>\n' "$dir" "$dir" >>"$INDEX_FILE"
-    done
-fi
+    if [ "${#DIRECTORIES[@]}" -eq 0 ]; then
+        echo "            <li class=\"note\">No additional directories</li>" >>"$INDEX_FILE"
+    else
+        for dir in "${DIRECTORIES[@]}"; do
+            printf '            <li><a href="%s">%s</a></li>\n' "$dir" "$dir" >>"$INDEX_FILE"
+        done
+    fi
 
-cat >>"$INDEX_FILE" <<'HTML'
+    cat >>"$INDEX_FILE" <<'HTML'
         </ul>
     </div>
     <p class="note">For details on each artefact, open the HTML documentation or download the RDF representations (TTL, OWL, JSON-LD).</p>
 </body>
 </html>
 HTML
+fi
 
 set -x
 "${SUDO_CMD[@]}" "$RSYNC_BIN" -av --delete "$DEPLOYMENT_DIR"/ "$DEST"

@@ -1,33 +1,5 @@
 [
   {
-    "@id": "https://hashgraphontology.xyz/core/ContractEvent",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Contract event"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Event"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Event emitted by a contract execution and captured in mirror node logs."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hedera/sdks-and-apis/smart-contracts/contract-log"
-      }
-    ]
-  },
-  {
     "@id": "https://hashgraphontology.xyz/core/invokesSystemContract",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
@@ -52,34 +24,6 @@
       {
         "@language": "en",
         "@value": "Indicates that a contract relies on a particular system contract during execution."
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/hasGasBreakdown",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/OpcodeTrace"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has gas breakdown"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Summary of intrinsic, opcode, and surcharge gas components for analytics."
       }
     ]
   },
@@ -118,35 +62,7 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/hasContractId",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/SmartContract"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has contract id"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Ledger identifier (e.g., 0.0.x) for a deployed contract."
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/executesContract",
+    "@id": "https://hashgraphontology.xyz/core/hasOpcodeTrace",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
@@ -158,18 +74,46 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "executes contract"
+        "@value": "has opcode trace"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyz/core/SmartContract"
+        "@id": "https://hashgraphontology.xyz/core/OpcodeTrace"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Links a contract execution process to the contract being executed."
+        "@value": "Links a contract execution to the opcode trace artefact exported by mirror nodes."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/includesInvocation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/ContractExecution"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "includes invocation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/PrecompileInvocation"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Associates a contract execution with the precompile invocations performed during the call."
       }
     ]
   },
@@ -202,6 +146,34 @@
     ]
   },
   {
+    "@id": "https://hashgraphontology.xyz/core/executesContract",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/ContractExecution"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "executes contract"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/SmartContract"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Links a contract execution process to the contract being executed."
+      }
+    ]
+  },
+  {
     "@id": "https://hashgraphontology.xyz/core/hasResultStatus",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
@@ -226,6 +198,62 @@
       {
         "@language": "en",
         "@value": "Execution status such as SUCCESS, REVERTED, or INSUFFICIENT_GAS."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/ContractEvent",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Contract event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Event"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Event emitted by a contract execution and captured in mirror node logs."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/sdks-and-apis/smart-contracts/contract-log"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/ContractExecution",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Contract execution"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Process"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Process representing a transaction that executes a smart contract function."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/sdks-and-apis/smart-contracts/contract-call"
       }
     ]
   },
@@ -258,30 +286,30 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/ContractBytecode",
+    "@id": "https://hashgraphontology.xyz/core/SystemContract",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Contract bytecode"
+        "@value": "System contract"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyz/core/Artefact"
+        "@id": "https://hashgraphontology.xyz/core/SmartContract"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "EVM bytecode package uploaded via File Service and linked to a deployed smart contract."
+        "@value": "Reserved contract deployed by Hedera for protocol operations such as HTS precompiles."
       }
     ],
     "https://hashgraphontology.xyz/core/sourceDocument": [
       {
-        "@id": "https://docs.hedera.com/hedera/core-concepts/smart-contracts/deploy-contracts"
+        "@id": "https://docs.hedera.com/hedera/core-concepts/smart-contracts/system-contracts"
       }
     ]
   },
@@ -338,62 +366,6 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/hasGasUsed",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/PrecompileInvocation"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has gas used"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#integer"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Total gas consumed by a precompile invocation."
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/Precompile",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Precompile"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/SystemContract"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Entry point exposing native Hedera services (HTS, HCS) to smart contracts via reserved selectors."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hedera/core-concepts/smart-contracts/system-contracts#token-service-precompile"
-      }
-    ]
-  },
-  {
     "@id": "https://hashgraphontology.xyz/core/targetsSystemContract",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
@@ -418,146 +390,6 @@
       {
         "@language": "en",
         "@value": "Identifies which system contract precompile was invoked."
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/SystemContract",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "System contract"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/SmartContract"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Reserved contract deployed by Hedera for protocol operations such as HTS precompiles."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hedera/core-concepts/smart-contracts/system-contracts"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/includesInvocation",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/ContractExecution"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "includes invocation"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/PrecompileInvocation"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Associates a contract execution with the precompile invocations performed during the call."
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/OpcodeTrace",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Opcode trace"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Artefact"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Detailed record of EVM opcodes executed during a contract execution."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hedera/mirror-node/sdks-and-apis/rest-api#tag/Contracts"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/GasFeeSchedule",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Gas fee schedule"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Artefact"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Fee schedule that defines intrinsic and surcharge gas costs for smart contract operations."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hedera/core-concepts/smart-contracts/gas-and-fees"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/ContractLog",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Contract log"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Artefact"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Structured record describing indexed topics and data generated by a contract event."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hedera/mirror-node/sdks-and-apis/rest-api#tag/Contracts"
       }
     ]
   },
@@ -590,226 +422,30 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/SmartContractService",
+    "@id": "https://hashgraphontology.xyz/core/ContractBytecode",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Smart Contract Service"
+        "@value": "Contract bytecode"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyz/core/Service"
+        "@id": "https://hashgraphontology.xyz/core/Artefact"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Network service that executes EVM smart contracts and exposes system contract integrations."
+        "@value": "EVM bytecode package uploaded via File Service and linked to a deployed smart contract."
       }
     ],
     "https://hashgraphontology.xyz/core/sourceDocument": [
       {
-        "@id": "https://docs.hedera.com/hedera/core-concepts/smart-contracts/introduction"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/hasBytecode",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/SmartContract"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has bytecode"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/ContractBytecode"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Connects a smart contract to the bytecode package it executes."
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/ContractAccount",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Contract account"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Account"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Account generated for a deployed smart contract to receive funds and identify executions."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hedera/core-concepts/smart-contracts/contract-accounts"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/ContractExecution",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Contract execution"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Process"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Process representing a transaction that executes a smart contract function."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hedera/sdks-and-apis/smart-contracts/contract-call"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/hasGasSchedule",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/SmartContractService"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has gas schedule"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/GasFeeSchedule"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Associates the Smart Contract Service with the published gas fee schedule."
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/PrecompileInvocation",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Precompile invocation"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Event"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Event capturing a contract execution invoking a specific system contract precompile."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hedera/mirror-node/sdks-and-apis/rest-api#tag/Contracts"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/emitsContractEvent",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/ContractExecution"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "emits contract event"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/ContractEvent"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Links a contract execution to events emitted during the call."
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/hasOpcodeTrace",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/ContractExecution"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has opcode trace"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/OpcodeTrace"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Links a contract execution to the opcode trace artefact exported by mirror nodes."
+        "@id": "https://docs.hedera.com/hedera/core-concepts/smart-contracts/deploy-contracts"
       }
     ]
   },
@@ -842,6 +478,230 @@
     ]
   },
   {
+    "@id": "https://hashgraphontology.xyz/core/hasGasSchedule",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/SmartContractService"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has gas schedule"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/GasFeeSchedule"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Associates the Smart Contract Service with the published gas fee schedule."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/hasContractId",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/SmartContract"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has contract id"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Ledger identifier (e.g., 0.0.x) for a deployed contract."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/ContractAccount",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Contract account"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Account"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Account generated for a deployed smart contract to receive funds and identify executions."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts/smart-contracts/contract-accounts"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/hasGasBreakdown",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/OpcodeTrace"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has gas breakdown"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Summary of intrinsic, opcode, and surcharge gas components for analytics."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/OpcodeTrace",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Opcode trace"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Artefact"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Detailed record of EVM opcodes executed during a contract execution."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/mirror-node/sdks-and-apis/rest-api#tag/Contracts"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/Precompile",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Precompile"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/SystemContract"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Entry point exposing native Hedera services (HTS, HCS) to smart contracts via reserved selectors."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts/smart-contracts/system-contracts#token-service-precompile"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/PrecompileInvocation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Precompile invocation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Event"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Event capturing a contract execution invoking a specific system contract precompile."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/mirror-node/sdks-and-apis/rest-api#tag/Contracts"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/ContractLog",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Contract log"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Artefact"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Structured record describing indexed topics and data generated by a contract event."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/mirror-node/sdks-and-apis/rest-api#tag/Contracts"
+      }
+    ]
+  },
+  {
     "@id": "https://hashgraphontology.xyz/core/hasFunctionSelector",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
@@ -866,6 +726,146 @@
       {
         "@language": "en",
         "@value": "Hex-encoded selector identifying the precompile function invoked."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/GasFeeSchedule",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Gas fee schedule"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Artefact"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Fee schedule that defines intrinsic and surcharge gas costs for smart contract operations."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts/smart-contracts/gas-and-fees"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/emitsContractEvent",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/ContractExecution"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "emits contract event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/ContractEvent"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Links a contract execution to events emitted during the call."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/hasBytecode",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/SmartContract"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has bytecode"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/ContractBytecode"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Connects a smart contract to the bytecode package it executes."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/hasGasUsed",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/PrecompileInvocation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has gas used"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Total gas consumed by a precompile invocation."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/SmartContractService",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Smart Contract Service"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Service"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Network service that executes EVM smart contracts and exposes system contract integrations."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts/smart-contracts/introduction"
       }
     ]
   }

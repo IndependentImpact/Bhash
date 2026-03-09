@@ -1,117 +1,5 @@
 [
   {
-    "@id": "https://hashgraphontology.xyz/core/hasShardIdentifier",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/HieroShard"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has shard identifier"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Short identifier for a Hiero shard."
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/HieroAvailabilityNode",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Hiero availability node"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Validator"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Validator focusing on data availability responsibilities in Hiero."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hiero/concepts/validators#availability"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/HieroOnboardingState",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Hiero onboarding state"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Concept"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "State classification such as pending, active, or slashed for validators joining Hiero."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hiero/concepts/validators"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/HieroSequencerNode",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Hiero sequencer node"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Validator"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Validator role producing ordered batches for Hiero shards."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hiero/concepts/validators#consensus"
-      }
-    ]
-  },
-  {
     "@id": "https://hashgraphontology.xyz/core/HieroParticipation",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
@@ -168,30 +56,30 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/hasParticipationStatus",
+    "@id": "https://hashgraphontology.xyz/core/HieroUpgradeMilestone",
     "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/HieroParticipation"
-      }
+      "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has participation status"
+        "@value": "Hiero upgrade milestone"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
+        "@id": "https://hashgraphontology.xyz/core/Event"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Human-readable status for participation (e.g., onboarding, active, slashed)."
+        "@value": "Event representing progression in the Hiero rollout roadmap."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hiero/roadmap"
       }
     ]
   },
@@ -224,7 +112,7 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/hasOnboardingState",
+    "@id": "https://hashgraphontology.xyz/core/assumesHieroRole",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
@@ -236,46 +124,154 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "has onboarding state"
+        "@value": "assumes Hiero role"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyz/core/HieroOnboardingState"
+        "@id": "https://hashgraphontology.xyz/core/HieroValidatorRole"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Associates a participation with its onboarding classification."
+        "@value": "Associates a participation with the specific Hiero validator role performed."
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/HieroUpgradeMilestone",
+    "@id": "https://hashgraphontology.xyz/core/supportsLayer",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/HieroParticipation"
+      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Hiero upgrade milestone"
+        "@value": "supports layer"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+    "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyz/core/Event"
+        "@id": "https://hashgraphontology.xyz/core/HieroLayer"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Event representing progression in the Hiero rollout roadmap."
+        "@value": "Identifies which Hiero layer the participation supports (consensus, execution, availability)."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/hasParticipationStatus",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/HieroParticipation"
       }
     ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
+    "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@id": "https://docs.hedera.com/hiero/roadmap"
+        "@language": "en",
+        "@value": "has participation status"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Human-readable status for participation (e.g., onboarding, active, slashed)."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/participationOf",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/HieroParticipation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "participation of"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Validator"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Links a Hiero participation process to the validator involved."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/hiero",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Ontology"
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2024-10-01"
+      }
+    ],
+    "http://purl.org/dc/terms/creator": [
+      {
+        "@language": "en",
+        "@value": "Bhash Ontology Working Group"
+      }
+    ],
+    "http://purl.org/dc/terms/description": [
+      {
+        "@language": "en",
+        "@value": "Vocabulary extending the core ontology with Hiero shards, validator roles, and onboarding milestones."
+      }
+    ],
+    "http://purl.org/dc/terms/modified": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2025-09-30"
+      }
+    ],
+    "http://purl.org/dc/terms/title": [
+      {
+        "@language": "en",
+        "@value": "Hiero Overlay module"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#imports": [
+      {
+        "@id": "https://hashgraphontology.xyz/core"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#versionInfo": [
+      {
+        "@value": "0.1.0-dev"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#editorialNote": [
+      {
+        "@language": "en",
+        "@value": "Phase 3 Hiero overlay capturing shard participation states for CQ-HIE-009."
       }
     ]
   },
@@ -336,166 +332,58 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/assumesHieroRole",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/HieroParticipation"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "assumes Hiero role"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/HieroValidatorRole"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Associates a participation with the specific Hiero validator role performed."
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/hiero",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Ontology"
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2024-10-01"
-      }
-    ],
-    "http://purl.org/dc/terms/creator": [
-      {
-        "@language": "en",
-        "@value": "Bhash Ontology Working Group"
-      }
-    ],
-    "http://purl.org/dc/terms/description": [
-      {
-        "@language": "en",
-        "@value": "Vocabulary extending the core ontology with Hiero shards, validator roles, and onboarding milestones."
-      }
-    ],
-    "http://purl.org/dc/terms/modified": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2025-09-30"
-      }
-    ],
-    "http://purl.org/dc/terms/title": [
-      {
-        "@language": "en",
-        "@value": "Hiero Overlay module"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#imports": [
-      {
-        "@id": "https://hashgraphontology.xyz/core"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#versionInfo": [
-      {
-        "@value": "0.1.0-dev"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#editorialNote": [
-      {
-        "@language": "en",
-        "@value": "Phase 3 Hiero overlay capturing shard participation states for CQ-HIE-009."
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/HieroValidatorRole",
+    "@id": "https://hashgraphontology.xyz/core/HieroAvailabilityNode",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Hiero validator role"
+        "@value": "Hiero availability node"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyz/core/Role"
+        "@id": "https://hashgraphontology.xyz/core/Validator"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Role undertaken by validators within the Hiero architecture (consensus, execution, availability)."
+        "@value": "Validator focusing on data availability responsibilities in Hiero."
       }
     ],
     "https://hashgraphontology.xyz/core/sourceDocument": [
       {
-        "@id": "https://docs.hedera.com/hiero/concepts/validators"
+        "@id": "https://docs.hedera.com/hiero/concepts/validators#availability"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/supportsLayer",
+    "@id": "https://hashgraphontology.xyz/core/hasShardIdentifier",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/HieroParticipation"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "supports layer"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/HieroLayer"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Identifies which Hiero layer the participation supports (consensus, execution, availability)."
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/participatesInShard",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/HieroParticipation"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "participates in shard"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
       {
         "@id": "https://hashgraphontology.xyz/core/HieroShard"
       }
     ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has shard identifier"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Identifies the shard in which the participation occurs."
+        "@value": "Short identifier for a Hiero shard."
       }
     ]
   },
@@ -528,7 +416,7 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/participationOf",
+    "@id": "https://hashgraphontology.xyz/core/hasOnboardingState",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
@@ -540,18 +428,18 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "participation of"
+        "@value": "has onboarding state"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyz/core/Validator"
+        "@id": "https://hashgraphontology.xyz/core/HieroOnboardingState"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Links a Hiero participation process to the validator involved."
+        "@value": "Associates a participation with its onboarding classification."
       }
     ]
   },
@@ -580,6 +468,118 @@
     "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hiero/concepts/state-proofs"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/HieroSequencerNode",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Hiero sequencer node"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Validator"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Validator role producing ordered batches for Hiero shards."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hiero/concepts/validators#consensus"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/HieroOnboardingState",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Hiero onboarding state"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Concept"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "State classification such as pending, active, or slashed for validators joining Hiero."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hiero/concepts/validators"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/HieroValidatorRole",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Hiero validator role"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Role"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Role undertaken by validators within the Hiero architecture (consensus, execution, availability)."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hiero/concepts/validators"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/participatesInShard",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/HieroParticipation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "participates in shard"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/HieroShard"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Identifies the shard in which the participation occurs."
       }
     ]
   }
