@@ -138,6 +138,19 @@ JSON-LD, and Turtle) are generated from the source `.ttl` files under
 catalogues using Jinja2 and keeps machine-readable formats in sync for
 deployments.
 
+> **Prerequisites – Python dependencies**
+>
+> The conversion script and deployment scripts require `rdflib`, `jinja2`, and
+> related packages.  Running any of them with the system Python (without a
+> prepared virtual environment) will produce:
+>
+> ```
+> ModuleNotFoundError: No module named 'rdflib'
+> ```
+>
+> Always run step 1 below before proceeding. It creates `ontology/venv` with all
+> required packages.
+
 1. Prepare the Python environment using the helper script under `ontology/` (this creates `ontology/venv` with the required
    dependencies):
 
@@ -164,6 +177,21 @@ deployments.
 
    ```bash
    rsync -avh ontology/deployment/ <user>@<host>:/var/www/ontology/
+   ```
+
+   To deploy to an nginx web root (content-negotiation enabled), use the
+   bundled script.  The script automatically uses `ontology/venv` when it
+   exists, so running step 1 first is sufficient:
+
+   ```bash
+   bash ontology/scripts/deploy_to_nginx.sh
+   ```
+
+   If you need to override the Python interpreter (e.g. on a server where
+   `rdflib` is installed system-wide), set `PYTHON_BIN` explicitly:
+
+   ```bash
+   PYTHON_BIN=/usr/bin/python3 bash ontology/scripts/deploy_to_nginx.sh
    ```
 
    Downstream systems that consume the OWL or JSON-LD contexts should reference

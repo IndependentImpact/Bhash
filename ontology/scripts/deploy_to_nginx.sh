@@ -12,8 +12,22 @@ RSYNC_BIN=${RSYNC_BIN:-rsync}
 WEB_USER=${WEB_USER:-www-data}
 WEB_GROUP=${WEB_GROUP:-www-data}
 INDEX_FILE="$DEPLOYMENT_DIR/index.html"
-PYTHON_BIN=${PYTHON_BIN:-python3}
 CONVERT_SCRIPT="$SCRIPT_DIR/convert_ontologies.py"
+
+# Prefer the virtual environment created by install_requirements.sh when
+# PYTHON_BIN has not been set explicitly.  This avoids "ModuleNotFoundError:
+# No module named 'rdflib'" when the caller uses the default system Python.
+_VENV_PYTHON="$SCRIPT_DIR/../venv/bin/python3"
+if [ -z "${PYTHON_BIN:-}" ]; then
+    if [ -x "$_VENV_PYTHON" ]; then
+        PYTHON_BIN="$_VENV_PYTHON"
+    else
+        PYTHON_BIN="python3"
+        echo "⚠️  ontology/venv not found. If you see a 'ModuleNotFoundError: No module named rdflib'" >&2
+        echo "   error, run 'bash ontology/install_requirements.sh' first to create the virtual" >&2
+        echo "   environment, or set PYTHON_BIN to a Python interpreter that has rdflib installed." >&2
+    fi
+fi
 
 if [ ! -d "$DEPLOYMENT_DIR" ]; then
     echo "❌ Deployment directory not found: $DEPLOYMENT_DIR" >&2
