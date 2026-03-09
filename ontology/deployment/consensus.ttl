@@ -146,6 +146,12 @@ hedera:supportedBy a owl:ObjectProperty ;
     rdfs:range hedera:GovernanceDecision ;
     skos:definition "Associates a process with the governance decision or mandate that authorises it."@en .
 
+hedera:inTopic a owl:ObjectProperty ;
+    rdfs:label "in topic"@en ;
+    rdfs:domain hedera:TopicMessage ;
+    rdfs:range hedera:ConsensusTopic ;
+    skos:definition "Links a topic message to the consensus topic it belongs to."@en .
+
 hedera:targetsTopic a owl:ObjectProperty ;
     rdfs:label "targets topic"@en ;
     rdfs:domain hedera:Transaction ;
