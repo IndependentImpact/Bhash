@@ -97,12 +97,6 @@ hedera:hasRunningHash a owl:DatatypeProperty ;
     rdfs:range xsd:hexBinary ;
     skos:definition "Running hash stored within a consensus record file."@en .
 
-hedera:hasTopicId a owl:DatatypeProperty ;
-    rdfs:label "has topic ID"@en ;
-    rdfs:domain hedera:ConsensusTopic ;
-    rdfs:range xsd:string ;
-    skos:definition "String identifier representing the canonical topic ID (shard.realm.num)."@en .
-
 hedera:hasSequenceNumber a owl:DatatypeProperty ;
     rdfs:label "has sequence number"@en ;
     rdfs:domain hedera:TopicMessage ;
@@ -121,6 +115,18 @@ hedera:hasTopic a owl:ObjectProperty ;
     rdfs:domain hedera:ConsensusService ;
     rdfs:range hedera:ConsensusTopic ;
     skos:definition "Associates the Consensus Service with the topics it manages."@en .
+
+hedera:hasTopicId a owl:DatatypeProperty ;
+    rdfs:label "has topic ID"@en ;
+    rdfs:domain hedera:ConsensusTopic ;
+    rdfs:range xsd:string ;
+    skos:definition "String identifier representing the canonical topic ID (shard.realm.num)."@en .
+
+hedera:inTopic a owl:ObjectProperty ;
+    rdfs:label "in topic"@en ;
+    rdfs:domain hedera:TopicMessage ;
+    rdfs:range hedera:ConsensusTopic ;
+    skos:definition "Links a topic message to the consensus topic it belongs to."@en .
 
 hedera:includesMessage a owl:ObjectProperty ;
     rdfs:label "includes message"@en ;
@@ -145,12 +151,6 @@ hedera:supportedBy a owl:ObjectProperty ;
     rdfs:domain hedera:Process ;
     rdfs:range hedera:GovernanceDecision ;
     skos:definition "Associates a process with the governance decision or mandate that authorises it."@en .
-
-hedera:inTopic a owl:ObjectProperty ;
-    rdfs:label "in topic"@en ;
-    rdfs:domain hedera:TopicMessage ;
-    rdfs:range hedera:ConsensusTopic ;
-    skos:definition "Links a topic message to the consensus topic it belongs to."@en .
 
 hedera:targetsTopic a owl:ObjectProperty ;
     rdfs:label "targets topic"@en ;

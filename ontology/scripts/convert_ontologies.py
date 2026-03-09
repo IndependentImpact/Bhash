@@ -87,6 +87,17 @@ def parse_args(argv: Optional[Sequence[str]] = None) -> argparse.Namespace:
         default=Path(__file__).resolve().parent / "templates" / "ontology.html.j2",
         help="HTML Jinja2 template to render human-readable output",
     )
+    parser.add_argument(
+        "--generate-index",
+        action="store_true",
+        help="Generate an index.html landing page in the deployment directory and exit",
+    )
+    parser.add_argument(
+        "--index-template",
+        type=Path,
+        default=Path(__file__).resolve().parent / "templates" / "index.html.j2",
+        help="Jinja2 template for the landing page (default: templates/index.html.j2)",
+    )
     return parser.parse_args(argv)
 
 
@@ -302,12 +313,165 @@ def convert_file(path: Path, source_dir: Path, deployment_dir: Path, template_pa
     return serialised
 
 
+# ---------------------------------------------------------------------------
+# Known module metadata used for the landing page.  The key is the stem path
+# relative to the deployment directory (e.g. "core" or "alignment/aiao").
+# ---------------------------------------------------------------------------
+_MODULE_META: Dict[str, Dict[str, str]] = {
+    "core": {
+        "title": "Core Ontology",
+        "description": "Upper-level classes and properties capturing shared Hedera and Hiero network concepts, including identity, governance, transactions, and data-export semantics.",
+        "section": "Core Modules",
+    },
+    "consensus": {
+        "title": "Consensus Service",
+        "description": "Hedera Consensus Service (HCS) – topics, messages, sequence numbers, and submit-key access control.",
+        "section": "Core Modules",
+    },
+    "token": {
+        "title": "Token Service",
+        "description": "Hedera Token Service (HTS) – fungible and non-fungible tokens, supply management, KYC, and freeze semantics.",
+        "section": "Core Modules",
+    },
+    "smart-contracts": {
+        "title": "Smart Contract Service",
+        "description": "Hedera Smart Contract Service (HSCS) – EVM-compatible contracts, bytecode, ABI, and gas semantics.",
+        "section": "Core Modules",
+    },
+    "file-schedule": {
+        "title": "File & Schedule Service",
+        "description": "Hedera File Service for on-ledger file storage and Scheduled Transactions for time-deferred execution.",
+        "section": "Core Modules",
+    },
+    "mirror-analytics": {
+        "title": "Mirror Node Analytics",
+        "description": "Mirror node ecosystem – REST queries, analytics events, streaming state, and data-export semantics.",
+        "section": "Core Modules",
+    },
+    "hiero": {
+        "title": "Hiero Architecture",
+        "description": "Hiero overlay and Hedera node software architecture – services, nodes, and platform abstractions.",
+        "section": "Core Modules",
+    },
+    "alignment/aiao": {
+        "title": "AIAO Alignment",
+        "description": "Bridge module aligning Hedera concepts with the Anthropogenic Impact Accounting Ontology (AIAO).",
+        "section": "Alignment Modules",
+    },
+    "alignment/claimont": {
+        "title": "ClaimOnt Alignment",
+        "description": "Bridge module aligning Hedera attestation patterns with the Claim Ontology (ClaimOnt).",
+        "section": "Alignment Modules",
+    },
+    "alignment/infocomm": {
+        "title": "InfoComm Alignment",
+        "description": "Bridge module aligning Hedera messaging semantics with the Information Communication Ontology (InfoComm).",
+        "section": "Alignment Modules",
+    },
+    "alignment/impactont": {
+        "title": "ImpactOnt Alignment",
+        "description": "Bridge module aligning Hedera-native concepts with the Impact Ontology (ImpactOnt).",
+        "section": "Alignment Modules",
+    },
+    "alignment/prefixes": {
+        "title": "Prefix Declarations",
+        "description": "Canonical prefix declarations shared across all Bhash ontology modules.",
+        "section": "Alignment Modules",
+    },
+    "imports/dcat": {
+        "title": "DCAT",
+        "description": "W3C Data Catalog Vocabulary – imported dependency used for dataset and distribution semantics.",
+        "section": "External Ontology Imports",
+    },
+    "imports/provo": {
+        "title": "PROV-O",
+        "description": "W3C Provenance Ontology – imported dependency used for activity, agent, and entity provenance.",
+        "section": "External Ontology Imports",
+    },
+}
+
+# Preferred display order for sections.
+_SECTION_ORDER: List[str] = [
+    "Core Modules",
+    "Alignment Modules",
+    "External Ontology Imports",
+]
+
+
+def generate_landing_page(deployment_dir: Path, index_template_path: Path) -> Path:
+    """Scan *deployment_dir* for HTML artefacts and render an index.html landing page."""
+    env = Environment(
+        loader=FileSystemLoader(index_template_path.parent),
+        autoescape=select_autoescape(["html", "xml"]),
+    )
+    tmpl = env.get_template(index_template_path.name)
+
+    # Discover all .html files (excluding index.html itself).
+    html_files = sorted(
+        p for p in deployment_dir.rglob("*.html") if p.name != "index.html"
+    )
+
+    # Build module entries grouped by section.
+    sections_map: Dict[str, List[Dict[str, Optional[str]]]] = {}
+    ungrouped: List[Dict[str, Optional[str]]] = []
+
+    for html_path in html_files:
+        rel = html_path.relative_to(deployment_dir)
+        stem_path = str(rel.with_suffix(""))  # e.g. "alignment/aiao"
+        meta = _MODULE_META.get(stem_path, {})
+        section_name = meta.get("section", "Other")
+        title = meta.get("title") or stem_path
+        description = meta.get("description", "")
+
+        # Build relative URL paths for each format.
+        def _rel_url(ext: str) -> Optional[str]:
+            candidate = html_path.with_suffix(ext)
+            return str(candidate.relative_to(deployment_dir)) if candidate.exists() else None
+
+        entry: Dict[str, Optional[str]] = {
+            "html_path": str(rel),
+            "ttl_path": _rel_url(".ttl"),
+            "owl_path": _rel_url(".owl"),
+            "jsonld_path": _rel_url(".jsonld"),
+            "title": title,
+            "description": description,
+        }
+
+        if section_name == "Other":
+            ungrouped.append(entry)
+        else:
+            sections_map.setdefault(section_name, []).append(entry)
+
+    # Assemble ordered sections list.
+    sections = []
+    for sname in _SECTION_ORDER:
+        if sname in sections_map:
+            sections.append({"title": sname, "modules": sections_map[sname]})
+    if ungrouped:
+        sections.append({"title": "Other", "modules": ungrouped})
+
+    html = tmpl.render(sections=sections)
+    index_path = deployment_dir / "index.html"
+    index_path.write_text(html, encoding="utf-8")
+    return index_path
+
+
 def run(argv: Optional[Sequence[str]] = None) -> int:
     args = parse_args(argv)
     source_dir = args.source_dir.resolve()
     deployment_dir = args.deployment_dir.resolve()
     basis = args.basis.lstrip(".").lower()
     template_path = args.template.resolve()
+    index_template_path = args.index_template.resolve()
+
+    if args.generate_index:
+        if not index_template_path.exists():
+            raise FileNotFoundError(f"Index template not found: {index_template_path}")
+        if not deployment_dir.exists():
+            raise FileNotFoundError(f"Deployment directory not found: {deployment_dir}")
+        out = generate_landing_page(deployment_dir, index_template_path)
+        print(f"✅ Landing page written to {out}")
+        return 0
 
     if not template_path.exists():
         raise FileNotFoundError(f"Template not found: {template_path}")

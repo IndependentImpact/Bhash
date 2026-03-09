@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hashgraph Ontology</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; margin: 0; background: #f8fafc; color: #1e293b; line-height: 1.6; }
+        header { background: #0f172a; color: #e2e8f0; padding: 2.5rem 2rem 2rem; }
+        header h1 { margin: 0 0 0.4rem; font-size: 2rem; color: #f1f5f9; }
+        header p { margin: 0; color: #94a3b8; max-width: 780px; }
+        header .iri { margin-top: 0.6rem; font-size: 0.9rem; color: #64748b; }
+        header .iri a { color: #7dd3fc; text-decoration: none; }
+        header .iri a:hover { text-decoration: underline; }
+        main { max-width: 1100px; margin: 2.5rem auto; padding: 0 1.5rem 3rem; }
+        h2 { color: #0f172a; font-size: 1.3rem; margin-top: 2.5rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.4rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.25rem; margin-top: 1rem; }
+        .card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.25rem 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; transition: box-shadow 0.15s; }
+        .card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        .card h3 { margin: 0; font-size: 1.05rem; }
+        .card h3 a { color: #0f766e; text-decoration: none; }
+        .card h3 a:hover { text-decoration: underline; }
+        .card .desc { font-size: 0.9rem; color: #475569; margin: 0; flex: 1; }
+        .card .formats { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.4rem; }
+        .fmt-badge { display: inline-block; padding: 0.15rem 0.55rem; border-radius: 4px; font-family: monospace; font-size: 0.8rem; text-decoration: none; border: 1px solid; }
+        .fmt-badge.ttl  { background: #f0fdf4; color: #15803d; border-color: #bbf7d0; }
+        .fmt-badge.ttl:hover  { background: #dcfce7; }
+        .fmt-badge.owl  { background: #fdf4ff; color: #7e22ce; border-color: #e9d5ff; }
+        .fmt-badge.owl:hover  { background: #f3e8ff; }
+        .fmt-badge.jsonld { background: #eff6ff; color: #1d4ed8; border-color: #bfdbfe; }
+        .fmt-badge.jsonld:hover { background: #dbeafe; }
+        footer { text-align: center; padding: 1.5rem; font-size: 0.85rem; color: #94a3b8; border-top: 1px solid #e2e8f0; }
+        footer a { color: #64748b; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hashgraph Ontology</h1>
+        <p>Machine-interpretable OWL ontologies modelling the Hedera Network and Hiero architecture, including services, governance, tokens, consensus, and smart contracts.</p>
+        <div class="iri">Base IRI: <a href="https://hashgraphontology.xyz/">https://hashgraphontology.xyz/</a></div>
+    </header>
+    <main>
+
+        <h2>Core Modules</h2>
+        <div class="grid">
+
+            <div class="card">
+                <h3><a href="consensus.html">Consensus Service</a></h3>
+                <p class="desc">Hedera Consensus Service (HCS) – topics, messages, sequence numbers, and submit-key access control.</p>
+                <div class="formats">
+<a class="fmt-badge ttl" href="consensus.ttl" type="text/turtle">.ttl</a>
+<a class="fmt-badge owl" href="consensus.owl" type="application/rdf+xml">.owl</a>
+<a class="fmt-badge jsonld" href="consensus.jsonld" type="application/ld+json">.jsonld</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3><a href="core.html">Core Ontology</a></h3>
+                <p class="desc">Upper-level classes and properties capturing shared Hedera and Hiero network concepts, including identity, governance, transactions, and data-export semantics.</p>
+                <div class="formats">
+<a class="fmt-badge ttl" href="core.ttl" type="text/turtle">.ttl</a>
+<a class="fmt-badge owl" href="core.owl" type="application/rdf+xml">.owl</a>
+<a class="fmt-badge jsonld" href="core.jsonld" type="application/ld+json">.jsonld</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3><a href="file-schedule.html">File & Schedule Service</a></h3>
+                <p class="desc">Hedera File Service for on-ledger file storage and Scheduled Transactions for time-deferred execution.</p>
+                <div class="formats">
+<a class="fmt-badge ttl" href="file-schedule.ttl" type="text/turtle">.ttl</a>
+<a class="fmt-badge owl" href="file-schedule.owl" type="application/rdf+xml">.owl</a>
+<a class="fmt-badge jsonld" href="file-schedule.jsonld" type="application/ld+json">.jsonld</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3><a href="hiero.html">Hiero Architecture</a></h3>
+                <p class="desc">Hiero overlay and Hedera node software architecture – services, nodes, and platform abstractions.</p>
+                <div class="formats">
+<a class="fmt-badge ttl" href="hiero.ttl" type="text/turtle">.ttl</a>
+<a class="fmt-badge owl" href="hiero.owl" type="application/rdf+xml">.owl</a>
+<a class="fmt-badge jsonld" href="hiero.jsonld" type="application/ld+json">.jsonld</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3><a href="mirror-analytics.html">Mirror Node Analytics</a></h3>
+                <p class="desc">Mirror node ecosystem – REST queries, analytics events, streaming state, and data-export semantics.</p>
+                <div class="formats">
+<a class="fmt-badge ttl" href="mirror-analytics.ttl" type="text/turtle">.ttl</a>
+<a class="fmt-badge owl" href="mirror-analytics.owl" type="application/rdf+xml">.owl</a>
+<a class="fmt-badge jsonld" href="mirror-analytics.jsonld" type="application/ld+json">.jsonld</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3><a href="smart-contracts.html">Smart Contract Service</a></h3>
+                <p class="desc">Hedera Smart Contract Service (HSCS) – EVM-compatible contracts, bytecode, ABI, and gas semantics.</p>
+                <div class="formats">
+<a class="fmt-badge ttl" href="smart-contracts.ttl" type="text/turtle">.ttl</a>
+<a class="fmt-badge owl" href="smart-contracts.owl" type="application/rdf+xml">.owl</a>
+<a class="fmt-badge jsonld" href="smart-contracts.jsonld" type="application/ld+json">.jsonld</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3><a href="token.html">Token Service</a></h3>
+                <p class="desc">Hedera Token Service (HTS) – fungible and non-fungible tokens, supply management, KYC, and freeze semantics.</p>
+                <div class="formats">
+<a class="fmt-badge ttl" href="token.ttl" type="text/turtle">.ttl</a>
+<a class="fmt-badge owl" href="token.owl" type="application/rdf+xml">.owl</a>
+<a class="fmt-badge jsonld" href="token.jsonld" type="application/ld+json">.jsonld</a>
+                </div>
+            </div>
+
+        </div>
+
+        <h2>Alignment Modules</h2>
+        <div class="grid">
+
+            <div class="card">
+                <h3><a href="alignment/aiao.html">AIAO Alignment</a></h3>
+                <p class="desc">Bridge module aligning Hedera concepts with the Anthropogenic Impact Accounting Ontology (AIAO).</p>
+                <div class="formats">
+<a class="fmt-badge ttl" href="alignment/aiao.ttl" type="text/turtle">.ttl</a>
+<a class="fmt-badge owl" href="alignment/aiao.owl" type="application/rdf+xml">.owl</a>
+<a class="fmt-badge jsonld" href="alignment/aiao.jsonld" type="application/ld+json">.jsonld</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3><a href="alignment/claimont.html">ClaimOnt Alignment</a></h3>
+                <p class="desc">Bridge module aligning Hedera attestation patterns with the Claim Ontology (ClaimOnt).</p>
+                <div class="formats">
+<a class="fmt-badge ttl" href="alignment/claimont.ttl" type="text/turtle">.ttl</a>
+<a class="fmt-badge owl" href="alignment/claimont.owl" type="application/rdf+xml">.owl</a>
+<a class="fmt-badge jsonld" href="alignment/claimont.jsonld" type="application/ld+json">.jsonld</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3><a href="alignment/impactont.html">ImpactOnt Alignment</a></h3>
+                <p class="desc">Bridge module aligning Hedera-native concepts with the Impact Ontology (ImpactOnt).</p>
+                <div class="formats">
+<a class="fmt-badge ttl" href="alignment/impactont.ttl" type="text/turtle">.ttl</a>
+<a class="fmt-badge owl" href="alignment/impactont.owl" type="application/rdf+xml">.owl</a>
+<a class="fmt-badge jsonld" href="alignment/impactont.jsonld" type="application/ld+json">.jsonld</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3><a href="alignment/infocomm.html">InfoComm Alignment</a></h3>
+                <p class="desc">Bridge module aligning Hedera messaging semantics with the Information Communication Ontology (InfoComm).</p>
+                <div class="formats">
+<a class="fmt-badge ttl" href="alignment/infocomm.ttl" type="text/turtle">.ttl</a>
+<a class="fmt-badge owl" href="alignment/infocomm.owl" type="application/rdf+xml">.owl</a>
+<a class="fmt-badge jsonld" href="alignment/infocomm.jsonld" type="application/ld+json">.jsonld</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3><a href="alignment/prefixes.html">Prefix Declarations</a></h3>
+                <p class="desc">Canonical prefix declarations shared across all Bhash ontology modules.</p>
+                <div class="formats">
+<a class="fmt-badge ttl" href="alignment/prefixes.ttl" type="text/turtle">.ttl</a>
+<a class="fmt-badge owl" href="alignment/prefixes.owl" type="application/rdf+xml">.owl</a>
+<a class="fmt-badge jsonld" href="alignment/prefixes.jsonld" type="application/ld+json">.jsonld</a>
+                </div>
+            </div>
+
+        </div>
+
+        <h2>External Ontology Imports</h2>
+        <div class="grid">
+
+            <div class="card">
+                <h3><a href="imports/dcat.html">DCAT</a></h3>
+                <p class="desc">W3C Data Catalog Vocabulary – imported dependency used for dataset and distribution semantics.</p>
+                <div class="formats">
+<a class="fmt-badge ttl" href="imports/dcat.ttl" type="text/turtle">.ttl</a>
+<a class="fmt-badge owl" href="imports/dcat.owl" type="application/rdf+xml">.owl</a>
+<a class="fmt-badge jsonld" href="imports/dcat.jsonld" type="application/ld+json">.jsonld</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3><a href="imports/provo.html">PROV-O</a></h3>
+                <p class="desc">W3C Provenance Ontology – imported dependency used for activity, agent, and entity provenance.</p>
+                <div class="formats">
+<a class="fmt-badge ttl" href="imports/provo.ttl" type="text/turtle">.ttl</a>
+<a class="fmt-badge owl" href="imports/provo.owl" type="application/rdf+xml">.owl</a>
+<a class="fmt-badge jsonld" href="imports/provo.jsonld" type="application/ld+json">.jsonld</a>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+    <footer>
+        Hashgraph Ontology · Published under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>
+    </footer>
+</body>
+</html>

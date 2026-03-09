@@ -5,7 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>ImpactOnt alignment module – Hashgraph Ontology</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 2rem auto; max-width: 1100px; line-height: 1.6; }
+        body { font-family: Arial, sans-serif; margin: 0; line-height: 1.6; }
+        .download-bar { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; padding: 0.6rem 1.5rem; background: #0f172a; color: #e2e8f0; font-size: 0.9rem; }
+        .download-bar a.home-link { color: #7dd3fc; text-decoration: none; font-weight: 600; margin-right: 0.5rem; }
+        .download-bar a.home-link:hover { text-decoration: underline; }
+        .download-bar .sep { border-left: 1px solid #334155; height: 1.2em; }
+        .download-bar .label { color: #94a3b8; }
+        .download-bar .fmt-link { display: inline-flex; align-items: center; gap: 0.25rem; padding: 0.2rem 0.6rem; border-radius: 4px; background: #1e293b; color: #7dd3fc; text-decoration: none; font-family: monospace; font-size: 0.85rem; border: 1px solid #334155; }
+        .download-bar .fmt-link:hover { background: #0ea5e9; color: #fff; border-color: #0ea5e9; }
+        .page-content { max-width: 1100px; margin: 2rem auto; padding: 0 1.5rem; }
         h1, h2, h3 { color: #1f2937; }
         table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
         th, td { padding: 0.5rem; border: 1px solid #e5e7eb; vertical-align: top; }
@@ -18,6 +26,15 @@
     </style>
 </head>
 <body>
+    <nav class="download-bar">
+        <a class="home-link" href="/">← Home</a>
+        <span class="sep"></span>
+        <span class="label">Download:</span>
+        <a class="fmt-link" href="impactont.ttl" type="text/turtle">Turtle (.ttl)</a>
+        <a class="fmt-link" href="impactont.owl" type="application/rdf+xml">RDF/XML (.owl)</a>
+        <a class="fmt-link" href="impactont.jsonld" type="application/ld+json">JSON-LD (.jsonld)</a>
+    </nav>
+    <div class="page-content">
     <header>
         <h1>ImpactOnt alignment module</h1>
         <div class="meta">IRI: <a href="https://hashgraphontology.xyz/alignment/impactont">https://hashgraphontology.xyz/alignment/impactont</a></div>
@@ -39,21 +56,21 @@
             
                 <tr><td>ns1</td><td>https://hashgraphontology.xyz/alignment/</td></tr>
             
-                <tr><td>ns2</td><td>https://w3id.org/</td></tr>
+                <tr><td>ns2</td><td>https://github.com/aiaont/</td></tr>
             
-                <tr><td>ns3</td><td>https://docs.hedera.com/hedera/mirror-node/architecture/</td></tr>
+                <tr><td>ns3</td><td>https://docs.hedera.com/hedera/core-concepts/transactions/</td></tr>
             
-                <tr><td>ns4</td><td>https://hips.hedera.com/hip/</td></tr>
+                <tr><td>ns4</td><td>https://docs.hedera.com/hedera/sdks-and-apis/token-service/</td></tr>
             
-                <tr><td>ns5</td><td>https://sdgs.un.org/</td></tr>
+                <tr><td>ns5</td><td>https://hips.hedera.com/hip/</td></tr>
             
-                <tr><td>ns6</td><td>https://docs.hedera.com/hedera/sdks-and-apis/token-service/</td></tr>
+                <tr><td>ns6</td><td>https://w3id.org/</td></tr>
             
-                <tr><td>ns7</td><td>https://github.com/aiaont/</td></tr>
+                <tr><td>ns7</td><td>https://docs.hedera.com/hedera/mirror-node/architecture/</td></tr>
             
                 <tr><td>ns8</td><td>https://hashgraphontology.xyz/</td></tr>
             
-                <tr><td>ns9</td><td>https://docs.hedera.com/hedera/core-concepts/transactions/</td></tr>
+                <tr><td>ns9</td><td>https://sdgs.un.org/</td></tr>
             
                 <tr><td>owl</td><td>http://www.w3.org/2002/07/owl#</td></tr>
             
@@ -216,5 +233,6 @@
             </tbody>
         </table>
     </section>
+    </div>
 </body>
 </html>
