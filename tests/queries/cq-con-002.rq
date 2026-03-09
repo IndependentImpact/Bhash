@@ -1,0 +1,8 @@
+PREFIX hedera: <https://hashgraphontology.xyz/core/>
+
+SELECT ?message ?topic
+WHERE {
+  ?message a hedera:TopicMessage ;
+           hedera:inTopic ?topic .
+}
+ORDER BY ?message
