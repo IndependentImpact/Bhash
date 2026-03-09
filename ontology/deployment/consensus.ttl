@@ -97,6 +97,12 @@ hedera:hasRunningHash a owl:DatatypeProperty ;
     rdfs:range xsd:hexBinary ;
     skos:definition "Running hash stored within a consensus record file."@en .
 
+hedera:hasTopicId a owl:DatatypeProperty ;
+    rdfs:label "has topic ID"@en ;
+    rdfs:domain hedera:ConsensusTopic ;
+    rdfs:range xsd:string ;
+    skos:definition "String identifier representing the canonical topic ID (shard.realm.num)."@en .
+
 hedera:hasSequenceNumber a owl:DatatypeProperty ;
     rdfs:label "has sequence number"@en ;
     rdfs:domain hedera:TopicMessage ;

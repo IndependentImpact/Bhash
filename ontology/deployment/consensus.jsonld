@@ -864,6 +864,34 @@
     ]
   },
   {
+    "@id": "https://hashgraphontology.xyz/core/hasTopicId",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/ConsensusTopic"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has topic ID"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "String identifier representing the canonical topic ID (shard.realm.num)."
+      }
+    ]
+  },
+  {
     "@id": "https://hashgraphontology.xyz/core/hasSequenceNumber",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"

@@ -181,6 +181,13 @@
     <rdfs:range rdf:resource="https://hashgraphontology.xyz/core/TopicSubmitKey"/>
     <skos:definition xml:lang="en">Identifies the submit key required for message submission.</skos:definition>
   </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/hasTopicId">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">has topic ID</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/ConsensusTopic"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <skos:definition xml:lang="en">String identifier representing the canonical topic ID (shard.realm.num).</skos:definition>
+  </rdf:Description>
   <rdf:Description rdf:about="https://hashgraphontology.xyz/core/hasSequenceNumber">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdfs:label xml:lang="en">has sequence number</rdfs:label>

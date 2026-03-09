@@ -248,6 +248,14 @@ hedera:supportedBy
 # Data properties
 ###
 
+hedera:hasTopicId
+    a owl:DatatypeProperty ;
+    rdfs:label "has topic ID"@en ;
+    rdfs:domain hedera:ConsensusTopic ;
+    rdfs:range xsd:string ;
+    skos:definition "String identifier representing the canonical topic ID (shard.realm.num)."@en ;
+    .
+
 hedera:hasSequenceNumber
     a owl:DatatypeProperty ;
     rdfs:label "has sequence number"@en ;
