@@ -7,94 +7,85 @@
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
 >
-  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/ImpactTelemetryExchange">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Impact telemetry exchange</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/Process"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/infocomm#ExchangeProcess"/>
-    <skos:definition xml:lang="en">Process shuttling anthropogenic impact telemetry between Hiero shards and mirror services.</skos:definition>
-    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hiero/concepts/validators"/>
-    <dcterms:source rdf:resource="https://w3id.org/infocomm#ExchangeProcess"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/HieroCommunicationSegment">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Hiero communication segment</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/HieroShard"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/infocomm#NetworkSegment"/>
-    <skos:definition xml:lang="en">Hiero shard treated as a communication segment for impact telemetry flows.</skos:definition>
-    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hiero/concepts/shards"/>
-    <dcterms:source rdf:resource="https://w3id.org/infocomm#NetworkSegment"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/publishesImpactDataset">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/transmitsTopicMessage">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">publishes impact dataset</rdfs:label>
-    <rdfs:domain rdf:resource="https://w3id.org/infocomm#CommunicationNode"/>
-    <rdfs:range rdf:resource="https://hashgraphontology.xyz/core/MirrorDataset"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/infocomm#exposesInterface"/>
-    <skos:definition xml:lang="en">States that a communication node exposes a mirror dataset interface.</skos:definition>
-    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/mirror-node/sdks-and-apis/rest-api"/>
-    <dcterms:source rdf:resource="https://w3id.org/infocomm#exposesInterface"/>
+    <rdfs:label xml:lang="en">transmits topic message</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/HCSCommunicationEvent"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyz/core/TopicMessage"/>
+    <rdfs:subPropertyOf rdf:resource="http://w3id.org/infocomm#transmits"/>
+    <skos:definition xml:lang="en">Identifies the topic message transmitted during an HCS communication event.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/message-flows"/>
+    <dcterms:source rdf:resource="http://w3id.org/infocomm#transmits"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/hasTelemetryLatency">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="en">has telemetry latency</rdfs:label>
-    <rdfs:domain rdf:resource="https://w3id.org/infocomm#CommunicationNode"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/infocomm#hasLatency"/>
-    <skos:definition xml:lang="en">Latency observed when distributing telemetry through a communication node.</skos:definition>
-    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/mirror-node/architecture/metrics"/>
-    <dcterms:source rdf:resource="https://w3id.org/infocomm#hasLatency"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/routesThroughSegment">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/hasCommunicationFormat">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">routes through segment</rdfs:label>
-    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/ImpactTelemetryExchange"/>
-    <rdfs:range rdf:resource="https://w3id.org/infocomm#NetworkSegment"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/infocomm#traversesSegment"/>
-    <skos:definition xml:lang="en">Identifies the network segment used to transport telemetry.</skos:definition>
-    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hiero/concepts/shards"/>
-    <dcterms:source rdf:resource="https://w3id.org/infocomm#traversesSegment"/>
+    <rdfs:label xml:lang="en">has communication format</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/HCSCommunicationEvent"/>
+    <rdfs:range rdf:resource="http://w3id.org/infocomm#Format"/>
+    <rdfs:subPropertyOf rdf:resource="http://w3id.org/infocomm#hasFormat"/>
+    <skos:definition xml:lang="en">Specifies the encoding format (e.g., protobuf, JSON) used during an HCS communication event.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/sdks-and-apis/hedera-api"/>
+    <dcterms:source rdf:resource="http://w3id.org/infocomm#hasFormat"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/MirrorCommunicationParty">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Mirror communication party</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/MirrorService"/>
+    <rdfs:subClassOf rdf:resource="http://w3id.org/infocomm#CommunicationParty"/>
+    <skos:definition xml:lang="en">A Hedera mirror service acting as a receiving communication party for consensus data.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/mirror-node"/>
+    <dcterms:source rdf:resource="http://w3id.org/infocomm#CommunicationParty"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://hashgraphontology.xyz/alignment/infocomm">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
     <dcterms:title xml:lang="en">InfoComm alignment module</dcterms:title>
-    <dcterms:description xml:lang="en">Maps Hedera/Hiero infrastructure elements to InfoComm communication assets for sustainability telemetry exchanges.</dcterms:description>
+    <dcterms:description xml:lang="en">Maps Hedera/Hiero network elements to the Information Communication Ontology, modelling HCS message submission as communication events, mirror nodes as communication parties, and HAPI as the governing protocol.</dcterms:description>
     <dcterms:creator xml:lang="en">Bhash Ontology Working Group</dcterms:creator>
     <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-10-01</dcterms:created>
-    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-10-01</dcterms:modified>
+    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-10-15</dcterms:modified>
     <owl:imports rdf:resource="https://hashgraphontology.xyz/core"/>
     <owl:imports rdf:resource="https://hashgraphontology.xyz/mirror-analytics"/>
-    <owl:imports rdf:resource="https://hashgraphontology.xyz/hiero"/>
+    <owl:imports rdf:resource="https://hashgraphontology.xyz/consensus"/>
     <owl:versionInfo>0.1.0-dev</owl:versionInfo>
-    <skos:editorialNote xml:lang="en">Phase 4 bridge module exposing mirror nodes and Hiero shards as InfoComm communication nodes and network segments.</skos:editorialNote>
+    <dcterms:source rdf:resource="http://w3id.org/infocomm"/>
+    <rdfs:seeAlso rdf:resource="https://github.com/aiaont/infocomm"/>
+    <skos:editorialNote xml:lang="en">Phase 4 bridge module exposing HCS message submission as InfoComm CommunicationEvents, mirror nodes as CommunicationParties, and the Hedera API as an InfoComm Protocol.</skos:editorialNote>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/servedByNode">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/hasConsensusNodeSender">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">served by node</rdfs:label>
-    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/ImpactTelemetryExchange"/>
-    <rdfs:range rdf:resource="https://w3id.org/infocomm#CommunicationNode"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/infocomm#isServedBy"/>
-    <skos:definition xml:lang="en">Associates a telemetry exchange with the communication node responsible for delivering data.</skos:definition>
-    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/mirror-node/sdks-and-apis/rest-api"/>
-    <dcterms:source rdf:resource="https://w3id.org/infocomm#isServedBy"/>
+    <rdfs:label xml:lang="en">has consensus node sender</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/HCSCommunicationEvent"/>
+    <rdfs:range rdf:resource="http://w3id.org/infocomm#CommunicationParty"/>
+    <rdfs:subPropertyOf rdf:resource="http://w3id.org/infocomm#hasSender"/>
+    <skos:definition xml:lang="en">Identifies the consensus node acting as sender in an HCS communication event.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/message-flows"/>
+    <dcterms:source rdf:resource="http://w3id.org/infocomm#hasSender"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/MirrorCommunicationNode">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/HCSCommunicationEvent">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Mirror communication node</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/MirrorService"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/infocomm#CommunicationNode"/>
-    <skos:definition xml:lang="en">Mirror service interpreted as a communication node within the InfoComm ontology.</skos:definition>
-    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/mirror-node"/>
-    <dcterms:source rdf:resource="https://w3id.org/infocomm#CommunicationNode"/>
+    <rdfs:label xml:lang="en">HCS communication event</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/Event"/>
+    <rdfs:subClassOf rdf:resource="http://w3id.org/infocomm#CommunicationEvent"/>
+    <skos:definition xml:lang="en">The transport of a Hedera Consensus Service message through the network, treated as an information communication event.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/message-flows"/>
+    <dcterms:source rdf:resource="http://w3id.org/infocomm#CommunicationEvent"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/anchorsTelemetryPolicy">
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/hasMirrorRecipient">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="en">anchors telemetry policy</rdfs:label>
-    <rdfs:domain rdf:resource="https://w3id.org/infocomm#CommunicationNode"/>
-    <rdfs:range rdf:resource="https://w3id.org/infocomm#ServiceLevelAgreement"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/infocomm#boundByAgreement"/>
-    <skos:definition xml:lang="en">Connects a mirror communication node to the service-level agreement governing telemetry distribution.</skos:definition>
-    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/mirror-node/architecture/overview"/>
-    <dcterms:source rdf:resource="https://w3id.org/infocomm#boundByAgreement"/>
+    <rdfs:label xml:lang="en">has mirror recipient</rdfs:label>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/HCSCommunicationEvent"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyz/core/MirrorCommunicationParty"/>
+    <rdfs:subPropertyOf rdf:resource="http://w3id.org/infocomm#hasRecipient"/>
+    <skos:definition xml:lang="en">Identifies the mirror service that receives consensus data during an HCS communication event.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/mirror-node/sdks-and-apis/rest-api"/>
+    <dcterms:source rdf:resource="http://w3id.org/infocomm#hasRecipient"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/HAPIProtocol">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">HAPI protocol</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://w3id.org/infocomm#Protocol"/>
+    <skos:definition xml:lang="en">The Hedera API (HAPI) protocol that governs the rules of transaction submission and query communication on the Hedera network.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/sdks-and-apis/hedera-api"/>
+    <dcterms:source rdf:resource="http://w3id.org/infocomm#Protocol"/>
   </rdf:Description>
 </rdf:RDF>

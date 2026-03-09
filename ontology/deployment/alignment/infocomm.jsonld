@@ -1,183 +1,18 @@
 [
   {
-    "@id": "https://hashgraphontology.xyz/core/routesThroughSegment",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@id": "https://w3id.org/infocomm#traversesSegment"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/ImpactTelemetryExchange"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "routes through segment"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/infocomm#NetworkSegment"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/infocomm#traversesSegment"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Identifies the network segment used to transport telemetry."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hiero/concepts/shards"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/publishesImpactDataset",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@id": "https://w3id.org/infocomm#exposesInterface"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/infocomm#CommunicationNode"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "publishes impact dataset"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/MirrorDataset"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/infocomm#exposesInterface"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "States that a communication node exposes a mirror dataset interface."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hedera/mirror-node/sdks-and-apis/rest-api"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/hasTelemetryLatency",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@id": "https://w3id.org/infocomm#hasLatency"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/infocomm#CommunicationNode"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has telemetry latency"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#decimal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/infocomm#hasLatency"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Latency observed when distributing telemetry through a communication node."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hedera/mirror-node/architecture/metrics"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/ImpactTelemetryExchange",
+    "@id": "https://hashgraphontology.xyz/core/MirrorCommunicationParty",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://purl.org/dc/terms/source": [
       {
-        "@id": "https://w3id.org/infocomm#ExchangeProcess"
+        "@id": "http://w3id.org/infocomm#CommunicationParty"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Impact telemetry exchange"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Process"
-      },
-      {
-        "@id": "https://w3id.org/infocomm#ExchangeProcess"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Process shuttling anthropogenic impact telemetry between Hiero shards and mirror services."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hiero/concepts/validators"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/MirrorCommunicationNode",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@id": "https://w3id.org/infocomm#CommunicationNode"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Mirror communication node"
+        "@value": "Mirror communication party"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
@@ -185,13 +20,13 @@
         "@id": "https://hashgraphontology.xyz/core/MirrorService"
       },
       {
-        "@id": "https://w3id.org/infocomm#CommunicationNode"
+        "@id": "http://w3id.org/infocomm#CommunicationParty"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Mirror service interpreted as a communication node within the InfoComm ontology."
+        "@value": "A Hedera mirror service acting as a receiving communication party for consensus data."
       }
     ],
     "https://hashgraphontology.xyz/core/sourceDocument": [
@@ -201,38 +36,167 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/HieroCommunicationSegment",
+    "@id": "https://hashgraphontology.xyz/core/hasMirrorRecipient",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://purl.org/dc/terms/source": [
       {
-        "@id": "https://w3id.org/infocomm#NetworkSegment"
+        "@id": "http://w3id.org/infocomm#hasRecipient"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/HCSCommunicationEvent"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Hiero communication segment"
+        "@value": "has mirror recipient"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+    "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://hashgraphontology.xyz/core/HieroShard"
-      },
+        "@id": "https://hashgraphontology.xyz/core/MirrorCommunicationParty"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "https://w3id.org/infocomm#NetworkSegment"
+        "@id": "http://w3id.org/infocomm#hasRecipient"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Hiero shard treated as a communication segment for impact telemetry flows."
+        "@value": "Identifies the mirror service that receives consensus data during an HCS communication event."
       }
     ],
     "https://hashgraphontology.xyz/core/sourceDocument": [
       {
-        "@id": "https://docs.hedera.com/hiero/concepts/shards"
+        "@id": "https://docs.hedera.com/hedera/mirror-node/sdks-and-apis/rest-api"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/hasCommunicationFormat",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@id": "http://w3id.org/infocomm#hasFormat"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/HCSCommunicationEvent"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has communication format"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://w3id.org/infocomm#Format"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://w3id.org/infocomm#hasFormat"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Specifies the encoding format (e.g., protobuf, JSON) used during an HCS communication event."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/sdks-and-apis/hedera-api"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/HCSCommunicationEvent",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@id": "http://w3id.org/infocomm#CommunicationEvent"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "HCS communication event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Event"
+      },
+      {
+        "@id": "http://w3id.org/infocomm#CommunicationEvent"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "The transport of a Hedera Consensus Service message through the network, treated as an information communication event."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/message-flows"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/hasConsensusNodeSender",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@id": "http://w3id.org/infocomm#hasSender"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/HCSCommunicationEvent"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has consensus node sender"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://w3id.org/infocomm#CommunicationParty"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://w3id.org/infocomm#hasSender"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Identifies the consensus node acting as sender in an HCS communication event."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/message-flows"
       }
     ]
   },
@@ -256,19 +220,29 @@
     "http://purl.org/dc/terms/description": [
       {
         "@language": "en",
-        "@value": "Maps Hedera/Hiero infrastructure elements to InfoComm communication assets for sustainability telemetry exchanges."
+        "@value": "Maps Hedera/Hiero network elements to the Information Communication Ontology, modelling HCS message submission as communication events, mirror nodes as communication parties, and HAPI as the governing protocol."
       }
     ],
     "http://purl.org/dc/terms/modified": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2025-10-01"
+        "@value": "2025-10-15"
+      }
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@id": "http://w3id.org/infocomm"
       }
     ],
     "http://purl.org/dc/terms/title": [
       {
         "@language": "en",
         "@value": "InfoComm alignment module"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#seeAlso": [
+      {
+        "@id": "https://github.com/aiaont/infocomm"
       }
     ],
     "http://www.w3.org/2002/07/owl#imports": [
@@ -279,7 +253,7 @@
         "@id": "https://hashgraphontology.xyz/mirror-analytics"
       },
       {
-        "@id": "https://hashgraphontology.xyz/hiero"
+        "@id": "https://hashgraphontology.xyz/consensus"
       }
     ],
     "http://www.w3.org/2002/07/owl#versionInfo": [
@@ -290,93 +264,83 @@
     "http://www.w3.org/2004/02/skos/core#editorialNote": [
       {
         "@language": "en",
-        "@value": "Phase 4 bridge module exposing mirror nodes and Hiero shards as InfoComm communication nodes and network segments."
+        "@value": "Phase 4 bridge module exposing HCS message submission as InfoComm CommunicationEvents, mirror nodes as CommunicationParties, and the Hedera API as an InfoComm Protocol."
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/servedByNode",
+    "@id": "https://hashgraphontology.xyz/core/HAPIProtocol",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
+      "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://purl.org/dc/terms/source": [
       {
-        "@id": "https://w3id.org/infocomm#isServedBy"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/ImpactTelemetryExchange"
+        "@id": "http://w3id.org/infocomm#Protocol"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "served by node"
+        "@value": "HAPI protocol"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/infocomm#CommunicationNode"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/infocomm#isServedBy"
+        "@id": "http://w3id.org/infocomm#Protocol"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Associates a telemetry exchange with the communication node responsible for delivering data."
+        "@value": "The Hedera API (HAPI) protocol that governs the rules of transaction submission and query communication on the Hedera network."
       }
     ],
     "https://hashgraphontology.xyz/core/sourceDocument": [
       {
-        "@id": "https://docs.hedera.com/hedera/mirror-node/sdks-and-apis/rest-api"
+        "@id": "https://docs.hedera.com/hedera/sdks-and-apis/hedera-api"
       }
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/anchorsTelemetryPolicy",
+    "@id": "https://hashgraphontology.xyz/core/transmitsTopicMessage",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://purl.org/dc/terms/source": [
       {
-        "@id": "https://w3id.org/infocomm#boundByAgreement"
+        "@id": "http://w3id.org/infocomm#transmits"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://w3id.org/infocomm#CommunicationNode"
+        "@id": "https://hashgraphontology.xyz/core/HCSCommunicationEvent"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "anchors telemetry policy"
+        "@value": "transmits topic message"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://w3id.org/infocomm#ServiceLevelAgreement"
+        "@id": "https://hashgraphontology.xyz/core/TopicMessage"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "https://w3id.org/infocomm#boundByAgreement"
+        "@id": "http://w3id.org/infocomm#transmits"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Connects a mirror communication node to the service-level agreement governing telemetry distribution."
+        "@value": "Identifies the topic message transmitted during an HCS communication event."
       }
     ],
     "https://hashgraphontology.xyz/core/sourceDocument": [
       {
-        "@id": "https://docs.hedera.com/hedera/mirror-node/architecture/overview"
+        "@id": "https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/message-flows"
       }
     ]
   }

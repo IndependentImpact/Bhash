@@ -38,8 +38,8 @@
     <header>
         <h1>InfoComm alignment module</h1>
         <div class="meta">IRI: <a href="https://hashgraphontology.xyz/alignment/infocomm">https://hashgraphontology.xyz/alignment/infocomm</a></div>
-        <p>Maps Hedera/Hiero infrastructure elements to InfoComm communication assets for sustainability telemetry exchanges.</p>
-        <p class="meta">Source file: alignment/infocomm.ttl</p>
+        <p>Maps Hedera/Hiero network elements to the Information Communication Ontology, modelling HCS message submission as communication events, mirror nodes as communication parties, and HAPI as the governing protocol.</p>
+        <p class="meta">Source file: infocomm.ttl</p>
     </header>
 
     <section class="section">
@@ -52,19 +52,23 @@
             
                 <tr><td>hedera</td><td>https://hashgraphontology.xyz/core/</td></tr>
             
-                <tr><td>infocomm</td><td>https://w3id.org/infocomm#</td></tr>
+                <tr><td>infocomm</td><td>http://w3id.org/infocomm#</td></tr>
             
-                <tr><td>ns1</td><td>https://hashgraphontology.xyz/alignment/</td></tr>
+                <tr><td>ns1</td><td>https://docs.hedera.com/hedera/</td></tr>
             
-                <tr><td>ns2</td><td>https://docs.hedera.com/hedera/mirror-node/sdks-and-apis/</td></tr>
+                <tr><td>ns2</td><td>https://hashgraphontology.xyz/alignment/</td></tr>
             
                 <tr><td>ns3</td><td>https://hashgraphontology.xyz/</td></tr>
             
-                <tr><td>ns4</td><td>https://docs.hedera.com/hedera/</td></tr>
+                <tr><td>ns4</td><td>https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/</td></tr>
             
-                <tr><td>ns5</td><td>https://docs.hedera.com/hedera/mirror-node/architecture/</td></tr>
+                <tr><td>ns5</td><td>http://w3id.org/</td></tr>
             
-                <tr><td>ns6</td><td>https://docs.hedera.com/hiero/concepts/</td></tr>
+                <tr><td>ns6</td><td>https://docs.hedera.com/hedera/sdks-and-apis/</td></tr>
+            
+                <tr><td>ns7</td><td>https://docs.hedera.com/hedera/mirror-node/sdks-and-apis/</td></tr>
+            
+                <tr><td>ns8</td><td>https://github.com/aiaont/</td></tr>
             
                 <tr><td>owl</td><td>http://www.w3.org/2002/07/owl#</td></tr>
             
@@ -73,8 +77,6 @@
                 <tr><td>rdfs</td><td>http://www.w3.org/2000/01/rdf-schema#</td></tr>
             
                 <tr><td>skos</td><td>http://www.w3.org/2004/02/skos/core#</td></tr>
-            
-                <tr><td>xsd</td><td>http://www.w3.org/2001/XMLSchema#</td></tr>
             
             </tbody>
         </table>
@@ -86,39 +88,39 @@
             <thead><tr><th>Label</th><th>QName</th><th>Subclass Of</th><th>Notes</th></tr></thead>
             <tbody>
             
-                <tr id="cls-hedera-HieroCommunicationSegment">
-                    <td>Hiero communication segment</td>
-                    <td>hedera:HieroCommunicationSegment</td>
-                    <td><span class="pill">hedera:HieroShard</span><span class="pill">infocomm:NetworkSegment</span></td>
+                <tr id="cls-hedera-HAPIProtocol">
+                    <td>HAPI protocol</td>
+                    <td>hedera:HAPIProtocol</td>
+                    <td><span class="pill">infocomm:Protocol</span></td>
                     <td class="small">
-                        <div><strong>Definition:</strong> Hiero shard treated as a communication segment for impact telemetry flows.</div>
+                        <div><strong>Definition:</strong> The Hedera API (HAPI) protocol that governs the rules of transaction submission and query communication on the Hedera network.</div>
                         
                         
-                        <div class="meta">IRI: https://hashgraphontology.xyz/core/HieroCommunicationSegment</div>
+                        <div class="meta">IRI: https://hashgraphontology.xyz/core/HAPIProtocol</div>
                     </td>
                 </tr>
             
-                <tr id="cls-hedera-ImpactTelemetryExchange">
-                    <td>Impact telemetry exchange</td>
-                    <td>hedera:ImpactTelemetryExchange</td>
-                    <td><span class="pill">hedera:Process</span><span class="pill">infocomm:ExchangeProcess</span></td>
+                <tr id="cls-hedera-HCSCommunicationEvent">
+                    <td>HCS communication event</td>
+                    <td>hedera:HCSCommunicationEvent</td>
+                    <td><span class="pill">hedera:Event</span><span class="pill">infocomm:CommunicationEvent</span></td>
                     <td class="small">
-                        <div><strong>Definition:</strong> Process shuttling anthropogenic impact telemetry between Hiero shards and mirror services.</div>
+                        <div><strong>Definition:</strong> The transport of a Hedera Consensus Service message through the network, treated as an information communication event.</div>
                         
                         
-                        <div class="meta">IRI: https://hashgraphontology.xyz/core/ImpactTelemetryExchange</div>
+                        <div class="meta">IRI: https://hashgraphontology.xyz/core/HCSCommunicationEvent</div>
                     </td>
                 </tr>
             
-                <tr id="cls-hedera-MirrorCommunicationNode">
-                    <td>Mirror communication node</td>
-                    <td>hedera:MirrorCommunicationNode</td>
-                    <td><span class="pill">hedera:MirrorService</span><span class="pill">infocomm:CommunicationNode</span></td>
+                <tr id="cls-hedera-MirrorCommunicationParty">
+                    <td>Mirror communication party</td>
+                    <td>hedera:MirrorCommunicationParty</td>
+                    <td><span class="pill">hedera:MirrorService</span><span class="pill">infocomm:CommunicationParty</span></td>
                     <td class="small">
-                        <div><strong>Definition:</strong> Mirror service interpreted as a communication node within the InfoComm ontology.</div>
+                        <div><strong>Definition:</strong> A Hedera mirror service acting as a receiving communication party for consensus data.</div>
                         
                         
-                        <div class="meta">IRI: https://hashgraphontology.xyz/core/MirrorCommunicationNode</div>
+                        <div class="meta">IRI: https://hashgraphontology.xyz/core/MirrorCommunicationParty</div>
                     </td>
                 </tr>
             
@@ -127,78 +129,64 @@
     </section>
 
     <section class="section">
-        <h2>Properties (5)</h2>
+        <h2>Properties (4)</h2>
         <table>
             <thead><tr><th>Label</th><th>QName</th><th>Kind</th><th>Domain</th><th>Range</th><th>Notes</th></tr></thead>
             <tbody>
             
-                <tr id="prop-hedera-anchorsTelemetryPolicy">
-                    <td>anchors telemetry policy</td>
-                    <td>hedera:anchorsTelemetryPolicy</td>
+                <tr id="prop-hedera-hasCommunicationFormat">
+                    <td>has communication format</td>
+                    <td>hedera:hasCommunicationFormat</td>
                     <td>ObjectProperty</td>
-                    <td><span class="pill">infocomm:CommunicationNode</span></td>
-                    <td><span class="pill">infocomm:ServiceLevelAgreement</span></td>
+                    <td><span class="pill">hedera:HCSCommunicationEvent</span></td>
+                    <td><span class="pill">infocomm:Format</span></td>
                     <td class="small">
                         
-                        <div><strong>SubProperty Of:</strong> <span class="pill">infocomm:boundByAgreement</span></div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">infocomm:hasFormat</span></div>
                         
-                        <div class="meta">IRI: https://hashgraphontology.xyz/core/anchorsTelemetryPolicy</div>
+                        <div class="meta">IRI: https://hashgraphontology.xyz/core/hasCommunicationFormat</div>
                     </td>
                 </tr>
             
-                <tr id="prop-hedera-hasTelemetryLatency">
-                    <td>has telemetry latency</td>
-                    <td>hedera:hasTelemetryLatency</td>
-                    <td>DatatypeProperty</td>
-                    <td><span class="pill">infocomm:CommunicationNode</span></td>
-                    <td><span class="pill">xsd:decimal</span></td>
+                <tr id="prop-hedera-hasConsensusNodeSender">
+                    <td>has consensus node sender</td>
+                    <td>hedera:hasConsensusNodeSender</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:HCSCommunicationEvent</span></td>
+                    <td><span class="pill">infocomm:CommunicationParty</span></td>
                     <td class="small">
                         
-                        <div><strong>SubProperty Of:</strong> <span class="pill">infocomm:hasLatency</span></div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">infocomm:hasSender</span></div>
                         
-                        <div class="meta">IRI: https://hashgraphontology.xyz/core/hasTelemetryLatency</div>
+                        <div class="meta">IRI: https://hashgraphontology.xyz/core/hasConsensusNodeSender</div>
                     </td>
                 </tr>
             
-                <tr id="prop-hedera-publishesImpactDataset">
-                    <td>publishes impact dataset</td>
-                    <td>hedera:publishesImpactDataset</td>
+                <tr id="prop-hedera-hasMirrorRecipient">
+                    <td>has mirror recipient</td>
+                    <td>hedera:hasMirrorRecipient</td>
                     <td>ObjectProperty</td>
-                    <td><span class="pill">infocomm:CommunicationNode</span></td>
-                    <td><span class="pill">hedera:MirrorDataset</span></td>
+                    <td><span class="pill">hedera:HCSCommunicationEvent</span></td>
+                    <td><span class="pill">hedera:MirrorCommunicationParty</span></td>
                     <td class="small">
                         
-                        <div><strong>SubProperty Of:</strong> <span class="pill">infocomm:exposesInterface</span></div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">infocomm:hasRecipient</span></div>
                         
-                        <div class="meta">IRI: https://hashgraphontology.xyz/core/publishesImpactDataset</div>
+                        <div class="meta">IRI: https://hashgraphontology.xyz/core/hasMirrorRecipient</div>
                     </td>
                 </tr>
             
-                <tr id="prop-hedera-routesThroughSegment">
-                    <td>routes through segment</td>
-                    <td>hedera:routesThroughSegment</td>
+                <tr id="prop-hedera-transmitsTopicMessage">
+                    <td>transmits topic message</td>
+                    <td>hedera:transmitsTopicMessage</td>
                     <td>ObjectProperty</td>
-                    <td><span class="pill">hedera:ImpactTelemetryExchange</span></td>
-                    <td><span class="pill">infocomm:NetworkSegment</span></td>
+                    <td><span class="pill">hedera:HCSCommunicationEvent</span></td>
+                    <td><span class="pill">hedera:TopicMessage</span></td>
                     <td class="small">
                         
-                        <div><strong>SubProperty Of:</strong> <span class="pill">infocomm:traversesSegment</span></div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">infocomm:transmits</span></div>
                         
-                        <div class="meta">IRI: https://hashgraphontology.xyz/core/routesThroughSegment</div>
-                    </td>
-                </tr>
-            
-                <tr id="prop-hedera-servedByNode">
-                    <td>served by node</td>
-                    <td>hedera:servedByNode</td>
-                    <td>ObjectProperty</td>
-                    <td><span class="pill">hedera:ImpactTelemetryExchange</span></td>
-                    <td><span class="pill">infocomm:CommunicationNode</span></td>
-                    <td class="small">
-                        
-                        <div><strong>SubProperty Of:</strong> <span class="pill">infocomm:isServedBy</span></div>
-                        
-                        <div class="meta">IRI: https://hashgraphontology.xyz/core/servedByNode</div>
+                        <div class="meta">IRI: https://hashgraphontology.xyz/core/transmitsTopicMessage</div>
                     </td>
                 </tr>
             

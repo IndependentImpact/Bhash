@@ -1,6 +1,6 @@
 @prefix : <https://hashgraphontology.xyz/alignment/impactont/> .
 @prefix hedera: <https://hashgraphontology.xyz/core/> .
-@prefix impactont: <https://w3id.org/impactont#> .
+@prefix impactont: <http://w3id.org/impactont#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -20,7 +20,7 @@
         <https://hashgraphontology.xyz/token> ,
         <https://hashgraphontology.xyz/mirror-analytics> ;
     owl:versionInfo "0.1.0-dev" ;
-    dcterms:source <https://w3id.org/impactont> ;
+    dcterms:source <http://w3id.org/impactont> ;
     rdfs:seeAlso <https://github.com/aiaont/impactont> ;
     skos:editorialNote "Phase 4 bridge module aligning Hedera concepts with the Impact Ontology core model: Events impact Things through States defined by Indicators. See https://github.com/aiaont/impactont for official ontology specification."@en ;
     .
@@ -33,26 +33,26 @@
 hedera:Account
     rdfs:subClassOf impactont:Thing ;
     skos:editorialNote "Accounts are Things whose states (balances, compliance metrics) can be impacted by transactions."@en ;
-    dcterms:source <https://w3id.org/impactont#Thing> ;
+    dcterms:source <http://w3id.org/impactont#Thing> ;
     .
 
 hedera:Token
     rdfs:subClassOf impactont:Thing ;
     skos:editorialNote "Tokens are Things with states (supply, holder distribution) that change through transfer and mint/burn events."@en ;
-    dcterms:source <https://w3id.org/impactont#Thing> ;
+    dcterms:source <http://w3id.org/impactont#Thing> ;
     .
 
 # Hedera Transactions are Events/Impacts that change states
 hedera:Transaction
     rdfs:subClassOf impactont:Event ;
     skos:editorialNote "Transactions are events that impact the state of accounts, tokens, and other Hedera artefacts."@en ;
-    dcterms:source <https://w3id.org/impactont#Event> ;
+    dcterms:source <http://w3id.org/impactont#Event> ;
     .
 
 hedera:ScheduledTransaction
     rdfs:subClassOf impactont:Impact ;
     skos:editorialNote "Scheduled transactions are impacts with explicit provenance, useful for sustainability reporting."@en ;
-    dcterms:source <https://w3id.org/impactont#Impact> ;
+    dcterms:source <http://w3id.org/impactont#Impact> ;
     .
 
 # Hedera-specific Indicator subclasses for sustainability metrics
@@ -62,7 +62,7 @@ hedera:SustainabilityIndicator
     rdfs:subClassOf impactont:Indicator ;
     skos:definition "An indicator used to measure sustainability-related states of Hedera assets, such as carbon credit balances or compliance scores."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/mirror-node/architecture/metrics> ;
-    dcterms:source <https://w3id.org/impactont#Indicator> ;
+    dcterms:source <http://w3id.org/impactont#Indicator> ;
     .
 
 hedera:TreasuryBalanceIndicator
@@ -136,7 +136,7 @@ hedera:impactsAccountState
     rdfs:subPropertyOf impactont:impacts ;
     skos:definition "Relates a Hedera transaction to a state of an account that it impacts."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/transactions/transaction-lifecycle> ;
-    dcterms:source <https://w3id.org/impactont#impacts> ;
+    dcterms:source <http://w3id.org/impactont#impacts> ;
     .
 
 hedera:impactsTokenState
@@ -147,7 +147,7 @@ hedera:impactsTokenState
     rdfs:subPropertyOf impactont:impacts ;
     skos:definition "Relates a Hedera transaction to a state of a token that it impacts."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-relationships> ;
-    dcterms:source <https://w3id.org/impactont#impacts> ;
+    dcterms:source <http://w3id.org/impactont#impacts> ;
     .
 
 hedera:reportsImpactState
