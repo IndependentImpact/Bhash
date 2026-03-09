@@ -1,0 +1,81 @@
+###
+# Canonical instance IRI example
+#
+# This file demonstrates the canonical IRI patterns for Hedera resources as
+# defined in the Bhash Hashgraph Ontology.  Projects should mint instance IRIs
+# using these templates to enable cross-project RDF graph merging and
+# owl:sameAs alignment.
+#
+# Templates:
+#   Account       : https://hashgraphontology.xyz/resource/{network}/account/{shard}.{realm}.{num}
+#   ConsensusTopic: https://hashgraphontology.xyz/resource/{network}/topic/{shard}.{realm}.{num}
+#   TopicMessage  : https://hashgraphontology.xyz/resource/{network}/topic/{shard}.{realm}.{num}/message/{sequenceNumber}
+#   Token         : https://hashgraphontology.xyz/resource/{network}/token/{shard}.{realm}.{num}
+#   SmartContract : https://hashgraphontology.xyz/resource/{network}/contract/{shard}.{realm}.{num}
+#
+# Network values: mainnet | testnet | previewnet
+###
+
+@prefix hedera: <https://hashgraphontology.xyz/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+###
+# Account
+###
+
+<https://hashgraphontology.xyz/resource/testnet/account/0.0.12345>
+    a hedera:Account ;
+    rdfs:label "Testnet account 0.0.12345"@en ;
+    hedera:hasAccountId "0.0.12345" ;
+    .
+
+###
+# Consensus Topic
+###
+
+<https://hashgraphontology.xyz/resource/testnet/topic/0.0.12345>
+    a hedera:ConsensusTopic ;
+    rdfs:label "Testnet topic 0.0.12345"@en ;
+    .
+
+###
+# Topic Message
+###
+
+<https://hashgraphontology.xyz/resource/testnet/topic/0.0.12345/message/987>
+    a hedera:TopicMessage ;
+    rdfs:label "Message 987 on testnet topic 0.0.12345"@en ;
+    hedera:hasSequenceNumber 987 ;
+    prov:generatedAtTime "2026-03-09T10:11:12.123Z"^^xsd:dateTime ;
+    .
+
+###
+# Token
+###
+
+<https://hashgraphontology.xyz/resource/mainnet/token/0.0.54321>
+    a hedera:Token ;
+    rdfs:label "Mainnet token 0.0.54321"@en ;
+    hedera:hasTokenId "0.0.54321" ;
+    .
+
+###
+# Smart Contract
+###
+
+<https://hashgraphontology.xyz/resource/mainnet/contract/0.0.98765>
+    a hedera:SmartContract ;
+    rdfs:label "Mainnet contract 0.0.98765"@en ;
+    hedera:hasContractId "0.0.98765" ;
+    .
+
+###
+# owl:sameAs alignment example
+# A project that minted its own local IRI can declare equivalence:
+###
+
+<https://example.org/myapp/topics/testnet-12345>
+    owl:sameAs <https://hashgraphontology.xyz/resource/testnet/topic/0.0.12345> .

@@ -38,6 +38,7 @@ hedera:SmartContract
     rdfs:subClassOf hedera:Artefact ;
     skos:definition "Deployed EVM bytecode managed by the Smart Contract Service with an associated contract account."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/smart-contracts/introduction> ;
+    hedera:instanceIRIPattern "https://hashgraphontology.xyz/resource/{network}/contract/{shard}.{realm}.{num}"@en ;
     .
 
 hedera:ContractAccount
