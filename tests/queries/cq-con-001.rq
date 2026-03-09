@@ -1,0 +1,10 @@
+PREFIX hedera: <https://hashgraphontology.xyz/core/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?message ?sequenceNumber ?consensusTimestamp
+WHERE {
+  ?message a hedera:TopicMessage ;
+           hedera:hasSequenceNumber ?sequenceNumber ;
+           hedera:hasConsensusTimestamp ?consensusTimestamp .
+}
+ORDER BY ?sequenceNumber

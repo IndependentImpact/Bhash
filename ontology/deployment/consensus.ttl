@@ -1,6 +1,7 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix hedera: <https://hashgraphontology.xyz/core/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -57,6 +58,14 @@ hedera:hasAdminKey a owl:ObjectProperty ;
     rdfs:range hedera:TopicAdminKey ;
     rdfs:subPropertyOf hedera:hasTopicKey ;
     skos:definition "Identifies the admin key responsible for topic lifecycle changes."@en .
+
+hedera:hasConsensusTimestamp a owl:DatatypeProperty ;
+    rdfs:label "has consensus timestamp"@en ;
+    rdfs:domain hedera:TopicMessage ;
+    rdfs:range xsd:dateTime ;
+    rdfs:subPropertyOf prov:generatedAtTime ;
+    skos:definition "Consensus-assigned timestamp recording when the topic message achieved ordering finality."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/message-flows> .
 
 hedera:hasEndpointAddress a owl:DatatypeProperty ;
     rdfs:label "has endpoint address"@en ;
@@ -205,11 +214,13 @@ hedera:ConsensusTopic a owl:Class ;
     rdfs:label "Consensus topic"@en ;
     rdfs:subClassOf hedera:Artefact ;
     skos:definition "Ordered message channel configured with administrator, submit, and auto-renew keys."@en ;
+    hedera:instanceIRIPattern "https://hashgraphontology.xyz/resource/{network}/topic/{shard}.{realm}.{num}"@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/topics> .
 
 hedera:TopicMessage a owl:Class ;
     rdfs:label "Topic message"@en ;
     rdfs:subClassOf hedera:Event ;
     skos:definition "Individual message submitted to a consensus topic and assigned a consensus timestamp."@en ;
+    hedera:instanceIRIPattern "https://hashgraphontology.xyz/resource/{network}/topic/{shard}.{realm}.{num}/message/{sequenceNumber}"@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/message-flows> .
 

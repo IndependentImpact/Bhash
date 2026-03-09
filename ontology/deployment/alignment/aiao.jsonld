@@ -1,120 +1,5 @@
 [
   {
-    "@id": "https://hashgraphontology.xyz/core/ConsensusImpactAssertion",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@id": "https://w3id.org/aiao#ImpactClaim"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Consensus impact assertion"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/TopicMessage"
-      },
-      {
-        "@id": "https://w3id.org/aiao#ImpactClaim"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Consensus Service message curated to substantiate an anthropogenic impact claim."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/message-flows"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/MirrorImpactIndicator",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@id": "https://w3id.org/impactont#Indicator"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Mirror impact indicator"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/TelemetryMetric"
-      },
-      {
-        "@id": "https://w3id.org/impactont#Indicator"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Telemetry metric derived from mirror analytics that feeds anthropogenic impact indicator dashboards."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hedera/mirror-node/architecture/metrics"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/deliveredBySchedule",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@id": "https://w3id.org/aiao#ImpactClaim"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aiao#ImpactClaim"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "delivered by schedule"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/ScheduledTransaction"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.w3.org/ns/prov#wasDerivedFrom"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Associates an impact claim with the scheduled transaction that operationalised it."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/how-scheduled-transactions-work"
-      }
-    ]
-  },
-  {
     "@id": "https://hashgraphontology.xyz/alignment/aiao",
     "@type": [
       "http://www.w3.org/2002/07/owl#Ontology"
@@ -219,6 +104,49 @@
     ]
   },
   {
+    "@id": "https://hashgraphontology.xyz/core/capturesImpactWindow",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@id": "https://w3id.org/impactont#hasTemporalLocation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aiao#ImpactClaim"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "captures impact window"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/impactont#hasTemporalLocation"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Specifies the reporting window for an impact claim expressed with Hedera data."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts/transactions/transaction-lifecycle"
+      }
+    ]
+  },
+  {
     "@id": "https://hashgraphontology.xyz/core/StablecoinReserveAssertion",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
@@ -251,49 +179,6 @@
     "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://hips.hedera.com/hip/hip-540"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/referencesMirrorDataset",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@id": "https://w3id.org/claimont#isSupportedBy"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/aiao#ImpactClaim"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "references mirror dataset"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/MirrorDataset"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/claimont#isSupportedBy"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Connects an impact claim to the mirror dataset furnishing evidentiary support."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hedera/mirror-node/sdks-and-apis/rest-api"
       }
     ]
   },
@@ -341,13 +226,49 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/capturesImpactWindow",
+    "@id": "https://hashgraphontology.xyz/core/ConsensusImpactAssertion",
     "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+      "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://purl.org/dc/terms/source": [
       {
-        "@id": "https://w3id.org/impactont#hasTemporalLocation"
+        "@id": "https://w3id.org/aiao#ImpactClaim"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Consensus impact assertion"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/TopicMessage"
+      },
+      {
+        "@id": "https://w3id.org/aiao#ImpactClaim"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Consensus Service message curated to substantiate an anthropogenic impact claim."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/message-flows"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/referencesMirrorDataset",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@id": "https://w3id.org/claimont#isSupportedBy"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
@@ -358,28 +279,107 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "captures impact window"
+        "@value": "references mirror dataset"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
+        "@id": "https://hashgraphontology.xyz/core/MirrorDataset"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "https://w3id.org/impactont#hasTemporalLocation"
+        "@id": "https://w3id.org/claimont#isSupportedBy"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Specifies the reporting window for an impact claim expressed with Hedera data."
+        "@value": "Connects an impact claim to the mirror dataset furnishing evidentiary support."
       }
     ],
     "https://hashgraphontology.xyz/core/sourceDocument": [
       {
-        "@id": "https://docs.hedera.com/hedera/core-concepts/transactions/transaction-lifecycle"
+        "@id": "https://docs.hedera.com/hedera/mirror-node/sdks-and-apis/rest-api"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/deliveredBySchedule",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@id": "https://w3id.org/aiao#ImpactClaim"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/aiao#ImpactClaim"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "delivered by schedule"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/ScheduledTransaction"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.w3.org/ns/prov#wasDerivedFrom"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Associates an impact claim with the scheduled transaction that operationalised it."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/how-scheduled-transactions-work"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/MirrorImpactIndicator",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@id": "https://w3id.org/impactont#Indicator"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Mirror impact indicator"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/TelemetryMetric"
+      },
+      {
+        "@id": "https://w3id.org/impactont#Indicator"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Telemetry metric derived from mirror analytics that feeds anthropogenic impact indicator dashboards."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/mirror-node/architecture/metrics"
       }
     ]
   }

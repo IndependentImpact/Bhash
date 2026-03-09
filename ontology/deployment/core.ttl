@@ -170,6 +170,10 @@ hedera:hasShard a owl:ObjectProperty ;
     skos:definition "Relates a network to a Hiero shard subdivision."@en ;
     hedera:sourceDocument <https://hips.hedera.com/hip/hip-840> .
 
+hedera:instanceIRIPattern a owl:AnnotationProperty ;
+    rdfs:label "instance IRI pattern"@en ;
+    skos:definition "URI template describing the canonical IRI scheme for instances of a class.  Network values are mainnet, testnet, or previewnet.  The shard.realm.num segments follow the native Hedera entity-ID format."@en .
+
 hedera:operatesService a owl:ObjectProperty ;
     rdfs:label "operates service"@en ;
     rdfs:domain hedera:Actor ;
@@ -636,6 +640,7 @@ hedera:Account a owl:Class ;
             owl:someValuesFrom xsd:string ],
         hedera:Actor ;
     skos:definition "On-ledger identity storing keys, balances, and staking configuration for participation in Hedera services."@en ;
+    hedera:instanceIRIPattern "https://hashgraphontology.xyz/resource/{network}/account/{shard}.{realm}.{num}"@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/accounts> .
 
 hedera:Actor a owl:Class ;

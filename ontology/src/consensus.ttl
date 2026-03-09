@@ -295,3 +295,13 @@ hedera:hasMessageContent
     rdfs:range xsd:string ;
     skos:definition "Payload content of a topic message."@en ;
     .
+
+hedera:hasConsensusTimestamp
+    a owl:DatatypeProperty ;
+    rdfs:label "has consensus timestamp"@en ;
+    rdfs:domain hedera:TopicMessage ;
+    rdfs:range xsd:dateTime ;
+    rdfs:subPropertyOf prov:generatedAtTime ;
+    skos:definition "Consensus-assigned timestamp recording when the topic message achieved ordering finality."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/message-flows> ;
+    .

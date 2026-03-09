@@ -37,23 +37,25 @@
             
                 <tr><td>ns1</td><td>https://hashgraphontology.xyz/</td></tr>
             
-                <tr><td>ns2</td><td>https://docs.hedera.com/hedera/core-concepts/</td></tr>
+                <tr><td>ns2</td><td>https://hedera.com/</td></tr>
             
-                <tr><td>ns3</td><td>https://docs.hedera.com/hedera/core-concepts/governing-the-network#</td></tr>
+                <tr><td>ns3</td><td>https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/</td></tr>
             
-                <tr><td>ns4</td><td>https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/</td></tr>
+                <tr><td>ns4</td><td>https://docs.hedera.com/hedera/core-concepts/</td></tr>
             
-                <tr><td>ns5</td><td>https://hedera.com/</td></tr>
+                <tr><td>ns5</td><td>https://hips.hedera.com/hip/</td></tr>
             
                 <tr><td>ns6</td><td>https://docs.hedera.com/hedera/mirror-node/architecture/</td></tr>
             
-                <tr><td>ns7</td><td>https://hips.hedera.com/hip/</td></tr>
+                <tr><td>ns7</td><td>https://raw.githubusercontent.com/hashgraph/hedera-docs/main/core-concepts/staking/staking.md#</td></tr>
             
-                <tr><td>ns8</td><td>https://raw.githubusercontent.com/hashgraph/hedera-docs/main/core-concepts/staking/staking.md#</td></tr>
+                <tr><td>ns8</td><td>https://docs.hedera.com/hedera/core-concepts/staking/</td></tr>
             
-                <tr><td>ns9</td><td>https://docs.hedera.com/hedera/core-concepts/staking/</td></tr>
+                <tr><td>ns9</td><td>https://docs.hedera.com/hedera/core-concepts/governing-the-network#</td></tr>
             
                 <tr><td>owl</td><td>http://www.w3.org/2002/07/owl#</td></tr>
+            
+                <tr><td>prov</td><td>http://www.w3.org/ns/prov#</td></tr>
             
                 <tr><td>rdf</td><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#</td></tr>
             
@@ -210,7 +212,7 @@
     </section>
 
     <section class="section">
-        <h2>Properties (21)</h2>
+        <h2>Properties (22)</h2>
         <table>
             <thead><tr><th>Label</th><th>QName</th><th>Kind</th><th>Domain</th><th>Range</th><th>Notes</th></tr></thead>
             <tbody>
@@ -282,6 +284,20 @@
                         <div><strong>SubProperty Of:</strong> <span class="pill">hedera:hasTopicKey</span></div>
                         
                         <div class="meta">IRI: https://hashgraphontology.xyz/core/hasAdminKey</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasConsensusTimestamp">
+                    <td>has consensus timestamp</td>
+                    <td>hedera:hasConsensusTimestamp</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:TopicMessage</span></td>
+                    <td><span class="pill">xsd:dateTime</span></td>
+                    <td class="small">
+                        
+                        <div><strong>SubProperty Of:</strong> <span class="pill">prov:generatedAtTime</span></div>
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyz/core/hasConsensusTimestamp</div>
                     </td>
                 </tr>
             
