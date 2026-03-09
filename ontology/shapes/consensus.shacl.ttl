@@ -2,6 +2,17 @@
 @prefix hedera: <https://hashgraphontology.xyz/core/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+hedera:TopicMessageShape
+    a sh:NodeShape ;
+    sh:targetClass hedera:TopicMessage ;
+    sh:property [
+        sh:path hedera:hasConsensusTimestamp ;
+        sh:datatype xsd:dateTime ;
+        sh:maxCount 1 ;
+        sh:message "A TopicMessage must have at most one consensus timestamp of type xsd:dateTime."@en ;
+    ] ;
+    .
+
 hedera:ConsensusNodeGovernanceShape
     a sh:NodeShape ;
     sh:targetClass hedera:ConsensusNode ;

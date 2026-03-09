@@ -230,3 +230,16 @@ ex:ConsensusTransactionMirrorRecord
     dcterms:description "Mirror API entry"@en ;
     prov:wasGeneratedBy ex:ConsensusTransactionExport ;
     .
+
+ex:TopicAlpha
+    a hedera:ConsensusTopic ;
+    rdfs:label "Topic alpha"@en ;
+    hedera:hasTopicId "0.0.12345" ;
+    .
+
+ex:TopicAlphaMessage987
+    a hedera:TopicMessage ;
+    rdfs:label "Topic alpha message 987"@en ;
+    hedera:hasSequenceNumber 987 ;
+    hedera:hasConsensusTimestamp "2026-03-09T10:11:12.123Z"^^xsd:dateTime ;
+    .

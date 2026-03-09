@@ -341,5 +341,6 @@ hedera:Token a owl:Class ;
     rdfs:label "Token"@en ;
     rdfs:subClassOf hedera:Artefact ;
     skos:definition "Digital asset managed by the Token Service with associated supply, metadata, and key governance."@en ;
+    hedera:instanceIRIPattern "https://hashgraphontology.xyz/resource/{network}/token/{shard}.{realm}.{num}"@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/sdks-and-apis/token-service/introduction> .
 
