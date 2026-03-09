@@ -38,6 +38,7 @@ hedera:ConsensusTopic
     rdfs:subClassOf hedera:Artefact ;
     skos:definition "Ordered message channel configured with administrator, submit, and auto-renew keys."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/topics> ;
+    hedera:instanceIRIPattern "https://hashgraphontology.xyz/resource/{network}/topic/{shard}.{realm}.{num}"@en ;
     .
 
 hedera:TopicMessage
@@ -46,6 +47,7 @@ hedera:TopicMessage
     rdfs:subClassOf hedera:Event ;
     skos:definition "Individual message submitted to a consensus topic and assigned a consensus timestamp."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/message-flows> ;
+    hedera:instanceIRIPattern "https://hashgraphontology.xyz/resource/{network}/topic/{shard}.{realm}.{num}/message/{sequenceNumber}"@en ;
     .
 
 hedera:TopicAdminKey

@@ -23,6 +23,41 @@ By modelling Hedera's public documentation and implementation guidance—includi
 * **Reasoning & validation** – enable automated validation (via OWL reasoning and SHACL constraints) for network states, policy rules, token compliance requirements, smart contract metadata, and Hiero onboarding milestones.
 * **Documentation** – provide an authoritative reference that augments Hedera/Hiero manuals with explicit relationships that are otherwise scattered across prose and code.
 
+## Canonical instance IRI patterns
+
+To enable cross-project RDF graph merging and `owl:sameAs` alignment, all Hedera resource instances should be minted using the following deterministic, stable IRI scheme:
+
+| Resource | IRI pattern |
+| -------- | ----------- |
+| Account | `https://hashgraphontology.xyz/resource/{network}/account/{shard}.{realm}.{num}` |
+| Consensus Topic | `https://hashgraphontology.xyz/resource/{network}/topic/{shard}.{realm}.{num}` |
+| Topic Message | `https://hashgraphontology.xyz/resource/{network}/topic/{shard}.{realm}.{num}/message/{sequenceNumber}` |
+| Token | `https://hashgraphontology.xyz/resource/{network}/token/{shard}.{realm}.{num}` |
+| Smart Contract | `https://hashgraphontology.xyz/resource/{network}/contract/{shard}.{realm}.{num}` |
+
+`{network}` is one of `mainnet`, `testnet`, or `previewnet`.  `{shard}.{realm}.{num}` follows the native Hedera entity-ID format (e.g., `0.0.12345`).  `{sequenceNumber}` is the consensus-assigned integer sequence number for a topic message.
+
+Example usage:
+
+```turtle
+<https://hashgraphontology.xyz/resource/testnet/topic/0.0.12345>
+    a hedera:ConsensusTopic .
+
+<https://hashgraphontology.xyz/resource/testnet/topic/0.0.12345/message/987>
+    a hedera:TopicMessage ;
+    hedera:hasSequenceNumber 987 ;
+    prov:generatedAtTime "2026-03-09T10:11:12.123Z"^^xsd:dateTime .
+```
+
+A working example with all five resource types is provided in `ontology/examples/canonical-iris.ttl`.  SHACL shapes that warn when instances deviate from these patterns are in `ontology/shapes/instance-iris.shacl.ttl`.  The `hedera:instanceIRIPattern` annotation property on each class also encodes the template for tooling that reads the ontology directly.
+
+Projects that have already minted local IRIs can align them via:
+
+```turtle
+<https://example.org/myapp/topics/testnet-12345>
+    owl:sameAs <https://hashgraphontology.xyz/resource/testnet/topic/0.0.12345> .
+```
+
 ## Current Phase 3 deliverables
 
 Phase 3 targets service-specific ontology modules. The following artefacts are now available:

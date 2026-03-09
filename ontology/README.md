@@ -41,6 +41,25 @@ Phase 3 expands the catalogue with the remaining service modules:
 All IRIs follow the canonical namespace `https://hashgraphontology.xyz/`.  Additional namespaces (e.g., `/governance/`, `/hts/`)
 are introduced per module so downstream integrations can import the specific slices they require.
 
+### Canonical instance IRI scheme
+
+Instance IRIs for key Hedera resources follow a stable, deterministic pattern under
+`https://hashgraphontology.xyz/resource/`:
+
+| Class | Pattern |
+| ----- | ------- |
+| `hedera:Account` | `…/resource/{network}/account/{shard}.{realm}.{num}` |
+| `hedera:ConsensusTopic` | `…/resource/{network}/topic/{shard}.{realm}.{num}` |
+| `hedera:TopicMessage` | `…/resource/{network}/topic/{shard}.{realm}.{num}/message/{sequenceNumber}` |
+| `hedera:Token` | `…/resource/{network}/token/{shard}.{realm}.{num}` |
+| `hedera:SmartContract` | `…/resource/{network}/contract/{shard}.{realm}.{num}` |
+
+`{network}` is `mainnet`, `testnet`, or `previewnet`.
+
+Each class carries a `hedera:instanceIRIPattern` annotation encoding its template.  SHACL
+shapes under `shapes/instance-iris.shacl.ttl` warn when instance IRIs deviate from the
+scheme.  A worked example is in `examples/canonical-iris.ttl`.
+
 ### Example data
 
 - `examples/core-consensus.ttl` provides a small worked example showing a mainnet validator, its staking account, the governing

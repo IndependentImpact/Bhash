@@ -1,0 +1,65 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix hedera: <https://hashgraphontology.xyz/core/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+###
+# Canonical instance IRI shapes
+#
+# These shapes validate that instances of key Hedera resource classes use the
+# canonical IRI scheme defined in hashgraphontology.xyz/resource/.  The pattern
+# for each class is:
+#
+#   Account  : https://hashgraphontology.xyz/resource/{network}/account/{shard}.{realm}.{num}
+#   ConsensusTopic : https://hashgraphontology.xyz/resource/{network}/topic/{shard}.{realm}.{num}
+#   TopicMessage   : https://hashgraphontology.xyz/resource/{network}/topic/{shard}.{realm}.{num}/message/{sequenceNumber}
+#   Token          : https://hashgraphontology.xyz/resource/{network}/token/{shard}.{realm}.{num}
+#   SmartContract  : https://hashgraphontology.xyz/resource/{network}/contract/{shard}.{realm}.{num}
+#
+# Network values: mainnet | testnet | previewnet
+# shard.realm.num uses non-negative integers (e.g., 0.0.12345)
+###
+
+hedera:AccountIRIShape
+    a sh:NodeShape ;
+    sh:targetClass hedera:Account ;
+    sh:nodeKind sh:IRI ;
+    sh:pattern "^https://hashgraphontology\\.xyz/resource/(mainnet|testnet|previewnet)/account/\\d+\\.\\d+\\.\\d+$" ;
+    sh:message "Account IRIs must follow the canonical pattern https://hashgraphontology.xyz/resource/{network}/account/{shard}.{realm}.{num} where network is mainnet, testnet, or previewnet."@en ;
+    sh:severity sh:Warning ;
+    .
+
+hedera:ConsensusTopicIRIShape
+    a sh:NodeShape ;
+    sh:targetClass hedera:ConsensusTopic ;
+    sh:nodeKind sh:IRI ;
+    sh:pattern "^https://hashgraphontology\\.xyz/resource/(mainnet|testnet|previewnet)/topic/\\d+\\.\\d+\\.\\d+$" ;
+    sh:message "ConsensusTopic IRIs must follow the canonical pattern https://hashgraphontology.xyz/resource/{network}/topic/{shard}.{realm}.{num} where network is mainnet, testnet, or previewnet."@en ;
+    sh:severity sh:Warning ;
+    .
+
+hedera:TopicMessageIRIShape
+    a sh:NodeShape ;
+    sh:targetClass hedera:TopicMessage ;
+    sh:nodeKind sh:IRI ;
+    sh:pattern "^https://hashgraphontology\\.xyz/resource/(mainnet|testnet|previewnet)/topic/\\d+\\.\\d+\\.\\d+/message/\\d+$" ;
+    sh:message "TopicMessage IRIs must follow the canonical pattern https://hashgraphontology.xyz/resource/{network}/topic/{shard}.{realm}.{num}/message/{sequenceNumber} where network is mainnet, testnet, or previewnet."@en ;
+    sh:severity sh:Warning ;
+    .
+
+hedera:TokenIRIShape
+    a sh:NodeShape ;
+    sh:targetClass hedera:Token ;
+    sh:nodeKind sh:IRI ;
+    sh:pattern "^https://hashgraphontology\\.xyz/resource/(mainnet|testnet|previewnet)/token/\\d+\\.\\d+\\.\\d+$" ;
+    sh:message "Token IRIs must follow the canonical pattern https://hashgraphontology.xyz/resource/{network}/token/{shard}.{realm}.{num} where network is mainnet, testnet, or previewnet."@en ;
+    sh:severity sh:Warning ;
+    .
+
+hedera:SmartContractIRIShape
+    a sh:NodeShape ;
+    sh:targetClass hedera:SmartContract ;
+    sh:nodeKind sh:IRI ;
+    sh:pattern "^https://hashgraphontology\\.xyz/resource/(mainnet|testnet|previewnet)/contract/\\d+\\.\\d+\\.\\d+$" ;
+    sh:message "SmartContract IRIs must follow the canonical pattern https://hashgraphontology.xyz/resource/{network}/contract/{shard}.{realm}.{num} where network is mainnet, testnet, or previewnet."@en ;
+    sh:severity sh:Warning ;
+    .

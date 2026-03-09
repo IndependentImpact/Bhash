@@ -37,6 +37,12 @@ hedera:sourceDocument
     skos:definition "Reference link to Hedera or Hiero documentation that supports an ontology element."@en ;
     .
 
+hedera:instanceIRIPattern
+    a owl:AnnotationProperty ;
+    rdfs:label "instance IRI pattern"@en ;
+    skos:definition "URI template describing the canonical IRI scheme for instances of a class.  Network values are mainnet, testnet, or previewnet.  The shard.realm.num segments follow the native Hedera entity-ID format."@en ;
+    .
+
 ###
 # Core classes
 ###
@@ -129,6 +135,7 @@ hedera:Account
     rdfs:subClassOf hedera:Actor ;
     skos:definition "On-ledger identity storing keys, balances, and staking configuration for participation in Hedera services."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/accounts> ;
+    hedera:instanceIRIPattern "https://hashgraphontology.xyz/resource/{network}/account/{shard}.{realm}.{num}"@en ;
     .
 
 hedera:AccountKey
