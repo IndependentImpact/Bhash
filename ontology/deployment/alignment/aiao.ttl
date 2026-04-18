@@ -1,8 +1,8 @@
-@prefix aiao: <https://w3id.org/aiao#> .
-@prefix claimont: <https://w3id.org/claimont#> .
+@prefix aiao: <http://w3id.org/aiao#> .
+@prefix claimont: <http://w3id.org/claimont#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix hedera: <https://hashgraphontology.xyz/core/> .
-@prefix impactont: <https://w3id.org/impactont#> .
+@prefix impactont: <http://w3id.org/impactont#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -25,33 +25,33 @@
 hedera:ConsensusImpactAssertion a owl:Class ;
     rdfs:label "Consensus impact assertion"@en ;
     dcterms:source aiao:ImpactClaim ;
-    rdfs:subClassOf hedera:TopicMessage,
-        aiao:ImpactClaim ;
+    rdfs:subClassOf aiao:ImpactClaim,
+        hedera:TopicMessage ;
     skos:definition "Consensus Service message curated to substantiate an anthropogenic impact claim."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/message-flows> .
 
 hedera:MirrorImpactIndicator a owl:Class ;
     rdfs:label "Mirror impact indicator"@en ;
     dcterms:source impactont:Indicator ;
-    rdfs:subClassOf hedera:TelemetryMetric,
-        impactont:Indicator ;
+    rdfs:subClassOf impactont:Indicator,
+        hedera:TelemetryMetric ;
     skos:definition "Telemetry metric derived from mirror analytics that feeds anthropogenic impact indicator dashboards."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/mirror-node/architecture/metrics> .
 
 hedera:StablecoinReserveAssertion a owl:Class ;
     rdfs:label "Stablecoin reserve assertion"@en ;
     dcterms:source aiao:ImpactClaim ;
-    rdfs:subClassOf hedera:TokenEvent,
-        aiao:ImpactClaim ;
+    rdfs:subClassOf aiao:ImpactClaim,
+        hedera:TokenEvent ;
     skos:definition "Token event demonstrating reserve movements that underpin sustainability-linked commitments."@en ;
     hedera:sourceDocument <https://hips.hedera.com/hip/hip-540> .
 
 hedera:capturesImpactWindow a owl:DatatypeProperty ;
     rdfs:label "captures impact window"@en ;
-    dcterms:source impactont:hasTemporalLocation ;
+    dcterms:source impactont:TemporalLocation ;
     rdfs:domain aiao:ImpactClaim ;
     rdfs:range xsd:string ;
-    rdfs:subPropertyOf impactont:hasTemporalLocation ;
+    rdfs:seeAlso impactont:hasTemporalLocation ;
     skos:definition "Specifies the reporting window for an impact claim expressed with Hedera data."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/transactions/transaction-lifecycle> .
 

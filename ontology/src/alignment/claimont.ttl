@@ -1,6 +1,6 @@
 @prefix : <https://hashgraphontology.xyz/alignment/claimont/> .
 @prefix hedera: <https://hashgraphontology.xyz/core/> .
-@prefix claimont: <https://w3id.org/claimont#> .
+@prefix claimont: <http://w3id.org/claimont#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -12,94 +12,97 @@
 <https://hashgraphontology.xyz/alignment/claimont>
     a owl:Ontology ;
     dcterms:title "ClaimOnt alignment module"@en ;
-    dcterms:description "Aligns Hedera scheduled transactions and governance commitments with ClaimOnt climate mitigation and adaptation concepts."@en ;
+    dcterms:description "Aligns Hedera governance decisions, scheduled transactions, and consensus records with the Claim Ontology, mapping on-chain artefacts to claims and their substantiation."@en ;
     dcterms:creator "Bhash Ontology Working Group"@en ;
     dcterms:created "2025-10-01"^^xsd:date ;
-    dcterms:modified "2025-10-01"^^xsd:date ;
+    dcterms:modified "2025-10-15"^^xsd:date ;
     owl:imports <https://hashgraphontology.xyz/core> ,
-        <https://hashgraphontology.xyz/file-schedule> ;
+        <https://hashgraphontology.xyz/file-schedule> ,
+        <https://hashgraphontology.xyz/consensus> ;
     owl:versionInfo "0.1.0-dev" ;
-    skos:editorialNote "Phase 4 bridge module mapping scheduled sustainability actions to ClaimOnt mitigation and adaptation taxonomies."@en ;
+    dcterms:source <http://w3id.org/claimont> ;
+    rdfs:seeAlso <https://github.com/aiaont/claimont> ;
+    skos:editorialNote "Phase 4 bridge module aligning Hedera on-chain artefacts with the Claim Ontology core model: Claims are made by Claimants, substantiated by Substantiations, and may comprise sub-claims."@en ;
     .
 
 ###
 # Alignment classes
 ###
 
-hedera:ScheduledMitigationAction
+hedera:HederaSubstantiation
     a owl:Class ;
-    rdfs:label "Scheduled mitigation action"@en ;
+    rdfs:label "Hedera substantiation"@en ;
+    rdfs:subClassOf hedera:TopicMessage ,
+        claimont:Substantiation ;
+    skos:definition "A Hedera Consensus Service message that provides immutable on-chain evidence as substantiation for a claim."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/message-flows> ;
+    dcterms:source <http://w3id.org/claimont#Substantiation> ;
+    .
+
+hedera:ScheduledReport
+    a owl:Class ;
+    rdfs:label "Scheduled report"@en ;
     rdfs:subClassOf hedera:ScheduledTransaction ,
-        claimont:MitigationAction ;
-    skos:definition "Scheduled transaction whose execution funds or enables a climate mitigation activity."@en ;
+        claimont:Report ;
+    skos:definition "A scheduled transaction whose execution produces a structured on-chain report within the meaning of the Claim Ontology."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/introduction> ;
-    dcterms:source <https://w3id.org/claimont#MitigationAction> ;
+    dcterms:source <http://w3id.org/claimont#Report> ;
     .
 
-hedera:ClimateAdaptationSchedule
+hedera:GovernanceClaim
     a owl:Class ;
-    rdfs:label "Climate adaptation schedule"@en ;
-    rdfs:subClassOf hedera:ScheduledTransaction ,
-        claimont:AdaptationCommitment ;
-    skos:definition "Scheduled transaction capturing staged funding for adaptation programmes."@en ;
-    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/how-scheduled-transactions-work> ;
-    dcterms:source <https://w3id.org/claimont#AdaptationCommitment> ;
-    .
-
-hedera:ResilienceMilestone
-    a owl:Class ;
-    rdfs:label "Resilience milestone"@en ;
-    rdfs:subClassOf hedera:Event ,
-        claimont:ResilienceOutcome ;
-    skos:definition "Network event used as a milestone for tracking adaptation commitments."@en ;
-    hedera:sourceDocument <https://docs.hedera.com/hiero/roadmap> ;
-    dcterms:source <https://w3id.org/claimont#ResilienceOutcome> ;
+    rdfs:label "Governance claim"@en ;
+    rdfs:subClassOf hedera:GovernanceDecision ,
+        claimont:Claim ;
+    skos:definition "A governance decision recorded on-chain as a formal claim within the meaning of the Claim Ontology."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/governing-the-network> ;
+    dcterms:source <http://w3id.org/claimont#Claim> ;
     .
 
 ###
 # Alignment properties
 ###
 
-hedera:advancesClimateObjective
+hedera:substantiatedByRecord
     a owl:ObjectProperty ;
-    rdfs:label "advances climate objective"@en ;
-    rdfs:domain hedera:ScheduledTransaction ;
-    rdfs:range claimont:ClimateObjective ;
-    rdfs:subPropertyOf claimont:advancesObjective ;
-    skos:definition "Associates a scheduled transaction with the climate objective it advances."@en ;
-    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/introduction> ;
-    dcterms:source <https://w3id.org/claimont#advancesObjective> ;
+    rdfs:label "substantiated by record"@en ;
+    rdfs:domain claimont:Claim ;
+    rdfs:range hedera:HederaSubstantiation ;
+    rdfs:subPropertyOf claimont:isSupportedBy ;
+    skos:definition "Associates a claim with the immutable Hedera Consensus Service record that substantiates it."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/message-flows> ;
+    dcterms:source <http://w3id.org/claimont#isSupportedBy> ;
     .
 
-hedera:linkedImpactAssertion
+hedera:hasClaimSubject
     a owl:ObjectProperty ;
-    rdfs:label "linked impact assertion"@en ;
-    rdfs:domain hedera:ScheduledTransaction ;
-    rdfs:range claimont:ImpactStatement ;
-    rdfs:subPropertyOf claimont:documentsOutcome ;
-    skos:definition "Connects a scheduled action to the impact statement documenting its execution."@en ;
-    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/how-scheduled-transactions-work> ;
-    dcterms:source <https://w3id.org/claimont#ImpactStatement> ;
+    rdfs:label "has claim subject"@en ;
+    rdfs:domain claimont:Claim ;
+    rdfs:range hedera:Account ;
+    rdfs:subPropertyOf claimont:hasSubject ;
+    skos:definition "Identifies the Hedera account that is the subject of a claim."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/governing-the-network> ;
+    dcterms:source <http://w3id.org/claimont#hasSubject> ;
     .
 
-hedera:tracksResilienceMilestone
+hedera:claimMadeByAccount
     a owl:ObjectProperty ;
-    rdfs:label "tracks resilience milestone"@en ;
-    rdfs:domain hedera:ScheduledTransaction ;
-    rdfs:range hedera:ResilienceMilestone ;
-    rdfs:subPropertyOf claimont:monitorsIndicator ;
-    skos:definition "Identifies the network milestone used to evidence progress against a climate action."@en ;
-    hedera:sourceDocument <https://docs.hedera.com/hiero/roadmap> ;
-    dcterms:source <https://w3id.org/claimont#monitorsIndicator> ;
+    rdfs:label "claim made by account"@en ;
+    rdfs:domain claimont:Claim ;
+    rdfs:range hedera:Account ;
+    rdfs:subPropertyOf claimont:isMadeBy ;
+    skos:definition "Associates a claim with the Hedera account acting as the claimant."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/governing-the-network> ;
+    dcterms:source <http://w3id.org/claimont#isMadeBy> ;
     .
 
-hedera:hasClimateWindow
-    a owl:DatatypeProperty ;
-    rdfs:label "has climate window"@en ;
-    rdfs:domain hedera:ScheduledTransaction ;
-    rdfs:range xsd:string ;
-    rdfs:subPropertyOf claimont:hasReportingPeriod ;
-    skos:definition "Specifies the reporting period for a scheduled climate commitment."@en ;
-    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/how-scheduled-transactions-work> ;
-    dcterms:source <https://w3id.org/claimont#hasReportingPeriod> ;
+hedera:comprisesClaimRecord
+    a owl:ObjectProperty ;
+    rdfs:label "comprises claim record"@en ;
+    rdfs:domain claimont:Claim ;
+    rdfs:range claimont:Claim ;
+    rdfs:subPropertyOf claimont:comprisesClaims ;
+    skos:definition "A composite on-chain claim comprises individual sub-claims recorded on the Hedera network."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/governing-the-network> ;
+    dcterms:source <http://w3id.org/claimont#comprisesClaims> ;
     .

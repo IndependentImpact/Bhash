@@ -38,8 +38,8 @@
     <header>
         <h1>ClaimOnt alignment module</h1>
         <div class="meta">IRI: <a href="https://hashgraphontology.xyz/alignment/claimont">https://hashgraphontology.xyz/alignment/claimont</a></div>
-        <p>Aligns Hedera scheduled transactions and governance commitments with ClaimOnt climate mitigation and adaptation concepts.</p>
-        <p class="meta">Source file: alignment/claimont.ttl</p>
+        <p>Aligns Hedera governance decisions, scheduled transactions, and consensus records with the Claim Ontology, mapping on-chain artefacts to claims and their substantiation.</p>
+        <p class="meta">Source file: claimont.ttl</p>
     </header>
 
     <section class="section">
@@ -48,7 +48,7 @@
             <thead><tr><th>Prefix</th><th>Namespace</th></tr></thead>
             <tbody>
             
-                <tr><td>claimont</td><td>https://w3id.org/claimont#</td></tr>
+                <tr><td>claimont</td><td>http://w3id.org/claimont#</td></tr>
             
                 <tr><td>dcterms</td><td>http://purl.org/dc/terms/</td></tr>
             
@@ -56,11 +56,17 @@
             
                 <tr><td>ns1</td><td>https://hashgraphontology.xyz/alignment/</td></tr>
             
-                <tr><td>ns2</td><td>https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/</td></tr>
+                <tr><td>ns2</td><td>https://docs.hedera.com/hedera/core-concepts/</td></tr>
             
-                <tr><td>ns3</td><td>https://docs.hedera.com/hiero/</td></tr>
+                <tr><td>ns3</td><td>https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/</td></tr>
             
                 <tr><td>ns4</td><td>https://hashgraphontology.xyz/</td></tr>
+            
+                <tr><td>ns5</td><td>http://w3id.org/</td></tr>
+            
+                <tr><td>ns6</td><td>https://github.com/aiaont/</td></tr>
+            
+                <tr><td>ns7</td><td>https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/</td></tr>
             
                 <tr><td>owl</td><td>http://www.w3.org/2002/07/owl#</td></tr>
             
@@ -69,8 +75,6 @@
                 <tr><td>rdfs</td><td>http://www.w3.org/2000/01/rdf-schema#</td></tr>
             
                 <tr><td>skos</td><td>http://www.w3.org/2004/02/skos/core#</td></tr>
-            
-                <tr><td>xsd</td><td>http://www.w3.org/2001/XMLSchema#</td></tr>
             
             </tbody>
         </table>
@@ -82,39 +86,39 @@
             <thead><tr><th>Label</th><th>QName</th><th>Subclass Of</th><th>Notes</th></tr></thead>
             <tbody>
             
-                <tr id="cls-hedera-ClimateAdaptationSchedule">
-                    <td>Climate adaptation schedule</td>
-                    <td>hedera:ClimateAdaptationSchedule</td>
-                    <td><span class="pill">hedera:ScheduledTransaction</span><span class="pill">claimont:AdaptationCommitment</span></td>
+                <tr id="cls-hedera-GovernanceClaim">
+                    <td>Governance claim</td>
+                    <td>hedera:GovernanceClaim</td>
+                    <td><span class="pill">hedera:GovernanceDecision</span><span class="pill">claimont:Claim</span></td>
                     <td class="small">
-                        <div><strong>Definition:</strong> Scheduled transaction capturing staged funding for adaptation programmes.</div>
+                        <div><strong>Definition:</strong> A governance decision recorded on-chain as a formal claim within the meaning of the Claim Ontology.</div>
                         
                         
-                        <div class="meta">IRI: https://hashgraphontology.xyz/core/ClimateAdaptationSchedule</div>
+                        <div class="meta">IRI: https://hashgraphontology.xyz/core/GovernanceClaim</div>
                     </td>
                 </tr>
             
-                <tr id="cls-hedera-ResilienceMilestone">
-                    <td>Resilience milestone</td>
-                    <td>hedera:ResilienceMilestone</td>
-                    <td><span class="pill">hedera:Event</span><span class="pill">claimont:ResilienceOutcome</span></td>
+                <tr id="cls-hedera-HederaSubstantiation">
+                    <td>Hedera substantiation</td>
+                    <td>hedera:HederaSubstantiation</td>
+                    <td><span class="pill">hedera:TopicMessage</span><span class="pill">claimont:Substantiation</span></td>
                     <td class="small">
-                        <div><strong>Definition:</strong> Network event used as a milestone for tracking adaptation commitments.</div>
+                        <div><strong>Definition:</strong> A Hedera Consensus Service message that provides immutable on-chain evidence as substantiation for a claim.</div>
                         
                         
-                        <div class="meta">IRI: https://hashgraphontology.xyz/core/ResilienceMilestone</div>
+                        <div class="meta">IRI: https://hashgraphontology.xyz/core/HederaSubstantiation</div>
                     </td>
                 </tr>
             
-                <tr id="cls-hedera-ScheduledMitigationAction">
-                    <td>Scheduled mitigation action</td>
-                    <td>hedera:ScheduledMitigationAction</td>
-                    <td><span class="pill">hedera:ScheduledTransaction</span><span class="pill">claimont:MitigationAction</span></td>
+                <tr id="cls-hedera-ScheduledReport">
+                    <td>Scheduled report</td>
+                    <td>hedera:ScheduledReport</td>
+                    <td><span class="pill">hedera:ScheduledTransaction</span><span class="pill">claimont:Report</span></td>
                     <td class="small">
-                        <div><strong>Definition:</strong> Scheduled transaction whose execution funds or enables a climate mitigation activity.</div>
+                        <div><strong>Definition:</strong> A scheduled transaction whose execution produces a structured on-chain report within the meaning of the Claim Ontology.</div>
                         
                         
-                        <div class="meta">IRI: https://hashgraphontology.xyz/core/ScheduledMitigationAction</div>
+                        <div class="meta">IRI: https://hashgraphontology.xyz/core/ScheduledReport</div>
                     </td>
                 </tr>
             
@@ -128,59 +132,59 @@
             <thead><tr><th>Label</th><th>QName</th><th>Kind</th><th>Domain</th><th>Range</th><th>Notes</th></tr></thead>
             <tbody>
             
-                <tr id="prop-hedera-advancesClimateObjective">
-                    <td>advances climate objective</td>
-                    <td>hedera:advancesClimateObjective</td>
+                <tr id="prop-hedera-claimMadeByAccount">
+                    <td>claim made by account</td>
+                    <td>hedera:claimMadeByAccount</td>
                     <td>ObjectProperty</td>
-                    <td><span class="pill">hedera:ScheduledTransaction</span></td>
-                    <td><span class="pill">claimont:ClimateObjective</span></td>
+                    <td><span class="pill">claimont:Claim</span></td>
+                    <td><span class="pill">hedera:Account</span></td>
                     <td class="small">
                         
-                        <div><strong>SubProperty Of:</strong> <span class="pill">claimont:advancesObjective</span></div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">claimont:isMadeBy</span></div>
                         
-                        <div class="meta">IRI: https://hashgraphontology.xyz/core/advancesClimateObjective</div>
+                        <div class="meta">IRI: https://hashgraphontology.xyz/core/claimMadeByAccount</div>
                     </td>
                 </tr>
             
-                <tr id="prop-hedera-hasClimateWindow">
-                    <td>has climate window</td>
-                    <td>hedera:hasClimateWindow</td>
-                    <td>DatatypeProperty</td>
-                    <td><span class="pill">hedera:ScheduledTransaction</span></td>
-                    <td><span class="pill">xsd:string</span></td>
+                <tr id="prop-hedera-comprisesClaimRecord">
+                    <td>comprises claim record</td>
+                    <td>hedera:comprisesClaimRecord</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">claimont:Claim</span></td>
+                    <td><span class="pill">claimont:Claim</span></td>
                     <td class="small">
                         
-                        <div><strong>SubProperty Of:</strong> <span class="pill">claimont:hasReportingPeriod</span></div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">claimont:comprisesClaims</span></div>
                         
-                        <div class="meta">IRI: https://hashgraphontology.xyz/core/hasClimateWindow</div>
+                        <div class="meta">IRI: https://hashgraphontology.xyz/core/comprisesClaimRecord</div>
                     </td>
                 </tr>
             
-                <tr id="prop-hedera-linkedImpactAssertion">
-                    <td>linked impact assertion</td>
-                    <td>hedera:linkedImpactAssertion</td>
+                <tr id="prop-hedera-hasClaimSubject">
+                    <td>has claim subject</td>
+                    <td>hedera:hasClaimSubject</td>
                     <td>ObjectProperty</td>
-                    <td><span class="pill">hedera:ScheduledTransaction</span></td>
-                    <td><span class="pill">claimont:ImpactStatement</span></td>
+                    <td><span class="pill">claimont:Claim</span></td>
+                    <td><span class="pill">hedera:Account</span></td>
                     <td class="small">
                         
-                        <div><strong>SubProperty Of:</strong> <span class="pill">claimont:documentsOutcome</span></div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">claimont:hasSubject</span></div>
                         
-                        <div class="meta">IRI: https://hashgraphontology.xyz/core/linkedImpactAssertion</div>
+                        <div class="meta">IRI: https://hashgraphontology.xyz/core/hasClaimSubject</div>
                     </td>
                 </tr>
             
-                <tr id="prop-hedera-tracksResilienceMilestone">
-                    <td>tracks resilience milestone</td>
-                    <td>hedera:tracksResilienceMilestone</td>
+                <tr id="prop-hedera-substantiatedByRecord">
+                    <td>substantiated by record</td>
+                    <td>hedera:substantiatedByRecord</td>
                     <td>ObjectProperty</td>
-                    <td><span class="pill">hedera:ScheduledTransaction</span></td>
-                    <td><span class="pill">hedera:ResilienceMilestone</span></td>
+                    <td><span class="pill">claimont:Claim</span></td>
+                    <td><span class="pill">hedera:HederaSubstantiation</span></td>
                     <td class="small">
                         
-                        <div><strong>SubProperty Of:</strong> <span class="pill">claimont:monitorsIndicator</span></div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">claimont:isSupportedBy</span></div>
                         
-                        <div class="meta">IRI: https://hashgraphontology.xyz/core/tracksResilienceMilestone</div>
+                        <div class="meta">IRI: https://hashgraphontology.xyz/core/substantiatedByRecord</div>
                     </td>
                 </tr>
             
