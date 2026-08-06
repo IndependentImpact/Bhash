@@ -241,8 +241,9 @@ hedera:hasScheduleExpiration
     a owl:DatatypeProperty ;
     rdfs:label "has schedule expiration"@en ;
     rdfs:domain hedera:ScheduledTransaction ;
-    rdfs:range xsd:dateTime ;
-    skos:definition "Timestamp at which the scheduled transaction expires."@en ;
+    rdfs:range xsd:string ;
+    skos:definition "Timestamp at which the scheduled transaction expires, in the native Hedera form \"seconds.nanoseconds\": Unix epoch seconds followed by exactly nine zero-padded nanosecond digits, as returned by the mirror node REST API (e.g. \"1633046400.000000000\")."@en ;
+    skos:editorialNote "Held as xsd:string rather than xsd:dateTime for the same reason as hedera:hasConsensusTimestamp: the native value round-trips exactly and is usable directly as a mirror-node query key."@en ;
     .
 
 hedera:hasRequiredSignatureCount

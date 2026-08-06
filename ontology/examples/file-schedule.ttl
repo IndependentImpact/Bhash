@@ -43,7 +43,7 @@ exfs:EmergencyPauseSchedule
     hedera:hasSchedulePayer "0.0.5005" ;
     hedera:hasRequiredSignatureCount 3 ;
     hedera:hasCollectedSignatureCount 2 ;
-    hedera:hasScheduleExpiration "2025-10-01T00:00:00Z"^^xsd:dateTime ;
+    hedera:hasScheduleExpiration "1759276800.000000000"^^xsd:string ;
     hedera:requiresSignature exfs:SecurityCouncil , exfs:OperationsLead , exfs:ComplianceOfficer ;
     hedera:hasCollectedSignature exfs:SecurityCouncilSignature , exfs:OperationsLeadSignature ;
     hedera:schedulesTransaction exsc:SwapExecution ;
