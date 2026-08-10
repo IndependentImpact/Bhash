@@ -3,4 +3,4 @@ hedera:File,https://docs.hedera.com/hedera/core-concepts/file-service/file-stora
 hedera:FileKey,https://docs.hedera.com/hedera/core-concepts/file-service/file-keys,Key material controlling file updates.
 hedera:PendingSchedule,https://docs.hedera.com/hedera/core-concepts/scheduled-transactions,Represents schedules awaiting additional signatures.
 hedera:hasRequiredSignatureCount,https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/how-scheduled-transactions-work,Tracks total approvals needed before execution.
-hedera:hasScheduleExpiration,https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/how-scheduled-transactions-work,Records expiration timestamp for deferred transactions.
+hedera:hasScheduleExpiration,https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/how-scheduled-transactions-work,Records expiration timestamp for deferred transactions; range xsd:string in the native Hedera seconds.nanoseconds form.

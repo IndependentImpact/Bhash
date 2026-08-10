@@ -316,8 +316,9 @@ hedera:hasConsensusTimestamp
     a owl:DatatypeProperty ;
     rdfs:label "has consensus timestamp"@en ;
     rdfs:domain hedera:TopicMessage ;
-    rdfs:range xsd:dateTime ;
-    rdfs:subPropertyOf prov:generatedAtTime ;
-    skos:definition "Consensus-assigned timestamp recording when the topic message achieved ordering finality."@en ;
+    rdfs:range xsd:string ;
+    rdfs:seeAlso prov:generatedAtTime ;
+    skos:definition "Consensus-assigned timestamp recording when the topic message achieved ordering finality, in the native Hedera form \"seconds.nanoseconds\": Unix epoch seconds followed by exactly nine zero-padded nanosecond digits, as returned by the mirror node REST API (e.g. \"1586567700.453054000\")."@en ;
+    skos:editorialNote "Held as xsd:string rather than xsd:dateTime so the native value round-trips exactly and can be used directly as a mirror-node query key. Consequently the value is not temporally comparable in SPARQL; lexicographic order matches chronological order for as long as the seconds field keeps a fixed width. This property is therefore not a subproperty of prov:generatedAtTime, whose range is xsd:dateTime — the PROV term is referenced via rdfs:seeAlso instead."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/message-flows> ;
     .
