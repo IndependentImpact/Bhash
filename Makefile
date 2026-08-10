@@ -11,11 +11,11 @@ build:
 	mkdir -p build build/reports build/templates
 
 reason-core: build
-	$(ROBOT) reason --reasoner ELK --input ontology/src/core.ttl --output build/core-reasoned.ttl
+	$(ROBOT) reason --catalog ontology/src/catalog-v001.xml --reasoner ELK --input ontology/src/core.ttl --output build/core-reasoned.ttl
 
 report-core: build
 	mkdir -p build/reports
-	$(ROBOT) report --input ontology/src/core.ttl --output build/reports/core-report.tsv
+	$(ROBOT) report --catalog ontology/src/catalog-v001.xml --input ontology/src/core.ttl --output build/reports/core-report.tsv
 
 template-example: build
 	mkdir -p build/templates
