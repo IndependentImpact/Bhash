@@ -32,7 +32,7 @@ sparql: python-venv
 	$(PYTHON_BIN) scripts/run_sparql.py
 
 fluree-smoke:
-        go test ./internal/fluree ./scripts/flureeclient
+	go test ./internal/fluree ./scripts/flureeclient
 
 clean:
 	rm -rf build
