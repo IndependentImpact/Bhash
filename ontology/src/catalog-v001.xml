@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri name="https://hashgraphontology.xyz/imports/prov" uri="imports/provo.ttl"/>
+    <uri name="https://hashgraphontology.xyz/imports/dcat" uri="imports/dcat.ttl"/>
+    <uri name="http://www.w3.org/ns/prov-o-20130430" uri="imports/vendor/prov-o-20130430.ttl"/>
+    <uri name="http://www.w3.org/ns/prov-o#" uri="imports/vendor/prov-o-20130430.ttl"/>
+    <uri name="http://www.w3.org/ns/dcat" uri="imports/vendor/dcat3.ttl"/>
+    <uri name="http://purl.org/dc/terms/" uri="imports/vendor/dcterms.ttl"/>
+    <uri name="http://www.w3.org/2004/02/skos/core" uri="imports/vendor/skos.ttl"/>
+</catalog>
