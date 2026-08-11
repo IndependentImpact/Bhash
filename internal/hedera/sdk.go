@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strings"
 
-	sdk "github.com/hashgraph/hedera-sdk-go/v2"
+	sdk "github.com/hiero-ledger/hiero-sdk-go/v2/sdk"
 )
 
 // SDKNetwork provides a Network implementation backed by the Hedera Go SDK.
