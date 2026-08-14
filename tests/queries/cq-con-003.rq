@@ -1,0 +1,7 @@
+PREFIX hedera: <https://hashgraphontology.xyz/core/>
+
+SELECT ?actor ?topic
+WHERE {
+  ?actor hedera:controlsTopic ?topic .
+}
+ORDER BY ?actor

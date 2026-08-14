@@ -89,6 +89,7 @@ ex:CommunityWallet
     a hedera:Actor ;
     rdfs:label "Community wallet operator"@en ;
     hedera:hasAccount ex:CommunityWalletAccount ;
+    hedera:controlsTopic ex:TopicAlpha ;
     .
 
 ex:CommunityWalletAccount

@@ -34,6 +34,14 @@ hedera:assignsRole a owl:ObjectProperty ;
     rdfs:range hedera:Role ;
     skos:definition "Indicates the role granted by a role assignment process."@en .
 
+hedera:controlsTopic a owl:ObjectProperty ;
+    rdfs:label "controls topic"@en ;
+    rdfs:domain hedera:Actor ;
+    rdfs:range hedera:ConsensusTopic ;
+    owl:inverseOf hedera:isTopicOf ;
+    skos:definition "Relates an actor to a consensus topic under its control."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/topics> .
+
 hedera:deliversMessage a owl:ObjectProperty ;
     rdfs:label "delivers message"@en ;
     rdfs:domain hedera:ConsensusService ;
@@ -146,6 +154,13 @@ hedera:isSubBodyOf a owl:ObjectProperty ;
     rdfs:domain hedera:GovernanceBody ;
     rdfs:range hedera:GovernanceBody ;
     skos:definition "Captures committee hierarchies within the Hedera Governing Council."@en .
+
+hedera:isTopicOf a owl:ObjectProperty ;
+    rdfs:label "is topic of"@en ;
+    rdfs:domain hedera:ConsensusTopic ;
+    rdfs:range hedera:Actor ;
+    skos:definition "Links a consensus topic back to the actor that owns or controls it."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/topics> .
 
 hedera:supportedBy a owl:ObjectProperty ;
     rdfs:label "supported by"@en ;
