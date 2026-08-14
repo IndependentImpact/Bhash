@@ -129,6 +129,8 @@ hedera:hasTopic
 hedera:controlsTopic
     a owl:ObjectProperty ;
     rdfs:label "controls topic"@en ;
+    rdfs:comment "Use for the admin- or submit-key-holding entity that owns or administers a topic. Distinct from hedera:hasTopic, which relates the Consensus Service to the topics it orders."@en ;
+    rdfs:isDefinedBy <https://hashgraphontology.xyz/consensus> ;
     rdfs:domain hedera:Actor ;
     rdfs:range hedera:ConsensusTopic ;
     owl:inverseOf hedera:isTopicOf ;
@@ -139,6 +141,8 @@ hedera:controlsTopic
 hedera:isTopicOf
     a owl:ObjectProperty ;
     rdfs:label "is topic of"@en ;
+    rdfs:comment "Inverse of hedera:controlsTopic; parallels hedera:isAccountOf on accounts."@en ;
+    rdfs:isDefinedBy <https://hashgraphontology.xyz/consensus> ;
     rdfs:domain hedera:ConsensusTopic ;
     rdfs:range hedera:Actor ;
     skos:definition "Links a consensus topic back to the actor that owns or controls it."@en ;

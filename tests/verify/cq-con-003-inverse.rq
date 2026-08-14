@@ -1,0 +1,11 @@
+PREFIX hedera: <https://hashgraphontology.xyz/core/>
+PREFIX ex: <https://hashgraphontology.xyz/examples/core/>
+
+# Violation query for `robot verify`: returns a row (failing the build) when
+# the reasoner has NOT entailed the isTopicOf inverse of the asserted
+# ex:CommunityWallet hedera:controlsTopic ex:TopicAlpha triple.
+SELECT ?violation
+WHERE {
+  BIND("hedera:isTopicOf not entailed from hedera:controlsTopic via owl:inverseOf" AS ?violation)
+  FILTER NOT EXISTS { ex:TopicAlpha hedera:isTopicOf ex:CommunityWallet }
+}

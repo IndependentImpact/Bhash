@@ -1,5 +1,6 @@
 pyshacl>=0.20.0
 rdflib>=6.3.2
+owlrl>=6.0.2
 requests>=2.31.0
 responses>=0.25.0
 pytest>=7.4.0

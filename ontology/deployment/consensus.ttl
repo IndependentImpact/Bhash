@@ -6,16 +6,6 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://hashgraphontology.xyz/consensus> a owl:Ontology ;
-    dcterms:created "2024-09-20"^^xsd:date ;
-    dcterms:creator "Bhash Ontology Working Group"@en ;
-    dcterms:description "Service-specific vocabulary for modelling Hedera Consensus Service topics, messages, and validator interfaces."@en ;
-    dcterms:modified "2024-09-20"^^xsd:date ;
-    dcterms:title "Hedera Consensus Service module"@en ;
-    owl:imports <https://hashgraphontology.xyz/core> ;
-    owl:versionInfo "0.1.0-dev" ;
-    skos:editorialNote "Phase 3 sprint scaffold capturing core Consensus Service artefacts required for validator onboarding and topic governance competency questions."@en .
-
 hedera:ValidatorOnboardingCommittee a owl:Class ;
     rdfs:label "Validator onboarding committee"@en ;
     rdfs:subClassOf hedera:CouncilCommittee ;
@@ -36,7 +26,9 @@ hedera:assignsRole a owl:ObjectProperty ;
 
 hedera:controlsTopic a owl:ObjectProperty ;
     rdfs:label "controls topic"@en ;
+    rdfs:comment "Use for the admin- or submit-key-holding entity that owns or administers a topic. Distinct from hedera:hasTopic, which relates the Consensus Service to the topics it orders."@en ;
     rdfs:domain hedera:Actor ;
+    rdfs:isDefinedBy <https://hashgraphontology.xyz/consensus> ;
     rdfs:range hedera:ConsensusTopic ;
     owl:inverseOf hedera:isTopicOf ;
     skos:definition "Relates an actor to a consensus topic under its control."@en ;
@@ -155,13 +147,6 @@ hedera:isSubBodyOf a owl:ObjectProperty ;
     rdfs:range hedera:GovernanceBody ;
     skos:definition "Captures committee hierarchies within the Hedera Governing Council."@en .
 
-hedera:isTopicOf a owl:ObjectProperty ;
-    rdfs:label "is topic of"@en ;
-    rdfs:domain hedera:ConsensusTopic ;
-    rdfs:range hedera:Actor ;
-    skos:definition "Links a consensus topic back to the actor that owns or controls it."@en ;
-    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/topics> .
-
 hedera:supportedBy a owl:ObjectProperty ;
     rdfs:label "supported by"@en ;
     rdfs:domain hedera:Process ;
@@ -206,6 +191,15 @@ hedera:hasSteward a owl:ObjectProperty ;
     owl:inverseOf hedera:stewardsProcess ;
     skos:definition "Links a governance process to the council body that stewards the decision."@en .
 
+hedera:isTopicOf a owl:ObjectProperty ;
+    rdfs:label "is topic of"@en ;
+    rdfs:comment "Inverse of hedera:controlsTopic; parallels hedera:isAccountOf on accounts."@en ;
+    rdfs:domain hedera:ConsensusTopic ;
+    rdfs:isDefinedBy <https://hashgraphontology.xyz/consensus> ;
+    rdfs:range hedera:Actor ;
+    skos:definition "Links a consensus topic back to the actor that owns or controls it."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/topics> .
+
 hedera:stewardsProcess a owl:ObjectProperty ;
     rdfs:label "stewards process"@en ;
     rdfs:domain hedera:GovernanceBody ;
@@ -213,6 +207,16 @@ hedera:stewardsProcess a owl:ObjectProperty ;
     rdfs:subPropertyOf hedera:participatesIn ;
     owl:inverseOf hedera:hasSteward ;
     skos:definition "Identifies the governance process that a council body is accountable for overseeing."@en .
+
+<https://hashgraphontology.xyz/consensus> a owl:Ontology ;
+    dcterms:created "2024-09-20"^^xsd:date ;
+    dcterms:creator "Bhash Ontology Working Group"@en ;
+    dcterms:description "Service-specific vocabulary for modelling Hedera Consensus Service topics, messages, and validator interfaces."@en ;
+    dcterms:modified "2026-08-14"^^xsd:date ;
+    dcterms:title "Hedera Consensus Service module"@en ;
+    owl:imports <https://hashgraphontology.xyz/core> ;
+    owl:versionInfo "0.1.0-dev" ;
+    skos:editorialNote "Phase 3 sprint scaffold capturing core Consensus Service artefacts required for validator onboarding and topic governance competency questions."@en .
 
 hedera:hasTopicKey a owl:ObjectProperty ;
     rdfs:label "has topic key"@en ;
@@ -238,17 +242,17 @@ hedera:ConsensusRecordFile a owl:Class ;
     skos:definition "Exported record file containing ordered transactions, consensus timestamps, and running hashes."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/mirror-node/architecture/record-and-balance-files> .
 
-hedera:ConsensusTopic a owl:Class ;
-    rdfs:label "Consensus topic"@en ;
-    rdfs:subClassOf hedera:Artefact ;
-    skos:definition "Ordered message channel configured with administrator, submit, and auto-renew keys."@en ;
-    hedera:instanceIRIPattern "https://hashgraphontology.xyz/resource/{network}/topic/{shard}.{realm}.{num}"@en ;
-    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/topics> .
-
 hedera:TopicMessage a owl:Class ;
     rdfs:label "Topic message"@en ;
     rdfs:subClassOf hedera:Event ;
     skos:definition "Individual message submitted to a consensus topic and assigned a consensus timestamp."@en ;
     hedera:instanceIRIPattern "https://hashgraphontology.xyz/resource/{network}/topic/{shard}.{realm}.{num}/message/{sequenceNumber}"@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/message-flows> .
+
+hedera:ConsensusTopic a owl:Class ;
+    rdfs:label "Consensus topic"@en ;
+    rdfs:subClassOf hedera:Artefact ;
+    skos:definition "Ordered message channel configured with administrator, submit, and auto-renew keys."@en ;
+    hedera:instanceIRIPattern "https://hashgraphontology.xyz/resource/{network}/topic/{shard}.{realm}.{num}"@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/topics> .
 
