@@ -1,0 +1,8 @@
+PREFIX hedera: <https://hashgraphontology.xyz/core/>
+
+SELECT ?actor ?key ?topic
+WHERE {
+  ?actor hedera:holdsKey ?key .
+  ?topic hedera:hasAdminKey|hedera:hasSubmitKey|hedera:hasFeeScheduleKey ?key .
+}
+ORDER BY ?actor ?key

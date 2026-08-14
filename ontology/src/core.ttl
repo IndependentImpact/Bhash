@@ -18,7 +18,7 @@
     dcterms:license <https://www.apache.org/licenses/LICENSE-2.0> ;
     dcterms:source <https://docs.hedera.com/hedera> , <https://docs.hedera.com/hiero> , <https://docs.hedera.com/hedera/core-concepts/transactions/transaction-lifecycle> ;
     dcterms:created "2024-05-02"^^xsd:date ;
-    dcterms:modified "2025-09-16"^^xsd:date ;
+    dcterms:modified "2026-08-14"^^xsd:date ;
     owl:versionIRI <https://hashgraphontology.xyz/core/0.1.0-dev> ;
     owl:versionInfo "0.1.0-dev" ;
     owl:imports <https://hashgraphontology.xyz/imports/prov> ,
@@ -492,6 +492,17 @@ hedera:securesAccount
     rdfs:range hedera:Account ;
     skos:definition "Indicates which account a key structure protects."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/accounts/account-properties#keys> ;
+    .
+
+hedera:holdsKey
+    a owl:ObjectProperty ;
+    rdfs:label "holds key"@en ;
+    rdfs:comment "For composite keys (hedera:KeyList, threshold keys) each participant holds the key without controlling it alone; holding asserts only the ability to contribute a signature, not unilateral control."@en ;
+    rdfs:isDefinedBy <https://hashgraphontology.xyz/core> ;
+    rdfs:domain hedera:Actor ;
+    rdfs:range hedera:AccountKey ;
+    skos:definition "Relates an actor to key material for which it can contribute a valid signature."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/keys-and-signatures> ;
     .
 
 hedera:stakesTo

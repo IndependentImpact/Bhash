@@ -2,6 +2,7 @@
 @prefix hedera: <https://hashgraphontology.xyz/core/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -24,15 +25,38 @@ hedera:assignsRole a owl:ObjectProperty ;
     rdfs:range hedera:Role ;
     skos:definition "Indicates the role granted by a role assignment process."@en .
 
-hedera:controlsTopic a owl:ObjectProperty ;
-    rdfs:label "controls topic"@en ;
-    rdfs:comment "Use for the admin- or submit-key-holding entity that owns or administers a topic. Distinct from hedera:hasTopic, which relates the Consensus Service to the topics it orders."@en ;
+hedera:controlsAdminKeyOf a owl:ObjectProperty ;
+    rdfs:label "controls admin key of"@en ;
+    rdfs:comment "Entailed from hedera:holdsKey on the key that is hedera:isAdminKeyOf the topic; may also be asserted directly when the key material is not modelled."@en ;
     rdfs:domain hedera:Actor ;
     rdfs:isDefinedBy <https://hashgraphontology.xyz/consensus> ;
     rdfs:range hedera:ConsensusTopic ;
-    owl:inverseOf hedera:isTopicOf ;
-    skos:definition "Relates an actor to a consensus topic under its control."@en ;
-    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/topics> .
+    rdfs:subPropertyOf hedera:controlsTopic ;
+    owl:propertyChainAxiom ( hedera:holdsKey hedera:isAdminKeyOf ) ;
+    skos:definition "Relates an actor to a consensus topic whose admin key it controls, authorising topic update, deletion, and re-keying."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/permissions> .
+
+hedera:controlsFeeScheduleKeyOf a owl:ObjectProperty ;
+    rdfs:label "controls fee schedule key of"@en ;
+    rdfs:comment "Entailed from hedera:holdsKey on the key that is hedera:isFeeScheduleKeyOf the topic. Introduced with HIP-991 revenue-generating topics."@en ;
+    rdfs:domain hedera:Actor ;
+    rdfs:isDefinedBy <https://hashgraphontology.xyz/consensus> ;
+    rdfs:range hedera:ConsensusTopic ;
+    rdfs:subPropertyOf hedera:controlsTopic ;
+    owl:propertyChainAxiom ( hedera:holdsKey hedera:isFeeScheduleKeyOf ) ;
+    skos:definition "Relates an actor to a consensus topic whose fee schedule key it controls, authorising update and deletion of the topic's custom fees."@en ;
+    hedera:sourceDocument <https://hips.hedera.com/hip/hip-991> .
+
+hedera:controlsSubmitKeyOf a owl:ObjectProperty ;
+    rdfs:label "controls submit key of"@en ;
+    rdfs:comment "Deliberately not \"can submit\": a topic without a submit key accepts messages from anyone. Entailed from hedera:holdsKey on the key that is hedera:isSubmitKeyOf the topic."@en ;
+    rdfs:domain hedera:Actor ;
+    rdfs:isDefinedBy <https://hashgraphontology.xyz/consensus> ;
+    rdfs:range hedera:ConsensusTopic ;
+    rdfs:subPropertyOf hedera:controlsTopic ;
+    owl:propertyChainAxiom ( hedera:holdsKey hedera:isSubmitKeyOf ) ;
+    skos:definition "Relates an actor to a consensus topic whose submit key it controls, gating message submission."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/permissions> .
 
 hedera:deliversMessage a owl:ObjectProperty ;
     rdfs:label "delivers message"@en ;
@@ -57,6 +81,7 @@ hedera:hasAdminKey a owl:ObjectProperty ;
     rdfs:domain hedera:ConsensusTopic ;
     rdfs:range hedera:TopicAdminKey ;
     rdfs:subPropertyOf hedera:hasTopicKey ;
+    owl:inverseOf hedera:isAdminKeyOf ;
     skos:definition "Identifies the admin key responsible for topic lifecycle changes."@en .
 
 hedera:hasConsensusTimestamp a owl:DatatypeProperty ;
@@ -79,6 +104,17 @@ hedera:hasEndpointPort a owl:DatatypeProperty ;
     rdfs:domain hedera:ConsensusNodeEndpoint ;
     rdfs:range xsd:integer ;
     skos:definition "Port number for a consensus node endpoint."@en .
+
+hedera:hasFeeScheduleKey a owl:ObjectProperty ;
+    rdfs:label "has fee schedule key"@en ;
+    rdfs:comment "Introduced with HIP-991 revenue-generating topics; absent on topics without custom fees."@en ;
+    rdfs:domain hedera:ConsensusTopic ;
+    rdfs:isDefinedBy <https://hashgraphontology.xyz/consensus> ;
+    rdfs:range hedera:TopicFeeScheduleKey ;
+    rdfs:subPropertyOf hedera:hasTopicKey ;
+    owl:inverseOf hedera:isFeeScheduleKeyOf ;
+    skos:definition "Identifies the fee schedule key that authorises update and deletion of a topic's custom fees."@en ;
+    hedera:sourceDocument <https://hips.hedera.com/hip/hip-991> .
 
 hedera:hasMessageContent a owl:DatatypeProperty ;
     rdfs:label "has message content"@en ;
@@ -109,6 +145,7 @@ hedera:hasSubmitKey a owl:ObjectProperty ;
     rdfs:domain hedera:ConsensusTopic ;
     rdfs:range hedera:TopicSubmitKey ;
     rdfs:subPropertyOf hedera:hasTopicKey ;
+    owl:inverseOf hedera:isSubmitKeyOf ;
     skos:definition "Identifies the submit key required for message submission."@en .
 
 hedera:hasTopic a owl:ObjectProperty ;
@@ -171,18 +208,6 @@ hedera:RoleAssignment a owl:Class ;
     skos:definition "Process that confers a specific governance or operational role to an actor."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/governing-the-network#council-committees> .
 
-hedera:TopicAdminKey a owl:Class ;
-    rdfs:label "Topic admin key"@en ;
-    rdfs:subClassOf hedera:AccountKey ;
-    skos:definition "Key that authorises topic-level administration such as update, delete, and re-key operations."@en ;
-    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/permissions> .
-
-hedera:TopicSubmitKey a owl:Class ;
-    rdfs:label "Topic submit key"@en ;
-    rdfs:subClassOf hedera:AccountKey ;
-    skos:definition "Key that governs which actors may post messages to a consensus topic."@en ;
-    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/permissions> .
-
 hedera:hasSteward a owl:ObjectProperty ;
     rdfs:label "has steward"@en ;
     rdfs:domain hedera:GovernanceProcess ;
@@ -208,21 +233,50 @@ hedera:stewardsProcess a owl:ObjectProperty ;
     owl:inverseOf hedera:hasSteward ;
     skos:definition "Identifies the governance process that a council body is accountable for overseeing."@en .
 
-<https://hashgraphontology.xyz/consensus> a owl:Ontology ;
-    dcterms:created "2024-09-20"^^xsd:date ;
-    dcterms:creator "Bhash Ontology Working Group"@en ;
-    dcterms:description "Service-specific vocabulary for modelling Hedera Consensus Service topics, messages, and validator interfaces."@en ;
-    dcterms:modified "2026-08-14"^^xsd:date ;
-    dcterms:title "Hedera Consensus Service module"@en ;
-    owl:imports <https://hashgraphontology.xyz/core> ;
-    owl:versionInfo "0.1.0-dev" ;
-    skos:editorialNote "Phase 3 sprint scaffold capturing core Consensus Service artefacts required for validator onboarding and topic governance competency questions."@en .
+hedera:TopicAdminKey a owl:Class ;
+    rdfs:label "Topic admin key"@en ;
+    rdfs:subClassOf hedera:AccountKey ;
+    skos:definition "Key that authorises topic-level administration such as update, delete, and re-key operations."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/permissions> .
 
-hedera:hasTopicKey a owl:ObjectProperty ;
-    rdfs:label "has topic key"@en ;
-    rdfs:domain hedera:ConsensusTopic ;
-    rdfs:range hedera:AccountKey ;
-    skos:definition "Connects a consensus topic to its configured keys."@en .
+hedera:TopicFeeScheduleKey a owl:Class ;
+    rdfs:label "Topic fee schedule key"@en ;
+    rdfs:subClassOf hedera:AccountKey ;
+    skos:definition "Key that authorises update and deletion of a consensus topic's custom fees, introduced with HIP-991 revenue-generating topics."@en ;
+    hedera:sourceDocument <https://hips.hedera.com/hip/hip-991> .
+
+hedera:TopicSubmitKey a owl:Class ;
+    rdfs:label "Topic submit key"@en ;
+    rdfs:subClassOf hedera:AccountKey ;
+    skos:definition "Key that governs which actors may post messages to a consensus topic."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/permissions> .
+
+hedera:isAdminKeyOf a owl:ObjectProperty ;
+    rdfs:label "is admin key of"@en ;
+    rdfs:comment "Inverse of hedera:hasAdminKey; second step of the hedera:controlsAdminKeyOf property chain."@en ;
+    rdfs:domain hedera:TopicAdminKey ;
+    rdfs:isDefinedBy <https://hashgraphontology.xyz/consensus> ;
+    rdfs:range hedera:ConsensusTopic ;
+    skos:definition "Links an admin key back to the consensus topic whose lifecycle it governs."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/permissions> .
+
+hedera:isFeeScheduleKeyOf a owl:ObjectProperty ;
+    rdfs:label "is fee schedule key of"@en ;
+    rdfs:comment "Inverse of hedera:hasFeeScheduleKey; second step of the hedera:controlsFeeScheduleKeyOf property chain."@en ;
+    rdfs:domain hedera:TopicFeeScheduleKey ;
+    rdfs:isDefinedBy <https://hashgraphontology.xyz/consensus> ;
+    rdfs:range hedera:ConsensusTopic ;
+    skos:definition "Links a fee schedule key back to the consensus topic whose custom fees it governs."@en ;
+    hedera:sourceDocument <https://hips.hedera.com/hip/hip-991> .
+
+hedera:isSubmitKeyOf a owl:ObjectProperty ;
+    rdfs:label "is submit key of"@en ;
+    rdfs:comment "Inverse of hedera:hasSubmitKey; second step of the hedera:controlsSubmitKeyOf property chain."@en ;
+    rdfs:domain hedera:TopicSubmitKey ;
+    rdfs:isDefinedBy <https://hashgraphontology.xyz/consensus> ;
+    rdfs:range hedera:ConsensusTopic ;
+    skos:definition "Links a submit key back to the consensus topic whose message submission it gates."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/permissions> .
 
 hedera:ConsensusNodeEndpoint a owl:Class ;
     rdfs:label "Consensus node endpoint"@en ;
@@ -236,6 +290,23 @@ hedera:ConsensusService a owl:Class ;
     skos:definition "Operational service that orders transactions, emits consensus timestamps, and manages topics."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service> .
 
+hedera:controlsTopic a owl:ObjectProperty ;
+    rdfs:label "controls topic"@en ;
+    rdfs:comment "Use for an entity that controls at least one of a topic's keys. Distinct from hedera:hasTopic, which relates the Consensus Service to the topics it orders."@en ;
+    rdfs:domain hedera:Actor ;
+    rdfs:isDefinedBy <https://hashgraphontology.xyz/consensus> ;
+    rdfs:range hedera:ConsensusTopic ;
+    owl:inverseOf hedera:isTopicOf ;
+    skos:definition "Relates an actor to a consensus topic under its control."@en ;
+    skos:editorialNote "Abstracts over the key-specific subproperties hedera:controlsAdminKeyOf, hedera:controlsSubmitKeyOf, and hedera:controlsFeeScheduleKeyOf. Assert it directly when the controlling key is unknown; assert a subproperty (or the underlying hedera:holdsKey / hedera:hasTopicKey facts) when it is."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/topics> .
+
+hedera:hasTopicKey a owl:ObjectProperty ;
+    rdfs:label "has topic key"@en ;
+    rdfs:domain hedera:ConsensusTopic ;
+    rdfs:range hedera:AccountKey ;
+    skos:definition "Connects a consensus topic to its configured keys."@en .
+
 hedera:ConsensusRecordFile a owl:Class ;
     rdfs:label "Consensus record file"@en ;
     rdfs:subClassOf hedera:Artefact ;
@@ -248,6 +319,16 @@ hedera:TopicMessage a owl:Class ;
     skos:definition "Individual message submitted to a consensus topic and assigned a consensus timestamp."@en ;
     hedera:instanceIRIPattern "https://hashgraphontology.xyz/resource/{network}/topic/{shard}.{realm}.{num}/message/{sequenceNumber}"@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/message-flows> .
+
+<https://hashgraphontology.xyz/consensus> a owl:Ontology ;
+    dcterms:created "2024-09-20"^^xsd:date ;
+    dcterms:creator "Bhash Ontology Working Group"@en ;
+    dcterms:description "Service-specific vocabulary for modelling Hedera Consensus Service topics, messages, and validator interfaces."@en ;
+    dcterms:modified "2026-08-14"^^xsd:date ;
+    dcterms:title "Hedera Consensus Service module"@en ;
+    owl:imports <https://hashgraphontology.xyz/core> ;
+    owl:versionInfo "0.1.0-dev" ;
+    skos:editorialNote "Phase 3 sprint scaffold capturing core Consensus Service artefacts required for validator onboarding and topic governance competency questions."@en .
 
 hedera:ConsensusTopic a owl:Class ;
     rdfs:label "Consensus topic"@en ;

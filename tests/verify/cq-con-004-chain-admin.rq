@@ -1,0 +1,12 @@
+PREFIX hedera: <https://hashgraphontology.xyz/core/>
+PREFIX ex: <https://hashgraphontology.xyz/examples/core/>
+
+# Violation query for the entailment harness: the example asserts only
+# ex:CommunityWallet hedera:holdsKey ex:TopicAlphaAdminKey and
+# ex:TopicAlpha hedera:hasAdminKey ex:TopicAlphaAdminKey, so this triple
+# must arrive via the owl:propertyChainAxiom (holdsKey o isAdminKeyOf).
+SELECT ?violation
+WHERE {
+  BIND("hedera:controlsAdminKeyOf not entailed via property chain holdsKey o isAdminKeyOf" AS ?violation)
+  FILTER NOT EXISTS { ex:CommunityWallet hedera:controlsAdminKeyOf ex:TopicAlpha }
+}
