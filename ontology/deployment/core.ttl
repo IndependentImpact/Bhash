@@ -8,23 +8,6 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://hashgraphontology.xyz/core> a owl:Ontology ;
-    dcterms:created "2024-05-02"^^xsd:date ;
-    dcterms:creator "Bhash Ontology Working Group"@en ;
-    dcterms:description "Upper-level classes and properties capturing shared Hedera and Hiero network concepts, including identity, governance, transactions, and data export semantics."@en ;
-    dcterms:license <https://www.apache.org/licenses/LICENSE-2.0> ;
-    dcterms:modified "2025-09-16"^^xsd:date ;
-    dcterms:source <https://docs.hedera.com/hedera>,
-        <https://docs.hedera.com/hedera/core-concepts/transactions/transaction-lifecycle>,
-        <https://docs.hedera.com/hiero> ;
-    dcterms:title "Bhash Core Ontology"@en ;
-    rdfs:seeAlso <https://hips.hedera.com/> ;
-    owl:imports <https://hashgraphontology.xyz/imports/dcat>,
-        <https://hashgraphontology.xyz/imports/prov> ;
-    owl:versionIRI hedera:0.1.0-dev ;
-    owl:versionInfo "0.1.0-dev" ;
-    skos:editorialNote "Phase 2 expands the scaffold with account, key, staking, transaction lifecycle, and Hiero overlay abstractions reused by downstream service modules."@en .
-
 hedera:ConsensusFinalityPhase a owl:Class ;
     rdfs:label "Consensus finality phase"@en ;
     rdfs:subClassOf [ a owl:Restriction ;
@@ -170,6 +153,15 @@ hedera:hasShard a owl:ObjectProperty ;
     skos:definition "Relates a network to a Hiero shard subdivision."@en ;
     hedera:sourceDocument <https://hips.hedera.com/hip/hip-840> .
 
+hedera:holdsKey a owl:ObjectProperty ;
+    rdfs:label "holds key"@en ;
+    rdfs:comment "For composite keys (hedera:KeyList, threshold keys) each participant holds the key without controlling it alone; holding asserts only the ability to contribute a signature, not unilateral control."@en ;
+    rdfs:domain hedera:Actor ;
+    rdfs:isDefinedBy <https://hashgraphontology.xyz/core> ;
+    rdfs:range hedera:AccountKey ;
+    skos:definition "Relates an actor to key material for which it can contribute a valid signature."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/keys-and-signatures> .
+
 hedera:instanceIRIPattern a owl:AnnotationProperty ;
     rdfs:label "instance IRI pattern"@en ;
     skos:definition "URI template describing the canonical IRI scheme for instances of a class.  Network values are mainnet, testnet, or previewnet.  The shard.realm.num segments follow the native Hedera entity-ID format."@en .
@@ -191,6 +183,23 @@ hedera:stakesTo a owl:ObjectProperty ;
     rdfs:range hedera:Validator ;
     skos:definition "Denotes the validator that receives stake from an account."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/staking/stake-hbar> .
+
+<https://hashgraphontology.xyz/core> a owl:Ontology ;
+    dcterms:created "2024-05-02"^^xsd:date ;
+    dcterms:creator "Bhash Ontology Working Group"@en ;
+    dcterms:description "Upper-level classes and properties capturing shared Hedera and Hiero network concepts, including identity, governance, transactions, and data export semantics."@en ;
+    dcterms:license <https://www.apache.org/licenses/LICENSE-2.0> ;
+    dcterms:modified "2026-08-14"^^xsd:date ;
+    dcterms:source <https://docs.hedera.com/hedera>,
+        <https://docs.hedera.com/hedera/core-concepts/transactions/transaction-lifecycle>,
+        <https://docs.hedera.com/hiero> ;
+    dcterms:title "Bhash Core Ontology"@en ;
+    rdfs:seeAlso <https://hips.hedera.com/> ;
+    owl:imports <https://hashgraphontology.xyz/imports/dcat>,
+        <https://hashgraphontology.xyz/imports/prov> ;
+    owl:versionIRI hedera:0.1.0-dev ;
+    owl:versionInfo "0.1.0-dev" ;
+    skos:editorialNote "Phase 2 expands the scaffold with account, key, staking, transaction lifecycle, and Hiero overlay abstractions reused by downstream service modules."@en .
 
 hedera:Role a owl:Class ;
     rdfs:label "Role"@en ;
@@ -534,15 +543,6 @@ hedera:producesEvent a owl:ObjectProperty ;
     rdfs:subPropertyOf prov:generated ;
     skos:definition "States that a process yields a specific event observation."@en .
 
-hedera:AccountKey a owl:Class ;
-    rdfs:label "Account key"@en ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onProperty hedera:securesAccount ;
-            owl:someValuesFrom hedera:Account ],
-        hedera:Artefact ;
-    skos:definition "Key material that authorises actions for accounts, topics, files, and tokens."@en ;
-    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/accounts/account-properties> .
-
 hedera:Concept a owl:Class ;
     rdfs:label "Concept"@en ;
     skos:definition "Abstract superclass for all Bhash ontology entities."@en .
@@ -567,6 +567,15 @@ hedera:TransactionRecord a owl:Class ;
         hedera:Event ;
     skos:definition "Structured record capturing the result of a processed transaction."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/transactions/transaction-record> .
+
+hedera:AccountKey a owl:Class ;
+    rdfs:label "Account key"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty hedera:securesAccount ;
+            owl:someValuesFrom hedera:Account ],
+        hedera:Artefact ;
+    skos:definition "Key material that authorises actions for accounts, topics, files, and tokens."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/accounts/account-properties> .
 
 hedera:Service a owl:Class ;
     rdfs:label "Service"@en ;
@@ -643,6 +652,15 @@ hedera:Account a owl:Class ;
     hedera:instanceIRIPattern "https://hashgraphontology.xyz/resource/{network}/account/{shard}.{realm}.{num}"@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/accounts> .
 
+hedera:Network a owl:Class ;
+    rdfs:label "Network"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty hedera:isGovernedBy ;
+            owl:someValuesFrom hedera:GovernanceBody ],
+        hedera:Actor ;
+    skos:definition "A distributed environment (e.g., mainnet, testnet, shard) that provides Hedera services."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/network/nodes/mainnet-nodes> .
+
 hedera:Actor a owl:Class ;
     rdfs:label "Actor"@en ;
     rdfs:subClassOf [ a owl:Restriction ;
@@ -652,13 +670,4 @@ hedera:Actor a owl:Class ;
         hedera:Concept ;
     skos:definition "An agent that participates in Hedera or Hiero network operations, such as councils, operators, or wallets."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/accounts> .
-
-hedera:Network a owl:Class ;
-    rdfs:label "Network"@en ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onProperty hedera:isGovernedBy ;
-            owl:someValuesFrom hedera:GovernanceBody ],
-        hedera:Actor ;
-    skos:definition "A distributed environment (e.g., mainnet, testnet, shard) that provides Hedera services."@en ;
-    hedera:sourceDocument <https://docs.hedera.com/hedera/network/nodes/mainnet-nodes> .
 

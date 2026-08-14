@@ -1,0 +1,24 @@
+PREFIX hedera: <https://hashgraphontology.xyz/core/>
+PREFIX ex: <https://hashgraphontology.xyz/examples/core/>
+
+# End-to-end violation query: ex:TopicAlphaFeeManager has ONLY
+# hedera:holdsKey asserted, so every triple checked here must be entailed —
+# the shortcut via the property chain, controlsTopic via rdfs:subPropertyOf,
+# and isTopicOf via owl:inverseOf.
+SELECT ?violation
+WHERE {
+  {
+    BIND("hedera:controlsFeeScheduleKeyOf not entailed via property chain holdsKey o isFeeScheduleKeyOf" AS ?violation)
+    FILTER NOT EXISTS { ex:TopicAlphaFeeManager hedera:controlsFeeScheduleKeyOf ex:TopicAlpha }
+  }
+  UNION
+  {
+    BIND("hedera:controlsTopic not entailed via rdfs:subPropertyOf from controlsFeeScheduleKeyOf" AS ?violation)
+    FILTER NOT EXISTS { ex:TopicAlphaFeeManager hedera:controlsTopic ex:TopicAlpha }
+  }
+  UNION
+  {
+    BIND("hedera:isTopicOf not entailed via owl:inverseOf from the entailed controlsTopic" AS ?violation)
+    FILTER NOT EXISTS { ex:TopicAlpha hedera:isTopicOf ex:TopicAlphaFeeManager }
+  }
+}
