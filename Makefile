@@ -3,9 +3,9 @@ PYTHON ?= python3
 VENV_DIR := build/venv
 PYTHON_BIN := $(VENV_DIR)/bin/python
 
-.PHONY: all reason-core report-core template-example shacl sparql fluree-smoke python-venv clean
+.PHONY: all reason-core report-core template-example shacl sparql entailment fluree-smoke python-venv clean
 
-all: reason-core report-core shacl sparql
+all: reason-core report-core shacl sparql entailment
 
 build:
 	mkdir -p build build/reports build/templates
@@ -30,6 +30,9 @@ shacl: python-venv
 
 sparql: python-venv
 	$(PYTHON_BIN) scripts/run_sparql.py
+
+entailment: python-venv
+	$(PYTHON_BIN) scripts/run_entailment_checks.py
 
 fluree-smoke:
 	go test ./internal/fluree ./scripts/flureeclient

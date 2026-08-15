@@ -89,6 +89,8 @@ ex:CommunityWallet
     a hedera:Actor ;
     rdfs:label "Community wallet operator"@en ;
     hedera:hasAccount ex:CommunityWalletAccount ;
+    hedera:controlsTopic ex:TopicAlpha ;
+    hedera:holdsKey ex:TopicAlphaAdminKey ;
     .
 
 ex:CommunityWalletAccount
@@ -235,6 +237,24 @@ ex:TopicAlpha
     a hedera:ConsensusTopic ;
     rdfs:label "Topic alpha"@en ;
     hedera:hasTopicId "0.0.12345" ;
+    hedera:hasAdminKey ex:TopicAlphaAdminKey ;
+    hedera:hasFeeScheduleKey ex:TopicAlphaFeeScheduleKey ;
+    .
+
+ex:TopicAlphaAdminKey
+    a hedera:TopicAdminKey ;
+    rdfs:label "Topic alpha admin key"@en ;
+    .
+
+ex:TopicAlphaFeeScheduleKey
+    a hedera:TopicFeeScheduleKey ;
+    rdfs:label "Topic alpha fee schedule key"@en ;
+    .
+
+ex:TopicAlphaFeeManager
+    a hedera:Actor ;
+    rdfs:label "Topic alpha fee manager"@en ;
+    hedera:holdsKey ex:TopicAlphaFeeScheduleKey ;
     .
 
 ex:TopicAlphaMessage987
