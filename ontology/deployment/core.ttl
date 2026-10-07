@@ -661,8 +661,9 @@ hedera:Account a owl:Class ;
         [ a owl:Restriction ;
             owl:onProperty hedera:hasAccountId ;
             owl:someValuesFrom xsd:string ],
-        hedera:Actor ;
+        hedera:Artefact ;
     skos:definition "On-ledger identity storing keys, balances, and staking configuration for participation in Hedera services."@en ;
+    skos:scopeNote "An account is ledger state, not an agent: relate it to the actor that controls it with hedera:isAccountOf / hedera:hasAccount, and to its network with hedera:registeredIn."@en ;
     hedera:instanceIRIPattern "https://hashgraphontology.xyz/resource/{network}/account/{shard}.{realm}.{num}"@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/accounts> .
 

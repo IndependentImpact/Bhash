@@ -607,11 +607,12 @@
   <rdf:Description rdf:about="https://hashgraphontology.xyz/core/Account">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">Account</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/Actor"/>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/Artefact"/>
     <rdfs:subClassOf rdf:nodeID="ne19b9777c7904e7ea63479dd486b1229b11"/>
     <rdfs:subClassOf rdf:nodeID="ne19b9777c7904e7ea63479dd486b1229b12"/>
     <rdfs:subClassOf rdf:nodeID="ne19b9777c7904e7ea63479dd486b1229b13"/>
     <skos:definition xml:lang="en">On-ledger identity storing keys, balances, and staking configuration for participation in Hedera services.</skos:definition>
+    <skos:scopeNote xml:lang="en">An account is ledger state, not an agent: relate it to the actor that controls it with hedera:isAccountOf / hedera:hasAccount, and to its network with hedera:registeredIn.</skos:scopeNote>
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/core-concepts/accounts"/>
     <hedera:instanceIRIPattern xml:lang="en">https://hashgraphontology.xyz/resource/{network}/account/{shard}.{realm}.{num}</hedera:instanceIRIPattern>
   </rdf:Description>

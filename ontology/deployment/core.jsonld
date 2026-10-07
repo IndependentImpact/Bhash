@@ -62,7 +62,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyz/core/Actor"
+        "@id": "https://hashgraphontology.xyz/core/Artefact"
       },
       {
         "@id": "_:ne19b9777c7904e7ea63479dd486b1229b11"
@@ -78,6 +78,12 @@
       {
         "@language": "en",
         "@value": "On-ledger identity storing keys, balances, and staking configuration for participation in Hedera services."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "An account is ledger state, not an agent: relate it to the actor that controls it with hedera:isAccountOf / hedera:hasAccount, and to its network with hedera:registeredIn."
       }
     ],
     "https://hashgraphontology.xyz/core/instanceIRIPattern": [
