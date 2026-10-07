@@ -3719,6 +3719,12 @@
         "@value": "Native cryptocurrency of the Hedera networks, used to pay transaction fees and to stake to consensus nodes."
       }
     ],
+    "https://hashgraphontology.xyz/core/hasDecimals": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 8
+      }
+    ],
     "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/support/faq/hbar"
@@ -3743,6 +3749,50 @@
             "@id": "https://hashgraphontology.xyz/core/Previewnet"
           }
         ]
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/hasDecimals",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Declared in the token module with domain hedera:FungibleToken until D-0006; widened to hedera:DigitalAsset so that it also applies to hedera:HBAR."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/DigitalAsset"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://hashgraphontology.xyz/core"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has decimals"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Number of decimal places between a digital asset's whole unit and its smallest indivisible unit (e.g., 8 for HBAR, as 1 HBAR = 100,000,000 tinybars)."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/support/faq/hbar"
       }
     ]
   }

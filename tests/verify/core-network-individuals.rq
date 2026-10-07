@@ -5,7 +5,8 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 # Violation query for the entailment harness (D-0005): the network named
 # individuals must carry the identifiers that tie them to the canonical
 # resource IRIs ({network} = skos:notation) and to external identifiers, and
-# hedera:HBAR must be entailed to be a hedera:DigitalAsset.
+# hedera:HBAR must be entailed to be a hedera:DigitalAsset with 8 decimals
+# (D-0006).
 SELECT ?violation
 WHERE {
   {
@@ -28,5 +29,10 @@ WHERE {
   {
     FILTER NOT EXISTS { hedera:HBAR a hedera:DigitalAsset }
     BIND("hedera:HBAR is not entailed to be a hedera:DigitalAsset" AS ?violation)
+  }
+  UNION
+  {
+    FILTER NOT EXISTS { hedera:HBAR hedera:hasDecimals 8 }
+    BIND("hedera:HBAR does not declare hedera:hasDecimals 8" AS ?violation)
   }
 }

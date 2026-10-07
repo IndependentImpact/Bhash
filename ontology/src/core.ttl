@@ -1032,6 +1032,17 @@ hedera:NativeCurrency
     hedera:sourceDocument <https://docs.hedera.com/support/faq/hbar> ;
     .
 
+hedera:hasDecimals
+    a owl:DatatypeProperty ;
+    rdfs:label "has decimals"@en ;
+    rdfs:comment "Declared in the token module with domain hedera:FungibleToken until D-0006; widened to hedera:DigitalAsset so that it also applies to hedera:HBAR."@en ;
+    rdfs:isDefinedBy <https://hashgraphontology.xyz/core> ;
+    rdfs:domain hedera:DigitalAsset ;
+    rdfs:range xsd:integer ;
+    skos:definition "Number of decimal places between a digital asset's whole unit and its smallest indivisible unit (e.g., 8 for HBAR, as 1 HBAR = 100,000,000 tinybars)."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/support/faq/hbar> ;
+    .
+
 hedera:hasNativeCurrency
     a owl:ObjectProperty ;
     rdfs:label "has native currency"@en ;
@@ -1112,5 +1123,6 @@ hedera:HBAR
     rdfs:comment "Record amounts as integers in tinybars (1 HBAR = 100,000,000 tinybars), as the network and mirror node do, rather than as decimal HBAR. The same individual serves every network; whether an amount has monetary value depends on the network it is held on."@en ;
     rdfs:isDefinedBy <https://hashgraphontology.xyz/core> ;
     skos:definition "Native cryptocurrency of the Hedera networks, used to pay transaction fees and to stake to consensus nodes."@en ;
+    hedera:hasDecimals 8 ;
     hedera:sourceDocument <https://docs.hedera.com/support/faq/hbar> ;
     .

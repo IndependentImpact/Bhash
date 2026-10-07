@@ -163,12 +163,6 @@ hedera:hasCustomFee a owl:ObjectProperty ;
     rdfs:range hedera:CustomFee ;
     skos:definition "Associates a token with the custom fee schedule entries it enforces."@en .
 
-hedera:hasDecimals a owl:DatatypeProperty ;
-    rdfs:label "has decimals"@en ;
-    rdfs:domain hedera:FungibleToken ;
-    rdfs:range xsd:integer ;
-    skos:definition "Number of decimal places tracked for fungible token units."@en .
-
 hedera:hasInitialSupply a owl:DatatypeProperty ;
     rdfs:label "has initial supply"@en ;
     rdfs:domain hedera:FungibleToken ;

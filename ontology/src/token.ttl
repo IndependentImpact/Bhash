@@ -405,13 +405,8 @@ hedera:hasSymbol
     skos:definition "Ticker-style symbol for a token."@en ;
     .
 
-hedera:hasDecimals
-    a owl:DatatypeProperty ;
-    rdfs:label "has decimals"@en ;
-    rdfs:domain hedera:FungibleToken ;
-    rdfs:range xsd:integer ;
-    skos:definition "Number of decimal places tracked for fungible token units."@en ;
-    .
+# hedera:hasDecimals is declared in core.ttl with domain hedera:DigitalAsset, so
+# that it also applies to the native currency (hedera:HBAR).
 
 hedera:hasInitialSupply
     a owl:DatatypeProperty ;

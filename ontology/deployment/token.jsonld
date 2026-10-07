@@ -789,34 +789,6 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/hasDecimals",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/FungibleToken"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has decimals"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#integer"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Number of decimal places tracked for fungible token units."
-      }
-    ]
-  },
-  {
     "@id": "https://hashgraphontology.xyz/core/SupplyKey",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
