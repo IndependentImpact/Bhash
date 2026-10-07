@@ -35,7 +35,7 @@ To enable cross-project RDF graph merging and `owl:sameAs` alignment, all Hedera
 | Token | `https://hashgraphontology.xyz/resource/{network}/token/{shard}.{realm}.{num}` |
 | Smart Contract | `https://hashgraphontology.xyz/resource/{network}/contract/{shard}.{realm}.{num}` |
 
-`{network}` is one of `mainnet`, `testnet`, or `previewnet`.  `{shard}.{realm}.{num}` follows the native Hedera entity-ID format (e.g., `0.0.12345`).  `{sequenceNumber}` is the consensus-assigned integer sequence number for a topic message.
+`{network}` is one of `mainnet`, `testnet`, or `previewnet`: the `skos:notation` of the `hedera:Mainnet`, `hedera:Testnet` and `hedera:Previewnet` named individuals declared in the core ontology.  `{shard}.{realm}.{num}` follows the native Hedera entity-ID format (e.g., `0.0.12345`).  `{sequenceNumber}` is the consensus-assigned integer sequence number for a topic message.
 
 Example usage:
 

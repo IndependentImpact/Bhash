@@ -83,7 +83,7 @@
     <dcterms:description xml:lang="en">Service-specific vocabulary for modelling Hedera Token Service artefacts, compliance roles, and lifecycle events.</dcterms:description>
     <dcterms:creator xml:lang="en">Bhash Ontology Working Group</dcterms:creator>
     <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-09-27</dcterms:created>
-    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-09-27</dcterms:modified>
+    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-10-07</dcterms:modified>
     <owl:imports rdf:resource="https://hashgraphontology.xyz/core"/>
     <owl:versionInfo>0.1.0-dev</owl:versionInfo>
     <skos:editorialNote xml:lang="en">Phase 3 sprint module introducing token compliance semantics to support CQ-COMP-003.</skos:editorialNote>
@@ -325,6 +325,8 @@
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">Token</rdfs:label>
     <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/Artefact"/>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/DigitalAsset"/>
+    <owl:disjointWith rdf:resource="https://hashgraphontology.xyz/core/NativeCurrency"/>
     <skos:definition xml:lang="en">Digital asset managed by the Token Service with associated supply, metadata, and key governance.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/sdks-and-apis/token-service/introduction"/>
     <hedera:instanceIRIPattern xml:lang="en">https://hashgraphontology.xyz/resource/{network}/token/{shard}.{realm}.{num}</hedera:instanceIRIPattern>

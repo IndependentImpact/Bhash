@@ -317,7 +317,7 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "URI template describing the canonical IRI scheme for instances of a class.  Network values are mainnet, testnet, or previewnet.  The shard.realm.num segments follow the native Hedera entity-ID format."
+        "@value": "URI template describing the canonical IRI scheme for instances of a class.  The {network} segment is the skos:notation of a hedera:Network individual: mainnet (hedera:Mainnet), testnet (hedera:Testnet), or previewnet (hedera:Previewnet).  The shard.realm.num segments follow the native Hedera entity-ID format."
       }
     ]
   },
@@ -3330,6 +3330,419 @@
     "http://www.w3.org/2002/07/owl#someValuesFrom": [
       {
         "@id": "http://www.w3.org/2001/XMLSchema#anyURI"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/DigitalAsset",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Common superclass of the native cryptocurrency (hedera:NativeCurrency) and Token Service tokens (hedera:Token), for properties that apply to either, such as fees payable in a token or in HBAR."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://hashgraphontology.xyz/core"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Digital asset"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Concept"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Unit of value or ownership whose balances are tracked by a Hedera network."
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/NativeCurrency",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Not a Token Service token: a native currency has no token ID and therefore no canonical resource IRI, so its instances are declared as named individuals (e.g., hedera:HBAR)."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://hashgraphontology.xyz/core"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Native currency"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/DigitalAsset"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Cryptocurrency built into a network's protocol and used to pay its transaction fees."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/support/faq/hbar"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/hasNativeCurrency",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Network"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://hashgraphontology.xyz/core"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has native currency"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/NativeCurrency"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Relates a network to the native cryptocurrency in which its transaction fees are paid."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/networks/mainnet"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/hasLedgerId",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "HIP-198 describes the current single-byte values as temporary, to be replaced by longer IDs."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Network"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://hashgraphontology.xyz/core"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has ledger ID"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#hexBinary"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Ledger ID that distinguishes a network, for example in state proofs and SDK network configuration."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://hips.hedera.com/hip/hip-198"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/hasEvmChainId",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Network"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://hashgraphontology.xyz/core"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has EVM chain ID"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#positiveInteger"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "EIP-155 chain ID that identifies a network to EVM tooling (JSON-RPC relay, wallets)."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/getting-started-evm-developers/add-hedera-to-metamask"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/Mainnet",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://hashgraphontology.xyz/core/Network"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://hashgraphontology.xyz/core"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Hedera mainnet"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Production Hedera network, on which transaction fees are paid in HBAR."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "mainnet"
+      }
+    ],
+    "https://hashgraphontology.xyz/core/hasEvmChainId": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#positiveInteger",
+        "@value": "295"
+      }
+    ],
+    "https://hashgraphontology.xyz/core/hasLedgerId": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#hexBinary",
+        "@value": "00"
+      }
+    ],
+    "https://hashgraphontology.xyz/core/hasNativeCurrency": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/HBAR"
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/networks/mainnet"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/Testnet",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://hashgraphontology.xyz/core/Network"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://hashgraphontology.xyz/core"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Hedera testnet"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Public Hedera test network for development, on which HBAR has no monetary value."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "testnet"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "Testnet is reset periodically, which clears balances, contracts, topics, tokens and other ledger state; accounts must be recreated afterwards. An entity ID, and so a canonical resource IRI under https://hashgraphontology.xyz/resource/testnet/, can therefore denote different entities before and after a reset."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/hasEvmChainId": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#positiveInteger",
+        "@value": "296"
+      }
+    ],
+    "https://hashgraphontology.xyz/core/hasLedgerId": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#hexBinary",
+        "@value": "01"
+      }
+    ],
+    "https://hashgraphontology.xyz/core/hasNativeCurrency": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/HBAR"
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/networks/testnet"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/Previewnet",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://hashgraphontology.xyz/core/Network"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://hashgraphontology.xyz/core"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Hedera previewnet"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Hedera network that receives new software releases before testnet and mainnet, for previewing upcoming features."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#notation": [
+      {
+        "@value": "previewnet"
+      }
+    ],
+    "https://hashgraphontology.xyz/core/hasEvmChainId": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#positiveInteger",
+        "@value": "297"
+      }
+    ],
+    "https://hashgraphontology.xyz/core/hasLedgerId": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#hexBinary",
+        "@value": "02"
+      }
+    ],
+    "https://hashgraphontology.xyz/core/hasNativeCurrency": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/HBAR"
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://hedera.com/blog/the-hedera-previewnet-is-now-live"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/HBAR",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual",
+      "https://hashgraphontology.xyz/core/NativeCurrency"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@language": "en",
+        "@value": "Record amounts as integers in tinybars (1 HBAR = 100,000,000 tinybars), as the network and mirror node do, rather than as decimal HBAR. The same individual serves every network; whether an amount has monetary value depends on the network it is held on."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://hashgraphontology.xyz/core"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "HBAR"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#altLabel": [
+      {
+        "@value": "\u210f"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Native cryptocurrency of the Hedera networks, used to pay transaction fees and to stake to consensus nodes."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/support/faq/hbar"
+      }
+    ]
+  },
+  {
+    "@id": "_:n7ff8d2d633d84317b16a3b747bc2ecf1b45",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#AllDifferent"
+    ],
+    "http://www.w3.org/2002/07/owl#distinctMembers": [
+      {
+        "@list": [
+          {
+            "@id": "https://hashgraphontology.xyz/core/Mainnet"
+          },
+          {
+            "@id": "https://hashgraphontology.xyz/core/Testnet"
+          },
+          {
+            "@id": "https://hashgraphontology.xyz/core/Previewnet"
+          }
+        ]
       }
     ]
   }

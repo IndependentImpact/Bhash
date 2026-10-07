@@ -74,7 +74,15 @@
             
                 <tr><td>ns18</td><td>https://docs.hedera.com/hedera/mirror-node/architecture/</td></tr>
             
+                <tr><td>ns19</td><td>https://docs.hedera.com/hedera/getting-started-evm-developers/</td></tr>
+            
                 <tr><td>ns2</td><td>https://docs.hedera.com/hedera/core-concepts/transactions/</td></tr>
+            
+                <tr><td>ns20</td><td>https://docs.hedera.com/networks/</td></tr>
+            
+                <tr><td>ns21</td><td>https://docs.hedera.com/support/faq/</td></tr>
+            
+                <tr><td>ns22</td><td>https://hedera.com/blog/</td></tr>
             
                 <tr><td>ns3</td><td>https://docs.hedera.com/</td></tr>
             
@@ -109,7 +117,7 @@
     </section>
 
     <section class="section">
-        <h2>Classes (37)</h2>
+        <h2>Classes (39)</h2>
         <table>
             <thead><tr><th>Label</th><th>QName</th><th>Subclass Of</th><th>Notes</th></tr></thead>
             <tbody>
@@ -195,6 +203,18 @@
                         
                         
                         <div class="meta">IRI: https://hashgraphontology.xyz/core/ConsensusNode</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-DigitalAsset">
+                    <td>Digital asset</td>
+                    <td>hedera:DigitalAsset</td>
+                    <td><span class="pill">hedera:Concept</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Unit of value or ownership whose balances are tracked by a Hedera network.</div>
+                        <div><strong>Comment:</strong> Common superclass of the native cryptocurrency (hedera:NativeCurrency) and Token Service tokens (hedera:Token), for properties that apply to either, such as fees payable in a token or in HBAR.</div>
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyz/core/DigitalAsset</div>
                     </td>
                 </tr>
             
@@ -351,6 +371,18 @@
                         
                         
                         <div class="meta">IRI: https://hashgraphontology.xyz/core/MirrorNode</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-hedera-NativeCurrency">
+                    <td>Native currency</td>
+                    <td>hedera:NativeCurrency</td>
+                    <td><span class="pill">hedera:DigitalAsset</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Cryptocurrency built into a network's protocol and used to pay its transaction fees.</div>
+                        <div><strong>Comment:</strong> Not a Token Service token: a native currency has no token ID and therefore no canonical resource IRI, so its instances are declared as named individuals (e.g., hedera:HBAR).</div>
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyz/core/NativeCurrency</div>
                     </td>
                 </tr>
             
@@ -563,7 +595,7 @@
     </section>
 
     <section class="section">
-        <h2>Properties (39)</h2>
+        <h2>Properties (42)</h2>
         <table>
             <thead><tr><th>Label</th><th>QName</th><th>Kind</th><th>Domain</th><th>Range</th><th>Notes</th></tr></thead>
             <tbody>
@@ -666,6 +698,20 @@
                     </td>
                 </tr>
             
+                <tr id="prop-hedera-hasEvmChainId">
+                    <td>has EVM chain ID</td>
+                    <td>hedera:hasEvmChainId</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:Network</span></td>
+                    <td><span class="pill">xsd:positiveInteger</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyz/core/hasEvmChainId</div>
+                    </td>
+                </tr>
+            
                 <tr id="prop-hedera-hasLayer">
                     <td>has layer</td>
                     <td>hedera:hasLayer</td>
@@ -680,6 +726,20 @@
                     </td>
                 </tr>
             
+                <tr id="prop-hedera-hasLedgerId">
+                    <td>has ledger ID</td>
+                    <td>hedera:hasLedgerId</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:Network</span></td>
+                    <td><span class="pill">xsd:hexBinary</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> HIP-198 describes the current single-byte values as temporary, to be replaced by longer IDs.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyz/core/hasLedgerId</div>
+                    </td>
+                </tr>
+            
                 <tr id="prop-hedera-hasMandate">
                     <td>has mandate</td>
                     <td>hedera:hasMandate</td>
@@ -691,6 +751,20 @@
                         
                         
                         <div class="meta">IRI: https://hashgraphontology.xyz/core/hasMandate</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasNativeCurrency">
+                    <td>has native currency</td>
+                    <td>hedera:hasNativeCurrency</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:Network</span></td>
+                    <td><span class="pill">hedera:NativeCurrency</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyz/core/hasNativeCurrency</div>
                     </td>
                 </tr>
             

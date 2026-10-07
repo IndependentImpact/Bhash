@@ -13,7 +13,8 @@
 #   Token         : https://hashgraphontology.xyz/resource/{network}/token/{shard}.{realm}.{num}
 #   SmartContract : https://hashgraphontology.xyz/resource/{network}/contract/{shard}.{realm}.{num}
 #
-# Network values: mainnet | testnet | previewnet
+# Network values: mainnet | testnet | previewnet -- the skos:notation of the
+# hedera:Mainnet, hedera:Testnet and hedera:Previewnet individuals in core.
 ###
 
 @prefix hedera: <https://hashgraphontology.xyz/core/> .
@@ -39,6 +40,7 @@
 <https://hashgraphontology.xyz/resource/testnet/topic/0.0.12345>
     a hedera:ConsensusTopic ;
     rdfs:label "Testnet topic 0.0.12345"@en ;
+    hedera:registeredIn hedera:Testnet ;
     .
 
 ###
@@ -59,6 +61,7 @@
 <https://hashgraphontology.xyz/resource/mainnet/token/0.0.54321>
     a hedera:Token ;
     rdfs:label "Mainnet token 0.0.54321"@en ;
+    hedera:registeredIn hedera:Mainnet ;
     hedera:hasTokenId "0.0.54321" ;
     .
 
@@ -69,6 +72,7 @@
 <https://hashgraphontology.xyz/resource/mainnet/contract/0.0.98765>
     a hedera:SmartContract ;
     rdfs:label "Mainnet contract 0.0.98765"@en ;
+    hedera:registeredIn hedera:Mainnet ;
     hedera:hasContractId "0.0.98765" ;
     .
 
