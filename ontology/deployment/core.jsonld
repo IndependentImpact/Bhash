@@ -230,7 +230,7 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Indicates which broader network a Hiero shard belongs to."
+        "@value": "Indicates the network that a Hiero shard is a partition of."
       }
     ],
     "https://hashgraphontology.xyz/core/sourceDocument": [
@@ -538,10 +538,24 @@
         "@id": "_:ne19b9777c7904e7ea63479dd486b1229b9"
       }
     ],
+    "http://www.w3.org/2002/07/owl#disjointWith": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/HieroLayer"
+      },
+      {
+        "@id": "https://hashgraphontology.xyz/core/HieroShard"
+      }
+    ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "A distributed environment (e.g., mainnet, testnet, shard) that provides Hedera services."
+        "@value": "A distributed ledger environment (e.g., mainnet, testnet, previewnet) that provides Hedera services."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "Hiero layers and shards are parts of a network, not kinds of network: relate them to their network with hedera:hasLayer / hedera:isLayerOf and hedera:hasShard / hedera:isShardOf."
       }
     ],
     "https://hashgraphontology.xyz/core/sourceDocument": [
@@ -696,7 +710,7 @@
     "http://purl.org/dc/terms/modified": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2026-08-14"
+        "@value": "2026-10-07"
       }
     ],
     "http://purl.org/dc/terms/source": [
@@ -1260,7 +1274,7 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Indicates the network or shard through which a service is made available."
+        "@value": "Indicates the network through which a service is made available."
       }
     ]
   },
@@ -1775,7 +1789,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyz/core/Network"
+        "@id": "https://hashgraphontology.xyz/core/Concept"
       },
       {
         "@id": "_:ne19b9777c7904e7ea63479dd486b1229b44"
@@ -1784,12 +1798,15 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Network partition within Hiero that localises consensus and execution responsibilities."
+        "@value": "Partition of a network within Hiero that localises consensus and execution responsibilities."
       }
     ],
     "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://hips.hedera.com/hip/hip-840"
+      },
+      {
+        "@id": "https://docs.hedera.com/hiero/concepts/shards"
       }
     ]
   },
@@ -2984,7 +3001,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyz/core/Network"
+        "@id": "https://hashgraphontology.xyz/core/Concept"
       },
       {
         "@id": "_:ne19b9777c7904e7ea63479dd486b1229b42"
@@ -2996,7 +3013,7 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Logical component of the Hiero architecture (consensus, execution, or service layer)."
+        "@value": "Logical component of the Hiero architecture (consensus, execution, or service layer) that forms part of a network."
       }
     ],
     "https://hashgraphontology.xyz/core/sourceDocument": [

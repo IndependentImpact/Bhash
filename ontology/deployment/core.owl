@@ -20,7 +20,10 @@
     <rdfs:label xml:lang="en">Network</rdfs:label>
     <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/Actor"/>
     <rdfs:subClassOf rdf:nodeID="ne19b9777c7904e7ea63479dd486b1229b9"/>
-    <skos:definition xml:lang="en">A distributed environment (e.g., mainnet, testnet, shard) that provides Hedera services.</skos:definition>
+    <owl:disjointWith rdf:resource="https://hashgraphontology.xyz/core/HieroLayer"/>
+    <owl:disjointWith rdf:resource="https://hashgraphontology.xyz/core/HieroShard"/>
+    <skos:definition xml:lang="en">A distributed ledger environment (e.g., mainnet, testnet, previewnet) that provides Hedera services.</skos:definition>
+    <skos:scopeNote xml:lang="en">Hiero layers and shards are parts of a network, not kinds of network: relate them to their network with hedera:hasLayer / hedera:isLayerOf and hedera:hasShard / hedera:isShardOf.</skos:scopeNote>
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/network/nodes/mainnet-nodes"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://hashgraphontology.xyz/core/stakesTo">
@@ -199,10 +202,11 @@
   <rdf:Description rdf:about="https://hashgraphontology.xyz/core/HieroShard">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">Hiero shard</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/Network"/>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/Concept"/>
     <rdfs:subClassOf rdf:nodeID="ne19b9777c7904e7ea63479dd486b1229b44"/>
-    <skos:definition xml:lang="en">Network partition within Hiero that localises consensus and execution responsibilities.</skos:definition>
+    <skos:definition xml:lang="en">Partition of a network within Hiero that localises consensus and execution responsibilities.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://hips.hedera.com/hip/hip-840"/>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hiero/concepts/shards"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://hashgraphontology.xyz/core/producesRecord">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -283,10 +287,10 @@
   <rdf:Description rdf:about="https://hashgraphontology.xyz/core/HieroLayer">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">Hiero layer</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/Network"/>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/Concept"/>
     <rdfs:subClassOf rdf:nodeID="ne19b9777c7904e7ea63479dd486b1229b42"/>
     <rdfs:subClassOf rdf:nodeID="ne19b9777c7904e7ea63479dd486b1229b43"/>
-    <skos:definition xml:lang="en">Logical component of the Hiero architecture (consensus, execution, or service layer).</skos:definition>
+    <skos:definition xml:lang="en">Logical component of the Hiero architecture (consensus, execution, or service layer) that forms part of a network.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hiero"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="ne19b9777c7904e7ea63479dd486b1229b27">
@@ -413,7 +417,7 @@
     <dcterms:source rdf:resource="https://docs.hedera.com/hiero"/>
     <dcterms:source rdf:resource="https://docs.hedera.com/hedera/core-concepts/transactions/transaction-lifecycle"/>
     <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-05-02</dcterms:created>
-    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-08-14</dcterms:modified>
+    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-10-07</dcterms:modified>
     <owl:versionIRI rdf:resource="https://hashgraphontology.xyz/core/0.1.0-dev"/>
     <owl:versionInfo>0.1.0-dev</owl:versionInfo>
     <owl:imports rdf:resource="https://hashgraphontology.xyz/imports/prov"/>
@@ -656,7 +660,7 @@
     <rdfs:label xml:lang="en">is shard of</rdfs:label>
     <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/HieroShard"/>
     <rdfs:range rdf:resource="https://hashgraphontology.xyz/core/Network"/>
-    <skos:definition xml:lang="en">Indicates which broader network a Hiero shard belongs to.</skos:definition>
+    <skos:definition xml:lang="en">Indicates the network that a Hiero shard is a partition of.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://hips.hedera.com/hip/hip-840"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="ne19b9777c7904e7ea63479dd486b1229b37">
@@ -831,7 +835,7 @@
     <rdfs:label xml:lang="en">exposed on</rdfs:label>
     <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/Service"/>
     <rdfs:range rdf:resource="https://hashgraphontology.xyz/core/Network"/>
-    <skos:definition xml:lang="en">Indicates the network or shard through which a service is made available.</skos:definition>
+    <skos:definition xml:lang="en">Indicates the network through which a service is made available.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:nodeID="ne19b9777c7904e7ea63479dd486b1229b38">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>

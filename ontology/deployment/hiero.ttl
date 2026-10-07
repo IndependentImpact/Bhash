@@ -87,7 +87,7 @@ hedera:triggeredByMilestone a owl:ObjectProperty ;
     dcterms:created "2024-10-01"^^xsd:date ;
     dcterms:creator "Bhash Ontology Working Group"@en ;
     dcterms:description "Vocabulary extending the core ontology with Hiero shards, validator roles, and onboarding milestones."@en ;
-    dcterms:modified "2025-09-30"^^xsd:date ;
+    dcterms:modified "2026-10-07"^^xsd:date ;
     dcterms:title "Hiero Overlay module"@en ;
     owl:imports <https://hashgraphontology.xyz/core> ;
     owl:versionInfo "0.1.0-dev" ;
@@ -116,12 +116,6 @@ hedera:HieroValidatorRole a owl:Class ;
     rdfs:subClassOf hedera:Role ;
     skos:definition "Role undertaken by validators within the Hiero architecture (consensus, execution, availability)."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hiero/concepts/validators> .
-
-hedera:HieroShard a owl:Class ;
-    rdfs:label "Hiero shard"@en ;
-    rdfs:subClassOf hedera:Network ;
-    skos:definition "Logical partition of the Hiero network responsible for consensus and execution within a region."@en ;
-    hedera:sourceDocument <https://docs.hedera.com/hiero/concepts/shards> .
 
 hedera:HieroParticipation a owl:Class ;
     rdfs:label "Hiero participation"@en ;

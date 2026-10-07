@@ -18,7 +18,7 @@
     dcterms:license <https://www.apache.org/licenses/LICENSE-2.0> ;
     dcterms:source <https://docs.hedera.com/hedera> , <https://docs.hedera.com/hiero> , <https://docs.hedera.com/hedera/core-concepts/transactions/transaction-lifecycle> ;
     dcterms:created "2024-05-02"^^xsd:date ;
-    dcterms:modified "2026-08-14"^^xsd:date ;
+    dcterms:modified "2026-10-07"^^xsd:date ;
     owl:versionIRI <https://hashgraphontology.xyz/core/0.1.0-dev> ;
     owl:versionInfo "0.1.0-dev" ;
     owl:imports <https://hashgraphontology.xyz/imports/prov> ,
@@ -65,7 +65,9 @@ hedera:Network
     a owl:Class ;
     rdfs:label "Network"@en ;
     rdfs:subClassOf hedera:Actor ;
-    skos:definition "A distributed environment (e.g., mainnet, testnet, shard) that provides Hedera services."@en ;
+    owl:disjointWith hedera:HieroLayer , hedera:HieroShard ;
+    skos:definition "A distributed ledger environment (e.g., mainnet, testnet, previewnet) that provides Hedera services."@en ;
+    skos:scopeNote "Hiero layers and shards are parts of a network, not kinds of network: relate them to their network with hedera:hasLayer / hedera:isLayerOf and hedera:hasShard / hedera:isShardOf."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/network/nodes/mainnet-nodes> ;
     .
 
@@ -116,8 +118,8 @@ hedera:Event
 hedera:HieroLayer
     a owl:Class ;
     rdfs:label "Hiero layer"@en ;
-    rdfs:subClassOf hedera:Network ;
-    skos:definition "Logical component of the Hiero architecture (consensus, execution, or service layer)."@en ;
+    rdfs:subClassOf hedera:Concept ;
+    skos:definition "Logical component of the Hiero architecture (consensus, execution, or service layer) that forms part of a network."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hiero> ;
     .
 
@@ -309,9 +311,9 @@ hedera:MirrorDataset
 hedera:HieroShard
     a owl:Class ;
     rdfs:label "Hiero shard"@en ;
-    rdfs:subClassOf hedera:Network ;
-    skos:definition "Network partition within Hiero that localises consensus and execution responsibilities."@en ;
-    hedera:sourceDocument <https://hips.hedera.com/hip/hip-840> ;
+    rdfs:subClassOf hedera:Concept ;
+    skos:definition "Partition of a network within Hiero that localises consensus and execution responsibilities."@en ;
+    hedera:sourceDocument <https://hips.hedera.com/hip/hip-840> , <https://docs.hedera.com/hiero/concepts/shards> ;
     .
 
 hedera:HieroConsensusLayer
@@ -436,7 +438,7 @@ hedera:exposedOn
     rdfs:label "exposed on"@en ;
     rdfs:domain hedera:Service ;
     rdfs:range hedera:Network ;
-    skos:definition "Indicates the network or shard through which a service is made available."@en ;
+    skos:definition "Indicates the network through which a service is made available."@en ;
     .
 
 hedera:registeredIn
@@ -632,7 +634,7 @@ hedera:isShardOf
     rdfs:label "is shard of"@en ;
     rdfs:domain hedera:HieroShard ;
     rdfs:range hedera:Network ;
-    skos:definition "Indicates which broader network a Hiero shard belongs to."@en ;
+    skos:definition "Indicates the network that a Hiero shard is a partition of."@en ;
     hedera:sourceDocument <https://hips.hedera.com/hip/hip-840> ;
     .
 

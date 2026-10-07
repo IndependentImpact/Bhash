@@ -249,7 +249,7 @@
     "http://purl.org/dc/terms/modified": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2025-09-30"
+        "@value": "2026-10-07"
       }
     ],
     "http://purl.org/dc/terms/title": [
@@ -300,34 +300,6 @@
       {
         "@language": "en",
         "@value": "Composite score used to assess validator readiness."
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/HieroShard",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Hiero shard"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Network"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Logical partition of the Hiero network responsible for consensus and execution within a region."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hiero/concepts/shards"
       }
     ]
   },

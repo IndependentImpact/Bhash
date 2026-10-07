@@ -18,7 +18,7 @@ ex:HederaCouncil
     a hedera:GovernanceBody ;
     rdfs:label "Hedera Governing Council"@en ;
     hedera:hasMandate "HIP-840 validator onboarding"@en ;
-    hedera:governs ex:Mainnet , ex:MainnetShardAlpha ;
+    hedera:governs ex:Mainnet ;
     .
 
 ex:CoinComCommittee
@@ -57,7 +57,6 @@ ex:MainnetShardAlpha
     a hedera:HieroShard ;
     rdfs:label "Mainnet shard alpha"@en ;
     hedera:isShardOf ex:Mainnet ;
-    hedera:isGovernedBy ex:HederaCouncil ;
     hedera:hasShardIdentifier "alpha" ;
     .
 

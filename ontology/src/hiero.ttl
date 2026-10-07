@@ -14,7 +14,7 @@
     dcterms:description "Vocabulary extending the core ontology with Hiero shards, validator roles, and onboarding milestones."@en ;
     dcterms:creator "Bhash Ontology Working Group"@en ;
     dcterms:created "2024-10-01"^^xsd:date ;
-    dcterms:modified "2025-09-30"^^xsd:date ;
+    dcterms:modified "2026-10-07"^^xsd:date ;
     owl:imports <https://hashgraphontology.xyz/core> ;
     owl:versionInfo "0.1.0-dev" ;
     skos:editorialNote "Phase 3 Hiero overlay capturing shard participation states for CQ-HIE-009."@en ;
@@ -24,13 +24,8 @@
 # Hiero classes
 ###
 
-hedera:HieroShard
-    a owl:Class ;
-    rdfs:label "Hiero shard"@en ;
-    rdfs:subClassOf hedera:Network ;
-    skos:definition "Logical partition of the Hiero network responsible for consensus and execution within a region."@en ;
-    hedera:sourceDocument <https://docs.hedera.com/hiero/concepts/shards> ;
-    .
+# hedera:HieroShard is declared in core.ttl (core's hasShard / isShardOf need it);
+# this module adds shard-level properties such as hedera:hasShardIdentifier.
 
 hedera:HieroParticipation
     a owl:Class ;

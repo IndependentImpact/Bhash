@@ -189,7 +189,7 @@ hedera:stakesTo a owl:ObjectProperty ;
     dcterms:creator "Bhash Ontology Working Group"@en ;
     dcterms:description "Upper-level classes and properties capturing shared Hedera and Hiero network concepts, including identity, governance, transactions, and data export semantics."@en ;
     dcterms:license <https://www.apache.org/licenses/LICENSE-2.0> ;
-    dcterms:modified "2026-08-14"^^xsd:date ;
+    dcterms:modified "2026-10-07"^^xsd:date ;
     dcterms:source <https://docs.hedera.com/hedera>,
         <https://docs.hedera.com/hedera/core-concepts/transactions/transaction-lifecycle>,
         <https://docs.hedera.com/hiero> ;
@@ -218,7 +218,7 @@ hedera:exposedOn a owl:ObjectProperty ;
     rdfs:label "exposed on"@en ;
     rdfs:domain hedera:Service ;
     rdfs:range hedera:Network ;
-    skos:definition "Indicates the network or shard through which a service is made available."@en .
+    skos:definition "Indicates the network through which a service is made available."@en .
 
 hedera:hasAccountId a owl:DatatypeProperty ;
     rdfs:label "has account ID"@en ;
@@ -346,15 +346,6 @@ hedera:GovernanceProcess a owl:Class ;
     skos:definition "Process through which councils or committees evaluate and ratify network decisions."@en ;
     hedera:sourceDocument <https://hedera.com/council> .
 
-hedera:HieroShard a owl:Class ;
-    rdfs:label "Hiero shard"@en ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onProperty hedera:isShardOf ;
-            owl:someValuesFrom hedera:Network ],
-        hedera:Network ;
-    skos:definition "Network partition within Hiero that localises consensus and execution responsibilities."@en ;
-    hedera:sourceDocument <https://hips.hedera.com/hip/hip-840> .
-
 hedera:Node a owl:Class ;
     rdfs:label "Node"@en ;
     rdfs:subClassOf [ a owl:Restriction ;
@@ -444,7 +435,7 @@ hedera:isShardOf a owl:ObjectProperty ;
     rdfs:label "is shard of"@en ;
     rdfs:domain hedera:HieroShard ;
     rdfs:range hedera:Network ;
-    skos:definition "Indicates which broader network a Hiero shard belongs to."@en ;
+    skos:definition "Indicates the network that a Hiero shard is a partition of."@en ;
     hedera:sourceDocument <https://hips.hedera.com/hip/hip-840> .
 
 hedera:participatesIn a owl:ObjectProperty ;
@@ -460,6 +451,16 @@ hedera:securesAccount a owl:ObjectProperty ;
     rdfs:range hedera:Account ;
     skos:definition "Indicates which account a key structure protects."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/accounts/account-properties#keys> .
+
+hedera:HieroShard a owl:Class ;
+    rdfs:label "Hiero shard"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty hedera:isShardOf ;
+            owl:someValuesFrom hedera:Network ],
+        hedera:Concept ;
+    skos:definition "Partition of a network within Hiero that localises consensus and execution responsibilities."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hiero/concepts/shards>,
+        <https://hips.hedera.com/hip/hip-840> .
 
 hedera:MirrorDataset a owl:Class ;
     rdfs:label "Mirror dataset"@en ;
@@ -543,22 +544,6 @@ hedera:producesEvent a owl:ObjectProperty ;
     rdfs:subPropertyOf prov:generated ;
     skos:definition "States that a process yields a specific event observation."@en .
 
-hedera:Concept a owl:Class ;
-    rdfs:label "Concept"@en ;
-    skos:definition "Abstract superclass for all Bhash ontology entities."@en .
-
-hedera:HieroLayer a owl:Class ;
-    rdfs:label "Hiero layer"@en ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onProperty hedera:isLayerOf ;
-            owl:someValuesFrom hedera:Network ],
-        [ a owl:Restriction ;
-            owl:onProperty hedera:virtualisesService ;
-            owl:someValuesFrom hedera:Service ],
-        hedera:Network ;
-    skos:definition "Logical component of the Hiero architecture (consensus, execution, or service layer)."@en ;
-    hedera:sourceDocument <https://docs.hedera.com/hiero> .
-
 hedera:TransactionRecord a owl:Class ;
     rdfs:label "Transaction record"@en ;
     rdfs:subClassOf [ a owl:Restriction ;
@@ -576,6 +561,18 @@ hedera:AccountKey a owl:Class ;
         hedera:Artefact ;
     skos:definition "Key material that authorises actions for accounts, topics, files, and tokens."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/accounts/account-properties> .
+
+hedera:HieroLayer a owl:Class ;
+    rdfs:label "Hiero layer"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty hedera:isLayerOf ;
+            owl:someValuesFrom hedera:Network ],
+        [ a owl:Restriction ;
+            owl:onProperty hedera:virtualisesService ;
+            owl:someValuesFrom hedera:Service ],
+        hedera:Concept ;
+    skos:definition "Logical component of the Hiero architecture (consensus, execution, or service layer) that forms part of a network."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hiero> .
 
 hedera:Service a owl:Class ;
     rdfs:label "Service"@en ;
@@ -601,6 +598,10 @@ hedera:Artefact a owl:Class ;
     rdfs:subClassOf prov:Entity,
         hedera:Concept ;
     skos:definition "Digital object or state produced or managed by Hedera services (topics, tokens, files, smart contracts)."@en .
+
+hedera:Concept a owl:Class ;
+    rdfs:label "Concept"@en ;
+    skos:definition "Abstract superclass for all Bhash ontology entities."@en .
 
 hedera:Process a owl:Class ;
     rdfs:label "Process"@en ;
@@ -636,6 +637,18 @@ hedera:TransactionPhase a owl:Class ;
     skos:definition "Segment of the transaction lifecycle (submission, consensus, execution, export)."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/transactions/transaction-lifecycle> .
 
+hedera:Network a owl:Class ;
+    rdfs:label "Network"@en ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty hedera:isGovernedBy ;
+            owl:someValuesFrom hedera:GovernanceBody ],
+        hedera:Actor ;
+    owl:disjointWith hedera:HieroLayer,
+        hedera:HieroShard ;
+    skos:definition "A distributed ledger environment (e.g., mainnet, testnet, previewnet) that provides Hedera services."@en ;
+    skos:scopeNote "Hiero layers and shards are parts of a network, not kinds of network: relate them to their network with hedera:hasLayer / hedera:isLayerOf and hedera:hasShard / hedera:isShardOf."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/network/nodes/mainnet-nodes> .
+
 hedera:Account a owl:Class ;
     rdfs:label "Account"@en ;
     rdfs:subClassOf [ a owl:Restriction ;
@@ -651,15 +664,6 @@ hedera:Account a owl:Class ;
     skos:definition "On-ledger identity storing keys, balances, and staking configuration for participation in Hedera services."@en ;
     hedera:instanceIRIPattern "https://hashgraphontology.xyz/resource/{network}/account/{shard}.{realm}.{num}"@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/accounts> .
-
-hedera:Network a owl:Class ;
-    rdfs:label "Network"@en ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onProperty hedera:isGovernedBy ;
-            owl:someValuesFrom hedera:GovernanceBody ],
-        hedera:Actor ;
-    skos:definition "A distributed environment (e.g., mainnet, testnet, shard) that provides Hedera services."@en ;
-    hedera:sourceDocument <https://docs.hedera.com/hedera/network/nodes/mainnet-nodes> .
 
 hedera:Actor a owl:Class ;
     rdfs:label "Actor"@en ;

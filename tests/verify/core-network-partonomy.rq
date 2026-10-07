@@ -1,0 +1,13 @@
+PREFIX hedera: <https://hashgraphontology.xyz/core/>
+
+# Violation query for the entailment harness: Hiero layers and shards are
+# parts of a network (hasLayer / hasShard), not kinds of network (D-0003).
+# Returns a row when, after the OWL 2 RL closure, any individual is typed both
+# hedera:Network and hedera:HieroLayer or hedera:HieroShard - e.g. because a
+# property with a Network domain or range was used on a layer or shard.
+SELECT ?violation ?node
+WHERE {
+  VALUES ?part { hedera:HieroLayer hedera:HieroShard }
+  ?node a hedera:Network , ?part .
+  BIND(CONCAT("individual typed as both hedera:Network and ", STR(?part)) AS ?violation)
+}
