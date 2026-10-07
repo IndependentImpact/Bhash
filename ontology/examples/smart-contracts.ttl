@@ -8,6 +8,7 @@
 exsc:SmartContractService
     a hedera:SmartContractService ;
     rdfs:label "Mainnet Smart Contract Service"@en ;
+    hedera:exposedOn hedera:Mainnet ;
     hedera:hasGasSchedule exsc:MainnetGasSchedule ;
     .
 

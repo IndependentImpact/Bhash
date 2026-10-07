@@ -8,6 +8,7 @@
 exfs:FileService
     a hedera:FileService ;
     rdfs:label "Mainnet File Service"@en ;
+    hedera:exposedOn hedera:Mainnet ;
     .
 
 exfs:DEXBytecodeFile
@@ -32,6 +33,7 @@ exfs:DEXBytecodeContent
 exfs:ScheduleService
     a hedera:ScheduleService ;
     rdfs:label "Scheduled Transaction Service"@en ;
+    hedera:exposedOn hedera:Mainnet ;
     .
 
 exfs:EmergencyPauseSchedule
