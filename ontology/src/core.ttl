@@ -1004,16 +1004,6 @@ hedera:HieroShard
     ] ;
     .
 
-###
-# Networks and native currency
-#
-# Named individuals for the public Hedera networks and their native
-# cryptocurrency.  These are fixed, universal instances, so they are declared
-# here in the ontology (and versioned with it) rather than minted under
-# https://hashgraphontology.xyz/resource/.  The skos:notation of each network
-# is the {network} segment of the canonical resource IRIs.
-###
-
 hedera:DigitalAsset
     a owl:Class ;
     rdfs:label "Digital asset"@en ;
@@ -1074,6 +1064,14 @@ hedera:hasEvmChainId
     skos:definition "EIP-155 chain ID that identifies a network to EVM tooling (JSON-RPC relay, wallets)."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/getting-started-evm-developers/add-hedera-to-metamask> ;
     .
+
+###
+# Named individuals for the public Hedera networks and their native
+# cryptocurrency. These are fixed, universal instances, so they are declared
+# here in the ontology (and versioned with it) rather than minted under
+# https://hashgraphontology.xyz/resource/.  The skos:notation of each network
+# is the {network} segment of the canonical resource IRIs.
+###
 
 hedera:Mainnet
     a owl:NamedIndividual , hedera:Network ;
