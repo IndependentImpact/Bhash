@@ -60,7 +60,15 @@ ex:USDH
     hedera:hasInitialSupply "5000000"^^xsd:decimal ;
     hedera:hasTreasury ex:IssuerAccount ;
     hedera:hasKeyAssignment ex:USDHKYCKeyAssignment , ex:USDHFreezeKeyAssignment , ex:USDHSupplyKeyAssignment ;
+    hedera:hasCustomFee ex:USDHTransferFee ;
     hedera:provTrace <https://hips.hedera.com/hip/hip-540> ;
+    .
+
+ex:USDHTransferFee
+    a hedera:FixedFee ;
+    rdfs:label "USDH transfer fee"@en ;
+    hedera:isDenominatedIn hedera:HBAR ;
+    hedera:feeCollector ex:IssuerAccount ;
     .
 
 ex:USDHKYCKey

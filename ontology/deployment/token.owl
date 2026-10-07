@@ -45,6 +45,7 @@
   <rdf:Description rdf:about="https://hashgraphontology.xyz/core/FixedFee">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">Fixed fee</rdfs:label>
+    <rdfs:comment xml:lang="en">State the currency with hedera:isDenominatedIn: hedera:HBAR or a fungible hedera:Token.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/CustomFee"/>
     <skos:definition xml:lang="en">Custom fee that transfers a fixed quantity of tokens or HBAR to the collector.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/sdks-and-apis/token-service/custom-fees/fixed-fees"/>
@@ -394,5 +395,15 @@
     <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/TokenComplianceRole"/>
     <skos:definition xml:lang="en">Role accountable for administering KYC approvals required before token transfers.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://hips.hedera.com/hip/hip-540"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/isDenominatedIn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">is denominated in</rdfs:label>
+    <rdfs:comment xml:lang="en">Corresponds to the fixed fee's denominating token ID. When that ID is unset the fee is charged in HBAR, so state hedera:HBAR explicitly. Only HBAR or a fungible token can denominate a fixed fee, never a non-fungible token.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="https://hashgraphontology.xyz/token"/>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/FixedFee"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyz/core/DigitalAsset"/>
+    <skos:definition xml:lang="en">Relates a fixed fee to the digital asset in which it is charged.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/native/tokens/custom-fees"/>
   </rdf:Description>
 </rdf:RDF>
