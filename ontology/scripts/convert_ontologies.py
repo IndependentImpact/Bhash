@@ -18,7 +18,7 @@ from typing import Dict, List, Optional, Sequence, Set, Tuple
 import rdflib
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from rdflib import Graph, Literal, URIRef
-from rdflib.namespace import DCTERMS, OWL, RDF, RDFS, SKOS
+from rdflib.namespace import DCTERMS, OWL, RDF, RDFS, SKOS, XSD
 
 # Map filename extensions to rdflib parse formats.
 FORMAT_BY_EXT: Dict[str, str] = {
@@ -47,6 +47,28 @@ class ClassInfo:
     comments: List[Literal]
     examples: List[Literal]
     subClassOf: List[str]
+
+
+@dataclass
+class FactInfo:
+    """One property assertion on a named individual, prepared for display."""
+
+    property: str
+    value: str
+    href: Optional[str]
+    datatype: Optional[str]
+
+
+@dataclass
+class IndividualInfo:
+    iri: str
+    qname: str
+    label: str
+    types: List[str]
+    definitions: List[Literal]
+    comments: List[Literal]
+    scope_notes: List[Literal]
+    facts: List[FactInfo]
 
 
 @dataclass
@@ -251,6 +273,60 @@ def collect_properties(g: Graph) -> List[PropertyInfo]:
     return items
 
 
+# Annotations rendered in their own slots of an individual's row rather than
+# in its list of facts.
+_INDIVIDUAL_SLOT_PREDICATES = {
+    RDF.type,
+    RDFS.label,
+    RDFS.comment,
+    RDFS.isDefinedBy,
+    SKOS.definition,
+    SKOS.scopeNote,
+}
+
+
+def collect_individuals(g: Graph) -> List[IndividualInfo]:
+    individuals: Set[URIRef] = set(s for s in g.subjects(RDF.type, OWL.NamedIndividual) if isinstance(s, URIRef))
+
+    def fact(p: URIRef, o: rdflib.term.Node) -> Optional[FactInfo]:
+        if isinstance(o, URIRef):
+            # Link to the individual's row when it is on the same page.
+            href = f"#ind-{qname(g, o).replace(':', '-')}" if o in individuals else str(o)
+            shown = qname(g, o)
+            if shown.startswith("<"):  # no prefix applies; show the bare IRI
+                shown = str(o)
+            return FactInfo(property=qname(g, p), value=shown, href=href, datatype=None)
+        if isinstance(o, Literal):
+            datatype = None
+            if o.datatype is not None and o.datatype != XSD.string:
+                datatype = qname(g, o.datatype)
+            return FactInfo(property=qname(g, p), value=str(o), href=None, datatype=datatype)
+        return None  # blank nodes are not shown
+
+    items: List[IndividualInfo] = []
+    for s in individuals:
+        labels = get_literals(g, s, RDFS.label)
+        label_literal, _ = literal_by_lang(labels)
+        label = str(label_literal) if label_literal else qname(g, s)
+        types = sorted(qname(g, o) for o in g.objects(s, RDF.type) if isinstance(o, URIRef) and o != OWL.NamedIndividual)
+        facts = [f for p, o in g.predicate_objects(s) if p not in _INDIVIDUAL_SLOT_PREDICATES for f in [fact(p, o)] if f]
+        facts.sort(key=lambda f: (f.property, f.value))
+        items.append(
+            IndividualInfo(
+                iri=str(s),
+                qname=qname(g, s),
+                label=label,
+                types=types,
+                definitions=get_literals(g, s, SKOS.definition),
+                comments=get_literals(g, s, RDFS.comment),
+                scope_notes=get_literals(g, s, SKOS.scopeNote),
+                facts=facts,
+            )
+        )
+    items.sort(key=lambda x: (x.label.lower(), x.qname))
+    return items
+
+
 def load_graph(path: Path) -> Graph:
     fmt = FORMAT_BY_EXT.get(path.suffix.lower())
     if fmt is None:
@@ -273,12 +349,14 @@ def render_html(graph: Graph, base_name: str, template_path: Path, output_path: 
     ontology = collect_ontology_info(graph)
     classes = collect_classes(graph)
     properties = collect_properties(graph)
+    individuals = collect_individuals(graph)
     prefixes = compute_used_prefixes(graph)
 
     html = tmpl.render(
         ontology=ontology,
         classes=classes,
         properties=properties,
+        individuals=individuals,
         prefixes=prefixes,
         base_name=base_name,
         source_path=source_path,

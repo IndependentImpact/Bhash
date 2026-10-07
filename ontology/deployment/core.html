@@ -1205,6 +1205,76 @@
             </tbody>
         </table>
     </section>
+
+    <section class="section">
+        <h2>Named Individuals (4)</h2>
+        <table>
+            <thead><tr><th>Label</th><th>QName</th><th>Type</th><th>Facts</th><th>Notes</th></tr></thead>
+            <tbody>
+            
+                <tr id="ind-hedera-HBAR">
+                    <td>HBAR</td>
+                    <td>hedera:HBAR</td>
+                    <td><span class="pill">hedera:NativeCurrency</span></td>
+                    <td class="small">
+                        <div><strong>hedera:hasDecimals:</strong> 8 <span class="meta">(xsd:integer)</span></div><div><strong>hedera:sourceDocument:</strong> <a href="https://docs.hedera.com/support/faq/hbar">https://docs.hedera.com/support/faq/hbar</a></div><div><strong>skos:altLabel:</strong> ℏ</div>
+                    </td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Native cryptocurrency of the Hedera networks, used to pay transaction fees and to stake to consensus nodes.</div>
+                        <div><strong>Comment:</strong> Record amounts as integers in tinybars (1 HBAR = 100,000,000 tinybars), as the network and mirror node do, rather than as decimal HBAR. The same individual serves every network; whether an amount has monetary value depends on the network it is held on.</div>
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyz/core/HBAR</div>
+                    </td>
+                </tr>
+            
+                <tr id="ind-hedera-Mainnet">
+                    <td>Hedera mainnet</td>
+                    <td>hedera:Mainnet</td>
+                    <td><span class="pill">hedera:Network</span></td>
+                    <td class="small">
+                        <div><strong>hedera:hasEvmChainId:</strong> 295 <span class="meta">(xsd:positiveInteger)</span></div><div><strong>hedera:hasLedgerId:</strong> 00 <span class="meta">(xsd:hexBinary)</span></div><div><strong>hedera:hasNativeCurrency:</strong> <a href="#ind-hedera-HBAR">hedera:HBAR</a></div><div><strong>hedera:sourceDocument:</strong> <a href="https://docs.hedera.com/networks/mainnet">https://docs.hedera.com/networks/mainnet</a></div><div><strong>skos:notation:</strong> mainnet</div>
+                    </td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Production Hedera network, on which transaction fees are paid in HBAR.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyz/core/Mainnet</div>
+                    </td>
+                </tr>
+            
+                <tr id="ind-hedera-Previewnet">
+                    <td>Hedera previewnet</td>
+                    <td>hedera:Previewnet</td>
+                    <td><span class="pill">hedera:Network</span></td>
+                    <td class="small">
+                        <div><strong>hedera:hasEvmChainId:</strong> 297 <span class="meta">(xsd:positiveInteger)</span></div><div><strong>hedera:hasLedgerId:</strong> 02 <span class="meta">(xsd:hexBinary)</span></div><div><strong>hedera:hasNativeCurrency:</strong> <a href="#ind-hedera-HBAR">hedera:HBAR</a></div><div><strong>hedera:sourceDocument:</strong> <a href="https://hedera.com/blog/the-hedera-previewnet-is-now-live">https://hedera.com/blog/the-hedera-previewnet-is-now-live</a></div><div><strong>skos:notation:</strong> previewnet</div>
+                    </td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Hedera network that receives new software releases before testnet and mainnet, for previewing upcoming features.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyz/core/Previewnet</div>
+                    </td>
+                </tr>
+            
+                <tr id="ind-hedera-Testnet">
+                    <td>Hedera testnet</td>
+                    <td>hedera:Testnet</td>
+                    <td><span class="pill">hedera:Network</span></td>
+                    <td class="small">
+                        <div><strong>hedera:hasEvmChainId:</strong> 296 <span class="meta">(xsd:positiveInteger)</span></div><div><strong>hedera:hasLedgerId:</strong> 01 <span class="meta">(xsd:hexBinary)</span></div><div><strong>hedera:hasNativeCurrency:</strong> <a href="#ind-hedera-HBAR">hedera:HBAR</a></div><div><strong>hedera:sourceDocument:</strong> <a href="https://docs.hedera.com/networks/testnet">https://docs.hedera.com/networks/testnet</a></div><div><strong>skos:notation:</strong> testnet</div>
+                    </td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Public Hedera test network for development, on which HBAR has no monetary value.</div>
+                        
+                        <div><strong>Scope note:</strong> Testnet is reset periodically, which clears balances, contracts, topics, tokens and other ledger state; accounts must be recreated afterwards. An entity ID, and so a canonical resource IRI under https://hashgraphontology.xyz/resource/testnet/, can therefore denote different entities before and after a reset.</div>
+                        <div class="meta">IRI: https://hashgraphontology.xyz/core/Testnet</div>
+                    </td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </section>
     </div>
 </body>
 </html>
