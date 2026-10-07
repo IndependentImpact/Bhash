@@ -5,7 +5,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-exfs:FileService
+exfs:MainnetFileService
     a hedera:FileService ;
     rdfs:label "Mainnet File Service"@en ;
     hedera:exposedOn hedera:Mainnet ;
@@ -30,9 +30,9 @@ exfs:DEXBytecodeContent
     a hedera:FileContent ;
     .
 
-exfs:ScheduleService
+exfs:MainnetScheduleService
     a hedera:ScheduleService ;
-    rdfs:label "Scheduled Transaction Service"@en ;
+    rdfs:label "Mainnet Scheduled Transaction Service"@en ;
     hedera:exposedOn hedera:Mainnet ;
     .
 

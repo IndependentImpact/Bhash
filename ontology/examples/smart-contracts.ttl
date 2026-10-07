@@ -5,7 +5,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-exsc:SmartContractService
+exsc:MainnetSmartContractService
     a hedera:SmartContractService ;
     rdfs:label "Mainnet Smart Contract Service"@en ;
     hedera:exposedOn hedera:Mainnet ;
