@@ -8,6 +8,10 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+hedera:Concept a owl:Class ;
+    rdfs:label "Concept"@en ;
+    skos:definition "Abstract superclass for all Bhash ontology entities."@en .
+
 hedera:ConsensusFinalityPhase a owl:Class ;
     rdfs:label "Consensus finality phase"@en ;
     rdfs:subClassOf [ a owl:Restriction ;
@@ -599,10 +603,6 @@ hedera:Artefact a owl:Class ;
         hedera:Concept ;
     skos:definition "Digital object or state produced or managed by Hedera services (topics, tokens, files, smart contracts)."@en .
 
-hedera:Concept a owl:Class ;
-    rdfs:label "Concept"@en ;
-    skos:definition "Abstract superclass for all Bhash ontology entities."@en .
-
 hedera:Process a owl:Class ;
     rdfs:label "Process"@en ;
     rdfs:subClassOf [ a owl:Restriction ;
@@ -642,7 +642,7 @@ hedera:Network a owl:Class ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:onProperty hedera:isGovernedBy ;
             owl:someValuesFrom hedera:GovernanceBody ],
-        hedera:Actor ;
+        hedera:Concept ;
     owl:disjointWith hedera:HieroLayer,
         hedera:HieroShard ;
     skos:definition "A distributed ledger environment (e.g., mainnet, testnet, previewnet) that provides Hedera services."@en ;

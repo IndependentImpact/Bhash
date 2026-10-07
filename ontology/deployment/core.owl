@@ -18,7 +18,7 @@
   <rdf:Description rdf:about="https://hashgraphontology.xyz/core/Network">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">Network</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/Actor"/>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/Concept"/>
     <rdfs:subClassOf rdf:nodeID="ne19b9777c7904e7ea63479dd486b1229b9"/>
     <owl:disjointWith rdf:resource="https://hashgraphontology.xyz/core/HieroLayer"/>
     <owl:disjointWith rdf:resource="https://hashgraphontology.xyz/core/HieroShard"/>

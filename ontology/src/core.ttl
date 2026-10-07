@@ -64,7 +64,7 @@ hedera:Actor
 hedera:Network
     a owl:Class ;
     rdfs:label "Network"@en ;
-    rdfs:subClassOf hedera:Actor ;
+    rdfs:subClassOf hedera:Concept ;
     owl:disjointWith hedera:HieroLayer , hedera:HieroShard ;
     skos:definition "A distributed ledger environment (e.g., mainnet, testnet, previewnet) that provides Hedera services."@en ;
     skos:scopeNote "Hiero layers and shards are parts of a network, not kinds of network: relate them to their network with hedera:hasLayer / hedera:isLayerOf and hedera:hasShard / hedera:isShardOf."@en ;

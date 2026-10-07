@@ -532,7 +532,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyz/core/Actor"
+        "@id": "https://hashgraphontology.xyz/core/Concept"
       },
       {
         "@id": "_:ne19b9777c7904e7ea63479dd486b1229b9"
