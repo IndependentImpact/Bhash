@@ -716,6 +716,15 @@ hedera:hasEvmChainId a owl:DatatypeProperty ;
     skos:definition "EIP-155 chain ID that identifies a network to EVM tooling (JSON-RPC relay, wallets)."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/getting-started-evm-developers/add-hedera-to-metamask> .
 
+hedera:hasDecimals a owl:DatatypeProperty ;
+    rdfs:label "has decimals"@en ;
+    rdfs:comment "Declared in the token module with domain hedera:FungibleToken until D-0006; widened to hedera:DigitalAsset so that it also applies to hedera:HBAR."@en ;
+    rdfs:domain hedera:DigitalAsset ;
+    rdfs:isDefinedBy <https://hashgraphontology.xyz/core> ;
+    rdfs:range xsd:integer ;
+    skos:definition "Number of decimal places between a digital asset's whole unit and its smallest indivisible unit (e.g., 8 for HBAR, as 1 HBAR = 100,000,000 tinybars)."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/support/faq/hbar> .    
+
 hedera:Mainnet a owl:NamedIndividual,
         hedera:Network ;
     rdfs:label "Hedera mainnet"@en ;
@@ -763,12 +772,5 @@ hedera:HBAR a owl:NamedIndividual,
     hedera:hasDecimals 8 ;
     hedera:sourceDocument <https://docs.hedera.com/support/faq/hbar> .
 
-hedera:hasDecimals a owl:DatatypeProperty ;
-    rdfs:label "has decimals"@en ;
-    rdfs:comment "Declared in the token module with domain hedera:FungibleToken until D-0006; widened to hedera:DigitalAsset so that it also applies to hedera:HBAR."@en ;
-    rdfs:domain hedera:DigitalAsset ;
-    rdfs:isDefinedBy <https://hashgraphontology.xyz/core> ;
-    rdfs:range xsd:integer ;
-    skos:definition "Number of decimal places between a digital asset's whole unit and its smallest indivisible unit (e.g., 8 for HBAR, as 1 HBAR = 100,000,000 tinybars)."@en ;
-    hedera:sourceDocument <https://docs.hedera.com/support/faq/hbar> .
+
 
