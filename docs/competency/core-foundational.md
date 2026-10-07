@@ -26,7 +26,7 @@ Phase 2 establishes executable evidence for foundational reasoning tasks backed 
 
 | network | validator | operatorAccount | mandate |
 | ------- | --------- | ---------------- | ------- |
-| `ex:Mainnet` | `ex:Node3` | `ex:Node3Account` | "HIP-840 validator onboarding" |
+| `hedera:Mainnet` | `ex:Node3` | `ex:Node3Account` | "HIP-840 validator onboarding" |
 
 ### Evidence bundle
 

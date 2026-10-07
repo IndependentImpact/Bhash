@@ -49,7 +49,7 @@
   }
   ORDER BY ?network ?validator
   ```
-* **Expected result (using the sample graph):** one row linking `ex:Mainnet`, `ex:Node3`, `ex:Node3Account`, and the HIP-840
+* **Expected result (using the sample graph):** one row linking `hedera:Mainnet`, `ex:Node3`, `ex:Node3Account`, and the HIP-840
   mandate string.
 * **Future extension:** replace the sample dataset with live mirror-node exports to validate real validator rosters and ensure
   onboarding mandates reference published council records.

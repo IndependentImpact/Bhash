@@ -6,7 +6,11 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-ex:Mainnet
+# hedera:Mainnet is declared in ontology/src/core.ttl.  Its type and label are
+# repeated here because the SPARQL and SHACL harnesses load the examples
+# without the ontology (CQ-CORE-001 selects ?network a hedera:Network ;
+# rdfs:label ?networkLabel).
+hedera:Mainnet
     a hedera:Network ;
     rdfs:label "Hedera mainnet"@en ;
     hedera:isGovernedBy ex:HederaCouncil ;
@@ -18,7 +22,7 @@ ex:HederaCouncil
     a hedera:GovernanceBody ;
     rdfs:label "Hedera Governing Council"@en ;
     hedera:hasMandate "HIP-840 validator onboarding"@en ;
-    hedera:governs ex:Mainnet ;
+    hedera:governs hedera:Mainnet ;
     .
 
 ex:CoinComCommittee
@@ -41,7 +45,7 @@ ex:ConsensusService
     a hedera:Service ;
     rdfs:label "Hedera Consensus Service"@en ;
     hedera:isOperatedBy ex:HederaCouncil ;
-    hedera:exposedOn ex:Mainnet ;
+    hedera:exposedOn hedera:Mainnet ;
     hedera:managesArtefact ex:ConsensusTransaction ;
     hedera:consumesArtefact ex:ConsensusTransaction ;
     .
@@ -49,14 +53,14 @@ ex:ConsensusService
 ex:HieroConsensusLayerMainnet
     a hedera:HieroConsensusLayer ;
     rdfs:label "Mainnet Hiero consensus layer"@en ;
-    hedera:isLayerOf ex:Mainnet ;
+    hedera:isLayerOf hedera:Mainnet ;
     hedera:virtualisesService ex:ConsensusService ;
     .
 
 ex:MainnetShardAlpha
     a hedera:HieroShard ;
     rdfs:label "Mainnet shard alpha"@en ;
-    hedera:isShardOf ex:Mainnet ;
+    hedera:isShardOf hedera:Mainnet ;
     hedera:hasShardIdentifier "alpha" ;
     .
 
@@ -112,7 +116,7 @@ ex:CommunityWalletKey
 ex:Node3Onboarding
     a hedera:ValidatorOnboardingProcess ;
     rdfs:label "Node 3 onboarding"@en ;
-    hedera:occursOn ex:Mainnet ;
+    hedera:occursOn hedera:Mainnet ;
     hedera:hasParticipant ex:HederaCouncil , ex:CoinComCommittee , ex:MembershipCommittee , ex:Node3 ;
     hedera:hasSteward ex:CoinComCommittee , ex:MembershipCommittee ;
     hedera:targetsValidator ex:Node3 ;
@@ -173,13 +177,13 @@ ex:ConsensusTransaction
     hedera:submittedBy ex:CommunityWalletAccount ;
     hedera:hasTransactionPhase ex:ConsensusTransactionSubmission , ex:ConsensusTransactionConsensus , ex:ConsensusTransactionExecution , ex:ConsensusTransactionExport ;
     hedera:hasRecord ex:ConsensusTransactionConsensusRecord , ex:ConsensusTransactionExecutionRecord , ex:ConsensusTransactionMirrorRecord ;
-    hedera:registeredIn ex:Mainnet ;
+    hedera:registeredIn hedera:Mainnet ;
     .
 
 ex:ConsensusTransactionSubmission
     a hedera:TransactionSubmission ;
     rdfs:label "HBAR transfer submission"@en ;
-    hedera:occursOn ex:Mainnet ;
+    hedera:occursOn hedera:Mainnet ;
     hedera:hasParticipant ex:CommunityWalletAccount ;
     hedera:hasPhaseOrder "1"^^xsd:integer ;
     hedera:precedesPhase ex:ConsensusTransactionConsensus ;
@@ -188,7 +192,7 @@ ex:ConsensusTransactionSubmission
 ex:ConsensusTransactionConsensus
     a hedera:ConsensusFinalityPhase ;
     rdfs:label "HBAR transfer consensus"@en ;
-    hedera:occursOn ex:Mainnet ;
+    hedera:occursOn hedera:Mainnet ;
     hedera:hasParticipant ex:Node3 ;
     hedera:hasPhaseOrder "2"^^xsd:integer ;
     hedera:precedesPhase ex:ConsensusTransactionExecution ;
@@ -198,7 +202,7 @@ ex:ConsensusTransactionConsensus
 ex:ConsensusTransactionExecution
     a hedera:TransactionExecutionPhase ;
     rdfs:label "HBAR transfer execution"@en ;
-    hedera:occursOn ex:Mainnet ;
+    hedera:occursOn hedera:Mainnet ;
     hedera:hasParticipant ex:Node3 ;
     hedera:hasPhaseOrder "3"^^xsd:integer ;
     hedera:precedesPhase ex:ConsensusTransactionExport ;
@@ -208,7 +212,7 @@ ex:ConsensusTransactionExecution
 ex:ConsensusTransactionExport
     a hedera:MirrorExportPhase ;
     rdfs:label "HBAR transfer mirror export"@en ;
-    hedera:occursOn ex:Mainnet ;
+    hedera:occursOn hedera:Mainnet ;
     hedera:hasParticipant ex:MirrorNode ;
     hedera:hasPhaseOrder "4"^^xsd:integer ;
     hedera:producesRecord ex:ConsensusTransactionMirrorRecord ;
