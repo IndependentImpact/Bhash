@@ -79,3 +79,15 @@ hedera:FreezeControllerActorShape
         sh:message "Freeze controllers must hold a freeze controller role."@en ;
     ] ;
     .
+
+hedera:FixedFeeDenominationShape
+    a sh:NodeShape ;
+    sh:targetClass hedera:FixedFee ;
+    sh:property [
+        sh:path hedera:isDenominatedIn ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:message "A fixed fee must be denominated in exactly one digital asset: hedera:HBAR or a fungible token."@en ;
+    ] ;
+    .

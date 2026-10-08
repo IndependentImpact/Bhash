@@ -14,6 +14,7 @@ hedera:AdminKey a owl:Class ;
 
 hedera:FixedFee a owl:Class ;
     rdfs:label "Fixed fee"@en ;
+    rdfs:comment "State the currency with hedera:isDenominatedIn: hedera:HBAR or a fungible hedera:Token."@en ;
     rdfs:subClassOf hedera:CustomFee ;
     skos:definition "Custom fee that transfers a fixed quantity of tokens or HBAR to the collector."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/sdks-and-apis/token-service/custom-fees/fixed-fees> .
@@ -163,12 +164,6 @@ hedera:hasCustomFee a owl:ObjectProperty ;
     rdfs:range hedera:CustomFee ;
     skos:definition "Associates a token with the custom fee schedule entries it enforces."@en .
 
-hedera:hasDecimals a owl:DatatypeProperty ;
-    rdfs:label "has decimals"@en ;
-    rdfs:domain hedera:FungibleToken ;
-    rdfs:range xsd:integer ;
-    skos:definition "Number of decimal places tracked for fungible token units."@en .
-
 hedera:hasInitialSupply a owl:DatatypeProperty ;
     rdfs:label "has initial supply"@en ;
     rdfs:domain hedera:FungibleToken ;
@@ -283,7 +278,7 @@ hedera:tracksRelationship a owl:ObjectProperty ;
     dcterms:created "2024-09-27"^^xsd:date ;
     dcterms:creator "Bhash Ontology Working Group"@en ;
     dcterms:description "Service-specific vocabulary for modelling Hedera Token Service artefacts, compliance roles, and lifecycle events."@en ;
-    dcterms:modified "2024-09-27"^^xsd:date ;
+    dcterms:modified "2026-10-07"^^xsd:date ;
     dcterms:title "Hedera Token Service module"@en ;
     owl:imports <https://hashgraphontology.xyz/core> ;
     owl:versionInfo "0.1.0-dev" ;
@@ -339,8 +334,19 @@ hedera:TokenRelationship a owl:Class ;
 
 hedera:Token a owl:Class ;
     rdfs:label "Token"@en ;
-    rdfs:subClassOf hedera:Artefact ;
+    rdfs:subClassOf hedera:Artefact,
+        hedera:DigitalAsset ;
+    owl:disjointWith hedera:NativeCurrency ;
     skos:definition "Digital asset managed by the Token Service with associated supply, metadata, and key governance."@en ;
     hedera:instanceIRIPattern "https://hashgraphontology.xyz/resource/{network}/token/{shard}.{realm}.{num}"@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/sdks-and-apis/token-service/introduction> .
+
+hedera:isDenominatedIn a owl:ObjectProperty ;
+    rdfs:label "is denominated in"@en ;
+    rdfs:comment "Corresponds to the fixed fee's denominating token ID. When that ID is unset the fee is charged in HBAR, so state hedera:HBAR explicitly. Only HBAR or a fungible token can denominate a fixed fee, never a non-fungible token."@en ;
+    rdfs:domain hedera:FixedFee ;
+    rdfs:isDefinedBy <https://hashgraphontology.xyz/token> ;
+    rdfs:range hedera:DigitalAsset ;
+    skos:definition "Relates a fixed fee to the digital asset in which it is charged."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/native/tokens/custom-fees> .
 

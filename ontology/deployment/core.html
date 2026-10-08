@@ -74,7 +74,15 @@
             
                 <tr><td>ns18</td><td>https://docs.hedera.com/hedera/mirror-node/architecture/</td></tr>
             
+                <tr><td>ns19</td><td>https://docs.hedera.com/hedera/getting-started-evm-developers/</td></tr>
+            
                 <tr><td>ns2</td><td>https://docs.hedera.com/hedera/core-concepts/transactions/</td></tr>
+            
+                <tr><td>ns20</td><td>https://docs.hedera.com/networks/</td></tr>
+            
+                <tr><td>ns21</td><td>https://docs.hedera.com/support/faq/</td></tr>
+            
+                <tr><td>ns22</td><td>https://hedera.com/blog/</td></tr>
             
                 <tr><td>ns3</td><td>https://docs.hedera.com/</td></tr>
             
@@ -109,7 +117,7 @@
     </section>
 
     <section class="section">
-        <h2>Classes (37)</h2>
+        <h2>Classes (39)</h2>
         <table>
             <thead><tr><th>Label</th><th>QName</th><th>Subclass Of</th><th>Notes</th></tr></thead>
             <tbody>
@@ -117,7 +125,7 @@
                 <tr id="cls-hedera-Account">
                     <td>Account</td>
                     <td>hedera:Account</td>
-                    <td><span class="pill">hedera:Actor</span></td>
+                    <td><span class="pill">hedera:Artefact</span></td>
                     <td class="small">
                         <div><strong>Definition:</strong> On-ledger identity storing keys, balances, and staking configuration for participation in Hedera services.</div>
                         
@@ -198,6 +206,18 @@
                     </td>
                 </tr>
             
+                <tr id="cls-hedera-DigitalAsset">
+                    <td>Digital asset</td>
+                    <td>hedera:DigitalAsset</td>
+                    <td><span class="pill">hedera:Concept</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Unit of value or ownership whose balances are tracked by a Hedera network.</div>
+                        <div><strong>Comment:</strong> Common superclass of the native cryptocurrency (hedera:NativeCurrency) and Token Service tokens (hedera:Token), for properties that apply to either, such as fees payable in a token or in HBAR.</div>
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyz/core/DigitalAsset</div>
+                    </td>
+                </tr>
+            
                 <tr id="cls-hedera-Event">
                     <td>Event</td>
                     <td>hedera:Event</td>
@@ -273,9 +293,9 @@
                 <tr id="cls-hedera-HieroLayer">
                     <td>Hiero layer</td>
                     <td>hedera:HieroLayer</td>
-                    <td><span class="pill">hedera:Network</span></td>
+                    <td><span class="pill">hedera:Concept</span></td>
                     <td class="small">
-                        <div><strong>Definition:</strong> Logical component of the Hiero architecture (consensus, execution, or service layer).</div>
+                        <div><strong>Definition:</strong> Logical component of the Hiero architecture (consensus, execution, or service layer) that forms part of a network.</div>
                         
                         
                         <div class="meta">IRI: https://hashgraphontology.xyz/core/HieroLayer</div>
@@ -297,9 +317,9 @@
                 <tr id="cls-hedera-HieroShard">
                     <td>Hiero shard</td>
                     <td>hedera:HieroShard</td>
-                    <td><span class="pill">hedera:Network</span></td>
+                    <td><span class="pill">hedera:Concept</span></td>
                     <td class="small">
-                        <div><strong>Definition:</strong> Network partition within Hiero that localises consensus and execution responsibilities.</div>
+                        <div><strong>Definition:</strong> Partition of a network within Hiero that localises consensus and execution responsibilities.</div>
                         
                         
                         <div class="meta">IRI: https://hashgraphontology.xyz/core/HieroShard</div>
@@ -354,12 +374,24 @@
                     </td>
                 </tr>
             
+                <tr id="cls-hedera-NativeCurrency">
+                    <td>Native currency</td>
+                    <td>hedera:NativeCurrency</td>
+                    <td><span class="pill">hedera:DigitalAsset</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Cryptocurrency built into a network's protocol and used to pay its transaction fees.</div>
+                        <div><strong>Comment:</strong> Not a Token Service token: a native currency has no token ID and therefore no canonical resource IRI, so its instances are declared as named individuals (e.g., hedera:HBAR).</div>
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyz/core/NativeCurrency</div>
+                    </td>
+                </tr>
+            
                 <tr id="cls-hedera-Network">
                     <td>Network</td>
                     <td>hedera:Network</td>
-                    <td><span class="pill">hedera:Actor</span></td>
+                    <td><span class="pill">hedera:Concept</span></td>
                     <td class="small">
-                        <div><strong>Definition:</strong> A distributed environment (e.g., mainnet, testnet, shard) that provides Hedera services.</div>
+                        <div><strong>Definition:</strong> A distributed ledger environment (e.g., mainnet, testnet, previewnet) that provides Hedera services.</div>
                         
                         
                         <div class="meta">IRI: https://hashgraphontology.xyz/core/Network</div>
@@ -563,7 +595,7 @@
     </section>
 
     <section class="section">
-        <h2>Properties (39)</h2>
+        <h2>Properties (43)</h2>
         <table>
             <thead><tr><th>Label</th><th>QName</th><th>Kind</th><th>Domain</th><th>Range</th><th>Notes</th></tr></thead>
             <tbody>
@@ -666,6 +698,34 @@
                     </td>
                 </tr>
             
+                <tr id="prop-hedera-hasDecimals">
+                    <td>has decimals</td>
+                    <td>hedera:hasDecimals</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:DigitalAsset</span></td>
+                    <td><span class="pill">xsd:integer</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> Declared in the token module with domain hedera:FungibleToken until D-0006; widened to hedera:DigitalAsset so that it also applies to hedera:HBAR.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyz/core/hasDecimals</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasEvmChainId">
+                    <td>has EVM chain ID</td>
+                    <td>hedera:hasEvmChainId</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:Network</span></td>
+                    <td><span class="pill">xsd:positiveInteger</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyz/core/hasEvmChainId</div>
+                    </td>
+                </tr>
+            
                 <tr id="prop-hedera-hasLayer">
                     <td>has layer</td>
                     <td>hedera:hasLayer</td>
@@ -680,6 +740,20 @@
                     </td>
                 </tr>
             
+                <tr id="prop-hedera-hasLedgerId">
+                    <td>has ledger ID</td>
+                    <td>hedera:hasLedgerId</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">hedera:Network</span></td>
+                    <td><span class="pill">xsd:hexBinary</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> HIP-198 describes the current single-byte values as temporary, to be replaced by longer IDs.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyz/core/hasLedgerId</div>
+                    </td>
+                </tr>
+            
                 <tr id="prop-hedera-hasMandate">
                     <td>has mandate</td>
                     <td>hedera:hasMandate</td>
@@ -691,6 +765,20 @@
                         
                         
                         <div class="meta">IRI: https://hashgraphontology.xyz/core/hasMandate</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-hasNativeCurrency">
+                    <td>has native currency</td>
+                    <td>hedera:hasNativeCurrency</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:Network</span></td>
+                    <td><span class="pill">hedera:NativeCurrency</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyz/core/hasNativeCurrency</div>
                     </td>
                 </tr>
             
@@ -1111,6 +1199,76 @@
                         
                         
                         <div class="meta">IRI: https://hashgraphontology.xyz/core/virtualisesService</div>
+                    </td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </section>
+
+    <section class="section">
+        <h2>Named Individuals (4)</h2>
+        <table>
+            <thead><tr><th>Label</th><th>QName</th><th>Type</th><th>Facts</th><th>Notes</th></tr></thead>
+            <tbody>
+            
+                <tr id="ind-hedera-HBAR">
+                    <td>HBAR</td>
+                    <td>hedera:HBAR</td>
+                    <td><span class="pill">hedera:NativeCurrency</span></td>
+                    <td class="small">
+                        <div><strong>hedera:hasDecimals:</strong> 8 <span class="meta">(xsd:integer)</span></div><div><strong>hedera:sourceDocument:</strong> <a href="https://docs.hedera.com/support/faq/hbar">https://docs.hedera.com/support/faq/hbar</a></div><div><strong>skos:altLabel:</strong> ℏ</div>
+                    </td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Native cryptocurrency of the Hedera networks, used to pay transaction fees and to stake to consensus nodes.</div>
+                        <div><strong>Comment:</strong> Record amounts as integers in tinybars (1 HBAR = 100,000,000 tinybars), as the network and mirror node do, rather than as decimal HBAR. The same individual serves every network; whether an amount has monetary value depends on the network it is held on.</div>
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyz/core/HBAR</div>
+                    </td>
+                </tr>
+            
+                <tr id="ind-hedera-Mainnet">
+                    <td>Hedera mainnet</td>
+                    <td>hedera:Mainnet</td>
+                    <td><span class="pill">hedera:Network</span></td>
+                    <td class="small">
+                        <div><strong>hedera:hasEvmChainId:</strong> 295 <span class="meta">(xsd:positiveInteger)</span></div><div><strong>hedera:hasLedgerId:</strong> 00 <span class="meta">(xsd:hexBinary)</span></div><div><strong>hedera:hasNativeCurrency:</strong> <a href="#ind-hedera-HBAR">hedera:HBAR</a></div><div><strong>hedera:sourceDocument:</strong> <a href="https://docs.hedera.com/networks/mainnet">https://docs.hedera.com/networks/mainnet</a></div><div><strong>skos:notation:</strong> mainnet</div>
+                    </td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Production Hedera network, on which transaction fees are paid in HBAR.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyz/core/Mainnet</div>
+                    </td>
+                </tr>
+            
+                <tr id="ind-hedera-Previewnet">
+                    <td>Hedera previewnet</td>
+                    <td>hedera:Previewnet</td>
+                    <td><span class="pill">hedera:Network</span></td>
+                    <td class="small">
+                        <div><strong>hedera:hasEvmChainId:</strong> 297 <span class="meta">(xsd:positiveInteger)</span></div><div><strong>hedera:hasLedgerId:</strong> 02 <span class="meta">(xsd:hexBinary)</span></div><div><strong>hedera:hasNativeCurrency:</strong> <a href="#ind-hedera-HBAR">hedera:HBAR</a></div><div><strong>hedera:sourceDocument:</strong> <a href="https://hedera.com/blog/the-hedera-previewnet-is-now-live">https://hedera.com/blog/the-hedera-previewnet-is-now-live</a></div><div><strong>skos:notation:</strong> previewnet</div>
+                    </td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Hedera network that receives new software releases before testnet and mainnet, for previewing upcoming features.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyz/core/Previewnet</div>
+                    </td>
+                </tr>
+            
+                <tr id="ind-hedera-Testnet">
+                    <td>Hedera testnet</td>
+                    <td>hedera:Testnet</td>
+                    <td><span class="pill">hedera:Network</span></td>
+                    <td class="small">
+                        <div><strong>hedera:hasEvmChainId:</strong> 296 <span class="meta">(xsd:positiveInteger)</span></div><div><strong>hedera:hasLedgerId:</strong> 01 <span class="meta">(xsd:hexBinary)</span></div><div><strong>hedera:hasNativeCurrency:</strong> <a href="#ind-hedera-HBAR">hedera:HBAR</a></div><div><strong>hedera:sourceDocument:</strong> <a href="https://docs.hedera.com/networks/testnet">https://docs.hedera.com/networks/testnet</a></div><div><strong>skos:notation:</strong> testnet</div>
+                    </td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Public Hedera test network for development, on which HBAR has no monetary value.</div>
+                        
+                        <div><strong>Scope note:</strong> Testnet is reset periodically, which clears balances, contracts, topics, tokens and other ledger state; accounts must be recreated afterwards. An entity ID, and so a canonical resource IRI under https://hashgraphontology.xyz/resource/testnet/, can therefore denote different entities before and after a reset.</div>
+                        <div class="meta">IRI: https://hashgraphontology.xyz/core/Testnet</div>
                     </td>
                 </tr>
             

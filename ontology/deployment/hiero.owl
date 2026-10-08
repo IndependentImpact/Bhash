@@ -83,7 +83,7 @@
     <dcterms:description xml:lang="en">Vocabulary extending the core ontology with Hiero shards, validator roles, and onboarding milestones.</dcterms:description>
     <dcterms:creator xml:lang="en">Bhash Ontology Working Group</dcterms:creator>
     <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-10-01</dcterms:created>
-    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-09-30</dcterms:modified>
+    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-10-07</dcterms:modified>
     <owl:imports rdf:resource="https://hashgraphontology.xyz/core"/>
     <owl:versionInfo>0.1.0-dev</owl:versionInfo>
     <skos:editorialNote xml:lang="en">Phase 3 Hiero overlay capturing shard participation states for CQ-HIE-009.</skos:editorialNote>
@@ -122,13 +122,6 @@
     <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/Process"/>
     <skos:definition xml:lang="en">Process describing a validator's lifecycle within a Hiero shard.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hiero/concepts/validators"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/HieroShard">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Hiero shard</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/Network"/>
-    <skos:definition xml:lang="en">Logical partition of the Hiero network responsible for consensus and execution within a region.</skos:definition>
-    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hiero/concepts/shards"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://hashgraphontology.xyz/core/participatesInShard">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>

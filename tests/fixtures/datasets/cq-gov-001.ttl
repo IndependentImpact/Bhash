@@ -43,7 +43,7 @@ ex:UCLCBT
 ex:NodeOnboarding2024Q3
     a hedera:ValidatorOnboardingProcess ;
     dcterms:title "Validator onboarding cohort Q3 2024"@en ;
-    hedera:occursOn ex:HederaMainnet ;
+    hedera:occursOn hedera:Mainnet ;
     hedera:hasParticipant ex:HederaCouncil , ex:CoinCom , ex:SwirldsLabs , ex:Worldpay , ex:UCLCBT , ex:MembershipCommittee ;
     hedera:hasSteward ex:CoinCom , ex:MembershipCommittee ;
     hedera:issuesDecision ex:HIP840Mandate ;
@@ -61,9 +61,11 @@ ex:HIP540Mandate
     dcterms:identifier "HIP-540" ;
     .
 
-ex:HederaMainnet
+# hedera:Mainnet is declared in ontology/src/core.ttl; its type is repeated
+# here because the SPARQL and SHACL harnesses load this fixture without the
+# ontology.
+hedera:Mainnet
     a hedera:Network ;
-    dcterms:title "Hedera Mainnet"@en ;
     .
 
 ex:SwirldsLabsStewardship

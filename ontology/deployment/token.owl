@@ -45,6 +45,7 @@
   <rdf:Description rdf:about="https://hashgraphontology.xyz/core/FixedFee">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">Fixed fee</rdfs:label>
+    <rdfs:comment xml:lang="en">State the currency with hedera:isDenominatedIn: hedera:HBAR or a fungible hedera:Token.</rdfs:comment>
     <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/CustomFee"/>
     <skos:definition xml:lang="en">Custom fee that transfers a fixed quantity of tokens or HBAR to the collector.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/sdks-and-apis/token-service/custom-fees/fixed-fees"/>
@@ -83,7 +84,7 @@
     <dcterms:description xml:lang="en">Service-specific vocabulary for modelling Hedera Token Service artefacts, compliance roles, and lifecycle events.</dcterms:description>
     <dcterms:creator xml:lang="en">Bhash Ontology Working Group</dcterms:creator>
     <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-09-27</dcterms:created>
-    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-09-27</dcterms:modified>
+    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-10-07</dcterms:modified>
     <owl:imports rdf:resource="https://hashgraphontology.xyz/core"/>
     <owl:versionInfo>0.1.0-dev</owl:versionInfo>
     <skos:editorialNote xml:lang="en">Phase 3 sprint module introducing token compliance semantics to support CQ-COMP-003.</skos:editorialNote>
@@ -325,6 +326,8 @@
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en">Token</rdfs:label>
     <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/Artefact"/>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/DigitalAsset"/>
+    <owl:disjointWith rdf:resource="https://hashgraphontology.xyz/core/NativeCurrency"/>
     <skos:definition xml:lang="en">Digital asset managed by the Token Service with associated supply, metadata, and key governance.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/sdks-and-apis/token-service/introduction"/>
     <hedera:instanceIRIPattern xml:lang="en">https://hashgraphontology.xyz/resource/{network}/token/{shard}.{realm}.{num}</hedera:instanceIRIPattern>
@@ -342,13 +345,6 @@
     <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/AccountKey"/>
     <skos:definition xml:lang="en">Key material that authorises token-specific actions such as supply control, compliance, or metadata updates.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/sdks-and-apis/token-service/token-keys"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/hasDecimals">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:label xml:lang="en">has decimals</rdfs:label>
-    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/FungibleToken"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-    <skos:definition xml:lang="en">Number of decimal places tracked for fungible token units.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://hashgraphontology.xyz/core/TokenBurnEvent">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -399,5 +395,15 @@
     <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/TokenComplianceRole"/>
     <skos:definition xml:lang="en">Role accountable for administering KYC approvals required before token transfers.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://hips.hedera.com/hip/hip-540"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/isDenominatedIn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">is denominated in</rdfs:label>
+    <rdfs:comment xml:lang="en">Corresponds to the fixed fee's denominating token ID. When that ID is unset the fee is charged in HBAR, so state hedera:HBAR explicitly. Only HBAR or a fungible token can denominate a fixed fee, never a non-fungible token.</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="https://hashgraphontology.xyz/token"/>
+    <rdfs:domain rdf:resource="https://hashgraphontology.xyz/core/FixedFee"/>
+    <rdfs:range rdf:resource="https://hashgraphontology.xyz/core/DigitalAsset"/>
+    <skos:definition xml:lang="en">Relates a fixed fee to the digital asset in which it is charged.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/native/tokens/custom-fees"/>
   </rdf:Description>
 </rdf:RDF>

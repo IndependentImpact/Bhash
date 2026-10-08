@@ -18,7 +18,7 @@
     dcterms:license <https://www.apache.org/licenses/LICENSE-2.0> ;
     dcterms:source <https://docs.hedera.com/hedera> , <https://docs.hedera.com/hiero> , <https://docs.hedera.com/hedera/core-concepts/transactions/transaction-lifecycle> ;
     dcterms:created "2024-05-02"^^xsd:date ;
-    dcterms:modified "2026-08-14"^^xsd:date ;
+    dcterms:modified "2026-10-07"^^xsd:date ;
     owl:versionIRI <https://hashgraphontology.xyz/core/0.1.0-dev> ;
     owl:versionInfo "0.1.0-dev" ;
     owl:imports <https://hashgraphontology.xyz/imports/prov> ,
@@ -40,7 +40,7 @@ hedera:sourceDocument
 hedera:instanceIRIPattern
     a owl:AnnotationProperty ;
     rdfs:label "instance IRI pattern"@en ;
-    skos:definition "URI template describing the canonical IRI scheme for instances of a class.  Network values are mainnet, testnet, or previewnet.  The shard.realm.num segments follow the native Hedera entity-ID format."@en ;
+    skos:definition "URI template describing the canonical IRI scheme for instances of a class.  The {network} segment is the skos:notation of a hedera:Network individual: mainnet (hedera:Mainnet), testnet (hedera:Testnet), or previewnet (hedera:Previewnet).  The shard.realm.num segments follow the native Hedera entity-ID format."@en ;
     .
 
 ###
@@ -64,8 +64,10 @@ hedera:Actor
 hedera:Network
     a owl:Class ;
     rdfs:label "Network"@en ;
-    rdfs:subClassOf hedera:Actor ;
-    skos:definition "A distributed environment (e.g., mainnet, testnet, shard) that provides Hedera services."@en ;
+    rdfs:subClassOf hedera:Concept ;
+    owl:disjointWith hedera:HieroLayer , hedera:HieroShard ;
+    skos:definition "A distributed ledger environment (e.g., mainnet, testnet, previewnet) that provides Hedera services."@en ;
+    skos:scopeNote "Hiero layers and shards are parts of a network, not kinds of network: relate them to their network with hedera:hasLayer / hedera:isLayerOf and hedera:hasShard / hedera:isShardOf."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/network/nodes/mainnet-nodes> ;
     .
 
@@ -116,8 +118,8 @@ hedera:Event
 hedera:HieroLayer
     a owl:Class ;
     rdfs:label "Hiero layer"@en ;
-    rdfs:subClassOf hedera:Network ;
-    skos:definition "Logical component of the Hiero architecture (consensus, execution, or service layer)."@en ;
+    rdfs:subClassOf hedera:Concept ;
+    skos:definition "Logical component of the Hiero architecture (consensus, execution, or service layer) that forms part of a network."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hiero> ;
     .
 
@@ -132,8 +134,9 @@ hedera:Validator
 hedera:Account
     a owl:Class ;
     rdfs:label "Account"@en ;
-    rdfs:subClassOf hedera:Actor ;
+    rdfs:subClassOf hedera:Artefact ;
     skos:definition "On-ledger identity storing keys, balances, and staking configuration for participation in Hedera services."@en ;
+    skos:scopeNote "An account is ledger state, not an agent: relate it to the actor that controls it with hedera:isAccountOf / hedera:hasAccount, and to its network with hedera:registeredIn."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/accounts> ;
     hedera:instanceIRIPattern "https://hashgraphontology.xyz/resource/{network}/account/{shard}.{realm}.{num}"@en ;
     .
@@ -309,9 +312,9 @@ hedera:MirrorDataset
 hedera:HieroShard
     a owl:Class ;
     rdfs:label "Hiero shard"@en ;
-    rdfs:subClassOf hedera:Network ;
-    skos:definition "Network partition within Hiero that localises consensus and execution responsibilities."@en ;
-    hedera:sourceDocument <https://hips.hedera.com/hip/hip-840> ;
+    rdfs:subClassOf hedera:Concept ;
+    skos:definition "Partition of a network within Hiero that localises consensus and execution responsibilities."@en ;
+    hedera:sourceDocument <https://hips.hedera.com/hip/hip-840> , <https://docs.hedera.com/hiero/concepts/shards> ;
     .
 
 hedera:HieroConsensusLayer
@@ -436,7 +439,7 @@ hedera:exposedOn
     rdfs:label "exposed on"@en ;
     rdfs:domain hedera:Service ;
     rdfs:range hedera:Network ;
-    skos:definition "Indicates the network or shard through which a service is made available."@en ;
+    skos:definition "Indicates the network through which a service is made available."@en ;
     .
 
 hedera:registeredIn
@@ -632,7 +635,7 @@ hedera:isShardOf
     rdfs:label "is shard of"@en ;
     rdfs:domain hedera:HieroShard ;
     rdfs:range hedera:Network ;
-    skos:definition "Indicates which broader network a Hiero shard belongs to."@en ;
+    skos:definition "Indicates the network that a Hiero shard is a partition of."@en ;
     hedera:sourceDocument <https://hips.hedera.com/hip/hip-840> ;
     .
 
@@ -999,4 +1002,126 @@ hedera:HieroShard
         owl:onProperty hedera:isShardOf ;
         owl:someValuesFrom hedera:Network
     ] ;
+    .
+
+hedera:DigitalAsset
+    a owl:Class ;
+    rdfs:label "Digital asset"@en ;
+    rdfs:comment "Common superclass of the native cryptocurrency (hedera:NativeCurrency) and Token Service tokens (hedera:Token), for properties that apply to either, such as fees payable in a token or in HBAR."@en ;
+    rdfs:isDefinedBy <https://hashgraphontology.xyz/core> ;
+    rdfs:subClassOf hedera:Concept ;
+    skos:definition "Unit of value or ownership whose balances are tracked by a Hedera network."@en ;
+    .
+
+hedera:NativeCurrency
+    a owl:Class ;
+    rdfs:label "Native currency"@en ;
+    rdfs:comment "Not a Token Service token: a native currency has no token ID and therefore no canonical resource IRI, so its instances are declared as named individuals (e.g., hedera:HBAR)."@en ;
+    rdfs:isDefinedBy <https://hashgraphontology.xyz/core> ;
+    rdfs:subClassOf hedera:DigitalAsset ;
+    skos:definition "Cryptocurrency built into a network's protocol and used to pay its transaction fees."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/support/faq/hbar> ;
+    .
+
+hedera:hasDecimals
+    a owl:DatatypeProperty ;
+    rdfs:label "has decimals"@en ;
+    rdfs:comment "Declared in the token module with domain hedera:FungibleToken until D-0006; widened to hedera:DigitalAsset so that it also applies to hedera:HBAR."@en ;
+    rdfs:isDefinedBy <https://hashgraphontology.xyz/core> ;
+    rdfs:domain hedera:DigitalAsset ;
+    rdfs:range xsd:integer ;
+    skos:definition "Number of decimal places between a digital asset's whole unit and its smallest indivisible unit (e.g., 8 for HBAR, as 1 HBAR = 100,000,000 tinybars)."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/support/faq/hbar> ;
+    .
+
+hedera:hasNativeCurrency
+    a owl:ObjectProperty ;
+    rdfs:label "has native currency"@en ;
+    rdfs:isDefinedBy <https://hashgraphontology.xyz/core> ;
+    rdfs:domain hedera:Network ;
+    rdfs:range hedera:NativeCurrency ;
+    skos:definition "Relates a network to the native cryptocurrency in which its transaction fees are paid."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/networks/mainnet> ;
+    .
+
+hedera:hasLedgerId
+    a owl:DatatypeProperty ;
+    rdfs:label "has ledger ID"@en ;
+    rdfs:comment "HIP-198 describes the current single-byte values as temporary, to be replaced by longer IDs."@en ;
+    rdfs:isDefinedBy <https://hashgraphontology.xyz/core> ;
+    rdfs:domain hedera:Network ;
+    rdfs:range xsd:hexBinary ;
+    skos:definition "Ledger ID that distinguishes a network, for example in state proofs and SDK network configuration."@en ;
+    hedera:sourceDocument <https://hips.hedera.com/hip/hip-198> ;
+    .
+
+hedera:hasEvmChainId
+    a owl:DatatypeProperty ;
+    rdfs:label "has EVM chain ID"@en ;
+    rdfs:isDefinedBy <https://hashgraphontology.xyz/core> ;
+    rdfs:domain hedera:Network ;
+    rdfs:range xsd:positiveInteger ;
+    skos:definition "EIP-155 chain ID that identifies a network to EVM tooling (JSON-RPC relay, wallets)."@en ;
+    hedera:sourceDocument <https://docs.hedera.com/hedera/getting-started-evm-developers/add-hedera-to-metamask> ;
+    .
+
+###
+# Named individuals for the public Hedera networks and their native
+# cryptocurrency. These are fixed, universal instances, so they are declared
+# here in the ontology (and versioned with it) rather than minted under
+# https://hashgraphontology.xyz/resource/.  The skos:notation of each network
+# is the {network} segment of the canonical resource IRIs.
+###
+
+hedera:Mainnet
+    a owl:NamedIndividual , hedera:Network ;
+    rdfs:label "Hedera mainnet"@en ;
+    rdfs:isDefinedBy <https://hashgraphontology.xyz/core> ;
+    skos:notation "mainnet" ;
+    skos:definition "Production Hedera network, on which transaction fees are paid in HBAR."@en ;
+    hedera:hasLedgerId "00"^^xsd:hexBinary ;
+    hedera:hasEvmChainId "295"^^xsd:positiveInteger ;
+    hedera:hasNativeCurrency hedera:HBAR ;
+    hedera:sourceDocument <https://docs.hedera.com/networks/mainnet> ;
+    .
+
+hedera:Testnet
+    a owl:NamedIndividual , hedera:Network ;
+    rdfs:label "Hedera testnet"@en ;
+    rdfs:isDefinedBy <https://hashgraphontology.xyz/core> ;
+    skos:notation "testnet" ;
+    skos:definition "Public Hedera test network for development, on which HBAR has no monetary value."@en ;
+    skos:scopeNote "Testnet is reset periodically, which clears balances, contracts, topics, tokens and other ledger state; accounts must be recreated afterwards. An entity ID, and so a canonical resource IRI under https://hashgraphontology.xyz/resource/testnet/, can therefore denote different entities before and after a reset."@en ;
+    hedera:hasLedgerId "01"^^xsd:hexBinary ;
+    hedera:hasEvmChainId "296"^^xsd:positiveInteger ;
+    hedera:hasNativeCurrency hedera:HBAR ;
+    hedera:sourceDocument <https://docs.hedera.com/networks/testnet> ;
+    .
+
+hedera:Previewnet
+    a owl:NamedIndividual , hedera:Network ;
+    rdfs:label "Hedera previewnet"@en ;
+    rdfs:isDefinedBy <https://hashgraphontology.xyz/core> ;
+    skos:notation "previewnet" ;
+    skos:definition "Hedera network that receives new software releases before testnet and mainnet, for previewing upcoming features."@en ;
+    hedera:hasLedgerId "02"^^xsd:hexBinary ;
+    hedera:hasEvmChainId "297"^^xsd:positiveInteger ;
+    hedera:hasNativeCurrency hedera:HBAR ;
+    hedera:sourceDocument <https://hedera.com/blog/the-hedera-previewnet-is-now-live> ;
+    .
+
+[]
+    a owl:AllDifferent ;
+    owl:distinctMembers ( hedera:Mainnet hedera:Testnet hedera:Previewnet ) ;
+    .
+
+hedera:HBAR
+    a owl:NamedIndividual , hedera:NativeCurrency ;
+    rdfs:label "HBAR"@en ;
+    skos:altLabel "\u210F" ;
+    rdfs:comment "Record amounts as integers in tinybars (1 HBAR = 100,000,000 tinybars), as the network and mirror node do, rather than as decimal HBAR. The same individual serves every network; whether an amount has monetary value depends on the network it is held on."@en ;
+    rdfs:isDefinedBy <https://hashgraphontology.xyz/core> ;
+    skos:definition "Native cryptocurrency of the Hedera networks, used to pay transaction fees and to stake to consensus nodes."@en ;
+    hedera:hasDecimals 8 ;
+    hedera:sourceDocument <https://docs.hedera.com/support/faq/hbar> ;
     .

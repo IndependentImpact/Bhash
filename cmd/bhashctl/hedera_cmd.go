@@ -134,7 +134,11 @@ func runHederaBootstrap(args []string) {
 		fmt.Fprintf(os.Stderr, "%v\n", err)
 		os.Exit(1)
 	}
-	transaction := result.Transaction(ledgerID)
+	transaction, err := result.Transaction(ledgerID)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "%v\n", err)
+		os.Exit(1)
+	}
 
 	output := map[string]any{
 		"network":     result.Network,

@@ -2,29 +2,89 @@ package hedera
 
 import (
 	"fmt"
+	"regexp"
+	"strings"
 	"time"
 
 	"github.com/hashgraph/bhash/internal/fluree"
 )
 
+const (
+	// coreNS is the namespace of the Bhash core ontology and its service modules.
+	coreNS = "https://hashgraphontology.xyz/core/"
+	// resourceNS is the root of the canonical instance IRIs (D-0002).
+	resourceNS = "https://hashgraphontology.xyz/resource/"
+	// ledgerNS holds ledger fields that have no Bhash ontology property yet.
+	// It is the namespace scripts/hedera_topic_to_fluree.py already uses for
+	// such fields; terms in it are not part of the ontology.
+	ledgerNS = "https://hashgraphontology.xyz/ledger#"
+)
+
+// networkIRIs maps a Hedera network name, which is also the {network} segment
+// of the canonical resource IRIs, to its named individual in the core
+// ontology (D-0005).
+var networkIRIs = map[string]string{
+	"mainnet":    coreNS + "Mainnet",
+	"testnet":    coreNS + "Testnet",
+	"previewnet": coreNS + "Previewnet",
+}
+
+// entityIDPattern matches a native Hedera entity ID (shard.realm.num).
+var entityIDPattern = regexp.MustCompile(`^\d+\.\d+\.\d+$`)
+
 var defaultContext = map[string]any{
-	"@vocab":                  "https://hashgraph.github.io/bhash/hedera#",
-	"hedera":                  "https://hashgraph.github.io/bhash/hedera#",
+	"hedera":                  coreNS,
+	"ledger":                  ledgerNS,
 	"prov":                    "http://www.w3.org/ns/prov#",
 	"schema":                  "http://schema.org/",
 	"xsd":                     "http://www.w3.org/2001/XMLSchema#",
 	"prov:generatedAtTime":    map[string]any{"@type": "xsd:dateTime"},
-	"hedera:belongsToNetwork": map[string]any{"@type": "xsd:string"},
-	"hedera:accountId":        map[string]any{"@type": "xsd:string"},
-	"hedera:topicId":          map[string]any{"@type": "xsd:string"},
-	"hedera:tokenId":          map[string]any{"@type": "xsd:string"},
-	"hedera:treasuryAccount":  map[string]any{"@type": "@id"},
+	"hedera:registeredIn":     map[string]any{"@type": "@id"},
+	"hedera:hasAccountId":     map[string]any{"@type": "xsd:string"},
+	"hedera:hasTopicId":       map[string]any{"@type": "xsd:string"},
+	"hedera:hasTokenId":       map[string]any{"@type": "xsd:string"},
+	"hedera:hasSymbol":        map[string]any{"@type": "xsd:string"},
+	"hedera:hasTreasury":      map[string]any{"@type": "@id"},
+	"hedera:hasDecimals":      map[string]any{"@type": "xsd:integer"},
+	"hedera:hasInitialSupply": map[string]any{"@type": "xsd:decimal"},
+	"hedera:hasMaxSupply":     map[string]any{"@type": "xsd:decimal"},
 	"schema:keywords":         map[string]any{"@container": "@set"},
 }
 
+// network identifies the Hedera network a bootstrap result was recorded on.
+type network struct {
+	slug string // {network} segment of the canonical resource IRIs
+	iri  string // named individual in the core ontology
+}
+
+func resolveNetwork(name string) (network, error) {
+	slug := strings.ToLower(strings.TrimSpace(name))
+	iri, ok := networkIRIs[slug]
+	if !ok {
+		return network{}, fmt.Errorf("network %q has no named individual in the core ontology (expected mainnet, testnet or previewnet)", name)
+	}
+	return network{slug: slug, iri: iri}, nil
+}
+
+// resourceIRI mints the canonical instance IRI
+// https://hashgraphontology.xyz/resource/{network}/{kind}/{shard}.{realm}.{num}.
+func (n network) resourceIRI(kind, entityID string) (string, error) {
+	if !entityIDPattern.MatchString(entityID) {
+		return "", fmt.Errorf("%s ID %q is not a shard.realm.num entity ID", kind, entityID)
+	}
+	return resourceNS + n.slug + "/" + kind + "/" + entityID, nil
+}
+
 // Transaction builds a Fluree transaction that inserts JSON-LD nodes for every
-// artefact recorded in the result.
-func (r BootstrapResult) Transaction(ledger string) fluree.TransactionRequest {
+// artefact recorded in the result. Nodes use the canonical resource IRIs and
+// the core ontology vocabulary, and link to the network's named individual
+// with hedera:registeredIn.
+func (r BootstrapResult) Transaction(ledger string) (fluree.TransactionRequest, error) {
+	net, err := resolveNetwork(r.Network)
+	if err != nil {
+		return fluree.TransactionRequest{}, err
+	}
+
 	ctx := make(map[string]any, len(defaultContext))
 	for k, v := range defaultContext {
 		ctx[k] = v
@@ -32,23 +92,39 @@ func (r BootstrapResult) Transaction(ledger string) fluree.TransactionRequest {
 
 	req := fluree.TransactionRequest{Ledger: ledger, Context: ctx}
 	for _, account := range r.Accounts {
-		req.Insert = append(req.Insert, account.asJSONLD(r.Network))
+		node, err := account.asJSONLD(net)
+		if err != nil {
+			return fluree.TransactionRequest{}, err
+		}
+		req.Insert = append(req.Insert, node)
 	}
 	for _, topic := range r.Topics {
-		req.Insert = append(req.Insert, topic.asJSONLD(r.Network))
+		node, err := topic.asJSONLD(net)
+		if err != nil {
+			return fluree.TransactionRequest{}, err
+		}
+		req.Insert = append(req.Insert, node)
 	}
 	for _, token := range r.Tokens {
-		req.Insert = append(req.Insert, token.asJSONLD(r.Network))
+		node, err := token.asJSONLD(net)
+		if err != nil {
+			return fluree.TransactionRequest{}, err
+		}
+		req.Insert = append(req.Insert, node)
 	}
-	return req
+	return req, nil
 }
 
-func (a AccountRecord) asJSONLD(network string) map[string]any {
+func (a AccountRecord) asJSONLD(net network) (map[string]any, error) {
+	id, err := net.resourceIRI("account", a.AccountID)
+	if err != nil {
+		return nil, err
+	}
 	node := map[string]any{
-		"@id":                     urn("account", a.AccountID),
-		"@type":                   []string{"hedera:Account", "prov:Agent"},
-		"hedera:accountId":        a.AccountID,
-		"hedera:belongsToNetwork": network,
+		"@id":                 id,
+		"@type":               []string{"hedera:Account", "prov:Entity"},
+		"hedera:hasAccountId": a.AccountID,
+		"hedera:registeredIn": net.iri,
 	}
 	if !a.CreatedAt.IsZero() {
 		node["prov:generatedAtTime"] = formatTime(a.CreatedAt)
@@ -60,20 +136,24 @@ func (a AccountRecord) asJSONLD(network string) map[string]any {
 		node["schema:description"] = a.Memo
 	}
 	if a.PublicKey != "" {
-		node["hedera:publicKey"] = a.PublicKey
+		node["ledger:publicKey"] = a.PublicKey
 	}
 	if len(a.Tags) > 0 {
 		node["schema:keywords"] = append([]string(nil), a.Tags...)
 	}
-	return node
+	return node, nil
 }
 
-func (t TopicRecord) asJSONLD(network string) map[string]any {
+func (t TopicRecord) asJSONLD(net network) (map[string]any, error) {
+	id, err := net.resourceIRI("topic", t.TopicID)
+	if err != nil {
+		return nil, err
+	}
 	node := map[string]any{
-		"@id":                     urn("topic", t.TopicID),
-		"@type":                   []string{"hedera:ConsensusTopic", "prov:Entity"},
-		"hedera:topicId":          t.TopicID,
-		"hedera:belongsToNetwork": network,
+		"@id":                 id,
+		"@type":               []string{"hedera:ConsensusTopic", "prov:Entity"},
+		"hedera:hasTopicId":   t.TopicID,
+		"hedera:registeredIn": net.iri,
 	}
 	if !t.CreatedAt.IsZero() {
 		node["prov:generatedAtTime"] = formatTime(t.CreatedAt)
@@ -85,23 +165,31 @@ func (t TopicRecord) asJSONLD(network string) map[string]any {
 		node["schema:keywords"] = append([]string(nil), t.Tags...)
 	}
 	if t.Sequence > 0 {
-		node["hedera:initialSequence"] = t.Sequence
+		node["ledger:initialSequence"] = t.Sequence
 	}
-	return node
+	return node, nil
 }
 
-func (t TokenRecord) asJSONLD(network string) map[string]any {
+func (t TokenRecord) asJSONLD(net network) (map[string]any, error) {
+	id, err := net.resourceIRI("token", t.TokenID)
+	if err != nil {
+		return nil, err
+	}
+	tokenClass, fungible, known := tokenClassFor(t.TokenType)
 	node := map[string]any{
-		"@id":                     urn("token", t.TokenID),
-		"@type":                   []string{"hedera:Token", "prov:Entity"},
-		"hedera:tokenId":          t.TokenID,
-		"hedera:belongsToNetwork": network,
+		"@id":                 id,
+		"@type":               []string{tokenClass, "prov:Entity"},
+		"hedera:hasTokenId":   t.TokenID,
+		"hedera:registeredIn": net.iri,
+	}
+	if !known {
+		node["ledger:tokenType"] = t.TokenType
 	}
 	if t.Name != "" {
 		node["schema:name"] = t.Name
 	}
 	if t.Symbol != "" {
-		node["schema:identifier"] = t.Symbol
+		node["hedera:hasSymbol"] = t.Symbol
 	}
 	if !t.CreatedAt.IsZero() {
 		node["prov:generatedAtTime"] = formatTime(t.CreatedAt)
@@ -110,31 +198,43 @@ func (t TokenRecord) asJSONLD(network string) map[string]any {
 		node["schema:description"] = t.Memo
 	}
 	if t.TreasuryAccountID != "" {
-		node["hedera:treasuryAccount"] = urn("account", t.TreasuryAccountID)
+		treasury, err := net.resourceIRI("account", t.TreasuryAccountID)
+		if err != nil {
+			return nil, fmt.Errorf("token %s treasury: %w", t.TokenID, err)
+		}
+		node["hedera:hasTreasury"] = treasury
 	}
 	if t.Decimals > 0 {
-		node["hedera:decimals"] = t.Decimals
+		node["hedera:hasDecimals"] = t.Decimals
 	}
-	if t.InitialSupply > 0 {
-		node["hedera:initialSupply"] = t.InitialSupply
+	// hedera:hasInitialSupply has domain hedera:FungibleToken.
+	if fungible && t.InitialSupply > 0 {
+		node["hedera:hasInitialSupply"] = t.InitialSupply
 	}
 	if t.MaxSupply != 0 {
-		node["hedera:maxSupply"] = t.MaxSupply
+		node["hedera:hasMaxSupply"] = t.MaxSupply
 	}
 	if t.SupplyType != "" {
-		node["hedera:supplyType"] = t.SupplyType
-	}
-	if t.TokenType != "" {
-		node["hedera:tokenType"] = t.TokenType
+		node["ledger:supplyType"] = t.SupplyType
 	}
 	if len(t.Tags) > 0 {
 		node["schema:keywords"] = append([]string(nil), t.Tags...)
 	}
-	return node
+	return node, nil
 }
 
-func urn(kind, id string) string {
-	return fmt.Sprintf("urn:hedera:%s:%s", kind, id)
+// tokenClassFor maps a Hedera token type, as accepted by parseTokenType, to
+// the matching Token Service class. An empty type is fungible, as in the SDK.
+// Unrecognised types fall back to hedera:Token with known == false.
+func tokenClassFor(tokenType string) (class string, fungible, known bool) {
+	switch strings.ToUpper(strings.TrimSpace(tokenType)) {
+	case "", "FUNGIBLE_COMMON", "TOKEN_TYPE_FUNGIBLE_COMMON":
+		return "hedera:FungibleToken", true, true
+	case "NON_FUNGIBLE_UNIQUE", "TOKEN_TYPE_NON_FUNGIBLE_UNIQUE":
+		return "hedera:NonFungibleToken", false, true
+	default:
+		return "hedera:Token", false, false
+	}
 }
 
 func formatTime(t time.Time) string {

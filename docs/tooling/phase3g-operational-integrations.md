@@ -89,7 +89,25 @@ The `internal/hedera` package introduces:
 * **Bootstrapper** – orchestrates provisioning and resolves aliases so tokens reference
   their treasury accounts automatically.
 * **JSON-LD export** – converts the resulting records into a Fluree transaction with a
-  shared context (`hedera`, `prov`, and `schema` prefixes).
+  shared context (`hedera`, `ledger`, `prov`, `schema`, and `xsd` prefixes). Nodes use the
+  canonical resource IRIs (`https://hashgraphontology.xyz/resource/{network}/{account|topic|token}/{shard}.{realm}.{num}`,
+  D-0002) and link to the network's named individual (`hedera:Mainnet`, `hedera:Testnet`,
+  or `hedera:Previewnet`, D-0005) with `hedera:registeredIn`; a network without a named
+  individual, or an ID that is not `shard.realm.num`, is rejected.
+
+  | Record field | Emitted as |
+  | ------------ | ---------- |
+  | account / topic / token ID | `hedera:hasAccountId` / `hedera:hasTopicId` / `hedera:hasTokenId` |
+  | token type | `@type` `hedera:FungibleToken` (also for an empty type) or `hedera:NonFungibleToken`; an unrecognised type stays `hedera:Token` plus `ledger:tokenType` |
+  | token symbol, decimals, treasury, max supply | `hedera:hasSymbol`, `hedera:hasDecimals`, `hedera:hasTreasury` (account IRI), `hedera:hasMaxSupply` |
+  | token initial supply | `hedera:hasInitialSupply` (fungible tokens only) |
+  | alias, token name, memo, tags | `schema:name`, `schema:name`, `schema:description`, `schema:keywords` |
+  | creation time | `prov:generatedAtTime` |
+  | account public key, topic initial sequence, token supply type | `ledger:publicKey`, `ledger:initialSequence`, `ledger:supplyType` |
+
+  The `ledger:` namespace (`https://hashgraphontology.xyz/ledger#`, also used by
+  `scripts/hedera_topic_to_fluree.py`) holds fields that have no ontology property yet; its
+  terms are not part of the ontology.
 
 When `--simulate=false`, the CLI instantiates the SDK-backed network and expects
 `HEDERA_OPERATOR_ID`/`HEDERA_OPERATOR_KEY` to be present so real transactions can be

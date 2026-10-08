@@ -62,6 +62,8 @@
             
                 <tr><td>ns5</td><td>https://docs.hedera.com/hedera/core-concepts/transactions/</td></tr>
             
+                <tr><td>ns6</td><td>https://docs.hedera.com/native/tokens/</td></tr>
+            
                 <tr><td>owl</td><td>http://www.w3.org/2002/07/owl#</td></tr>
             
                 <tr><td>prov</td><td>http://www.w3.org/ns/prov#</td></tr>
@@ -114,7 +116,7 @@
                     <td><span class="pill">hedera:CustomFee</span></td>
                     <td class="small">
                         <div><strong>Definition:</strong> Custom fee that transfers a fixed quantity of tokens or HBAR to the collector.</div>
-                        
+                        <div><strong>Comment:</strong> State the currency with hedera:isDenominatedIn: hedera:HBAR or a fungible hedera:Token.</div>
                         
                         <div class="meta">IRI: https://hashgraphontology.xyz/core/FixedFee</div>
                     </td>
@@ -291,7 +293,7 @@
                 <tr id="cls-hedera-Token">
                     <td>Token</td>
                     <td>hedera:Token</td>
-                    <td><span class="pill">hedera:Artefact</span></td>
+                    <td><span class="pill">hedera:Artefact</span><span class="pill">hedera:DigitalAsset</span></td>
                     <td class="small">
                         <div><strong>Definition:</strong> Digital asset managed by the Token Service with associated supply, metadata, and key governance.</div>
                         
@@ -528,20 +530,6 @@
                     </td>
                 </tr>
             
-                <tr id="prop-hedera-hasDecimals">
-                    <td>has decimals</td>
-                    <td>hedera:hasDecimals</td>
-                    <td>DatatypeProperty</td>
-                    <td><span class="pill">hedera:FungibleToken</span></td>
-                    <td><span class="pill">xsd:integer</span></td>
-                    <td class="small">
-                        
-                        
-                        
-                        <div class="meta">IRI: https://hashgraphontology.xyz/core/hasDecimals</div>
-                    </td>
-                </tr>
-            
                 <tr id="prop-hedera-hasInitialSupply">
                     <td>has initial supply</td>
                     <td>hedera:hasInitialSupply</td>
@@ -665,6 +653,20 @@
                         
                         
                         <div class="meta">IRI: https://hashgraphontology.xyz/core/isControlledBy</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-hedera-isDenominatedIn">
+                    <td>is denominated in</td>
+                    <td>hedera:isDenominatedIn</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">hedera:FixedFee</span></td>
+                    <td><span class="pill">hedera:DigitalAsset</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> Corresponds to the fixed fee's denominating token ID. When that ID is unset the fee is charged in HBAR, so state hedera:HBAR explicitly. Only HBAR or a fungible token can denominate a fixed fee, never a non-fungible token.</div>
+                        
+                        
+                        <div class="meta">IRI: https://hashgraphontology.xyz/core/isDenominatedIn</div>
                     </td>
                 </tr>
             

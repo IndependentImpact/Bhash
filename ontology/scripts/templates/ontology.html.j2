@@ -98,7 +98,32 @@
             {% endfor %}
             </tbody>
         </table>
-    </section>
+    </section>{% if individuals %}
+
+    <section class="section">
+        <h2>Named Individuals ({{ individuals|length }})</h2>
+        <table>
+            <thead><tr><th>Label</th><th>QName</th><th>Type</th><th>Facts</th><th>Notes</th></tr></thead>
+            <tbody>
+            {% for ind in individuals %}
+                <tr id="ind-{{ ind.qname|replace(':','-') }}">
+                    <td>{{ ind.label }}</td>
+                    <td>{{ ind.qname }}</td>
+                    <td>{% for t in ind.types %}<span class="pill">{{ t }}</span>{% endfor %}</td>
+                    <td class="small">
+                        {% for f in ind.facts %}<div><strong>{{ f.property }}:</strong> {% if f.href %}<a href="{{ f.href }}">{{ f.value }}</a>{% else %}{{ f.value }}{% endif %}{% if f.datatype %} <span class="meta">({{ f.datatype }})</span>{% endif %}</div>{% endfor %}
+                    </td>
+                    <td class="small">
+                        {% for d in ind.definitions %}<div><strong>Definition:</strong> {{ d }}</div>{% endfor %}
+                        {% for c in ind.comments %}<div><strong>Comment:</strong> {{ c }}</div>{% endfor %}
+                        {% for n in ind.scope_notes %}<div><strong>Scope note:</strong> {{ n }}</div>{% endfor %}
+                        <div class="meta">IRI: {{ ind.iri }}</div>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </section>{% endif %}
     </div>
 </body>
 </html>
