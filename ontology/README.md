@@ -53,6 +53,7 @@ Instance IRIs for key Hedera resources follow a stable, deterministic pattern un
 | `hedera:TopicMessage` | `…/resource/{network}/topic/{shard}.{realm}.{num}/message/{sequenceNumber}` |
 | `hedera:Token` | `…/resource/{network}/token/{shard}.{realm}.{num}` |
 | `hedera:SmartContract` | `…/resource/{network}/contract/{shard}.{realm}.{num}` |
+| `hedera:TransactionRecord` | `…/resource/{network}/record/{consensusTimestamp}` |
 
 `{network}` is `mainnet`, `testnet`, or `previewnet`: the `skos:notation` of the `hedera:Mainnet`,
 `hedera:Testnet` and `hedera:Previewnet` individuals in `src/core.ttl`.  Link a resource to its

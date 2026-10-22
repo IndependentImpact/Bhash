@@ -14,9 +14,11 @@
 #   TopicMessage   : https://hashgraphontology.xyz/resource/{network}/topic/{shard}.{realm}.{num}/message/{sequenceNumber}
 #   Token          : https://hashgraphontology.xyz/resource/{network}/token/{shard}.{realm}.{num}
 #   SmartContract  : https://hashgraphontology.xyz/resource/{network}/contract/{shard}.{realm}.{num}
+#   TransactionRecord : https://hashgraphontology.xyz/resource/{network}/record/{consensusTimestamp}
 #
 # Network values: mainnet | testnet | previewnet
 # shard.realm.num uses non-negative integers (e.g., 0.0.12345)
+# consensusTimestamp uses the native seconds.nanoseconds form (e.g., 1586567700.453054000)
 ###
 
 hedera:AccountIRIShape
@@ -61,5 +63,14 @@ hedera:SmartContractIRIShape
     sh:nodeKind sh:IRI ;
     sh:pattern "^https://hashgraphontology\\.xyz/resource/(mainnet|testnet|previewnet)/contract/\\d+\\.\\d+\\.\\d+$" ;
     sh:message "SmartContract IRIs must follow the canonical pattern https://hashgraphontology.xyz/resource/{network}/contract/{shard}.{realm}.{num} where network is mainnet, testnet, or previewnet."@en ;
+    sh:severity sh:Warning ;
+    .
+
+hedera:TransactionRecordIRIShape
+    a sh:NodeShape ;
+    sh:targetClass hedera:TransactionRecord ;
+    sh:nodeKind sh:IRI ;
+    sh:pattern "^https://hashgraphontology\\.xyz/resource/(mainnet|testnet|previewnet)/record/(0|[1-9][0-9]*)\\.[0-9]{9}$" ;
+    sh:message "TransactionRecord IRIs must follow the canonical pattern https://hashgraphontology.xyz/resource/{network}/record/{consensusTimestamp} where network is mainnet, testnet, or previewnet and consensusTimestamp is the record's consensus timestamp in the native seconds.nanoseconds form with exactly nine nanosecond digits."@en ;
     sh:severity sh:Warning ;
     .

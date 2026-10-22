@@ -34,8 +34,9 @@ To enable cross-project RDF graph merging and `owl:sameAs` alignment, all Hedera
 | Topic Message | `https://hashgraphontology.xyz/resource/{network}/topic/{shard}.{realm}.{num}/message/{sequenceNumber}` |
 | Token | `https://hashgraphontology.xyz/resource/{network}/token/{shard}.{realm}.{num}` |
 | Smart Contract | `https://hashgraphontology.xyz/resource/{network}/contract/{shard}.{realm}.{num}` |
+| Transaction Record | `https://hashgraphontology.xyz/resource/{network}/record/{consensusTimestamp}` |
 
-`{network}` is one of `mainnet`, `testnet`, or `previewnet`: the `skos:notation` of the `hedera:Mainnet`, `hedera:Testnet` and `hedera:Previewnet` named individuals declared in the core ontology.  `{shard}.{realm}.{num}` follows the native Hedera entity-ID format (e.g., `0.0.12345`).  `{sequenceNumber}` is the consensus-assigned integer sequence number for a topic message.
+`{network}` is one of `mainnet`, `testnet`, or `previewnet`: the `skos:notation` of the `hedera:Mainnet`, `hedera:Testnet` and `hedera:Previewnet` named individuals declared in the core ontology.  `{shard}.{realm}.{num}` follows the native Hedera entity-ID format (e.g., `0.0.12345`).  `{sequenceNumber}` is the consensus-assigned integer sequence number for a topic message.  `{consensusTimestamp}` is a transaction record's consensus timestamp in the native Hedera `seconds.nanoseconds` form (e.g., `1586567700.453054000`), the same value as its `hedera:hasConsensusTimestamp`; records are keyed by it rather than by transaction ID because one transaction ID can yield several records.
 
 Example usage:
 
@@ -49,7 +50,7 @@ Example usage:
     prov:generatedAtTime "2026-03-09T10:11:12.123Z"^^xsd:dateTime .
 ```
 
-A working example with all five resource types is provided in `ontology/examples/canonical-iris.ttl`.  SHACL shapes that warn when instances deviate from these patterns are in `ontology/shapes/instance-iris.shacl.ttl`.  The `hedera:instanceIRIPattern` annotation property on each class also encodes the template for tooling that reads the ontology directly.
+A working example with all six resource types is provided in `ontology/examples/canonical-iris.ttl`.  SHACL shapes that warn when instances deviate from these patterns are in `ontology/shapes/instance-iris.shacl.ttl`.  The `hedera:instanceIRIPattern` annotation property on each class also encodes the template for tooling that reads the ontology directly.
 
 Projects that have already minted local IRIs can align them via:
 

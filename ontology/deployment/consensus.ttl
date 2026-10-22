@@ -86,12 +86,15 @@ hedera:hasAdminKey a owl:ObjectProperty ;
 
 hedera:hasConsensusTimestamp a owl:DatatypeProperty ;
     rdfs:label "has consensus timestamp"@en ;
-    rdfs:domain hedera:TopicMessage ;
+    rdfs:comment "The domain is the union of hedera:TopicMessage and hedera:TransactionRecord. ELK does not support an owl:unionOf domain and ignores it, so under ELK this property entails nothing about its subject's type. On a transaction record the value is also the key of its canonical IRI (see hedera:instanceIRIPattern on hedera:TransactionRecord)."@en ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( hedera:TopicMessage hedera:TransactionRecord ) ] ;
     rdfs:range xsd:string ;
     rdfs:seeAlso prov:generatedAtTime ;
-    skos:definition "Consensus-assigned timestamp recording when the topic message achieved ordering finality, in the native Hedera form \"seconds.nanoseconds\": Unix epoch seconds followed by exactly nine zero-padded nanosecond digits, as returned by the mirror node REST API (e.g. \"1586567700.453054000\")."@en ;
+    skos:definition "Consensus-assigned timestamp recording when a topic message, or the transaction a transaction record describes, achieved ordering finality, in the native Hedera form \"seconds.nanoseconds\": Unix epoch seconds followed by exactly nine zero-padded nanosecond digits, as returned by the mirror node REST API (e.g. \"1586567700.453054000\")."@en ;
     skos:editorialNote "Held as xsd:string rather than xsd:dateTime so the native value round-trips exactly and can be used directly as a mirror-node query key. Consequently the value is not temporally comparable in SPARQL; lexicographic order matches chronological order for as long as the seconds field keeps a fixed width. This property is therefore not a subproperty of prov:generatedAtTime, whose range is xsd:dateTime — the PROV term is referenced via rdfs:seeAlso instead."@en ;
-    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/message-flows> .
+    hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/message-flows>,
+        <https://docs.hedera.com/hedera/core-concepts/transactions/transaction-record> .
 
 hedera:hasEndpointAddress a owl:DatatypeProperty ;
     rdfs:label "has endpoint address"@en ;
@@ -324,7 +327,7 @@ hedera:TopicMessage a owl:Class ;
     dcterms:created "2024-09-20"^^xsd:date ;
     dcterms:creator "Bhash Ontology Working Group"@en ;
     dcterms:description "Service-specific vocabulary for modelling Hedera Consensus Service topics, messages, and validator interfaces."@en ;
-    dcterms:modified "2026-08-14"^^xsd:date ;
+    dcterms:modified "2026-10-21"^^xsd:date ;
     dcterms:title "Hedera Consensus Service module"@en ;
     owl:imports <https://hashgraphontology.xyz/core> ;
     owl:versionInfo "0.1.0-dev" ;
