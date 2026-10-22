@@ -1,12 +1,12 @@
 [
   {
-    "@id": "https://hashgraphontology.xyz/core/claimMadeByAccount",
+    "@id": "https://hashgraphontology.xyz/core/comprisesClaimRecord",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://purl.org/dc/terms/source": [
       {
-        "@id": "http://w3id.org/claimont#isMadeBy"
+        "@id": "http://w3id.org/claimont#comprisesClaims"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
@@ -17,7 +17,50 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "claim made by account"
+        "@value": "comprises claim record"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://w3id.org/claimont#Claim"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://w3id.org/claimont#comprisesClaims"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A composite on-chain claim comprises individual sub-claims recorded on the Hedera network."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts/governing-the-network"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/hasClaimSubject",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@id": "http://w3id.org/claimont#hasSubject"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://w3id.org/claimont#Claim"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has claim subject"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -27,18 +70,54 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "http://w3id.org/claimont#isMadeBy"
+        "@id": "http://w3id.org/claimont#hasSubject"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Associates a claim with the Hedera account acting as the claimant."
+        "@value": "Identifies the Hedera account that is the subject of a claim."
       }
     ],
     "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/core-concepts/governing-the-network"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/HederaSubstantiation",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@id": "http://w3id.org/claimont#Substantiation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Hedera substantiation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/TopicMessage"
+      },
+      {
+        "@id": "http://w3id.org/claimont#Substantiation"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A Hedera Consensus Service message that provides immutable on-chain evidence as substantiation for a claim."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/message-flows"
       }
     ]
   },
@@ -82,42 +161,6 @@
     "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/message-flows"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/ScheduledReport",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@id": "http://w3id.org/claimont#Report"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Scheduled report"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/ScheduledTransaction"
-      },
-      {
-        "@id": "http://w3id.org/claimont#Report"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A scheduled transaction whose execution produces a structured on-chain report within the meaning of the Claim Ontology."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/introduction"
       }
     ]
   },
@@ -190,49 +233,6 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/hasClaimSubject",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@id": "http://w3id.org/claimont#hasSubject"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://w3id.org/claimont#Claim"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has claim subject"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Account"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://w3id.org/claimont#hasSubject"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Identifies the Hedera account that is the subject of a claim."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hedera/core-concepts/governing-the-network"
-      }
-    ]
-  },
-  {
     "@id": "https://hashgraphontology.xyz/core/GovernanceClaim",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
@@ -269,13 +269,13 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/comprisesClaimRecord",
+    "@id": "https://hashgraphontology.xyz/core/claimMadeByAccount",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://purl.org/dc/terms/source": [
       {
-        "@id": "http://w3id.org/claimont#comprisesClaims"
+        "@id": "http://w3id.org/claimont#isMadeBy"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
@@ -286,23 +286,23 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "comprises claim record"
+        "@value": "claim made by account"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://w3id.org/claimont#Claim"
+        "@id": "https://hashgraphontology.xyz/core/Account"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "http://w3id.org/claimont#comprisesClaims"
+        "@id": "http://w3id.org/claimont#isMadeBy"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "A composite on-chain claim comprises individual sub-claims recorded on the Hedera network."
+        "@value": "Associates a claim with the Hedera account acting as the claimant."
       }
     ],
     "https://hashgraphontology.xyz/core/sourceDocument": [
@@ -312,38 +312,38 @@
     ]
   },
   {
-    "@id": "https://hashgraphontology.xyz/core/HederaSubstantiation",
+    "@id": "https://hashgraphontology.xyz/core/ScheduledReport",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://purl.org/dc/terms/source": [
       {
-        "@id": "http://w3id.org/claimont#Substantiation"
+        "@id": "http://w3id.org/claimont#Report"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Hedera substantiation"
+        "@value": "Scheduled report"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://hashgraphontology.xyz/core/TopicMessage"
+        "@id": "https://hashgraphontology.xyz/core/ScheduledTransaction"
       },
       {
-        "@id": "http://w3id.org/claimont#Substantiation"
+        "@id": "http://w3id.org/claimont#Report"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "A Hedera Consensus Service message that provides immutable on-chain evidence as substantiation for a claim."
+        "@value": "A scheduled transaction whose execution produces a structured on-chain report within the meaning of the Claim Ontology."
       }
     ],
     "https://hashgraphontology.xyz/core/sourceDocument": [
       {
-        "@id": "https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/message-flows"
+        "@id": "https://docs.hedera.com/hedera/core-concepts/scheduled-transactions/introduction"
       }
     ]
   }

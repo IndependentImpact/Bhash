@@ -1,0 +1,800 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The data catalog vocabulary – Hashgraph Ontology</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; line-height: 1.6; }
+        .download-bar { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; padding: 0.6rem 1.5rem; background: #0f172a; color: #e2e8f0; font-size: 0.9rem; }
+        .download-bar a.home-link { color: #7dd3fc; text-decoration: none; font-weight: 600; margin-right: 0.5rem; }
+        .download-bar a.home-link:hover { text-decoration: underline; }
+        .download-bar .sep { border-left: 1px solid #334155; height: 1.2em; }
+        .download-bar .label { color: #94a3b8; }
+        .download-bar .fmt-link { display: inline-flex; align-items: center; gap: 0.25rem; padding: 0.2rem 0.6rem; border-radius: 4px; background: #1e293b; color: #7dd3fc; text-decoration: none; font-family: monospace; font-size: 0.85rem; border: 1px solid #334155; }
+        .download-bar .fmt-link:hover { background: #0ea5e9; color: #fff; border-color: #0ea5e9; }
+        .page-content { max-width: 1100px; margin: 2rem auto; padding: 0 1.5rem; }
+        h1, h2, h3 { color: #1f2937; }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        th, td { padding: 0.5rem; border: 1px solid #e5e7eb; vertical-align: top; }
+        th { background: #f3f4f6; text-align: left; }
+        .meta { color: #4b5563; }
+        .pill { display: inline-block; padding: 0.2rem 0.5rem; margin: 0.1rem; background: #e5e7eb; border-radius: 6px; }
+        .small { font-size: 0.9rem; }
+        .section { margin-top: 2rem; }
+        a { color: #0f766e; }
+    </style>
+</head>
+<body>
+    <nav class="download-bar">
+        <a class="home-link" href="/">← Home</a>
+        <span class="sep"></span>
+        <span class="label">Download:</span>
+        <a class="fmt-link" href="dcat3.ttl" type="text/turtle">Turtle (.ttl)</a>
+        <a class="fmt-link" href="dcat3.owl" type="application/rdf+xml">RDF/XML (.owl)</a>
+        <a class="fmt-link" href="dcat3.jsonld" type="application/ld+json">JSON-LD (.jsonld)</a>
+    </nav>
+    <div class="page-content">
+    <header>
+        <h1>The data catalog vocabulary</h1>
+        <div class="meta">IRI: <a href="http://www.w3.org/ns/dcat">http://www.w3.org/ns/dcat</a></div>
+        <p>DCAT is an RDF vocabulary designed to facilitate interoperability between data catalogs published on the Web. By using DCAT to describe datasets in data catalogs, publishers increase discoverability and enable applications easily to consume metadata from multiple catalogs. It further enables decentralized publishing of catalogs and facilitates federated dataset search across sites. Aggregated DCAT metadata can serve as a manifest file to facilitate digital preservation. DCAT is defined at http://www.w3.org/TR/vocab-dcat/. Any variance between that normative document and this schema is an error in this schema.</p>
+        <p class="meta">Source file: imports\vendor\dcat3.ttl</p>
+    </header>
+
+    <section class="section">
+        <h2>Prefixes</h2>
+        <table>
+            <thead><tr><th>Prefix</th><th>Namespace</th></tr></thead>
+            <tbody>
+            
+                <tr><td>:</td><td>http://www.w3.org/ns/dcat#</td></tr>
+            
+                <tr><td>adms</td><td>http://www.w3.org/ns/adms#</td></tr>
+            
+                <tr><td>bibo</td><td>http://purl.org/ontology/bibo/</td></tr>
+            
+                <tr><td>dcterms</td><td>http://purl.org/dc/terms/</td></tr>
+            
+                <tr><td>dctype</td><td>http://purl.org/dc/dcmitype/</td></tr>
+            
+                <tr><td>foaf</td><td>http://xmlns.com/foaf/0.1/</td></tr>
+            
+                <tr><td>ns1</td><td>http://www.w3.org/ns/</td></tr>
+            
+                <tr><td>ns10</td><td>http://people.csiro.au/</td></tr>
+            
+                <tr><td>ns11</td><td>https://www.wikidata.org/entity/</td></tr>
+            
+                <tr><td>ns2</td><td>http://www.w3.org/2004/02/skos/</td></tr>
+            
+                <tr><td>ns3</td><td>https://orcid.org/</td></tr>
+            
+                <tr><td>ns4</td><td>https://</td></tr>
+            
+                <tr><td>ns5</td><td>http://makxdekkers.com/makxdekkers.rdf#</td></tr>
+            
+                <tr><td>ns6</td><td>https://jakub.klímek.com/#</td></tr>
+            
+                <tr><td>ns7</td><td>http://</td></tr>
+            
+                <tr><td>ns8</td><td>https://www.w3.org/TR/vocab-dcat-3/images/</td></tr>
+            
+                <tr><td>ns9</td><td>https://www.w3.org/groups/wg/</td></tr>
+            
+                <tr><td>org</td><td>http://www.w3.org/ns/org#</td></tr>
+            
+                <tr><td>owl</td><td>http://www.w3.org/2002/07/owl#</td></tr>
+            
+                <tr><td>pav</td><td>http://purl.org/pav/</td></tr>
+            
+                <tr><td>prov</td><td>http://www.w3.org/ns/prov#</td></tr>
+            
+                <tr><td>rdf</td><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#</td></tr>
+            
+                <tr><td>rdfs</td><td>http://www.w3.org/2000/01/rdf-schema#</td></tr>
+            
+                <tr><td>sdo</td><td>http://schema.org/</td></tr>
+            
+                <tr><td>skos</td><td>http://www.w3.org/2004/02/skos/core#</td></tr>
+            
+                <tr><td>vann</td><td>http://purl.org/vocab/vann/</td></tr>
+            
+                <tr><td>vcard</td><td>http://www.w3.org/2006/vcard/ns#</td></tr>
+            
+                <tr><td>xhv</td><td>http://www.w3.org/1999/xhtml/vocab#</td></tr>
+            
+                <tr><td>xsd</td><td>http://www.w3.org/2001/XMLSchema#</td></tr>
+            
+            </tbody>
+        </table>
+    </section>
+
+    <section class="section">
+        <h2>Classes (10)</h2>
+        <table>
+            <thead><tr><th>Label</th><th>QName</th><th>Subclass Of</th><th>Notes</th></tr></thead>
+            <tbody>
+            
+                <tr id="cls-<na25320d41bdf44d58676c06d7f679475b22>">
+                    <td><na25320d41bdf44d58676c06d7f679475b22></td>
+                    <td><na25320d41bdf44d58676c06d7f679475b22></td>
+                    <td></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: na25320d41bdf44d58676c06d7f679475b22</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls--Catalog">
+                    <td>Catalog</td>
+                    <td>:Catalog</td>
+                    <td><span class="pill">:Dataset</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> A curated collection of metadata about resources.</div><div><strong>Definition:</strong> Una colección curada de metadatos sobre recursos.</div><div><strong>Definition:</strong> Una raccolta curata di metadati sulle risorse.</div><div><strong>Definition:</strong> Une collection élaborée de métadonnées sur les jeux de données.</div><div><strong>Definition:</strong> Řízená kolekce metadat o datových sadách a datových službách.</div><div><strong>Definition:</strong> Μια επιμελημένη συλλογή μεταδεδομένων περί συνόλων δεδομένων.</div><div><strong>Definition:</strong> مجموعة من توصيفات قوائم البيانات</div><div><strong>Definition:</strong> データ・カタログは、データセットに関するキュレートされたメタデータの集合です。</div><div><strong>Definition:</strong> En samling af metadata om ressourcer.</div>
+                        <div><strong>Comment:</strong> A curated collection of metadata about resources (e.g., datasets and data services in the context of a data catalog).</div><div><strong>Comment:</strong> Una colección curada de metadatos sobre recursos (por ejemplo, conjuntos de datos y servicios de datos en el contexto de un catálogo de datos).</div><div><strong>Comment:</strong> Una raccolta curata di metadati sulle risorse (ad es. sui dataset e relativi servizi nel contesto di cataloghi di dati).</div><div><strong>Comment:</strong> Une collection élaborée de métadonnées sur les jeux de données</div><div><strong>Comment:</strong> Řízená kolekce metadat o datových sadách a datových službách</div><div><strong>Comment:</strong> Μια επιμελημένη συλλογή μεταδεδομένων περί συνόλων δεδομένων</div><div><strong>Comment:</strong> مجموعة من توصيفات قوائم البيانات</div><div><strong>Comment:</strong> データ・カタログは、データセットに関するキュレートされたメタデータの集合です。</div><div><strong>Comment:</strong> En udvalgt og arrangeret samling af metadata om ressourcer (fx datasæt og datatjenester i kontekst af et datakatalog). </div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/dcat#Catalog</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls--CatalogRecord">
+                    <td>Catalog Record</td>
+                    <td>:CatalogRecord</td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> 1つのデータセットを記述したデータ・カタログ内のレコード。</div><div><strong>Definition:</strong> A record in a data catalog, describing the registration of a single dataset or data service.</div><div><strong>Definition:</strong> Un record in un catalogo di dati che descrive un singolo dataset o servizio di dati.</div><div><strong>Definition:</strong> Un registre du catalogue ou une entrée du catalogue, décrivant un seul jeu de données.</div><div><strong>Definition:</strong> Un registro en un catálogo de datos que describe un solo conjunto de datos o un servicio de datos.</div><div><strong>Definition:</strong> Záznam v datovém katalogu popisující jednu datovou sadu či datovou službu.</div><div><strong>Definition:</strong> Μία καταγραφή ενός καταλόγου, η οποία περιγράφει ένα συγκεκριμένο σύνολο δεδομένων.</div><div><strong>Definition:</strong> En post i et datakatalog der beskriver registreringen af et enkelt datasæt eller en datatjeneste.</div>
+                        <div><strong>Comment:</strong> 1つのデータセットを記述したデータ・カタログ内のレコード。</div><div><strong>Comment:</strong> A record in a data catalog, describing the registration of a single dataset or data service.</div><div><strong>Comment:</strong> Un record in un catalogo di dati che descrive un singolo dataset o servizio di dati.</div><div><strong>Comment:</strong> Un registre du catalogue ou une entrée du catalogue, décrivant un seul jeu de données.</div><div><strong>Comment:</strong> Un registro en un catálogo de datos que describe un solo conjunto de datos o un servicio de datos.</div><div><strong>Comment:</strong> Záznam v datovém katalogu popisující jednu datovou sadu či datovou službu.</div><div><strong>Comment:</strong> Μία καταγραφή ενός καταλόγου, η οποία περιγράφει ένα συγκεκριμένο σύνολο δεδομένων.</div><div><strong>Comment:</strong> En post i et datakatalog der beskriver registreringen af et enkelt datasæt eller en datatjeneste.</div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/dcat#CatalogRecord</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls--Resource">
+                    <td>Catalogued resource</td>
+                    <td>:Resource</td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> Recurso publicado o curado por un agente único.</div><div><strong>Definition:</strong> Resource published or curated by a single agent.</div><div><strong>Definition:</strong> Risorsa pubblicata o curata da un singolo agente.</div><div><strong>Definition:</strong> Zdroj publikovaný či řízený jediným činitelem.</div><div><strong>Definition:</strong> Ressource udgivet eller udvalgt og arrangeret af en enkelt aktør.</div>
+                        <div><strong>Comment:</strong> Recurso publicado o curado por un agente único.</div><div><strong>Comment:</strong> Resource published or curated by a single agent.</div><div><strong>Comment:</strong> Risorsa pubblicata o curata da un singolo agente.</div><div><strong>Comment:</strong> Zdroj publikovaný či řízený jediným činitelem.</div><div><strong>Comment:</strong> Ressource udgivet eller udvalgt og arrangeret af en enkelt aktør.</div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/dcat#Resource</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls--DataService">
+                    <td>Data service</td>
+                    <td>:DataService</td>
+                    <td><span class="pill">dctype:Service</span><span class="pill">:Resource</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> A site or end-point providing operations related to the discovery of, access to, or processing functions on, data or related resources.</div><div><strong>Definition:</strong> Umístění či přístupový bod poskytující operace související s hledáním, přistupem k, či výkonem funkcí na datech či souvisejících zdrojích.</div><div><strong>Definition:</strong> Un sitio o end-point que provee operaciones relacionadas a funciones de descubrimiento, acceso, o procesamiento de datos o recursos relacionados.</div><div><strong>Definition:</strong> Un sito o end-point che fornisce operazioni relative alla scoperta, all'accesso o all'elaborazione di funzioni su dati o risorse correlate.</div><div><strong>Definition:</strong> Et site eller endpoint der udstiller operationer relateret til opdagelse af, adgang til eller behandlende funktioner på data eller relaterede ressourcer.</div>
+                        <div><strong>Comment:</strong> A site or end-point providing operations related to the discovery of, access to, or processing functions on, data or related resources.</div><div><strong>Comment:</strong> Umístění či přístupový bod poskytující operace související s hledáním, přistupem k, či výkonem funkcí na datech či souvisejících zdrojích.</div><div><strong>Comment:</strong> Un sitio o end-point que provee operaciones relacionadas a funciones de descubrimiento, acceso, o procesamiento de datos o recursos relacionados.</div><div><strong>Comment:</strong> Un sito o end-point che fornisce operazioni relative alla scoperta, all'accesso o all'elaborazione di funzioni su dati o risorse correlate.</div><div><strong>Comment:</strong> Et websted eller endpoint der udstiller operationer relateret til opdagelse af, adgang til eller behandlende funktioner på data eller relaterede ressourcer.</div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/dcat#DataService</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls--Dataset">
+                    <td>Dataset</td>
+                    <td>:Dataset</td>
+                    <td><span class="pill">:Resource</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> 1つのエージェントによって公開またはキュレートされ、1つ以上の形式でアクセスまたはダウンロードできるデータの集合。</div><div><strong>Definition:</strong> A collection of data, published or curated by a single source, and available for access or download in one or more representations.</div><div><strong>Definition:</strong> Kolekce dat poskytovaná či řízená jedním zdrojem, která je k dispozici pro přístup či stažení v jednom či více formátech.</div><div><strong>Definition:</strong> Raccolta di dati, pubblicati o curati da un'unica fonte, disponibili per l'accesso o il download in uno o più formati.</div><div><strong>Definition:</strong> Una colección de datos, publicados o conservados por una única fuente, y disponibles para ser accedidos o descargados en uno o más formatos.</div><div><strong>Definition:</strong> Une collection de données, publiée ou élaborée par une seule source, et disponible pour accès ou téléchargement dans un ou plusieurs formats.</div><div><strong>Definition:</strong> Μία συλλογή από δεδομένα, δημοσιευμένη ή επιμελημένη από μία και μόνο πηγή, διαθέσιμη δε προς πρόσβαση ή μεταφόρτωση σε μία ή περισσότερες μορφές.</div><div><strong>Definition:</strong> قائمة بيانات منشورة أو مجموعة من قبل مصدر ما و متاح الوصول إليها أو تحميلها</div><div><strong>Definition:</strong> En samling a data, udgivet eller udvalgt og arrangeret af en enkelt kilde og som der er adgang til i en eller flere repræsentationer.</div>
+                        <div><strong>Comment:</strong> 1つのエージェントによって公開またはキュレートされ、1つ以上の形式でアクセスまたはダウンロードできるデータの集合。</div><div><strong>Comment:</strong> A collection of data, published or curated by a single source, and available for access or download in one or more representations.</div><div><strong>Comment:</strong> Kolekce dat poskytovaná či řízená jedním zdrojem, která je k dispozici pro přístup či stažení v jednom či více formátech.</div><div><strong>Comment:</strong> Raccolta di dati, pubblicati o curati da un'unica fonte, disponibili per l'accesso o il download in uno o più formati.</div><div><strong>Comment:</strong> Una colección de datos, publicados o conservados por una única fuente, y disponibles para ser accedidos o descargados en uno o más formatos.</div><div><strong>Comment:</strong> Une collection de données, publiée ou élaborée par une seule source, et disponible pour accès ou téléchargement dans un ou plusieurs formats.</div><div><strong>Comment:</strong> Μία συλλογή από δεδομένα, δημοσιευμένη ή επιμελημένη από μία και μόνο πηγή, διαθέσιμη δε προς πρόσβαση ή μεταφόρτωση σε μία ή περισσότερες μορφές.</div><div><strong>Comment:</strong> قائمة بيانات منشورة أو مجموعة من قبل مصدر ما و متاح الوصول إليها أو تحميلها</div><div><strong>Comment:</strong> En samling af data, udgivet eller udvalgt og arrangeret af en enkelt kilde og som er til råde for adgang til eller download af i en eller flere repræsentationer.</div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/dcat#Dataset</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls--DatasetSeries">
+                    <td>Dataset series</td>
+                    <td>:DatasetSeries</td>
+                    <td><span class="pill">:Dataset</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> A collection of datasets that are published separately, but share some common characteristics that groups them.</div><div><strong>Definition:</strong> Una collezione di dataset che sono pubblicati separatamente, ma che condividono caratteristiche che li rendono parte di uno stesso gruppo.</div><div><strong>Definition:</strong> Una colección de conjuntos de datos publicados por separado, pero que comparten características comunes que los agrupan.</div>
+                        <div><strong>Comment:</strong> A collection of datasets that are published separately, but share some characteristics that group them.</div><div><strong>Comment:</strong> Una collezione di dataset che sono pubblicati separatamente, ma che condividono caratteristiche che li rendono parte di uno stesso gruppo.</div><div><strong>Comment:</strong> Una colección de conjuntos de datos publicados por separado, pero que comparten características que los agrupan.</div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/dcat#DatasetSeries</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls--Distribution">
+                    <td>Distribution</td>
+                    <td>:Distribution</td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> A specific representation of a dataset. A dataset might be available in multiple serializations that may differ in various ways, including natural language, media-type or format, schematic organization, temporal and spatial resolution, level of detail or profiles (which might specify any or all of the above).</div><div><strong>Definition:</strong> Konkrétní reprezentace datové sady. Datová sada může být dostupná v různých serializacích, které se mohou navzájem lišit různými způsoby, mimo jiné přirozeným jazykem, media-typem či formátem, schematickou organizací, časovým a prostorovým rozlišením, úrovní detailu či profily (které mohou specifikovat některé či všechny tyto rozdíly).</div><div><strong>Definition:</strong> Rappresenta una forma disponibile e specifica del dataset. Ciascun dataset può essere disponibile in forme differenti, che possono rappresentare formati diversi o diversi punti di accesso per un dataset. Esempi di distribuzioni sono un file CSV scaricabile, una API o un RSS feed.</div><div><strong>Definition:</strong> Représente une forme spécifique d'un jeu de données. Caque jeu de données peut être disponible sous différentes formes, celles-ci pouvant représenter différents formats du jeu de données ou différents endpoint. Des exemples de distribution sont des fichirs CSV, des API ou des flux RSS.</div><div><strong>Definition:</strong> Una representación específica de los datos. Cada conjunto de datos puede estar disponible en formas diferentes, las cuáles pueden variar en distintas formas, incluyendo el idioma, 'media-type' o formato, organización esquemática, resolución temporal y espacial, nivel de detalle o perfiles (que pueden especificar cualquiera o todas las diferencias anteriores).</div><div><strong>Definition:</strong> Αναπαριστά μία συγκεκριμένη διαθέσιμη μορφή ενός συνόλου δεδομένων. Κάθε σύνολο δεδομενων μπορεί να είναι διαθέσιμο σε διαφορετικές μορφές, οι μορφές αυτές μπορεί να αναπαριστούν διαφορετικές μορφές αρχείων ή διαφορετικά σημεία διάθεσης. Παραδείγματα διανομών συμπεριλαμβάνουν ένα μεταφορτώσιμο αρχείο μορφής CSV, ένα API ή ένα RSS feed.</div><div><strong>Definition:</strong> شكل محدد لقائمة البيانات يمكن الوصول إليه. قائمة بيانات ما يمكن أن تكون متاحه باشكال و أنواع متعددة.  ملف يمكن تحميله أو واجهة برمجية يمكن من خلالها الوصول إلى البيانات هي أمثلة على ذلك.</div><div><strong>Definition:</strong> データセットの特定の利用可能な形式を表わします。各データセットは、異なる形式で利用できることがあり、これらの形式は、データセットの異なる形式や、異なるエンドポイントを表わす可能性があります。配信の例には、ダウンロード可能なCSVファイル、API、RSSフィードが含まれます。</div><div><strong>Definition:</strong> En specifik repræsentation af et datasæt. Et datasæt kan være tilgængelig i mange serialiseringer der kan variere på forskellige vis, herunder sprog, medietype eller format, systemorganisering, tidslig- og geografisk opløsning, detaljeringsniveau eller profiler (der kan specificere en eller flere af ovenstående).</div>
+                        <div><strong>Comment:</strong> A specific representation of a dataset. A dataset might be available in multiple serializations that may differ in various ways, including natural language, media-type or format, schematic organization, temporal and spatial resolution, level of detail or profiles (which might specify any or all of the above).</div><div><strong>Comment:</strong> Konkrétní reprezentace datové sady. Datová sada může být dostupná v různých serializacích, které se mohou navzájem lišit různými způsoby, mimo jiné přirozeným jazykem, media-typem či formátem, schematickou organizací, časovým a prostorovým rozlišením, úrovní detailu či profily (které mohou specifikovat některé či všechny tyto rozdíly).</div><div><strong>Comment:</strong> Rappresenta una forma disponibile e specifica del dataset. Ciascun dataset può essere disponibile in forme differenti, che possono rappresentare formati diversi o diversi punti di accesso per un dataset. Esempi di distribuzioni sono un file CSV scaricabile, una API o un RSS feed.</div><div><strong>Comment:</strong> Représente une forme spécifique d'un jeu de données. Caque jeu de données peut être disponible sous différentes formes, celles-ci pouvant représenter différents formats du jeu de données ou différents endpoint. Des exemples de distribution sont des fichirs CSV, des API ou des flux RSS.</div><div><strong>Comment:</strong> Una representación específica de los datos. Cada conjunto de datos puede estar disponible en formas diferentes, las cuáles pueden variar en distintas formas, incluyendo el idioma, 'media-type' o formato, organización esquemática, resolución temporal y espacial, nivel de detalle o perfiles (que pueden especificar cualquiera o todas las diferencias anteriores).</div><div><strong>Comment:</strong> Αναπαριστά μία συγκεκριμένη διαθέσιμη μορφή ενός συνόλου δεδομένων. Κάθε σύνολο δεδομενων μπορεί να είναι διαθέσιμο σε διαφορετικές μορφές, οι μορφές αυτές μπορεί να αναπαριστούν διαφορετικές μορφές αρχείων ή διαφορετικά σημεία διάθεσης. Παραδείγματα διανομών συμπεριλαμβάνουν ένα μεταφορτώσιμο αρχείο μορφής CSV, ένα API ή ένα RSS feed.</div><div><strong>Comment:</strong> شكل محدد لقائمة البيانات يمكن الوصول إليه. قائمة بيانات ما يمكن أن تكون متاحه باشكال و أنواع متعددة.  ملف يمكن تحميله أو واجهة برمجية يمكن من خلالها الوصول إلى البيانات هي أمثلة على ذلك.</div><div><strong>Comment:</strong> データセットの特定の利用可能な形式を表わします。各データセットは、異なる形式で利用できることがあり、これらの形式は、データセットの異なる形式や、異なるエンドポイントを表わす可能性があります。配信の例には、ダウンロード可能なCSVファイル、API、RSSフィードが含まれます。</div><div><strong>Comment:</strong> En specifik repræsentation af et datasæt. Et datasæt kan være tilgængelig i mange serialiseringer der kan variere på forskellige vis, herunder sprog, medietype eller format, systemorganisering, tidslig- og geografisk opløsning, detaljeringsniveau eller profiler (der kan specificere en eller flere af ovenstående).</div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/dcat#Distribution</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls--Relationship">
+                    <td>Relationship</td>
+                    <td>:Relationship</td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> An association class for attaching additional information to a relationship between DCAT Resources.</div><div><strong>Definition:</strong> Asociační třída pro připojení dodatečných informací ke vztahu mezi zdroji DCAT.</div><div><strong>Definition:</strong> Una clase de asociación para adjuntar información adicional a una relación entre recursos DCAT.</div><div><strong>Definition:</strong> Una classe di associazione per il collegamento di informazioni aggiuntive a una relazione tra le risorse DCAT.</div><div><strong>Definition:</strong> En associationsklasse til brug for tilknytning af yderligere information til en relation mellem DCAT-ressourcer.</div>
+                        <div><strong>Comment:</strong> An association class for attaching additional information to a relationship between DCAT Resources.</div><div><strong>Comment:</strong> Asociační třída pro připojení dodatečných informací ke vztahu mezi zdroji DCAT.</div><div><strong>Comment:</strong> Una clase de asociación para adjuntar información adicional a una relación entre recursos DCAT.</div><div><strong>Comment:</strong> Una classe di associazione per il collegamento di informazioni aggiuntive a una relazione tra le risorse DCAT.</div><div><strong>Comment:</strong> En associationsklasse til brug for tilknytning af yderligere information til en relation mellem DCAT-ressourcer.</div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/dcat#Relationship</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls--Role">
+                    <td>Role</td>
+                    <td>:Role</td>
+                    <td><span class="pill">skos:Concept</span></td>
+                    <td class="small">
+                        <div><strong>Definition:</strong> A role is the function of a resource or agent with respect to another resource, in the context of resource attribution or resource relationships.</div><div><strong>Definition:</strong> Role je funkce zdroje či agenta ve vztahu k jinému zdroji, v kontextu přiřazení zdrojů či vztahů mezi zdroji.</div><div><strong>Definition:</strong> Un rol es la función de un recurso o agente con respecto a otro recuros, en el contexto de atribución del recurso o de las relaciones entre recursos.</div><div><strong>Definition:</strong> Un ruolo è la funzione di una risorsa o di un agente rispetto ad un'altra risorsa, nel contesto dell'attribuzione delle risorse o delle relazioni tra risorse.</div><div><strong>Definition:</strong> En rolle er den funktion en ressource eller aktør har i forhold til en anden ressource, i forbindelse med ressourcekreditering eller ressourcerelationer.</div>
+                        <div><strong>Comment:</strong> A role is the function of a resource or agent with respect to another resource, in the context of resource attribution or resource relationships.</div><div><strong>Comment:</strong> Role je funkce zdroje či agenta ve vztahu k jinému zdroji, v kontextu přiřazení zdrojů či vztahů mezi zdroji.</div><div><strong>Comment:</strong> Un rol es la función de un recurso o agente con respecto a otro recuros, en el contexto de atribución del recurso o de las relaciones entre recursos.</div><div><strong>Comment:</strong> Un ruolo è la funzione di una risorsa o di un agente rispetto ad un'altra risorsa, nel contesto dell'attribuzione delle risorse o delle relazioni tra risorse.</div><div><strong>Comment:</strong> En rolle er den funktion en ressource eller aktør har i forhold til en anden ressource, i forbindelse med ressourcekreditering eller ressourcerelationer.</div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/dcat#Role</div>
+                    </td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </section>
+
+    <section class="section">
+        <h2>Properties (39)</h2>
+        <table>
+            <thead><tr><th>Label</th><th>QName</th><th>Kind</th><th>Domain</th><th>Range</th><th>Notes</th></tr></thead>
+            <tbody>
+            
+                <tr id="prop--accessURL">
+                    <td>access address</td>
+                    <td>:accessURL</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Distribution</span></td>
+                    <td><span class="pill">rdfs:Resource</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> A URL of a resource that gives access to a distribution of the dataset. E.g. landing page, feed, SPARQL endpoint. Use for all cases except a simple download link, in which case downloadURL is preferred.</div><div><strong>Comment:</strong> Ceci peut être tout type d'URL qui donne accès à une distribution du jeu de données. Par exemple, un lien à une page HTML contenant un lien au jeu de données, un Flux RSS, un point d'accès SPARQL. Utilisez le lorsque votre catalogue ne contient pas d'information sur quoi il est ou quand ce n'est pas téléchargeable.</div><div><strong>Comment:</strong> Puede ser cualquier tipo de URL que de acceso a una distribución del conjunto de datos, e.g., página de destino, descarga, URL feed, punto de acceso SPARQL. Esta propriedad se debe usar cuando su catálogo de datos no tiene información sobre donde está o cuando no se puede descargar.</div><div><strong>Comment:</strong> URL zdroje, přes které je přístupná distribuce datové sady. Příkladem může být vstupní stránka, RSS kanál či SPARQL endpoint. Použijte ve všech případech kromě URL souboru ke stažení, pro které je lepší použít dcat:downloadURL.</div><div><strong>Comment:</strong> Un URL di una risorsa che consente di accedere a una distribuzione del set di dati. Per esempio, pagina di destinazione, feed, endpoint SPARQL. Da utilizzare per tutti i casi, tranne  quando  si tratta di un semplice link per il download nel qual caso è preferito downloadURL.</div><div><strong>Comment:</strong> Μπορεί να είναι οποιουδήποτε είδους URL που δίνει πρόσβαση στη διανομή ενός συνόλου δεδομένων. Π.χ. ιστοσελίδα αρχικής πρόσβασης, μεταφόρτωση, feed URL, σημείο διάθεσης SPARQL. Να χρησιμοποιείται όταν ο κατάλογος δεν περιέχει πληροφορίες εαν πρόκειται ή όχι για μεταφορτώσιμο αρχείο.</div><div><strong>Comment:</strong> أي رابط يتيح الوصول إلى البيانات. إذا كان الرابط هو ربط مباشر لملف يمكن تحميله استخدم الخاصية downloadURL</div><div><strong>Comment:</strong> データセットの配信にアクセス権を与えるランディング・ページ、フィード、SPARQLエンドポイント、その他の種類の資源。</div><div><strong>Comment:</strong> En URL for en ressource som giver adgang til en repræsentation af datsættet. Fx destinationsside, feed, SPARQL-endpoint. Anvendes i alle sammenhænge undtagen til angivelse af et simpelt download link hvor anvendelse af egenskaben downloadURL foretrækkes.</div>
+                        
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/dcat#accessURL</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--bbox">
+                    <td>bounding box</td>
+                    <td>:bbox</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">dcterms:Location</span></td>
+                    <td><span class="pill">rdfs:Literal</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> El cuadro delimitador geográfico para un recurso.</div><div><strong>Comment:</strong> Ohraničení geografické oblasti zdroje.</div><div><strong>Comment:</strong> The geographic bounding box of a spatial thing [SDW-BP].</div><div><strong>Comment:</strong> Il riquadro di delimitazione geografica di una risorsa.</div><div><strong>Comment:</strong> Den geografiske omskrevne firkant af en ressource.</div>
+                        
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/dcat#bbox</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--byteSize">
+                    <td>byte size</td>
+                    <td>:byteSize</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">:Distribution</span></td>
+                    <td><span class="pill">rdfs:Literal</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> El tamaño de una distribución en bytes.</div><div><strong>Comment:</strong> La dimensione di una distribuzione in byte.</div><div><strong>Comment:</strong> La taille de la distribution en octects</div><div><strong>Comment:</strong> The size of a distribution in bytes.</div><div><strong>Comment:</strong> Velikost distribuce v bajtech.</div><div><strong>Comment:</strong> Το μέγεθος μιας διανομής σε bytes.</div><div><strong>Comment:</strong> الحجم بالبايتات </div><div><strong>Comment:</strong> バイトによる配信のサイズ。</div><div><strong>Comment:</strong> Størrelsen af en distributionen angivet i bytes.</div>
+                        
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/dcat#byteSize</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--catalog">
+                    <td>catalog</td>
+                    <td>:catalog</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Catalog</span></td>
+                    <td><span class="pill">:Catalog</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> A catalog that is listed in the catalog.</div><div><strong>Comment:</strong> Katalog, jehož obsah je v kontextu tohoto katalogu zajímavý.</div><div><strong>Comment:</strong> Un catalogo i cui contenuti sono di interesse nel contesto di questo catalogo.</div><div><strong>Comment:</strong> Un catálogo cuyo contenido es de interés en el contexto del catálogo que está siendo descripto.</div><div><strong>Comment:</strong> Et katalog hvis indhold er relevant i forhold til det aktuelle katalog.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">:resource</span></div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/dcat#catalog</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--centroid">
+                    <td>centroid</td>
+                    <td>:centroid</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">dcterms:Location</span></td>
+                    <td><span class="pill">rdfs:Literal</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> El centro geográfico (centroide) de un recurso.</div><div><strong>Comment:</strong> Geografický střed (centroid) zdroje.</div><div><strong>Comment:</strong> The geographic center (centroid) of a spatial thing [SDW-BP].</div><div><strong>Comment:</strong> Il centro geografico (centroide) di una risorsa.</div><div><strong>Comment:</strong> Det geometrisk tyngdepunkt (centroid) for en ressource.</div>
+                        
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/dcat#centroid</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--compressFormat">
+                    <td>compression format</td>
+                    <td>:compressFormat</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Distribution</span></td>
+                    <td><span class="pill">dcterms:MediaType</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> El formato de la distribución en el que los datos están en forma comprimida, e.g. para reducir el tamaño del archivo a bajar.</div><div><strong>Comment:</strong> Formát komprese souboru, ve kterém jsou data poskytována v komprimované podobě, např. ke snížení velikosti souboru ke stažení.</div><div><strong>Comment:</strong> Il formato di compressione della distribuzione nel quale i dati sono in forma compressa, ad es. per ridurre le dimensioni del file da scaricare.</div><div><strong>Comment:</strong> The compression format of the distribution in which the data is contained in a compressed form, e.g. to reduce the size of the downloadable file.</div><div><strong>Comment:</strong> Kompressionsformatet for distributionen som indeholder data i et komprimeret format, fx for at reducere størrelsen af downloadfilen.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dcterms:format</span></div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/dcat#compressFormat</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--contactPoint">
+                    <td>contact point</td>
+                    <td>:contactPoint</td>
+                    <td>ObjectProperty</td>
+                    <td></td>
+                    <td><span class="pill">vcard:Kind</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> Información relevante de contacto para el recurso catalogado. Se recomienda el uso de vCard.</div><div><strong>Comment:</strong> Informazioni di contatto rilevanti per la risorsa catalogata. Si raccomanda l'uso di vCard.</div><div><strong>Comment:</strong> Relevant contact information for the catalogued resource. Use of vCard is recommended.</div><div><strong>Comment:</strong> Relevantní kontaktní informace pro katalogizovaný zdroj. Doporučuje se použít slovník VCard.</div><div><strong>Comment:</strong> Relie un jeu de données à une information de contact utile en utilisant VCard.</div><div><strong>Comment:</strong> Συνδέει ένα σύνολο δεδομένων με ένα σχετικό σημείο επικοινωνίας, μέσω VCard.</div><div><strong>Comment:</strong> تربط قائمة البيانات بعنوان اتصال موصف  باستخدام VCard</div><div><strong>Comment:</strong> データセットを、VCardを用いて提供されている適切な連絡先情報にリンクします。</div><div><strong>Comment:</strong> Relevante kontaktoplysninger for den katalogiserede ressource. Anvendelse af vCard anbefales.</div>
+                        
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/dcat#contactPoint</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--accessService">
+                    <td>data access service</td>
+                    <td>:accessService</td>
+                    <td>ObjectProperty</td>
+                    <td></td>
+                    <td><span class="pill">:DataService</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> A site or end-point that gives access to the distribution of the dataset.</div><div><strong>Comment:</strong> Umístění či přístupový bod zpřístupňující distribuci datové sady.</div><div><strong>Comment:</strong> Un sitio o end-point que da acceso a la distribución de un conjunto de datos.</div><div><strong>Comment:</strong> Un sito o end-point che dà accesso alla distribuzione del set di dati.</div><div><strong>Comment:</strong> Et websted eller endpoint der giver adgang til en repræsentation af datasættet.</div>
+                        
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/dcat#accessService</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--dataset">
+                    <td>dataset</td>
+                    <td>:dataset</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Catalog</span></td>
+                    <td><span class="pill">:Dataset</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> A dataset that is listed in the catalog.</div><div><strong>Comment:</strong> Kolekce dat, která je katalogizována v katalogu.</div><div><strong>Comment:</strong> Relie un catalogue à un jeu de données faisant partie de ce catalogue.</div><div><strong>Comment:</strong> Un conjunto de datos que se lista en el catálogo.</div><div><strong>Comment:</strong> Una raccolta di dati che è elencata nel catalogo.</div><div><strong>Comment:</strong> Συνδέει έναν κατάλογο με ένα σύνολο δεδομένων το οποίο ανήκει στον εν λόγω κατάλογο.</div><div><strong>Comment:</strong> تربط الفهرس بقائمة بيانات ضمنه</div><div><strong>Comment:</strong> カタログの一部であるデータセット。</div><div><strong>Comment:</strong> En samling af data som er opført i kataloget.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">:resource</span></div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/dcat#dataset</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--endpointDescription">
+                    <td>description of service end-point</td>
+                    <td>:endpointDescription</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:DataService</span></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> A description of the service end-point, including its operations, parameters etc.</div><div><strong>Comment:</strong> Popis přístupového bodu služby včetně operací, parametrů apod.</div><div><strong>Comment:</strong> Una descripción del end-point del servicio, incluyendo sus operaciones, parámetros, etc.</div><div><strong>Comment:</strong> Una descrizione dell'endpoint del servizio, incluse le sue operazioni, parametri, ecc.</div><div><strong>Comment:</strong> En beskrivelse af det pågældende tjenesteendpoint, inklusiv dets operationer, parametre etc.</div>
+                        
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/dcat#endpointDescription</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--distribution">
+                    <td>distribution</td>
+                    <td>:distribution</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Dataset</span></td>
+                    <td><span class="pill">:Distribution</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> An available distribution of the dataset.</div><div><strong>Comment:</strong> Connecte un jeu de données à des distributions disponibles.</div><div><strong>Comment:</strong> Dostupná distribuce datové sady.</div><div><strong>Comment:</strong> Una distribución disponible del conjunto de datos.</div><div><strong>Comment:</strong> Una distribuzione disponibile per il set di dati.</div><div><strong>Comment:</strong> Συνδέει ένα σύνολο δεδομένων με μία από τις διαθέσιμες διανομές του.</div><div><strong>Comment:</strong> تربط قائمة البيانات بطريقة أو بشكل يسمح  الوصول الى البيانات</div><div><strong>Comment:</strong> データセットを、その利用可能な配信に接続します。</div><div><strong>Comment:</strong> En tilgængelig repræsentation af datasættet.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dcterms:relation</span></div>
+                        <div><strong>Inverse Of:</strong> <span class="pill">:isDistributionOf</span></div>
+                        <div class="meta">IRI: http://www.w3.org/ns/dcat#distribution</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--downloadURL">
+                    <td>download URL</td>
+                    <td>:downloadURL</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Distribution</span></td>
+                    <td><span class="pill">rdfs:Resource</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> Ceci est un lien direct à un fichier téléchargeable en un format donnée. Exple fichier CSV ou RDF. Le format est décrit par les propriétés de distribution dcterms:format et/ou dcat:mediaType.</div><div><strong>Comment:</strong> La URL de un archivo descargable en el formato dato. Por ejemplo, archivo CSV o archivo RDF. El formato se describe con las propiedades de la distribución dcterms:format y/o dcat:mediaType.</div><div><strong>Comment:</strong> Questo è un link diretto al file scaricabile in un dato formato. E.g. un file CSV o un file RDF. Il formato è descritto dal dcterms:format e/o dal dcat:mediaType della distribuzione.</div><div><strong>Comment:</strong> The URL of the downloadable file in a given format. E.g. CSV file or RDF file. The format is indicated by the distribution's dcterms:format and/or dcat:mediaType.</div><div><strong>Comment:</strong> URL souboru ke stažení v daném formátu, například CSV nebo RDF soubor. Formát je popsán vlastností distribuce dcterms:format a/nebo dcat:mediaType.</div><div><strong>Comment:</strong> dcat:downloadURLはdcat:accessURLの特定の形式です。しかし、DCATプロファイルが非ダウンロード・ロケーションに対してのみaccessURLを用いる場合には、より強い分離を課すことを望む可能性があるため、この含意を強化しないように、DCATは、dcat:downloadURLをdcat:accessURLのサブプロパティーであると定義しません。</div><div><strong>Comment:</strong> Είναι ένας σύνδεσμος άμεσης μεταφόρτωσης ενός αρχείου σε μια δεδομένη μορφή. Π.χ. ένα αρχείο CSV ή RDF. Η μορφη αρχείου περιγράφεται από τις ιδιότητες dcterms:format ή/και dcat:mediaType της διανομής.</div><div><strong>Comment:</strong> رابط مباشر لملف يمكن تحميله. نوع الملف يتم توصيفه باستخدام الخاصية dcterms:format dcat:mediaType </div><div><strong>Comment:</strong> URL til fil der kan downloades i et bestemt format. Fx en CSV-fil eller en RDF-fil. Formatet for distributionen angives ved hjælp af egenskaberne dcterms:format og/eller dcat:mediaType.</div>
+                        
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/dcat#downloadURL</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--endDate">
+                    <td>end date</td>
+                    <td>:endDate</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">dcterms:PeriodOfTime</span></td>
+                    <td><span class="pill">rdfs:Literal</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> El fin del período.</div><div><strong>Comment:</strong> Konec doby trvání.</div><div><strong>Comment:</strong> The end of the period.</div><div><strong>Comment:</strong> La fine del periodo.</div><div><strong>Comment:</strong> Slutningen på perioden.</div>
+                        
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/dcat#endDate</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--first">
+                    <td>first</td>
+                    <td>:first</td>
+                    <td>ObjectProperty</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> The first resource in an ordered collection or series of resources, to which the current resource belongs.</div><div><strong>Comment:</strong> El primer recurso en una colección ordenada o serie de recursos, al que el recurso pertenece.</div><div><strong>Comment:</strong> La prima risorsa in una collezione ordinata o in una serie di risorse, di cui la risorsa fa parte.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">xhv:first</span></div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/dcat#first</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-foaf-homepage">
+                    <td>foaf:homepage</td>
+                    <td>foaf:homepage</td>
+                    <td>ObjectProperty</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> This axiom needed so that Protege loads DCAT 3 without errors.</div><div><strong>Comment:</strong> Este axioma se necesita de manera que Protege cargue DCAT3 sin problemas.</div>
+                        
+                        
+                        <div class="meta">IRI: http://xmlns.com/foaf/0.1/homepage</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-foaf-primaryTopic">
+                    <td>foaf:primaryTopic</td>
+                    <td>foaf:primaryTopic</td>
+                    <td>ObjectProperty</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> This axiom needed so that Protege loads DCAT 3 without errors.</div><div><strong>Comment:</strong> Este axioma se necesita de manera que Protege cargue DCAT 3 sin problemas.</div>
+                        
+                        
+                        <div class="meta">IRI: http://xmlns.com/foaf/0.1/primaryTopic</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--hadRole">
+                    <td>hadRole</td>
+                    <td>:hadRole</td>
+                    <td>ObjectProperty</td>
+                    <td></td>
+                    <td><span class="pill">:Role</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> Funkce entity či agenta ve vztahu k jiné entitě či zdroji.</div><div><strong>Comment:</strong> La función de una entidad o agente con respecto a otra entidad o recurso.</div><div><strong>Comment:</strong> La funzione di un'entità o un agente rispetto ad un'altra entità o risorsa.</div><div><strong>Comment:</strong> The function of an entity or agent with respect to another entity or resource.</div><div><strong>Comment:</strong> Den funktion en entitet eller aktør har i forhold til en anden ressource.</div>
+                        
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/dcat#hadRole</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--hasCurrentVersion">
+                    <td>has current version</td>
+                    <td>:hasCurrentVersion</td>
+                    <td>ObjectProperty</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> This resource has a more specific, versioned resource with equivalent content [PAV].</div><div><strong>Comment:</strong> Este recurso es más específico y versionado con contenido equivalente [PAV].</div><div><strong>Comment:</strong> Per questa risorsa esiste una risorsa più specifica e versionata, ma con lo stesso contenuto.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">pav:hasVersion</span></div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/dcat#hasCurrentVersion</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--hasVersion">
+                    <td>has version</td>
+                    <td>:hasVersion</td>
+                    <td>ObjectProperty</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> This resource has a more specific, versioned resource [PAV].</div><div><strong>Comment:</strong> Este recurso tiene una versión específica.</div><div><strong>Comment:</strong> Per questa risorsa esiste una risorsa più specifica e versionata.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dcterms:hasVersion</span><span class="pill">prov:generalizationOf</span></div>
+                        <div><strong>Inverse Of:</strong> <span class="pill">:isVersionOf</span></div>
+                        <div class="meta">IRI: http://www.w3.org/ns/dcat#hasVersion</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--inSeries">
+                    <td>in series</td>
+                    <td>:inSeries</td>
+                    <td>ObjectProperty</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> A dataset series of which the dataset is part.</div><div><strong>Comment:</strong> Una serie de conjuntos de datos del cuál un conjunto de datos es parte.</div><div><strong>Comment:</strong> Una serie di dataset di cui questo dataset fa parte.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dcterms:isPartOf</span></div>
+                        <div><strong>Inverse Of:</strong> <span class="pill">:seriesMember</span></div>
+                        <div class="meta">IRI: http://www.w3.org/ns/dcat#inSeries</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--keyword">
+                    <td>keyword</td>
+                    <td>:keyword</td>
+                    <td>DatatypeProperty</td>
+                    <td></td>
+                    <td><span class="pill">rdfs:Literal</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> A keyword or tag describing a resource.</div><div><strong>Comment:</strong> Klíčové slovo nebo značka popisující zdroj.</div><div><strong>Comment:</strong> Un mot-clé ou étiquette décrivant une ressource.</div><div><strong>Comment:</strong> Una palabra clave o etiqueta que describe un recurso.</div><div><strong>Comment:</strong> Una parola chiave o un'etichetta per descrivere la risorsa.</div><div><strong>Comment:</strong> Μία λέξη-κλειδί ή μία ετικέτα που περιγράφει το σύνολο δεδομένων.</div><div><strong>Comment:</strong> كلمة  مفتاحيه توصف قائمة البيانات</div><div><strong>Comment:</strong> データセットを記述しているキーワードまたはタグ。</div><div><strong>Comment:</strong> Et nøgleord eller tag til beskrivelse af en ressource.</div>
+                        
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/dcat#keyword</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--landingPage">
+                    <td>landing page</td>
+                    <td>:landingPage</td>
+                    <td>ObjectProperty</td>
+                    <td></td>
+                    <td><span class="pill">foaf:Document</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> A Web page that can be navigated to in a Web browser to gain access to the catalog, a dataset, its distributions and/or additional information.</div><div><strong>Comment:</strong> Una pagina web che può essere navigata per ottenere l'accesso al catalogo, ad un dataset, alle distribuzioni del dataset e/o ad informazioni addizionali.</div><div><strong>Comment:</strong> Una página web que puede ser visitada en un explorador Web para tener acceso el catálogo, un conjunto de datos, sus distribuciones y/o información adicional.</div><div><strong>Comment:</strong> Une page Web accessible par un navigateur Web donnant accès au catalogue, un jeu de données, ses distributions et/ou des informations additionnelles.</div><div><strong>Comment:</strong> Webová stránka, na kterou lze pro získání přístupu ke katalogu, datové sadě, jejím distribucím a/nebo dalším informacím přistoupit webovým prohlížečem.</div><div><strong>Comment:</strong> Μία ιστοσελίδα πλοηγίσιμη μέσω ενός φυλλομετρητή (Web browser) που δίνει πρόσβαση στο σύνολο δεδομένων, τις διανομές αυτού ή/και επιπρόσθετες πληροφορίες.</div><div><strong>Comment:</strong> صفحة وب يمكن من خلالها الوصول الى قائمة البيانات أو إلى معلومات إضافية متعلقة بها </div><div><strong>Comment:</strong> データセット、その配信および（または）追加情報にアクセスするためにウエブ・ブラウザでナビゲートできるウェブページ。</div><div><strong>Comment:</strong> En webside som der kan navigeres til i en webbrowser for at få adgang til kataloget, et datasæt, dets distributioner og/eller yderligere information.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">foaf:page</span></div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/dcat#landingPage</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--last">
+                    <td>last</td>
+                    <td>:last</td>
+                    <td>ObjectProperty</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> The last resource in an ordered collection or series of resources, to which the current resource belongs.</div><div><strong>Comment:</strong> El último recurso en una colección ordenada o serie de recursos, al que el recurso pertenece.</div><div><strong>Comment:</strong> L'ultima risorsa in una collezione ordinata o in una serie di risorse, di cui la risorsa fa parte.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">xhv:last</span></div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/dcat#last</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--mediaType">
+                    <td>media type</td>
+                    <td>:mediaType</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Distribution</span></td>
+                    <td><span class="pill">dcterms:MediaType</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> Cette propriété doit être utilisée quand c'est définit le type de média de la distribution en IANA, sinon dcterms:format DOIT être utilisé avec différentes valeurs.</div><div><strong>Comment:</strong> Esta propiedad debe ser usada cuando está definido el tipo de media de la distribución en IANA, de otra manera dcterms:format puede ser utilizado con diferentes valores</div><div><strong>Comment:</strong> Il tipo di media della distribuzione come definito da IANA</div><div><strong>Comment:</strong> The media type of the distribution as defined by IANA</div><div><strong>Comment:</strong> Typ média distribuce definovaný v IANA.</div><div><strong>Comment:</strong> Η ιδιότητα αυτή ΘΑ ΠΡΕΠΕΙ να χρησιμοποιείται όταν ο τύπος μέσου μίας διανομής είναι ορισμένος στο IANA, αλλιώς η ιδιότητα dcterms:format ΔΥΝΑΤΑΙ να χρησιμοποιηθεί με διαφορετικές τιμές.</div><div><strong>Comment:</strong> يجب استخدام هذه الخاصية إذا كان نوع الملف معرف ضمن IANA</div><div><strong>Comment:</strong> このプロパティーは、配信のメディア・タイプがIANAで定義されているときに使用すべきで（SHOULD）、そうでない場合には、dcterms:formatを様々な値と共に使用できます（MAY）。</div><div><strong>Comment:</strong> Medietypen for distributionen som den er defineret af IANA.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dcterms:format</span></div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/dcat#mediaType</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--packageFormat">
+                    <td>packaging format</td>
+                    <td>:packageFormat</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Distribution</span></td>
+                    <td><span class="pill">dcterms:MediaType</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> Balíčkový formát souboru, ve kterém je jeden či více souborů seskupeno dohromady, např. aby bylo možné stáhnout sadu souvisejících souborů naráz.</div><div><strong>Comment:</strong> El formato del archivo en que se agrupan uno o más archivos de datos, e.g. para permitir que un conjunto de archivos relacionados se bajen juntos.</div><div><strong>Comment:</strong> Il formato di impacchettamento della distribuzione in cui uno o più file di dati sono raggruppati insieme, ad es. per abilitare un insieme di file correlati da scaricare insieme.</div><div><strong>Comment:</strong> The package format of the distribution in which one or more data files are grouped together, e.g. to enable a set of related files to be downloaded together.</div><div><strong>Comment:</strong> Format til pakning af data med henblik på distribution af en eller flere relaterede datafiler der samles til en enhed med henblik på samlet distribution. </div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dcterms:format</span></div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/dcat#packageFormat</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--prev">
+                    <td>previous</td>
+                    <td>:prev</td>
+                    <td>ObjectProperty</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> The previous resource (before the current one) in an ordered collection or series of resources.</div><div><strong>Comment:</strong> La risorsa precedente a quella attuale in una collezione ordinata o in una serie di risorse.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">xhv:prev</span></div>
+                        <div><strong>Inverse Of:</strong> <span class="pill">:next</span></div>
+                        <div class="meta">IRI: http://www.w3.org/ns/dcat#prev</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--previousVersion">
+                    <td>previous version</td>
+                    <td>:previousVersion</td>
+                    <td>ObjectProperty</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> The previous version of a resource in a lineage [PAV].</div><div><strong>Comment:</strong> La versione precedente di una risorsa.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">prov:wasRevisionOf</span></div>
+                        <div><strong>Inverse Of:</strong> <span class="pill">:nextVersion</span></div>
+                        <div class="meta">IRI: http://www.w3.org/ns/dcat#previousVersion</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--spatialResolutionInMeters">
+                    <td>prostorové rozlišení (metry)</td>
+                    <td>:spatialResolutionInMeters</td>
+                    <td>DatatypeProperty</td>
+                    <td></td>
+                    <td><span class="pill">xsd:decimal</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> minimum spatial separation resolvable in a dataset, measured in meters.</div><div><strong>Comment:</strong> minimum spatial separation resolvable in a dataset, measured in metres.</div><div><strong>Comment:</strong> minimální prostorový rozestup rozeznatelný v datové sadě, měřeno v metrech.</div><div><strong>Comment:</strong> mínima separacíon espacial disponible en un conjunto de datos, medida en metros.</div><div><strong>Comment:</strong> separazione spaziale minima risolvibile in un set di dati, misurata in metri.</div><div><strong>Comment:</strong> mindste geografiske afstand som kan erkendes i et datasæt, målt i meter.</div>
+                        
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/dcat#spatialResolutionInMeters</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--qualifiedRelation">
+                    <td>qualified relation</td>
+                    <td>:qualifiedRelation</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Resource</span></td>
+                    <td><span class="pill">:Relationship</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> Enlace a una descripción de la relación con otro recurso.</div><div><strong>Comment:</strong> Link a una descrizione di una relazione con un'altra risorsa.</div><div><strong>Comment:</strong> Link to a description of a relationship with another resource.</div><div><strong>Comment:</strong> Odkaz na popis vztahu s jiným zdrojem.</div><div><strong>Comment:</strong> Reference til en beskrivelse af en relation til en anden ressource.</div>
+                        
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/dcat#qualifiedRelation</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--record">
+                    <td>record</td>
+                    <td>:record</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Catalog</span></td>
+                    <td><span class="pill">:CatalogRecord</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> A record describing the registration of a single dataset or data service that is part of the catalog.</div><div><strong>Comment:</strong> Describe la registración de un conjunto de datos o un servicio de datos en el catálogo.</div><div><strong>Comment:</strong> Propojuje katalog a jeho záznamy.</div><div><strong>Comment:</strong> Relie un catalogue à ses registres.</div><div><strong>Comment:</strong> Un record che descrive la registrazione di un singolo set di dati o di un servizio dati che fa parte del catalogo.</div><div><strong>Comment:</strong> Záznam popisující registraci jedné datové sady či datové služby jakožto součásti katalogu.</div><div><strong>Comment:</strong> Συνδέει έναν κατάλογο με τις καταγραφές του.</div><div><strong>Comment:</strong> تربط الفهرس بسجل ضمنه</div><div><strong>Comment:</strong> カタログの一部であるカタログ・レコード。</div><div><strong>Comment:</strong> En post der beskriver registreringen af et enkelt datasæt eller en datatjeneste som er opført i kataloget.</div>
+                        
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/dcat#record</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--resource">
+                    <td>resource</td>
+                    <td>:resource</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Catalog</span></td>
+                    <td><span class="pill">:Resource</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> A resource that is listed in the catalog.</div><div><strong>Comment:</strong> Una risorsa elencata nel catalogo.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dcterms:hasPart</span></div>
+                        <div><strong>Inverse Of:</strong> <span class="pill">:inCatalog</span></div>
+                        <div class="meta">IRI: http://www.w3.org/ns/dcat#resource</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--servesDataset">
+                    <td>serves dataset</td>
+                    <td>:servesDataset</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:DataService</span></td>
+                    <td><span class="pill">:Dataset</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> A collection of data that this DataService can distribute.</div><div><strong>Comment:</strong> Kolekce dat, kterou je tato Datová služba schopna poskytnout.</div><div><strong>Comment:</strong> Una colección de datos que este Servicio de Datos puede distribuir.</div><div><strong>Comment:</strong> Una raccolta di dati che questo DataService può distribuire.</div><div><strong>Comment:</strong> En samling af data som denne datatjeneste kan distribuere.</div>
+                        
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/dcat#servesDataset</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--service">
+                    <td>service</td>
+                    <td>:service</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Catalog</span></td>
+                    <td><span class="pill">:DataService</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> A service that is listed in the catalog.</div><div><strong>Comment:</strong> Umístění či přístupový bod registrovaný v katalogu.</div><div><strong>Comment:</strong> Un sitio o 'endpoint' que está listado en el catálogo.</div><div><strong>Comment:</strong> Un sito o endpoint elencato nel catalogo.</div><div><strong>Comment:</strong> Et websted eller et endpoint som er opført i kataloget.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">:resource</span></div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/dcat#service</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--endpointURL">
+                    <td>service end-point</td>
+                    <td>:endpointURL</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:DataService</span></td>
+                    <td><span class="pill">rdfs:Resource</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> Kořenové umístění nebo hlavní přístupový bod služby (IRI přístupné přes Web).</div><div><strong>Comment:</strong> La locazione principale o l'endpoint primario del servizio (un IRI risolvibile via web).</div><div><strong>Comment:</strong> La posición raíz o end-point principal del servicio (una IRI web).</div><div><strong>Comment:</strong> The root location or primary endpoint of the service (a web-resolvable IRI).</div><div><strong>Comment:</strong> Rodplaceringen eller det primære endpoint for en tjeneste (en web-resolverbar IRI).</div>
+                        
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/dcat#endpointURL</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--startDate">
+                    <td>start date</td>
+                    <td>:startDate</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">dcterms:PeriodOfTime</span></td>
+                    <td><span class="pill">rdfs:Literal</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/dcat#startDate</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--temporalResolution">
+                    <td>temporal resolution</td>
+                    <td>:temporalResolution</td>
+                    <td>DatatypeProperty</td>
+                    <td></td>
+                    <td><span class="pill">xsd:duration</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> minimum time period resolvable in a dataset.</div><div><strong>Comment:</strong> minimální doba trvání rozlišitelná v datové sadě.</div><div><strong>Comment:</strong> periodo di tempo minimo risolvibile in un set di dati.</div><div><strong>Comment:</strong> período de tiempo mínimo en el conjunto de datos.</div><div><strong>Comment:</strong> mindste tidsperiode der kan resolveres i datasættet.</div>
+                        
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/dcat#temporalResolution</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--theme">
+                    <td>theme</td>
+                    <td>:theme</td>
+                    <td>ObjectProperty</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> A main category of the resource. A resource can have multiple themes.</div><div><strong>Comment:</strong> Hlavní téma zdroje. Zdroj může mít více témat.</div><div><strong>Comment:</strong> La categoria principale della risorsa. Una risorsa può avere più temi.</div><div><strong>Comment:</strong> La categoría principal del recurso. Un recurso puede tener varios temas.</div><div><strong>Comment:</strong> La catégorie principale de la ressource. Une ressource peut avoir plusieurs thèmes.</div><div><strong>Comment:</strong> Η κύρια κατηγορία του συνόλου δεδομένων. Ένα σύνολο δεδομένων δύναται να έχει πολλαπλά θέματα.</div><div><strong>Comment:</strong> التصنيف الرئيسي لقائمة البيانات. قائمة البيانات يمكن أن تملك أكثر من تصنيف رئيسي واحد.</div><div><strong>Comment:</strong> データセットの主要カテゴリー。データセットは複数のテーマを持つことができます。</div><div><strong>Comment:</strong> Et centralt emne for ressourcen. En ressource kan have flere centrale emner.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dcterms:subject</span></div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/dcat#theme</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--themeTaxonomy">
+                    <td>theme taxonomy</td>
+                    <td>:themeTaxonomy</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Catalog</span></td>
+                    <td><span class="pill">rdfs:Resource</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> El sistema de organización del conocimiento utilizado para clasificar conjuntos de datos de catálogos.</div><div><strong>Comment:</strong> Il sistema di organizzazione della conoscenza (KOS) usato per classificare i dataset del catalogo.</div><div><strong>Comment:</strong> Le systhème d'ogranisation de connaissances utilisé pour classifier les jeux de données du catalogue.</div><div><strong>Comment:</strong> Systém organizace znalostí (KOS) použitý pro klasifikaci datových sad v katalogu.</div><div><strong>Comment:</strong> The knowledge organization system (KOS) used to classify catalog's datasets.</div><div><strong>Comment:</strong> Το σύστημα οργάνωσης γνώσης που χρησιμοποιείται για την κατηγοριοποίηση των συνόλων δεδομένων του καταλόγου.</div><div><strong>Comment:</strong> لائحة التصنيفات المستخدمه لتصنيف قوائم البيانات ضمن الفهرس</div><div><strong>Comment:</strong> カタログのデータセットを分類するために用いられる知識組織化体系（KOS；knowledge organization system）。</div><div><strong>Comment:</strong> Vidensorganiseringssystem (KOS) som anvendes til at klassificere datasæt i kataloget.</div>
+                        
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/dcat#themeTaxonomy</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--version">
+                    <td>version</td>
+                    <td>:version</td>
+                    <td>DatatypeProperty</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> The version indicator (name or identifier) of a resource.</div><div><strong>Comment:</strong> El indicador de versión (nombre o identificador) del recurso.</div><div><strong>Comment:</strong> L'indicatore di versione (un nome o un identificatore) di una risorsa.</div>
+                        
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/dcat#version</div>
+                    </td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </section>
+    </div>
+</body>
+</html>

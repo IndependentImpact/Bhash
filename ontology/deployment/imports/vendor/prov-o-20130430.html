@@ -1,0 +1,1283 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>prov-o-20130430 – Hashgraph Ontology</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; line-height: 1.6; }
+        .download-bar { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; padding: 0.6rem 1.5rem; background: #0f172a; color: #e2e8f0; font-size: 0.9rem; }
+        .download-bar a.home-link { color: #7dd3fc; text-decoration: none; font-weight: 600; margin-right: 0.5rem; }
+        .download-bar a.home-link:hover { text-decoration: underline; }
+        .download-bar .sep { border-left: 1px solid #334155; height: 1.2em; }
+        .download-bar .label { color: #94a3b8; }
+        .download-bar .fmt-link { display: inline-flex; align-items: center; gap: 0.25rem; padding: 0.2rem 0.6rem; border-radius: 4px; background: #1e293b; color: #7dd3fc; text-decoration: none; font-family: monospace; font-size: 0.85rem; border: 1px solid #334155; }
+        .download-bar .fmt-link:hover { background: #0ea5e9; color: #fff; border-color: #0ea5e9; }
+        .page-content { max-width: 1100px; margin: 2rem auto; padding: 0 1.5rem; }
+        h1, h2, h3 { color: #1f2937; }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        th, td { padding: 0.5rem; border: 1px solid #e5e7eb; vertical-align: top; }
+        th { background: #f3f4f6; text-align: left; }
+        .meta { color: #4b5563; }
+        .pill { display: inline-block; padding: 0.2rem 0.5rem; margin: 0.1rem; background: #e5e7eb; border-radius: 6px; }
+        .small { font-size: 0.9rem; }
+        .section { margin-top: 2rem; }
+        a { color: #0f766e; }
+    </style>
+</head>
+<body>
+    <nav class="download-bar">
+        <a class="home-link" href="/">← Home</a>
+        <span class="sep"></span>
+        <span class="label">Download:</span>
+        <a class="fmt-link" href="prov-o-20130430.ttl" type="text/turtle">Turtle (.ttl)</a>
+        <a class="fmt-link" href="prov-o-20130430.owl" type="application/rdf+xml">RDF/XML (.owl)</a>
+        <a class="fmt-link" href="prov-o-20130430.jsonld" type="application/ld+json">JSON-LD (.jsonld)</a>
+    </nav>
+    <div class="page-content">
+    <header>
+        <h1>prov-o-20130430</h1>
+        <div class="meta">IRI: <a href="http://www.w3.org/ns/prov#">http://www.w3.org/ns/prov#</a></div>
+        
+        <p class="meta">Source file: imports\vendor\prov-o-20130430.ttl</p>
+    </header>
+
+    <section class="section">
+        <h2>Prefixes</h2>
+        <table>
+            <thead><tr><th>Prefix</th><th>Namespace</th></tr></thead>
+            <tbody>
+            
+                <tr><td>:</td><td>http://www.w3.org/ns/prov#</td></tr>
+            
+                <tr><td>ns1</td><td>http://www.w3.org/ns/</td></tr>
+            
+                <tr><td>ns2</td><td>http://www.w3.org/TR/prov-o/#</td></tr>
+            
+                <tr><td>owl</td><td>http://www.w3.org/2002/07/owl#</td></tr>
+            
+                <tr><td>rdf</td><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#</td></tr>
+            
+                <tr><td>rdfs</td><td>http://www.w3.org/2000/01/rdf-schema#</td></tr>
+            
+                <tr><td>xsd</td><td>http://www.w3.org/2001/XMLSchema#</td></tr>
+            
+            </tbody>
+        </table>
+    </section>
+
+    <section class="section">
+        <h2>Classes (39)</h2>
+        <table>
+            <thead><tr><th>Label</th><th>QName</th><th>Subclass Of</th><th>Notes</th></tr></thead>
+            <tbody>
+            
+                <tr id="cls-<n745cd8dd7f1b46449031052fd90b6025b16>">
+                    <td><n745cd8dd7f1b46449031052fd90b6025b16></td>
+                    <td><n745cd8dd7f1b46449031052fd90b6025b16></td>
+                    <td></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: n745cd8dd7f1b46449031052fd90b6025b16</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-<n745cd8dd7f1b46449031052fd90b6025b19>">
+                    <td><n745cd8dd7f1b46449031052fd90b6025b19></td>
+                    <td><n745cd8dd7f1b46449031052fd90b6025b19></td>
+                    <td></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: n745cd8dd7f1b46449031052fd90b6025b19</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-<n745cd8dd7f1b46449031052fd90b6025b35>">
+                    <td><n745cd8dd7f1b46449031052fd90b6025b35></td>
+                    <td><n745cd8dd7f1b46449031052fd90b6025b35></td>
+                    <td></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: n745cd8dd7f1b46449031052fd90b6025b35</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-<n745cd8dd7f1b46449031052fd90b6025b39>">
+                    <td><n745cd8dd7f1b46449031052fd90b6025b39></td>
+                    <td><n745cd8dd7f1b46449031052fd90b6025b39></td>
+                    <td></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: n745cd8dd7f1b46449031052fd90b6025b39</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-<n745cd8dd7f1b46449031052fd90b6025b4>">
+                    <td><n745cd8dd7f1b46449031052fd90b6025b4></td>
+                    <td><n745cd8dd7f1b46449031052fd90b6025b4></td>
+                    <td></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: n745cd8dd7f1b46449031052fd90b6025b4</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-<n745cd8dd7f1b46449031052fd90b6025b58>">
+                    <td><n745cd8dd7f1b46449031052fd90b6025b58></td>
+                    <td><n745cd8dd7f1b46449031052fd90b6025b58></td>
+                    <td></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: n745cd8dd7f1b46449031052fd90b6025b58</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-<n745cd8dd7f1b46449031052fd90b6025b63>">
+                    <td><n745cd8dd7f1b46449031052fd90b6025b63></td>
+                    <td><n745cd8dd7f1b46449031052fd90b6025b63></td>
+                    <td></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: n745cd8dd7f1b46449031052fd90b6025b63</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-<n745cd8dd7f1b46449031052fd90b6025b9>">
+                    <td><n745cd8dd7f1b46449031052fd90b6025b9></td>
+                    <td><n745cd8dd7f1b46449031052fd90b6025b9></td>
+                    <td></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: n745cd8dd7f1b46449031052fd90b6025b9</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls--Activity">
+                    <td>Activity</td>
+                    <td>:Activity</td>
+                    <td></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#Activity</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls--ActivityInfluence">
+                    <td>ActivityInfluence</td>
+                    <td>:ActivityInfluence</td>
+                    <td><span class="pill">:Influence</span></td>
+                    <td class="small">
+                        
+                        <div><strong>Comment:</strong> ActivityInfluence provides additional descriptions of an Activity's binary influence upon any other kind of resource. Instances of ActivityInfluence use the prov:activity property to cite the influencing Activity.</div><div><strong>Comment:</strong> It is not recommended that the type ActivityInfluence be asserted without also asserting one of its more specific subclasses.</div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#ActivityInfluence</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls--Agent">
+                    <td>Agent</td>
+                    <td>:Agent</td>
+                    <td></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#Agent</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls--AgentInfluence">
+                    <td>AgentInfluence</td>
+                    <td>:AgentInfluence</td>
+                    <td><span class="pill">:Influence</span></td>
+                    <td class="small">
+                        
+                        <div><strong>Comment:</strong> AgentInfluence provides additional descriptions of an Agent's binary influence upon any other kind of resource. Instances of AgentInfluence use the prov:agent property to cite the influencing Agent.</div><div><strong>Comment:</strong> It is not recommended that the type AgentInfluence be asserted without also asserting one of its more specific subclasses.</div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#AgentInfluence</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls--Association">
+                    <td>Association</td>
+                    <td>:Association</td>
+                    <td><span class="pill">:AgentInfluence</span></td>
+                    <td class="small">
+                        
+                        <div><strong>Comment:</strong> An instance of prov:Association provides additional descriptions about the binary prov:wasAssociatedWith relation from an prov:Activity to some prov:Agent that had some responsiblity for it. For example, :baking prov:wasAssociatedWith :baker; prov:qualifiedAssociation [ a prov:Association; prov:agent :baker; :foo :bar ].</div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#Association</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls--Attribution">
+                    <td>Attribution</td>
+                    <td>:Attribution</td>
+                    <td><span class="pill">:AgentInfluence</span></td>
+                    <td class="small">
+                        
+                        <div><strong>Comment:</strong> An instance of prov:Attribution provides additional descriptions about the binary prov:wasAttributedTo relation from an prov:Entity to some prov:Agent that had some responsible for it. For example, :cake prov:wasAttributedTo :baker; prov:qualifiedAttribution [ a prov:Attribution; prov:entity :baker; :foo :bar ].</div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#Attribution</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls--Bundle">
+                    <td>Bundle</td>
+                    <td>:Bundle</td>
+                    <td><span class="pill">:Entity</span></td>
+                    <td class="small">
+                        
+                        <div><strong>Comment:</strong> Note that there are kinds of bundles (e.g. handwritten letters, audio recordings, etc.) that are not expressed in PROV-O, but can be still be described by PROV-O.</div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#Bundle</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls--Collection">
+                    <td>Collection</td>
+                    <td>:Collection</td>
+                    <td><span class="pill">:Entity</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#Collection</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls--Communication">
+                    <td>Communication</td>
+                    <td>:Communication</td>
+                    <td><span class="pill">:ActivityInfluence</span></td>
+                    <td class="small">
+                        
+                        <div><strong>Comment:</strong> An instance of prov:Communication provides additional descriptions about the binary prov:wasInformedBy relation from an informed prov:Activity to the prov:Activity that informed it. For example, :you_jumping_off_bridge prov:wasInformedBy :everyone_else_jumping_off_bridge; prov:qualifiedCommunication [ a prov:Communication; prov:activity :everyone_else_jumping_off_bridge; :foo :bar ].</div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#Communication</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls--Delegation">
+                    <td>Delegation</td>
+                    <td>:Delegation</td>
+                    <td><span class="pill">:AgentInfluence</span></td>
+                    <td class="small">
+                        
+                        <div><strong>Comment:</strong> An instance of prov:Delegation provides additional descriptions about the binary prov:actedOnBehalfOf relation from a performing prov:Agent to some prov:Agent for whom it was performed. For example, :mixing prov:wasAssociatedWith :toddler . :toddler prov:actedOnBehalfOf :mother; prov:qualifiedDelegation [ a prov:Delegation; prov:entity :mother; :foo :bar ].</div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#Delegation</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls--Derivation">
+                    <td>Derivation</td>
+                    <td>:Derivation</td>
+                    <td><span class="pill">:EntityInfluence</span></td>
+                    <td class="small">
+                        
+                        <div><strong>Comment:</strong> An instance of prov:Derivation provides additional descriptions about the binary prov:wasDerivedFrom relation from some derived prov:Entity to another prov:Entity from which it was derived. For example, :chewed_bubble_gum prov:wasDerivedFrom :unwrapped_bubble_gum; prov:qualifiedDerivation [ a prov:Derivation; prov:entity :unwrapped_bubble_gum; :foo :bar ].</div><div><strong>Comment:</strong> The more specific forms of prov:Derivation (i.e., prov:Revision, prov:Quotation, prov:PrimarySource) should be asserted if they apply.</div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#Derivation</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls--EmptyCollection">
+                    <td>EmptyCollection</td>
+                    <td>:EmptyCollection</td>
+                    <td><span class="pill">:Collection</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#EmptyCollection</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls--End">
+                    <td>End</td>
+                    <td>:End</td>
+                    <td><span class="pill">:EntityInfluence</span><span class="pill">:InstantaneousEvent</span></td>
+                    <td class="small">
+                        
+                        <div><strong>Comment:</strong> An instance of prov:End provides additional descriptions about the binary prov:wasEndedBy relation from some ended prov:Activity to an prov:Entity that ended it. For example, :ball_game prov:wasEndedBy :buzzer; prov:qualifiedEnd [ a prov:End; prov:entity :buzzer; :foo :bar; prov:atTime '2012-03-09T08:05:08-05:00'^^xsd:dateTime ].</div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#End</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls--Entity">
+                    <td>Entity</td>
+                    <td>:Entity</td>
+                    <td></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#Entity</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls--EntityInfluence">
+                    <td>EntityInfluence</td>
+                    <td>:EntityInfluence</td>
+                    <td><span class="pill">:Influence</span></td>
+                    <td class="small">
+                        
+                        <div><strong>Comment:</strong> EntityInfluence provides additional descriptions of an Entity's binary influence upon any other kind of resource. Instances of EntityInfluence use the prov:entity property to cite the influencing Entity.</div><div><strong>Comment:</strong> It is not recommended that the type EntityInfluence be asserted without also asserting one of its more specific subclasses.</div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#EntityInfluence</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls--Generation">
+                    <td>Generation</td>
+                    <td>:Generation</td>
+                    <td><span class="pill">:ActivityInfluence</span><span class="pill">:InstantaneousEvent</span></td>
+                    <td class="small">
+                        
+                        <div><strong>Comment:</strong> An instance of prov:Generation provides additional descriptions about the binary prov:wasGeneratedBy relation from a generated prov:Entity to the prov:Activity that generated it. For example, :cake prov:wasGeneratedBy :baking; prov:qualifiedGeneration [ a prov:Generation; prov:activity :baking; :foo :bar ].</div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#Generation</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls--Influence">
+                    <td>Influence</td>
+                    <td>:Influence</td>
+                    <td></td>
+                    <td class="small">
+                        
+                        <div><strong>Comment:</strong> An instance of prov:Influence provides additional descriptions about the binary prov:wasInfluencedBy relation from some influenced Activity, Entity, or Agent to the influencing Activity, Entity, or Agent. For example, :stomach_ache prov:wasInfluencedBy :spoon; prov:qualifiedInfluence [ a prov:Influence; prov:entity :spoon; :foo :bar ] . Because prov:Influence is a broad relation, the more specific relations (Communication, Delegation, End, etc.) should be used when applicable.</div><div><strong>Comment:</strong> Because prov:Influence is a broad relation, its most specific subclasses (e.g. prov:Communication, prov:Delegation, prov:End, prov:Revision, etc.) should be used when applicable.</div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#Influence</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls--InstantaneousEvent">
+                    <td>InstantaneousEvent</td>
+                    <td>:InstantaneousEvent</td>
+                    <td></td>
+                    <td class="small">
+                        
+                        <div><strong>Comment:</strong> An instantaneous event, or event for short, happens in the world and marks a change in the world, in its activities and in its entities. The term 'event' is commonly used in process algebra with a similar meaning. Events represent communications or interactions; they are assumed to be atomic and instantaneous.</div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#InstantaneousEvent</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls--Invalidation">
+                    <td>Invalidation</td>
+                    <td>:Invalidation</td>
+                    <td><span class="pill">:ActivityInfluence</span><span class="pill">:InstantaneousEvent</span></td>
+                    <td class="small">
+                        
+                        <div><strong>Comment:</strong> An instance of prov:Invalidation provides additional descriptions about the binary prov:wasInvalidatedBy relation from an invalidated prov:Entity to the prov:Activity that invalidated it. For example, :uncracked_egg prov:wasInvalidatedBy :baking; prov:qualifiedInvalidation [ a prov:Invalidation; prov:activity :baking; :foo :bar ].</div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#Invalidation</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls--Location">
+                    <td>Location</td>
+                    <td>:Location</td>
+                    <td></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#Location</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls--Organization">
+                    <td>Organization</td>
+                    <td>:Organization</td>
+                    <td><span class="pill">:Agent</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#Organization</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls-owl-Thing">
+                    <td>owl:Thing</td>
+                    <td>owl:Thing</td>
+                    <td></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: http://www.w3.org/2002/07/owl#Thing</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls--Person">
+                    <td>Person</td>
+                    <td>:Person</td>
+                    <td><span class="pill">:Agent</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#Person</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls--Plan">
+                    <td>Plan</td>
+                    <td>:Plan</td>
+                    <td><span class="pill">:Entity</span></td>
+                    <td class="small">
+                        
+                        <div><strong>Comment:</strong> There exist no prescriptive requirement on the nature of plans, their representation, the actions or steps they consist of, or their intended goals. Since plans may evolve over time, it may become necessary to track their provenance, so plans themselves are entities. Representing the plan explicitly in the provenance can be useful for various tasks: for example, to validate the execution as represented in the provenance record, to manage expectation failures, or to provide explanations.</div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#Plan</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls--PrimarySource">
+                    <td>PrimarySource</td>
+                    <td>:PrimarySource</td>
+                    <td><span class="pill">:Derivation</span></td>
+                    <td class="small">
+                        
+                        <div><strong>Comment:</strong> An instance of prov:PrimarySource provides additional descriptions about the binary prov:hadPrimarySource relation from some secondary prov:Entity to an earlier, primary prov:Entity. For example, :blog prov:hadPrimarySource :newsArticle; prov:qualifiedPrimarySource [ a prov:PrimarySource; prov:entity :newsArticle; :foo :bar ] .</div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#PrimarySource</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls--Quotation">
+                    <td>Quotation</td>
+                    <td>:Quotation</td>
+                    <td><span class="pill">:Derivation</span></td>
+                    <td class="small">
+                        
+                        <div><strong>Comment:</strong> An instance of prov:Quotation provides additional descriptions about the binary prov:wasQuotedFrom relation from some taken prov:Entity from an earlier, larger prov:Entity. For example, :here_is_looking_at_you_kid prov:wasQuotedFrom :casablanca_script; prov:qualifiedQuotation [ a prov:Quotation; prov:entity :casablanca_script; :foo :bar ].</div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#Quotation</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls--Revision">
+                    <td>Revision</td>
+                    <td>:Revision</td>
+                    <td><span class="pill">:Derivation</span></td>
+                    <td class="small">
+                        
+                        <div><strong>Comment:</strong> An instance of prov:Revision provides additional descriptions about the binary prov:wasRevisionOf relation from some newer prov:Entity to an earlier prov:Entity. For example, :draft_2 prov:wasRevisionOf :draft_1; prov:qualifiedRevision [ a prov:Revision; prov:entity :draft_1; :foo :bar ].</div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#Revision</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls--Role">
+                    <td>Role</td>
+                    <td>:Role</td>
+                    <td></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#Role</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls--SoftwareAgent">
+                    <td>SoftwareAgent</td>
+                    <td>:SoftwareAgent</td>
+                    <td><span class="pill">:Agent</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#SoftwareAgent</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls--Start">
+                    <td>Start</td>
+                    <td>:Start</td>
+                    <td><span class="pill">:EntityInfluence</span><span class="pill">:InstantaneousEvent</span></td>
+                    <td class="small">
+                        
+                        <div><strong>Comment:</strong> An instance of prov:Start provides additional descriptions about the binary prov:wasStartedBy relation from some started prov:Activity to an prov:Entity that started it. For example, :foot_race prov:wasStartedBy :bang; prov:qualifiedStart [ a prov:Start; prov:entity :bang; :foo :bar; prov:atTime '2012-03-09T08:05:08-05:00'^^xsd:dateTime ] .</div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#Start</div>
+                    </td>
+                </tr>
+            
+                <tr id="cls--Usage">
+                    <td>Usage</td>
+                    <td>:Usage</td>
+                    <td><span class="pill">:EntityInfluence</span><span class="pill">:InstantaneousEvent</span></td>
+                    <td class="small">
+                        
+                        <div><strong>Comment:</strong> An instance of prov:Usage provides additional descriptions about the binary prov:used relation from some prov:Activity to an prov:Entity that it used. For example, :keynote prov:used :podium; prov:qualifiedUsage [ a prov:Usage; prov:entity :podium; :foo :bar ].</div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#Usage</div>
+                    </td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </section>
+
+    <section class="section">
+        <h2>Properties (50)</h2>
+        <table>
+            <thead><tr><th>Label</th><th>QName</th><th>Kind</th><th>Domain</th><th>Range</th><th>Notes</th></tr></thead>
+            <tbody>
+            
+                <tr id="prop--actedOnBehalfOf">
+                    <td>actedOnBehalfOf</td>
+                    <td>:actedOnBehalfOf</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Agent</span></td>
+                    <td><span class="pill">:Agent</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> An object property to express the accountability of an agent towards another agent. The subordinate agent acted on behalf of the responsible agent in an actual activity. </div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">:wasInfluencedBy</span></div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#actedOnBehalfOf</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--activity">
+                    <td>activity</td>
+                    <td>:activity</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:ActivityInfluence</span></td>
+                    <td><span class="pill">:Activity</span></td>
+                    <td class="small">
+                        
+                        <div><strong>SubProperty Of:</strong> <span class="pill">:influencer</span></div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#activity</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--agent">
+                    <td>agent</td>
+                    <td>:agent</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:AgentInfluence</span></td>
+                    <td><span class="pill">:Agent</span></td>
+                    <td class="small">
+                        
+                        <div><strong>SubProperty Of:</strong> <span class="pill">:influencer</span></div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#agent</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--alternateOf">
+                    <td>alternateOf</td>
+                    <td>:alternateOf</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Entity</span></td>
+                    <td><span class="pill">:Entity</span></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#alternateOf</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--atLocation">
+                    <td>atLocation</td>
+                    <td>:atLocation</td>
+                    <td>ObjectProperty</td>
+                    <td></td>
+                    <td><span class="pill">:Location</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> The Location of any resource.</div><div><strong>Comment:</strong> This property has multiple RDFS domains to suit multiple OWL Profiles. See <a href="#owl-profile">PROV-O OWL Profile</a>.</div>
+                        
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#atLocation</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--atTime">
+                    <td>atTime</td>
+                    <td>:atTime</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">:InstantaneousEvent</span></td>
+                    <td><span class="pill">xsd:dateTime</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> The time at which an InstantaneousEvent occurred, in the form of xsd:dateTime.</div>
+                        
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#atTime</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--endedAtTime">
+                    <td>endedAtTime</td>
+                    <td>:endedAtTime</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">:Activity</span></td>
+                    <td><span class="pill">xsd:dateTime</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> The time at which an activity ended. See also prov:startedAtTime.</div>
+                        
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#endedAtTime</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--entity">
+                    <td>entity</td>
+                    <td>:entity</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:EntityInfluence</span></td>
+                    <td><span class="pill">:Entity</span></td>
+                    <td class="small">
+                        
+                        <div><strong>SubProperty Of:</strong> <span class="pill">:influencer</span></div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#entity</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--generated">
+                    <td>generated</td>
+                    <td>:generated</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Activity</span></td>
+                    <td><span class="pill">:Entity</span></td>
+                    <td class="small">
+                        
+                        <div><strong>SubProperty Of:</strong> <span class="pill">:influenced</span></div>
+                        <div><strong>Inverse Of:</strong> <span class="pill">:wasGeneratedBy</span></div>
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#generated</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--generatedAtTime">
+                    <td>generatedAtTime</td>
+                    <td>:generatedAtTime</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">:Entity</span></td>
+                    <td><span class="pill">xsd:dateTime</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> The time at which an entity was completely created and is available for use.</div>
+                        
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#generatedAtTime</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--hadActivity">
+                    <td>hadActivity</td>
+                    <td>:hadActivity</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Influence</span></td>
+                    <td><span class="pill">:Activity</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> The _optional_ Activity of an Influence, which used, generated, invalidated, or was the responsibility of some Entity. This property is _not_ used by ActivityInfluence (use prov:activity instead).</div><div><strong>Comment:</strong> This property has multiple RDFS domains to suit multiple OWL Profiles. See <a href="#owl-profile">PROV-O OWL Profile</a>.</div>
+                        
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#hadActivity</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--hadGeneration">
+                    <td>hadGeneration</td>
+                    <td>:hadGeneration</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Derivation</span></td>
+                    <td><span class="pill">:Generation</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> The _optional_ Generation involved in an Entity's Derivation.</div>
+                        
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#hadGeneration</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--hadMember">
+                    <td>hadMember</td>
+                    <td>:hadMember</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Collection</span></td>
+                    <td><span class="pill">:Entity</span></td>
+                    <td class="small">
+                        
+                        <div><strong>SubProperty Of:</strong> <span class="pill">:wasInfluencedBy</span></div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#hadMember</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--hadPlan">
+                    <td>hadPlan</td>
+                    <td>:hadPlan</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Association</span></td>
+                    <td><span class="pill">:Plan</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> The _optional_ Plan adopted by an Agent in Association with some Activity. Plan specifications are out of the scope of this specification.</div>
+                        
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#hadPlan</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--hadPrimarySource">
+                    <td>hadPrimarySource</td>
+                    <td>:hadPrimarySource</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Entity</span></td>
+                    <td><span class="pill">:Entity</span></td>
+                    <td class="small">
+                        
+                        <div><strong>SubProperty Of:</strong> <span class="pill">:wasDerivedFrom</span></div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#hadPrimarySource</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--hadRole">
+                    <td>hadRole</td>
+                    <td>:hadRole</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Influence</span></td>
+                    <td><span class="pill">:Role</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> The _optional_ Role that an Entity assumed in the context of an Activity. For example, :baking prov:used :spoon; prov:qualified [ a prov:Usage; prov:entity :spoon; prov:hadRole roles:mixing_implement ].</div><div><strong>Comment:</strong> This property has multiple RDFS domains to suit multiple OWL Profiles. See <a href="#owl-profile">PROV-O OWL Profile</a>.</div>
+                        
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#hadRole</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--hadUsage">
+                    <td>hadUsage</td>
+                    <td>:hadUsage</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Derivation</span></td>
+                    <td><span class="pill">:Usage</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> The _optional_ Usage involved in an Entity's Derivation.</div>
+                        
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#hadUsage</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--influenced">
+                    <td>influenced</td>
+                    <td>:influenced</td>
+                    <td>ObjectProperty</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        
+                        
+                        <div><strong>Inverse Of:</strong> <span class="pill">:wasInfluencedBy</span></div>
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#influenced</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--influencer">
+                    <td>influencer</td>
+                    <td>:influencer</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Influence</span></td>
+                    <td><span class="pill">owl:Thing</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> Subproperties of prov:influencer are used to cite the object of an unqualified PROV-O triple whose predicate is a subproperty of prov:wasInfluencedBy (e.g. prov:used, prov:wasGeneratedBy). prov:influencer is used much like rdf:object is used.</div>
+                        
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#influencer</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--invalidated">
+                    <td>invalidated</td>
+                    <td>:invalidated</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Activity</span></td>
+                    <td><span class="pill">:Entity</span></td>
+                    <td class="small">
+                        
+                        <div><strong>SubProperty Of:</strong> <span class="pill">:influenced</span></div>
+                        <div><strong>Inverse Of:</strong> <span class="pill">:wasInvalidatedBy</span></div>
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#invalidated</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--invalidatedAtTime">
+                    <td>invalidatedAtTime</td>
+                    <td>:invalidatedAtTime</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">:Entity</span></td>
+                    <td><span class="pill">xsd:dateTime</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> The time at which an entity was invalidated (i.e., no longer usable).</div>
+                        
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#invalidatedAtTime</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--qualifiedAssociation">
+                    <td>qualifiedAssociation</td>
+                    <td>:qualifiedAssociation</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Activity</span></td>
+                    <td><span class="pill">:Association</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> If this Activity prov:wasAssociatedWith Agent :ag, then it can qualify the Association using prov:qualifiedAssociation [ a prov:Association;  prov:agent :ag; :foo :bar ].</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">:qualifiedInfluence</span></div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#qualifiedAssociation</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--qualifiedAttribution">
+                    <td>qualifiedAttribution</td>
+                    <td>:qualifiedAttribution</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Entity</span></td>
+                    <td><span class="pill">:Attribution</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> If this Entity prov:wasAttributedTo Agent :ag, then it can qualify how it was influenced using prov:qualifiedAttribution [ a prov:Attribution;  prov:agent :ag; :foo :bar ].</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">:qualifiedInfluence</span></div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#qualifiedAttribution</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--qualifiedCommunication">
+                    <td>qualifiedCommunication</td>
+                    <td>:qualifiedCommunication</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Activity</span></td>
+                    <td><span class="pill">:Communication</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> If this Activity prov:wasInformedBy Activity :a, then it can qualify how it was influenced using prov:qualifiedCommunication [ a prov:Communication;  prov:activity :a; :foo :bar ].</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">:qualifiedInfluence</span></div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#qualifiedCommunication</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--qualifiedDelegation">
+                    <td>qualifiedDelegation</td>
+                    <td>:qualifiedDelegation</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Agent</span></td>
+                    <td><span class="pill">:Delegation</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> If this Agent prov:actedOnBehalfOf Agent :ag, then it can qualify how with prov:qualifiedResponsibility [ a prov:Responsibility;  prov:agent :ag; :foo :bar ].</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">:qualifiedInfluence</span></div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#qualifiedDelegation</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--qualifiedDerivation">
+                    <td>qualifiedDerivation</td>
+                    <td>:qualifiedDerivation</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Entity</span></td>
+                    <td><span class="pill">:Derivation</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> If this Entity prov:wasDerivedFrom Entity :e, then it can qualify how it was derived using prov:qualifiedDerivation [ a prov:Derivation;  prov:entity :e; :foo :bar ].</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">:qualifiedInfluence</span></div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#qualifiedDerivation</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--qualifiedEnd">
+                    <td>qualifiedEnd</td>
+                    <td>:qualifiedEnd</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Activity</span></td>
+                    <td><span class="pill">:End</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> If this Activity prov:wasEndedBy Entity :e1, then it can qualify how it was ended using prov:qualifiedEnd [ a prov:End;  prov:entity :e1; :foo :bar ].</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">:qualifiedInfluence</span></div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#qualifiedEnd</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--qualifiedGeneration">
+                    <td>qualifiedGeneration</td>
+                    <td>:qualifiedGeneration</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Entity</span></td>
+                    <td><span class="pill">:Generation</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> If this Activity prov:generated Entity :e, then it can qualify how it performed the Generation using prov:qualifiedGeneration [ a prov:Generation;  prov:entity :e; :foo :bar ].</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">:qualifiedInfluence</span></div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#qualifiedGeneration</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--qualifiedInfluence">
+                    <td>qualifiedInfluence</td>
+                    <td>:qualifiedInfluence</td>
+                    <td>ObjectProperty</td>
+                    <td></td>
+                    <td><span class="pill">:Influence</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> Because prov:qualifiedInfluence is a broad relation, the more specific relations (qualifiedCommunication, qualifiedDelegation, qualifiedEnd, etc.) should be used when applicable.</div>
+                        
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#qualifiedInfluence</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--qualifiedInvalidation">
+                    <td>qualifiedInvalidation</td>
+                    <td>:qualifiedInvalidation</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Entity</span></td>
+                    <td><span class="pill">:Invalidation</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> If this Entity prov:wasInvalidatedBy Activity :a, then it can qualify how it was invalidated using prov:qualifiedInvalidation [ a prov:Invalidation;  prov:activity :a; :foo :bar ].</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">:qualifiedInfluence</span></div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#qualifiedInvalidation</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--qualifiedPrimarySource">
+                    <td>qualifiedPrimarySource</td>
+                    <td>:qualifiedPrimarySource</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Entity</span></td>
+                    <td><span class="pill">:PrimarySource</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> If this Entity prov:hadPrimarySource Entity :e, then it can qualify how using prov:qualifiedPrimarySource [ a prov:PrimarySource; prov:entity :e; :foo :bar ].</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">:qualifiedInfluence</span></div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#qualifiedPrimarySource</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--qualifiedQuotation">
+                    <td>qualifiedQuotation</td>
+                    <td>:qualifiedQuotation</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Entity</span></td>
+                    <td><span class="pill">:Quotation</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> If this Entity prov:wasQuotedFrom Entity :e, then it can qualify how using prov:qualifiedQuotation [ a prov:Quotation;  prov:entity :e; :foo :bar ].</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">:qualifiedInfluence</span></div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#qualifiedQuotation</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--qualifiedRevision">
+                    <td>qualifiedRevision</td>
+                    <td>:qualifiedRevision</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Entity</span></td>
+                    <td><span class="pill">:Revision</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> If this Entity prov:wasRevisionOf Entity :e, then it can qualify how it was revised using prov:qualifiedRevision [ a prov:Revision;  prov:entity :e; :foo :bar ].</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">:qualifiedInfluence</span></div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#qualifiedRevision</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--qualifiedStart">
+                    <td>qualifiedStart</td>
+                    <td>:qualifiedStart</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Activity</span></td>
+                    <td><span class="pill">:Start</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> If this Activity prov:wasStartedBy Entity :e1, then it can qualify how it was started using prov:qualifiedStart [ a prov:Start;  prov:entity :e1; :foo :bar ].</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">:qualifiedInfluence</span></div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#qualifiedStart</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--qualifiedUsage">
+                    <td>qualifiedUsage</td>
+                    <td>:qualifiedUsage</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Activity</span></td>
+                    <td><span class="pill">:Usage</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> If this Activity prov:used Entity :e, then it can qualify how it used it using prov:qualifiedUsage [ a prov:Usage; prov:entity :e; :foo :bar ].</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">:qualifiedInfluence</span></div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#qualifiedUsage</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--specializationOf">
+                    <td>specializationOf</td>
+                    <td>:specializationOf</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Entity</span></td>
+                    <td><span class="pill">:Entity</span></td>
+                    <td class="small">
+                        
+                        <div><strong>SubProperty Of:</strong> <span class="pill">:alternateOf</span></div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#specializationOf</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--startedAtTime">
+                    <td>startedAtTime</td>
+                    <td>:startedAtTime</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">:Activity</span></td>
+                    <td><span class="pill">xsd:dateTime</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> The time at which an activity started. See also prov:endedAtTime.</div>
+                        
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#startedAtTime</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--used">
+                    <td>used</td>
+                    <td>:used</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Activity</span></td>
+                    <td><span class="pill">:Entity</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> A prov:Entity that was used by this prov:Activity. For example, :baking prov:used :spoon, :egg, :oven .</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">:wasInfluencedBy</span></div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#used</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--value">
+                    <td>value</td>
+                    <td>:value</td>
+                    <td>DatatypeProperty</td>
+                    <td><span class="pill">:Entity</span></td>
+                    <td></td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#value</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--wasAssociatedWith">
+                    <td>wasAssociatedWith</td>
+                    <td>:wasAssociatedWith</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Activity</span></td>
+                    <td><span class="pill">:Agent</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> An prov:Agent that had some (unspecified) responsibility for the occurrence of this prov:Activity.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">:wasInfluencedBy</span></div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#wasAssociatedWith</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--wasAttributedTo">
+                    <td>wasAttributedTo</td>
+                    <td>:wasAttributedTo</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Entity</span></td>
+                    <td><span class="pill">:Agent</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> Attribution is the ascribing of an entity to an agent.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">:wasInfluencedBy</span></div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#wasAttributedTo</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--wasDerivedFrom">
+                    <td>wasDerivedFrom</td>
+                    <td>:wasDerivedFrom</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Entity</span></td>
+                    <td><span class="pill">:Entity</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> The more specific subproperties of prov:wasDerivedFrom (i.e., prov:wasQuotedFrom, prov:wasRevisionOf, prov:hadPrimarySource) should be used when applicable.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">:wasInfluencedBy</span></div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#wasDerivedFrom</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--wasEndedBy">
+                    <td>wasEndedBy</td>
+                    <td>:wasEndedBy</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Activity</span></td>
+                    <td><span class="pill">:Entity</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> End is when an activity is deemed to have ended. An end may refer to an entity, known as trigger, that terminated the activity.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">:wasInfluencedBy</span></div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#wasEndedBy</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--wasGeneratedBy">
+                    <td>wasGeneratedBy</td>
+                    <td>:wasGeneratedBy</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Entity</span></td>
+                    <td><span class="pill">:Activity</span></td>
+                    <td class="small">
+                        
+                        <div><strong>SubProperty Of:</strong> <span class="pill">:wasInfluencedBy</span></div>
+                        <div><strong>Inverse Of:</strong> <span class="pill">:generated</span></div>
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#wasGeneratedBy</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--wasInfluencedBy">
+                    <td>wasInfluencedBy</td>
+                    <td>:wasInfluencedBy</td>
+                    <td>ObjectProperty</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> Because prov:wasInfluencedBy is a broad relation, its more specific subproperties (e.g. prov:wasInformedBy, prov:actedOnBehalfOf, prov:wasEndedBy, etc.) should be used when applicable.</div><div><strong>Comment:</strong> This property has multiple RDFS domains to suit multiple OWL Profiles. See <a href="#owl-profile">PROV-O OWL Profile</a>.</div>
+                        
+                        <div><strong>Inverse Of:</strong> <span class="pill">:influenced</span></div>
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#wasInfluencedBy</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--wasInformedBy">
+                    <td>wasInformedBy</td>
+                    <td>:wasInformedBy</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Activity</span></td>
+                    <td><span class="pill">:Activity</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> An activity a2 is dependent on or informed by another activity a1, by way of some unspecified entity that is generated by a1 and used by a2.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">:wasInfluencedBy</span></div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#wasInformedBy</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--wasInvalidatedBy">
+                    <td>wasInvalidatedBy</td>
+                    <td>:wasInvalidatedBy</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Entity</span></td>
+                    <td><span class="pill">:Activity</span></td>
+                    <td class="small">
+                        
+                        <div><strong>SubProperty Of:</strong> <span class="pill">:wasInfluencedBy</span></div>
+                        <div><strong>Inverse Of:</strong> <span class="pill">:invalidated</span></div>
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#wasInvalidatedBy</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--wasQuotedFrom">
+                    <td>wasQuotedFrom</td>
+                    <td>:wasQuotedFrom</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Entity</span></td>
+                    <td><span class="pill">:Entity</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> An entity is derived from an original entity by copying, or 'quoting', some or all of it.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">:wasDerivedFrom</span></div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#wasQuotedFrom</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--wasRevisionOf">
+                    <td>wasRevisionOf</td>
+                    <td>:wasRevisionOf</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Entity</span></td>
+                    <td><span class="pill">:Entity</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> A revision is a derivation that revises an entity into a revised version.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">:wasDerivedFrom</span></div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#wasRevisionOf</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop--wasStartedBy">
+                    <td>wasStartedBy</td>
+                    <td>:wasStartedBy</td>
+                    <td>ObjectProperty</td>
+                    <td><span class="pill">:Activity</span></td>
+                    <td><span class="pill">:Entity</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> Start is when an activity is deemed to have started. A start may refer to an entity, known as trigger, that initiated the activity.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">:wasInfluencedBy</span></div>
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#wasStartedBy</div>
+                    </td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </section>
+
+    <section class="section">
+        <h2>Named Individuals (1)</h2>
+        <table>
+            <thead><tr><th>Label</th><th>QName</th><th>Type</th><th>Facts</th><th>Notes</th></tr></thead>
+            <tbody>
+            
+                <tr id="ind--EmptyCollection">
+                    <td>EmptyCollection</td>
+                    <td>:EmptyCollection</td>
+                    <td><span class="pill">owl:Class</span></td>
+                    <td class="small">
+                        <div><strong>:category:</strong> expanded</div><div><strong>:component:</strong> collections</div><div><strong>:definition:</strong> An empty collection is a collection without members.</div><div><strong>rdfs:subClassOf:</strong> <a href="http://www.w3.org/ns/prov#Collection">:Collection</a></div>
+                    </td>
+                    <td class="small">
+                        
+                        
+                        
+                        <div class="meta">IRI: http://www.w3.org/ns/prov#EmptyCollection</div>
+                    </td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </section>
+    </div>
+</body>
+</html>
