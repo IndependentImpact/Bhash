@@ -1,206 +1,5 @@
 [
   {
-    "@id": "https://hashgraphontology.xyz/core/MirrorCommunicationParty",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@id": "http://w3id.org/infocomm#CommunicationParty"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Mirror communication party"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/MirrorService"
-      },
-      {
-        "@id": "http://w3id.org/infocomm#CommunicationParty"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A Hedera mirror service acting as a receiving communication party for consensus data."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hedera/mirror-node"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/hasMirrorRecipient",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@id": "http://w3id.org/infocomm#hasRecipient"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/HCSCommunicationEvent"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has mirror recipient"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/MirrorCommunicationParty"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://w3id.org/infocomm#hasRecipient"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Identifies the mirror service that receives consensus data during an HCS communication event."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hedera/mirror-node/sdks-and-apis/rest-api"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/hasCommunicationFormat",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@id": "http://w3id.org/infocomm#hasFormat"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/HCSCommunicationEvent"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has communication format"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://w3id.org/infocomm#Format"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://w3id.org/infocomm#hasFormat"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Specifies the encoding format (e.g., protobuf, JSON) used during an HCS communication event."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hedera/sdks-and-apis/hedera-api"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/HCSCommunicationEvent",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@id": "http://w3id.org/infocomm#CommunicationEvent"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "HCS communication event"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/Event"
-      },
-      {
-        "@id": "http://w3id.org/infocomm#CommunicationEvent"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "The transport of a Hedera Consensus Service message through the network, treated as an information communication event."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/message-flows"
-      }
-    ]
-  },
-  {
-    "@id": "https://hashgraphontology.xyz/core/hasConsensusNodeSender",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@id": "http://w3id.org/infocomm#hasSender"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://hashgraphontology.xyz/core/HCSCommunicationEvent"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "has consensus node sender"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://w3id.org/infocomm#CommunicationParty"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://w3id.org/infocomm#hasSender"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Identifies the consensus node acting as sender in an HCS communication event."
-      }
-    ],
-    "https://hashgraphontology.xyz/core/sourceDocument": [
-      {
-        "@id": "https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/message-flows"
-      }
-    ]
-  },
-  {
     "@id": "https://hashgraphontology.xyz/alignment/infocomm",
     "@type": [
       "http://www.w3.org/2002/07/owl#Ontology"
@@ -269,6 +68,42 @@
     ]
   },
   {
+    "@id": "https://hashgraphontology.xyz/core/HCSCommunicationEvent",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@id": "http://w3id.org/infocomm#CommunicationEvent"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "HCS communication event"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/Event"
+      },
+      {
+        "@id": "http://w3id.org/infocomm#CommunicationEvent"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "The transport of a Hedera Consensus Service message through the network, treated as an information communication event."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/message-flows"
+      }
+    ]
+  },
+  {
     "@id": "https://hashgraphontology.xyz/core/HAPIProtocol",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
@@ -298,6 +133,85 @@
     "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/sdks-and-apis/hedera-api"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/hasMirrorRecipient",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@id": "http://w3id.org/infocomm#hasRecipient"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/HCSCommunicationEvent"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has mirror recipient"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/MirrorCommunicationParty"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://w3id.org/infocomm#hasRecipient"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Identifies the mirror service that receives consensus data during an HCS communication event."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/mirror-node/sdks-and-apis/rest-api"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/MirrorCommunicationParty",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@id": "http://w3id.org/infocomm#CommunicationParty"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Mirror communication party"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/MirrorService"
+      },
+      {
+        "@id": "http://w3id.org/infocomm#CommunicationParty"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A Hedera mirror service acting as a receiving communication party for consensus data."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/mirror-node"
       }
     ]
   },
@@ -341,6 +255,92 @@
     "https://hashgraphontology.xyz/core/sourceDocument": [
       {
         "@id": "https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/message-flows"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/hasConsensusNodeSender",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@id": "http://w3id.org/infocomm#hasSender"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/HCSCommunicationEvent"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has consensus node sender"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://w3id.org/infocomm#CommunicationParty"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://w3id.org/infocomm#hasSender"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Identifies the consensus node acting as sender in an HCS communication event."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/message-flows"
+      }
+    ]
+  },
+  {
+    "@id": "https://hashgraphontology.xyz/core/hasCommunicationFormat",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@id": "http://w3id.org/infocomm#hasFormat"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://hashgraphontology.xyz/core/HCSCommunicationEvent"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "has communication format"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://w3id.org/infocomm#Format"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://w3id.org/infocomm#hasFormat"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Specifies the encoding format (e.g., protobuf, JSON) used during an HCS communication event."
+      }
+    ],
+    "https://hashgraphontology.xyz/core/sourceDocument": [
+      {
+        "@id": "https://docs.hedera.com/hedera/sdks-and-apis/hedera-api"
       }
     ]
   }

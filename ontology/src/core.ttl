@@ -18,7 +18,7 @@
     dcterms:license <https://www.apache.org/licenses/LICENSE-2.0> ;
     dcterms:source <https://docs.hedera.com/hedera> , <https://docs.hedera.com/hiero> , <https://docs.hedera.com/hedera/core-concepts/transactions/transaction-lifecycle> ;
     dcterms:created "2024-05-02"^^xsd:date ;
-    dcterms:modified "2026-10-07"^^xsd:date ;
+    dcterms:modified "2026-10-21"^^xsd:date ;
     owl:versionIRI <https://hashgraphontology.xyz/core/0.1.0-dev> ;
     owl:versionInfo "0.1.0-dev" ;
     owl:imports <https://hashgraphontology.xyz/imports/prov> ,
@@ -298,7 +298,9 @@ hedera:TransactionRecord
     rdfs:label "Transaction record"@en ;
     rdfs:subClassOf hedera:Event ;
     skos:definition "Structured record capturing the result of a processed transaction."@en ;
+    skos:scopeNote "A record is keyed by its consensus timestamp (hedera:hasConsensusTimestamp), not by its transaction ID: the consensus timestamp is unique per record on a network, whereas one transaction ID can yield several records (scheduled, child and duplicate transactions). The {consensusTimestamp} IRI segment is that timestamp in the native Hedera form \"seconds.nanoseconds\", identical to the property value."@en ;
     hedera:sourceDocument <https://docs.hedera.com/hedera/core-concepts/transactions/transaction-record> ;
+    hedera:instanceIRIPattern "https://hashgraphontology.xyz/resource/{network}/record/{consensusTimestamp}"@en ;
     .
 
 hedera:MirrorDataset

@@ -17,6 +17,15 @@
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/core-concepts/hedera-consensus-service/message-flows"/>
     <dcterms:source rdf:resource="http://w3id.org/infocomm#transmits"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/MirrorCommunicationParty">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Mirror communication party</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/MirrorService"/>
+    <rdfs:subClassOf rdf:resource="http://w3id.org/infocomm#CommunicationParty"/>
+    <skos:definition xml:lang="en">A Hedera mirror service acting as a receiving communication party for consensus data.</skos:definition>
+    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/mirror-node"/>
+    <dcterms:source rdf:resource="http://w3id.org/infocomm#CommunicationParty"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://hashgraphontology.xyz/core/hasCommunicationFormat">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:label xml:lang="en">has communication format</rdfs:label>
@@ -26,15 +35,6 @@
     <skos:definition xml:lang="en">Specifies the encoding format (e.g., protobuf, JSON) used during an HCS communication event.</skos:definition>
     <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/sdks-and-apis/hedera-api"/>
     <dcterms:source rdf:resource="http://w3id.org/infocomm#hasFormat"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://hashgraphontology.xyz/core/MirrorCommunicationParty">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="en">Mirror communication party</rdfs:label>
-    <rdfs:subClassOf rdf:resource="https://hashgraphontology.xyz/core/MirrorService"/>
-    <rdfs:subClassOf rdf:resource="http://w3id.org/infocomm#CommunicationParty"/>
-    <skos:definition xml:lang="en">A Hedera mirror service acting as a receiving communication party for consensus data.</skos:definition>
-    <hedera:sourceDocument rdf:resource="https://docs.hedera.com/hedera/mirror-node"/>
-    <dcterms:source rdf:resource="http://w3id.org/infocomm#CommunicationParty"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://hashgraphontology.xyz/alignment/infocomm">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>

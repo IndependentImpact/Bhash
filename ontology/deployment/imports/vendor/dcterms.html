@@ -1,0 +1,878 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>dcterms – Hashgraph Ontology</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; line-height: 1.6; }
+        .download-bar { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; padding: 0.6rem 1.5rem; background: #0f172a; color: #e2e8f0; font-size: 0.9rem; }
+        .download-bar a.home-link { color: #7dd3fc; text-decoration: none; font-weight: 600; margin-right: 0.5rem; }
+        .download-bar a.home-link:hover { text-decoration: underline; }
+        .download-bar .sep { border-left: 1px solid #334155; height: 1.2em; }
+        .download-bar .label { color: #94a3b8; }
+        .download-bar .fmt-link { display: inline-flex; align-items: center; gap: 0.25rem; padding: 0.2rem 0.6rem; border-radius: 4px; background: #1e293b; color: #7dd3fc; text-decoration: none; font-family: monospace; font-size: 0.85rem; border: 1px solid #334155; }
+        .download-bar .fmt-link:hover { background: #0ea5e9; color: #fff; border-color: #0ea5e9; }
+        .page-content { max-width: 1100px; margin: 2rem auto; padding: 0 1.5rem; }
+        h1, h2, h3 { color: #1f2937; }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        th, td { padding: 0.5rem; border: 1px solid #e5e7eb; vertical-align: top; }
+        th { background: #f3f4f6; text-align: left; }
+        .meta { color: #4b5563; }
+        .pill { display: inline-block; padding: 0.2rem 0.5rem; margin: 0.1rem; background: #e5e7eb; border-radius: 6px; }
+        .small { font-size: 0.9rem; }
+        .section { margin-top: 2rem; }
+        a { color: #0f766e; }
+    </style>
+</head>
+<body>
+    <nav class="download-bar">
+        <a class="home-link" href="/">← Home</a>
+        <span class="sep"></span>
+        <span class="label">Download:</span>
+        <a class="fmt-link" href="dcterms.ttl" type="text/turtle">Turtle (.ttl)</a>
+        <a class="fmt-link" href="dcterms.owl" type="application/rdf+xml">RDF/XML (.owl)</a>
+        <a class="fmt-link" href="dcterms.jsonld" type="application/ld+json">JSON-LD (.jsonld)</a>
+    </nav>
+    <div class="page-content">
+    <header>
+        <h1>dcterms</h1>
+        
+        
+        <p class="meta">Source file: imports\vendor\dcterms.ttl</p>
+    </header>
+
+    <section class="section">
+        <h2>Prefixes</h2>
+        <table>
+            <thead><tr><th>Prefix</th><th>Namespace</th></tr></thead>
+            <tbody>
+            
+                <tr><td>dc</td><td>http://purl.org/dc/elements/1.1/</td></tr>
+            
+                <tr><td>dcam</td><td>http://purl.org/dc/dcam/</td></tr>
+            
+                <tr><td>dcmitype</td><td>http://purl.org/dc/dcmitype/</td></tr>
+            
+                <tr><td>dcterms</td><td>http://purl.org/dc/terms/</td></tr>
+            
+                <tr><td>foaf</td><td>http://xmlns.com/foaf/0.1/</td></tr>
+            
+                <tr><td>ns1</td><td>http://lcweb.loc.gov/catdir/cpso/lcco/</td></tr>
+            
+                <tr><td>ns2</td><td>http://www.ietf.org/rfc/</td></tr>
+            
+                <tr><td>ns3</td><td>http://purl.org/dc/aboutdcmi#</td></tr>
+            
+                <tr><td>ns4</td><td>http://www.w3.org/TR/</td></tr>
+            
+                <tr><td>ns5</td><td>https://www.iso.org/obp/ui/#</td></tr>
+            
+                <tr><td>ns6</td><td>http://www.getty.edu/research/tools/vocabulary/tgn/</td></tr>
+            
+                <tr><td>ns7</td><td>http://www.nlm.nih.gov/mesh/</td></tr>
+            
+                <tr><td>ns8</td><td>http://lcweb.loc.gov/standards/iso639-2/</td></tr>
+            
+                <tr><td>owl</td><td>http://www.w3.org/2002/07/owl#</td></tr>
+            
+                <tr><td>rdf</td><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#</td></tr>
+            
+                <tr><td>rdfs</td><td>http://www.w3.org/2000/01/rdf-schema#</td></tr>
+            
+            </tbody>
+        </table>
+    </section>
+
+    <section class="section">
+        <h2>Classes (0)</h2>
+        <table>
+            <thead><tr><th>Label</th><th>QName</th><th>Subclass Of</th><th>Notes</th></tr></thead>
+            <tbody>
+            
+            </tbody>
+        </table>
+    </section>
+
+    <section class="section">
+        <h2>Properties (55)</h2>
+        <table>
+            <thead><tr><th>Label</th><th>QName</th><th>Kind</th><th>Domain</th><th>Range</th><th>Notes</th></tr></thead>
+            <tbody>
+            
+                <tr id="prop-dcterms-abstract">
+                    <td>Abstract</td>
+                    <td>dcterms:abstract</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> A summary of the resource.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dc:description</span><span class="pill">dcterms:description</span></div>
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/abstract</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-accessRights">
+                    <td>Access Rights</td>
+                    <td>dcterms:accessRights</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> Information about who access the resource or an indication of its security status.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dc:rights</span><span class="pill">dcterms:rights</span></div>
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/accessRights</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-accrualMethod">
+                    <td>Accrual Method</td>
+                    <td>dcterms:accrualMethod</td>
+                    <td>Property</td>
+                    <td><span class="pill">dcmitype:Collection</span></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> The method by which items are added to a collection.</div>
+                        
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/accrualMethod</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-accrualPeriodicity">
+                    <td>Accrual Periodicity</td>
+                    <td>dcterms:accrualPeriodicity</td>
+                    <td>Property</td>
+                    <td><span class="pill">dcmitype:Collection</span></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> The frequency with which items are added to a collection.</div>
+                        
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/accrualPeriodicity</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-accrualPolicy">
+                    <td>Accrual Policy</td>
+                    <td>dcterms:accrualPolicy</td>
+                    <td>Property</td>
+                    <td><span class="pill">dcmitype:Collection</span></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> The policy governing the addition of items to a collection.</div>
+                        
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/accrualPolicy</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-alternative">
+                    <td>Alternative Title</td>
+                    <td>dcterms:alternative</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td><span class="pill">rdfs:Literal</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> An alternative name for the resource.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dc:title</span><span class="pill">dcterms:title</span></div>
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/alternative</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-audience">
+                    <td>Audience</td>
+                    <td>dcterms:audience</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> A class of agents for whom the resource is intended or useful.</div>
+                        
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/audience</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-educationLevel">
+                    <td>Audience Education Level</td>
+                    <td>dcterms:educationLevel</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> A class of agents, defined in terms of progression through an educational or training context, for which the described resource is intended.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dcterms:audience</span></div>
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/educationLevel</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-bibliographicCitation">
+                    <td>Bibliographic Citation</td>
+                    <td>dcterms:bibliographicCitation</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td><span class="pill">rdfs:Literal</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> A bibliographic reference for the resource.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dc:identifier</span><span class="pill">dcterms:identifier</span></div>
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/bibliographicCitation</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-conformsTo">
+                    <td>Conforms To</td>
+                    <td>dcterms:conformsTo</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> An established standard to which the described resource conforms.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dc:relation</span><span class="pill">dcterms:relation</span></div>
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/conformsTo</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-contributor">
+                    <td>Contributor</td>
+                    <td>dcterms:contributor</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> An entity responsible for making contributions to the resource.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dc:contributor</span></div>
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/contributor</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-coverage">
+                    <td>Coverage</td>
+                    <td>dcterms:coverage</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> The spatial or temporal topic of the resource, spatial applicability of the resource, or jurisdiction under which the resource is relevant.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dc:coverage</span></div>
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/coverage</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-creator">
+                    <td>Creator</td>
+                    <td>dcterms:creator</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> An entity responsible for making the resource.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dc:creator</span><span class="pill">dcterms:contributor</span></div>
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/creator</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-date">
+                    <td>Date</td>
+                    <td>dcterms:date</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td><span class="pill">rdfs:Literal</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> A point or period of time associated with an event in the lifecycle of the resource.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dc:date</span></div>
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/date</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-dateAccepted">
+                    <td>Date Accepted</td>
+                    <td>dcterms:dateAccepted</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td><span class="pill">rdfs:Literal</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> Date of acceptance of the resource.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dc:date</span><span class="pill">dcterms:date</span></div>
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/dateAccepted</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-available">
+                    <td>Date Available</td>
+                    <td>dcterms:available</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td><span class="pill">rdfs:Literal</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> Date that the resource became or will become available.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dc:date</span><span class="pill">dcterms:date</span></div>
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/available</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-dateCopyrighted">
+                    <td>Date Copyrighted</td>
+                    <td>dcterms:dateCopyrighted</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td><span class="pill">rdfs:Literal</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> Date of copyright of the resource.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dc:date</span><span class="pill">dcterms:date</span></div>
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/dateCopyrighted</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-created">
+                    <td>Date Created</td>
+                    <td>dcterms:created</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td><span class="pill">rdfs:Literal</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> Date of creation of the resource.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dc:date</span><span class="pill">dcterms:date</span></div>
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/created</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-issued">
+                    <td>Date Issued</td>
+                    <td>dcterms:issued</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td><span class="pill">rdfs:Literal</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> Date of formal issuance of the resource.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dc:date</span><span class="pill">dcterms:date</span></div>
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/issued</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-modified">
+                    <td>Date Modified</td>
+                    <td>dcterms:modified</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td><span class="pill">rdfs:Literal</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> Date on which the resource was changed.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dc:date</span><span class="pill">dcterms:date</span></div>
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/modified</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-dateSubmitted">
+                    <td>Date Submitted</td>
+                    <td>dcterms:dateSubmitted</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td><span class="pill">rdfs:Literal</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> Date of submission of the resource.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dc:date</span><span class="pill">dcterms:date</span></div>
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/dateSubmitted</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-valid">
+                    <td>Date Valid</td>
+                    <td>dcterms:valid</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td><span class="pill">rdfs:Literal</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> Date (often a range) of validity of a resource.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dc:date</span><span class="pill">dcterms:date</span></div>
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/valid</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-description">
+                    <td>Description</td>
+                    <td>dcterms:description</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> An account of the resource.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dc:description</span></div>
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/description</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-extent">
+                    <td>Extent</td>
+                    <td>dcterms:extent</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> The size or duration of the resource.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dc:format</span><span class="pill">dcterms:format</span></div>
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/extent</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-format">
+                    <td>Format</td>
+                    <td>dcterms:format</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> The file format, physical medium, or dimensions of the resource.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dc:format</span></div>
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/format</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-hasFormat">
+                    <td>Has Format</td>
+                    <td>dcterms:hasFormat</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> A related resource that is substantially the same as the pre-existing described resource, but in another format.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dc:relation</span><span class="pill">dcterms:relation</span></div>
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/hasFormat</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-hasPart">
+                    <td>Has Part</td>
+                    <td>dcterms:hasPart</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> A related resource that is included either physically or logically in the described resource.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dc:relation</span><span class="pill">dcterms:relation</span></div>
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/hasPart</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-hasVersion">
+                    <td>Has Version</td>
+                    <td>dcterms:hasVersion</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> A related resource that is a version, edition, or adaptation of the described resource.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dc:relation</span><span class="pill">dcterms:relation</span></div>
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/hasVersion</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-identifier">
+                    <td>Identifier</td>
+                    <td>dcterms:identifier</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td><span class="pill">rdfs:Literal</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> An unambiguous reference to the resource within a given context.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dc:identifier</span></div>
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/identifier</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-instructionalMethod">
+                    <td>Instructional Method</td>
+                    <td>dcterms:instructionalMethod</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> A process, used to engender knowledge, attitudes and skills, that the described resource is designed to support.</div>
+                        
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/instructionalMethod</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-isFormatOf">
+                    <td>Is Format Of</td>
+                    <td>dcterms:isFormatOf</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> A pre-existing related resource that is substantially the same as the described resource, but in another format.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dc:relation</span><span class="pill">dcterms:relation</span></div>
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/isFormatOf</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-isPartOf">
+                    <td>Is Part Of</td>
+                    <td>dcterms:isPartOf</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> A related resource in which the described resource is physically or logically included.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dc:relation</span><span class="pill">dcterms:relation</span></div>
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/isPartOf</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-isReferencedBy">
+                    <td>Is Referenced By</td>
+                    <td>dcterms:isReferencedBy</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> A related resource that references, cites, or otherwise points to the described resource.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dc:relation</span><span class="pill">dcterms:relation</span></div>
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/isReferencedBy</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-isReplacedBy">
+                    <td>Is Replaced By</td>
+                    <td>dcterms:isReplacedBy</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> A related resource that supplants, displaces, or supersedes the described resource.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dc:relation</span><span class="pill">dcterms:relation</span></div>
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/isReplacedBy</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-isRequiredBy">
+                    <td>Is Required By</td>
+                    <td>dcterms:isRequiredBy</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> A related resource that requires the described resource to support its function, delivery, or coherence.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dc:relation</span><span class="pill">dcterms:relation</span></div>
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/isRequiredBy</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-isVersionOf">
+                    <td>Is Version Of</td>
+                    <td>dcterms:isVersionOf</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> A related resource of which the described resource is a version, edition, or adaptation.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dc:relation</span><span class="pill">dcterms:relation</span></div>
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/isVersionOf</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-language">
+                    <td>Language</td>
+                    <td>dcterms:language</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> A language of the resource.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dc:language</span></div>
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/language</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-license">
+                    <td>License</td>
+                    <td>dcterms:license</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> A legal document giving official permission to do something with the resource.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dc:rights</span><span class="pill">dcterms:rights</span></div>
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/license</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-mediator">
+                    <td>Mediator</td>
+                    <td>dcterms:mediator</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> An entity that mediates access to the resource.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dcterms:audience</span></div>
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/mediator</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-medium">
+                    <td>Medium</td>
+                    <td>dcterms:medium</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> The material or physical carrier of the resource.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dc:format</span><span class="pill">dcterms:format</span></div>
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/medium</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-provenance">
+                    <td>Provenance</td>
+                    <td>dcterms:provenance</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> A statement of any changes in ownership and custody of the resource since its creation that are significant for its authenticity, integrity, and interpretation.</div>
+                        
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/provenance</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-publisher">
+                    <td>Publisher</td>
+                    <td>dcterms:publisher</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> An entity responsible for making the resource available.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dc:publisher</span></div>
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/publisher</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-references">
+                    <td>References</td>
+                    <td>dcterms:references</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> A related resource that is referenced, cited, or otherwise pointed to by the described resource.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dc:relation</span><span class="pill">dcterms:relation</span></div>
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/references</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-relation">
+                    <td>Relation</td>
+                    <td>dcterms:relation</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> A related resource.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dc:relation</span></div>
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/relation</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-replaces">
+                    <td>Replaces</td>
+                    <td>dcterms:replaces</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> A related resource that is supplanted, displaced, or superseded by the described resource.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dc:relation</span><span class="pill">dcterms:relation</span></div>
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/replaces</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-requires">
+                    <td>Requires</td>
+                    <td>dcterms:requires</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> A related resource that is required by the described resource to support its function, delivery, or coherence.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dc:relation</span><span class="pill">dcterms:relation</span></div>
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/requires</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-rights">
+                    <td>Rights</td>
+                    <td>dcterms:rights</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> Information about rights held in and over the resource.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dc:rights</span></div>
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/rights</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-rightsHolder">
+                    <td>Rights Holder</td>
+                    <td>dcterms:rightsHolder</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> A person or organization owning or managing rights over the resource.</div>
+                        
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/rightsHolder</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-source">
+                    <td>Source</td>
+                    <td>dcterms:source</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> A related resource from which the described resource is derived.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dc:source</span><span class="pill">dcterms:relation</span></div>
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/source</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-spatial">
+                    <td>Spatial Coverage</td>
+                    <td>dcterms:spatial</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> Spatial characteristics of the resource.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dc:coverage</span><span class="pill">dcterms:coverage</span></div>
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/spatial</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-subject">
+                    <td>Subject</td>
+                    <td>dcterms:subject</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> A topic of the resource.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dc:subject</span></div>
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/subject</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-tableOfContents">
+                    <td>Table Of Contents</td>
+                    <td>dcterms:tableOfContents</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> A list of subunits of the resource.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dc:description</span><span class="pill">dcterms:description</span></div>
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/tableOfContents</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-temporal">
+                    <td>Temporal Coverage</td>
+                    <td>dcterms:temporal</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> Temporal characteristics of the resource.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dc:coverage</span><span class="pill">dcterms:coverage</span></div>
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/temporal</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-title">
+                    <td>Title</td>
+                    <td>dcterms:title</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td><span class="pill">rdfs:Literal</span></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> A name given to the resource.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dc:title</span></div>
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/title</div>
+                    </td>
+                </tr>
+            
+                <tr id="prop-dcterms-type">
+                    <td>Type</td>
+                    <td>dcterms:type</td>
+                    <td>Property</td>
+                    <td></td>
+                    <td></td>
+                    <td class="small">
+                        <div><strong>Comment:</strong> The nature or genre of the resource.</div>
+                        <div><strong>SubProperty Of:</strong> <span class="pill">dc:type</span></div>
+                        
+                        <div class="meta">IRI: http://purl.org/dc/terms/type</div>
+                    </td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </section>
+    </div>
+</body>
+</html>

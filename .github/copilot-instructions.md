@@ -120,6 +120,7 @@ ontology/venv/bin/python ontology/scripts/convert_ontologies.py \
 | Topic Message | `https://hashgraphontology.xyz/resource/{network}/topic/{shard}.{realm}.{num}/message/{sequenceNumber}` |
 | Token | `https://hashgraphontology.xyz/resource/{network}/token/{shard}.{realm}.{num}` |
 | Smart Contract | `https://hashgraphontology.xyz/resource/{network}/contract/{shard}.{realm}.{num}` |
+| Transaction Record | `https://hashgraphontology.xyz/resource/{network}/record/{consensusTimestamp}` |
 
 `{network}` is one of `mainnet`, `testnet`, or `previewnet` — the `skos:notation` of the `hedera:Mainnet`, `hedera:Testnet` and `hedera:Previewnet` named individuals in `ontology/src/core.ttl`. The native currency is the `hedera:HBAR` individual (a `hedera:NativeCurrency`, not a `hedera:Token`).
 
